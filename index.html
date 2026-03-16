@@ -113,11 +113,40 @@
       to { transform: rotate(360deg); }
     }
 
-    .intro-logo-circle i {
-      font-size: 90px;
-      color: #fff;
-      animation: leafFloat 3s ease-in-out infinite;
-    }
+    /* LOGO CIRCLE */
+.intro-logo-circle {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #3A7D44, #1e4a2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 70px rgba(58,125,68,0.8),
+    inset 0 0 25px rgba(255,255,255,0.15);
+  border: 3px solid rgba(255,255,255,0.25);
+  animation: logoGlow 3s infinite ease-in-out;
+}
+
+/* LOGO IMAGE */
+.intro-logo-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* GLOW ANIMATION */
+@keyframes logoGlow {
+  0% { box-shadow: 0 0 40px rgba(58,125,68,0.6); }
+  50% { box-shadow: 0 0 80px rgba(58,125,68,1); }
+  100% { box-shadow: 0 0 40px rgba(58,125,68,0.6); }
+}
 
     @keyframes leafFloat {
       0% { transform: scale(1); }
@@ -693,11 +722,13 @@
 
   <div class="intro-content">
 
-    <div class="intro-logo">
-      <div class="intro-logo-circle">
-        <img src="imagesproducts/kvb-logo.png" alt="KVB Logo" class="intro-logo-img">
-      </div>
-    </div>
+   <div class="intro-logo">
+  <div class="intro-logo-circle">
+    <img src="images/products/New Logo Design.jpg.jpeg" 
+         alt="KVB Logo" 
+         class="intro-logo-img">
+  </div>
+</div>
 
     <h1 class="intro-title">KVB GREEN ENERGIES</h1>
     <p class="intro-subtitle">Engineering the Future</p>
