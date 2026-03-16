@@ -114,26 +114,19 @@
     }
 
     /* LOGO CIRCLE */
-.intro-logo-circle {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 25px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #3A7D44, #1e4a2a);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow:
-    0 0 70px rgba(58,125,68,0.8),
-    inset 0 0 25px rgba(255,255,255,0.15);
-  border: 3px solid rgba(255,255,255,0.25);
-  animation: logoGlow 3s infinite ease-in-out;
+.intro-logo-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;   /* keeps the whole image visible */
+  border-radius: 80%;     /* makes the container circular */
+  background: white;      /* fills any empty space */
+  padding: 10px;          /* gives breathing room */
 }
 
 /* LOGO IMAGE */
 .intro-logo-img {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   background: white;
   border-radius: 50%;
