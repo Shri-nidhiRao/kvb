@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>KVB Green Energies – Engineering the Future</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -29,7 +31,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: opacity 1.5s cubic-bezier(0.77,0,0.175,1), visibility 1.5s ease;
+      transition: opacity 1.5s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.5s ease;
     }
 
     .intro-container.fade-out {
@@ -56,14 +58,19 @@
     }
 
     @keyframes slowZoom {
-      0% { transform: scale(1.02); }
-      100% { transform: scale(1.1); }
+      0% {
+        transform: scale(1.02);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
     }
 
     .intro-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
       z-index: 2;
     }
 
@@ -78,8 +85,15 @@
     }
 
     @keyframes contentFadeIn {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .intro-logo {
@@ -88,29 +102,50 @@
     }
 
     @keyframes logoPulse {
-      0% { filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5)); }
-      50% { filter: drop-shadow(0 0 40px rgba(58, 125, 68, 0.9)); }
-      100% { filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5)); }
+      0% {
+        filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 40px rgba(58, 125, 68, 0.9));
+      }
+
+      100% {
+        filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5));
+      }
     }
 
     .intro-logo-img {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: white;
-  padding: 10px;
-}
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+      padding: 25px;
+    }
 
-@keyframes logoFloat {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
+    @keyframes logoFloat {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
 
     @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* LOGO CIRCLE */
@@ -142,9 +177,17 @@
 }
 
     @keyframes leafFloat {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     .intro-title {
@@ -155,7 +198,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 20px;
-      text-shadow: 0 5px 30px rgba(0,0,0,0.5);
+      text-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
       background: linear-gradient(to right, #f0f0f0, #c8e6c9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -164,15 +207,20 @@
     }
 
     @keyframes titleGlow {
-      0% { text-shadow: 0 0 30px rgba(58,125,68,0.5); }
-      100% { text-shadow: 0 0 60px rgba(58,125,68,0.9); }
+      0% {
+        text-shadow: 0 0 30px rgba(58, 125, 68, 0.5);
+      }
+
+      100% {
+        text-shadow: 0 0 60px rgba(58, 125, 68, 0.9);
+      }
     }
 
     .intro-subtitle {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 1.4rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       letter-spacing: 0.3em;
       text-transform: uppercase;
       margin-bottom: 50px;
@@ -183,7 +231,7 @@
       width: 200px;
       height: 2px;
       margin: 0 auto;
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 4px;
       position: relative;
       overflow: hidden;
@@ -203,8 +251,13 @@
     }
 
     @keyframes loadingBar {
-      0% { left: -40%; }
-      100% { left: 100%; }
+      0% {
+        left: -40%;
+      }
+
+      100% {
+        left: 100%;
+      }
     }
 
     .intro-particles {
@@ -218,27 +271,95 @@
       position: absolute;
       width: 4px;
       height: 4px;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       box-shadow: 0 0 10px #3A7D44;
       animation: floatParticle 15s infinite linear;
     }
 
     @keyframes floatParticle {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
     }
 
-    .intro-particles span:nth-child(1) { left: 10%; width: 6px; height: 6px; animation-duration: 18s; animation-delay: 0s; }
-    .intro-particles span:nth-child(2) { left: 30%; width: 3px; height: 3px; animation-duration: 12s; animation-delay: 2s; }
-    .intro-particles span:nth-child(3) { left: 50%; width: 8px; height: 8px; animation-duration: 22s; animation-delay: 1s; }
-    .intro-particles span:nth-child(4) { left: 70%; width: 5px; height: 5px; animation-duration: 14s; animation-delay: 3s; }
-    .intro-particles span:nth-child(5) { left: 90%; width: 4px; height: 4px; animation-duration: 16s; animation-delay: 0.5s; }
-    .intro-particles span:nth-child(6) { left: 45%; width: 7px; height: 7px; animation-duration: 20s; animation-delay: 4s; }
-    .intro-particles span:nth-child(7) { left: 15%; width: 5px; height: 5px; animation-duration: 13s; animation-delay: 1.5s; }
-    .intro-particles span:nth-child(8) { left: 85%; width: 6px; height: 6px; animation-duration: 19s; animation-delay: 2.5s; }
+    .intro-particles span:nth-child(1) {
+      left: 10%;
+      width: 6px;
+      height: 6px;
+      animation-duration: 18s;
+      animation-delay: 0s;
+    }
+
+    .intro-particles span:nth-child(2) {
+      left: 30%;
+      width: 3px;
+      height: 3px;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+
+    .intro-particles span:nth-child(3) {
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      animation-duration: 22s;
+      animation-delay: 1s;
+    }
+
+    .intro-particles span:nth-child(4) {
+      left: 70%;
+      width: 5px;
+      height: 5px;
+      animation-duration: 14s;
+      animation-delay: 3s;
+    }
+
+    .intro-particles span:nth-child(5) {
+      left: 90%;
+      width: 4px;
+      height: 4px;
+      animation-duration: 16s;
+      animation-delay: 0.5s;
+    }
+
+    .intro-particles span:nth-child(6) {
+      left: 45%;
+      width: 7px;
+      height: 7px;
+      animation-duration: 20s;
+      animation-delay: 4s;
+    }
+
+    .intro-particles span:nth-child(7) {
+      left: 15%;
+      width: 5px;
+      height: 5px;
+      animation-duration: 13s;
+      animation-delay: 1.5s;
+    }
+
+    .intro-particles span:nth-child(8) {
+      left: 85%;
+      width: 6px;
+      height: 6px;
+      animation-duration: 19s;
+      animation-delay: 2.5s;
+    }
 
     /* ----- MAIN WEBSITE ----- */
     #mainWebsite {
@@ -252,7 +373,9 @@
     }
 
     @keyframes websiteFadeIn {
-      to { opacity: 1; }
+      to {
+        opacity: 1;
+      }
     }
 
     /* header placeholder */
@@ -351,6 +474,39 @@
       margin-bottom: 1.5rem;
       color: white;
       font-family: 'Montserrat', sans-serif;
+      min-height: 1.2em;
+      transition: opacity 1s ease;
+    }
+
+    .hero-title.fade-out {
+      opacity: 0;
+    }
+
+    .hero-title.fade-in {
+      opacity: 1;
+    }
+
+    /* Typewriter blinking cursor */
+    .typewriter-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background: white;
+      margin-left: 4px;
+      vertical-align: text-bottom;
+      animation: cursorBlink 0.7s infinite;
+    }
+
+    @keyframes cursorBlink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     .hero-subtitle {
@@ -423,17 +579,42 @@
     }
 
     @keyframes bounce {
-      0%,20%,50%,80%,100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-10px) translateX(-50%); }
-      60% { transform: translateY(-5px) translateX(-50%); }
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0) translateX(-50%);
+      }
+
+      40% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+
+      60% {
+        transform: translateY(-5px) translateX(-50%);
+      }
     }
 
-    /* ===== SOLUTIONS ECOSYSTEM – product cards (unchanged) ===== */
+    /* ===== SOLUTIONS ECOSYSTEM – 4 category cards ===== */
     .solutions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-top: 3rem;
+    }
+
+    @media (max-width: 1024px) {
+      .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .product-card {
@@ -444,7 +625,7 @@
       transition: all 0.3s ease;
       text-decoration: none;
       color: inherit;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
     }
 
     .product-card:hover {
@@ -520,7 +701,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
     }
 
     .client-logo img {
@@ -538,8 +719,13 @@
     }
 
     @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     /* ===== INNOVATION LAB ===== */
@@ -557,7 +743,7 @@
       padding: 2rem 1.5rem;
       text-align: center;
       transition: all 0.3s;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
     }
 
     .innovation-item i {
@@ -595,7 +781,7 @@
       background: #ffffff;
       border-radius: 24px;
       padding: 2.5rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
       border: 1px solid #f0f0f0;
       transition: box-shadow 0.3s, border-color 0.2s;
     }
@@ -626,88 +812,203 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      margin-top: 3.5rem; 
+      margin-top: 3.5rem;
     }
-    .stat-message { text-align: center; }
-    .stat-message i { font-size: 2rem; color: #4a8b4a; margin-bottom: 1rem; background: rgba(74,139,74,0.05); padding: 1rem; border-radius: 50%; }
-    .stat-message h3 { font-size: 1.5rem; font-weight: 600; color: #1d1d1f; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
-    .stat-message p { color: #86868b; }
+
+    .stat-message {
+      text-align: center;
+    }
+
+    .stat-message i {
+      font-size: 2rem;
+      color: #4a8b4a;
+      margin-bottom: 1rem;
+      background: rgba(74, 139, 74, 0.05);
+      padding: 1rem;
+      border-radius: 50%;
+    }
+
+    .stat-message h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .stat-message p {
+      color: #86868b;
+    }
 
     /* ----- SUSTAINABILITY MESSAGE (unchanged) ----- */
     .sustainability-message {
-      background: #f9f9fb; padding: 5rem 0; text-align: center;
+      background: #f9f9fb;
+      padding: 5rem 0;
+      text-align: center;
     }
+
     .sustainability-message h2 {
-      font-size: 2.2rem; font-weight: 500; max-width: 900px; margin: 2rem auto; line-height: 1.4; color: #1d1d1f;
+      font-size: 2.2rem;
+      font-weight: 500;
+      max-width: 900px;
+      margin: 2rem auto;
+      line-height: 1.4;
+      color: #1d1d1f;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    .fa-quote-left, .fa-quote-right { color: #4a8b4a; opacity: 0.2; font-size: 2rem; }
+
+    .fa-quote-left,
+    .fa-quote-right {
+      color: #4a8b4a;
+      opacity: 0.2;
+      font-size: 2rem;
+    }
 
     /* ----- CTA BANNER (unchanged) ----- */
     .cta-banner {
-      background: #4a8b4a; padding: 5rem 0; color: white; text-align: center;
+      background: #4a8b4a;
+      padding: 5rem 0;
+      color: white;
+      text-align: center;
     }
+
     .cta-banner h2 {
-      font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; color: white;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
     }
+
     .cta-buttons {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
+
     .cta-buttons .btn {
-      background: white; color: #4a8b4a; padding: 0.8rem 2rem; border-radius: 30px; font-weight: 500;
+      background: white;
+      color: #4a8b4a;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 500;
     }
+
     .cta-buttons .btn-outline {
-      background: transparent; color: white; border: 1px solid white;
+      background: transparent;
+      color: white;
+      border: 1px solid white;
     }
+
     .cta-buttons .btn-outline:hover {
-      background: white; color: #4a8b4a;
+      background: white;
+      color: #4a8b4a;
     }
+
     .cta-buttons .btn-gold {
-      background: #FDB813; color: #1d1d1f;
+      background: #FDB813;
+      color: #1d1d1f;
     }
+
     .cta-buttons .btn-gold:hover {
       background: #e5a800;
     }
 
     /* ----- WHATSAPP FLOAT (unchanged) ----- */
     .whatsapp-float {
-      position: fixed; bottom: 30px; right: 30px; background: #25d366; border-radius: 50%;
-      width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
-      font-size: 32px; color: white; box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-      z-index: 999; transition: transform 0.2s;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 999;
+      transition: transform 0.2s;
     }
-    .whatsapp-float:hover { transform: scale(1.05); }
+
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      .hero-title { font-size: 3rem; }
+      .hero-title {
+        font-size: 3rem;
+      }
     }
+
     @media (max-width: 768px) {
-      .hero-title { font-size: 2.2rem; }
-      .hero-content { max-width: 100%; padding: 0 1rem; }
-      .hero-buttons { flex-direction: column; align-items: center; }
-      .btn { width: 100%; max-width: 300px; }
-      .section-title { font-size: 2rem; }
-      .sustainability-message h2 { font-size: 1.8rem; }
-      .marquee-item { width: 130px; }
-      .client-logo { width: 100px; height: 100px; }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        padding: 0 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .sustainability-message h2 {
+        font-size: 1.8rem;
+      }
+
+      .marquee-item {
+        width: 130px;
+      }
+
+      .client-logo {
+        width: 100px;
+        height: 100px;
+      }
     }
+
     @media (max-width: 480px) {
-      .marquee-item { width: 110px; }
-      .client-logo { width: 80px; height: 80px; }
-      .client-name { font-size: 0.9rem; }
+      .marquee-item {
+        width: 110px;
+      }
+
+      .client-logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .client-name {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <!-- CINEMATIC INTRO (unchanged) -->
- <div class="intro-container" id="introScreen">
-  <video class="intro-video-bg" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2021/08/09/84269-589985131_large.mp4" type="video/mp4">
-  </video>
+  <div class="intro-container" id="introScreen">
+    <video class="intro-video-bg" autoplay muted loop playsinline>
+      <source src="https://cdn.pixabay.com/video/2021/08/09/84269-589985131_large.mp4" type="video/mp4">
+    </video>
 
-  <div class="intro-overlay"></div>
+    <div class="intro-overlay"></div>
 
+<<<<<<< HEAD
   <div class="intro-particles">
     <span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span>
@@ -722,13 +1023,27 @@
          class="intro-logo-img">
   </div>
 </div>
+=======
+    <div class="intro-particles">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+>>>>>>> 3cd5dc936607b994f925ccafc006e7b509821eb3
 
-    <h1 class="intro-title">KVB GREEN ENERGIES</h1>
-    <p class="intro-subtitle">Engineering the Future</p>
-    <div class="intro-loader"></div>
+    <div class="intro-content">
 
+      <div class="intro-logo">
+        <div class="intro-logo-circle">
+          <img src="images/products/kvb-logo.png" alt="KVB Logo" class="intro-logo-img">
+        </div>
+      </div>
+
+      <h1 class="intro-title">KVB GREEN ENERGIES</h1>
+      <p class="intro-subtitle">Engineering the Future</p>
+      <div class="intro-loader"></div>
+
+    </div>
   </div>
-</div>
 
   <!-- MAIN WEBSITE -->
   <div id="mainWebsite">
@@ -748,9 +1063,9 @@
       </div>
       <div class="overlay"></div>
       <div class="container hero-content">
-        <h1 class="hero-title">We Are Into Clean Tech-Solar Thermal & Agri Tech</h1>
-        
-       
+        <h1 class="hero-title" id="heroTypewriter"></h1>
+
+
     </section>
 
     <!-- PILLARS SECTION -->
@@ -762,7 +1077,8 @@
           <div class="pillar-card" data-aos="zoom-in" data-aos-delay="100">
             <div class="pillar-icon"><i class="fas fa-solar-panel"></i></div>
             <h3>Next-Generation Clean Energy Solutions</h3>
-            <p>Solar thermal and steam technologies replacing fossil fuels in large-scale cooking and industrial heat applications.</p>
+            <p>Solar thermal and steam technologies replacing fossil fuels in large-scale cooking and industrial heat
+              applications.</p>
           </div>
           <div class="pillar-card" data-aos="zoom-in" data-aos-delay="200">
             <div class="pillar-icon"><i class="fas fa-seedling"></i></div>
@@ -778,39 +1094,31 @@
       </div>
     </section>
 
-    <!-- SOLUTIONS ECOSYSTEM – product cards with images -->
+    <!-- SOLUTIONS ECOSYSTEM – 4 category cards -->
     <section class="section" style="background:#f9f9fb;" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Solutions Eco-system</h2>
         <p class="section-subtitle">Complete renewable energy and smart agriculture solutions</p>
         <div class="solutions-grid">
-          <a href="products/solar-steam-cooking.html" class="product-card">
+          <a href="solutions/solar-steam-cooking.html" class="product-card">
             <div class="product-image"><img src="images/products/parabolic-cooker.png" alt="Solar Steam Cooking"></div>
-            <div class="product-name">Parabolic Solar Cooker</div>>
+            <div class="product-name">Solar Steam Cooking</div>
           </a>
-          <a href="products/scheffler-concentrators.html" class="product-card">
-            <div class="product-image"><img src="images/products/scheffler-dish4.jpg" alt="Scheffler Concentrator"></div>
-            <div class="product-name">Scheffler Solar Concentrators</div>
+          <a href="solutions/solar-dryers.html" class="product-card">
+            <div class="product-image"><img src="images/products/solar-tunnel-dryer1.jpg" alt="Solar Dryers"></div>
+            <div class="product-name">Solar Dryers</div>
           </a>
-          <a href="products/solar-tunnel-dryer.html" class="product-card">
-            <div class="product-image"><img src="images/products/solar-tunnel-dryer1.jpg" alt="Solar Tunnel Dryer"></div>
-            <div class="product-name">Hybrid Solar Tunnel Dryers</div>
-          </a>
-          <a href="products/thermal-storage.html" class="product-card">
-            <div class="product-image"><img src="images/products/ptc.jpg" alt="Energy Storage"></div>
-            <div class="product-name">Solar Parabolic Trough</div>
-          </a>
-          <a href="biomass-integration.html" class="product-card">
-            <div class="product-image"><img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Biomass"></div>
-            <div class="product-name">Biomass Thermal Integration</div>
-          </a>
-          <a href="products/ai-crop-detection.html" class="product-card">
-            <div class="product-image"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Crop"></div>
-            <div class="product-name">AI Crop Quality Detection</div>
+          <a href="solutions/agritech-solutions.html" class="product-card">
+            <div class="product-image"><img
+                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Agritech Solutions"></div>
+            <div class="product-name">Agritech Solutions</div>
           </a>
           <a href="products/microgreen-systems.html" class="product-card">
-            <div class="product-image"><img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Microgreen"></div>
-            <div class="product-name">Microgreen Automation Systems</div>
+            <div class="product-image"><img
+                src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="Microgreen"></div>
+            <div class="product-name">Microgreen</div>
           </a>
         </div>
       </div>
@@ -824,29 +1132,97 @@
         <div class="marquee-wrapper">
           <div class="marquee-track">
             <!-- First set (exactly as provided) -->
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army"></div><div class="client-name">Indian Army</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/IIT_Dharwad.svg" alt="IIT Dharwad"></div><div class="client-name">IIT Dharwad</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/yashada.jpeg" alt="Yashada Pune"></div><div class="client-name">Yashada Pune</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/geda-goa.jpeg" alt="GEDA Goa"></div><div class="client-name">GEDA Goa</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/uhs b.jpeg" alt="UHS Bagalkot"></div><div class="client-name">UHS Bagalkot</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/ins madavi goa.jpeg" alt="INS Mandavi Goa"></div><div class="client-name">INS Mandavi Goa</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/ksnau.jpeg" alt="KSNAU Shimoga"></div><div class="client-name">KSNAU Shimoga</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/caet.jpeg" alt="CAET Godhra"></div><div class="client-name">CAET Godhra</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/org-karwar.webp" alt="Prakruti Organics Karwar"></div><div class="client-name">Prakruti Organics Karwar</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/uas b.jpeg" alt="UAS Bangalore"></div><div class="client-name">UAS Bangalore</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/mauli.png" alt="Mauli Pratishthan A' Nagar"></div><div class="client-name">Mauli Pratishthan A' Nagar</div></div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army"></div>
+              <div class="client-name">Indian Army</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/IIT_Dharwad.svg" alt="IIT Dharwad"></div>
+              <div class="client-name">IIT Dharwad</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/yashada.jpeg" alt="Yashada Pune"></div>
+              <div class="client-name">Yashada Pune</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/geda-goa.jpeg" alt="GEDA Goa"></div>
+              <div class="client-name">GEDA Goa</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/uhs b.jpeg" alt="UHS Bagalkot"></div>
+              <div class="client-name">UHS Bagalkot</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/ins madavi goa.jpeg" alt="INS Mandavi Goa"></div>
+              <div class="client-name">INS Mandavi Goa</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/ksnau.jpeg" alt="KSNAU Shimoga"></div>
+              <div class="client-name">KSNAU Shimoga</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/caet.jpeg" alt="CAET Godhra"></div>
+              <div class="client-name">CAET Godhra</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/org-karwar.webp" alt="Prakruti Organics Karwar">
+              </div>
+              <div class="client-name">Prakruti Organics Karwar</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/uas b.jpeg" alt="UAS Bangalore"></div>
+              <div class="client-name">UAS Bangalore</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/mauli.png" alt="Mauli Pratishthan A' Nagar"></div>
+              <div class="client-name">Mauli Pratishthan A' Nagar</div>
+            </div>
             <!-- Duplicate set for seamless loop -->
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army"></div><div class="client-name">Indian Army</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/IIT_Dharwad.svg" alt="IIT Dharwad"></div><div class="client-name">IIT Dharwad</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/yashada.jpeg" alt="Yashada Pune"></div><div class="client-name">Yashada Pune</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/geda-goa.jpeg" alt="GEDA Goa"></div><div class="client-name">GEDA Goa</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/uas b.jpeg" alt="UHS Bagalkot"></div><div class="client-name">UHS Bagalkot</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/ins madavi goa.jpeg" alt="INS Mandavi Goa"></div><div class="client-name">INS Mandavi Goa</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/ksnau.jpeg" alt="KSNAU Shimoga"></div><div class="client-name">KSNAU Shimoga</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/caet.jpeg" alt="CAET Godhra"></div><div class="client-name">CAET Godhra</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/org-karwar.webp" alt="Prakruti Organics Karwar"></div><div class="client-name">Prakruti Organics Karwar</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/uas bangalore.png" alt="UAS Bangalore"></div><div class="client-name">UAS Bangalore</div></div>
-            <div class="marquee-item"><div class="client-logo"><img src="images/certificates/mauli.png" alt="Mauli Pratishthan A' Nagar"></div><div class="client-name">Mauli Pratishthan A' Nagar</div></div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army"></div>
+              <div class="client-name">Indian Army</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/IIT_Dharwad.svg" alt="IIT Dharwad"></div>
+              <div class="client-name">IIT Dharwad</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/yashada.jpeg" alt="Yashada Pune"></div>
+              <div class="client-name">Yashada Pune</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/geda-goa.jpeg" alt="GEDA Goa"></div>
+              <div class="client-name">GEDA Goa</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/uas b.jpeg" alt="UHS Bagalkot"></div>
+              <div class="client-name">UHS Bagalkot</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/ins madavi goa.jpeg" alt="INS Mandavi Goa"></div>
+              <div class="client-name">INS Mandavi Goa</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/ksnau.jpeg" alt="KSNAU Shimoga"></div>
+              <div class="client-name">KSNAU Shimoga</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/caet.jpeg" alt="CAET Godhra"></div>
+              <div class="client-name">CAET Godhra</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/org-karwar.webp" alt="Prakruti Organics Karwar">
+              </div>
+              <div class="client-name">Prakruti Organics Karwar</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/uas bangalore.png" alt="UAS Bangalore"></div>
+              <div class="client-name">UAS Bangalore</div>
+            </div>
+            <div class="marquee-item">
+              <div class="client-logo"><img src="images/certificates/mauli.png" alt="Mauli Pratishthan A' Nagar"></div>
+              <div class="client-name">Mauli Pratishthan A' Nagar</div>
+            </div>
           </div>
         </div>
       </div>
@@ -857,10 +1233,22 @@
       <div class="container">
         <h2 class="section-title">Real Impact, Measurable Results</h2>
         <div class="impact-grid">
-          <div class="stat-message"><i class="fas fa-smog"></i><h3>Thousands of tons</h3><p>CO₂ emissions reduced</p></div>
-          <div class="stat-message"><i class="fas fa-gas-pump"></i><h3>Large‑scale LPG</h3><p>replaced with solar thermal</p></div>
-          <div class="stat-message"><i class="fas fa-tree"></i><h3>Firewood saved</h3><p>community kitchens & industries</p></div>
-          <div class="stat-message"><i class="fas fa-users"></i><h3>Farmer livelihoods</h3><p>strengthened through smart agriculture</p></div>
+          <div class="stat-message"><i class="fas fa-smog"></i>
+            <h3>Thousands of tons</h3>
+            <p>CO₂ emissions reduced</p>
+          </div>
+          <div class="stat-message"><i class="fas fa-gas-pump"></i>
+            <h3>Large‑scale LPG</h3>
+            <p>replaced with solar thermal</p>
+          </div>
+          <div class="stat-message"><i class="fas fa-tree"></i>
+            <h3>Firewood saved</h3>
+            <p>community kitchens & industries</p>
+          </div>
+          <div class="stat-message"><i class="fas fa-users"></i>
+            <h3>Farmer livelihoods</h3>
+            <p>strengthened through smart agriculture</p>
+          </div>
         </div>
       </div>
     </section>
@@ -869,13 +1257,29 @@
     <section class="section" style="background:#f9f9fb;" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Building Tomorrow's Infrastructure Today</h2>
-        <p style="font-size:1.2rem;color:#86868b;max-width:700px;margin-bottom:3rem;">KVB is actively developing future technologies that will transform energy and agriculture systems.</p>
+        <p style="font-size:1.2rem;color:#86868b;max-width:700px;margin-bottom:3rem;">KVB is actively developing future
+          technologies that will transform energy and agriculture systems.</p>
         <div class="innovation-grid">
-          <div class="innovation-item"><i class="fas fa-temperature-high"></i><h4>Thermal Energy Storage</h4><p>Long‑duration heat storage for round‑the‑clock industrial use</p></div>
-          <div class="innovation-item"><i class="fas fa-digital-tachograph"></i><h4>Soil‑to‑Sale Platforms</h4><p>Integrated digital agriculture from farm to market</p></div>
-          <div class="innovation-item"><i class="fas fa-brain"></i><h4>AI Crop Grading Systems</h4><p>Automated quality detection with 99% accuracy</p></div>
-          <div class="innovation-item"><i class="fas fa-robot"></i><h4>Microgreen Smart Farms</h4><p>Fully automated vertical farming for urban areas</p></div>
-          <div class="innovation-item"><i class="fas fa-bolt"></i><h4>Hybrid Renewable Heat</h4><p>Integration of solar, biomass and storage for continuous heat</p></div>
+          <div class="innovation-item"><i class="fas fa-temperature-high"></i>
+            <h4>Thermal Energy Storage</h4>
+            <p>Long‑duration heat storage for round‑the‑clock industrial use</p>
+          </div>
+          <div class="innovation-item"><i class="fas fa-digital-tachograph"></i>
+            <h4>Soil‑to‑Sale Platforms</h4>
+            <p>Integrated digital agriculture from farm to market</p>
+          </div>
+          <div class="innovation-item"><i class="fas fa-brain"></i>
+            <h4>AI Crop Grading Systems</h4>
+            <p>Automated quality detection with 99% accuracy</p>
+          </div>
+          <div class="innovation-item"><i class="fas fa-robot"></i>
+            <h4>Microgreen Smart Farms</h4>
+            <p>Fully automated vertical farming for urban areas</p>
+          </div>
+          <div class="innovation-item"><i class="fas fa-bolt"></i>
+            <h4>Hybrid Renewable Heat</h4>
+            <p>Integration of solar, biomass and storage for continuous heat</p>
+          </div>
         </div>
       </div>
     </section>
@@ -884,7 +1288,9 @@
     <section class="sustainability-message" data-aos="fade-up">
       <div class="container">
         <i class="fas fa-quote-left"></i>
-        <h2>Every kilogram of firewood and LPG burned releases harmful CO₂. Our mission is to replace fossil fuel dependency with renewable thermal energy and intelligent agricultural systems that protect the environment while strengthening livelihoods.</h2>
+        <h2>Every kilogram of firewood and LPG burned releases harmful CO₂. Our mission is to replace fossil fuel
+          dependency with renewable thermal energy and intelligent agricultural systems that protect the environment
+          while strengthening livelihoods.</h2>
         <i class="fas fa-quote-right"></i>
       </div>
     </section>
@@ -910,7 +1316,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    (function() {
+    (function () {
       // intro screen handling
       if (sessionStorage.getItem('introShown') === 'true') {
         document.getElementById('introScreen').classList.add('hidden');
@@ -955,7 +1361,7 @@
         "../components/footer.html"
       ]);
 
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         const header = document.querySelector('.header');
         if (header) {
           if (window.scrollY > 50) {
@@ -988,8 +1394,58 @@
           video1.classList.add('visible');
           current = 1;
         }
-      }, 10000); // 10 seconds per video – adjust as needed
+      }, 10000); // 10 seconds per video
+
+      // ===== TYPEWRITER ANIMATION =====
+      const typewriterText = 'We Are Into Clean Tech-Solar Thermal & Agri Tech';
+      const heroEl = document.getElementById('heroTypewriter');
+      let twTimeout;
+
+      function typeWriter(text, index, callback) {
+        if (index < text.length) {
+          heroEl.innerHTML = text.substring(0, index + 1) + '<span class="typewriter-cursor"></span>';
+          twTimeout = setTimeout(() => typeWriter(text, index + 1, callback), 100);
+        } else {
+          // Remove cursor after typing finishes
+          setTimeout(() => {
+            heroEl.innerHTML = text;
+            if (callback) callback();
+          }, 500);
+        }
+      }
+
+      function runTypewriterCycle() {
+        // Phase 1: Type in (~5 seconds)
+        heroEl.classList.remove('fade-out');
+        heroEl.classList.add('fade-in');
+        typeWriter(typewriterText, 0, () => {
+          // Phase 2: Stay visible for a moment, then fade out
+          setTimeout(() => {
+            heroEl.classList.remove('fade-in');
+            heroEl.classList.add('fade-out');
+            // Phase 3: Stay hidden while video plays, then reappear after 30s
+            setTimeout(() => {
+              heroEl.innerHTML = typewriterText;
+              heroEl.classList.remove('fade-out');
+              heroEl.classList.add('fade-in');
+              // Phase 4: Stay visible for 30 seconds, then restart cycle
+              setTimeout(() => {
+                heroEl.classList.remove('fade-in');
+                heroEl.classList.add('fade-out');
+                setTimeout(() => {
+                  heroEl.innerHTML = '';
+                  runTypewriterCycle();
+                }, 1000);
+              }, 30000);
+            }, 5000);
+          }, 3000);
+        });
+      }
+
+      // Start the typewriter cycle
+      runTypewriterCycle();
     })();
   </script>
 </body>
+
 </html>

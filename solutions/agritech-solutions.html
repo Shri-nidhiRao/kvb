@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agritech Solutions – KVB Green Energies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+      background: #ffffff;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ===== PAGE HERO BANNER ===== */
+    .page-hero {
+      background: linear-gradient(135deg, #2d5a33 0%, #4a8b4a 50%, #3A7D44 100%);
+      padding: 8rem 0 4rem;
+      color: white;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== PRODUCT ROW ===== */
+    .product-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 4rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .product-row:last-child { border-bottom: none; }
+
+    .product-row.reverse .product-info { order: 2; }
+    .product-row.reverse .product-media { order: 1; }
+
+    .product-info h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-bottom: 1rem;
+    }
+
+    .product-info p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-info .btn-explore {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      background: #4a8b4a;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .product-info .btn-explore:hover {
+      background: #2d5a33;
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(74, 139, 74, 0.2);
+    }
+
+    /* Video/media placeholder */
+    .product-media {
+      background: #f5f5f7;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e8e8ed;
+    }
+
+    .product-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .product-media .placeholder-text {
+      color: #aaa;
+      font-size: 1rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .product-media .placeholder-text i {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 2.2rem; }
+      .product-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0;
+      }
+      .product-row.reverse .product-info { order: 1; }
+      .product-row.reverse .product-media { order: 2; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Agritech Solutions</h1>
+      <p>Intelligent agriculture technology combining AI, IoT, and data analytics to empower farmers with actionable insights for better yields and quality.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="container" style="padding: 2rem 2rem 4rem;">
+
+    <!-- 1. AgroSense -->
+    <div class="product-row" data-aos="fade-up">
+      <div class="product-info">
+        <h2>AgroSense</h2>
+        <p>AgroSense is KVB's flagship smart agriculture platform that integrates AI-powered crop quality detection, soil health monitoring, and real-time weather analytics. Designed for farmers and agri-businesses, AgroSense provides end-to-end digital tools — from soil analysis to market-ready grading — helping increase crop value and reduce post-harvest losses.</p>
+        <a href="../products/ai-crop-detection.html" class="btn-explore">Learn More →</a>
+      </div>
+      <div class="product-media">
+        <div class="placeholder-text">
+          <i class="fas fa-video"></i>
+          Video coming soon
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 30 });
+
+    function loadComponent(id, paths) {
+      const tryPath = (index) => {
+        if (index >= paths.length) return;
+        fetch(paths[index])
+          .then(res => { if (!res.ok) throw new Error(); return res.text(); })
+          .then(data => { document.getElementById(id).innerHTML = data; })
+          .catch(() => tryPath(index + 1));
+      };
+      tryPath(0);
+    }
+
+    loadComponent("header", ["../components/header.html", "components/header.html"]);
+    loadComponent("footer", ["../components/footer.html", "components/footer.html"]);
+  </script>
+</body>
+
+</html>
