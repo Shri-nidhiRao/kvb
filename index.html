@@ -93,19 +93,20 @@
       100% { filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5)); }
     }
 
-    .intro-logo-circle {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 25px;
-      background: linear-gradient(145deg, #3A7D44, #1e4a2a);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 80px rgba(58, 125, 68, 0.8);
-      border: 2px solid rgba(255,255,255,0.2);
-      animation: rotateSlow 20s linear infinite;
-    }
+    .intro-logo-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 10px;
+}
+
+@keyframes logoFloat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
 
     @keyframes rotateSlow {
       from { transform: rotate(0deg); }
@@ -678,25 +679,32 @@
 </head>
 <body>
   <!-- CINEMATIC INTRO (unchanged) -->
-  <div class="intro-container" id="introScreen">
-    <video class="intro-video-bg" autoplay muted loop playsinline>
-      <source src="https://cdn.pixabay.com/video/2021/08/09/84269-589985131_large.mp4" type="video/mp4">
-    </video>
-    <div class="intro-overlay"></div>
-    <div class="intro-particles">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <div class="intro-content">
-      <div class="intro-logo">
-        <div class="intro-logo-circle">
-          <i class="fas fa-leaf"></i>
-        </div>
-      </div>
-      <h1 class="intro-title">KVB GREEN ENERGIES</h1>
-      <p class="intro-subtitle">Engineering the Future</p>
-      <div class="intro-loader"></div>
-    </div>
+ <div class="intro-container" id="introScreen">
+  <video class="intro-video-bg" autoplay muted loop playsinline>
+    <source src="https://cdn.pixabay.com/video/2021/08/09/84269-589985131_large.mp4" type="video/mp4">
+  </video>
+
+  <div class="intro-overlay"></div>
+
+  <div class="intro-particles">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
   </div>
+
+  <div class="intro-content">
+
+    <div class="intro-logo">
+      <div class="intro-logo-circle">
+        <img src="imagesproducts/kvb-logo.png" alt="KVB Logo" class="intro-logo-img">
+      </div>
+    </div>
+
+    <h1 class="intro-title">KVB GREEN ENERGIES</h1>
+    <p class="intro-subtitle">Engineering the Future</p>
+    <div class="intro-loader"></div>
+
+  </div>
+</div>
 
   <!-- MAIN WEBSITE -->
   <div id="mainWebsite">
