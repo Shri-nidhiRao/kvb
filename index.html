@@ -148,33 +148,11 @@
       }
     }
 
-    /* LOGO CIRCLE */
-.intro-logo-img {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;   /* keeps the whole image visible */
-  border-radius: 80%;     /* makes the container circular */
-  background: white;      /* fills any empty space */
-  padding: 10px;          /* gives breathing room */
-}
-
-/* LOGO IMAGE */
-.intro-logo-img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  background: white;
-  border-radius: 50%;
-  padding: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-/* GLOW ANIMATION */
-@keyframes logoGlow {
-  0% { box-shadow: 0 0 40px rgba(58,125,68,0.6); }
-  50% { box-shadow: 0 0 80px rgba(58,125,68,1); }
-  100% { box-shadow: 0 0 40px rgba(58,125,68,0.6); }
-}
+    .intro-logo-circle i {
+      font-size: 90px;
+      color: #fff;
+      animation: leafFloat 3s ease-in-out infinite;
+    }
 
     @keyframes leafFloat {
       0% {
@@ -1008,27 +986,10 @@
 
     <div class="intro-overlay"></div>
 
-<<<<<<< HEAD
-  <div class="intro-particles">
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-  </div>
-
-  <div class="intro-content">
-
-   <div class="intro-logo">
-  <div class="intro-logo-circle">
-    <img src="images/products/New Logo Design.jpg.jpeg" 
-         alt="KVB Logo" 
-         class="intro-logo-img">
-  </div>
-</div>
-=======
     <div class="intro-particles">
       <span></span><span></span><span></span><span></span>
       <span></span><span></span><span></span><span></span>
     </div>
->>>>>>> 3cd5dc936607b994f925ccafc006e7b509821eb3
 
     <div class="intro-content">
 
