@@ -267,7 +267,7 @@
             transition: all 0.2s;
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeUp 0.6s forwards;
+            /* animation disabled for zig-zag override */
         }
         .spec-card i {
             font-size: 2.5rem;
@@ -291,7 +291,7 @@
             transition: all 0.2s;
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeUp 0.6s forwards;
+            /* animation disabled for zig-zag override */
         }
         .app-card i {
             font-size: 2.5rem;
@@ -314,7 +314,7 @@
             border: 1px solid var(--border);
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeUp 0.6s forwards;
+            /* animation disabled for zig-zag override */
         }
         .gallery-item img {
             width: 100%;
@@ -564,7 +564,123 @@
                 padding: 1.8rem;
             }
         }
-    </style>
+    
+        /* ===== ULTIMATE PREMIUM ZIG-ZAG LAYOUT OVERRIDE ===== */
+        .specs-grid, .applications-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 6rem !important; /* Massive breathing room */
+            margin: 6rem 0 !important;
+        }
+
+        
+        .spec-card, .app-card, .application-card, .spec-highlight-card {
+            animation: none !important;
+            display: grid !important;
+
+            grid-template-rows: auto auto !important;
+            gap: 3rem !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            align-items: center !important;
+            will-change: transform, opacity;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ODD Zig-Zag (Text Left, Premium Visual Right) */
+        .spec-card:nth-child(odd), .app-card:nth-child(odd), .application-card:nth-child(odd), .spec-highlight-card:nth-child(odd) {
+            grid-template-columns: 1.1fr 1fr !important;
+            grid-template-areas:
+                "title visual"
+                "desc visual" !important;
+            transform: translateX(-60px);
+            opacity: 0;
+        }
+
+        /* EVEN Zig-Zag (Premium Visual Left, Text Right) */
+        .spec-card:nth-child(even), .app-card:nth-child(even), .application-card:nth-child(even), .spec-highlight-card:nth-child(even) {
+            grid-template-columns: 1fr 1.1fr !important;
+            grid-template-areas:
+                "visual title"
+                "visual desc" !important;
+            transform: translateX(60px);
+            opacity: 0;
+        }
+
+        /* Animation Trigger */
+        .spec-card.visible, .app-card.visible, .application-card.visible, .spec-highlight-card.visible {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+        }
+
+        /* Text Tuning */
+        .spec-card h3, .app-card h3, .application-card h3, .spec-highlight-card h3 {
+            grid-area: title !important;
+            font-size: 2.2rem !important;
+            margin-bottom: 1rem !important;
+            color: var(--text-primary) !important;
+            align-self: end !important;
+        }
+
+        .spec-card p, .app-card p, .application-card p, .spec-highlight-card p {
+            grid-area: desc !important;
+            font-size: 1.15rem !important;
+            color: var(--text-secondary) !important;
+            line-height: 1.7 !important;
+            max-width: 90% !important;
+            margin-bottom: 0 !important;
+            align-self: start !important;
+        }
+
+        /* The SVG Visual Container */
+        .pro-icon-ultra {
+            grid-area: visual !important;
+            width: 100% !important;
+            min-height: 380px !important;
+            background: linear-gradient(145deg, var(--background), #f3f3f5) !important;
+            border-radius: 32px !important;
+            border: 1px solid var(--border) !important;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.04) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 3rem !important;
+            margin: 0 !important;
+            transition: all 0.4s ease !important;
+        }
+
+        .spec-card:hover .pro-icon-ultra, .app-card:hover .pro-icon-ultra {
+            transform: translateY(-10px) scale(1.02) !important;
+            box-shadow: 0 40px 80px rgba(74, 139, 74, 0.12) !important;
+            border-color: var(--primary-light) !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .spec-card:nth-child(n), .app-card:nth-child(n) {
+                grid-template-columns: 1fr !important;
+                grid-template-areas: 
+                    "visual"
+                    "title"
+                    "desc" !important;
+                transform: translateY(40px) !important;
+                text-align: center !important;
+            }
+            .pro-icon-ultra {
+                min-height: 300px !important;
+            }
+            .spec-card h3, .app-card h3 {
+                font-size: 1.8rem !important;
+                align-self: center !important;
+            }
+            .spec-card p, .app-card p {
+                align-self: center !important;
+                margin: 0 auto !important;
+            }
+        }
+
+</style>
 </head>
 <body>
     <div id="header"></div>

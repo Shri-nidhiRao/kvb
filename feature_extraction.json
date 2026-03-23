@@ -1,0 +1,394 @@
+{
+    "microgreen-systems.html": [
+        [
+            "Growing Layers",
+            "5 \u2013 20 tiers, customisable to your ceiling height and space."
+        ],
+        [
+            "Footprint",
+            "4m\u00b2 \u2013 40m\u00b2 floor area, produces like a 10x larger field."
+        ],
+        [
+            "Daily Production",
+            "10 \u2013 100 kg of fresh microgreens per day."
+        ],
+        [
+            "Lighting",
+            "Full\u2011spectrum LED, 18\u2011hour optimal photoperiod."
+        ],
+        [
+            "Broccoli",
+            "High in sulforaphane, cancer\u2011fighting compounds."
+        ],
+        [
+            "Radish",
+            "Spicy, vibrant red stems \u2013 adds colour to dishes."
+        ],
+        [
+            "Sunflower",
+            "Nutty flavour, crunchy texture, high in protein."
+        ],
+        [
+            "Pea Shoots",
+            "Sweet, tender, delicate \u2013 chefs' favourite."
+        ],
+        [
+            "Automated Irrigation",
+            "Nutrient\u2011film technique with precise EC & pH control."
+        ],
+        [
+            "Smart Lighting",
+            "Adjustable spectrum & intensity, automatic sunrise/sunset."
+        ],
+        [
+            "Climate Control",
+            "Temperature, humidity & CO\u2082 \u2013 always optimal."
+        ],
+        [
+            "App Control",
+            "Monitor & manage your farm from anywhere."
+        ],
+        [
+            "Vertical Racks",
+            "5\u2011tier system in a 20ft container"
+        ],
+        [
+            "Fresh Harvest",
+            "Radish microgreens, ready in 12 days"
+        ],
+        [
+            "Mobile Control",
+            "Real\u2011time monitoring and alerts"
+        ],
+        [
+            "Unlock Premium Technical Library",
+            "Get detailed system blueprints, crop production schedules, financial models, and a custom farm design consultation."
+        ],
+        [
+            "Financial Model",
+            "Excel\u2011based P&L, cash flow, ROI calculator."
+        ],
+        [
+            "Training Videos",
+            "Setup, seeding, harvest, and troubleshooting."
+        ],
+        [
+            "Farm Design Call",
+            "30\u2011minute consultation with our agronomist."
+        ]
+    ],
+    "solar-steam-cooking.html": [
+        [
+            "Temperature Range",
+            "150\u00b0C \u2013 250\u00b0C at focal point"
+        ],
+        [
+            "Cooking Capacity",
+            "Up to 50 people per unit (modular)"
+        ],
+        [
+            "Collector Area",
+            "2.5 \u2013 10 m\u00b2 (customizable)"
+        ],
+        [
+            "Efficiency",
+            "65% \u2013 75% solar\u2011to\u2011thermal"
+        ],
+        [
+            "Concentration",
+            "The parabolic reflector focuses sunlight onto a single focal point, achieving high temperatures."
+        ],
+        [
+            "Tracking",
+            "Optional manual or automatic tracking keeps the reflector aligned with the sun."
+        ],
+        [
+            "Cooking / Heating",
+            "Concentrated heat is used for cooking, boiling water, pasteurization, or steam generation."
+        ],
+        [
+            "Community Cooking",
+            "Prepare meals for up to 50 people per unit \u2013 ideal for schools, hostels, and village kitchens."
+        ],
+        [
+            "Water Pasteurization",
+            "Heat water to 65\u00b0C+ for safe drinking in off\u2011grid areas."
+        ],
+        [
+            "Industrial Process Heat",
+            "Pre\u2011heating, steam generation, and drying for small industries."
+        ],
+        [
+            "Sterilization",
+            "Sterilize medical instruments or laboratory equipment in remote locations."
+        ],
+        [
+            "Precision Reflector",
+            "Anodized aluminium, >92% reflectivity"
+        ],
+        [
+            "Cooking in Action",
+            "Preparing meals with zero fuel"
+        ],
+        [
+            "Community Cooking",
+            "Rural school, 150 meals/day"
+        ],
+        [
+            "Unlock Premium Technical Library",
+            "Get detailed engineering drawings, performance data, case studies, and a custom ROI calculator for the Parabolic Solar Cooker."
+        ],
+        [
+            "Performance Data",
+            "Temperature curves, efficiency reports for different regions."
+        ],
+        [
+            "Installation Videos",
+            "Step\u2011by\u2011step assembly, alignment, and maintenance guides."
+        ],
+        [
+            "Case Studies",
+            "Real\u2011world implementations \u2013 schools, industries, communities."
+        ]
+    ],
+    "solar-dryers.html": [
+        [
+            "Tunnel Size",
+            "10m \u2013 50m length, fully customizable."
+        ],
+        [
+            "Temperature Range",
+            "40\u00b0C \u2013 80\u00b0C, digitally controlled \u00b12\u00b0C."
+        ],
+        [
+            "Capacity",
+            "100 \u2013 2000 kg per batch."
+        ],
+        [
+            "Drying Time",
+            "6 \u2013 48 hours, programmable cycles."
+        ],
+        [
+            "Fruits",
+            "Mango, banana, grapes, berries, pineapple"
+        ],
+        [
+            "Vegetables",
+            "Tomato, onion, garlic, ginger, herbs"
+        ],
+        [
+            "Spices",
+            "Chilies, turmeric, coriander, cardamom"
+        ],
+        [
+            "Grains & Pulses",
+            "Paddy, wheat, maize, lentils, coffee"
+        ],
+        [
+            "Modular Tunnel",
+            "With solar collectors"
+        ],
+        [
+            "Premium Dried Fruits",
+            "Retains colour & nutrients"
+        ],
+        [
+            "Smart Control",
+            "Digital PID with remote monitoring"
+        ],
+        [
+            "Unlock Premium Technical Library",
+            "Get detailed technical documentation, case studies, ROI calculator, and implementation guides for the Hybrid Solar Tunnel Dryer."
+        ],
+        [
+            "ROI Calculator",
+            "Interactive Excel tool \u2013 enter your capacity."
+        ],
+        [
+            "Installation Videos",
+            "Step\u2011by\u2011step video guide."
+        ],
+        [
+            "Case Studies",
+            "Successful installations."
+        ]
+    ],
+    "scheffler-concentrators.html": [
+        [
+            "Dish Size",
+            "8m\u00b2 \u2013 16m\u00b2 per unit, multiple units can be combined."
+        ],
+        [
+            "Temperature",
+            "150\u00b0C \u2013 250\u00b0C, ideal for steam, hot water, and thermal oil."
+        ],
+        [
+            "Thermal Output",
+            "3 \u2013 6 kW per dish (depending on season & location)."
+        ],
+        [
+            "Efficiency",
+            "65% \u2013 70% annual average, with automatic seasonal adjustment."
+        ],
+        [
+            "Process Heating",
+            "Chemical, textile, food processing, and automotive industries."
+        ],
+        [
+            "Steam Generation",
+            "Boiler feedwater preheating, low\u2011pressure steam for cooking/cleaning."
+        ],
+        [
+            "Thermal Oil Heating",
+            "For industrial thermal fluid systems up to 250\u00b0C."
+        ],
+        [
+            "Food Processing",
+            "Pasteurisation, sterilisation, and large\u2011scale cooking."
+        ],
+        [
+            "Scheffler Dish Array",
+            "Multiple concentrators for higher thermal capacity"
+        ],
+        [
+            "Industrial Installation",
+            "Process heat for a textile plant"
+        ],
+        [
+            "Smart Tracking",
+            "Automatic seasonal tilt adjustment"
+        ],
+        [
+            "Unlock Premium Technical Library",
+            "Get detailed technical drawings, performance data, industrial case studies, and a custom ROI calculator for Scheffler concentrators."
+        ],
+        [
+            "Performance Data",
+            "Year\u2011round output predictions for major Indian cities."
+        ],
+        [
+            "Installation Videos",
+            "Step\u2011by\u2011step assembly, alignment, and maintenance guide."
+        ],
+        [
+            "Industry Case Studies",
+            "Textile, dairy, pharmaceutical \u2013 real projects."
+        ]
+    ],
+    "thermal-storage.html": [
+        [
+            "Storage Temperature",
+            "150\u00b0C \u2013 600\u00b0C, suitable for most industrial heating applications."
+        ],
+        [
+            "Storage Duration",
+            "12 \u2013 72 hours, with less than 1% daily heat loss."
+        ],
+        [
+            "Capacity Range",
+            "100 kWh \u2013 10 MWh, modular and fully scalable."
+        ],
+        [
+            "Round\u2011trip Efficiency",
+            "85% \u2013 90%, depending on insulation and temperature."
+        ],
+        [
+            "Industrial Process Heat",
+            "Continuous heat supply for manufacturing, drying, and preheating."
+        ],
+        [
+            "District Heating",
+            "Community\u2011scale heating systems for towns or campuses."
+        ],
+        [
+            "Solar Farm Integration",
+            "Store excess solar thermal energy for night\u2011time use."
+        ],
+        [
+            "Grid Services",
+            "Frequency regulation, peak shaving, and demand response."
+        ],
+        [
+            "Prototype Unit",
+            "100 kWh demonstration system at KVB Innovation Lab"
+        ],
+        [
+            "Industrial Integration",
+            "Connected to a solar thermal farm"
+        ],
+        [
+            "Smart Monitoring",
+            "Real\u2011time temperature and charge level dashboard"
+        ],
+        [
+            "Unlock Premium Technical Library",
+            "Get detailed technical datasheets, performance simulation tools, industrial case studies, and a custom ROI calculator for the Sand Battery."
+        ],
+        [
+            "ROI Calculator",
+            "Excel tool \u2013 input your fuel costs, get payback period."
+        ],
+        [
+            "Simulation Videos",
+            "3D animations of charge/discharge process."
+        ],
+        [
+            "Lab Test Reports",
+            "Independent validation from NABL\u2011accredited labs."
+        ]
+    ],
+    "ai-crop-detection.html": [
+        [
+            "Peak Temp",
+            "up to 1000\u00b0C"
+        ],
+        [
+            "Concentration",
+            "200 \u2013 2000x"
+        ],
+        [
+            "Aperture Area",
+            "10 \u2013 150 m\u00b2"
+        ],
+        [
+            "Tracking",
+            "Dual\u2011axis (0.1\u00b0 accuracy)"
+        ],
+        [
+            "Parabolic trough",
+            "Line focus, medium temperature"
+        ],
+        [
+            "Parabolic dish",
+            "Point focus, very high temperature"
+        ],
+        [
+            "Heliostat field",
+            "Central receiver, large scale"
+        ],
+        [
+            "Linear Fresnel",
+            "Compact line focus"
+        ],
+        [
+            "Biomass hybrid",
+            "24/7 operation"
+        ],
+        [
+            "Unlock Premium Technical Library",
+            "Get detailed documentation, performance curves, CAD drawings, and case studies for the KVB Solar Concentrator."
+        ],
+        [
+            "ROI Calculator",
+            "Interactive Excel tool."
+        ],
+        [
+            "Installation Videos",
+            "Step\u2011by\u2011step guides."
+        ],
+        [
+            "Performance Reports",
+            "ICAR & IIT test reports."
+        ]
+    ]
+}
