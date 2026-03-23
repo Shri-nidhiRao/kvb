@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Parabolic Trough Collector | KVB Green Energies – Industrial Solar Thermal</title>
+    <title>Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking</title>
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        /* ----- CINEMATIC DARK THEME with Green Accents ----- */
+        /* ===== BASE STYLES – Pure White & Airy ===== */
         * {
             margin: 0;
             padding: 0;
@@ -19,78 +19,84 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0A0A0A;
-            color: #F5F5F7;
+            background: #FFFFFF;
+            color: #1A1A1F;
             overflow-x: hidden;
             scroll-behavior: smooth;
             padding-top: 80px;
         }
 
         :root {
-            --bg-deep: #050505;
-            --bg-surface: #111111;
-            --bg-card: #1A1A1E;
-            --border-glow: rgba(74, 139, 74, 0.3);
-            --primary: #4A8B4A;
-            --primary-glow: #4A8B4A;
-            --text-light: #FFFFFF;
-            --text-muted: #A1A1A6;
-            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.5);
+            --bg-white: #FFFFFF;
+            --bg-soft: #F8F9FC;
+            --text-primary: #1A1A1F;
+            --text-secondary: #5A5A66;
+            --text-tertiary: #8A8A99;
+            --border-light: #E9ECF0;
+            --primary: #3B7A3B;
+            --primary-dark: #2C5E2C;
+            --primary-light: #EAF5EA;
+            --primary-glow: rgba(59, 122, 59, 0.08);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
+            --shadow-md: 0 8px 20px rgba(0,0,0,0.04);
+            --shadow-lg: 0 16px 32px rgba(0,0,0,0.06);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 0 32px;
         }
 
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
             font-weight: 700;
             letter-spacing: -0.02em;
         }
 
         h1 {
             font-size: 3.8rem;
-            background: linear-gradient(135deg, #FFFFFF 0%, #A8E6A8 100%);
+            background: linear-gradient(135deg, #1A1A1F 0%, #3B7A3B 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
         }
 
         h2 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             margin-bottom: 2rem;
             position: relative;
             display: inline-block;
-        }
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 2px;
         }
         .section-title {
             text-align: center;
         }
         .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
         }
 
         p {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
-        /* ----- BUTTONS ----- */
+        /* ===== BUTTONS ===== */
         .btn {
             display: inline-block;
             padding: 0.9rem 2rem;
@@ -105,93 +111,107 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 8px 20px rgba(74, 139, 74, 0.3);
+            box-shadow: 0 4px 12px rgba(59, 122, 59, 0.15);
         }
         .btn-primary:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(74, 139, 74, 0.4);
-            background: #3A753A;
+            box-shadow: 0 8px 20px rgba(59, 122, 59, 0.25);
         }
         .btn-outline {
             border: 1px solid var(--primary);
             background: transparent;
-            color: white;
+            color: var(--primary);
         }
         .btn-outline:hover {
-            background: rgba(74, 139, 74, 0.15);
-            border-color: var(--primary);
+            background: var(--primary-light);
             transform: translateY(-2px);
         }
 
-        /* ----- HEADER placeholder ----- */
+        /* ===== HEADER placeholder ===== */
         #header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(10,10,10,0.85);
+            background: rgba(255,255,255,0.92);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(74,139,74,0.2);
+            border-bottom: 1px solid var(--border-light);
         }
 
-        /* ----- HERO – Two Column (left text, right video) ----- */
-        .hero-cinematic {
+        /* ===== HERO – Centered Title + BIG Centered Video ===== */
+        .hero-light {
+            position: relative;
             min-height: 85vh;
             display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #0A0A0A 0%, #111111 100%);
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
             padding: 100px 0 60px;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
         }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 0.7fr 1.6fr;
-            gap: 4rem;
-            align-items: center;
+        .hero-light .hero-full-width {
+            width: 100%;
+            padding: 0 20px;
         }
-        .hero-left {
-            animation: fadeUp 0.8s ease-out;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .hero-content h1 {
+            text-align: center;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
         }
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 0.8rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
-        .cinema-tag {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(74,139,74,0.4);
+        .tag {
+            background: white;
+            border: 1px solid var(--border-light);
             padding: 0.5rem 1.2rem;
             border-radius: 40px;
             font-size: 0.85rem;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
         }
-        .cinema-tag:hover {
-            background: rgba(74,139,74,0.2);
+        .tag i { color: var(--primary); }
+        .tag:hover {
+            transform: translateY(-2px);
             border-color: var(--primary);
+            box-shadow: var(--shadow-md);
         }
-        .hero-right {
-            width: 100%;
+        .hero-video-wrapper {
+            width: 90vw;
+            max-width: 1600px;
+            margin: 2rem auto 0;
             position: relative;
-            border-radius: 28px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            background: #1A1A1E;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            background: #F0F2F5;
+            box-shadow: var(--shadow-lg);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .hero-right:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+        .hero-video-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.1);
         }
-        .hero-right::before {
+        .hero-video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 75%; /* 4:3 ratio */
+            padding-top: 56.25%; /* 16:9 aspect ratio */
         }
-        .hero-right video {
+        .hero-video-wrapper video {
             position: absolute;
             inset: 0;
             width: 100%;
@@ -199,15 +219,15 @@
             object-fit: cover;
             border: none;
         }
-        .hero-right .shine {
+        .hero-video-wrapper .shine {
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.1), transparent 60%);
+            background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.15), transparent 60%);
             transform: rotate(25deg);
-            animation: shineMove 8s infinite linear;
+            animation: shineMove 6s infinite linear;
             pointer-events: none;
             z-index: 2;
         }
@@ -215,42 +235,131 @@
             from { transform: translateX(-50%) rotate(25deg); }
             to { transform: translateX(50%) rotate(25deg); }
         }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) {
+            .hero-video-wrapper {
+                width: 95vw;
+            }
         }
 
-        /* ----- SCROLL REVEAL ----- */
+        /* ===== SCROLL REVEAL ===== */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* ----- CARDS – Glassy ----- */
-        .spec-grid, .app-grid {
+        /* ===== HIGHLIGHT OVERVIEW ===== */
+        .highlight-tech {
+            background: linear-gradient(120deg, #FFFFFF 0%, #F5FBF5 100%);
+            border-left: 6px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 2rem 2.2rem;
+            margin: 3rem 0 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s ease;
+        }
+        .highlight-tech h2 {
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: none;
+            font-size: 2rem;
+        }
+        .highlight-tech h2:after {
+            display: none;
+        }
+        .highlight-tech p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 95%;
+            color: var(--text-primary);
+        }
+        .highlight-tech strong {
+            color: var(--primary-dark);
+        }
+
+        /* ===== 2x2 FEATURE MATRIX ===== */
+        .feature-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .feature-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .feature-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.4rem;
+            position: relative;
+            font-size: 0.98rem;
+            line-height: 1.45;
+            color: var(--text-secondary);
+        }
+        .feature-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .feature-matrix {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ===== CARDS ===== */
+        .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 4rem 0;
         }
         .card {
-            background: rgba(20, 20, 25, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(74, 139, 74, 0.2);
-            border-radius: 28px;
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
             padding: 2rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
         .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.4), 0 0 0 1px rgba(74,139,74,0.3);
+            transform: translateY(-6px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
         }
         .card i {
             font-size: 2.6rem;
@@ -262,105 +371,146 @@
             margin-bottom: 0.8rem;
         }
 
-        /* ----- TABLES (glass) ----- */
-        .glass-table {
-            background: rgba(20,20,25,0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 28px;
-            border: 1px solid rgba(74,139,74,0.2);
-            overflow-x: auto;
-            margin: 3rem 0;
-        }
-        .glass-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .glass-table th, .glass-table td {
-            padding: 1rem 1.5rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .glass-table th {
-            background: rgba(74,139,74,0.2);
-            font-weight: 600;
-            color: #A8E6A8;
-        }
-        .glass-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* ----- GALLERY ----- */
-        .gallery-cine {
+        /* ===== APPLICATIONS – one row ===== */
+        .applications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 2rem;
             margin: 4rem 0;
         }
-        .gallery-item-cine {
-            border-radius: 24px;
+        .app-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .app-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .app-card i {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .app-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+        @media (max-width: 1200px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+        }
+
+        /* ===== TABLES ===== */
+        .soft-table {
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            overflow-x: auto;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .soft-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .soft-table th, .soft-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .soft-table th {
+            background: var(--primary-light);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .soft-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .gallery-item {
+            border-radius: var(--radius-md);
             overflow: hidden;
+            height: 260px;
             position: relative;
-            height: 280px;
+            border: 1px solid var(--border-light);
             transition: transform 0.4s;
         }
-        .gallery-item-cine img {
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s;
+            transition: transform 0.7s;
         }
-        .gallery-item-cine:hover img {
-            transform: scale(1.05);
+        .gallery-item:hover img {
+            transform: scale(1.03);
         }
         .gallery-caption {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, #000000cc, transparent);
-            padding: 1.2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            color: white;
+            padding: 1rem;
             font-weight: 500;
         }
 
-        /* ----- PREMIUM UNLOCK ----- */
-        .premium-lock {
-            background: linear-gradient(145deg, #111115, #0A0A0C);
-            border-radius: 40px;
-            padding: 3rem;
+        /* ===== PREMIUM UNLOCK ===== */
+        .premium-wrapper {
             margin: 5rem auto;
+            max-width: 900px;
+        }
+        .lock-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
             text-align: center;
-            border: 1px solid rgba(74,139,74,0.3);
-            transition: 0.3s;
             cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
         }
-        .premium-lock:hover {
+        .lock-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(74,139,74,0.2);
-            transform: scale(1.01);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
-        .premium-form-container {
-            background: #0F0F12;
-            border-radius: 40px;
+        .lock-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .form-container {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
             padding: 2.5rem;
             margin-top: 2rem;
             display: none;
-            border: 1px solid rgba(74,139,74,0.3);
+            box-shadow: var(--shadow-md);
         }
-        .premium-form-container.visible {
+        .form-container.visible {
             display: block;
-            animation: fadeSlideUp 0.5s;
-        }
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            animation: fadeUp 0.5s;
         }
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.2rem;
-        }
-        .form-group {
-            margin-bottom: 1rem;
         }
         .form-group.full {
             grid-column: span 2;
@@ -368,80 +518,87 @@
         input, select, textarea {
             width: 100%;
             padding: 0.9rem 1rem;
-            background: #1E1E24;
-            border: 1px solid #2A2A30;
-            border-radius: 20px;
-            color: white;
+            background: var(--bg-soft);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
             font-family: inherit;
             transition: 0.2s;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(74,139,74,0.3);
+            box-shadow: 0 0 0 3px var(--primary-glow);
         }
         .btn-submit {
             background: var(--primary);
             width: 100%;
             padding: 1rem;
             border-radius: 40px;
-            font-weight: bold;
+            font-weight: 600;
             color: white;
             border: none;
             cursor: pointer;
             transition: 0.2s;
         }
         .btn-submit:hover {
-            background: #3A753A;
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
-        .premium-content-hidden {
+        .hidden-content {
             display: none;
             margin-top: 2rem;
         }
-        .premium-content-hidden.visible {
+        .hidden-content.visible {
             display: block;
         }
         .success-banner {
-            background: rgba(74,139,74,0.2);
+            background: var(--primary-light);
             border-left: 4px solid var(--primary);
             padding: 1rem;
-            border-radius: 16px;
+            border-radius: var(--radius-md);
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-        .premium-card-grid {
+        .premium-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
             gap: 1.2rem;
             margin: 2rem 0;
         }
-        .premium-info-card {
-            background: #1A1A1E;
-            border-radius: 24px;
+        .premium-card {
+            background: var(--bg-soft);
+            border-radius: var(--radius-md);
             padding: 1.5rem;
             text-align: center;
+            border: 1px solid var(--border-light);
         }
-        .premium-info-card i {
+        .premium-card i {
             font-size: 2rem;
             color: var(--primary);
             margin-bottom: 0.8rem;
         }
 
-        .footer-cine {
-            background: #030303;
+        .footer-light {
+            background: var(--bg-soft);
+            border-top: 1px solid var(--border-light);
             padding: 2rem;
             text-align: center;
-            border-top: 1px solid rgba(74,139,74,0.2);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 992px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
             .form-grid { grid-template-columns: 1fr; }
             .form-group.full { grid-column: span 1; }
         }
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-            h1 { font-size: 2.4rem; }
+            h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
         }
     </style>
@@ -449,176 +606,181 @@
 <body>
     <div id="header"></div>
 
-    <!-- HERO SECTION – Two Column with Local Video -->
-    <section class="hero-cinematic">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-left">
-                    <h1>Parabolic Trough Collector Systems</h1>
-                    <p>Industrial‑grade concentrated solar thermal up to 400°C. Cut fuel costs by 30–70% with proven reliability, modular scalability, and seamless hybrid integration for process heat, steam, and thermal oil applications.</p>
-                    <div class="hero-tags">
-                        <span class="cinema-tag"><i class="fas fa-temperature-high"></i> 400°C Max</span>
-                        <span class="cinema-tag"><i class="fas fa-chart-line"></i> 55–70% Efficiency</span>
-                        <span class="cinema-tag"><i class="fas fa-sun"></i> Single‑Axis Tracking</span>
-                        <span class="cinema-tag"><i class="fas fa-leaf"></i> 20+ Year Lifespan</span>
-                        <span class="cinema-tag"><i class="fas fa-rupee-sign"></i> 2‑5 Year ROI</span>
-                    </div>
-                </div>
-                <div class="hero-right">
-                    <div class="shine"></div>
-                    <video autoplay muted loop playsinline>
-                        <source src="images/products/WhatsApp Video 2026-03-23 at 12.50.54.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+    <!-- HERO – Centered Title + Large Centered Video -->
+    <section class="hero-light">
+        <div class="hero-full-width">
+            <div class="hero-content">
+                <h1>Solar Parabolic Cooker</h1>
+              
+            </div>
+            <div class="hero-video-wrapper">
+                <div class="shine"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="../videos/parabolic.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
 
     <main class="container">
-        <!-- System Overview -->
-        <div style="margin: 5rem 0 3rem;">
-            <div class="reveal">
-                <h2 class="section-title" style="text-align: center;">The Future of Process Heat</h2>
-                <p style="max-width: 900px; margin: 1rem auto 0; text-align: center;">The Parabolic Trough Collector (PTC) System delivers reliable, high-temperature solar thermal energy for industrial applications. Precision reflectors, advanced tracking, and seamless hybrid integration enable industries to decarbonize without compromising performance.</p>
+        <!-- Highlighted Technology Overview -->
+        <div class="reveal highlight-tech">
+            <div style="margin-bottom: 0.5rem;">
+                <h2 style="margin-bottom: 0.5rem;">⚡ Parabolic Concentrator Technology</h2>
             </div>
+            <p>The <strong>Solar Parabolic Cooker</strong> harnesses the power of a precisely curved parabolic reflector to concentrate sunlight onto a small focal point, instantly generating intense heat (up to 350°C). This concentrated energy is transferred directly to a cooking vessel, enabling boiling, frying, roasting, and steaming without any fuel. The system features a simple manual tracking mechanism to follow the sun, ensuring peak performance throughout the day. Ideal for clean, sustainable cooking in both rural and urban settings.</p>
         </div>
 
-        <!-- Engineering Specs Table -->
-        <div class="reveal glass-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Engineering Specifications</h2>
-            <table class="tech-table">
-                <thead>…
-                    <th>Parameter</th><th>Specification</th>
-                </thead>
+        
+
+        <!-- Technical Details Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Details</h2>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Specification</th> </thead>
                 <tbody>
-                    <tr><td>Collector Technology</td><td>Parabolic Trough Collector (PTC)</td></tr>
-                    <tr><td>Aperture Width</td><td>4 – 6 m (custom)</td></tr>
-                    <tr><td>Module Length</td><td>12 – 24 m</td></tr>
-                    <tr><td>Reflectivity</td><td>≥93% (silvered glass / anodized aluminum)</td></tr>
-                    <tr><td>Tracking Mechanism</td><td>Automatic single‑axis, precision ±0.1°</td></tr>
-                    <tr><td>Operating Temp</td><td>120°C – 400°C</td></tr>
-                    <tr><td>Heat Transfer Fluid</td><td>Thermic oil / pressurized water / molten salt</td></tr>
+                    <tr><td><strong>Reflector Area</strong></td><td>1.5 m² & 4 m² (Available Options)</td> </tr>
+                    <tr><td><strong>Type</strong></td><td>Parabolic Dish Concentrator</td> </tr>
+                    <tr><td><strong>Reflector Material</strong></td><td>High reflectivity aluminum / mirror finish</td> </tr>
+                    <tr><td><strong>Reflectivity</strong></td><td>≥ 90%</td> </tr>
+                    <tr><td><strong>Structure Material</strong></td><td>Mild Steel with anti‑corrosion coating</td> </tr>
+                    <tr><td><strong>Tracking System</strong></td><td>Manual (Single Axis)</td> </tr>
+                    <tr><td><strong>Concentration Ratio</strong></td><td>60:1 to 120:1</td> </tr>
+                    <tr><td><strong>Focal Length</strong></td><td>~0.8 to 1.5 meters</td> </tr>
+                    <tr><td><strong>Operating Temperature</strong></td><td>150°C to 350°C</td> </tr>
+                    <tr><td><strong>Cooking Capacity</strong></td><td>10–30 persons (based on model)</td> </tr>
+                    <tr><td><strong>Mounting Type</strong></td><td>Ground mounted</td> </tr>
+                    <tr><td><strong>Wind Resistance</strong></td><td>Up to 120 km/h (with locking mechanism)</td> </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Thermal Performance Table -->
-        <div class="reveal glass-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🔥 Thermal Performance</h2>
-            <table class="tech-table">
-                <thead>…
-                    <th>Parameter</th><th>Value</th>
-                </thead>
+        <!-- Solar Performance Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">☀️ Solar Performance</h2>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Value</th> </thead>
                 <tbody>
-                    <tr><td>Thermal Output (per module)</td><td>25 – 150 kW</td></tr>
-                    <tr><td>Optical Efficiency</td><td>70 – 80%</td></tr>
-                    <tr><td>Net System Efficiency</td><td>55 – 70%</td></tr>
-                    <tr><td>Solar Resource Requirement</td><td>DNI ≥ 500 W/m²</td></tr>
-                    <tr><td>Payback Period</td><td>2 – 5 years</td></tr>
+                    <tr><td><strong>Thermal Output</strong></td><td>1 kW – 3.5 kW (based on model)</td> </tr>
+                    <tr><td><strong>Solar Efficiency</strong></td><td>50% – 65%</td> </tr>
+                    <tr><td><strong>Daily Cooking Hours</strong></td><td>5–7 hours (clear sky)</td> </tr>
+                    <tr><td><strong>Fuel Savings</strong></td><td>Significant reduction in LPG usage</td> </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Core Advantages Cards -->
+        <!-- 2x2 Feature Matrix -->
         <div class="reveal">
-            <h2 class="section-title">Core Advantages</h2>
-            <div class="spec-grid">
-                <div class="card"><i class="fas fa-bolt"></i><h3>High Efficiency</h3><p>Up to 80% optical efficiency, net system efficiency 55–70% under standard conditions.</p></div>
-                <div class="card"><i class="fas fa-cubes"></i><h3>Modular Scalability</h3><p>From 100 kWth to multi‑MWth – expand as demand grows.</p></div>
-                <div class="card"><i class="fas fa-chart-simple"></i><h3>Proven ROI</h3><p>30–70% fuel reduction, 2–5 year payback, 20+ year lifespan.</p></div>
-                <div class="card"><i class="fas fa-microchip"></i><h3>Smart Integration</h3><p>PLC tracking, IoT monitoring, hybrid (biomass / boiler) ready.</p></div>
+            <div class="section-title"><h2>Core Capabilities</h2></div>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Cooking Performance</h3>
+                    <ul class="feature-list">
+                        <li>Boiling, frying, steaming, roasting</li>
+                        <li>Rice: 30–45 min (2‑4 kg batch)</li>
+                        <li>Dal: 40–60 min (3‑5 liters)</li>
+                        <li>Vegetables: 20–30 min (2‑3 kg)</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>System Components</h3>
+                    <ul class="feature-list">
+                        <li>High‑reflectivity parabolic dish</li>
+                        <li>Galvanized steel support frame</li>
+                        <li>Manual single‑axis tracking</li>
+                        <li>Adjustable cooking vessel stand</li>
+                        <li>Safety wind lock mechanism</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety Features</h3>
+                    <ul class="feature-list">
+                        <li>Sturdy ground‑mounted design</li>
+                        <li>Heat‑resistant receiver & handles</li>
+                        <li>Wind‑resistant locking (up to 120 km/h)</li>
+                        <li>Safe manual tracking without glare</li>
+                        <li>No open flame – zero fire risk</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Key Benefits</h3>
+                    <ul class="feature-list">
+                        <li>Zero fuel cost – complete LPG elimination</li>
+                        <li>15‑20 year system lifespan</li>
+                        <li>1–2 year payback period</li>
+                        <li>Minimal maintenance (mirror cleaning)</li>
+                        <li>Eligible for government subsidies & carbon credits</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- Industrial Applications Cards -->
+        <!-- Applications – one row on large screens -->
         <div class="reveal">
-            <h2 class="section-title">🏭 Industrial Applications</h2>
-            <div class="app-grid">
-                <div class="card"><i class="fas fa-utensils"></i><h3>Food & Agro</h3><p>Drying, sterilization, cooking</p></div>
-                <div class="card"><i class="fas fa-tint"></i><h3>Dairy</h3><p>Pasteurization, CIP steam</p></div>
-                <div class="card"><i class="fas fa-shirt"></i><h3>Textile</h3><p>Thermic fluid for dyeing</p></div>
-                <div class="card"><i class="fas fa-flask"></i><h3>Chemical & Pharma</h3><p>Reactor heating, distillation</p></div>
-                <div class="card"><i class="fas fa-industry"></i><h3>Paper & Pulp</h3><p>Steam for drying cylinders</p></div>
-                <div class="card"><i class="fas fa-hotel"></i><h3>Hotels / Institutions</h3><p>Hot water, kitchen steam</p></div>
-            </div>
-        </div>
-
-        <!-- System Architecture & Integration -->
-        <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 4rem 0;">
-            <div class="card"><i class="fas fa-microchip"></i><h3>System Architecture</h3><ul style="color:#aaa; margin-left:1.2rem;"><li>Reflector modules + receiver</li><li>PLC tracking & drive</li><li>Heat transfer loop</li><li>Control & instrumentation</li><li>Optional thermal storage</li></ul></div>
-            <div class="card"><i class="fas fa-exchange-alt"></i><h3>Process Integration</h3><ul style="color:#aaa; margin-left:1.2rem;"><li>Boiler feedwater preheating</li><li>Direct steam generation</li><li>Thermic fluid heating</li><li>Hybrid (biomass / fossil)</li><li>Waste heat recovery ready</li></ul></div>
-        </div>
-
-        <!-- Gallery with Local Image -->
-        <div class="reveal">
-            <h2 class="section-title">System in Action</h2>
-            <div class="gallery-cine">
-                <div class="gallery-item-cine"><img src="images/products/WhatsApp Image 2026-03-23 at 12.50.52.jpeg" alt="PTC Installation"><div class="gallery-caption">On‑site PTC installation | KVB Green Energies</div></div>
-                <div class="gallery-item-cine"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar Field"><div class="gallery-caption">Utility-scale solar field</div></div>
-                <div class="gallery-item-cine"><img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Receiver Tube"><div class="gallery-caption">High-performance receiver</div></div>
-                <div class="gallery-item-cine"><img src="https://images.unsplash.com/photo-1572107745973-9cfc9b6ec66f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Control Room"><div class="gallery-caption">Smart monitoring dashboard</div></div>
-            </div>
-        </div>
-
-        <!-- Strategic Advantage Block -->
-        <div class="reveal" style="background: linear-gradient(135deg, #0A2F1A20, #000000); border-radius: 32px; padding: 2.5rem; margin: 4rem 0; text-align: center;">
-            <h3>💡 Strategic Advantage</h3>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem;">
-                <span class="cinema-tag" style="background:#1E1E24;">Reliable high-temp heat</span>
-                <span class="cinema-tag" style="background:#1E1E24;">30–70% fuel saving</span>
-                <span class="cinema-tag" style="background:#1E1E24;">ESG & carbon credits</span>
-                <span class="cinema-tag" style="background:#1E1E24;">MNRE approved</span>
+            <div class="section-title"><h2>Applications & Impact</h2></div>
+            <div class="applications-grid">
+                <div class="app-card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam with zero fuel cost.</p></div>
+                <div class="app-card"><i class="fas fa-school"></i><h3>Residential Schools</h3><p>Nutritious meals for hundreds of students daily.</p></div>
+                <div class="app-card"><i class="fas fa-people-arrows"></i><h3>Community Kitchens</h3><p>Reliable, clean energy for mid‑day meal programs.</p></div>
+                <div class="app-card"><i class="fas fa-tree"></i><h3>Rural Areas</h3><p>Off‑grid cooking, reduces drudgery and indoor pollution.</p></div>
+                <div class="app-card"><i class="fas fa-concierge-bell"></i><h3>Catering Services</h3><p>Eco‑friendly bulk cooking, enhanced brand value.</p></div>
             </div>
         </div>
 
         <!-- Premium Unlock -->
-        <div class="reveal" style="margin: 5rem 0;">
-            <div id="lockTrigger" class="premium-lock">
-                <i class="fas fa-lock" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem; display: inline-block;"></i>
+        <div class="premium-wrapper reveal">
+            <div id="lockContainer" class="lock-card">
+                <div class="lock-icon"><i class="fas fa-lock"></i></div>
                 <h3>Unlock Premium Technical Library</h3>
-                <p style="max-width: 600px; margin: 0.5rem auto;">Get full engineering datasheets, simulation tools, ROI calculator, and in-depth case studies.</p>
-                <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.5rem 1.5rem;">↗ Unlock now</span>
+                <p>Get detailed engineering drawings, performance data, installation guides, and a custom ROI calculator for the Solar Parabolic Cooker.</p>
+                <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
             </div>
 
-            <div id="premiumFormPanel" class="premium-form-container">
-                <h3>Access premium content</h3>
-                <p>Enter your details — we’ll email you the link instantly.</p>
-                <form id="premiumAccessForm">
+            <div id="unlockFormContainer" class="form-container">
+                <h3>Access Premium Content</h3>
+                <p>Enter your details – we’ll send the link instantly.</p>
+                <form id="premiumForm">
                     <div class="form-grid">
                         <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required></div>
                         <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required></div>
                         <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="company" placeholder="Organization"></div>
-                        <div class="form-group full"><textarea rows="2" id="requirements" placeholder="Tell us about your process heat needs..."></textarea></div>
-                        <input type="hidden" id="productName" value="Parabolic Trough Collector (PTC)">
+                        <div class="form-group"><input type="text" id="organization" placeholder="Organization"></div>
+                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your cooking requirements..."></textarea></div>
+                        <input type="hidden" id="productName" value="Solar Parabolic Cooker">
                         <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-unlock-alt"></i> Unlock Library</button></div>
                     </div>
                     <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No spam.</p>
                 </form>
             </div>
 
-            <div id="premiumContentHidden" class="premium-content-hidden">
-                <div class="success-banner" id="successMessage" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources are ready.</div>
-                <div style="background: #111; border-radius: 32px; padding: 2rem;">
+            <div id="hiddenPremiumContent" class="hidden-content">
+                <div id="successMessage" class="success-banner" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources are ready.</div>
+                <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
                     <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
-                    <div class="premium-card-grid">
-                        <div class="premium-info-card"><i class="fas fa-file-pdf"></i><h4>Technical Datasheet</h4><p>Full specs, thermal curves, dimensions</p><span style="color: #4A8B4A;">✓ available</span></div>
-                        <div class="premium-info-card"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><p>Excel tool with DNI inputs</p><span style="color: #4A8B4A;">✓ included</span></div>
-                        <div class="premium-info-card"><i class="fas fa-video"></i><h4>3D Simulation</h4><p>Tracking & thermal animations</p><span style="color: #4A8B4A;">✓ watch</span></div>
-                        <div class="premium-info-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>Textile, dairy, pharma savings</p><span style="color: #4A8B4A;">✓ read</span></div>
+                    <div class="premium-grid">
+                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>Engineering Drawings</h4><p>CAD files, reflector schematics</p><span style="color: var(--primary);">✓ available</span></div>
+                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><p>Custom Excel for LPG savings</p><span style="color: var(--primary);">✓ included</span></div>
+                        <div class="premium-card"><i class="fas fa-video"></i><h4>Installation Videos</h4><p>Step‑by‑step assembly guide</p><span style="color: var(--primary);">✓ watch</span></div>
+                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>Schools, temples, industries</p><span style="color: var(--primary);">✓ read</span></div>
                     </div>
-                    <div style="margin-top: 2rem; padding: 1rem; background: #1A1A1E; border-radius: 24px;">
-                        <p><strong>🏭 Industrial success:</strong> 800 kWth textile unit → 42% fuel saving, 3.1 years ROI. 500 kWth dairy → 35% LPG reduction.</p>
+                    <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
+                        <p><strong>🏆 Success stories:</strong> Rural School, Rajasthan – 150 meals/day, ₹1.2L annual LPG savings. Dairy Cooperative – 80% fuel reduction for pasteurization.</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <div class="footer-cine">
-        <p>KVB Green Energies — Concentrated Solar Thermal Excellence</p>
-        <p style="font-size: 0.8rem;">© 2025 • Engineered for industry decarbonization</p>
+    <div class="footer-light">
+        <p>KVB Green Energies — Solar Thermal Excellence</p>
+        <p style="font-size: 0.8rem;">© 2025 • Engineered for sustainable cooking</p>
     </div>
 
     <script>
@@ -644,16 +806,16 @@
         })();
 
         // Premium unlock
-        const lockDiv = document.getElementById('lockTrigger');
-        const formPanel = document.getElementById('premiumFormPanel');
-        const hiddenContentDiv = document.getElementById('premiumContentHidden');
-        const successMsgDiv = document.getElementById('successMessage');
+        const lockDiv = document.getElementById('lockContainer');
+        const formPanel = document.getElementById('unlockFormContainer');
+        const hiddenContent = document.getElementById('hiddenPremiumContent');
+        const successMsg = document.getElementById('successMessage');
 
-        if (sessionStorage.getItem('ptcPremiumUnlocked') === 'true') {
+        if (sessionStorage.getItem('premiumUnlocked_cooker') === 'true') {
             lockDiv.style.display = 'none';
             formPanel.style.display = 'none';
-            hiddenContentDiv.classList.add('visible');
-            successMsgDiv.style.display = 'flex';
+            hiddenContent.classList.add('visible');
+            successMsg.style.display = 'flex';
         }
 
         lockDiv.addEventListener('click', () => {
@@ -662,19 +824,19 @@
             formPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
-        const premiumForm = document.getElementById('premiumAccessForm');
+        const premiumForm = document.getElementById('premiumForm');
         premiumForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('fullname').value.trim();
             const email = document.getElementById('emailid').value.trim();
             if (!name || !email) { alert('Please enter name and email'); return; }
             const phone = document.getElementById('phoneNum').value.trim() || 'Not provided';
-            const company = document.getElementById('company').value.trim() || 'Not provided';
-            const requirements = document.getElementById('requirements').value.trim() || 'No specific';
+            const organization = document.getElementById('organization').value.trim() || 'Not provided';
+            const message = document.getElementById('message').value.trim() || 'No specific';
             const product = document.getElementById('productName').value;
 
-            const adminParams = { from_name: name, reply_to: email, phone, organization: company, message: requirements, product, to_email: 'siddappagout@gmail.com' };
-            const autoParams = { from_name: name, reply_to: email, phone, organization: company, message: requirements, product, to_email: email };
+            const adminParams = { from_name: name, reply_to: email, phone, organization, message, product, to_email: 'siddappagout@gmail.com' };
+            const autoParams = { from_name: name, reply_to: email, phone, organization, message, product, to_email: email };
 
             const submitBtn = premiumForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
@@ -684,22 +846,22 @@
             emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.adminTemplate, adminParams)
                 .then(() => emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.autoTemplate, autoParams))
                 .then(() => {
-                    sessionStorage.setItem('ptcPremiumUnlocked', 'true');
+                    sessionStorage.setItem('premiumUnlocked_cooker', 'true');
                     formPanel.style.display = 'none';
-                    hiddenContentDiv.classList.add('visible');
-                    successMsgDiv.style.display = 'flex';
+                    hiddenContent.classList.add('visible');
+                    successMsg.style.display = 'flex';
                     premiumForm.reset();
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
                 })
-                .catch(err => { console.error(err); alert('Could not send. Please contact directly.'); submitBtn.disabled = false; submitBtn.innerHTML = originalText; });
+                .catch(err => { console.error(err); alert('Error sending request. Please try again.'); submitBtn.disabled = false; submitBtn.innerHTML = originalText; });
         });
 
         // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
 </body>
