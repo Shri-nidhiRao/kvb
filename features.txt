@@ -1,0 +1,107 @@
+
+--- microgreen-systems.html ---
+* Growing Layers
+* Footprint
+* Daily Production
+* Lighting
+* Broccoli
+* Radish
+* Sunflower
+* Pea Shoots
+* Automated Irrigation
+* Smart Lighting
+* Climate Control
+* App Control
+* Vertical Racks
+* Fresh Harvest
+* Mobile Control
+* Unlock Premium Technical Library
+* Financial Model
+* Training Videos
+* Farm Design Call
+
+--- solar-steam-cooking.html ---
+* Temperature Range
+* Cooking Capacity
+* Collector Area
+* Efficiency
+* Concentration
+* Tracking
+* Cooking / Heating
+* Community Cooking
+* Water Pasteurization
+* Industrial Process Heat
+* Sterilization
+* Precision Reflector
+* Cooking in Action
+* Community Cooking
+* Unlock Premium Technical Library
+* Performance Data
+* Installation Videos
+* Case Studies
+
+--- solar-dryers.html ---
+* Tunnel Size
+* Temperature Range
+* Capacity
+* Drying Time
+* Fruits
+* Vegetables
+* Spices
+* Grains & Pulses
+* Modular Tunnel
+* Premium Dried Fruits
+* Smart Control
+* Unlock Premium Technical Library
+* ROI Calculator
+* Installation Videos
+* Case Studies
+
+--- scheffler-concentrators.html ---
+* Dish Size
+* Temperature
+* Thermal Output
+* Efficiency
+* Process Heating
+* Steam Generation
+* Thermal Oil Heating
+* Food Processing
+* Scheffler Dish Array
+* Industrial Installation
+* Smart Tracking
+* Unlock Premium Technical Library
+* Performance Data
+* Installation Videos
+* Industry Case Studies
+
+--- thermal-storage.html ---
+* Storage Temperature
+* Storage Duration
+* Capacity Range
+* Round‑trip Efficiency
+* Industrial Process Heat
+* District Heating
+* Solar Farm Integration
+* Grid Services
+* Prototype Unit
+* Industrial Integration
+* Smart Monitoring
+* Unlock Premium Technical Library
+* ROI Calculator
+* Simulation Videos
+* Lab Test Reports
+
+--- ai-crop-detection.html ---
+* Peak Temp
+* Concentration
+* Aperture Area
+* Tracking
+* Parabolic trough
+* Parabolic dish
+* Heliostat field
+* Linear Fresnel
+* Biomass hybrid
+* Unlock Premium Technical Library
+* ROI Calculator
+* Installation Videos
+* Performance Reports
