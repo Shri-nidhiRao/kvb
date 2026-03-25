@@ -1075,12 +1075,12 @@
                 alt="Agritech Solutions"></div>
             <div class="product-name">Agritech Solutions</div>
           </a>
-          <a href="products/microgreen-systems.html" class="product-card">
+         <!-- <a href="products/microgreen-systems.html" class="product-card">
             <div class="product-image"><img
                 src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                 alt="Microgreen"></div>
             <div class="product-name">Microgreen</div>
-          </a>
+          </a>-->
           <a href="solutions/dehydrators.html" class="product-card">
             <div class="product-image"><img
                 src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
@@ -1363,54 +1363,9 @@
         }
       }, 10000); // 10 seconds per video
 
-      // ===== TYPEWRITER ANIMATION =====
-      const typewriterText = 'We Are Into Clean Tech-Solar Thermal & Agri Tech';
-      const heroEl = document.getElementById('heroTypewriter');
-      let twTimeout;
+     
 
-      function typeWriter(text, index, callback) {
-        if (index < text.length) {
-          heroEl.innerHTML = text.substring(0, index + 1) + '<span class="typewriter-cursor"></span>';
-          twTimeout = setTimeout(() => typeWriter(text, index + 1, callback), 100);
-        } else {
-          // Remove cursor after typing finishes
-          setTimeout(() => {
-            heroEl.innerHTML = text;
-            if (callback) callback();
-          }, 500);
-        }
-      }
-
-      function runTypewriterCycle() {
-        // Phase 1: Type in (~5 seconds)
-        heroEl.classList.remove('fade-out');
-        heroEl.classList.add('fade-in');
-        typeWriter(typewriterText, 0, () => {
-          // Phase 2: Stay visible for a moment, then fade out
-          setTimeout(() => {
-            heroEl.classList.remove('fade-in');
-            heroEl.classList.add('fade-out');
-            // Phase 3: Stay hidden while video plays, then reappear after 30s
-            setTimeout(() => {
-              heroEl.innerHTML = typewriterText;
-              heroEl.classList.remove('fade-out');
-              heroEl.classList.add('fade-in');
-              // Phase 4: Stay visible for 30 seconds, then restart cycle
-              setTimeout(() => {
-                heroEl.classList.remove('fade-in');
-                heroEl.classList.add('fade-out');
-                setTimeout(() => {
-                  heroEl.innerHTML = '';
-                  runTypewriterCycle();
-                }, 1000);
-              }, 30000);
-            }, 5000);
-          }, 3000);
-        });
-      }
-
-      // Start the typewriter cycle
-      runTypewriterCycle();
+      
     })();
   </script>
 </body>

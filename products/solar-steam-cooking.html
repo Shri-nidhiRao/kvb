@@ -66,6 +66,7 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 1.2rem;
+            text-align: center;
         }
 
         h2 {
@@ -138,29 +139,38 @@
             border-bottom: 1px solid var(--border-light);
         }
 
-        /* ----- HERO – Clean Light Mode ----- */
+        /* ----- HERO – Centered Title + BIG Centered Video ----- */
         .hero-light {
             position: relative;
             min-height: 85vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
             background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
             padding: 100px 0 60px;
+            text-align: center;
         }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 0.7fr 1.6fr;
-            gap: 4rem;
-            align-items: center;
+        .hero-light .hero-full-width {
+            width: 100%;
+            padding: 0 20px;
         }
-        .hero-left {
-            animation: fadeUp 0.8s ease-out;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .hero-content h1 {
+            text-align: center;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
         }
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 0.8rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         .tag {
             background: white;
@@ -181,8 +191,10 @@
             border-color: var(--primary);
             box-shadow: var(--shadow-md);
         }
-        .hero-right {
-            width: 100%;
+        .hero-video-wrapper {
+            width: 90vw;
+            max-width: 1600px;
+            margin: 2rem auto 0;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -190,17 +202,16 @@
             box-shadow: var(--shadow-lg);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .hero-right:hover {
+        .hero-video-wrapper:hover {
             transform: translateY(-5px);
             box-shadow: 0 30px 50px rgba(0,0,0,0.1);
         }
-        .hero-right::before {
+        .hero-video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 75%; /* 4:3 ratio, adjust as needed */
+            padding-top: 56.25%; /* 16:9 aspect ratio */
         }
-        /* Video element to fill the container */
-        .hero-right video {
+        .hero-video-wrapper video {
             position: absolute;
             inset: 0;
             width: 100%;
@@ -208,8 +219,8 @@
             object-fit: cover;
             border: none;
         }
-        /* Shine effect overlay (optional) */
-        .hero-right .shine {
+        /* shine effect (optional) */
+        .hero-video-wrapper .shine {
             position: absolute;
             top: -50%;
             left: -50%;
@@ -225,6 +236,11 @@
             from { transform: translateX(-50%) rotate(25deg); }
             to { transform: translateX(50%) rotate(25deg); }
         }
+        @media (max-width: 768px) {
+            .hero-video-wrapper {
+                width: 95vw;
+            }
+        }
 
         /* ----- SCROLL REVEAL ----- */
         .reveal {
@@ -237,7 +253,96 @@
             transform: translateY(0);
         }
 
-        /* ----- CARDS – Clean White ----- */
+        /* ----- HIGHLIGHT OVERVIEW (Parabolic Concentrator Technology) ----- */
+        .highlight-tech {
+            background: linear-gradient(120deg, #FFFFFF 0%, #F5FBF5 100%);
+            border-left: 6px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 2rem 2.2rem;
+            margin: 3rem 0 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s ease;
+        }
+        .highlight-tech h2 {
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: none;
+            font-size: 2rem;
+        }
+        .highlight-tech h2:after {
+            display: none;
+        }
+        .highlight-tech p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 95%;
+            color: var(--text-primary);
+        }
+        .highlight-tech strong {
+            color: var(--primary-dark);
+        }
+
+        /* ----- 2x2 FEATURE MATRIX ----- */
+        .feature-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .feature-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .feature-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.4rem;
+            position: relative;
+            font-size: 0.98rem;
+            line-height: 1.45;
+            color: var(--text-secondary);
+        }
+        .feature-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .feature-matrix {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ----- CARDS (generic) ----- */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -265,6 +370,42 @@
         .card h3 {
             font-size: 1.6rem;
             margin-bottom: 0.8rem;
+        }
+
+        /* ----- APPLICATIONS – one row on large screens ----- */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .app-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .app-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .app-card i {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .app-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+        @media (max-width: 1200px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
         }
 
         /* ----- TABLES – Soft Light ----- */
@@ -453,7 +594,6 @@
         }
 
         @media (max-width: 992px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
             .form-grid { grid-template-columns: 1fr; }
             .form-group.full { grid-column: span 1; }
         }
@@ -467,39 +607,80 @@
 <body>
     <div id="header"></div>
 
-    <!-- Hero Section – Light Mode with Local Video -->
+    <!-- Hero Section – Centered Title + BIG Centered Video -->
     <section class="hero-light">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-left">
-                    <h1>Solar Parabolic Cooker</h1>
-                    <p>High‑efficiency solar cooking for homes, communities, and institutions. Zero fuel cost, zero emissions, and a payback period of just 1–2 years. Cook rice, dal, vegetables, and more using pure concentrated sunlight.</p>
-                    
-                </div>
-                <div class="hero-right">
-                    <div class="shine"></div>
-                    <video autoplay muted loop playsinline>
-                        <source src="../videos/parabolic.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+        <div class="hero-full-width">
+            <div class="hero-content">
+                <h1>Solar Parabolic Cooker</h1>
+               
+            </div>
+            <div class="hero-video-wrapper">
+                <div class="shine"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="../videos/parabolic.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
 
     <main class="container">
-        <!-- Overview -->
-        <div class="reveal" style="margin: 4rem 0 2rem;">
-            <div class="section-title"><h2>General Description</h2></div>
-            <p style="max-width: 850px; margin: 0 auto; text-align: center;">The Solar Parabolic Cooker uses parabolic reflection technology to concentrate solar energy at a focal point, generating high temperatures for cooking. Available in <strong>1.5 m²</strong> (small kitchens) and <strong>4 m²</strong> (temples, hostels, canteens) models. It eliminates conventional fuel dependency while delivering exceptional thermal performance.</p>
+        <!-- HIGHLIGHTED Overview: Parabolic Concentrator Technology -->
+        <div class="reveal highlight-tech">
+            <div style="margin-bottom: 0.5rem;">
+                <h1 style="margin-bottom: 0.5rem;">⚡ Parabolic Concentrator Technology</h1>
+            </div>
+            <p>The <strong>Solar Parabolic Cooker</strong> harnesses the power of a precisely curved parabolic reflector to concentrate sunlight onto a small focal point, instantly generating intense heat (up to 350°C). This concentrated energy is transferred directly to a cooking vessel, enabling boiling, frying, roasting, and steaming without any fuel. The system features a simple manual tracking mechanism to follow the sun, ensuring peak performance throughout the day. Ideal for clean, sustainable cooking in both rural and urban settings.</p>
         </div>
 
-        <!-- Key Features Cards -->
-        <div class="cards-grid reveal">
-            <div class="card"><i class="fas fa-utensils"></i><h3>Cooking Performance</h3><p>Boiling, frying, steaming, roasting. Rice: 30–45 min, Dal: 40–60 min, Vegetables: 20–30 min.</p></div>
-            <div class="card"><i class="fas fa-cogs"></i><h3>System Components</h3><p>Parabolic dish, support structure, manual tracking, cooking vessel stand, safety lock, optional high‑temp vessel.</p></div>
-            <div class="card"><i class="fas fa-shield-alt"></i><h3>Safety Features</h3><p>Wind locking, stable design, heat‑resistant receiver, safe manual operation.</p></div>
-            <div class="card"><i class="fas fa-chart-line"></i><h3>Key Benefits</h3><p>Zero fuel cost, 15‑20 year lifespan, minimal maintenance, significant LPG savings.</p></div>
+        <!-- 2x2 FEATURE MATRIX (Cooking Performance, System Components, Safety, Key Benefits) -->
+        <div class="reveal">
+            <div class="section-title"><h2>Core Capabilities</h2></div>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Cooking Performance</h3>
+                    <ul class="feature-list">
+                        <li>Boiling, frying, steaming, roasting</li>
+                        <li>Rice: 30–45 min (2‑4 kg batch)</li>
+                        <li>Dal: 40–60 min (3‑5 liters)</li>
+                        <li>Vegetables: 20–30 min (2‑3 kg)</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>System Components</h3>
+                    <ul class="feature-list">
+                        <li>High‑reflectivity parabolic dish</li>
+                        <li>Galvanized steel support frame</li>
+                        <li>Manual single‑axis tracking</li>
+                        <li>Adjustable cooking vessel stand</li>
+                        <li>Safety wind lock mechanism</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety Features</h3>
+                    <ul class="feature-list">
+                        <li>Sturdy ground‑mounted design</li>
+                        <li>Heat‑resistant receiver & handles</li>
+                        <li>Wind‑resistant locking (up to 120 km/h)</li>
+                        <li>Safe manual tracking without glare</li>
+                        <li>No open flame – zero fire risk</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Key Benefits</h3>
+                    <ul class="feature-list">
+                        <li>Zero fuel cost – complete LPG elimination</li>
+                        <li>15‑20 year system lifespan</li>
+                        <li>1–2 year payback period</li>
+                        <li>Minimal maintenance (mirror cleaning)</li>
+                        <li>Eligible for government subsidies & carbon credits</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- Technical Details Table -->
@@ -507,7 +688,7 @@
             <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Details</h2>
             <table>
                 <thead>
-                    <tr><th>Parameter</th><th>Specification</th></tr>
+                    <tr><th>Parameter</th><th>Specification</th> </tr>
                 </thead>
                 <tbody>
                     <tr><td><strong>Reflector Area</strong></td><td>1.5 m² & 4 m² (Available Options)</td></tr>
@@ -542,15 +723,15 @@
             </table>
         </div>
 
-        <!-- Applications -->
+        <!-- Applications – one row on large screens -->
         <div class="reveal">
             <div class="section-title"><h2>Applications & Impact</h2></div>
-            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr));">
-                <div class="card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam cooking with zero fuel cost.</p></div>
-                <div class="card"><i class="fas fa-school"></i><h3>Residential Schools</h3><p>Nutritious meals for hundreds of students daily.</p></div>
-                <div class="card"><i class="fas fa-people-arrows"></i><h3>Community Kitchens</h3><p>Reliable, clean energy for mid‑day meal programs.</p></div>
-                <div class="card"><i class="fas fa-tree"></i><h3>Rural Areas</h3><p>Off‑grid cooking, reduces drudgery and indoor pollution.</p></div>
-                <div class="card"><i class="fas fa-concierge-bell"></i><h3>Catering Services</h3><p>Eco‑friendly bulk cooking, enhanced brand value.</p></div>
+            <div class="applications-grid">
+                <div class="app-card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam with zero fuel cost.</p></div>
+                <div class="app-card"><i class="fas fa-school"></i><h3>Residential Schools</h3><p>Nutritious meals for hundreds of students daily.</p></div>
+                <div class="app-card"><i class="fas fa-people-arrows"></i><h3>Community Kitchens</h3><p>Reliable, clean energy for mid‑day meal programs.</p></div>
+                <div class="app-card"><i class="fas fa-tree"></i><h3>Rural Areas</h3><p>Off‑grid cooking, reduces drudgery and indoor pollution.</p></div>
+                <div class="app-card"><i class="fas fa-concierge-bell"></i><h3>Catering Services</h3><p>Eco‑friendly bulk cooking, enhanced brand value.</p></div>
             </div>
         </div>
 

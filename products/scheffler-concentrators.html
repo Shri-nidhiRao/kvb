@@ -10,13 +10,7 @@
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        /* ===== RESET & PREMIUM LIGHT MODE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* ===== BASE STYLES – Premium Light Mode ===== */
         :root {
             --background: #FFFFFF;
             --background-alt: #F8F9FC;
@@ -48,13 +42,93 @@
             padding-top: 80px;
         }
 
+        /* Main container for content (keeps text readable) */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 32px;
         }
 
-        /* Header placeholder - keep original */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.6rem;
+            background: linear-gradient(135deg, #1D1D1F 0%, #4A8B4A 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title {
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(74, 139, 74, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(74, 139, 74, 0.3);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* ===== HEADER (placeholder) ===== */
         #header {
             position: fixed;
             top: 0;
@@ -65,106 +139,44 @@
             border-bottom: 1px solid var(--border);
         }
 
-        /* ===== TOP HEADING – CENTERED ===== */
-        .page-top-heading {
-            width: 100%;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem 0 1.5rem 0;
-            text-align: center;
+        /* ===== HERO – BIG, CENTERED VIDEO ===== */
+        .product-hero {
             position: relative;
-            z-index: 10;
-            margin-top: 0;
-        }
-        
-        .main-title {
-            font-family: var(--font-heading);
-            font-size: 3.4rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #1D1D1F 0%, #4A8B4A 70%, #2F5E2F 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 0;
-            padding: 0;
-            display: inline-block;
-        }
-        
-        .sub-eco {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--primary);
-            margin-top: 0.5rem;
+            min-height: 85vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 1.8rem;
-            flex-wrap: wrap;
-        }
-        
-        .sub-eco span {
-            background: var(--primary-light);
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* ===== VIDEO SECTION - REDUCED SIZE ===== */
-        .video-section {
-            width: 100%;
-            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
-            padding: 2rem 0;
-        }
-        
-        .video-container-limited {
-            max-width: 1000px;
-            margin: 0 auto;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            background: #000;
-        }
-        
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            background: #0a0a0c;
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Description section */
-        .description-section {
-            padding: 2rem 0 1.5rem;
-            background: var(--background);
-        }
-        
-        .hero-description {
-            max-width: 900px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, var(--background-alt) 0%, #FFFFFF 100%);
+            padding: 100px 0 60px;
             text-align: center;
         }
-        
-        .hero-description p {
+
+        /* Hero container: full width, no max-width, but with side padding */
+        .product-hero .hero-full-width {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-content h1 {
+            text-align: center;
+        }
+
+        .hero-content p {
             font-size: 1.2rem;
-            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
         
         .product-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2rem;
             justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
         }
         
         .tag {
@@ -188,19 +200,53 @@
         .tag:hover {
             transform: translateY(-2px);
             border-color: var(--primary);
+            box-shadow: var(--shadow-md);
         }
 
-        h2 {
-            font-family: var(--font-heading);
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            text-align: center;
+        /* Video wrapper – very large, centered, no overflow */
+        .hero-video-wrapper {
+            width: 90vw;                /* nearly full viewport width */
+            max-width: 1600px;          /* but not too huge on giant screens */
+            margin: 0 auto;
             position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: #F0F2F5;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-video-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.12);
+        }
+
+        .hero-video-wrapper::before {
+            content: "";
+            display: block;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .hero-video-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive: on smaller screens, reduce the width to avoid touching edges */
+        @media (max-width: 768px) {
+            .hero-video-wrapper {
+                width: 95vw;
+            }
+        }
+
+        /* ===== SCROLL REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
         .section-title:after {
             content: '';
@@ -212,17 +258,106 @@
             border-radius: 2px;
         }
 
-        p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 1.05rem;
+        /* ===== HIGHLIGHT OVERVIEW (Scheffler Fixed-Focus) – eye-catching ===== */
+        .highlight-tech {
+            background: linear-gradient(120deg, #FFFFFF 0%, #F5FBF5 100%);
+            border-left: 6px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 2rem 2.2rem;
+            margin: 3rem 0 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s ease;
+        }
+        .highlight-tech h2 {
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: none;
+            font-size: 2rem;
+        }
+        .highlight-tech h2:after {
+            display: none;
+        }
+        .highlight-tech p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 95%;
+            color: var(--text-primary);
+        }
+        .highlight-tech strong {
+            color: var(--primary-dark);
         }
 
-        .specs-grid, .applications-grid {
+        /* ===== 2x2 FEATURE MATRIX ===== */
+        .feature-matrix {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin: 3rem 0;
+        }
+        .feature-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .feature-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.4rem;
+            position: relative;
+            font-size: 0.98rem;
+            line-height: 1.45;
+            color: var(--text-secondary);
+        }
+        .feature-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .feature-matrix {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ===== CARDS ===== */
+        .specs-grid, .applications-grid {
+            display: grid;
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .applications-grid {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        .specs-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
         .spec-card, .app-card {
             background: white;
@@ -242,29 +377,17 @@
             color: var(--primary);
             margin-bottom: 1.2rem;
         }
-        .tech-table-container {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin: 4rem 0;
-            box-shadow: var(--shadow-sm);
+        .spec-card h3, .app-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
         }
-        .tech-table {
-            width: 100%;
-            border-collapse: collapse;
+        @media (max-width: 1200px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
         }
-        .tech-table th {
-            text-align: left;
-            padding: 1rem 1.5rem;
-            background: var(--primary-light);
-            font-weight: 600;
-        }
-        .tech-table td {
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
+
+        /* ===== IMAGE GALLERY ===== */
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -294,15 +417,37 @@
             background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
             color: white;
             padding: 1.5rem;
+            font-weight: 500;
         }
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+
+        /* ===== TECHNICAL TABLES ===== */
+        .tech-table-container {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 5rem 0;
+            box-shadow: var(--shadow-sm);
         }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tech-table th {
+            text-align: left;
+            padding: 1rem 1.5rem;
+            background: var(--primary-light);
+            color: var(--text-primary);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+        .tech-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .tech-table tr:last-child td {
+            border-bottom: none;
         }
 
         /* Premium Unlock Section */
@@ -333,8 +478,9 @@
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             padding: 2.5rem;
-            display: none;
+            box-shadow: var(--shadow-lg);
             margin-top: 2rem;
+            display: none;
         }
         .unlock-form-container.visible {
             display: block;
@@ -345,15 +491,33 @@
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
-        .full-width {
+        .form-group.full-width {
             grid-column: span 2;
         }
-        .form-group input, .form-group select, .form-group textarea {
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 0.85rem 1rem;
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
             font-family: var(--font-body);
+            font-size: 0.95rem;
+            background: var(--background-alt);
+            transition: 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
         }
         .btn-submit {
             width: 100%;
@@ -364,6 +528,11 @@
             border-radius: 40px;
             font-weight: 600;
             cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
         }
         .hidden-content {
             display: none;
@@ -371,6 +540,22 @@
         }
         .hidden-content.visible {
             display: block;
+        }
+        .success-message {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .premium-card {
+            background: var(--background-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
         }
         .premium-grid {
             display: grid;
@@ -385,22 +570,37 @@
             padding: 1.5rem;
             text-align: center;
         }
-        
+        .premium-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .btn-small {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+        }
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px);}
             to { opacity: 1; transform: translateY(0);}
         }
-        
         @media (max-width: 992px) {
-            .unlock-form { grid-template-columns: 1fr; }
-            .full-width { grid-column: span 1; }
+            .unlock-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
         }
-        
         @media (max-width: 768px) {
-            .main-title { font-size: 2.2rem; }
-            .container { padding: 0 20px; }
-            h2 { font-size: 1.8rem; }
-            .video-container-limited { margin: 0 20px; }
+            .container {
+                padding: 0 20px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -409,52 +609,79 @@
     <!-- Header placeholder - ORIGINAL, loads from external component -->
     <div id="header"></div>
 
-    <!-- ===== TOP HEADING – CENTERED TITLE ===== -->
-    <div class="page-top-heading">
-        <div class="container" style="text-align: center;">
-            <h1 class="main-title">16 m² Solar Scheffler Dish</h1>
-            <div class="sub-eco">
-                <span><i class="fas fa-solar-panel"></i> Industrial Thermal Power</span>
-                <span><i class="fas fa-chart-line"></i> 8–10 kW Output</span>
-                <span><i class="fas fa-leaf"></i> 100% Carbon Free</span>
-                <span><i class="fas fa-rupee-sign"></i> 2-4 Year Payback</span>
+    <!-- ===== HERO SECTION – Centered Title + BIG, CENTERED VIDEO ===== -->
+    <section class="product-hero">
+        <div class="hero-full-width">
+            <div class="hero-content">
+                <h1>Solar Scheffler Dish</h1>
+               
             </div>
-        </div>
-    </div>
-
-    <!-- ===== VIDEO SECTION - REDUCED SIZE ===== -->
-    <section class="video-section">
-        <div class="video-container-limited">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/SuYSjfcq3QY?autoplay=1&mute=1&loop=1&playlist=SuYSjfcq3QY&controls=1&rel=0&modestbranding=1" title="Scheffler Dish Demo" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+            <div class="hero-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/SuYSjfcq3QY?autoplay=1&mute=1&loop=1&playlist=SuYSjfcq3QY&controls=0&rel=0&modestbranding=1&vq=hd1080" title="Scheffler Dish Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- ===== DESCRIPTION SECTION (below video) ===== -->
-    <section class="description-section">
-        <div class="container">
-            <div class="hero-description">
-                <p style="font-size:1.2rem; font-weight:500;">Industrial‑grade fixed‑focus solar cooking system designed for large‑scale institutional kitchens. Delivers <strong>8–10 kW thermal output</strong>, cooking for 80–100 persons per batch, with zero fuel cost and a proven 2–4 year payback.</p>
-                <div class="product-tags">
-                    <span class="tag"><i class="fas fa-expand-arrows-alt"></i> 16 m² Aperture</span>
-                    <span class="tag"><i class="fas fa-temperature-high"></i> 350–450°C Peak</span>
-                    <span class="tag"><i class="fas fa-utensils"></i> 80‑100 Meals/Batch</span>
-                    <span class="tag"><i class="fas fa-leaf"></i> Zero Emissions</span>
-                    <span class="tag"><i class="fas fa-cogs"></i> Fixed Focus</span>
-                    <span class="tag"><i class="fas fa-chart-line"></i> 2‑4 Year ROI</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== MAIN PRODUCT CONTENT ===== -->
+    <!-- ===== MAIN CONTENT ===== -->
     <section class="product-content">
         <div class="container">
-            <!-- System Overview -->
-            <div style="margin-bottom: 4rem;">
-                <h2 class="section-title">System Overview</h2>
-                <p style="max-width: 900px; margin: 0 auto; text-align: center;">The <strong>16 m² Solar Scheffler Dish</strong> is a precision‑engineered concentrated solar cooking solution based on the fixed‑focus principle. It reflects sunlight onto a stationary indoor receiver, enabling seamless, fuel‑free cooking for temples, residential schools, industrial canteens, and mid‑day meal programs. Optical efficiency of 65–75% with robust galvanized steel structure delivers reliable thermal output with minimal maintenance.</p>
+            <!-- HIGHLIGHTED Overview: Scheffler Fixed‑Focus Technology -->
+            <div class="reveal highlight-tech">
+                <div style="margin-bottom: 0.5rem;">
+                    <h1 style="margin-bottom: 0.5rem;">⚡ Scheffler Fixed‑Focus Technology</h1>
+                </div>
+                <p>The <strong>16 m² Solar Scheffler Dish</strong> uses a patented lateral‑moving parabolic geometry to reflect sunlight onto a <strong>stationary receiver located inside the kitchen</strong>. Unlike conventional cookers, the cooking position is fixed, safe, and indoor. The dish automatically tracks the sun while the focal point remains static — enabling continuous, high‑temperature cooking without operator exposure to concentrated rays.</p>
+            </div>
+
+            <!-- 2x2 FEATURE MATRIX -->
+            <div class="reveal">
+                <div class="section-title"><h2>Core Capabilities</h2></div>
+                <div class="feature-matrix">
+                    <div class="feature-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Cooking Performance</h3>
+                        <ul class="feature-list">
+                            <li>Rice: 15–20 kg in 40–60 min</li>
+                            <li>Dal: 20–25 L in 45–60 min</li>
+                            <li>Vegetables: 25–30 kg in 30–45 min</li>
+                            <li>Frying &amp; Chapati supported</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>System Components</h3>
+                        <ul class="feature-list">
+                            <li>16 m² Scheffler reflector</li>
+                            <li>Precision tracking mechanism</li>
+                            <li>Fixed receiver unit (indoor cooking)</li>
+                            <li>HDG steel structure</li>
+                            <li>Seasonal tilt adjustment</li>
+                            <li>Wind stow system (140 km/h)</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Safety Features</h3>
+                        <ul class="feature-list">
+                            <li>Fixed focal point eliminates glare exposure</li>
+                            <li>Wind stow mechanism (140 km/h)</li>
+                            <li>Controlled heat delivery indoors</li>
+                            <li>No open flame – zero fire risk</li>
+                            <li>Automatic solar tracking with manual override</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Key Benefits</h3>
+                        <ul class="feature-list">
+                            <li>Eliminates LPG / firewood dependency</li>
+                            <li>10–12 tons CO₂ saved / year</li>
+                            <li>2–4 year payback period</li>
+                            <li>20–25 year system service life</li>
+                            <li>Eligible for carbon credits</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Key Specs -->
@@ -470,9 +697,9 @@
             <div class="tech-table-container reveal">
                 <h2 style="margin-bottom: 2rem;">📐 Engineering Specifications</h2>
                 <table class="tech-table">
-                    <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+                    <thead>汽<th>Parameter</th><th>Specification</th> </thead>
                     <tbody>
-                        <tr><td><strong>Concentrator Type</strong></td><td>Scheffler Fixed‑Focus Offset Parabolic</td></tr>
+                        的人<td><strong>Concentrator Type</strong></td><td>Scheffler Fixed‑Focus Offset Parabolic</td></tr>
                         <tr><td><strong>Aperture Area</strong></td><td>16 m²</td></tr>
                         <tr><td><strong>Reflector Material</strong></td><td>Glass mirror facets / Anodized aluminum (≥90% reflectivity)</td></tr>
                         <tr><td><strong>Tracking Mechanism</strong></td><td>Single axis (manual seasonal tilt – optional motorized)</td></tr>
@@ -487,7 +714,7 @@
             <div class="tech-table-container reveal">
                 <h2 style="margin-bottom: 2rem;">🔥 Thermal Performance & Cooking Output</h2>
                 <table class="tech-table">
-                    <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                    <thead>汽<th>Parameter</th><th>Value</th> </thead>
                     <tbody>
                         <tr><td><strong>Thermal Power Output</strong></td><td>8 – 10 kW</td></tr>
                         <tr><td><strong>Optical Efficiency</strong></td><td>65 – 75%</td></tr>
@@ -505,7 +732,7 @@
                 <div class="spec-card"><i class="fas fa-shield-alt"></i><h3>Operational Safety</h3><ul style="margin-left:1.2rem;"><li>Fixed focal point – zero operator exposure</li><li>Indoor cooking – no glare / no flame</li><li>Wind‑safe parking mechanism</li><li>Thermally stable receiver design</li></ul></div>
             </div>
 
-            <!-- Applications -->
+            <!-- Applications Grid – all in one row on large screens -->
             <h2 class="section-title">📍 Deployment Applications</h2>
             <div class="applications-grid">
                 <div class="app-card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam with zero fuel cost.</p></div>
@@ -567,11 +794,39 @@
             <div class="premium-card">
                 <h3><i class="fas fa-file-alt"></i> Premium Technical Library</h3>
                 <div class="premium-grid">
-                    <div class="premium-item"><i class="fas fa-file-pdf"></i><h4>Engineering Drawings</h4><a href="#" class="btn-outline btn-small" style="padding:0.3rem 1rem; display:inline-block; margin-top:1rem;">Download</a></div>
-                    <div class="premium-item"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><a href="#" class="btn-outline btn-small">Calculate</a></div>
-                    <div class="premium-item"><i class="fas fa-video"></i><h4>Installation Videos</h4><a href="#" class="btn-outline btn-small">Watch</a></div>
+                    <div class="premium-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Engineering Drawings</h4>
+                        <p>CAD files, installation blueprints, piping schematics.</p>
+                        <a href="#" class="btn btn-small btn-outline" style="margin-top:1rem;">Download</a>
+                    </div>
+                    <div class="premium-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>ROI Calculator</h4>
+                        <p>Custom Excel with LPG savings & payback projection.</p>
+                        <a href="#" class="btn btn-small btn-outline">Calculate</a>
+                    </div>
+                    <div class="premium-item">
+                        <i class="fas fa-video"></i>
+                        <h4>Installation Videos</h4>
+                        <p>Step‑by‑step assembly, alignment, maintenance.</p>
+                        <a href="#" class="btn btn-small btn-outline">Watch</a>
+                    </div>
+                    <div class="premium-item">
+                        <i class="fas fa-chalkboard-user"></i>
+                        <h4>Case Studies</h4>
+                        <p>Temple, school, industrial – real savings data.</p>
+                        <a href="#" class="btn btn-small btn-outline">Read</a>
+                    </div>
                 </div>
-                <div style="background:var(--background-alt); padding:1.5rem; border-radius:20px; margin-top:1rem;"><strong>📘 Confidential Case Studies:</strong> Shri Kashi Vishwanath Temple – 2,000 meals/day, ROI 2.3 yrs; JNV School – 90% fuel cost reduction.</div>
+                <div style="margin-top:2rem; padding:1.5rem; background:white; border-radius:var(--radius-md); border:1px solid var(--border);">
+                    <h4 style="color:var(--primary); margin-bottom:1rem;">📘 Confidential Success Stories</h4>
+                    <ul style="list-style:none;">
+                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:12px;"></i> <strong>Shri Kashi Vishwanath Temple, Varanasi</strong> – 2,000 meals/day, 100% LPG replacement, ROI 2.3 years</li>
+                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:12px;"></i> <strong>Jawahar Navodaya Vidyalaya, Tamil Nadu</strong> – 500 meals/day, 90% fuel cost reduction</li>
+                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:12px;"></i> <strong>Industrial Canteen, Pune</strong> – 600 meals/day, ₹6L annual savings, payback 3.1 years</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

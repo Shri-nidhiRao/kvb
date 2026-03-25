@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking</title>
+    <title>AgroSense | Smart Farming & Precision Agriculture – AI-Powered Farm Intelligence</title>
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        /* ===== BASE STYLES – Pure White & Airy ===== */
+        /* ===== BASE STYLES – Pure White & Airy (same as previous pages) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -209,31 +209,14 @@
         .hero-video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 56.25%;
         }
-        .hero-video-wrapper video {
+        .hero-video-wrapper iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border: none;
-        }
-        .hero-video-wrapper .shine {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.15), transparent 60%);
-            transform: rotate(25deg);
-            animation: shineMove 6s infinite linear;
-            pointer-events: none;
-            z-index: 2;
-        }
-        @keyframes shineMove {
-            from { transform: translateX(-50%) rotate(25deg); }
-            to { transform: translateX(50%) rotate(25deg); }
         }
         @media (max-width: 768px) {
             .hero-video-wrapper {
@@ -260,7 +243,6 @@
             padding: 2rem 2.2rem;
             margin: 3rem 0 2rem;
             box-shadow: var(--shadow-md);
-            transition: all 0.2s ease;
         }
         .highlight-tech h2 {
             margin-bottom: 1rem;
@@ -341,7 +323,65 @@
             }
         }
 
-        /* ===== CARDS ===== */
+        /* ===== APPLICATIONS – equal width cards ===== */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .app-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        .app-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .app-card i {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .app-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+        .app-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+        @media (max-width: 1200px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 1rem;
+            }
+            .app-card {
+                padding: 1.5rem 1rem;
+            }
+            .app-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== OTHER CARDS ===== */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -369,42 +409,6 @@
         .card h3 {
             font-size: 1.6rem;
             margin-bottom: 0.8rem;
-        }
-
-        /* ===== APPLICATIONS – one row ===== */
-        .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-        .app-card {
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-        }
-        .app-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary-light);
-            box-shadow: var(--shadow-lg);
-        }
-        .app-card i {
-            font-size: 2.6rem;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-        }
-        .app-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-        }
-        @media (max-width: 1200px) {
-            .applications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            }
         }
 
         /* ===== TABLES ===== */
@@ -610,15 +614,11 @@
     <section class="hero-light">
         <div class="hero-full-width">
             <div class="hero-content">
-                <h1>Solar Parabolic Cooker</h1>
-              
+                <h1>AgroSense</h1>
+                
             </div>
             <div class="hero-video-wrapper">
-                <div class="shine"></div>
-                <video autoplay muted loop playsinline>
-                    <source src="../videos/parabolic.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe src="https://www.youtube.com/embed/5pAjcFmN5-U?autoplay=1&mute=1&loop=1&playlist=5pAjcFmN5-U&controls=0&rel=0&modestbranding=1" title="Smart Farming Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -627,110 +627,214 @@
         <!-- Highlighted Technology Overview -->
         <div class="reveal highlight-tech">
             <div style="margin-bottom: 0.5rem;">
-                <h2 style="margin-bottom: 0.5rem;">⚡ Parabolic Concentrator Technology</h2>
+                <h2 style="margin-bottom: 0.5rem;">🌱 AI‑Powered Digital Farm Brain</h2>
             </div>
-            <p>The <strong>Solar Parabolic Cooker</strong> harnesses the power of a precisely curved parabolic reflector to concentrate sunlight onto a small focal point, instantly generating intense heat (up to 350°C). This concentrated energy is transferred directly to a cooking vessel, enabling boiling, frying, roasting, and steaming without any fuel. The system features a simple manual tracking mechanism to follow the sun, ensuring peak performance throughout the day. Ideal for clean, sustainable cooking in both rural and urban settings.</p>
+            <p><strong>AgroSense</strong> is an advanced smart farming platform designed to transform traditional agriculture into a data‑driven, automated, and intelligent ecosystem. Built on real‑time field monitoring and intelligent decision‑making, the system continuously analyzes soil health, environmental conditions, and crop requirements to automate irrigation, predict diseases, and optimize farm productivity. It acts as a digital brain for the farm, enabling farmers to reduce input costs, conserve water, and maximize yield through precision agriculture.</p>
         </div>
 
-         <!-- 2x2 Feature Matrix -->
+        <!-- 2x2 Feature Matrix (Core Capabilities) -->
         <div class="reveal">
             <div class="section-title"><h2>Core Capabilities</h2></div>
             <div class="feature-matrix">
                 <div class="feature-card">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Cooking Performance</h3>
+                    <i class="fas fa-seedling"></i>
+                    <h3>Smart Soil Health Intelligence</h3>
                     <ul class="feature-list">
-                        <li>Boiling, frying, steaming, roasting</li>
-                        <li>Rice: 30–45 min (2‑4 kg batch)</li>
-                        <li>Dal: 40–60 min (3‑5 liters)</li>
-                        <li>Vegetables: 20–30 min (2‑3 kg)</li>
+                        <li>Continuous monitoring of soil nutrients (N, P, K)</li>
+                        <li>pH, electrical conductivity, temperature & moisture</li>
+                        <li>Precision nutrient & irrigation recommendations</li>
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>System Components</h3>
+                    <i class="fas fa-bug"></i>
+                    <h3>AI Pest & Disease Prediction</h3>
                     <ul class="feature-list">
-                        <li>High‑reflectivity parabolic dish</li>
-                        <li>Galvanized steel support frame</li>
-                        <li>Manual single‑axis tracking</li>
-                        <li>Adjustable cooking vessel stand</li>
-                        <li>Safety wind lock mechanism</li>
+                        <li>Early warning alerts based on field conditions</li>
+                        <li>AI‑powered pest risk analysis</li>
+                        <li>Optimized spraying schedules (crop‑stage based)</li>
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safety Features</h3>
+                    <i class="fas fa-tint"></i>
+                    <h3>Smart Irrigation Control</h3>
                     <ul class="feature-list">
-                        <li>Sturdy ground‑mounted design</li>
-                        <li>Heat‑resistant receiver & handles</li>
-                        <li>Wind‑resistant locking (up to 120 km/h)</li>
-                        <li>Safe manual tracking without glare</li>
-                        <li>No open flame – zero fire risk</li>
+                        <li>Three modes: Normal, Moisture‑Based, Timer‑Based</li>
+                        <li>Automatic motor & valve control</li>
+                        <li>Prevents overwatering / underwatering</li>
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Key Benefits</h3>
+                    <i class="fas fa-chart-simple"></i>
+                    <h3>Yield Optimization & Sustainability</h3>
                     <ul class="feature-list">
-                        <li>Zero fuel cost – complete LPG elimination</li>
-                        <li>15‑20 year system lifespan</li>
-                        <li>1–2 year payback period</li>
-                        <li>Minimal maintenance (mirror cleaning)</li>
-                        <li>Eligible for government subsidies & carbon credits</li>
+                        <li>15–30% increase in crop yield</li>
+                        <li>30–50% reduction in water usage</li>
+                        <li>Lower fertilizer & pesticide costs</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-
-        <!-- Technical Details Table -->
+        <!-- Core System Specifications Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Details</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Core System Specifications</h2>
             <table>
                 <thead>
-                    <tr><th>Parameter</th><th>Specification</th> </thead>
+                    <tr><th>Parameter</th><th>Specification</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td><strong>Reflector Area</strong></td><td>1.5 m² & 4 m² (Available Options)</td> </tr>
-                    <tr><td><strong>Type</strong></td><td>Parabolic Dish Concentrator</td> </tr>
-                    <tr><td><strong>Reflector Material</strong></td><td>High reflectivity aluminum / mirror finish</td> </tr>
-                    <tr><td><strong>Reflectivity</strong></td><td>≥ 90%</td> </tr>
-                    <tr><td><strong>Structure Material</strong></td><td>Mild Steel with anti‑corrosion coating</td> </tr>
-                    <tr><td><strong>Tracking System</strong></td><td>Manual (Single Axis)</td> </tr>
-                    <tr><td><strong>Concentration Ratio</strong></td><td>60:1 to 120:1</td> </tr>
-                    <tr><td><strong>Focal Length</strong></td><td>~0.8 to 1.5 meters</td> </tr>
-                    <tr><td><strong>Operating Temperature</strong></td><td>150°C to 350°C</td> </tr>
-                    <tr><td><strong>Cooking Capacity</strong></td><td>10–30 persons (based on model)</td> </tr>
-                    <tr><td><strong>Mounting Type</strong></td><td>Ground mounted</td> </tr>
-                    <tr><td><strong>Wind Resistance</strong></td><td>Up to 120 km/h (with locking mechanism)</td> </tr>
+                    <tr><td><strong>System Type</strong></td><td>Smart Farming & Automation Platform</td></tr>
+                    <tr><td><strong>Monitoring Capability</strong></td><td>Real‑time + Cloud Analytics</td></tr>
+                    <tr><td><strong>Connectivity</strong></td><td>Wireless (GSM / Wi‑Fi / LoRa based on site)</td></tr>
+                    <tr><td><strong>Power System</strong></td><td>Solar powered with battery backup</td></tr>
+                    <tr><td><strong>User Interface</strong></td><td>Mobile App + Web Dashboard</td></tr>
+                    <tr><td><strong>Control Mode</strong></td><td>Fully Automatic + Manual Override</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Solar Performance Table -->
+        <!-- Smart Soil Health & Climate Monitoring Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">☀️ Solar Performance</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌾 Smart Soil Health & Climate Intelligence</h2>
             <table>
                 <thead>
-                    <tr><th>Parameter</th><th>Value</th> </thead>
+                    <tr><th>Feature</th><th>Capability</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td><strong>Thermal Output</strong></td><td>1 kW – 3.5 kW (based on model)</td> </tr>
-                    <tr><td><strong>Solar Efficiency</strong></td><td>50% – 65%</td> </tr>
-                    <tr><td><strong>Daily Cooking Hours</strong></td><td>5–7 hours (clear sky)</td> </tr>
-                    <tr><td><strong>Fuel Savings</strong></td><td>Significant reduction in LPG usage</td> </tr>
+                    <tr><td><strong>7‑in‑1 Soil Analysis</strong></td><td>Continuous monitoring of N, P, K, pH, EC, temperature, moisture</td></tr>
+                    <tr><td><strong>Climate Monitoring</strong></td><td>Air temperature, humidity, environmental trends</td></tr>
+                    <tr><td><strong>Weather Intelligence</strong></td><td>7‑day forecast, rain alerts, temperature/humidity trends</td></tr>
+                    <tr><td><strong>Disease Prediction</strong></td><td>AI‑based early warnings using soil + climate data</td></tr>
+                    <tr><td><strong>AI Pest Spraying</strong></td><td>Crop‑stage‑based spraying recommendations, optimized pesticide usage</td></tr>
                 </tbody>
             </table>
         </div>
 
-       
-        <!-- Applications – one row on large screens -->
+        <!-- Smart Irrigation Control System Table (with three modes) -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">💧 Smart Irrigation Control System</h2>
+            <table>
+                <thead>
+                    <tr><th>Mode</th><th>Operation</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Normal Mode</strong></td><td>Manual ON/OFF control through mobile app</td></tr>
+                    <tr><td><strong>Moisture‑Based Mode</strong></td><td>Automatic irrigation triggered by soil moisture levels</td></tr>
+                    <tr><td><strong>Timer‑Based Mode</strong></td><td>Scheduled irrigation based on predefined timings</td></tr>
+                    <tr><td colspan="2"><strong>Advanced Features:</strong> Automatic motor control, zone‑wise valve control, drip & sprinkler compatibility</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- System Architecture Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">⚙️ System Architecture</h2>
+            <table>
+                <thead>
+                    <tr><th>Layer</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Field Layer</strong></td><td>Soil and climate monitoring, real‑time data collection</td></tr>
+                    <tr><td><strong>Control Layer</strong></td><td>Data processing, decision‑making, automated irrigation & alerts</td></tr>
+                    <tr><td><strong>Cloud Layer</strong></td><td>Data storage, analytics, dashboard visualization</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Smart Dashboard & Alerts Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📱 Smart Dashboard & Alerts</h2>
+            <table>
+                <thead>
+                    <tr><th>Feature</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Real‑time Monitoring</strong></td><td>Live farm data via mobile app & web dashboard</td></tr>
+                    <tr><td><strong>Visual Dashboards</strong></td><td>Graphs, indicators, historical analysis</td></tr>
+                    <tr><td><strong>Alerts & Notifications</strong></td><td>Low soil moisture, disease risk, irrigation status, weather alerts</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Key Benefits & Sustainability Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌱 Key Benefits & Impact</h2>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Benefit</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Crop Yield</strong></td><td>Increase by 15–30% through precision management</td></tr>
+                    <tr><td><strong>Water Savings</strong></td><td>30–50% reduction in irrigation water</td></tr>
+                    <tr><td><strong>Fertilizer Usage</strong></td><td>Optimized NPK application reduces costs</td></tr>
+                    <tr><td><strong>Labor Dependency</strong></td><td>Automated operations reduce manual effort</td></tr>
+                    <tr><td><strong>Crop Loss Prevention</strong></td><td>Early disease detection minimizes losses</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Installation, Maintenance & Scalability Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🛠️ Installation & Scalability</h2>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Details</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Installation Time</strong></td><td>1–2 days per farm</td></tr>
+                    <tr><td><strong>Coverage</strong></td><td>1–10 acres (expandable)</td></tr>
+                    <tr><td><strong>Maintenance</strong></td><td>Periodic sensor calibration, cleaning of probes, software updates</td></tr>
+                    <tr><td><strong>Scalability</strong></td><td>Multi‑location monitoring, crop‑specific customization</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Advanced Add‑ons Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🚀 Advanced Add‑ons</h2>
+            <table>
+                <thead>
+                    <tr><th>Add‑on</th><th>Benefit</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>AI Crop Advisory</strong></td><td>Personalized recommendations for each crop stage</td></tr>
+                    <tr><td><strong>Drone‑based Spraying</strong></td><td>Integrated aerial application</td></tr>
+                    <tr><td><strong>Satellite Data Integration</strong></td><td>Large‑scale field health monitoring</td></tr>
+                    <tr><td><strong>Market Price Intelligence</strong></td><td>Real‑time market trends and best selling windows</td></tr>
+                    <tr><td><strong>Supply Chain Integration</strong></td><td>Cold storage and logistics connectivity</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Applications – six equal‑width cards -->
         <div class="reveal">
-            <div class="section-title"><h2>Applications & Impact</h2></div>
+            <div class="section-title"><h2>📍 Suitable For</h2></div>
             <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam with zero fuel cost.</p></div>
-                <div class="app-card"><i class="fas fa-school"></i><h3>Residential Schools</h3><p>Nutritious meals for hundreds of students daily.</p></div>
-                <div class="app-card"><i class="fas fa-people-arrows"></i><h3>Community Kitchens</h3><p>Reliable, clean energy for mid‑day meal programs.</p></div>
-                <div class="app-card"><i class="fas fa-tree"></i><h3>Rural Areas</h3><p>Off‑grid cooking, reduces drudgery and indoor pollution.</p></div>
-                <div class="app-card"><i class="fas fa-concierge-bell"></i><h3>Catering Services</h3><p>Eco‑friendly bulk cooking, enhanced brand value.</p></div>
+                <div class="app-card"><i class="fas fa-apple-alt"></i><h3>Fruit Orchards</h3><p>Mango, pomegranate, citrus, grapes</p></div>
+                <div class="app-card"><i class="fas fa-carrot"></i><h3>Vegetable Farms</h3><p>Tomato, onion, chili, leafy greens</p></div>
+                <div class="app-card"><i class="fas fa-seedling"></i><h3>Field Crops</h3><p>Cotton, sugarcane, maize, wheat</p></div>
+                <div class="app-card"><i class="fas fa-leaf"></i><h3>High‑Value Crops</h3><p>Spices, medicinal plants, flowers</p></div>
+                <div class="app-card"><i class="fas fa-users"></i><h3>Farmer Groups</h3><p>FPOs, cooperatives</p></div>
+                <div class="app-card"><i class="fas fa-chart-line"></i><h3>Agri‑Startups</h3><p>Precision farming enterprises</p></div>
+            </div>
+        </div>
+
+        <!-- Gallery (placeholder images) -->
+        <div class="reveal">
+            <div class="section-title"><h2>System in Action</h2></div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Field Sensors">
+                    <div class="gallery-caption">Field monitoring unit</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smart Irrigation">
+                    <div class="gallery-caption">Automated drip irrigation</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1590513251874-92e2f69ea5f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dashboard View">
+                    <div class="gallery-caption">Mobile app dashboard</div>
+                </div>
             </div>
         </div>
 
@@ -739,7 +843,7 @@
             <div id="lockContainer" class="lock-card">
                 <div class="lock-icon"><i class="fas fa-lock"></i></div>
                 <h3>Unlock Premium Technical Library</h3>
-                <p>Get detailed engineering drawings, performance data, installation guides, and a custom ROI calculator for the Solar Parabolic Cooker.</p>
+                <p>Get detailed engineering drawings, ROI calculator, case studies, and funding proposal templates for the AgroSense smart farming system.</p>
                 <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
             </div>
 
@@ -751,9 +855,9 @@
                         <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required></div>
                         <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required></div>
                         <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="organization" placeholder="Organization"></div>
-                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your cooking requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="Solar Parabolic Cooker">
+                        <div class="form-group"><input type="text" id="organization" placeholder="Organization / Farm"></div>
+                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your farming requirements..."></textarea></div>
+                        <input type="hidden" id="productName" value="AgroSense Smart Farming">
                         <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-unlock-alt"></i> Unlock Library</button></div>
                     </div>
                     <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No spam.</p>
@@ -765,13 +869,13 @@
                 <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
                     <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
                     <div class="premium-grid">
-                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>Engineering Drawings</h4><p>CAD files, reflector schematics</p><span style="color: var(--primary);">✓ available</span></div>
-                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><p>Custom Excel for LPG savings</p><span style="color: var(--primary);">✓ included</span></div>
-                        <div class="premium-card"><i class="fas fa-video"></i><h4>Installation Videos</h4><p>Step‑by‑step assembly guide</p><span style="color: var(--primary);">✓ watch</span></div>
-                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>Schools, temples, industries</p><span style="color: var(--primary);">✓ read</span></div>
+                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>System Schematics</h4><p>Block diagrams, sensor layout, wiring</p><span style="color: var(--primary);">✓ available</span></div>
+                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><p>Custom Excel – water savings, yield gain</p><span style="color: var(--primary);">✓ included</span></div>
+                        <div class="premium-card"><i class="fas fa-video"></i><h4>Installation Videos</h4><p>Step‑by‑step field setup guide</p><span style="color: var(--primary);">✓ watch</span></div>
+                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>FPOs, large farms – real data</p><span style="color: var(--primary);">✓ read</span></div>
                     </div>
                     <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong>🏆 Success stories:</strong> Rural School, Rajasthan – 150 meals/day, ₹1.2L annual LPG savings. Dairy Cooperative – 80% fuel reduction for pasteurization.</p>
+                        <p><strong>🏆 Success stories:</strong> Pomegranate Growers, Maharashtra – 22% yield increase, 35% water saved. Vegetable FPO, Karnataka – AI pest alerts reduced chemical use by 40%.</p>
                     </div>
                 </div>
             </div>
@@ -779,12 +883,11 @@
     </main>
 
     <div class="footer-light">
-        <p>KVB Green Energies — Solar Thermal Excellence</p>
-        <p style="font-size: 0.8rem;">© 2025 • Engineered for sustainable cooking</p>
+        <p>KVB Green Energies — Smart Agriculture & Climate‑Tech Solutions</p>
+        <p style="font-size: 0.8rem;">© 2025 • AI‑Powered Precision Farming</p>
     </div>
 
     <script>
-        // Load header/footer (silent)
         function loadComponent(id, paths) {
             const tryPath = (index) => {
                 if (index >= paths.length) return;
@@ -795,7 +898,6 @@
         loadComponent("header", ["components/header.html", "../components/header.html"]);
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
-        // EmailJS init
         (function() {
             emailjs.init('dU0o-KrI0m49D4wqR');
             window.emailjsConfig = {
@@ -805,13 +907,12 @@
             };
         })();
 
-        // Premium unlock
         const lockDiv = document.getElementById('lockContainer');
         const formPanel = document.getElementById('unlockFormContainer');
         const hiddenContent = document.getElementById('hiddenPremiumContent');
         const successMsg = document.getElementById('successMessage');
 
-        if (sessionStorage.getItem('premiumUnlocked_cooker') === 'true') {
+        if (sessionStorage.getItem('premiumUnlocked_agrosense') === 'true') {
             lockDiv.style.display = 'none';
             formPanel.style.display = 'none';
             hiddenContent.classList.add('visible');
@@ -846,7 +947,7 @@
             emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.adminTemplate, adminParams)
                 .then(() => emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.autoTemplate, autoParams))
                 .then(() => {
-                    sessionStorage.setItem('premiumUnlocked_cooker', 'true');
+                    sessionStorage.setItem('premiumUnlocked_agrosense', 'true');
                     formPanel.style.display = 'none';
                     hiddenContent.classList.add('visible');
                     successMsg.style.display = 'flex';
@@ -857,7 +958,6 @@
                 .catch(err => { console.error(err); alert('Error sending request. Please try again.'); submitBtn.disabled = false; submitBtn.innerHTML = originalText; });
         });
 
-        // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });

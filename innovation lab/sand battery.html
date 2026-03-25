@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking</title>
+    <title>TES Sand Battery System | KVB Green Energies – Smart Heat Storage Solution</title>
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -165,6 +165,16 @@
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
         }
+        .hero-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
@@ -209,31 +219,14 @@
         .hero-video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 56.25%;
         }
-        .hero-video-wrapper video {
+        .hero-video-wrapper iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border: none;
-        }
-        .hero-video-wrapper .shine {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.15), transparent 60%);
-            transform: rotate(25deg);
-            animation: shineMove 6s infinite linear;
-            pointer-events: none;
-            z-index: 2;
-        }
-        @keyframes shineMove {
-            from { transform: translateX(-50%) rotate(25deg); }
-            to { transform: translateX(50%) rotate(25deg); }
         }
         @media (max-width: 768px) {
             .hero-video-wrapper {
@@ -260,7 +253,6 @@
             padding: 2rem 2.2rem;
             margin: 3rem 0 2rem;
             box-shadow: var(--shadow-md);
-            transition: all 0.2s ease;
         }
         .highlight-tech h2 {
             margin-bottom: 1rem;
@@ -341,7 +333,65 @@
             }
         }
 
-        /* ===== CARDS ===== */
+        /* ===== APPLICATIONS – equal width cards ===== */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .app-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        .app-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .app-card i {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .app-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+        .app-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+        @media (max-width: 1100px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 1rem;
+            }
+            .app-card {
+                padding: 1.5rem 1rem;
+            }
+            .app-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== OTHER CARDS ===== */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -369,42 +419,6 @@
         .card h3 {
             font-size: 1.6rem;
             margin-bottom: 0.8rem;
-        }
-
-        /* ===== APPLICATIONS – one row ===== */
-        .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-        .app-card {
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-        }
-        .app-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary-light);
-            box-shadow: var(--shadow-lg);
-        }
-        .app-card i {
-            font-size: 2.6rem;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-        }
-        .app-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-        }
-        @media (max-width: 1200px) {
-            .applications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            }
         }
 
         /* ===== TABLES ===== */
@@ -610,15 +624,12 @@
     <section class="hero-light">
         <div class="hero-full-width">
             <div class="hero-content">
-                <h1>Solar Parabolic Cooker</h1>
-              
+                <div class="hero-badge"><i class="fas fa-rocket"></i> Coming Soon – Smart Heat Storage Solution</div>
+                <h1>TES Sand Battery System</h1>
+                
             </div>
             <div class="hero-video-wrapper">
-                <div class="shine"></div>
-                <video autoplay muted loop playsinline>
-                    <source src="../videos/parabolic.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe src="https://www.youtube.com/embed/8zGJqL5Qe1k?autoplay=1&mute=1&loop=1&playlist=8zGJqL5Qe1k&controls=0&rel=0&modestbranding=1" title="Sand Battery Thermal Storage" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -627,110 +638,130 @@
         <!-- Highlighted Technology Overview -->
         <div class="reveal highlight-tech">
             <div style="margin-bottom: 0.5rem;">
-                <h2 style="margin-bottom: 0.5rem;">⚡ Parabolic Concentrator Technology</h2>
+                <h2 style="margin-bottom: 0.5rem;">🔥 A Battery for Heat – Available Anytime</h2>
             </div>
-            <p>The <strong>Solar Parabolic Cooker</strong> harnesses the power of a precisely curved parabolic reflector to concentrate sunlight onto a small focal point, instantly generating intense heat (up to 350°C). This concentrated energy is transferred directly to a cooking vessel, enabling boiling, frying, roasting, and steaming without any fuel. The system features a simple manual tracking mechanism to follow the sun, ensuring peak performance throughout the day. Ideal for clean, sustainable cooking in both rural and urban settings.</p>
+            <p>Many industries need continuous heat, but renewable sources like solar are not available at night. The <strong>TES Sand Battery System</strong> solves this by storing excess thermal energy during the day and releasing it whenever needed. Using simple, abundant sand as the storage medium, the system acts as a thermal battery – enabling 24×7 operation, lowering fuel costs, and reducing dependence on fossil fuels.</p>
         </div>
 
-         <!-- 2x2 Feature Matrix -->
+        <!-- 2x2 Feature Matrix (How It Works) -->
         <div class="reveal">
-            <div class="section-title"><h2>Core Capabilities</h2></div>
+            <div class="section-title"><h2>How It Works – Simple & Reliable</h2></div>
             <div class="feature-matrix">
                 <div class="feature-card">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Cooking Performance</h3>
+                    <i class="fas fa-sun"></i>
+                    <h3>Step 1: Heat Generation</h3>
                     <ul class="feature-list">
-                        <li>Boiling, frying, steaming, roasting</li>
-                        <li>Rice: 30–45 min (2‑4 kg batch)</li>
-                        <li>Dal: 40–60 min (3‑5 liters)</li>
-                        <li>Vegetables: 20–30 min (2‑3 kg)</li>
+                        <li>Solar thermal collectors or biomass (agri‑waste) produce heat</li>
+                        <li>Low‑cost, renewable energy sources</li>
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>System Components</h3>
+                    <i class="fas fa-database"></i>
+                    <h3>Step 2: Heat Storage</h3>
                     <ul class="feature-list">
-                        <li>High‑reflectivity parabolic dish</li>
-                        <li>Galvanized steel support frame</li>
-                        <li>Manual single‑axis tracking</li>
-                        <li>Adjustable cooking vessel stand</li>
-                        <li>Safety wind lock mechanism</li>
+                        <li>Generated heat stored in specially designed sand bed</li>
+                        <li>Sand retains heat for hours without significant loss</li>
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safety Features</h3>
+                    <i class="fas fa-bolt"></i>
+                    <h3>Step 3: Energy Storage Mode</h3>
                     <ul class="feature-list">
-                        <li>Sturdy ground‑mounted design</li>
-                        <li>Heat‑resistant receiver & handles</li>
-                        <li>Wind‑resistant locking (up to 120 km/h)</li>
-                        <li>Safe manual tracking without glare</li>
-                        <li>No open flame – zero fire risk</li>
+                        <li>Excess heat is stored instead of wasted</li>
+                        <li>System keeps energy ready for later use</li>
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Key Benefits</h3>
+                    <i class="fas fa-fire"></i>
+                    <h3>Step 4: On‑Demand Heat Release</h3>
                     <ul class="feature-list">
-                        <li>Zero fuel cost – complete LPG elimination</li>
-                        <li>15‑20 year system lifespan</li>
-                        <li>1–2 year payback period</li>
-                        <li>Minimal maintenance (mirror cleaning)</li>
-                        <li>Eligible for government subsidies & carbon credits</li>
+                        <li>Stored heat released instantly when needed</li>
+                        <li>Supplies process heating, drying, steam generation</li>
+                        <li>Enables 24×7 continuous operation</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-
-        <!-- Technical Details Table -->
+        <!-- Technical Specifications Table (Projected) -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Details</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Specifications (Projected)</h2>
             <table>
                 <thead>
                     <tr><th>Parameter</th><th>Specification</th> </thead>
                 <tbody>
-                    <tr><td><strong>Reflector Area</strong></td><td>1.5 m² & 4 m² (Available Options)</td> </tr>
-                    <tr><td><strong>Type</strong></td><td>Parabolic Dish Concentrator</td> </tr>
-                    <tr><td><strong>Reflector Material</strong></td><td>High reflectivity aluminum / mirror finish</td> </tr>
-                    <tr><td><strong>Reflectivity</strong></td><td>≥ 90%</td> </tr>
-                    <tr><td><strong>Structure Material</strong></td><td>Mild Steel with anti‑corrosion coating</td> </tr>
-                    <tr><td><strong>Tracking System</strong></td><td>Manual (Single Axis)</td> </tr>
-                    <tr><td><strong>Concentration Ratio</strong></td><td>60:1 to 120:1</td> </tr>
-                    <tr><td><strong>Focal Length</strong></td><td>~0.8 to 1.5 meters</td> </tr>
-                    <tr><td><strong>Operating Temperature</strong></td><td>150°C to 350°C</td> </tr>
-                    <tr><td><strong>Cooking Capacity</strong></td><td>10–30 persons (based on model)</td> </tr>
-                    <tr><td><strong>Mounting Type</strong></td><td>Ground mounted</td> </tr>
-                    <tr><td><strong>Wind Resistance</strong></td><td>Up to 120 km/h (with locking mechanism)</td> </tr>
+                     <tr><td><strong>System Type</strong></td><td>Thermal Energy Storage (Sand Battery) with Hybrid Heat Input</td> </tr>
+                      <tr><td><strong>Storage Medium</strong></td><td>High‑density silica sand / naturally available sand</td> </tr>
+                      <tr><td><strong>Storage Capacity</strong></td><td>Customizable – 500 kWh to 5 MWh (or higher)</td> </tr>
+                      <tr><td><strong>Heat Input Sources</strong></td><td>Solar thermal, biomass, waste heat recovery</td> </tr>
+                      <tr><td><strong>Output Temperature</strong></td><td>Up to 400°C – 600°C (depending on design)</td> </tr>
+                      <tr><td><strong>Charging Time</strong></td><td>4 – 8 hours (daytime solar / biomass)</td> </tr>
+                      <tr><td><strong>Discharge Duration</strong></td><td>4 – 24 hours (based on demand and storage size)</td> </tr>
+                      <tr><td><strong>Control System</strong></td><td>Automated heat management with smart sensors</td> </tr>
+                      <tr><td><strong>Integration</strong></td><td>Compatible with existing industrial heating lines, dryers, steam systems</td> </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Solar Performance Table -->
+        <!-- Why It’s a Game Changer Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">☀️ Solar Performance</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">💡 Why This is a Game Changer</h2>
             <table>
                 <thead>
-                    <tr><th>Parameter</th><th>Value</th> </thead>
+                    <tr><th>Challenge</th><th>Solution</th> </thead>
                 <tbody>
-                    <tr><td><strong>Thermal Output</strong></td><td>1 kW – 3.5 kW (based on model)</td> </tr>
-                    <tr><td><strong>Solar Efficiency</strong></td><td>50% – 65%</td> </tr>
-                    <tr><td><strong>Daily Cooking Hours</strong></td><td>5–7 hours (clear sky)</td> </tr>
-                    <tr><td><strong>Fuel Savings</strong></td><td>Significant reduction in LPG usage</td> </tr>
+                      <tr><td>High fossil fuel costs & dependency</td><td>Uses free solar energy + low‑cost agri‑waste, storing it for later use</td> </tr>
+                      <tr><td>Intermittent renewable energy (solar not available at night)</td><td>Stored heat ensures 24×7 supply without fossil fuel backup</td> </tr>
+                      <tr><td>Wasted heat during daytime</td><td>Captures and stores excess heat that would otherwise be lost</td> </tr>
+                      <tr><td>Unstable production due to energy gaps</td><td>Continuous heat supply stabilizes processes</td> </tr>
                 </tbody>
             </table>
         </div>
 
-       
-        <!-- Applications – one row on large screens -->
+        <!-- Business Impact Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌱 Business Impact</h2>
+            <table>
+                <thead>
+                    <tr><th>Aspect</th><th>Benefit</th> </thead>
+                <tbody>
+                      <tr><td><strong>Fuel Cost Reduction</strong></td><td>Up to 50–80% reduction in LPG / diesel / natural gas consumption</td> </tr>
+                      <tr><td><strong>Operational Flexibility</strong></td><td>Use stored heat during peak tariff hours or night shifts</td> </tr>
+                      <tr><td><strong>Reliability</strong></td><td>Uninterrupted heat supply regardless of weather or fuel supply delays</td> </tr>
+                      <tr><td><strong>ROI</strong></td><td>Typical payback within 1.5 – 3 years (depending on fuel savings)</td> </tr>
+                      <tr><td><strong>Sustainability</strong></td><td>CO₂ reduction of 50–500 tons/year based on scale</td> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Applications – five cards, one row -->
         <div class="reveal">
-            <div class="section-title"><h2>Applications & Impact</h2></div>
+            <div class="section-title"><h2>📍 Where It Can Be Used</h2></div>
             <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam with zero fuel cost.</p></div>
-                <div class="app-card"><i class="fas fa-school"></i><h3>Residential Schools</h3><p>Nutritious meals for hundreds of students daily.</p></div>
-                <div class="app-card"><i class="fas fa-people-arrows"></i><h3>Community Kitchens</h3><p>Reliable, clean energy for mid‑day meal programs.</p></div>
-                <div class="app-card"><i class="fas fa-tree"></i><h3>Rural Areas</h3><p>Off‑grid cooking, reduces drudgery and indoor pollution.</p></div>
-                <div class="app-card"><i class="fas fa-concierge-bell"></i><h3>Catering Services</h3><p>Eco‑friendly bulk cooking, enhanced brand value.</p></div>
+                <div class="app-card"><i class="fas fa-utensils"></i><h3>Food Processing</h3><p>Continuous drying, cooking, steam generation</p></div>
+                <div class="app-card"><i class="fas fa-tshirt"></i><h3>Textile & Dyeing</h3><p>Process heating, thermic fluid systems</p></div>
+                <div class="app-card"><i class="fas fa-industry"></i><h3>Chemical Industry</h3><p>Reactor heating, distillation</p></div>
+                <div class="app-card"><i class="fas fa-cow"></i><h3>Dairy</h3><p>Pasteurization, CIP cleaning</p></div>
+                <div class="app-card"><i class="fas fa-solar-panel"></i><h3>Solar Drying Systems</h3><p>Night operation for continuous drying</p></div>
+            </div>
+        </div>
+
+        <!-- Gallery (placeholder images) -->
+        <div class="reveal">
+            <div class="section-title"><h2>System in Action (Concept)</h2></div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sand Battery Storage">
+                    <div class="gallery-caption">Insulated sand storage tank</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542051841854-5f90055e5b0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Heat Exchanger">
+                    <div class="gallery-caption">Heat exchange system</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Control Panel">
+                    <div class="gallery-caption">Smart energy management</div>
+                </div>
             </div>
         </div>
 
@@ -738,40 +769,40 @@
         <div class="premium-wrapper reveal">
             <div id="lockContainer" class="lock-card">
                 <div class="lock-icon"><i class="fas fa-lock"></i></div>
-                <h3>Unlock Premium Technical Library</h3>
-                <p>Get detailed engineering drawings, performance data, installation guides, and a custom ROI calculator for the Solar Parabolic Cooker.</p>
-                <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
+                <h3>Be First to Know – Early Access</h3>
+                <p>Get detailed technical specifications, industrial case study, and early‑bird pricing for the TES Sand Battery System.</p>
+                <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Request Information →</span>
             </div>
 
             <div id="unlockFormContainer" class="form-container">
-                <h3>Access Premium Content</h3>
-                <p>Enter your details – we’ll send the link instantly.</p>
+                <h3>Get Full Details</h3>
+                <p>Enter your details – we’ll share the complete product brochure and arrange a consultation.</p>
                 <form id="premiumForm">
                     <div class="form-grid">
                         <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required></div>
                         <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required></div>
                         <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="organization" placeholder="Organization"></div>
-                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your cooking requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="Solar Parabolic Cooker">
-                        <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-unlock-alt"></i> Unlock Library</button></div>
+                        <div class="form-group"><input type="text" id="organization" placeholder="Organization / Industry"></div>
+                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your heat requirements..."></textarea></div>
+                        <input type="hidden" id="productName" value="TES Sand Battery System">
+                        <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-envelope"></i> Request Early Access</button></div>
                     </div>
                     <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No spam.</p>
                 </form>
             </div>
 
             <div id="hiddenPremiumContent" class="hidden-content">
-                <div id="successMessage" class="success-banner" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources are ready.</div>
+                <div id="successMessage" class="success-banner" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Thank you!</strong> We’ll send you the detailed product brochure soon.</div>
                 <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
-                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
+                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> What You’ll Receive</h3>
                     <div class="premium-grid">
-                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>Engineering Drawings</h4><p>CAD files, reflector schematics</p><span style="color: var(--primary);">✓ available</span></div>
-                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><p>Custom Excel for LPG savings</p><span style="color: var(--primary);">✓ included</span></div>
-                        <div class="premium-card"><i class="fas fa-video"></i><h4>Installation Videos</h4><p>Step‑by‑step assembly guide</p><span style="color: var(--primary);">✓ watch</span></div>
-                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>Schools, temples, industries</p><span style="color: var(--primary);">✓ read</span></div>
+                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>Product Brochure</h4><p>Technical specs, sizing, integration details</p><span style="color: var(--primary);">✓ PDF</span></div>
+                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>Fuel Savings Calculator</h4><p>Estimate your cost reduction potential</p><span style="color: var(--primary);">✓ Excel tool</span></div>
+                        <div class="premium-card"><i class="fas fa-video"></i><h4>Demo Video</h4><p>See the system in action</p><span style="color: var(--primary);">✓ link</span></div>
+                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Industrial Case Study</h4><p>Real‑world savings and performance</p><span style="color: var(--primary);">✓ coming soon</span></div>
                     </div>
                     <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong>🏆 Success stories:</strong> Rural School, Rajasthan – 150 meals/day, ₹1.2L annual LPG savings. Dairy Cooperative – 80% fuel reduction for pasteurization.</p>
+                        <p><strong>🔔 Early Access Offer:</strong> First 10 inquiries receive a complimentary energy audit for their facility.</p>
                     </div>
                 </div>
             </div>
@@ -779,12 +810,11 @@
     </main>
 
     <div class="footer-light">
-        <p>KVB Green Energies — Solar Thermal Excellence</p>
-        <p style="font-size: 0.8rem;">© 2025 • Engineered for sustainable cooking</p>
+        <p>KVB Green Energies — Smart Industrial Solutions</p>
+        <p style="font-size: 0.8rem;">© 2025 • Thermal Energy Storage | Coming Soon</p>
     </div>
 
     <script>
-        // Load header/footer (silent)
         function loadComponent(id, paths) {
             const tryPath = (index) => {
                 if (index >= paths.length) return;
@@ -795,7 +825,6 @@
         loadComponent("header", ["components/header.html", "../components/header.html"]);
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
-        // EmailJS init
         (function() {
             emailjs.init('dU0o-KrI0m49D4wqR');
             window.emailjsConfig = {
@@ -805,13 +834,12 @@
             };
         })();
 
-        // Premium unlock
         const lockDiv = document.getElementById('lockContainer');
         const formPanel = document.getElementById('unlockFormContainer');
         const hiddenContent = document.getElementById('hiddenPremiumContent');
         const successMsg = document.getElementById('successMessage');
 
-        if (sessionStorage.getItem('premiumUnlocked_cooker') === 'true') {
+        if (sessionStorage.getItem('premiumUnlocked_sandbattery') === 'true') {
             lockDiv.style.display = 'none';
             formPanel.style.display = 'none';
             hiddenContent.classList.add('visible');
@@ -846,7 +874,7 @@
             emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.adminTemplate, adminParams)
                 .then(() => emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.autoTemplate, autoParams))
                 .then(() => {
-                    sessionStorage.setItem('premiumUnlocked_cooker', 'true');
+                    sessionStorage.setItem('premiumUnlocked_sandbattery', 'true');
                     formPanel.style.display = 'none';
                     hiddenContent.classList.add('visible');
                     successMsg.style.display = 'flex';
@@ -857,7 +885,6 @@
                 .catch(err => { console.error(err); alert('Error sending request. Please try again.'); submitBtn.disabled = false; submitBtn.innerHTML = originalText; });
         });
 
-        // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });

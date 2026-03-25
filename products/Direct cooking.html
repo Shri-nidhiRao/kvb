@@ -67,6 +67,7 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 1.2rem;
+            text-align: center;
         }
 
         h2 {
@@ -139,51 +140,32 @@
             border-bottom: 1px solid var(--border-light);
         }
 
-        /* ----- HERO – Clean Light Mode ----- */
+        /* ----- HERO – Wider, Centered Video ----- */
         .hero-light {
             position: relative;
             min-height: 85vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
             padding: 100px 0 60px;
+            text-align: center;
         }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 0.7fr 1.6fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .hero-left {
-            animation: fadeUp 0.8s ease-out;
-        }
-        .hero-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2rem;
-        }
-        .tag {
-            background: white;
-            border: 1px solid var(--border-light);
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
-        }
-        .tag i { color: var(--primary); }
-        .tag:hover {
-            transform: translateY(-2px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
-        }
-        .hero-right {
+        /* Allow hero container to be wider for the video, but keep text content readable */
+        .hero-light .container {
+            max-width: none;
             width: 100%;
+            padding: 0 20px;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .hero-video-wrapper {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -191,21 +173,112 @@
             box-shadow: var(--shadow-lg);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .hero-right:hover {
+        .hero-video-wrapper:hover {
             transform: translateY(-5px);
             box-shadow: 0 30px 50px rgba(0,0,0,0.1);
         }
-        .hero-right::before {
+        .hero-video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 75%;
+            padding-top: 56.25%;
         }
-        .hero-right iframe {
+        .hero-video-wrapper iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: none;
+        }
+
+        /* ----- HIGHLIGHT OVERVIEW (Scheffler Technology) ----- */
+        .highlight-overview {
+            background: linear-gradient(120deg, #FFFFFF 0%, #F5FBF5 100%);
+            border-left: 6px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 2rem 2.2rem;
+            margin: 3rem 0 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s ease;
+        }
+        .highlight-overview h2 {
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: none;
+            font-size: 2rem;
+        }
+        .highlight-overview h2:after {
+            display: none;
+        }
+        .highlight-overview p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 95%;
+            color: var(--text-primary);
+        }
+        .highlight-overview strong {
+            color: var(--primary-dark);
+        }
+
+        /* ----- 2x2 Feature Matrix (Cooking Performance, System Components, Safety, Benefits) ----- */
+        .feature-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .feature-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+        .feature-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.4rem;
+            position: relative;
+            font-size: 0.98rem;
+            line-height: 1.45;
+            color: var(--text-secondary);
+        }
+        .feature-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        /* responsive matrix */
+        @media (max-width: 768px) {
+            .feature-matrix {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
 
         /* ----- SCROLL REVEAL ----- */
@@ -219,12 +292,15 @@
             transform: translateY(0);
         }
 
-        /* ----- CARDS – Clean White ----- */
+        /* ----- CARDS – generic (for applications) ----- */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 4rem 0;
+        }
+        /* Default: five cards in one row on large screens */
+        .applications-grid {
+            grid-template-columns: repeat(5, 1fr);
         }
         .card {
             background: white;
@@ -247,6 +323,12 @@
         .card h3 {
             font-size: 1.6rem;
             margin-bottom: 0.8rem;
+        }
+        /* Responsive: wrap cards on smaller screens */
+        @media (max-width: 1100px) {
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
         }
 
         /* ----- TABLES – Soft Light ----- */
@@ -276,38 +358,7 @@
             border-bottom: none;
         }
 
-        /* ----- PERFORMANCE GRID ----- */
-        .perf-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .perf-card {
-            background: var(--bg-soft);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid var(--border-light);
-            transition: all 0.2s;
-        }
-        .perf-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-        .perf-card .value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            font-family: var(--font-heading);
-        }
-        .perf-card .label {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-            margin-top: 0.5rem;
-        }
-
-        /* ----- PREMIUM UNLOCK – Light Mode ----- */
+        /* premium unlock */
         .premium-wrapper {
             margin: 5rem auto;
             max-width: 900px;
@@ -417,78 +468,107 @@
             color: var(--primary);
             margin-bottom: 0.8rem;
         }
-
         .footer-light {
             background: var(--bg-soft);
             border-top: 1px solid var(--border-light);
             padding: 2rem;
             text-align: center;
         }
-
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @media (max-width: 992px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
             .form-grid { grid-template-columns: 1fr; }
             .form-group.full { grid-column: span 1; }
-            .perf-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
-            .perf-grid { grid-template-columns: 1fr; }
+            .highlight-overview p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <!-- Hero Section – Light Mode -->
+    <!-- Hero Section – Wider, Centered YouTube Video -->
     <section class="hero-light">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-left">
-                    <h1>Direct Cooking System</h1>
-                    
-                </div>
-                <div class="hero-right">
-                    <iframe src="https://www.youtube.com/embed/wCM_D2bMMRY?autoplay=1&mute=1&loop=1&playlist=wCM_D2bMMRY&controls=0&rel=0&modestbranding=1" title="Solar Scheffler Dish Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
+            <div class="hero-content">
+                <h1>Direct Cooking System</h1>
+            </div>
+            <div class="hero-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/wCM_D2bMMRY?autoplay=1&mute=1&loop=1&playlist=wCM_D2bMMRY&controls=0&rel=0&modestbranding=1" title="Solar Scheffler Dish Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
     <main class="container">
-        <!-- Overview & Scheffler Advantage -->
-        <div class="reveal" style="margin: 4rem 0 2rem;">
-            <div class="section-title"><h2>Scheffler Fixed‑Focus Technology</h2></div>
-            <p style="max-width: 850px; margin: 0 auto; text-align: center;">The 16 m² Solar Scheffler Dish uses a patented lateral‑moving parabolic geometry to reflect sunlight onto a <strong>stationary receiver located inside the kitchen</strong>. Unlike conventional cookers, the cooking position is fixed, safe, and indoor. The dish automatically tracks the sun while the focal point remains static — enabling continuous, high‑temperature cooking without operator exposure to concentrated rays.</p>
+        <!-- HIGHLIGHTED Overview: Scheffler Fixed‑Focus Technology -->
+        <div class="reveal highlight-overview">
+            <div class="section-title" style="text-align: left; margin-bottom: 0.5rem;">
+                <h1 style="margin-bottom: 0.5rem;">⚡ Scheffler Fixed‑Focus Technology</h1>
+            </div>
+            <p>The <strong>16 m² Solar Scheffler Dish</strong> uses a patented lateral‑moving parabolic geometry to reflect sunlight onto a <strong>stationary receiver located inside the kitchen</strong>. Unlike conventional cookers, the cooking position is fixed, safe, and indoor. The dish automatically tracks the sun while the focal point remains static — enabling continuous, high‑temperature cooking without operator exposure to concentrated rays.</p>
         </div>
 
-        <!-- Key Performance Stats -->
-        <div class="reveal perf-grid">
-            <div class="perf-card"><div class="value">450°C</div><div class="label">Max Operating Temperature</div></div>
-            <div class="perf-card"><div class="value">8–10 kW</div><div class="label">Peak Thermal Output</div></div>
-            <div class="perf-card"><div class="value">80–100</div><div class="label">Persons per Batch</div></div>
-            <div class="perf-card"><div class="value">20–25 yr</div><div class="label">System Lifespan</div></div>
-        </div>
-
-        <!-- Key Features Cards -->
-        <div class="cards-grid reveal">
-            <div class="card"><i class="fas fa-utensils"></i><h3>Cooking Performance</h3><p>Rice: 15–20 kg in 40–60 min | Dal: 20–25 L in 45–60 min | Vegetables: 25–30 kg in 30–45 min | Frying & Chapati supported.</p></div>
-            <div class="card"><i class="fas fa-cogs"></i><h3>System Components</h3><p>16 m² Scheffler reflector, tracking mechanism, fixed receiver unit, HDG steel structure, seasonal tilt adjustment, wind stow system.</p></div>
-            <div class="card"><i class="fas fa-shield-alt"></i><h3>Safety Features</h3><p>Fixed focal point eliminates glare exposure, wind stow mechanism (140 km/h), controlled heat delivery, no open flame indoors.</p></div>
-            <div class="card"><i class="fas fa-chart-line"></i><h3>Key Benefits</h3><p>Eliminates LPG/firewood, 10–12 tons CO₂ saved/year, 2–4 year payback, 20–25 year service life, carbon credit eligible.</p></div>
+        <!-- 2x2 FEATURE MATRIX (Cooking Performance, System Components, Safety Features, Key Benefits) -->
+        <div class="reveal">
+            <div class="section-title"><h2>Core Capabilities</h2></div>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Cooking Performance</h3>
+                    <ul class="feature-list">
+                        <li>Rice: 15–20 kg in 40–60 min</li>
+                        <li>Dal: 20–25 L in 45–60 min</li>
+                        <li>Vegetables: 25–30 kg in 30–45 min</li>
+                        <li>Frying &amp; Chapati supported</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>System Components</h3>
+                    <ul class="feature-list">
+                        <li>16 m² Scheffler reflector</li>
+                        <li>Precision tracking mechanism</li>
+                        <li>Fixed receiver unit (indoor cooking)</li>
+                        <li>HDG steel structure</li>
+                        <li>Seasonal tilt adjustment</li>
+                        <li>Wind stow system (140 km/h)</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety Features</h3>
+                    <ul class="feature-list">
+                        <li>Fixed focal point eliminates glare exposure</li>
+                        <li>Wind stow mechanism (140 km/h)</li>
+                        <li>Controlled heat delivery indoors</li>
+                        <li>No open flame – zero fire risk</li>
+                        <li>Automatic solar tracking with manual override</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Key Benefits</h3>
+                    <ul class="feature-list">
+                        <li>Eliminates LPG / firewood dependency</li>
+                        <li>10–12 tons CO₂ saved / year</li>
+                        <li>2–4 year payback period</li>
+                        <li>20–25 year system service life</li>
+                        <li>Eligible for carbon credits</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- Technical Details Table -->
         <div class="reveal soft-table">
             <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Specifications</h2>
-            <table>
+            <table class="tech-table">
                 <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
                 <tbody>
                     <tr><td><strong>Reflector Area</strong></td><td>16 Square Meters</td></tr>
@@ -510,7 +590,7 @@
         <!-- Solar Thermal Performance Table -->
         <div class="reveal soft-table">
             <h2 style="margin-left: 1.5rem; margin-top: 1rem;">☀️ Solar Thermal Performance</h2>
-            <table>
+            <table class="tech-table">
                 <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
                 <tbody>
                     <tr><td><strong>Peak Thermal Output</strong></td><td>8 kW – 10 kW</td></tr>
@@ -522,14 +602,14 @@
             </table>
         </div>
 
-        <!-- Applications -->
+        <!-- Applications – now all in one row on large screens -->
         <div class="reveal">
             <div class="section-title"><h2>Deployed Across High‑Demand Kitchens</h2></div>
-            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr));">
+            <div class="cards-grid applications-grid">
                 <div class="card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Langar & prasad for 500–1000+ devotees daily, zero fuel cost.</p></div>
                 <div class="card"><i class="fas fa-school"></i><h3>Residential Schools & Hostels</h3><p>Mid‑day meal programs with consistent thermal output.</p></div>
                 <div class="card"><i class="fas fa-utensils"></i><h3>Industrial Canteens</h3><p>Staff meals, significant operational savings.</p></div>
-                <div class="card"><i class="fas fa-shield-hooded"></i><h3>Defense Kitchens</h3><p>Army, Police, Paramilitary — reliable off‑grid capability.</p></div>
+                <div class="card"><i class="fas fa-shield"></i><h3>Defense Kitchens</h3><p>Army, Police, Paramilitary — reliable off‑grid capability.</p></div>
                 <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Community Kitchens</h3><p>Large‑scale meal programs, carbon credit opportunities.</p></div>
             </div>
         </div>
@@ -537,7 +617,7 @@
         <!-- Installation & Maintenance -->
         <div class="reveal soft-table">
             <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🛠️ Installation & Maintenance</h2>
-            <table>
+            <table class="tech-table">
                 <thead><tr><th>Requirement</th><th>Details</th></tr></thead>
                 <tbody>
                     <tr><td><strong>Installation Requirements</strong></td><td>RCC foundation, 3–5 days installation, unobstructed south-facing location</td></tr>
@@ -610,7 +690,7 @@
     </div>
 
     <script>
-        // Load header/footer (silent fallback)
+        // Load header placeholder (silent fallback)
         function loadComponent(id, paths) {
             const tryPath = (index) => {
                 if (index >= paths.length) return;
@@ -619,7 +699,6 @@
             tryPath(0);
         }
         loadComponent("header", ["components/header.html", "../components/header.html"]);
-        loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
         // EmailJS init
         (function() {
