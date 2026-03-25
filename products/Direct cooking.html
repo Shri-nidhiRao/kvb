@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking</title>
+    <title>16m² Solar Scheffler Dish | KVB Green Energies – Institutional Direct Cooking</title>
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,6 +37,7 @@
             --primary-dark: #2C5E2C;
             --primary-light: #EAF5EA;
             --primary-glow: rgba(59, 122, 59, 0.08);
+            --accent-gold: #D4A017;
             --shadow-sm: 0 2px 8px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
             --shadow-md: 0 8px 20px rgba(0,0,0,0.04);
             --shadow-lg: 0 16px 32px rgba(0,0,0,0.06);
@@ -197,33 +198,14 @@
         .hero-right::before {
             content: "";
             display: block;
-            padding-top: 75%; /* 4:3 ratio, adjust as needed */
+            padding-top: 75%;
         }
-        /* Video element to fill the container */
-        .hero-right video {
+        .hero-right iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border: none;
-        }
-        /* Shine effect overlay (optional) */
-        .hero-right .shine {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.15), transparent 60%);
-            transform: rotate(25deg);
-            animation: shineMove 6s infinite linear;
-            pointer-events: none;
-            z-index: 2;
-        }
-        @keyframes shineMove {
-            from { transform: translateX(-50%) rotate(25deg); }
-            to { transform: translateX(50%) rotate(25deg); }
         }
 
         /* ----- SCROLL REVEAL ----- */
@@ -294,39 +276,35 @@
             border-bottom: none;
         }
 
-        /* ----- GALLERY (optional) ----- */
-        .gallery-grid {
+        /* ----- PERFORMANCE GRID ----- */
+        .perf-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        .gallery-item {
+        .perf-card {
+            background: var(--bg-soft);
             border-radius: var(--radius-md);
-            overflow: hidden;
-            height: 260px;
-            position: relative;
+            padding: 1.5rem;
+            text-align: center;
             border: 1px solid var(--border-light);
-            transition: transform 0.4s;
+            transition: all 0.2s;
         }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s;
+        .perf-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
         }
-        .gallery-item:hover img {
-            transform: scale(1.03);
+        .perf-card .value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: var(--font-heading);
         }
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-            color: white;
-            padding: 1rem;
-            font-weight: 500;
+        .perf-card .label {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            margin-top: 0.5rem;
         }
 
         /* ----- PREMIUM UNLOCK – Light Mode ----- */
@@ -456,142 +434,170 @@
             .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
             .form-grid { grid-template-columns: 1fr; }
             .form-group.full { grid-column: span 1; }
+            .perf-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
+            .perf-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <!-- Hero Section – Light Mode with Local Video -->
+    <!-- Hero Section – Light Mode -->
     <section class="hero-light">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-left">
-                    <h1>Solar Parabolic Cooker</h1>
-                    <p>High‑efficiency solar cooking for homes, communities, and institutions. Zero fuel cost, zero emissions, and a payback period of just 1–2 years. Cook rice, dal, vegetables, and more using pure concentrated sunlight.</p>
+                    <h1>Direct Cooking System</h1>
                     
                 </div>
                 <div class="hero-right">
-                    <div class="shine"></div>
-                    <video autoplay muted loop playsinline>
-                        <source src="../videos/parabolic.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <iframe src="https://www.youtube.com/embed/wCM_D2bMMRY?autoplay=1&mute=1&loop=1&playlist=wCM_D2bMMRY&controls=0&rel=0&modestbranding=1" title="Solar Scheffler Dish Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <main class="container">
-        <!-- Overview -->
+        <!-- Overview & Scheffler Advantage -->
         <div class="reveal" style="margin: 4rem 0 2rem;">
-            <div class="section-title"><h2>General Description</h2></div>
-            <p style="max-width: 850px; margin: 0 auto; text-align: center;">The Solar Parabolic Cooker uses parabolic reflection technology to concentrate solar energy at a focal point, generating high temperatures for cooking. Available in <strong>1.5 m²</strong> (small kitchens) and <strong>4 m²</strong> (temples, hostels, canteens) models. It eliminates conventional fuel dependency while delivering exceptional thermal performance.</p>
+            <div class="section-title"><h2>Scheffler Fixed‑Focus Technology</h2></div>
+            <p style="max-width: 850px; margin: 0 auto; text-align: center;">The 16 m² Solar Scheffler Dish uses a patented lateral‑moving parabolic geometry to reflect sunlight onto a <strong>stationary receiver located inside the kitchen</strong>. Unlike conventional cookers, the cooking position is fixed, safe, and indoor. The dish automatically tracks the sun while the focal point remains static — enabling continuous, high‑temperature cooking without operator exposure to concentrated rays.</p>
+        </div>
+
+        <!-- Key Performance Stats -->
+        <div class="reveal perf-grid">
+            <div class="perf-card"><div class="value">450°C</div><div class="label">Max Operating Temperature</div></div>
+            <div class="perf-card"><div class="value">8–10 kW</div><div class="label">Peak Thermal Output</div></div>
+            <div class="perf-card"><div class="value">80–100</div><div class="label">Persons per Batch</div></div>
+            <div class="perf-card"><div class="value">20–25 yr</div><div class="label">System Lifespan</div></div>
         </div>
 
         <!-- Key Features Cards -->
         <div class="cards-grid reveal">
-            <div class="card"><i class="fas fa-utensils"></i><h3>Cooking Performance</h3><p>Boiling, frying, steaming, roasting. Rice: 30–45 min, Dal: 40–60 min, Vegetables: 20–30 min.</p></div>
-            <div class="card"><i class="fas fa-cogs"></i><h3>System Components</h3><p>Parabolic dish, support structure, manual tracking, cooking vessel stand, safety lock, optional high‑temp vessel.</p></div>
-            <div class="card"><i class="fas fa-shield-alt"></i><h3>Safety Features</h3><p>Wind locking, stable design, heat‑resistant receiver, safe manual operation.</p></div>
-            <div class="card"><i class="fas fa-chart-line"></i><h3>Key Benefits</h3><p>Zero fuel cost, 15‑20 year lifespan, minimal maintenance, significant LPG savings.</p></div>
+            <div class="card"><i class="fas fa-utensils"></i><h3>Cooking Performance</h3><p>Rice: 15–20 kg in 40–60 min | Dal: 20–25 L in 45–60 min | Vegetables: 25–30 kg in 30–45 min | Frying & Chapati supported.</p></div>
+            <div class="card"><i class="fas fa-cogs"></i><h3>System Components</h3><p>16 m² Scheffler reflector, tracking mechanism, fixed receiver unit, HDG steel structure, seasonal tilt adjustment, wind stow system.</p></div>
+            <div class="card"><i class="fas fa-shield-alt"></i><h3>Safety Features</h3><p>Fixed focal point eliminates glare exposure, wind stow mechanism (140 km/h), controlled heat delivery, no open flame indoors.</p></div>
+            <div class="card"><i class="fas fa-chart-line"></i><h3>Key Benefits</h3><p>Eliminates LPG/firewood, 10–12 tons CO₂ saved/year, 2–4 year payback, 20–25 year service life, carbon credit eligible.</p></div>
         </div>
 
         <!-- Technical Details Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Details</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Specifications</h2>
             <table>
-                <thead>
-                    <tr><th>Parameter</th><th>Specification</th></tr>
-                </thead>
+                <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Reflector Area</strong></td><td>1.5 m² & 4 m² (Available Options)</td></tr>
-                    <tr><td><strong>Type</strong></td><td>Parabolic Dish Concentrator</td></tr>
-                    <tr><td><strong>Reflector Material</strong></td><td>High reflectivity aluminum / mirror finish</td></tr>
+                    <tr><td><strong>Reflector Area</strong></td><td>16 Square Meters</td></tr>
+                    <tr><td><strong>System Type</strong></td><td>Scheffler Fixed Focus Parabolic Dish</td></tr>
+                    <tr><td><strong>Reflector Material</strong></td><td>High Reflectivity Glass Mirrors / Anodized Aluminum</td></tr>
                     <tr><td><strong>Reflectivity</strong></td><td>≥ 90%</td></tr>
-                    <tr><td><strong>Structure Material</strong></td><td>Mild Steel with anti‑corrosion coating</td></tr>
-                    <tr><td><strong>Tracking System</strong></td><td>Manual (Single Axis)</td></tr>
-                    <tr><td><strong>Concentration Ratio</strong></td><td>60:1 to 120:1</td></tr>
-                    <tr><td><strong>Focal Length</strong></td><td>~0.8 to 1.5 meters</td></tr>
-                    <tr><td><strong>Operating Temperature</strong></td><td>150°C to 350°C</td></tr>
-                    <tr><td><strong>Cooking Capacity</strong></td><td>10–30 persons (based on model)</td></tr>
-                    <tr><td><strong>Mounting Type</strong></td><td>Ground mounted</td></tr>
-                    <tr><td><strong>Wind Resistance</strong></td><td>Up to 120 km/h (with locking mechanism)</td></tr>
+                    <tr><td><strong>Structure Material</strong></td><td>Mild Steel (Hot Dip Galvanized / Anti-corrosion Coated)</td></tr>
+                    <tr><td><strong>Tracking System</strong></td><td>Manual / Semi-Automatic (Single Axis with Seasonal Adjustment)</td></tr>
+                    <tr><td><strong>Focal Length</strong></td><td>~2.5 to 3.0 meters</td></tr>
+                    <tr><td><strong>Concentration Ratio</strong></td><td>100:1 to 150:1</td></tr>
+                    <tr><td><strong>Operating Temperature</strong></td><td>350°C to 450°C</td></tr>
+                    <tr><td><strong>Mounting Type</strong></td><td>Ground Mounted with RCC Foundation</td></tr>
+                    <tr><td><strong>Wind Resistance</strong></td><td>Up to 140 km/h (with stow mechanism)</td></tr>
+                    <tr><td><strong>System Life</strong></td><td>20–25 years</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Solar Performance Table -->
+        <!-- Solar Thermal Performance Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">☀️ Solar Performance</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">☀️ Solar Thermal Performance</h2>
             <table>
-                <thead>
-                    <tr><th>Parameter</th><th>Value</th></tr>
-                </thead>
+                <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Thermal Output</strong></td><td>1 kW – 3.5 kW (based on model)</td></tr>
-                    <tr><td><strong>Solar Efficiency</strong></td><td>50% – 65%</td></tr>
-                    <tr><td><strong>Daily Cooking Hours</strong></td><td>5–7 hours (clear sky)</td></tr>
-                    <tr><td><strong>Fuel Savings</strong></td><td>Significant reduction in LPG usage</td></tr>
+                    <tr><td><strong>Peak Thermal Output</strong></td><td>8 kW – 10 kW</td></tr>
+                    <tr><td><strong>System Efficiency</strong></td><td>55% – 70%</td></tr>
+                    <tr><td><strong>Effective Cooking Duration</strong></td><td>5–7 hours/day (clear sky conditions)</td></tr>
+                    <tr><td><strong>Fuel Savings</strong></td><td>Equivalent to ~3–4 kg LPG/day</td></tr>
+                    <tr><td><strong>Annual CO₂ Reduction</strong></td><td>10–12 tons</td></tr>
                 </tbody>
             </table>
         </div>
 
         <!-- Applications -->
         <div class="reveal">
-            <div class="section-title"><h2>Applications & Impact</h2></div>
+            <div class="section-title"><h2>Deployed Across High‑Demand Kitchens</h2></div>
             <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr));">
-                <div class="card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam cooking with zero fuel cost.</p></div>
-                <div class="card"><i class="fas fa-school"></i><h3>Residential Schools</h3><p>Nutritious meals for hundreds of students daily.</p></div>
-                <div class="card"><i class="fas fa-people-arrows"></i><h3>Community Kitchens</h3><p>Reliable, clean energy for mid‑day meal programs.</p></div>
-                <div class="card"><i class="fas fa-tree"></i><h3>Rural Areas</h3><p>Off‑grid cooking, reduces drudgery and indoor pollution.</p></div>
-                <div class="card"><i class="fas fa-concierge-bell"></i><h3>Catering Services</h3><p>Eco‑friendly bulk cooking, enhanced brand value.</p></div>
+                <div class="card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Langar & prasad for 500–1000+ devotees daily, zero fuel cost.</p></div>
+                <div class="card"><i class="fas fa-school"></i><h3>Residential Schools & Hostels</h3><p>Mid‑day meal programs with consistent thermal output.</p></div>
+                <div class="card"><i class="fas fa-utensils"></i><h3>Industrial Canteens</h3><p>Staff meals, significant operational savings.</p></div>
+                <div class="card"><i class="fas fa-shield-hooded"></i><h3>Defense Kitchens</h3><p>Army, Police, Paramilitary — reliable off‑grid capability.</p></div>
+                <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Community Kitchens</h3><p>Large‑scale meal programs, carbon credit opportunities.</p></div>
             </div>
+        </div>
+
+        <!-- Installation & Maintenance -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🛠️ Installation & Maintenance</h2>
+            <table>
+                <thead><tr><th>Requirement</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Installation Requirements</strong></td><td>RCC foundation, 3–5 days installation, unobstructed south-facing location</td></tr>
+                    <tr><td><strong>Maintenance Practices</strong></td><td>Routine mirror cleaning, lubrication of tracking joints, periodic alignment inspection</td></tr>
+                    <tr><td><strong>Accessories Included</strong></td><td>Fixed receiver unit, cooking stand, safety lock, seasonal tilt mechanism</td></tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Premium Unlock -->
         <div class="premium-wrapper reveal">
             <div id="lockContainer" class="lock-card">
-                <div class="lock-icon"><i class="fas fa-lock"></i></div>
-                <h3>Unlock Premium Technical Library</h3>
-                <p>Get detailed engineering drawings, performance data, installation guides, and a custom ROI calculator for the Solar Parabolic Cooker.</p>
-                <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
+                <div class="lock-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Scheffler Technical Library</h3>
+                <p>Access engineering drawings, performance curves, installation manuals, ROI calculator, and verified case studies from temples, schools, and defense kitchens.</p>
+                <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock Premium Resources →</span>
             </div>
 
             <div id="unlockFormContainer" class="form-container">
-                <h3>Access Premium Content</h3>
-                <p>Enter your details – we’ll send the link instantly.</p>
+                <h3>Get Complete Technical Documentation</h3>
+                <p>Enter your details — instant access to the full Scheffler library.</p>
                 <form id="premiumForm">
                     <div class="form-grid">
                         <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required></div>
                         <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required></div>
                         <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="organization" placeholder="Organization"></div>
-                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your cooking requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="Solar Parabolic Cooker">
-                        <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-unlock-alt"></i> Unlock Library</button></div>
+                        <div class="form-group"><input type="text" id="organization" placeholder="Institution / Organization"></div>
+                        <div class="form-group full">
+                            <select id="appType">
+                                <option value="">Primary Application</option>
+                                <option>Temple / Ashram</option>
+                                <option>Residential School / Hostel</option>
+                                <option>Industrial Canteen</option>
+                                <option>Defense Kitchen</option>
+                                <option>Community Kitchen / NGO</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your cooking load, location, or specific requirements..."></textarea></div>
+                        <input type="hidden" id="productName" value="16m² Solar Scheffler Dish">
+                        <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-unlock-alt"></i> Unlock Scheffler Library</button></div>
                     </div>
-                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No spam.</p>
+                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">Your information is private. We'll send resources instantly.</p>
                 </form>
             </div>
 
             <div id="hiddenPremiumContent" class="hidden-content">
-                <div id="successMessage" class="success-banner" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources are ready.</div>
+                <div id="successMessage" class="success-banner" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your Scheffler technical library is ready.</div>
                 <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
-                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
+                    <h3><i class="fas fa-solar-panel" style="color: var(--primary);"></i> 16m² Scheffler Dish – Premium Resources</h3>
                     <div class="premium-grid">
-                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>Engineering Drawings</h4><p>CAD files, reflector schematics</p><span style="color: var(--primary);">✓ available</span></div>
-                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><p>Custom Excel for LPG savings</p><span style="color: var(--primary);">✓ included</span></div>
-                        <div class="premium-card"><i class="fas fa-video"></i><h4>Installation Videos</h4><p>Step‑by‑step assembly guide</p><span style="color: var(--primary);">✓ watch</span></div>
-                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>Schools, temples, industries</p><span style="color: var(--primary);">✓ read</span></div>
+                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>Engineering Drawings</h4><p>CAD files, reflector schematics, foundation layout</p><span style="color: var(--primary); font-size:0.8rem;">✓ Download</span></div>
+                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>Performance Data Sheets</h4><p>Temperature curves, regional efficiency reports</p><span style="color: var(--primary);">✓ Available</span></div>
+                        <div class="premium-card"><i class="fas fa-video"></i><h4>Installation Video Series</h4><p>Step‑by‑step assembly, tracking calibration</p><span style="color: var(--primary);">✓ Watch</span></div>
+                        <div class="premium-card"><i class="fas fa-calculator"></i><h4>ROI & LPG Savings Tool</h4><p>Custom Excel calculator for your institution</p><span style="color: var(--primary);">✓ Included</span></div>
+                        <div class="premium-card"><i class="fas fa-temple"></i><h4>Case Studies</h4><p>Temples, schools, defense kitchens — real data</p><span style="color: var(--primary);">✓ Read</span></div>
+                        <div class="premium-card"><i class="fas fa-cloud-sun"></i><h4>Carbon Credit Guide</h4><p>Emission reduction documentation support</p><span style="color: var(--primary);">✓ Download</span></div>
                     </div>
-                    <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong>🏆 Success stories:</strong> Rural School, Rajasthan – 150 meals/day, ₹1.2L annual LPG savings. Dairy Cooperative – 80% fuel reduction for pasteurization.</p>
+                    <div style="margin-top: 2rem; padding: 1.2rem; background: white; border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
+                        <p><strong>🏆 Verified Installations:</strong> Sri Kashi Vishwanath Temple, Varanasi — 800+ meals/day • Sainik School, Karnataka — 100% LPG replacement • CRPF Campus, Hyderabad — 600 personnel daily cooking.</p>
                     </div>
                 </div>
             </div>
@@ -599,12 +605,12 @@
     </main>
 
     <div class="footer-light">
-        <p>KVB Green Energies — Solar Thermal Excellence</p>
-        <p style="font-size: 0.8rem;">© 2025 • Engineered for sustainable cooking</p>
+        <p>KVB Green Energies — Solar Thermal Excellence | Scheffler Dish Specialists</p>
+        <p style="font-size: 0.8rem;">© 2025 • Engineered for sustainable institutional cooking</p>
     </div>
 
     <script>
-        // Load header/footer (silent)
+        // Load header/footer (silent fallback)
         function loadComponent(id, paths) {
             const tryPath = (index) => {
                 if (index >= paths.length) return;
@@ -625,13 +631,13 @@
             };
         })();
 
-        // Premium unlock
+        // Premium unlock logic
         const lockDiv = document.getElementById('lockContainer');
         const formPanel = document.getElementById('unlockFormContainer');
         const hiddenContent = document.getElementById('hiddenPremiumContent');
         const successMsg = document.getElementById('successMessage');
 
-        if (sessionStorage.getItem('premiumUnlocked_cooker') === 'true') {
+        if (sessionStorage.getItem('schefflerUnlocked') === 'true') {
             lockDiv.style.display = 'none';
             formPanel.style.display = 'none';
             hiddenContent.classList.add('visible');
@@ -652,11 +658,12 @@
             if (!name || !email) { alert('Please enter name and email'); return; }
             const phone = document.getElementById('phoneNum').value.trim() || 'Not provided';
             const organization = document.getElementById('organization').value.trim() || 'Not provided';
-            const message = document.getElementById('message').value.trim() || 'No specific';
+            const appType = document.getElementById('appType').value || 'Not specified';
+            const message = document.getElementById('message').value.trim() || 'No specific details';
             const product = document.getElementById('productName').value;
 
-            const adminParams = { from_name: name, reply_to: email, phone, organization, message, product, to_email: 'siddappagout@gmail.com' };
-            const autoParams = { from_name: name, reply_to: email, phone, organization, message, product, to_email: email };
+            const adminParams = { from_name: name, reply_to: email, phone, organization, application: appType, message, product, to_email: 'siddappagout@gmail.com' };
+            const autoParams = { from_name: name, reply_to: email, phone, organization, application: appType, message, product, to_email: email };
 
             const submitBtn = premiumForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
@@ -666,7 +673,7 @@
             emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.adminTemplate, adminParams)
                 .then(() => emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.autoTemplate, autoParams))
                 .then(() => {
-                    sessionStorage.setItem('premiumUnlocked_cooker', 'true');
+                    sessionStorage.setItem('schefflerUnlocked', 'true');
                     formPanel.style.display = 'none';
                     hiddenContent.classList.add('visible');
                     successMsg.style.display = 'flex';
