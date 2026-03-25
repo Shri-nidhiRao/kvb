@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovation Lab – KVB Green Energies</title>
     <!-- Apple-inspired fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===== RESET & VARIABLES ===== */
@@ -22,11 +25,12 @@
             --text-secondary: #86868B;
             --text-tertiary: #A1A1A6;
             --border: #E6E6E8;
-            --accent: #2E7D32;             /* KVB green – subtle */
+            --accent: #2E7D32;
+            /* KVB green – subtle */
             --accent-light: #E8F5E9;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,0.06);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.06);
             --radius-sm: 12px;
             --radius-md: 20px;
             --radius-lg: 28px;
@@ -41,6 +45,7 @@
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
+            padding-top: 80px;
         }
 
         .container {
@@ -49,7 +54,10 @@
             padding: 0 32px;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-heading);
             font-weight: 600;
             line-height: 1.2;
@@ -57,17 +65,38 @@
             color: var(--text-primary);
         }
 
-        h1 { font-size: 3.2rem; margin-bottom: 1rem; }
-        h2 { font-size: 2.5rem; margin-bottom: 2rem; }
-        h3 { font-size: 1.8rem; margin-bottom: 1rem; }
-        h4 { font-size: 1.3rem; margin-bottom: 0.8rem; font-weight: 500; }
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+        }
 
-        p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
 
         .section-title {
             text-align: center;
             margin-bottom: 2.5rem;
         }
+
         .section-title:after {
             content: '';
             display: block;
@@ -93,21 +122,25 @@
             font-size: 1rem;
             background: transparent;
         }
+
         .btn-primary {
             background: var(--accent);
             color: white;
-            box-shadow: 0 4px 12px rgba(46,125,50,0.2);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
         }
+
         .btn-primary:hover {
             background: #1E5F24;
             transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(46,125,50,0.3);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
         }
+
         .btn-outline {
             border: 1px solid var(--accent);
             color: var(--accent);
             background: transparent;
         }
+
         .btn-outline:hover {
             background: var(--accent-light);
         }
@@ -117,26 +150,34 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
         /* ===== HERO – Minimal, clean ===== */
         .hero {
-            padding: 120px 0 60px;
-            background: var(--background-alt);
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
             border-bottom: 1px solid var(--border);
         }
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
         }
+
         .hero-subtitle {
             font-size: 1.4rem;
             color: var(--text-secondary);
@@ -144,6 +185,7 @@
             max-width: 600px;
             margin: 0 auto 2rem;
         }
+
         .hero-stats {
             display: flex;
             justify-content: center;
@@ -151,9 +193,11 @@
             margin-top: 3rem;
             flex-wrap: wrap;
         }
+
         .stat {
             text-align: center;
         }
+
         .stat-number {
             font-size: 2.8rem;
             font-weight: 700;
@@ -161,6 +205,7 @@
             line-height: 1;
             margin-bottom: 0.3rem;
         }
+
         .stat-label {
             font-size: 0.9rem;
             color: var(--text-secondary);
@@ -172,12 +217,14 @@
             padding: 5rem 0;
             background: var(--background);
         }
+
         .university-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
+
         .university-card {
             background: var(--background-alt);
             border: 1px solid var(--border);
@@ -189,10 +236,12 @@
             transform: translateY(20px);
             animation: fadeUp 0.6s forwards;
         }
+
         .university-card:hover {
             border-color: var(--accent);
             box-shadow: var(--shadow-md);
         }
+
         .university-logo {
             width: 70px;
             height: 70px;
@@ -205,6 +254,7 @@
             font-size: 2rem;
             margin: 0 auto 1.5rem;
         }
+
         .collab-details {
             display: flex;
             justify-content: center;
@@ -221,12 +271,14 @@
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
+
         .upcoming-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
             margin-top: 2rem;
         }
+
         .upcoming-card {
             background: white;
             border: 1px solid var(--border);
@@ -239,6 +291,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .upcoming-card::after {
             content: '';
             position: absolute;
@@ -251,14 +304,17 @@
             transform-origin: left;
             transition: transform 0.3s ease;
         }
+
         .upcoming-card:hover::after {
             transform: scaleX(1);
         }
+
         .upcoming-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
             border-color: var(--accent);
         }
+
         .upcoming-icon {
             width: 70px;
             height: 70px;
@@ -271,6 +327,7 @@
             font-size: 2rem;
             margin-bottom: 1.5rem;
         }
+
         .upcoming-badge {
             display: inline-block;
             background: var(--accent-light);
@@ -282,18 +339,22 @@
             margin-bottom: 1rem;
             letter-spacing: 0.5px;
         }
+
         .upcoming-card h3 {
             font-size: 1.8rem;
             margin-bottom: 0.8rem;
         }
+
         .upcoming-card p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
         }
+
         .upcoming-features {
             list-style: none;
             margin: 1.5rem 0;
         }
+
         .upcoming-features li {
             margin-bottom: 0.6rem;
             display: flex;
@@ -302,11 +363,13 @@
             font-size: 0.95rem;
             color: var(--text-secondary);
         }
+
         .upcoming-features i {
             color: var(--accent);
             width: 20px;
             font-size: 0.9rem;
         }
+
         .coming-soon-btn {
             display: inline-flex;
             align-items: center;
@@ -321,6 +384,7 @@
             transition: all 0.2s;
             margin-top: 0.5rem;
         }
+
         .coming-soon-btn:hover {
             background: var(--accent);
             color: white;
@@ -337,7 +401,10 @@
 
         /* ===== ANIMATIONS ===== */
         @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ===== RESPONSIVE ===== */
@@ -347,14 +414,27 @@
                 gap: 2rem;
             }
         }
+
         @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            h1 { font-size: 2.5rem; }
-            .hero-stats { gap: 1.5rem; }
-            .university-grid { grid-template-columns: 1fr; }
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .university-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="header"></div>
 
@@ -364,18 +444,31 @@
             <div class="hero-content">
                 <h1>Innovation Lab</h1>
                 <p class="hero-subtitle">Engineering the future of renewable energy and smart agriculture</p>
-                <p style="max-width: 600px; margin: 0 auto;">KVB's Innovation Lab develops next‑generation technologies through research‑driven engineering. Here's what's coming next.</p>
+                <p style="max-width: 600px; margin: 0 auto;">KVB's Innovation Lab develops next‑generation technologies
+                    through research‑driven engineering. Here's what's coming next.</p>
                 <div class="hero-stats">
-                    <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Research Projects</div></div>
-                    <div class="stat"><div class="stat-number">8</div><div class="stat-label">University Collaborations</div></div>
-                    <div class="stat"><div class="stat-number">5</div><div class="stat-label">Patents Filed</div></div>
-                    <div class="stat"><div class="stat-number">3</div><div class="stat-label">Pilot Projects</div></div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Research Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">University Collaborations</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Patents Filed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Pilot Projects</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- UNIVERSITY COLLABORATIONS -->
+    <!-- UNIVERSITY COLLABORATIONS 
     <section class="university-collaborations">
         <div class="container">
             <h2 class="section-title">University Collaborations</h2>
@@ -388,7 +481,7 @@
                 <div class="university-card"><div class="university-logo"><i class="fas fa-book-open"></i></div><h3>Keladi University</h3><p>Policy & impact studies</p><div class="collab-details"><span>Since 2023</span><span>Research</span></div></div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- UPCOMING PRODUCTS (Main Focus) -->
     <section class="upcoming-products">
@@ -400,39 +493,45 @@
                     <div class="upcoming-icon"><i class="fas fa-apple-alt"></i></div>
                     <span class="upcoming-badge">Coming Soon</span>
                     <h3>Mango Quality Testing & Segregation</h3>
-                    <p>AI‑powered non‑destructive grading system that detects internal quality and defects without cutting the fruit.</p>
+                    <p>AI‑powered non‑destructive grading system that detects internal quality and defects without
+                        cutting the fruit.</p>
                     <ul class="upcoming-features">
                         <li><i class="fas fa-check-circle"></i> Internal quality detection</li>
                         <li><i class="fas fa-check-circle"></i> Export‑ready grading</li>
                         <li><i class="fas fa-check-circle"></i> Fully automated sorting</li>
                     </ul>
-                    <a href="../innovation lab/mango testing.html" class="coming-soon-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="../innovation lab/mango testing.html" class="coming-soon-btn">Learn More <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
                 <!-- Pepper Segregation -->
                 <div class="upcoming-card">
                     <div class="upcoming-icon"><i class="fas fa-pepper-hot"></i></div>
                     <span class="upcoming-badge">Coming Soon</span>
                     <h3>Pepper Segregation & Adulteration Detection</h3>
-                    <p>Smart system that detects papaya seeds, stones, and low‑quality berries to ensure 100% pure, export‑grade pepper.</p>
+                    <p>Smart system that detects papaya seeds, stones, and low‑quality berries to ensure 100% pure,
+                        export‑grade pepper.</p>
                     <ul class="upcoming-features">
                         <li><i class="fas fa-check-circle"></i> Real‑time adulterant detection</li>
                         <li><i class="fas fa-check-circle"></i> High‑speed automated sorting</li>
                         <li><i class="fas fa-check-circle"></i> Export quality assurance</li>
                     </ul>
-                    <a href="../innovation lab/pepper segregation.html" class="coming-soon-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="../innovation lab/pepper segregation.html" class="coming-soon-btn">Learn More <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
                 <!-- TES Sand Battery -->
                 <div class="upcoming-card">
                     <div class="upcoming-icon"><i class="fas fa-battery-full"></i></div>
                     <span class="upcoming-badge">Coming Soon</span>
                     <h3>TES Sand Battery System</h3>
-                    <p>Thermal energy storage using sand – store heat during the day and use it anytime, enabling 24×7 renewable industrial heat.</p>
+                    <p>Thermal energy storage using sand – store heat during the day and use it anytime, enabling 24×7
+                        renewable industrial heat.</p>
                     <ul class="upcoming-features">
                         <li><i class="fas fa-check-circle"></i> Low‑cost sand medium</li>
                         <li><i class="fas fa-check-circle"></i> 12‑48 hours heat storage</li>
                         <li><i class="fas fa-check-circle"></i> 400‑600°C output</li>
                     </ul>
-                    <a href="../innovation lab/sand battery.html" class="coming-soon-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="../innovation lab/sand battery.html" class="coming-soon-btn">Learn More <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -465,4 +564,5 @@
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
     </script>
 </body>
+
 </html>
