@@ -116,12 +116,12 @@
     }
 
     .intro-logo-img {
-      width: 200px;
-      height: 260px;
+      width: 240px;
+      height: 240px;
       object-fit: contain;
-      border-radius: 70%;
+      border-radius: 50%;
       background: white;
-      padding: 10px;
+      padding: 30px;
     }
 
     @keyframes logoFloat {
@@ -201,8 +201,25 @@
       color: rgba(255, 255, 255, 0.9);
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      margin-bottom: 50px;
+      margin-bottom: 15px;
       backdrop-filter: blur(2px);
+    }
+
+    .intro-slogan {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: rgba(200, 230, 201, 1);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      animation: subtitleGlow 3s infinite alternate;
+    }
+
+    @keyframes subtitleGlow {
+      0% { text-shadow: 0 0 10px rgba(58, 125, 68, 0.3); }
+      100% { text-shadow: 0 0 20px rgba(58, 125, 68, 0.8); }
     }
 
     .intro-loader {
@@ -578,7 +595,7 @@
     /* ===== SOLUTIONS ECOSYSTEM – 4 category cards ===== */
     .solutions-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-top: 3rem;
     }
@@ -1001,6 +1018,7 @@
 
       <h1 class="intro-title">KVB GREEN ENERGIES</h1>
       <p class="intro-subtitle">Engineering the Future</p>
+      <p class="intro-slogan">Innovating for the sustainable future</p>
       <div class="intro-loader"></div>
 
     </div>

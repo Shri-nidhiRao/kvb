@@ -1,14 +1,10 @@
-I've fixed the HTML to remove all Chinese characters and properly format the tables. The page now has clean English
-tags, consistent spacing, and matches the premium layout of your previous product pages.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Smart Vertical Microgreens Growing System | KVB Green Energies – Automated Indoor Farming</title>
+    <title>Food Dehydrator System | KVB Green Energies – Controlled Drying for Agro & Food Processing</title>
     <!-- Fonts & Icons -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
@@ -434,7 +430,41 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             }
         }
 
-        /* ===== TABLES – Soft Light ===== */
+        /* ===== OTHER CARDS ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card i {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ===== TABLES – Soft Light with Improved Spacing ===== */
         .soft-table {
             background: white;
             border-radius: var(--radius-lg);
@@ -702,13 +732,13 @@ tags, consistent spacing, and matches the premium layout of your previous produc
     <section class="hero-light">
         <div class="hero-full-width">
             <div class="hero-content">
-                <h1>Smart Vertical Microgreens Growing System</h1>
+                <h1>Food Dehydrator System</h1>
 
             </div>
             <div class="hero-video-wrapper">
                 <iframe
-                    src="https://www.youtube.com/embed/Bk3FwZ7lQrI?autoplay=1&mute=1&loop=1&playlist=Bk3FwZ7lQrI&controls=0&rel=0&modestbranding=1"
-                    title="Microgreens Growing System" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    src="https://www.youtube.com/embed/kL2g1U6BkZY?autoplay=1&mute=1&loop=1&playlist=kL2g1U6BkZY&controls=0&rel=0&modestbranding=1"
+                    title="Food Dehydrator Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -717,65 +747,67 @@ tags, consistent spacing, and matches the premium layout of your previous produc
         <!-- Highlighted Technology Overview -->
         <div class="reveal highlight-tech">
             <div style="margin-bottom: 0.5rem;">
-                <h2 style="margin-bottom: 0.5rem;">🌱 Complete Indoor Farming Solution</h2>
+                <h2 style="margin-bottom: 0.5rem;">🌡️ Controlled Drying for Premium Quality</h2>
             </div>
-            <p>The <strong>Smart Vertical Microgreens Growing System</strong> is a compact, sensor‑driven indoor farming
-                solution designed to enable high‑quality, pesticide‑free microgreens production in a fully controlled
-                environment. Unlike conventional systems that focus only on lighting or hydroponics, this system
-                integrates production, environmental control, automation, and performance evaluation into a single unit
-                – making it suitable for urban farming, research, and commercial applications. This approach addresses a
-                key gap identified across multiple research studies, where no single system integrates growth, control,
-                and post‑harvest considerations together.</p>
+            <p>The <strong>Food Dehydrator System</strong> is a high‑efficiency drying solution designed to remove
+                moisture under controlled temperature, airflow, and humidity. It ensures uniform drying, enhanced
+                product quality, extended shelf life, and hygienic processing – making it ideal for commercial
+                applications in agro‑processing, food industries, and export‑oriented production. Transform raw produce
+                into value‑added, market‑ready products with consistent quality.</p>
         </div>
 
         <!-- 2x2 Feature Matrix (Core Capabilities) -->
         <div class="reveal">
             <div class="section-title">
-                <h2>Core Capabilities</h2>
+                <h2>Why Choose This Dehydrator</h2>
             </div>
             <div class="feature-matrix">
                 <div class="feature-card">
-                    <i class="fas fa-temperature-low"></i>
-                    <h3>Temperature Control</h3>
-                    <ul class="feature-list">
-                        <li>Continuous monitoring</li>
-                        <li>Cooling fan auto ON if limit exceeded</li>
-                        <li>Ensures optimal growth range</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Lighting Control</h3>
-                    <ul class="feature-list">
-                        <li>LED grow lights (Red + Blue spectrum)</li>
-                        <li>Programmable day/night cycles</li>
-                        <li>Optional UV‑A enhancement</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-tint"></i>
-                    <h3>Intelligent Irrigation</h3>
-                    <ul class="feature-list">
-                        <li>Manual, Timer‑Based, or Moisture‑Based (Smart) Modes</li>
-                        <li>Soil moisture sensing prevents over‑irrigation</li>
-                        <li>Pump & valve auto‑control</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Environmental Monitoring</h3>
+                    <h3>Superior Drying Performance</h3>
                     <ul class="feature-list">
-                        <li>Temperature & humidity sensors</li>
-                        <li>Soil moisture display</li>
-                        <li>Real‑time control panel</li>
+                        <li>40–90°C adjustable temperature range</li>
+                        <li>Forced convection for uniform drying</li>
+                        <li>Moisture reduction up to 80–95%</li>
+                        <li>4–24 hours drying time (product dependent)</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Robust Construction</h3>
+                    <ul class="feature-list">
+                        <li>SS 304 food‑grade contact surfaces</li>
+                        <li>PUF / glass wool insulation</li>
+                        <li>Stainless steel perforated trays</li>
+                        <li>Tray capacities from 10 to 200 trays</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Smart Features (Optional)</h3>
+                    <ul class="feature-list">
+                        <li>Programmable drying cycles</li>
+                        <li>Digital PID temperature & humidity control</li>
+                        <li>IoT remote monitoring & data logging</li>
+                        <li>Automatic safety shutdown</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-simple"></i>
+                    <h3>Economic & Environmental Benefits</h3>
+                    <ul class="feature-list">
+                        <li>Faster drying than open sun</li>
+                        <li>Retains color, taste, and nutrients</li>
+                        <li>Reduces post‑harvest losses</li>
+                        <li>Payback period: 1–3 years</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- System Configuration Table -->
+        <!-- Technical Specifications Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 System Configuration</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Specifications</h2>
             <table>
                 <thead>
                     <tr>
@@ -786,198 +818,55 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                 <tbody>
                     <tr>
                         <td><strong>System Type</strong></td>
-                        <td>Vertical Indoor Microgreens Growth Chamber</td>
+                        <td>Electrical / Hybrid Dehydrator</td>
                     </tr>
                     <tr>
-                        <td><strong>Structure Size</strong></td>
-                        <td>Approx. 750 × 550 × 1200 mm</td>
+                        <td><strong>Drying Capacity</strong></td>
+                        <td>50 kg – 1000 kg per batch (customizable)</td>
                     </tr>
                     <tr>
-                        <td><strong>Layers</strong></td>
-                        <td>Multi‑layer tray system (3 levels)</td>
+                        <td><strong>Dryer Configuration</strong></td>
+                        <td>Tray-based / Cabinet / Tunnel type</td>
                     </tr>
                     <tr>
-                        <td><strong>Structure Type</strong></td>
-                        <td>Enclosed controlled cabinet</td>
+                        <td><strong>Structure Material</strong></td>
+                        <td>SS 304 (food-grade) / MS powder-coated</td>
                     </tr>
                     <tr>
-                        <td><strong>Material</strong></td>
-                        <td>Aluminum / SS / Powder‑coated MS</td>
+                        <td><strong>Insulation</strong></td>
+                        <td>PUF / Glass wool</td>
                     </tr>
                     <tr>
-                        <td><strong>Installation</strong></td>
-                        <td>Floor‑mounted compact unit</td>
-                    </tr>
-                </tbody>
-            
-        </div>
-
-        <!-- Lighting & Irrigation System Tables -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">💡 Lighting System</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Specification</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Light Type</strong></td>
-                        <td>LED grow lights (Red + Blue spectrum)</td>
+                        <td><strong>Tray Material</strong></td>
+                        <td>SS 304 perforated trays</td>
                     </tr>
                     <tr>
-                        <td><strong>Optional</strong></td>
-                        <td>UV‑A enhancement</td>
+                        <td><strong>Number of Trays</strong></td>
+                        <td>10 – 200 (based on capacity)</td>
                     </tr>
                     <tr>
-                        <td><strong>Placement</strong></td>
-                        <td>Mounted under each layer</td>
+                        <td><strong>Airflow System</strong></td>
+                        <td>Forced convection</td>
                     </tr>
                     <tr>
-                        <td><strong>Light Cycle</strong></td>
-                        <td>Controlled via timer (e.g., 18h OFF / 6h ON configurable)</td>
+                        <td><strong>Heating Source</strong></td>
+                        <td>Electric heater / Hybrid (solar + biomass optional)</td>
                     </tr>
-                    <tr>
-                        <td><strong>Purpose</strong></td>
-                        <td>Photosynthesis + growth optimization</td>
-                    </tr>
-                </tbody>
-            
-        </div>
-
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">💧 Irrigation & Water System</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Component</th>
-                        <th>Specification</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Water Source</strong></td>
-                        <td>Bottom reservoir tank</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Distribution</strong></td>
-                        <td>Pump‑based / spray system</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Control</strong></td>
-                        <td>Automated valve‑based irrigation</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Irrigation Type</strong></td>
-                        <td>Mist / controlled watering</td>
-                    </tr>
-                </tbody>
-            
-        </div>
-
-        <!-- Environmental Monitoring & Airflow Tables -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌬️ Airflow & Environmental Control</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Specification</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Ventilation</strong></td>
-                        <td>Exhaust fan system</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Function</strong></td>
-                        <td>Temperature & humidity control</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Airflow Type</strong></td>
-                        <td>Continuous circulation</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Placement</strong></td>
-                        <td>Rear / top‑mounted airflow system</td>
-                    </tr>
-                </tbody>
-            
-        </div>
-
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌡️ Environmental Monitoring</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Function</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Temperature</strong></td>
-                        <td>Maintains optimal growth range</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Humidity</strong></td>
-                        <td>Controls moisture environment</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Soil Moisture</strong></td>
-                        <td>Determines irrigation need</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Display</strong></td>
-                        <td>Real‑time monitoring panel</td>
-                    </tr>
-                </tbody>
-            
-        </div>
-
-        <!-- Smart Automation Logic Description (as a table or descriptive section) -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">⚙️ Smart Automation Logic</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Mode / Feature</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <td><strong>Temperature Control</strong></td>
-                        <td>System monitors continuously; if temperature exceeds set limit → cooling fan ON, else OFF.
-                        </td>
+                        <td>Digital controller (PID optional)</td>
                     </tr>
                     <tr>
-                        <td><strong>Lighting Control</strong></td>
-                        <td>Automated timer‑based lighting cycle (e.g., 18h OFF / 6h ON, configurable).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Irrigation – Manual Mode</strong></td>
-                        <td>User‑controlled ON/OFF.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Irrigation – Timer Mode</strong></td>
-                        <td>Irrigation at fixed intervals.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Irrigation – Smart Mode</strong></td>
-                        <td>Checks soil moisture periodically; if below threshold → pump ON, valve opens, water sprayed;
-                            auto OFF after set duration.</td>
+                        <td><strong>Air Circulation</strong></td>
+                        <td>Uniform airflow across all trays</td>
                     </tr>
                 </tbody>
-            
+            </table>
         </div>
 
-        <!-- Growing Capacity & Suitable Crops -->
+        <!-- Thermal & Drying Performance Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌱 Growing Capacity & Crops</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌡️ Thermal & Drying Performance</h2>
             <table>
                 <thead>
                     <tr>
@@ -987,70 +876,116 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Trays per Layer</strong></td>
-                        <td>1–2</td>
+                        <td><strong>Temperature Range</strong></td>
+                        <td>40°C – 90°C (adjustable)</td>
                     </tr>
                     <tr>
-                        <td><strong>Total Capacity</strong></td>
-                        <td>3–6 trays</td>
+                        <td><strong>Drying Duration</strong></td>
+                        <td>4–24 hours (product dependent)</td>
                     </tr>
                     <tr>
-                        <td><strong>Crop Cycle</strong></td>
-                        <td>7–14 days</td>
+                        <td><strong>Moisture Reduction</strong></td>
+                        <td>Up to 80% – 95%</td>
                     </tr>
                     <tr>
-                        <td><strong>Crop Types</strong></td>
-                        <td>Microgreens (sunflower, radish, wheatgrass), leafy greens (lettuce, spinach), herbs (basil,
-                            coriander)</td>
+                        <td><strong>Airflow Type</strong></td>
+                        <td>High‑efficiency centrifugal / axial fans</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Air Distribution</strong></td>
+                        <td>Duct‑based / chamber circulation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exhaust System</strong></td>
+                        <td>Moist air removal with adjustable dampers</td>
                     </tr>
                 </tbody>
-            
+            </table>
+        </div>
+
+        <!-- System Components Table -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">⚙️ System Components</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Drying Chamber</strong></td>
+                        <td>Insulated, food‑grade interior</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tray System</strong></td>
+                        <td>SS 304 perforated trays or trolleys</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Heating Unit</strong></td>
+                        <td>Electric / hybrid (solar + biomass optional)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Air Circulation</strong></td>
+                        <td>High‑efficiency blowers with uniform distribution</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Control Panel</strong></td>
+                        <td>Digital / PLC with temperature & humidity monitoring</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exhaust System</strong></td>
+                        <td>Adjustable dampers for moisture removal</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Applications – five cards, one row -->
         <div class="reveal">
             <div class="section-title">
-                <h2>📍 Perfect For</h2>
+                <h2>📍 Product Applications</h2>
             </div>
             <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-city"></i>
-                    <h3>Urban Farming</h3>
-                    <p>Fresh produce in limited space</p>
+                <div class="app-card"><i class="fas fa-apple-alt"></i>
+                    <h3>Fruits</h3>
+                    <p>Mango, banana, apple, pineapple</p>
                 </div>
-                <div class="app-card"><i class="fas fa-flask"></i>
-                    <h3>Research Labs</h3>
-                    <p>Controlled environment studies</p>
+                <div class="app-card"><i class="fas fa-carrot"></i>
+                    <h3>Vegetables</h3>
+                    <p>Onion, tomato, garlic, chili</p>
                 </div>
-                <div class="app-card"><i class="fas fa-store"></i>
-                    <h3>Commercial Growers</h3>
-                    <p>High‑quality microgreens</p>
+                <div class="app-card"><i class="fas fa-pepper-hot"></i>
+                    <h3>Spices</h3>
+                    <p>Turmeric, chili, coriander</p>
                 </div>
-                <div class="app-card"><i class="fas fa-school"></i>
-                    <h3>Educational Institutions</h3>
-                    <p>Hands‑on agri‑tech learning</p>
+                <div class="app-card"><i class="fas fa-seedling"></i>
+                    <h3>Herbs & Medicinal</h3>
+                    <p>Medicinal plants, leaves</p>
                 </div>
-                <div class="app-card"><i class="fas fa-utensils"></i>
-                    <h3>Restaurants & Chefs</h3>
-                    <p>Fresh, chemical‑free greens</p>
+                <div class="app-card"><i class="fas fa-fish"></i>
+                    <h3>Fish & Meat</h3>
+                    <p>Fish, meat processing</p>
                 </div>
             </div>
         </div>
 
-        <!-- Gallery (placeholder images) -->
+        <!-- Gallery -->
         <div class="reveal">
             <div class="section-title">
                 <h2>System in Action</h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Vertical Microgreens System">
-                    <div class="gallery-caption">Compact vertical unit</div>
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Food Dehydrator">
+                    <div class="gallery-caption">Stainless steel tray dehydrator</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1592441321114-7b2b93e6d3c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Microgreens Harvest">
-                    <div class="gallery-caption">Fresh, healthy microgreens</div>
+                    <img src="https://images.unsplash.com/photo-1542051841854-5f90055e5b0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Dried Mango">
+                    <div class="gallery-caption">Premium dried mango</div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1558449028-b53a39d10009?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -1060,9 +995,9 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             </div>
         </div>
 
-        <!-- Safety, Benefits & Power Requirements Table -->
+        <!-- Safety & Benefits Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🔒 Safety, Benefits & Power</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🔒 Safety, Hygiene & Benefits</h2>
             <table>
                 <thead>
                     <tr>
@@ -1072,52 +1007,57 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Hygiene & Safety</strong></td>
-                        <td>Fully enclosed dust‑free chamber, food‑grade surfaces, low‑voltage safe operation</td>
+                        <td><strong>Hygiene Standards</strong></td>
+                        <td>Food‑grade SS contact surfaces, enclosed chamber prevents contamination</td>
                     </tr>
                     <tr>
-                        <td><strong>Key Benefits</strong></td>
-                        <td>Year‑round farming, 80–90% water savings, faster cycles, chemical‑free, space‑efficient</td>
+                        <td><strong>Safety</strong></td>
+                        <td>Over‑temperature protection, automatic shutdown</td>
                     </tr>
                     <tr>
-                        <td><strong>Power Requirements</strong></td>
-                        <td>Low voltage DC system; adapter powered (solar optional); energy‑efficient LED + pump + fan
-                        </td>
+                        <td><strong>Product Quality</strong></td>
+                        <td>Uniform drying retains color, taste, and nutrients</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post‑Harvest Loss</strong></td>
+                        <td>Reduces losses by enabling value addition</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Energy Efficiency</strong></td>
+                        <td>Hybrid options reduce electricity consumption</td>
                     </tr>
                 </tbody>
-            
+            </table>
         </div>
 
-        <!-- Optional Upgrades Table -->
+        <!-- Scalability & Add‑ons Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🚀 Optional Upgrades</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📊 Scalability & Optional Add‑ons</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Add‑on</th>
-                        <th>Benefit</th>
+                        <th>Aspect</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>IoT‑based Remote Monitoring</td>
-                        <td>Real‑time data, alerts, analytics</td>
+                        <td><strong>Scalability</strong></td>
+                        <td>Modular design; capacity from 50 kg to 1 ton per batch; custom‑built for specific products
+                        </td>
                     </tr>
                     <tr>
-                        <td>AI‑based Crop Advisory (AgroSense)</td>
-                        <td>Yield optimization, growth recommendations</td>
+                        <td><strong>Installation Time</strong></td>
+                        <td>2–5 days</td>
                     </tr>
                     <tr>
-                        <td>UV‑A Lighting Enhancement</td>
-                        <td>Increased nutritional value, pathogen control</td>
+                        <td><strong>Maintenance</strong></td>
+                        <td>Regular tray cleaning, heater inspection, blower servicing, periodic system checks</td>
                     </tr>
                     <tr>
-                        <td>Data Logging for Research</td>
-                        <td>Exportable growth data for studies</td>
-                    </tr>
-                    <tr>
-                        <td>Solar Power Integration</td>
-                        <td>Off‑grid operation</td>
+                        <td><strong>Optional Add‑ons</strong></td>
+                        <td>Solar integration, biomass heating, cold storage integration, packaging line integration
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -1128,8 +1068,8 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             <div id="lockContainer" class="lock-card">
                 <div class="lock-icon"><i class="fas fa-lock"></i></div>
                 <h3>Get Full Technical Documentation</h3>
-                <p>Download detailed engineering drawings, automation logic diagrams, research validation, and ROI
-                    calculator for the Smart Vertical Microgreens Growing System.</p>
+                <p>Download detailed engineering drawings, performance data, ROI calculator, and case studies for the
+                    Food Dehydrator System.</p>
                 <span class="btn-outline"
                     style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Request Information
                     →</span>
@@ -1148,8 +1088,8 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                         <div class="form-group"><input type="text" id="organization"
                                 placeholder="Organization / Business"></div>
                         <div class="form-group full"><textarea rows="2" id="message"
-                                placeholder="Tell us about your growing requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="Smart Vertical Microgreens Growing System">
+                                placeholder="Tell us about your drying requirements..."></textarea></div>
+                        <input type="hidden" id="productName" value="Food Dehydrator System">
                         <div class="form-group full"><button type="submit" class="btn-submit"><i
                                     class="fas fa-unlock-alt"></i> Unlock Technical Library</button></div>
                     </div>
@@ -1167,28 +1107,27 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                     <div class="premium-grid">
                         <div class="premium-card"><i class="fas fa-file-pdf"></i>
                             <h4>Engineering Drawings</h4>
-                            <p>CAD files, system layout, wiring diagrams</p><span style="color: var(--primary);">✓
-                                PDF</span>
+                            <p>CAD files, tray layouts, installation blueprints</p><span
+                                style="color: var(--primary);">✓ PDF</span>
                         </div>
                         <div class="premium-card"><i class="fas fa-chart-line"></i>
                             <h4>ROI Calculator</h4>
-                            <p>Custom Excel – cost, yield, payback</p><span style="color: var(--primary);">✓
+                            <p>Custom Excel – drying cost & payback</p><span style="color: var(--primary);">✓
                                 included</span>
                         </div>
                         <div class="premium-card"><i class="fas fa-video"></i>
                             <h4>Installation Videos</h4>
-                            <p>Step‑by‑step assembly & operation</p><span style="color: var(--primary);">✓ watch</span>
+                            <p>Step‑by‑step assembly</p><span style="color: var(--primary);">✓ watch</span>
                         </div>
                         <div class="premium-card"><i class="fas fa-chalkboard-user"></i>
                             <h4>Case Studies</h4>
-                            <p>Urban farms, research labs – real data</p><span style="color: var(--primary);">✓
-                                read</span>
+                            <p>Commercial drying success stories</p><span style="color: var(--primary);">✓ read</span>
                         </div>
                     </div>
                     <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong>🏆 Success stories:</strong> Urban farm, Bengaluru – 3 units installed, 85% water
-                            savings, 14‑day cycle. Research institution, Pune – used for lighting optimization study,
-                            published in agri‑tech journal.</p>
+                        <p><strong>🏆 Success stories:</strong> Mango processing unit, Karnataka – 500 kg/day, 30%
+                            faster drying, export‑ready quality. Vegetable cooperative, Maharashtra – 40% reduction in
+                            post‑harvest loss, payback 2.2 years.</p>
                     </div>
                 </div>
             </div>
@@ -1196,8 +1135,8 @@ tags, consistent spacing, and matches the premium layout of your previous produc
     </main>
 
     <div class="footer-light">
-        <p>KVB Green Energies — Smart Agriculture & Agri‑Tech Solutions</p>
-        <p style="font-size: 0.8rem;">© 2025 • Automated Indoor Farming | Research & Commercial Ready</p>
+        <p>KVB Green Energies — Drying & Thermal Solutions</p>
+        <p style="font-size: 0.8rem;">© 2025 • Controlled Drying for Value‑Added Products</p>
     </div>
 
     <script>
@@ -1225,7 +1164,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
         const hiddenContent = document.getElementById('hiddenPremiumContent');
         const successMsg = document.getElementById('successMessage');
 
-        if (sessionStorage.getItem('premiumUnlocked_microgreens') === 'true') {
+        if (sessionStorage.getItem('premiumUnlocked_dehydrator') === 'true') {
             lockDiv.style.display = 'none';
             formPanel.style.display = 'none';
             hiddenContent.classList.add('visible');
@@ -1260,7 +1199,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.adminTemplate, adminParams)
                 .then(() => emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.autoTemplate, autoParams))
                 .then(() => {
-                    sessionStorage.setItem('premiumUnlocked_microgreens', 'true');
+                    sessionStorage.setItem('premiumUnlocked_dehydrator', 'true');
                     formPanel.style.display = 'none';
                     hiddenContent.classList.add('visible');
                     successMsg.style.display = 'flex';
