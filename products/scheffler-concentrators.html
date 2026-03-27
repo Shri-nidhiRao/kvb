@@ -165,7 +165,7 @@
         .hero-content h1 {
             text-align: center;
         }
-
+        
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
@@ -247,6 +247,10 @@
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
         .section-title:after {
             content: '';
@@ -354,7 +358,7 @@
             margin: 4rem 0;
         }
         .applications-grid {
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
         .specs-grid {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -454,6 +458,7 @@
         .premium-wrapper {
             margin: 6rem auto;
             max-width: 900px;
+            display: none;
         }
         .lock-container {
             background: white;
@@ -628,7 +633,7 @@
             <!-- HIGHLIGHTED Overview: Scheffler Fixed‑Focus Technology -->
             <div class="reveal highlight-tech">
                 <div style="margin-bottom: 0.5rem;">
-                    <h1 style="margin-bottom: 0.5rem;">⚡ Scheffler Fixed‑Focus Technology</h1>
+                    <h2 style="margin-bottom: 0.5rem; font-size: 2.2rem;">⚡ Scheffler Fixed‑Focus Technology</h2>
                 </div>
                 <p>The <strong>16 m² Solar Scheffler Dish</strong> uses a patented lateral‑moving parabolic geometry to reflect sunlight onto a <strong>stationary receiver located inside the kitchen</strong>. Unlike conventional cookers, the cooking position is fixed, safe, and indoor. The dish automatically tracks the sun while the focal point remains static — enabling continuous, high‑temperature cooking without operator exposure to concentrated rays.</p>
             </div>
@@ -697,9 +702,9 @@
             <div class="tech-table-container reveal">
                 <h2 style="margin-bottom: 2rem;">📐 Engineering Specifications</h2>
                 <table class="tech-table">
-                    <thead>汽<th>Parameter</th><th>Specification</th> </thead>
+                    <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
                     <tbody>
-                        的人<td><strong>Concentrator Type</strong></td><td>Scheffler Fixed‑Focus Offset Parabolic</td></tr>
+                        <tr><td><strong>Concentrator Type</strong></td><td>Scheffler Fixed‑Focus Offset Parabolic</td></tr>
                         <tr><td><strong>Aperture Area</strong></td><td>16 m²</td></tr>
                         <tr><td><strong>Reflector Material</strong></td><td>Glass mirror facets / Anodized aluminum (≥90% reflectivity)</td></tr>
                         <tr><td><strong>Tracking Mechanism</strong></td><td>Single axis (manual seasonal tilt – optional motorized)</td></tr>
@@ -714,7 +719,7 @@
             <div class="tech-table-container reveal">
                 <h2 style="margin-bottom: 2rem;">🔥 Thermal Performance & Cooking Output</h2>
                 <table class="tech-table">
-                    <thead>汽<th>Parameter</th><th>Value</th> </thead>
+                    <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Thermal Power Output</strong></td><td>8 – 10 kW</td></tr>
                         <tr><td><strong>Optical Efficiency</strong></td><td>65 – 75%</td></tr>

@@ -362,6 +362,7 @@
         .premium-wrapper {
             margin: 5rem auto;
             max-width: 900px;
+            display: none;
         }
         .lock-card {
             background: white;
@@ -684,10 +685,9 @@
         </div>
     </main>
 
-    <div class="footer-light">
-        <p>KVB Green Energies — Solar Thermal Excellence | Scheffler Dish Specialists</p>
-        <p style="font-size: 0.8rem;">© 2025 • Engineered for sustainable institutional cooking</p>
-    </div>
+    <!-- Universal Footer -->
+    <!-- Universal Footer -->
+    <div id="footer"></div>
 
     <script>
         // Load header placeholder (silent fallback)
@@ -699,6 +699,7 @@
             tryPath(0);
         }
         loadComponent("header", ["components/header.html", "../components/header.html"]);
+        loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
         // EmailJS init
         (function() {
