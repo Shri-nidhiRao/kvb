@@ -227,12 +227,14 @@
             padding-top: 56.25%; /* 16:9 aspect ratio */
         }
 
-        .hero-video-wrapper iframe {
+        .hero-video-wrapper iframe,
+        .hero-video-wrapper video {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: cover;
         }
 
         /* Responsive: on smaller screens, reduce the width to avoid touching edges */
@@ -622,7 +624,11 @@
                
             </div>
             <div class="hero-video-wrapper">
-                <iframe src="https://www.youtube.com/embed/SuYSjfcq3QY?autoplay=1&mute=1&loop=1&playlist=SuYSjfcq3QY&controls=0&rel=0&modestbranding=1&vq=hd1080" title="Scheffler Dish Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <div class="shine"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="../videos/DJI_0958_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
