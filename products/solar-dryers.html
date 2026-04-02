@@ -235,14 +235,30 @@
             content: "";
             display: block;
             padding-top: 56.25%;
+            /* 16:9 aspect ratio */
         }
 
-        .hero-video-wrapper iframe {
+        .hero-video-wrapper iframe,
+        .hero-video-wrapper video {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: cover;
+        }
+
+        .hero-video-wrapper .shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.15), transparent 60%);
+            transform: rotate(25deg);
+            animation: shineMove 6s infinite linear;
+            pointer-events: none;
+            z-index: 2;
         }
 
         @media (max-width: 768px) {
@@ -783,10 +799,10 @@
                 <h1>Smart Solar Tunnel Dryer</h1>
 
             </div>
-            <div class="hero-video-wrapper">
-                <iframe
-                    src="https://www.youtube.com/embed/Rcsu-SS9eHE?autoplay=1&mute=1&loop=1&playlist=Rcsu-SS9eHE&controls=0&rel=0&modestbranding=1"
-                    title="Smart Solar Tunnel Dryer Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
+           <div class="hero-video-wrapper">
+                <div class="shine"></div>
+                <!-- Local video demonstrating solar drying -->
+                <video src="../videos/solar-dryer.mp4" autoplay loop muted playsinline></video>
             </div>
         </div>
     </section>
@@ -1086,24 +1102,30 @@
                 </table>
             </div>
             <!-- Sustainability & Financial Benefits Table -->
-            <div class="reveal">
-                <div class="section-title">
-                    <h2>System in Action</h2>
+             <!-- Gallery (optional, using placeholder images) -->
+        <div class="reveal">
+            <div class="section-title">
+                <h2>System in Action</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../images/products/solar-dryer-1.jpeg" alt="Box Solar Dryer">
+                    <div class="gallery-caption"></div>
                 </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="../images/products/solar-tunnel-dryer1.jpg" alt="Smart Tunnel Dryer">
-                        <div class="gallery-caption">Modular tunnel with TCU integration</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../images/products/solar-tunnel-dryer2.jpg" alt="Dried Mango">
-                        <div class="gallery-caption">Premium dried mango – export quality</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../images/products/solar-tunnel-dryer3.jpg" alt="Control Panel">
-                        <div class="gallery-caption">Smart control panel with IoT ready</div>
-                    </div>
+                <div class="gallery-item">
+                    <img src="../images/products/solar-dryer-5.jpeg" alt="Trays inside dryer">
+                    <div class="gallery-caption"></div>
                 </div>
+                <div class="gallery-item">
+                    <img src="../images/products/solar-dryer-4.jpeg" alt="Dried mango slices">
+                    <div class="gallery-caption"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/products/solar-dryer.jpeg" alt="Dried mango slices">
+                    <div class="gallery-caption"></div>
+                </div>
+            </div>
+        </div>
 
                 <!-- Premium Unlock -->
                 <div class="premium-wrapper reveal">
