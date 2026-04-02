@@ -1,362 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Food Processing Solar Steam | KVB Green Energies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>SolarTherm | Parabolic Trough Solar Steam for Food Processing</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root{
- --eco-green:#3A7D44;
- --background:#FFFFFF;
- --background-alt:#F9F9FB;
- --text-primary:#1D1D1F;
- --text-secondary:#86868B;
- --border:#E6E6E8;
- --radius-lg:28px;
-}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            scroll-behavior: smooth;
+            line-height: 1.4;
+        }
 
-*{
- margin:0;
- padding:0;
- box-sizing:border-box;
- font-family:'Inter',sans-serif;
-}
+        :root {
+            --green-accent: #2c6e49;
+            --green-light: #e6f4ea;
+            --gray-bg: #f5f5f7;
+            --card-border: rgba(0, 0, 0, 0.06);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            --radius-xl: 32px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+        }
 
-body{
- background:var(--background);
- color:var(--text-primary);
-}
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
 
-.container{
- max-width:1280px;
- margin:auto;
- padding:0 32px;
-}
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
 
-h1,h2,h3{
- font-family:'Montserrat',sans-serif;
-}
+        h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #1d1d1f 0%, #2c3e2f 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+        }
 
-h1{
- font-size:3rem;
- margin-bottom:1rem;
-}
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
 
-p{
- color:var(--text-secondary);
-}
+        .section-subhead {
+            font-size: 1.2rem;
+            color: #6e6e73;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
 
-/* ===== SECTION ===== */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
 
-.content-section{
- padding:6rem 0;
- border-bottom:1px solid var(--border);
-}
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
 
-/* ===== TWO COLUMN ===== */
+        .btn-primary i {
+            font-size: 1rem;
+        }
 
-.two-col{
- display:flex;
- gap:4rem;
- align-items:flex-start;
-}
+        .btn-primary:hover {
+            background-color: #1f553a;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(44, 110, 73, 0.25);
+        }
 
-.left-col{flex:1;}
-.right-col{flex:1;}
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #d2d2d6;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: #1d1d1f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-.feature-list{
- list-style:none;
- margin-top:1.5rem;
-}
+        .btn-outline:hover {
+            border-color: var(--green-accent);
+            background: #f9faf9;
+        }
 
-.feature-list li{
- padding:14px 0;
- border-bottom:1px solid var(--border);
- display:flex;
- gap:10px;
-}
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
 
-.feature-list i{
- color:var(--eco-green);
-}
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
 
-/* ===== CAROUSEL ===== */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
 
-.carousel-container{
- position:relative;
- border-radius:var(--radius-lg);
- overflow:hidden;
- box-shadow:0 15px 40px rgba(0,0,0,.06);
-}
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
 
-.carousel-image{
- width:100%;
- display:block;
- cursor:pointer;
-}
+        .card i {
+            font-size: 2.2rem;
+            color: var(--green-accent);
+            margin-bottom: 1.2rem;
+        }
 
-.carousel-arrow{
- position:absolute;
- top:50%;
- transform:translateY(-50%);
- width:40px;
- height:40px;
- border-radius:50%;
- border:none;
- background:white;
- cursor:pointer;
- box-shadow:0 5px 20px rgba(0,0,0,.15);
-}
+        .card h4 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
 
-.carousel-arrow.left{left:15px;}
-.carousel-arrow.right{right:15px;}
+        .stat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            background: var(--gray-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-xl);
+            margin-top: 2rem;
+        }
 
-.carousel-dots{
- position:absolute;
- bottom:15px;
- left:50%;
- transform:translateX(-50%);
- display:flex;
- gap:8px;
-}
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
 
-.dot{
- width:10px;
- height:10px;
- border-radius:50%;
- background:rgba(255,255,255,.5);
- cursor:pointer;
-}
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--green-accent);
+            line-height: 1;
+        }
 
-.dot.active{background:white;}
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
 
-/* ===== ALIGNMENT FIX ===== */
+        .feature-list li {
+            padding: 10px 0;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border-bottom: 1px solid #efeff1;
+        }
 
-.section-header{
- max-width:1280px;
- margin:0 auto 3rem auto;
- padding:0 32px;
-}
+        .feature-list i {
+            color: var(--green-accent);
+            width: 22px;
+        }
 
-.section-header h2{
- text-align:left;
-}
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e9e9ed;
+        }
 
-/* ===== BENEFITS ===== */
+        .section-alt {
+            background-color: var(--gray-bg);
+        }
 
-.grid-3{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:2rem;
-}
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
 
-.card{
- background:var(--background-alt);
- border:1px solid var(--border);
- border-radius:20px;
- padding:2rem;
-}
+        .badge {
+            display: inline-block;
+            background: var(--green-light);
+            color: var(--green-accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
 
-.card i{
- font-size:2rem;
- color:var(--eco-green);
- margin-bottom:1rem;
-}
+        .img-soft {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
 
-/* ===== TECHNICAL ===== */
+        .img-soft:hover {
+            transform: scale(1.01);
+        }
 
-.stats-grid{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:2rem;
- text-align:center;
- margin-top: 3rem;
-}
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin: 2rem 0;
+            align-items: stretch;
+        }
 
-.stat-number{
- font-size:3rem;
- color:var(--eco-green);
- font-weight:600;
-}
+        .step {
+            flex: 1 1 calc(33.333% - 1.25rem);
+            min-width: 140px;
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border: 1px solid #e9e9ed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #3a3a3c;
+            line-height: 1.4;
+        }
 
-.stat-label{
- color:var(--text-secondary);
-}
+        .step i.step-icon {
+            font-size: 1.5rem;
+            color: var(--green-accent);
+        }
 
-.btn{
- display:inline-block;
- margin-top:2rem;
- padding:1rem 3rem;
- background:var(--eco-green);
- color:white;
- border-radius:40px;
- text-decoration:none;
-}
+        .step-number {
+            background: var(--green-accent);
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
 
-/* ===== MOBILE ===== */
+        .cta-block {
+            background: #1d1d1f;
+            border-radius: var(--radius-xl);
+            padding: 3.5rem;
+            text-align: center;
+            color: white;
+        }
 
-@media(max-width:900px){
+        .cta-block h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
 
-.two-col{flex-direction:column;}
-.grid-3{grid-template-columns:1fr;}
-.stats-grid{grid-template-columns:repeat(2,1fr);}
-h1{font-size:2.2rem;}
+        .cta-block .btn-primary {
+            background: white;
+            color: #1d1d1f;
+        }
 
-}
+        .cta-block .btn-primary:hover {
+            background: #f0f0f0;
+        }
 
-</style>
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #86868b;
+            border-top: 1px solid #e9e9ed;
+        }
+
+        .carousel-container {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .06);
+        }
+
+        .carousel-image {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+        }
+
+        .carousel-arrow.left {
+            left: 15px;
+        }
+
+        .carousel-arrow.right {
+            right: 15px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .5);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        @media (max-width: 900px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.6rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 24px;
+            }
+
+            .stat-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div id="header"></div>
+    <div id="header"></div>
 
-<!-- HERO -->
-<section class="content-section" style="padding-top:2rem;">
-<div class="container">
-<h1>Parabolic Trough Solar Thermal<br>for Food Processing</h1>
-<p style="font-size:1.2rem;max-width:700px;">
-Blanching, evaporation, drying – cut fuel costs and emissions with reliable solar heat.
-</p>
-</div>
-</section>
+    <main>
+        <!-- Hero Section -->
+        <div class="container" style="padding-top: 3rem; padding-bottom: 2rem;">
+            <div class="grid-2" style="gap: 2rem;">
+                <div>
+                    <div class="badge"><i class="fas fa-utensils"></i> Food processing heat reimagined</div>
+                    <h1>Parabolic Trough Solar Steam<br>for Food Processing</h1>
+                    <p style="font-size: 1.25rem; color: #515154; margin: 1rem 0 1.8rem 0;">Cut fuel costs up to 40% •
+                        Cooking, drying, sterilization • 120–250°C solar steam</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn-primary"><i class="fas fa-chart-line"></i> Calculate your savings</a>
+                        <a href="#" class="btn-outline"><i class="fas fa-file-pdf"></i> Food industry brochure</a>
+                    </div>
+                </div>
+                <div>
+                    <img class="img-soft"
+                        src="https://images.unsplash.com/photo-1584278860047-22db4e9b9f1e?auto=format&fit=crop&w=1200&q=80"
+                        alt="Food processing plant" style="max-height: 380px; width:100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
 
-<!-- THERMAL OPERATIONS -->
-<section class="content-section">
-<div class="container two-col">
+        <!-- 1. Pain Area — Rising Energy Cost -->
+        <div class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <span class="badge"><i class="fas fa-fire"></i> The hidden cost</span>
+                        <h2>Rising energy cost is eating your margins</h2>
+                        <p>Food processing is driven by heat. Cooking, pasteurization, drying, sterilization —
+                            everything depends on thermal energy.</p>
+                        <p>Most food processing plants operate with:</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-oil-can"></i> LPG / Furnace Oil / Coal boilers</li>
+                            <li><i class="fas fa-clock"></i> Continuous steam and hot water demand</li>
+                            <li><i class="fas fa-charging-station"></i> High energy consumption across production lines
+                            </li>
+                        </ul>
+                        <div style="background: #faf9f7; padding: 1.4rem; border-radius: 20px; margin-top: 1rem;">
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">What This Means for Your Business:</p>
+                            <ul
+                                style="list-style: none; padding-left: 0; margin-left: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i> Fuel
+                                    cost = major contributor to production cost</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i>
+                                    Margins shrink as fuel prices rise</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i> High
+                                    energy demand in drying & evaporation increases expenses</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i>
+                                    Increasing pressure for sustainable and clean processing</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i> Export
+                                    markets demanding low-carbon food production</li>
+                            </ul>
+                            <p
+                                style="margin-top: 1rem; font-style: italic; border-left: 3px solid var(--green-accent); padding-left: 1rem;">
+                                <i class="fas fa-hand-point-right"
+                                    style="color: var(--green-accent); margin-right: 8px;"></i> You are not just
+                                processing food — you are burning fuel to stay competitive.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="img-soft"
+                            src="https://images.unsplash.com/photo-1557210101-33c8a9a4b7d5?auto=format&fit=crop&w=1200&q=80"
+                            alt="Food processing boiler">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="left-col">
-<h2>Thermal Operations</h2>
+        <!-- 2. Smart Solution — Solar Thermal for Food Industry -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="badge"><i class="fas fa-sun"></i> Permanent cost reduction</span>
+                    <h2>What if your plant could reduce up to 40% of its energy cost?</h2>
+                    <p class="section-subhead" style="margin: 0 auto;">KVB Green Energies provides Parabolic Trough
+                        Solar Thermal Systems (PTC) engineered for food processing applications.</p>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h3>What This System Does:</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-temperature-high"></i> Generates steam and high-temperature heat using
+                                solar energy</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> Supports cooking, drying, and sterilization
+                                processes</li>
+                            <li><i class="fas fa-plug"></i> Integrates with your existing boiler system</li>
+                            <li><i class="fas fa-sync-alt"></i> Ensures uninterrupted production with hybrid operation
+                            </li>
+                        </ul>
+                        <p><strong>Immediate Impact:</strong> Up to <strong>40% reduction in fuel consumption</strong> •
+                            Lower cost of production • Long-term energy price stability</p>
+                        <p style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-hand-point-right"
+                                style="color: var(--green-accent);"></i> This is not just energy saving — it is margin
+                            improvement.</p>
+                    </div>
+                    <div>
+                        <img class="img-soft"
+                            src="https://www.researchgate.net/publication/324092231/figure/fig2/AS%3A1027099691347971%401621891057220/Schematic-diagram-parabolic-trough-solar-power-plant.ppm"
+                            alt="Parabolic trough solar field">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<ul class="feature-list">
-<li><i class="fas fa-check-circle"></i> Cooking & blanching (90–130°C)</li>
-<li><i class="fas fa-check-circle"></i> Pasteurisation (80–120°C)</li>
-<li><i class="fas fa-check-circle"></i> Evaporation (120–180°C)</li>
-<li><i class="fas fa-check-circle"></i> Drying (100–200°C)</li>
-<li><i class="fas fa-check-circle"></i> CIP / Sanitation (80–100°C)</li>
-</ul>
-</div>
+        <!-- 3. Process / Technology — Built for Industrial Reliability -->
+        <div class="section">
+            <div class="container">
+                <div class="grid-2" style="align-items: start;">
+                    <div>
+                        <span class="badge"><i class="fas fa-cogs"></i> Industrial-grade engineering</span>
+                        <h2>Built for industrial reliability</h2>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div><i class="fas fa-sun step-icon"></i>
+                                <div>Solar mirrors capture &amp; concentrate sunlight</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div><i class="fas fa-crosshairs step-icon"></i>
+                                <div>Heat focused onto absorber tubes</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div><i class="fas fa-temperature-high step-icon"></i>
+                                <div>Heat transfer fluid absorbs thermal energy</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div><i class="fas fa-wind step-icon"></i>
+                                <div>Steam or hot air is generated</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">5</div><i class="fas fa-utensils step-icon"></i>
+                                <div>Heat supplied to food processing</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">6</div><i class="fas fa-sync-alt step-icon"></i>
+                                <div>Boiler automatically supports when required</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <p><strong>Integration Options:</strong> Boiler Feedwater Preheating • Direct Steam Supply •
+                                Hybrid Solar + Boiler Mode • Optional Thermal Storage</p>
+                            <p><strong>Industrial Performance:</strong> Temperature Range: <strong>120°C –
+                                    250°C</strong> • Efficiency: <strong>50–70%</strong> • Solar Contribution:
+                                <strong>20–60%</strong> • System Life: <strong>20–30 years</strong>
+                            </p>
+                            <p style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;"><i
+                                    class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Reliable,
+                                scalable, and designed for continuous production environments.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="carousel-container">
+                            <img id="carouselImage" class="carousel-image"
+                                src="https://images.unsplash.com/photo-1584278860047-22db4e9b9f1e?auto=format&fit=crop&w=1200&q=80">
+                            <button class="carousel-arrow left" id="prevBtn"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-arrow right" id="nextBtn"><i
+                                    class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-dots" id="carouselDots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="right-col">
+        <!-- 4. Applications — Across Food Processing Segments -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2>Across food processing segments</h2>
 
-<div class="carousel-container">
+                </div>
+                <div class="grid-3">
+                    <div class="card"><i class="fas fa-utensils"></i>
+                        <h4>Cooking & Blanching</h4>
+                        <p>Continuous thermal support</p>
+                    </div>
+                    <div class="card"><i class="fas fa-temperature-low"></i>
+                        <h4>Pasteurization & Sterilization</h4>
+                        <p>Precise temperature control</p>
+                    </div>
+                    <div class="card"><i class="fas fa-tint"></i>
+                        <h4>Evaporation & Concentration</h4>
+                        <p>Energy-efficient concentration</p>
+                    </div>
+                    <div class="card"><i class="fas fa-wind"></i>
+                        <h4>Drying (fruits, vegetables, grains, spices)</h4>
+                        <p>Hot air or steam drying</p>
+                    </div>
+                    <div class="card"><i class="fas fa-pump-soap"></i>
+                        <h4>CIP / Sanitation systems</h4>
+                        <p>Hot water & steam cleaning</p>
+                    </div>
+                    <div class="card"><i class="fas fa-water"></i>
+                        <h4>Boiler feedwater heating</h4>
+                        <p>Improves overall efficiency</p>
+                    </div>
+                </div>
+                <p
+                    style="text-align: center; margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> If your process uses
+                    heat daily — <strong>solar thermal fits perfectly.</strong>
+                </p>
+            </div>
+        </div>
 
-<img id="carouselImage"
-class="carousel-image"
-src="../images/application1/food pr/Picture13.png">
+        <!-- 5. Benefits — What Food Industries Gain -->
+        <div class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <span class="badge"><i class="fas fa-chart-simple"></i> Triple advantage</span>
+                        <h2>What food industries gain</h2>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-coins"></i> <span><strong>Financial Advantage</strong> – Reduce fuel
+                                    consumption by 20–60%, lower cost per unit of production, protection from fuel price
+                                    volatility</span></li>
+                            <li><i class="fas fa-gear"></i> <span><strong>Operational Advantage</strong> – Seamless
+                                    integration with existing systems, no disruption to production, automated hybrid
+                                    operation</span></li>
+                            <li><i class="fas fa-globe"></i> <span><strong>Strategic Advantage</strong> – Reduced carbon
+                                    footprint, compliance with sustainability standards, stronger brand value for export
+                                    markets</span></li>
+                        </ul>
+                        <p style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;"><i
+                                class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Lower cost +
+                            sustainable production = higher competitiveness</p>
+                    </div>
+                    <div>
+                        <img class="img-soft"
+                            src="https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
+                            alt="Energy cost comparison">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<button class="carousel-arrow left" id="prevBtn">
-<i class="fas fa-chevron-left"></i>
-</button>
+        <!-- 6. ROI — Clear Business Value -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Clear business value</h2>
+                    <p class="section-subhead">Typical returns (India Food Industry)</p>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2–5 yrs</div>
+                        <div>Payback period</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30–40%</div>
+                        <div>Annual fuel savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+ yrs</div>
+                        <div>System life</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">~3T CO₂</div>
+                        <div>Saved per ton of oil replaced</div>
+                    </div>
+                </div>
+                <p
+                    style="margin-top: 2rem; text-align: center; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> After Payback: Your
+                    thermal energy cost becomes extremely low — giving you a long-term cost advantage over competitors.
+                    This is a high-impact, low-risk investment.
+                </p>
+            </div>
+        </div>
 
-<button class="carousel-arrow right" id="nextBtn">
-<i class="fas fa-chevron-right"></i>
-</button>
+        <!-- 7. Call to Action — Reduce Cost, Increase Profit -->
+        <div class="section" style="border-bottom: none;">
+            <div class="container">
+                <div class="cta-block">
+                    <h3>Don't let energy cost decide your product price</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #e9e9ed;">Take control of your thermal
+                        energy with solar.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                        <a href="#" class="btn-primary" style="background: white; color:#1d1d1f;"><i
+                                class="fas fa-clipboard-list"></i> Free site evaluation</a>
+                        <a href="#" class="btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;"><i
+                                class="fas fa-chart-line"></i> Get your ROI report</a>
+                        <a href="#" class="btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;"><i
+                                class="fas fa-headset"></i> Speak to our expert</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="carousel-dots" id="carouselDots"></div>
+        <!-- Powerful Closing Statement -->
+        <div id="footer"></div>
+    </main>
 
-</div>
+    <script>
+        /* HEADER FOOTER */
+        function loadComponent(id, paths) {
+            const vars = [...paths, '../' + paths[0]];
+            function tryPath(i) {
+                if (i >= vars.length) return;
+                fetch(vars[i])
+                    .then(r => r.ok ? r.text() : Promise.reject())
+                    .then(d => {
+                        const elem = document.getElementById(id);
+                        if (elem) {
+                            elem.innerHTML = d;
+                            const scripts = elem.querySelectorAll("script");
+                            scripts.forEach(s => {
+                                const newScript = document.createElement("script");
+                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                                newScript.appendChild(document.createTextNode(s.innerHTML));
+                                s.parentNode.replaceChild(newScript, s);
+                            });
+                        }
+                    })
+                    .catch(() => tryPath(i + 1));
+            }
+            tryPath(0);
+        }
+        loadComponent("header", ["components/header.html"]);
+        loadComponent("footer", ["components/footer.html"]);
 
-</div>
+        // Carousel with food processing relevant images
+        const images = [
+            "https://images.unsplash.com/photo-1584278860047-22db4e9b9f1e?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1557210101-33c8a9a4b7d5?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1200&q=80",
+            "https://www.researchgate.net/publication/324092231/figure/fig2/AS%3A1027099691347971%401621891057220/Schematic-diagram-parabolic-trough-solar-power-plant.ppm",
+            "https://image.made-in-china.com/365f3j00TzEeUArBJKgi/Concentrated-Solar-Power-CSP-Collector-Produce-550-Steam-to-Drive-Steam.webp"
+        ];
 
-</div>
-</section>
+        let index = 0;
+        const img = document.getElementById("carouselImage");
+        const dots = document.getElementById("carouselDots");
 
-<!-- WHY PTC -->
-<section class="content-section" style="background:var(--background-alt);">
+        function update(i) {
+            if (i < 0) i = images.length - 1;
+            if (i >= images.length) i = 0;
+            index = i;
+            img.src = images[index];
+            renderDots();
+        }
 
-<div class="section-header">
-<h2>Why PTC for Food Processing</h2>
-</div>
+        function renderDots() {
+            dots.innerHTML = "";
+            images.forEach((_, i) => {
+                const d = document.createElement("span");
+                d.className = "dot" + (i === index ? " active" : "");
+                d.onclick = () => update(i);
+                dots.appendChild(d);
+            });
+        }
 
-<div class="container">
-
-<div class="grid-3">
-<div class="card"><i class="fas fa-temperature-high"></i><h4>120–250°C</h4><p>Ideal for all thermal processes</p></div>
-<div class="card"><i class="fas fa-leaf"></i><h4>Reduce emissions</h4><p>Up to 60% fuel displacement</p></div>
-<div class="card"><i class="fas fa-coins"></i><h4>Payback 2–5 years</h4><p>Strong ROI</p></div>
-</div>
-
-</div>
-</section>
-
-<!-- TECH PERFORMANCE -->
-<section class="content-section">
-<div class="container">
-
-<h2>Technical Performance</h2>
-
-<div class="stats-grid">
-<div><div class="stat-number">120–250°C</div><div class="stat-label">Output</div></div>
-<div><div class="stat-number">20–60%</div><div class="stat-label">Solar fraction</div></div>
-<div><div class="stat-number">50–70%</div><div class="stat-label">Efficiency</div></div>
-<div><div class="stat-number">20–30 yr</div><div class="stat-label">Life</div></div>
-</div>
-
-</div>
-</section>
-
-<div id="footer"></div>
-
-<script>
-
-/* HEADER FOOTER */
-function loadComponent(id,paths){
-const vars=[...paths,'../'+paths[0]];
-function tryPath(i){
-if(i>=vars.length)return;
-fetch(vars[i])
-.then(r=>r.ok?r.text():Promise.reject())
-.then(d=>document.getElementById(id).innerHTML=d)
-.catch(()=>tryPath(i+1));
-}
-tryPath(0);
-}
-loadComponent("header",["components/header.html"]);
-loadComponent("footer",["components/footer.html"]);
-
-/* CAROUSEL */
-
-const images=[
-"../images/application1/food pr/Picture13.png",
-"../images/application1/food pr/Picture14.png",
-"../images/application1/food pr/Picture15.png"
-];
-
-let index=0;
-const img=document.getElementById("carouselImage");
-const dots=document.getElementById("carouselDots");
-
-function update(i){
-if(i<0)i=images.length-1;
-if(i>=images.length)i=0;
-index=i;
-img.src=images[index];
-renderDots();
-}
-
-function renderDots(){
-dots.innerHTML="";
-images.forEach((_,i)=>{
-const d=document.createElement("span");
-d.className="dot"+(i===index?" active":"");
-d.onclick=()=>update(i);
-dots.appendChild(d);
-});
-}
-
-document.getElementById("prevBtn").onclick=()=>update(index-1);
-document.getElementById("nextBtn").onclick=()=>update(index+1);
-
-update(0);
-
-</script>
+        document.getElementById("prevBtn").onclick = () => update(index - 1);
+        document.getElementById("nextBtn").onclick = () => update(index + 1);
+        img.onclick = () => update(index + 1);
+        update(0);
+    </script>
 
 </body>
+
 </html>

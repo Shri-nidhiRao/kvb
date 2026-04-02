@@ -1,274 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dairy Solar Steam | KVB Green Energies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>SolarTherm | Parabolic Trough Solar Steam for Dairy Industry</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root{
---eco-green:#3A7D44;
---background:#FFFFFF;
---background-alt:#F9F9FB;
---text-primary:#1D1D1F;
---text-secondary:#86868B;
---border:#E6E6E8;
---radius-lg:28px;
-}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            scroll-behavior: smooth;
+            line-height: 1.4;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:var(--background);color:var(--text-primary);}
+        :root {
+            --green-accent: #2c6e49;
+            --green-light: #e6f4ea;
+            --gray-bg: #f5f5f7;
+            --card-border: rgba(0, 0, 0, 0.06);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            --radius-xl: 32px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+        }
 
-.container{max-width:1280px;margin:auto;padding:0 32px;}
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
 
-h1,h2,h3{font-family:'Montserrat',sans-serif;font-weight:600;}
-h1{font-size:3rem;margin-bottom:1rem;}
-h2{font-size:2.4rem;margin-bottom:2rem;}
-p{color:var(--text-secondary);margin-bottom:1.5rem;}
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
 
-.content-section{padding:6rem 0;border-bottom:1px solid var(--border);}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+        h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #1d1d1f 0%, #2c3e2f 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+        }
 
-.feature-list{list-style:none;margin:2rem 0;}
-.feature-list li{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border);}
-.feature-list i{color:var(--eco-green);}
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
 
-.section-title{text-align:center;margin-bottom:3rem;}
-.section-title:after{
-content:'';display:block;width:60px;height:3px;
-background:var(--eco-green);margin:1rem auto 0;
-}
+        .section-subhead {
+            font-size: 1.2rem;
+            color: #6e6e73;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
 
-.card{
-background:var(--background-alt);
-border:1px solid var(--border);
-border-radius:20px;
-padding:2rem;
-}
-.card i{font-size:2rem;color:var(--eco-green);margin-bottom:1rem;}
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
 
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:2rem;
-margin-top:4rem;
-text-align:center;
-}
-.stat-number{font-size:3rem;font-weight:600;color:var(--eco-green);}
-.stat-label{color:var(--text-secondary);}
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
 
-.btn{
-display:inline-block;
-padding:.9rem 2.5rem;
-background:var(--eco-green);
-color:white;
-border-radius:40px;
-text-decoration:none;
-}
+        .btn-primary i {
+            font-size: 1rem;
+        }
 
-/* ===== CAROUSEL ===== */
+        .btn-primary:hover {
+            background-color: #1f553a;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(44, 110, 73, 0.25);
+        }
 
-.carousel-container{
-position:relative;
-border-radius:28px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.06);
-}
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #d2d2d6;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: #1d1d1f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-.carousel-image{
-width:100%;
-display:block;
-cursor:pointer;
-}
+        .btn-outline:hover {
+            border-color: var(--green-accent);
+            background: #f9faf9;
+        }
 
-.carousel-arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:42px;
-height:42px;
-border-radius:50%;
-border:none;
-background:white;
-cursor:pointer;
-box-shadow:0 5px 20px rgba(0,0,0,.15);
-}
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
 
-.carousel-arrow.left{left:15px;}
-.carousel-arrow.right{right:15px;}
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
 
-.carousel-dots{
-position:absolute;
-bottom:15px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-gap:8px;
-}
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
 
-.dot{
-width:10px;height:10px;
-border-radius:50%;
-background:rgba(255,255,255,.5);
-cursor:pointer;
-}
-.dot.active{background:white;}
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
 
-@media(max-width:900px){
-.grid-2{grid-template-columns:1fr;}
-.grid-3{grid-template-columns:1fr;}
-}
+        .card i {
+            font-size: 2.2rem;
+            color: var(--green-accent);
+            margin-bottom: 1.2rem;
+        }
 
-</style>
+        .card h4 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .stat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            background: var(--gray-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-xl);
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--green-accent);
+            line-height: 1;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border-bottom: 1px solid #efeff1;
+        }
+
+        .feature-list i {
+            color: var(--green-accent);
+            width: 22px;
+        }
+
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        .section-alt {
+            background-color: var(--gray-bg);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--green-light);
+            color: var(--green-accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        .img-soft {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .img-soft:hover {
+            transform: scale(1.01);
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin: 2rem 0;
+            align-items: stretch;
+        }
+
+        .step {
+            flex: 1 1 calc(33.333% - 1.25rem);
+            min-width: 140px;
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border: 1px solid #e9e9ed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #3a3a3c;
+            line-height: 1.4;
+        }
+
+        .step i.step-icon {
+            font-size: 1.5rem;
+            color: var(--green-accent);
+        }
+
+        .step-number {
+            background: var(--green-accent);
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .cta-block {
+            background: #1d1d1f;
+            border-radius: var(--radius-xl);
+            padding: 3.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-block h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-block .btn-primary {
+            background: white;
+            color: #1d1d1f;
+        }
+
+        .cta-block .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #86868b;
+            border-top: 1px solid #e9e9ed;
+        }
+
+        .carousel-container {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .06);
+        }
+
+        .carousel-image {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+        }
+
+        .carousel-arrow.left {
+            left: 15px;
+        }
+
+        .carousel-arrow.right {
+            right: 15px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .5);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        @media (max-width: 900px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.6rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 24px;
+            }
+
+            .stat-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div id="header"></div>
+    <!-- HEADER -->
+    <div id="header"></div>
 
-<!-- HERO -->
-<section class="content-section" style="padding-top:2rem;">
-<div class="container">
-<h1>Parabolic Trough Solar Thermal<br>for Dairy Process Heat</h1>
-<p style="font-size:1.2rem;max-width:700px;">
-Pasteurisation, evaporation, CIP – reliable solar steam for dairy plants.
-</p>
-</div>
-</section>
+    <main>
+        <!-- Hero Section -->
+        <div class="container" style="padding-top: 3rem; padding-bottom: 2rem;">
+            <div class="grid-2" style="gap: 2rem;">
+                <div>
+                    <div class="badge"><i class="fas fa-industry"></i> Dairy process heat reimagined</div>
+                    <h1>Parabolic Trough Solar Steam<br>for Dairy Industry</h1>
+                    <p style="font-size: 1.25rem; color: #515154; margin: 1rem 0 1.8rem 0;">Cut fuel costs up to 40% •
+                        Continuous pasteurization, evaporation & CIP • 120–250°C solar steam</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn-primary"><i class="fas fa-chart-line"></i> Calculate your savings</a>
+                        <a href="#" class="btn-outline"><i class="fas fa-file-pdf"></i> Dairy technical brochure</a>
+                    </div>
+                </div>
+                <div>
+                    <img class="img-soft"
+                        src="https://images.unsplash.com/photo-1582474081876-9bd9a3e5b6f5?auto=format&fit=crop&w=1200&q=80"
+                        alt="Modern dairy plant" style="max-height: 380px; width:100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
 
-<!-- DAIRY CHALLENGE + CAROUSEL -->
-<section class="content-section">
-<div class="container grid-2">
+        <!-- 1. Pain Area — Dairy Bleeding Energy Costs -->
+        <div class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <span class="badge"><i class="fas fa-fire"></i> The hidden cost</span>
+                        <h2>Dairy plants are bleeding energy costs</h2>
+                        <p>Dairy processing runs on heat. From pasteurization to evaporation and CIP cleaning — your
+                            plant depends on continuous steam and hot water. Most dairy plants today rely on:</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-oil-can"></i> LPG / Furnace Oil / Diesel boilers</li>
+                            <li><i class="fas fa-clock"></i> High daily operating hours</li>
+                            <li><i class="fas fa-charging-station"></i> Constant thermal demand</li>
+                        </ul>
+                        <div style="background: #faf9f7; padding: 1.4rem; border-radius: 20px; margin-top: 1rem;">
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">What This Means for Your Business:</p>
+                            <ul
+                                style="list-style: none; padding-left: 0; margin-left: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i> Fuel
+                                    cost = major share of operating expense</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i> Energy
+                                    cost fluctuates with fuel price</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i> High
+                                    steam demand in evaporation & drying increases cost further</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i> Carbon
+                                    emissions impacting sustainability goals</li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;"><i
+                                        class="fas fa-times-circle" style="color: #d9534f; margin-top: 4px;"></i>
+                                    Pressure from large buyers for green processing</li>
+                            </ul>
+                            <p
+                                style="margin-top: 1rem; font-style: italic; border-left: 3px solid var(--green-accent); padding-left: 1rem;">
+                                <i class="fas fa-hand-point-right"
+                                    style="color: var(--green-accent); margin-right: 8px;"></i> You are not just
+                                producing dairy — you are consuming expensive fuel every hour.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="img-soft"
+                            src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1200&q=80"
+                            alt="Dairy boiler room">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div>
-<h2>The Dairy Challenge</h2>
+        <!-- 2. Smart Solution — Solar Heat for Dairy Operations -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="badge"><i class="fas fa-sun"></i> Permanent fuel cost reduction</span>
+                    <h2>Imagine reducing up to 40% of your fuel cost — permanently.</h2>
+                    <p class="section-subhead" style="margin: 0 auto;">KVB Green Energies delivers Parabolic Trough
+                        Solar Thermal Systems designed specifically for dairy process heat.</p>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h3>What This System Does:</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-temperature-high"></i> Generates high-temperature steam using solar
+                                energy</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> Supplies heat for pasteurization, evaporation,
+                                and CIP</li>
+                            <li><i class="fas fa-plug"></i> Integrates with your existing boiler system</li>
+                            <li><i class="fas fa-sync-alt"></i> Works in hybrid mode for uninterrupted production</li>
+                        </ul>
+                        <p><strong>Immediate Impact:</strong> Up to <strong>40% reduction in fuel consumption</strong> •
+                            Lower operating cost from Day 1 • Stable energy pricing for decades.</p>
+                        <p style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-hand-point-right"
+                                style="color: var(--green-accent);"></i> This is not just renewable energy — this is
+                            cost control for your plant.</p>
+                    </div>
+                    <div>
+                        <img class="img-soft"
+                            src="https://www.researchgate.net/publication/324092231/figure/fig2/AS%3A1027099691347971%401621891057220/Schematic-diagram-parabolic-trough-solar-power-plant.ppm"
+                            alt="Parabolic trough solar field">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<ul class="feature-list">
-<li><i class="fas fa-check-circle"></i>Milk pasteurisation (80–120°C)</li>
-<li><i class="fas fa-check-circle"></i>Evaporation & concentration (120–180°C)</li>
-<li><i class="fas fa-check-circle"></i>Spray drying</li>
-<li><i class="fas fa-check-circle"></i>CIP cleaning (70–100°C)</li>
-<li><i class="fas fa-check-circle"></i>Boiler feedwater preheating</li>
-</ul>
+        <!-- 3. Process / Technology — Reliable & Proven System -->
+        <div class="section">
+            <div class="container">
+                <div class="grid-2" style="align-items: start;">
+                    <div>
+                        <span class="badge"><i class="fas fa-cogs"></i> Industrial-grade engineering</span>
+                        <h2>Reliable, proven system for dairy operations</h2>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <i class="fas fa-sun step-icon"></i>
+                                <span>Solar mirrors capture & concentrate sunlight</span>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <i class="fas fa-crosshairs step-icon"></i>
+                                <span>Heat focused onto absorber tubes</span>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <i class="fas fa-temperature-high step-icon"></i>
+                                <span>Heat transfer fluid absorbs thermal energy</span>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <i class="fas fa-wind step-icon"></i>
+                                <span>Steam or hot water generated</span>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <i class="fas fa-industry step-icon"></i>
+                                <span>Heat supplied to dairy processes</span>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">6</div>
+                                <i class="fas fa-sync-alt step-icon"></i>
+                                <span>Boiler automatically supports when required</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <p><strong>Integration Options:</strong> Boiler Feedwater Preheating • Direct Steam
+                                Generation • Hybrid Solar + Boiler Mode</p>
+                            <p><strong>Industrial Performance:</strong> Temperature Range: <strong>120°C –
+                                    250°C</strong> • Efficiency: <strong>50–70%</strong> • Solar Contribution:
+                                <strong>20–60%</strong> • System Life: <strong>20–30 years</strong>
+                            </p>
+                            <p style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;"><i
+                                    class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Designed
+                                for continuous dairy operations with zero disruption.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="carousel-container">
+                            <img id="carouselImage" class="carousel-image"
+                                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
+                            <button class="carousel-arrow left" id="prevBtn"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-arrow right" id="nextBtn"><i
+                                    class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-dots" id="carouselDots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<p>Traditional fuels: LPG, FO, coal → high cost & emissions.</p>
-</div>
+        <!-- 4. Applications — Where Solar Works in Dairy -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2>Perfectly suited for all major dairy heat processes</h2>
 
-<div class="carousel-container">
+                </div>
+                <div class="grid-3">
+                    <div class="card"><i class="fas fa-temperature-low"></i>
+                        <h4>Milk Pasteurization</h4>
+                        <p>72–85°C continuous, precise control</p>
+                    </div>
+                    <div class="card"><i class="fas fa-tint"></i>
+                        <h4>Evaporation & Concentration</h4>
+                        <p>60–80°C under vacuum</p>
+                    </div>
+                    <div class="card"><i class="fas fa-wind"></i>
+                        <h4>Spray Drying (preheating)</h4>
+                        <p>150–200°C air heating support</p>
+                    </div>
+                    <div class="card"><i class="fas fa-pump-soap"></i>
+                        <h4>CIP (Cleaning-In-Place)</h4>
+                        <p>70–85°C hot water & steam</p>
+                    </div>
+                    <div class="card"><i class="fas fa-water"></i>
+                        <h4>Boiler Feedwater Heating</h4>
+                        <p>Lifts feedwater temp, cuts boiler load</p>
+                    </div>
+                    <div class="card"><i class="fas fa-fire"></i>
+                        <h4>Hot water generation</h4>
+                        <p>General process & utility heating</p>
+                    </div>
+                </div>
+                <p
+                    style="text-align: center; margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> If your plant uses steam
+                    daily — <strong>you are an ideal candidate.</strong>
+                </p>
+            </div>
+        </div>
 
-<img id="carouselImage"
-class="carousel-image"
-src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
+        <!-- 5. Benefits — What Dairy Plants Gain -->
+        <div class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <span class="badge"><i class="fas fa-chart-simple"></i> Triple advantage</span>
+                        <h2>Financial, operational & strategic gains</h2>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-coins"></i> <span><strong>Financial Advantage</strong> – Reduce fuel
+                                    consumption by 20–60%, save significant annual energy cost, protect against fuel
+                                    price
+                                    increases</span></li>
+                            <li><i class="fas fa-gear"></i> <span><strong>Operational Advantage</strong> – Seamless
+                                    integration with existing systems, no production downtime, automated hybrid
+                                    control</span></li>
+                            <li><i class="fas fa-globe"></i> <span><strong>Strategic Advantage</strong> – Lower carbon
+                                    emissions, meet sustainability & export requirements, strengthen brand value with
+                                    green
+                                    processing</span></li>
+                        </ul>
+                        <p style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;"><i
+                                class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Lower cost +
+                            better compliance = stronger market position</p>
+                    </div>
+                    <div>
+                        <img class="img-soft"
+                            src="https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
+                            alt="Energy cost comparison dairy">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<button class="carousel-arrow left" id="prevBtn">
-<i class="fas fa-chevron-left"></i>
-</button>
+        <!-- 6. ROI — Strong Financial Justification -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>ROI that transforms dairy economics</h2>
+                    <p class="section-subhead">Typical returns for Indian dairy plants & emerging markets</p>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2–5 yrs</div>
+                        <div>Payback period</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30–40%</div>
+                        <div>Annual fuel savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+ yrs</div>
+                        <div>System life, solar heat is free for decades</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">~3T CO₂</div>
+                        <div>Saved per ton of oil replaced</div>
+                    </div>
+                </div>
+                <p
+                    style="margin-top: 2rem; text-align: center; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> One of the most bankable
+                    investments in industrial energy. After payback, your thermal energy cost drops drastically.
+                </p>
+            </div>
+        </div>
 
-<button class="carousel-arrow right" id="nextBtn">
-<i class="fas fa-chevron-right"></i>
-</button>
+        <!-- 7. Call to Action — Start Reducing Your Energy Cost -->
+        <div class="section" style="border-bottom: none;">
+            <div class="container">
+                <div class="cta-block">
+                    <h3>Control your heat cost before it controls your profit</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #e9e9ed;">Switch to solar thermal and
+                        make your dairy plant future-ready.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                        <a href="#" class="btn-primary" style="background: white; color:#1d1d1f;"><i
+                                class="fas fa-clipboard-list"></i> Free site evaluation</a>
+                        <a href="#" class="btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;"><i
+                                class="fas fa-chart-line"></i> Get your ROI analysis</a>
+                        <a href="#" class="btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;"><i
+                                class="fas fa-headset"></i> Talk to our expert</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="carousel-dots" id="carouselDots"></div>
+    </main>
 
-</div>
+    <!-- FOOTER -->
+    <div id="footer"></div>
 
-</div>
-</section>
+    <script>
+        // Carousel functionality with fallback images (dairy-specific)
+        const images = [
+            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1582474081876-9bd9a3e5b6f5?auto=format&fit=crop&w=1200&q=80",
+            "https://www.researchgate.net/publication/324092231/figure/fig2/AS%3A1027099691347971%401621891057220/Schematic-diagram-parabolic-trough-solar-power-plant.ppm",
+            "https://image.made-in-china.com/365f3j00TzEeUArBJKgi/Concentrated-Solar-Power-CSP-Collector-Produce-550-Steam-to-Drive-Steam.webp",
+            "https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
+        ];
 
-<!-- WHY PTC -->
-<section class="content-section" style="background:var(--background-alt);">
-<div class="container">
-<h2 class="section-title">Why PTC for Dairy</h2>
+        let index = 0;
+        const img = document.getElementById("carouselImage");
+        const dots = document.getElementById("carouselDots");
 
-<div class="grid-3">
-<div class="card"><i class="fas fa-thermometer-half"></i><h4>Right temperature</h4><p>120–250°C covers dairy needs.</p></div>
-<div class="card"><i class="fas fa-clock"></i><h4>Continuous support</h4><p>Hybrid boiler backup ensures 24/7.</p></div>
-<div class="card"><i class="fas fa-expand-alt"></i><h4>Modular & scalable</h4><p>Matches plant profile.</p></div>
-</div>
-</div>
-</section>
+        function update(i) {
+            if (i < 0) i = images.length - 1;
+            if (i >= images.length) i = 0;
+            index = i;
+            img.src = images[index];
+            renderDots();
+        }
 
-<!-- TECH -->
-<section class="content-section">
-<div class="container">
-<h2 class="section-title">Technical Performance</h2>
+        function renderDots() {
+            dots.innerHTML = "";
+            images.forEach((_, i) => {
+                const d = document.createElement("span");
+                d.className = "dot" + (i === index ? " active" : "");
+                d.onclick = () => update(i);
+                dots.appendChild(d);
+            });
+        }
 
-<div class="stats-grid">
-<div><div class="stat-number">120–250°C</div><div class="stat-label">Output</div></div>
-<div><div class="stat-number">25–60%</div><div class="stat-label">Solar fraction</div></div>
-<div><div class="stat-number">50–70%</div><div class="stat-label">Efficiency</div></div>
-<div><div class="stat-number">20–30 yr</div><div class="stat-label">Life</div></div>
-</div>
-</div>
-</section>
+        document.getElementById("prevBtn").onclick = () => update(index - 1);
+        document.getElementById("nextBtn").onclick = () => update(index + 1);
+        img.onclick = () => update(index + 1);
+        update(0);
 
-<!-- CTA -->
-<section class="content-section" style="background:var(--background-alt);">
-<div class="container" style="text-align:center;">
-<h2>Ready to lower your dairy’s energy cost?</h2>
-<a href="#" class="btn">Contact us for a free assessment</a>
-</div>
-</section>
+        function loadComponent(id, paths) {
+            const tryPath = (index) => {
+                if (index >= paths.length) return;
+                fetch(paths[index])
+                    .then(res => {
+                        if (!res.ok) throw new Error();
+                        return res.text();
+                    })
+                    .then(data => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch(() => tryPath(index + 1));
+            };
+            tryPath(0);
+        }
 
-<div id="footer"></div>
-
-<script>
-function loadComponent(id,paths){
-const tryPath=i=>{
-if(i>=paths.length)return;
-fetch(paths[i])
-.then(r=>r.ok?r.text():Promise.reject())
-.then(d=>document.getElementById(id).innerHTML=d)
-.catch(()=>tryPath(i+1));
-};
-tryPath(0);
-}
-loadComponent("header",["components/header.html","../components/header.html"]);
-loadComponent("footer",["components/footer.html","../components/footer.html"]);
-
-/* CAROUSEL */
-
-const images=[
-"../images/application1/solar ptc/Picture7.png",
-"../images/application1/solar ptc/Picture8.png",
-"../images/application1/solar ptc/Picture9.jpg",
-"../images/application1/solar ptc/Picture10.png",
-"../images/application1/solar ptc/Picture11.png",
-"../images/application1/solar ptc/Picture12.png"
-];
-
-let index=0;
-const img=document.getElementById("carouselImage");
-const dots=document.getElementById("carouselDots");
-
-function update(i){
-if(i<0)i=images.length-1;
-if(i>=images.length)i=0;
-index=i;
-img.src=images[index];
-renderDots();
-}
-
-function renderDots(){
-dots.innerHTML="";
-images.forEach((_,i)=>{
-const d=document.createElement("span");
-d.className="dot"+(i===index?" active":"");
-d.onclick=()=>update(i);
-dots.appendChild(d);
-});
-}
-
-document.getElementById("prevBtn").onclick=()=>update(index-1);
-document.getElementById("nextBtn").onclick=()=>update(index+1);
-img.onclick=()=>update(index+1);
-
-update(0);
-</script>
+        loadComponent("header", ["../components/header.html", "components/header.html"]);
+        loadComponent("footer", ["../components/footer.html", "components/footer.html"]);
+    </script>
 
 </body>
+
 </html>
