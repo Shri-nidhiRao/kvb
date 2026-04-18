@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Leaflet JS (required for map) -->
@@ -41,10 +44,15 @@
             background-color: var(--soft-white);
             color: #333;
             line-height: 1.6;
-            padding-top: 80px; /* space for fixed header */
+            padding-top: 80px;
+            /* space for fixed header */
         }
 
-        h1, h2, h3, h4, h5 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'Playfair Display', serif;
             color: var(--earth-green);
             font-weight: 600;
@@ -114,10 +122,17 @@
             color: white;
         }
 
-      
+
         @keyframes dropdownFade {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* CTA button in header */
@@ -159,8 +174,8 @@
 
         /* ===== CONTACT HERO ===== */
         .contact-hero {
-            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(58, 90, 64, 0.9)), 
-                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(58, 90, 64, 0.9)),
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             color: var(--soft-white);
             padding: 120px 0 100px;
             text-align: center;
@@ -685,8 +700,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .success-content {
@@ -1120,7 +1142,7 @@
             flex-wrap: wrap;
         }
 
-      
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .nav-menu {
@@ -1150,9 +1172,11 @@
             .hamburger.active span:nth-child(1) {
                 transform: rotate(45deg) translate(8px, 8px);
             }
+
             .hamburger.active span:nth-child(2) {
                 opacity: 0;
             }
+
             .hamburger.active span:nth-child(3) {
                 transform: rotate(-45deg) translate(8px, -8px);
             }
@@ -1179,10 +1203,12 @@
         }
 
         @media (max-width: 992px) {
+
             .form-wrapper,
             .location-wrapper {
                 grid-template-columns: 1fr;
             }
+
             .contact-hero h1 {
                 font-size: 3rem;
             }
@@ -1192,22 +1218,27 @@
             .contact-hero h1 {
                 font-size: 2.5rem;
             }
+
             .form-row {
                 grid-template-columns: 1fr;
             }
+
             .contact-quick-links {
                 flex-direction: column;
                 align-items: center;
             }
+
             .quick-link {
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
             }
+
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
             }
+
             .footer-links a {
                 margin: 0 10px;
             }
@@ -1217,26 +1248,31 @@
             .contact-hero h1 {
                 font-size: 2rem;
             }
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
+
             .btn {
                 padding: 12px 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- ===== HEADER (with dropdowns) ===== -->
-   <div id="header"></div>
+    <div id="header"></div>
     <!-- ===== CONTACT HERO ===== -->
     <section class="contact-hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Grow With Nature's Wisdom</h1>
                 <p class="hero-subtitle">Connect with India's Pioneers in Renewable Energy & Sustainable Agriculture</p>
-                <p class="hero-description">Join us in cultivating a greener future. Whether you seek technical guidance, partnership opportunities, or sustainable solutions, our team nurtures every inquiry with care.</p>
-                
+                <p class="hero-description">Join us in cultivating a greener future. Whether you seek technical
+                    guidance, partnership opportunities, or sustainable solutions, our team nurtures every inquiry with
+                    care.</p>
+
                 <div class="contact-quick-links">
                     <a href="#contact-form" class="quick-link">
                         <i class="fas fa-seedling"></i>
@@ -1313,7 +1349,7 @@
         <div class="container">
             <h2 class="section-title">How Can We Help Your Growth?</h2>
             <p class="section-subtitle">Select your inquiry type for personalized nurturing and guidance</p>
-            
+
             <div class="inquiry-grid">
                 <div class="inquiry-card" data-inquiry-type="technical">
                     <div class="inquiry-icon"><i class="fas fa-cogs"></i></div>
@@ -1365,7 +1401,7 @@
                     <span>Please select an inquiry type above</span>
                 </div>
             </div>
-            
+
             <div class="form-wrapper">
                 <form id="mainContactForm" class="contact-form">
                     <div class="form-row">
@@ -1381,7 +1417,8 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="reply_to">Email Address *</label>
-                            <input type="email" id="reply_to" name="reply_to" placeholder="your.email@domain.com" required>
+                            <input type="email" id="reply_to" name="reply_to" placeholder="your.email@domain.com"
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
@@ -1431,23 +1468,26 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Your Message/Requirements *</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Share your vision, requirements, project scope, timeline, or any specific questions..." required></textarea>
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Share your vision, requirements, project scope, timeline, or any specific questions..."
+                            required></textarea>
                     </div>
-                    
+
                     <!-- File upload note (EmailJS cannot handle files) -->
-                    
-                    
-                    
+
+
+
                     <div class="form-group">
                         <label class="checkbox-label">
                             <input type="checkbox" name="privacy" required>
-                            <span>I agree to the <a href="privacy-policy.html">Privacy Policy</a> and consent to KVB contacting me regarding my inquiry *</span>
+                            <span>I agree to the <a href="privacy-policy.html">Privacy Policy</a> and consent to KVB
+                                contacting me regarding my inquiry *</span>
                         </label>
                     </div>
-                    
+
                     <input type="hidden" name="product" value="Contact Form Inquiry">
                     <input type="hidden" id="admin_email" name="to_email" value="info@kvbgreenenergies.com">
-                    
+
                     <div class="form-submit">
                         <button type="submit" class="btn btn-primary" id="submitBtn">
                             <i class="fas fa-seedling"></i> Plant Your Inquiry
@@ -1455,7 +1495,7 @@
                         <p class="form-note">We typically respond within 24 hours during business days</p>
                     </div>
                 </form>
-                
+
                 <div class="form-sidebar">
                     <div class="sidebar-card">
                         <h3><i class="fas fa-lightbulb"></i> Tips for Better Response</h3>
@@ -1470,9 +1510,12 @@
                     <div class="sidebar-card">
                         <h3><i class="fas fa-clock"></i> Response Time</h3>
                         <div class="response-time">
-                            <div class="time-category"><span class="time-label">General Inquiries</span><span class="time-value">24h</span></div>
-                            <div class="time-category"><span class="time-label">Technical Queries</span><span class="time-value">48h</span></div>
-                            <div class="time-category"><span class="time-label">Project Proposals</span><span class="time-value">3‑5 days</span></div>
+                            <div class="time-category"><span class="time-label">General Inquiries</span><span
+                                    class="time-value">24h</span></div>
+                            <div class="time-category"><span class="time-label">Technical Queries</span><span
+                                    class="time-value">48h</span></div>
+                            <div class="time-category"><span class="time-label">Project Proposals</span><span
+                                    class="time-value">3‑5 days</span></div>
                         </div>
                     </div>
                     <div class="sidebar-card">
@@ -1480,11 +1523,13 @@
                         <div class="contact-options">
                             <a href="tel:+919545529950" class="contact-option">
                                 <i class="fas fa-phone"></i>
-                                <div><span class="option-label">Call Us</span><span class="option-value">+91 9545529950</span></div>
+                                <div><span class="option-label">Call Us</span><span class="option-value">+91
+                                        9545529950</span></div>
                             </a>
                             <a href="https://wa.me/919545529950" target="_blank" class="contact-option">
                                 <i class="fab fa-whatsapp"></i>
-                                <div><span class="option-label">WhatsApp</span><span class="option-value">+91 9545529950</span></div>
+                                <div><span class="option-label">WhatsApp</span><span class="option-value">+91
+                                        9545529950</span></div>
                             </a>
                         </div>
                     </div>
@@ -1546,11 +1591,15 @@
     <section class="partnership-opportunities">
         <div class="container">
             <h2 class="section-title">Cultivate Partnerships</h2>
-            <p class="section-subtitle">Join hands with KVB to sow seeds of sustainable growth and reap abundant harvests</p>
-            
+            <p class="section-subtitle">Join hands with KVB to sow seeds of sustainable growth and reap abundant
+                harvests</p>
+
             <div class="partnership-types">
                 <div class="partnership-type">
-                    <div class="type-header"><div class="type-icon"><i class="fas fa-handshake"></i></div><h3>Distribution Partnerships</h3></div>
+                    <div class="type-header">
+                        <div class="type-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Distribution Partnerships</h3>
+                    </div>
                     <div class="type-content">
                         <p>Become an authorized distributor of KVB's sustainable solutions in your region</p>
                         <ul class="type-benefits">
@@ -1563,7 +1612,10 @@
                     </div>
                 </div>
                 <div class="partnership-type">
-                    <div class="type-header"><div class="type-icon"><i class="fas fa-university"></i></div><h3>Institutional Collaborations</h3></div>
+                    <div class="type-header">
+                        <div class="type-icon"><i class="fas fa-university"></i></div>
+                        <h3>Institutional Collaborations</h3>
+                    </div>
                     <div class="type-content">
                         <p>Collaborate with educational and research institutions</p>
                         <ul class="type-benefits">
@@ -1576,7 +1628,10 @@
                     </div>
                 </div>
                 <div class="partnership-type">
-                    <div class="type-header"><div class="type-icon"><i class="fas fa-globe"></i></div><h3>International Partnerships</h3></div>
+                    <div class="type-header">
+                        <div class="type-icon"><i class="fas fa-globe"></i></div>
+                        <h3>International Partnerships</h3>
+                    </div>
                     <div class="type-content">
                         <p>Expand KVB's technologies to international markets</p>
                         <ul class="type-benefits">
@@ -1589,7 +1644,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="partnership-cta">
                 <div class="cta-content">
                     <h3>Ready to Cultivate with KVB?</h3>
@@ -1609,24 +1664,50 @@
             <h2 class="section-title">Commonly Asked Cultivation Questions</h2>
             <div class="faq-accordion">
                 <div class="faq-item">
-                    <div class="faq-question"><h4>What is the typical response time for inquiries?</h4><i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer"><p>We nurture general inquiries within 24 hours on business days. Technical queries may take up to 48 hours.</p></div>
+                    <div class="faq-question">
+                        <h4>What is the typical response time for inquiries?</h4><i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We nurture general inquiries within 24 hours on business days. Technical queries may take up
+                            to 48 hours.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><h4>Do you provide site visits and demonstrations?</h4><i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer"><p>Yes, please schedule in advance through our demo request form.</p></div>
+                    <div class="faq-question">
+                        <h4>Do you provide site visits and demonstrations?</h4><i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, please schedule in advance through our demo request form.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><h4>What information should I provide for a technical inquiry?</h4><i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer"><p>Please provide current energy consumption, application type, capacity requirements, site location, and any specific challenges.</p></div>
+                    <div class="faq-question">
+                        <h4>What information should I provide for a technical inquiry?</h4><i
+                            class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Please provide current energy consumption, application type, capacity requirements, site
+                            location, and any specific challenges.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><h4>How can I check subsidy eligibility for my project?</h4><i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer"><p>Our team assists with subsidy applications. Provide your project details and we'll check eligibility.</p></div>
+                    <div class="faq-question">
+                        <h4>How can I check subsidy eligibility for my project?</h4><i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our team assists with subsidy applications. Provide your project details and we'll check
+                            eligibility.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question"><h4>Do you provide training for system operation and maintenance?</h4><i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer"><p>Yes, comprehensive training is included with installation, and we offer periodic refresher courses.</p></div>
+                    <div class="faq-question">
+                        <h4>Do you provide training for system operation and maintenance?</h4><i
+                            class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, comprehensive training is included with installation, and we offer periodic refresher
+                            courses.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1640,15 +1721,17 @@
                 <p>Our team of green energy cultivators is ready to help you grow your sustainable projects.</p>
                 <div class="cta-buttons">
                     <a href="tel:+919545529950" class="btn btn-success"><i class="fas fa-phone"></i> Call Our Fields</a>
-                    <a href="https://wa.me/919545529950" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
-                    <a href="mailto:info@kvbgreenenergies.com" class="btn btn-success"><i class="fas fa-envelope"></i> Send Email</a>
+                    <a href="https://wa.me/919545529950" target="_blank" class="btn btn-success"><i
+                            class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+                    <a href="mailto:info@kvbgreenenergies.com" class="btn btn-success"><i class="fas fa-envelope"></i>
+                        Send Email</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-   <div id="footer"></div>
+    <div id="footer"></div>
     <script>
         // Load header/footer components
         function loadComponent(id, paths) {
@@ -1668,12 +1751,12 @@
         }
         loadComponent("header", ["components/header.html", "../components/header.html"]);
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
-    </script>   
+    </script>
     <!-- ===== SCRIPTS ===== -->
     <script>
-        (function() {
+        (function () {
             // ===== EMAILJS INIT =====
-              const EMAILJS_PUBLIC_KEY = 'dU0o-KrI0m49D4wqR';     // Your public key
+            const EMAILJS_PUBLIC_KEY = 'dU0o-KrI0m49D4wqR';     // Your public key
             const EMAILJS_SERVICE_ID = 'service_t3i4ttm';        // Your service ID
             const EMAILJS_ADMIN_TEMPLATE_ID = 'template_q9aciqa'; // Your admin template ID
 
@@ -1692,7 +1775,7 @@
             const navMenu = document.getElementById('navMenu');
 
             if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
+                hamburger.addEventListener('click', function () {
                     hamburger.classList.toggle('active');
                     navMenu.classList.toggle('active');
                 });
@@ -1706,7 +1789,7 @@
 
                 // Mobile dropdown toggle
                 document.querySelectorAll('.dropdown > a').forEach(link => {
-                    link.addEventListener('click', function(e) {
+                    link.addEventListener('click', function (e) {
                         if (window.innerWidth <= 1024) {
                             e.preventDefault();
                             this.parentElement.classList.toggle('active');
@@ -1722,20 +1805,20 @@
             const selectedDisplay = document.getElementById('selectedInquiryDisplay');
 
             selectButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const type = this.dataset.type;
                     inquiryCards.forEach(card => card.classList.remove('selected'));
                     this.closest('.inquiry-card').classList.add('selected');
                     if (inquiryTypeSelect) inquiryTypeSelect.value = type;
-                    
-                    const names = { technical:'Technical Inquiry', demo:'Demo/Site Visit', government:'Government Partnership', investor:'Investor Inquiry', farmer:'Farmer Support', other:'Other' };
+
+                    const names = { technical: 'Technical Inquiry', demo: 'Demo/Site Visit', government: 'Government Partnership', investor: 'Investor Inquiry', farmer: 'Farmer Support', other: 'Other' };
                     selectedDisplay.innerHTML = `<i class="fas fa-check-circle"></i> <span>Selected: <strong>${names[type]}</strong></span> <button class="btn-text" id="changeInquiry">Change</button>`;
                     document.getElementById('changeInquiry')?.addEventListener('click', () => {
                         selectedDisplay.innerHTML = '<span>Please select an inquiry type above</span>';
                         inquiryCards.forEach(card => card.classList.remove('selected'));
                         if (inquiryTypeSelect) inquiryTypeSelect.value = '';
                     });
-                    document.getElementById('contact-form').scrollIntoView({ behavior:'smooth', block:'start' });
+                    document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
 
@@ -1744,7 +1827,7 @@
             const submitBtn = document.getElementById('submitBtn');
 
             if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
+                contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
 
                     const formData = new FormData(this);
@@ -1818,7 +1901,7 @@
 
             // ===== FAQ ACCORDION =====
             document.querySelectorAll('.faq-question').forEach(q => {
-                q.addEventListener('click', function() {
+                q.addEventListener('click', function () {
                     const item = this.parentElement;
                     const wasActive = item.classList.contains('active');
                     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
@@ -1828,7 +1911,7 @@
 
             // ===== SMOOTH SCROLL =====
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1836,27 +1919,27 @@
             });
 
             // ===== MAP INIT (Leaflet) - ONLY DHARWAD HEADQUARTERS =====
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 const mapEl = document.getElementById('officeMap');
                 if (!mapEl) return;
-                
+
                 // Coordinates for Dharwad headquarters (approximate)
                 const hqCoords = [15.4589, 75.0078];
-                
+
                 // Initialize map centered on Dharwad with zoom level 13 for a clear view
                 const map = L.map('officeMap').setView(hqCoords, 13);
-                
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
-                    attribution: '© OpenStreetMap', 
-                    maxZoom: 18 
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap',
+                    maxZoom: 18
                 }).addTo(map);
 
                 // Custom marker icon
-                const icon = L.divIcon({ 
-                    className: 'office-marker', 
-                    html: '<div class="map-marker"><i class="fas fa-map-marker-alt"></i></div>', 
-                    iconSize: [45, 45], 
-                    iconAnchor: [22.5, 45] 
+                const icon = L.divIcon({
+                    className: 'office-marker',
+                    html: '<div class="map-marker"><i class="fas fa-map-marker-alt"></i></div>',
+                    iconSize: [45, 45],
+                    iconAnchor: [22.5, 45]
                 });
 
                 // Add single marker for headquarters
@@ -1881,4 +1964,5 @@
         })();
     </script>
 </body>
+
 </html>

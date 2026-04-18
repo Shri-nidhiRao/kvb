@@ -156,7 +156,7 @@
         }
         .hero-content {
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1rem;
         }
         .hero-content h1 {
             text-align: center;
@@ -192,9 +192,9 @@
             box-shadow: var(--shadow-md);
         }
         .hero-video-wrapper {
-            width: 90vw;
-            max-width: 1600px;
-            margin: 2rem auto 0;
+            width: 100%;
+            max-width: 1040px;
+            margin: 2rem auto 2rem;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -211,15 +211,18 @@
             display: block;
             padding-top: 56.25%;
         }
-        .hero-video-wrapper iframe {
+        .hero-video-wrapper iframe,
+        .hero-video-wrapper video {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: cover;
         }
-        @media (max-width: 768px) {
-            .hero-video-wrapper {
+        @media (max-width: 992px) {
+            .hero-video-grid {
+                grid-template-columns: 1fr;
                 width: 95vw;
             }
         }
@@ -619,7 +622,10 @@
                 
             </div>
             <div class="hero-video-wrapper">
-                <iframe src="https://www.youtube.com/embed/5pAjcFmN5-U?autoplay=1&mute=1&loop=1&playlist=5pAjcFmN5-U&controls=0&rel=0&modestbranding=1" title="Smart Farming Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <video autoplay muted loop playsinline controls preload="metadata">
+                    <source src="../videos/232561_small.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>

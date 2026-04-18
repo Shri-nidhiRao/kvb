@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>16 m² Solar Scheffler Dish | KVB Green Energies</title>
     <!-- Fonts & Icons – Apple-inspired Premium -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -22,9 +25,9 @@
             --primary-dark: #2F5E2F;
             --primary-light: #EAF5EA;
             --primary-glow: rgba(74, 139, 74, 0.08);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
-            --shadow-md: 0 8px 20px rgba(0,0,0,0.04);
-            --shadow-lg: 0 16px 32px rgba(0,0,0,0.06);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.06);
             --radius-sm: 12px;
             --radius-md: 20px;
             --radius-lg: 28px;
@@ -49,7 +52,10 @@
             padding: 0 32px;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-heading);
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -134,7 +140,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255,255,255,0.92);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
@@ -165,12 +171,12 @@
         .hero-content h1 {
             text-align: center;
         }
-        
+
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .product-tags {
             display: flex;
             flex-wrap: wrap;
@@ -178,7 +184,7 @@
             gap: 0.8rem;
             margin-top: 1.5rem;
         }
-        
+
         .tag {
             background: white;
             border: 1px solid var(--border);
@@ -192,11 +198,11 @@
             transition: all 0.2s;
             box-shadow: var(--shadow-sm);
         }
-        
+
         .tag i {
             color: var(--primary);
         }
-        
+
         .tag:hover {
             transform: translateY(-2px);
             border-color: var(--primary);
@@ -205,9 +211,9 @@
 
         /* Video wrapper – very large, centered, no overflow */
         .hero-video-wrapper {
-            width: 90vw;                /* nearly full viewport width */
-            max-width: 1600px;          /* but not too huge on giant screens */
-            margin: 0 auto;
+            width: 100%;
+            max-width: 1040px;
+            margin: 2rem auto 2rem;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -218,13 +224,14 @@
 
         .hero-video-wrapper:hover {
             transform: translateY(-5px);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.12);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.12);
         }
 
         .hero-video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 56.25%;
+            /* 16:9 aspect ratio */
         }
 
         .hero-video-wrapper iframe,
@@ -250,10 +257,12 @@
             transform: translateY(40px);
             transition: all 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
+
         .section-title:after {
             content: '';
             display: block;
@@ -274,21 +283,25 @@
             box-shadow: var(--shadow-md);
             transition: all 0.2s ease;
         }
+
         .highlight-tech h2 {
             margin-bottom: 1rem;
             display: inline-block;
             background: none;
             font-size: 2rem;
         }
+
         .highlight-tech h2:after {
             display: none;
         }
+
         .highlight-tech p {
             font-size: 1.1rem;
             line-height: 1.7;
             max-width: 95%;
             color: var(--text-primary);
         }
+
         .highlight-tech strong {
             color: var(--primary-dark);
         }
@@ -300,6 +313,7 @@
             gap: 2rem;
             margin: 3rem 0;
         }
+
         .feature-card {
             background: white;
             border: 1px solid var(--border);
@@ -309,27 +323,32 @@
             box-shadow: var(--shadow-sm);
             height: 100%;
         }
+
         .feature-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary-light);
             box-shadow: var(--shadow-lg);
         }
+
         .feature-card i {
             font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 1rem;
             display: inline-block;
         }
+
         .feature-card h3 {
             font-size: 1.6rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
+
         .feature-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .feature-list li {
             margin-bottom: 0.75rem;
             padding-left: 1.4rem;
@@ -338,6 +357,7 @@
             line-height: 1.45;
             color: var(--text-secondary);
         }
+
         .feature-list li:before {
             content: "▹";
             position: absolute;
@@ -346,6 +366,7 @@
             font-weight: 600;
             font-size: 1rem;
         }
+
         @media (max-width: 768px) {
             .feature-matrix {
                 grid-template-columns: 1fr;
@@ -354,18 +375,26 @@
         }
 
         /* ===== CARDS ===== */
-        .specs-grid, .applications-grid {
+        .specs-grid,
+        .applications-grid {
             display: grid;
             gap: 2rem;
             margin: 4rem 0;
         }
+
         .applications-grid {
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
         }
+
         .specs-grid {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
-        .spec-card, .app-card {
+
+        .spec-card,
+        .app-card {
             background: white;
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
@@ -373,20 +402,27 @@
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
         }
-        .spec-card:hover, .app-card:hover {
+
+        .spec-card:hover,
+        .app-card:hover {
             transform: translateY(-6px);
             border-color: var(--primary-light);
             box-shadow: var(--shadow-lg);
         }
-        .spec-card i, .app-card i {
+
+        .spec-card i,
+        .app-card i {
             font-size: 2.6rem;
             color: var(--primary);
             margin-bottom: 1.2rem;
         }
-        .spec-card h3, .app-card h3 {
+
+        .spec-card h3,
+        .app-card h3 {
             font-size: 1.6rem;
             margin-bottom: 0.8rem;
         }
+
         @media (max-width: 1200px) {
             .applications-grid {
                 grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -400,27 +436,31 @@
             gap: 2rem;
             margin: 4rem 0;
         }
+
         .gallery-item {
             border-radius: var(--radius-md);
             overflow: hidden;
             height: 260px;
             position: relative;
         }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s;
         }
+
         .gallery-item:hover img {
             transform: scale(1.05);
         }
+
         .gallery-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
             color: white;
             padding: 1.5rem;
             font-weight: 500;
@@ -435,10 +475,12 @@
             margin: 5rem 0;
             box-shadow: var(--shadow-sm);
         }
+
         .tech-table {
             width: 100%;
             border-collapse: collapse;
         }
+
         .tech-table th {
             text-align: left;
             padding: 1rem 1.5rem;
@@ -447,11 +489,13 @@
             font-weight: 600;
             border-bottom: 1px solid var(--border);
         }
+
         .tech-table td {
             padding: 1rem 1.5rem;
             border-bottom: 1px solid var(--border);
             color: var(--text-secondary);
         }
+
         .tech-table tr:last-child td {
             border-bottom: none;
         }
@@ -462,6 +506,7 @@
             max-width: 900px;
             display: none;
         }
+
         .lock-container {
             background: white;
             border: 1px solid var(--border);
@@ -471,15 +516,18 @@
             cursor: pointer;
             transition: all 0.3s;
         }
+
         .lock-container:hover {
             border-color: var(--primary);
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
         }
+
         .lock-icon-big {
             font-size: 3.8rem;
             color: var(--primary);
         }
+
         .unlock-form-container {
             background: white;
             border: 1px solid var(--border);
@@ -489,24 +537,29 @@
             margin-top: 2rem;
             display: none;
         }
+
         .unlock-form-container.visible {
             display: block;
             animation: fadeUp 0.5s;
         }
+
         .unlock-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
+
         .form-group.full-width {
             grid-column: span 2;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 0.4rem;
             font-weight: 500;
             font-size: 0.9rem;
         }
+
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -519,6 +572,7 @@
             background: var(--background-alt);
             transition: 0.2s;
         }
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
@@ -526,6 +580,7 @@
             border-color: var(--primary);
             box-shadow: 0 0 0 3px var(--primary-glow);
         }
+
         .btn-submit {
             width: 100%;
             padding: 1rem;
@@ -537,17 +592,21 @@
             cursor: pointer;
             transition: 0.2s;
         }
+
         .btn-submit:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
         }
+
         .hidden-content {
             display: none;
             margin-top: 2rem;
         }
+
         .hidden-content.visible {
             display: block;
         }
+
         .success-message {
             background: var(--primary-light);
             border-left: 4px solid var(--primary);
@@ -558,18 +617,21 @@
             gap: 1rem;
             margin-bottom: 2rem;
         }
+
         .premium-card {
             background: var(--background-alt);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             padding: 2rem;
         }
+
         .premium-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
+
         .premium-item {
             background: var(--background-alt);
             border: 1px solid var(--border);
@@ -577,40 +639,56 @@
             padding: 1.5rem;
             text-align: center;
         }
+
         .premium-item i {
             font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
+
         .btn-small {
             padding: 0.5rem 1.2rem;
             font-size: 0.9rem;
         }
+
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px);}
-            to { opacity: 1; transform: translateY(0);}
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @media (max-width: 992px) {
             .unlock-form {
                 grid-template-columns: 1fr;
             }
+
             .form-group.full-width {
                 grid-column: span 1;
             }
         }
+
         @media (max-width: 768px) {
             .container {
                 padding: 0 20px;
             }
+
             h1 {
                 font-size: 2.5rem;
             }
+
             h2 {
                 font-size: 2rem;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header placeholder - ORIGINAL, loads from external component -->
@@ -621,10 +699,13 @@
         <div class="hero-full-width">
             <div class="hero-content">
                 <h1>Solar Scheffler Dish</h1>
-               
+
             </div>
             <div class="hero-video-wrapper">
-                <iframe src="../videos/DJI_0958.MP4" title="Scheffler Dish Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="../videos/DJI_0958_2.mp4" type="video/mp4">
+                    <source src="../videos/DJI_0958.webm" type="video/webm">
+                </video>
             </div>
         </div>
     </section>
@@ -637,21 +718,27 @@
                 <div style="margin-bottom: 0.5rem;">
                     <h2 style="margin-bottom: 0.5rem; font-size: 2.2rem;">⚡ Scheffler Fixed‑Focus Technology</h2>
                 </div>
-                <p>The <strong>16 m² Solar Scheffler Dish</strong> uses a patented lateral‑moving parabolic geometry to reflect sunlight onto a <strong>stationary receiver located inside the kitchen</strong>. Unlike conventional cookers, the cooking position is fixed, safe, and indoor. The dish automatically tracks the sun while the focal point remains static — enabling continuous, high‑temperature cooking without operator exposure to concentrated rays.</p>
+                <p>The <strong>16 m² Solar Scheffler Dish</strong> uses a patented lateral‑moving parabolic geometry to
+                    reflect sunlight onto a <strong>stationary receiver located inside the kitchen</strong>. Unlike
+                    conventional cookers, the cooking position is fixed, safe, and indoor. The dish automatically tracks
+                    the sun while the focal point remains static — enabling continuous, high‑temperature cooking without
+                    operator exposure to concentrated rays.</p>
             </div>
 
             <!-- 2x2 FEATURE MATRIX -->
             <div class="reveal">
-                <div class="section-title"><h2>Core Capabilities</h2></div>
+                <div class="section-title">
+                    <h2>Core Capabilities</h2>
+                </div>
                 <div class="feature-matrix">
                     <div class="feature-card">
                         <i class="fas fa-utensils"></i>
                         <h3>Cooking Performance</h3>
                         <ul class="feature-list">
                             <li>Rice: 15–20 kg in 15-25 min</li>
-                            <li>Dal: 20–25 L in 45–45 min</li>
+                            <li>Dal: 20–25 L in 40–45 min</li>
                             <li>Vegetables: 25–30 kg in 20-25 min</li>
-                            
+
                         </ul>
                     </div>
                     <div class="feature-card">
@@ -661,7 +748,7 @@
                             <li>16 m² Scheffler reflector</li>
                             <li>Precision tracking mechanism</li>
                             <li>Fixed receiver unit (indoor cooking)</li>
-                        
+
                             <li>Seasonal tilt adjustment</li>
                             <li>Wind Velocity (140 km/h)</li>
                         </ul>
@@ -694,25 +781,60 @@
             <!-- Key Specs -->
             <h2 class="section-title">Key Specifications</h2>
             <div class="specs-grid">
-                <div class="spec-card"><i class="fas fa-chart-pie"></i><h3>Aperture Area</h3><p>16 m² – ideal for high‑demand kitchens .</p></div>
-                <div class="spec-card"><i class="fas fa-thermometer-half"></i><h3>Operating Temperature</h3><p>350°C – 450°C peak flux; 180°C Temp at 10/pressure for continuous cooking.</p></div>
-                <div class="spec-card"><i class="fas fa-sun"></i><h3>Thermal Output</h3><p>5.5 kW, enough for bulk cooking.</p></div>
-                <div class="spec-card"><i class="fas fa-chart-line"></i><h3>System Efficiency</h3><p>65–75% optical, 45–50% net thermal efficiency.</p></div>
+                <div class="spec-card"><i class="fas fa-chart-pie"></i>
+                    <h3>Aperture Area</h3>
+                    <p>16 m² – ideal for high‑demand kitchens .</p>
+                </div>
+                <div class="spec-card"><i class="fas fa-thermometer-half"></i>
+                    <h3>Operating Temperature</h3>
+                    <p>350°C – 450°C peak flux; 180°C Temp at 10/pressure for continuous cooking.</p>
+                </div>
+                <div class="spec-card"><i class="fas fa-sun"></i>
+                    <h3>Thermal Output</h3>
+                    <p>5.5 kW, enough for bulk cooking.</p>
+                </div>
+                <div class="spec-card"><i class="fas fa-chart-line"></i>
+                    <h3>System Efficiency</h3>
+                    <p>65–75% optical, 45–50% net thermal efficiency.</p>
+                </div>
             </div>
 
             <!-- Engineering Table -->
             <div class="tech-table-container reveal">
                 <h2 style="margin-bottom: 2rem;">📐 Engineering Specifications</h2>
                 <table class="tech-table">
-                    <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Specification</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr><td><strong>Concentrator Type</strong></td><td> Solar Scheffler Dish</td></tr>
-                        <tr><td><strong>Aperture Area</strong></td><td>16 m²</td></tr>
-                        <tr><td><strong>Reflector Material</strong></td><td>Glass mirror facets / Anodized aluminum (≥90% reflectivity)</td></tr>
-                        <tr><td><strong>Tracking Mechanism</strong></td><td>Single axis (manual seasonal tilt – optional motorized)</td></tr>
-                        <tr><td><strong>Focal Distance</strong></td><td>4 meters (fixed receiver indoors)</td></tr>
-                        <tr><td><strong>Concentration Ratio</strong></td><td>100:1 – 150:1</td></tr>
-                        
+                        <tr>
+                            <td><strong>Concentrator Type</strong></td>
+                            <td> Solar Scheffler Dish</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gross Area</strong></td>
+                            <td>16 m²</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reflector Material</strong></td>
+                            <td>Glass mirror facets / Anodized aluminum (≥90% reflectivity)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tracking Mechanism</strong></td>
+                            <td>Single axis (manual seasonal tilt – optional motorized)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Focal Distance</strong></td>
+                            <td>4 meters (fixed receiver indoors)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Concentration Ratio</strong></td>
+                            <td>100:1 – 150:1</td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -721,31 +843,87 @@
             <div class="tech-table-container reveal">
                 <h2 style="margin-bottom: 2rem;">🔥 Thermal Performance & Cooking Output</h2>
                 <table class="tech-table">
-                    <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr><td><strong>Thermal Power Output</strong></td><td>5.5 kW</td></tr>
-                        <tr><td><strong>Optical Efficiency</strong></td><td>65 – 75%</td></tr>
-                        <tr><td><strong>Net System Efficiency</strong></td><td>55 – 70%</td></tr>
-                        <tr><td><strong>Cooking Capacity</strong></td><td>80 – 100 persons per batch</td></tr>
-                        <tr><td><strong>Rice Cooking (15–20 kg)</strong></td><td>40 – 60 minutes</td></tr>
-                        <tr><td><strong>Dal/Sambar (20–25 liters)</strong></td><td>45 – 60 minutes</td></tr>
+                        <tr>
+                            <td><strong>Thermal Power Output</strong></td>
+                            <td>5.5 kW</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optical Efficiency</strong></td>
+                            <td>65 – 75%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net System Efficiency</strong></td>
+                            <td>45 – 50%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cooking Capacity</strong></td>
+                            <td>80 – 100 persons per batch</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rice Cooking (15–20 kg)</strong></td>
+                            <td>40 – 60 minutes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dal/Sambar (20–25 liters)</strong></td>
+                            <td>45 – 60 minutes</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
             <!-- Architecture & Safety -->
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 4rem 0;">
-                <div class="spec-card"><i class="fas fa-microchip"></i><h3>System Architecture</h3><ul style="margin-left:1.2rem;"><li>Scheffler reflector dish (segmented mirrors)</li><li>Heavy‑duty support structure</li><li>Manual / motorized tracking drive</li><li>Fixed indoor receiver unit</li><li>Seasonal inclination mechanism</li></ul></div>
-                <div class="spec-card"><i class="fas fa-shield-alt"></i><h3>Operational Safety</h3><ul style="margin-left:1.2rem;"><li>Fixed focal point – zero operator exposure</li><li>Indoor cooking – no glare / no flame</li><li>Wind‑safe parking mechanism</li><li>Thermally stable receiver design</li></ul></div>
+                <div class="spec-card"><i class="fas fa-microchip"></i>
+                    <h3>System Architecture</h3>
+                    <ul style="margin-left:1.2rem;">
+                        <li>Scheffler reflector dish (segmented mirrors)</li>
+                        <li>Heavy‑duty support structure</li>
+                        <li>Manual / motorized tracking drive</li>
+                        <li>Fixed indoor receiver unit</li>
+                        <li>Seasonal inclination mechanism</li>
+                    </ul>
+                </div>
+                <div class="spec-card"><i class="fas fa-shield-alt"></i>
+                    <h3>Operational Safety</h3>
+                    <ul style="margin-left:1.2rem;">
+                        <li>Fixed focal point – zero operator exposure</li>
+                        <li>Indoor cooking – no glare / no flame</li>
+                        <li>Wind‑safe parking mechanism</li>
+                        <li>Thermally stable receiver design</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- Applications Grid – all in one row on large screens -->
             <h2 class="section-title">📍 Deployment Applications</h2>
             <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-place-of-worship"></i><h3>Temples & Ashrams</h3><p>Large‑scale prasadam with zero fuel cost.</p></div>
-                <div class="app-card"><i class="fas fa-school"></i><h3>Residential Schools</h3><p>Mid‑day meals for 100+ students daily.</p></div>
-                <div class="app-card"><i class="fas fa-building"></i><h3>Industrial Canteens</h3><p>Workforce feeding, reduced operational costs.</p></div>
-                <div class="app-card"><i class="fas fa-utensils"></i><h3>Community Kitchens</h3><p>Reliable, clean cooking for large groups.</p></div>
+                <div class="app-card" style="flex: 1 1 200px; max-width: 260px; text-align: center;"><i
+                        class="fas fa-place-of-worship"></i>
+                    <h3 style="font-size: 1.2rem;">Temple &amp; Ashrams</h3>
+                </div>
+                <div class="app-card" style="flex: 1 1 200px; max-width: 260px; text-align: center;"><i
+                        class="fas fa-school"></i>
+                    <h3 style="font-size: 1.2rem;">Residential School</h3>
+                </div>
+                <div class="app-card" style="flex: 1 1 200px; max-width: 260px; text-align: center;"><i
+                        class="fas fa-building"></i>
+                    <h3 style="font-size: 1.2rem;">Industrial Canteens</h3>
+                </div>
+                <div class="app-card" style="flex: 1 1 200px; max-width: 260px; text-align: center;"><i
+                        class="fas fa-shield-alt"></i>
+                    <h3 style="line-height:1.4; font-size: 1.1rem;">SRPF / CRPF / Army / Navy / Airforce Canteen</h3>
+                </div>
+                <div class="app-card" style="flex: 1 1 200px; max-width: 260px; text-align: center;"><i
+                        class="fas fa-chalkboard-teacher"></i>
+                    <h3 style="font-size: 1.2rem;">Large Training Centers</h3>
+                </div>
             </div>
 
             <!-- Gallery -->
@@ -753,11 +931,26 @@
                 <h2 style="margin-bottom: 2rem;">🌱 Sustainability & Financial Benefits</h2>
                 <table class="tech-table">
                     <tbody>
-                        <tr><td><strong>Fuel Savings</strong></td><td>Complete elimination of LPG / PNG / firewood</td></tr>
-                        <tr><td><strong>CO₂ Reduction</strong></td><td>8 – 12 tons per year per system</td></tr>
-                        <tr><td><strong>Payback Period</strong></td><td>2 – 4 years (depending on usage & fuel cost)</td></tr>
-                        <tr><td><strong>System Lifespan</strong></td><td>20 – 25 years</td></tr>
-                        <tr><td><strong>Maintenance</strong></td><td>Minimal – reflector cleaning & seasonal alignment</td></tr>
+                        <tr>
+                            <td><strong>Fuel Savings</strong></td>
+                            <td>Complete elimination of LPG / PNG / firewood</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CO₂ Reduction</strong></td>
+                            <td>8 – 12 tons per year per system</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Payback Period</strong></td>
+                            <td>2 – 4 years (depending on usage & fuel cost)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>System Lifespan</strong></td>
+                            <td>20 – 25 years</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maintenance</strong></td>
+                            <td>Minimal – reflector cleaning & seasonal alignment</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -765,9 +958,23 @@
             <!-- Sustainability -->
             <h2 class="section-title">System in Action</h2>
             <div class="image-gallery">
-                <div class="gallery-item"><img src="../images/products/scheffler-dish1.jpg" alt="Scheffler Dish Array"><div class="gallery-overlay"><h3>16 m² Dish Array</h3></div></div>
-                <div class="gallery-item"><img src="../images/products/scheffler-dish2.jpg" alt="Indoor Cooking Station"><div class="gallery-overlay"><h3>Indoor Cooking Station</h3></div></div>
-                <div class="gallery-item"><img src="../images/products/scheffler-dish3.jpg" alt="Installation at Temple"><div class="gallery-overlay"><h3>Temple Installation</h3></div></div>
+                <div class="gallery-item"><img src="../images/products/scheffler-dish1.jpg" alt="Scheffler Dish Array">
+                    <div class="gallery-overlay">
+                        <h3>16 m² Dish Array</h3>
+                    </div>
+                </div>
+                <div class="gallery-item"><img src="../images/products/scheffler-dish2.jpg"
+                        alt="Indoor Cooking Station">
+                    <div class="gallery-overlay">
+                        <h3>Indoor Cooking Station</h3>
+                    </div>
+                </div>
+                <div class="gallery-item"><img src="../images/products/scheffler-dish3.jpg"
+                        alt="Installation at Temple">
+                    <div class="gallery-overlay">
+                        <h3>Temple Installation</h3>
+                    </div>
+                </div>
             </div>
     </section>
 
@@ -776,8 +983,10 @@
         <div id="lockContainer" class="lock-container">
             <div class="lock-icon-big"><i class="fas fa-lock"></i></div>
             <h3>Unlock Premium Technical Library</h3>
-            <p>Get detailed engineering drawings, performance data, installation videos, industrial case studies, and a custom ROI calculator for the 16 m² Scheffler Dish.</p>
-            <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Click to unlock →</span>
+            <p>Get detailed engineering drawings, performance data, installation videos, industrial case studies, and a
+                custom ROI calculator for the 16 m² Scheffler Dish.</p>
+            <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Click to
+                unlock →</span>
         </div>
 
         <div id="unlockFormContainer" class="unlock-form-container">
@@ -788,15 +997,20 @@
                 <div class="form-group"><label>Email Address *</label><input type="email" id="reply_to" required></div>
                 <div class="form-group"><label>Phone Number</label><input type="tel" id="phone"></div>
                 <div class="form-group"><label>Organization</label><input type="text" id="organization"></div>
-                <div class="form-group full-width"><label>Message / Requirements</label><textarea id="message" rows="2"></textarea></div>
+                <div class="form-group full-width"><label>Message / Requirements</label><textarea id="message"
+                        rows="2"></textarea></div>
                 <input type="hidden" id="admin_email" value="siddappagout@gmail.com">
                 <input type="hidden" name="product" value="16 m² Solar Scheffler Dish">
-                <div class="form-group full-width"><button type="submit" class="btn-submit"><i class="fas fa-unlock-alt"></i> Unlock Premium Content</button></div>
+                <div class="form-group full-width"><button type="submit" class="btn-submit"><i
+                            class="fas fa-unlock-alt"></i> Unlock Premium Content</button></div>
             </form>
         </div>
 
         <div id="hiddenPremiumContent" class="hidden-content">
-            <div id="successMessage" style="display:none; background:var(--primary-light); padding:1rem; border-radius:16px; margin-bottom:1rem;"><i class="fas fa-check-circle"></i> Thank you! Premium content unlocked.</div>
+            <div id="successMessage"
+                style="display:none; background:var(--primary-light); padding:1rem; border-radius:16px; margin-bottom:1rem;">
+                <i class="fas fa-check-circle"></i> Thank you! Premium content unlocked.
+            </div>
             <div class="premium-card">
                 <h3><i class="fas fa-file-alt"></i> Premium Technical Library</h3>
                 <div class="premium-grid">
@@ -825,12 +1039,19 @@
                         <a href="#" class="btn btn-small btn-outline">Read</a>
                     </div>
                 </div>
-                <div style="margin-top:2rem; padding:1.5rem; background:white; border-radius:var(--radius-md); border:1px solid var(--border);">
+                <div
+                    style="margin-top:2rem; padding:1.5rem; background:white; border-radius:var(--radius-md); border:1px solid var(--border);">
                     <h4 style="color:var(--primary); margin-bottom:1rem;">📘 Confidential Success Stories</h4>
                     <ul style="list-style:none;">
-                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:12px;"></i> <strong>Shri Kashi Vishwanath Temple, Varanasi</strong> – 2,000 meals/day, 100% LPG replacement, ROI 2.3 years</li>
-                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:12px;"></i> <strong>Jawahar Navodaya Vidyalaya, Tamil Nadu</strong> – 500 meals/day, 90% fuel cost reduction</li>
-                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:12px;"></i> <strong>Industrial Canteen, Pune</strong> – 600 meals/day, ₹6L annual savings, payback 3.1 years</li>
+                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle"
+                                style="color:var(--primary); margin-right:12px;"></i> <strong>Shri Kashi Vishwanath
+                                Temple, Varanasi</strong> – 2,000 meals/day, 100% LPG replacement, ROI 2.3 years</li>
+                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle"
+                                style="color:var(--primary); margin-right:12px;"></i> <strong>Jawahar Navodaya
+                                Vidyalaya, Tamil Nadu</strong> – 500 meals/day, 90% fuel cost reduction</li>
+                        <li style="margin-bottom:0.8rem;"><i class="fas fa-check-circle"
+                                style="color:var(--primary); margin-right:12px;"></i> <strong>Industrial Canteen,
+                                Pune</strong> – 600 meals/day, ₹6L annual savings, payback 3.1 years</li>
                     </ul>
                 </div>
             </div>
@@ -861,7 +1082,7 @@
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
         // EmailJS config
-        (function() {
+        (function () {
             const EMAILJS_PUBLIC_KEY = 'dU0o-KrI0m49D4wqR';
             const EMAILJS_SERVICE_ID = 'service_t3i4ttm';
             const EMAILJS_ADMIN_TEMPLATE_ID = 'template_q9aciqa';
@@ -875,7 +1096,7 @@
         })();
 
         // Premium unlock logic
-        (function() {
+        (function () {
             const lockContainer = document.getElementById('lockContainer');
             const formContainer = document.getElementById('unlockFormContainer');
             const hiddenContent = document.getElementById('hiddenPremiumContent');
@@ -883,19 +1104,19 @@
             const unlockForm = document.getElementById('premiumForm');
 
             if (sessionStorage.getItem('premiumUnlocked_scheffler16') === 'true') {
-                if(lockContainer) lockContainer.style.display = 'none';
-                if(formContainer) formContainer.style.display = 'none';
-                if(hiddenContent) hiddenContent.classList.add('visible');
-                if(successMsg) successMsg.style.display = 'flex';
+                if (lockContainer) lockContainer.style.display = 'none';
+                if (formContainer) formContainer.style.display = 'none';
+                if (hiddenContent) hiddenContent.classList.add('visible');
+                if (successMsg) successMsg.style.display = 'flex';
             }
 
-            if(lockContainer) lockContainer.addEventListener('click', function() {
+            if (lockContainer) lockContainer.addEventListener('click', function () {
                 lockContainer.style.display = 'none';
                 formContainer.classList.add('visible');
                 formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
 
-            if(unlockForm) unlockForm.addEventListener('submit', function(e) {
+            if (unlockForm) unlockForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const name = document.getElementById('from_name').value.trim();
                 const email = document.getElementById('reply_to').value.trim();
@@ -964,4 +1185,5 @@
         document.querySelectorAll('.reveal, .spec-card, .app-card, .gallery-item').forEach(el => observer.observe(el));
     </script>
 </body>
+
 </html>
