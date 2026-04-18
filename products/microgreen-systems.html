@@ -219,9 +219,9 @@ tags, consistent spacing, and matches the premium layout of your previous produc
         }
 
         .hero-video-wrapper {
-            width: 90vw;
-            max-width: 1600px;
-            margin: 2rem auto 0;
+            width: 100%;
+            max-width: 1040px;
+            margin: 2rem auto 2rem;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -235,18 +235,11 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
         }
 
-        .hero-video-wrapper::before {
-            content: "";
-            display: block;
-            padding-top: 56.25%;
-        }
-
-        .hero-video-wrapper iframe {
-            position: absolute;
-            inset: 0;
+        .hero-video-wrapper video {
             width: 100%;
-            height: 100%;
-            border: none;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-lg);
         }
 
         @media (max-width: 768px) {
@@ -707,9 +700,10 @@ tags, consistent spacing, and matches the premium layout of your previous produc
 
             </div>
             <div class="hero-video-wrapper">
-                <iframe
-                    src="https://www.youtube.com/embed/Bk3FwZ7lQrI?autoplay=1&mute=1&loop=1&playlist=Bk3FwZ7lQrI&controls=0&rel=0&modestbranding=1"
-                    title="Microgreens Growing System" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <video autoplay muted loop playsinline controls preload="metadata">
+                    <source src="../videos/watch.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>

@@ -154,18 +154,20 @@
         /* ----- HERO – Centered Title + BIG Centered Video ----- */
         .hero-light {
             position: relative;
-            min-height: 85vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
-            padding: 100px 0 60px;
+            padding: 100px 0 20px;
             text-align: center;
         }
 
         .hero-light .hero-full-width {
             width: 100%;
-            padding: 0 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
         }
 
         .hero-content {
@@ -215,9 +217,9 @@
         }
 
         .hero-video-wrapper {
-            width: 90vw;
-            max-width: 1600px;
-            margin: 2rem auto 0;
+            width: 100%;
+            max-width: 1040px;
+            margin: 2rem auto 2rem;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -295,7 +297,7 @@
             border-left: 6px solid var(--primary);
             border-radius: var(--radius-md);
             padding: 2rem 2.2rem;
-            margin: 3rem 0 2rem;
+            margin: 1rem 0 2rem;
             box-shadow: var(--shadow-md);
             transition: all 0.2s ease;
         }
@@ -424,10 +426,10 @@
             margin-bottom: 0.8rem;
         }
 
-        /* ----- APPLICATIONS – one row on large screens ----- */
+        /* ----- APPLICATIONS – 3 cards per row for 6 items ----- */
         .applications-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin: 4rem 0;
         }
@@ -503,6 +505,28 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 4rem 0;
+        }
+
+        .system-action-section {
+            max-width: 1140px;
+            margin: 0 auto 4rem;
+            padding-left: 30px;
+            text-align: left;
+        }
+
+        .system-action-section .section-title {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .system-action-section .gallery-grid {
+            justify-content: start;
+            margin-left: -30px;
+            width: calc(100% + 30px);
+        }
+
+        .system-action-section .gallery-item {
+            min-width: 280px;
         }
 
         .gallery-item {
@@ -759,9 +783,9 @@
                     <h3>Cooking Performance</h3>
                     <ul class="feature-list">
                         <li>Boiling, frying, steaming, roasting</li>
-                        <li>Rice: 30–45 min (2‑4 kg batch)</li>
-                        <li>Dal: 40–60 min (3‑5 liters)</li>
-                        <li>Vegetables: 20–30 min (2‑3 kg)</li>
+                        <li>Rice: 20–25 min (2‑4 kg batch)</li>
+                        <li>Dal: 40–45 min (3‑5 liters)</li>
+                        <li>Vegetables: 20–25 min (2‑3 kg)</li>
                     </ul>
                 </div>
                 <div class="feature-card">
@@ -901,24 +925,49 @@
             </div>
             <div class="applications-grid">
                 <div class="app-card"><i class="fas fa-place-of-worship"></i>
-                    <h3>Temples & Ashrams</h3>
-                    <p>Large‑scale prasadam with zero fuel cost.</p>
+                    <h3>Ashrams</h3>
+                </div>
+                <div class="app-card"><i class="fas fa-child"></i>
+                    <h3>Anganwadi</h3>
+                </div>
+                <div class="app-card"><i class="fas fa-building"></i>
+                    <h3>Small PG</h3>
+                </div>
+                <div class="app-card"><i class="fas fa-hotel"></i>
+                    <h3>Small Hotels / Dhaba's</h3>
+                </div>
+                <div class="app-card"><i class="fas fa-hospital"></i>
+                    <h3>Sterilization (Hospital PHC)</h3>
                 </div>
                 <div class="app-card"><i class="fas fa-school"></i>
-                    <h3>Residential Schools</h3>
-                    <p>Nutritious meals for hundreds of students daily.</p>
+                    <h3>Small Schools</h3>
                 </div>
-                <div class="app-card"><i class="fas fa-people-arrows"></i>
-                    <h3>Community Kitchens</h3>
-                    <p>Reliable, clean energy for mid‑day meal programs.</p>
+            </div>
+        </div>
+
+        <!-- System in Action Gallery -->
+        <div class="reveal system-action-section">
+            <div class="section-title">
+                <h2>System in Action</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../cooker/4 Sq mtr Images.jpeg" alt="Parabolic Cooker Array">
+                    <div class="gallery-caption">
+                        <h3>Parabolic Cooker Array</h3>
+                    </div>
                 </div>
-                <div class="app-card"><i class="fas fa-tree"></i>
-                    <h3>Rural Areas</h3>
-                    <p>Off‑grid cooking, reduces drudgery and indoor pollution.</p>
+                <div class="gallery-item">
+                    <img src="../cooker/Domestic Cooker 1.5Sq mtr Images.jpeg" alt="Focused Solar Receiver">
+                    <div class="gallery-caption">
+                        <h3>Focused Solar Receiver</h3>
+                    </div>
                 </div>
-                <div class="app-card"><i class="fas fa-concierge-bell"></i>
-                    <h3>Catering Services</h3>
-                    <p>Eco‑friendly bulk cooking, enhanced brand value.</p>
+                <div class="gallery-item">
+                    <img src="../cooker/WhatsApp Image 2026-04-17 at 16.53.59.jpeg" alt="Field Installation">
+                    <div class="gallery-caption">
+                        <h3>Field Installation</h3>
+                    </div>
                 </div>
             </div>
         </div>

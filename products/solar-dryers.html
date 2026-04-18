@@ -215,9 +215,9 @@
         }
 
         .hero-video-wrapper {
-            width: 90vw;
-            max-width: 1600px;
-            margin: 2rem auto 0;
+            width: 100%;
+            max-width: 1040px;
+            margin: 2rem auto 2rem;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -801,8 +801,8 @@
             </div>
            <div class="hero-video-wrapper">
                 <div class="shine"></div>
-                <!-- Local video demonstrating solar drying -->
-                <video src="../videos/solar-dryer.mp4" autoplay loop muted playsinline></video>
+                <!-- Local video fallback to image -->
+                <video src="../videos/solar-dryer.mp4" autoplay loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; object-fit: cover;"></video>
             </div>
         </div>
     </section>

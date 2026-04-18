@@ -154,12 +154,12 @@
         /* ===== HERO – Centered Title + BIG Centered Video ===== */
         .hero-light {
             position: relative;
-            min-height: 85vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
-            padding: 100px 0 60px;
+            padding: 20px 0 0;
             text-align: center;
         }
 
@@ -170,16 +170,17 @@
 
         .hero-content {
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 0;
         }
 
         .hero-content h1 {
             text-align: center;
+            margin-bottom: 0.5rem;
         }
 
         .hero-content p {
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .hero-tags {
@@ -187,7 +188,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         .tag {
@@ -215,9 +216,9 @@
         }
 
         .hero-video-wrapper {
-            width: 90vw;
-            max-width: 1600px;
-            margin: 2rem auto 0;
+            width: 100%;
+            max-width: 1040px;
+            margin: 2rem auto 2rem;
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -237,11 +238,13 @@
             padding-top: 56.25%;
         }
 
+        .hero-video-wrapper video,
         .hero-video-wrapper iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
             border: none;
         }
 
@@ -737,9 +740,10 @@
 
             </div>
             <div class="hero-video-wrapper">
-                <iframe
-                    src="https://www.youtube.com/embed/kL2g1U6BkZY?autoplay=1&mute=1&loop=1&playlist=kL2g1U6BkZY&controls=0&rel=0&modestbranding=1"
-                    title="Food Dehydrator Demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <video autoplay muted loop playsinline controls preload="metadata">
+                    <source src="../videos/784-139519770_medium.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
