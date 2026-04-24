@@ -25,6 +25,46 @@
         return true;
     }
 
+    function initHeaderScripts() {
+        // Mobile Menu Toggle
+        const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("navMenu");
+        if (btn && menu && !btn.hasAttribute('data-initialized')) {
+            btn.onclick = () => {
+                menu.classList.toggle("active");
+            };
+            btn.setAttribute('data-initialized', 'true');
+        }
+
+        // Mobile Dropdown Toggle
+        document.querySelectorAll("#navMenu .dropdown > a").forEach(el => {
+            if (!el.hasAttribute('data-initialized')) {
+                el.addEventListener("click", e => {
+                    if (window.innerWidth < 900) {
+                        e.preventDefault();
+                        el.parentElement.classList.toggle("active");
+                    }
+                });
+                el.setAttribute('data-initialized', 'true');
+            }
+        });
+
+        // Hide top bar and add shadow on scroll
+        if (!window.headerScrollInitialized) {
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                if (header) {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+            });
+            window.headerScrollInitialized = true;
+        }
+    }
+
     // Try immediately, then retry until header has loaded (up to ~3 seconds)
     if (!fixLogo()) {
         var attempts = 0;
@@ -32,7 +72,10 @@
             attempts++;
             if (fixLogo() || attempts > 20) {
                 clearInterval(interval);
+                initHeaderScripts();
             }
         }, 150);
+    } else {
+        initHeaderScripts();
     }
 })();
