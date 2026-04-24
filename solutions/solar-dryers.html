@@ -5,11 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solar Dryers – KVB Green Energies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -17,7 +22,11 @@
       background: #ffffff;
     }
 
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
     /* ===== PAGE HERO BANNER ===== */
     .page-hero {
@@ -51,10 +60,17 @@
       border-bottom: 1px solid #f0f0f0;
     }
 
-    .product-row:last-child { border-bottom: none; }
+    .product-row:last-child {
+      border-bottom: none;
+    }
 
-    .product-row.reverse .product-info { order: 2; }
-    .product-row.reverse .product-media { order: 1; }
+    .product-row.reverse .product-info {
+      order: 2;
+    }
+
+    .product-row.reverse .product-media {
+      order: 1;
+    }
 
     .product-info h2 {
       font-family: 'Montserrat', sans-serif;
@@ -123,92 +139,177 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .page-hero h1 { font-size: 2.2rem; }
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
       .product-row {
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 3rem 0;
       }
-      .product-row.reverse .product-info { order: 1; }
-      .product-row.reverse .product-media { order: 2; }
+
+      .product-row.reverse .product-info {
+        order: 1;
+      }
+
+      .product-row.reverse .product-media {
+        order: 2;
+      }
     }
-  
+
     /* ===== ENHANCED AOS ZIG-ZAG OVERRIDE ===== */
     .product-row[data-aos] {
-        opacity: 0 !important;
-        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      opacity: 0 !important;
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
-    .product-row:nth-child(odd)[data-aos] { transform: translateX(-60px) !important; }
-    .product-row:nth-child(even)[data-aos] { transform: translateX(60px) !important; }
+
+    .product-row:nth-child(odd)[data-aos] {
+      transform: translateX(-60px) !important;
+    }
+
+    .product-row:nth-child(even)[data-aos] {
+      transform: translateX(60px) !important;
+    }
+
     .product-row.aos-animate[data-aos] {
-        opacity: 1 !important;
-        transform: translateX(0) !important;
+      opacity: 1 !important;
+      transform: translateX(0) !important;
     }
 
     /* Override standard media to house massive SVGs */
     .product-media {
-        background: linear-gradient(145deg, var(--background, #fff), #f3f3f5) !important;
-        border-radius: 32px !important;
-        border: 1px solid #e8e8ed !important;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.04) !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 4rem 2rem !important;
-        margin: 0 !important;
-        min-height: 400px !important; 
-        transition: all 0.4s ease !important;
-        overflow: visible !important;
+      background: linear-gradient(145deg, var(--background, #fff), #f3f3f5) !important;
+      border-radius: 32px !important;
+      border: 1px solid #e8e8ed !important;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 4rem 2rem !important;
+      margin: 0 !important;
+      min-height: 400px !important;
+      transition: all 0.4s ease !important;
+      overflow: visible !important;
     }
 
     .product-row:hover .product-media {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 40px 80px rgba(74, 139, 74, 0.12) !important;
-        border-color: #d1ead1 !important;
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 40px 80px rgba(74, 139, 74, 0.12) !important;
+      border-color: #d1ead1 !important;
     }
-    
+
     .product-media .pro-icon-ultra {
-        width: 220px !important;
-        height: 220px !important;
+      width: 220px !important;
+      height: 220px !important;
     }
 
     @media (max-width: 768px) {
-        .product-row:nth-child(n)[data-aos] { 
-            transform: translateY(30px) !important; 
-        }
-        .product-media {
-            min-height: 280px !important;
-            padding: 2rem !important;
-        }
-        .product-media .pro-icon-ultra {
-            width: 160px !important;
-            height: 160px !important;
-        }
+      .product-row:nth-child(n)[data-aos] {
+        transform: translateY(30px) !important;
+      }
+
+      .product-media {
+        min-height: 280px !important;
+        padding: 2rem !important;
+      }
+
+      .product-media .pro-icon-ultra {
+        width: 160px !important;
+        height: 160px !important;
+      }
     }
 
     /* ULTR-PREMIUM 3D SVGs */
     .pro-icon-ultra {
-        overflow: visible;
-        filter: drop-shadow(0 20px 40px rgba(74,139,74,0.3));
+      overflow: visible;
+      filter: drop-shadow(0 20px 40px rgba(74, 139, 74, 0.3));
     }
-    .ultra-background { animation: blobMorph 10s ease-in-out infinite alternate; transform-origin: center; }
-    .ultra-float { animation: ultraFloat 6s ease-in-out infinite alternate; }
-    .ultra-float-delay { animation: ultraFloat 6s ease-in-out 1.5s infinite alternate; }
-    .ultra-float-delay-2 { animation: ultraFloat 6s ease-in-out 3s infinite alternate; }
-    .ultra-pulse { animation: ultraPulse 3s ease-in-out infinite alternate; }
-    .ultra-spin { animation: ultraSpin 24s linear infinite; transform-origin: center; }
-    .ultra-spin-fast { animation: ultraSpin 8s linear infinite; transform-origin: center; }
-    .ultra-orbit { animation: ultraOrbit 8s linear infinite; transform-origin: center; }
+
+    .ultra-background {
+      animation: blobMorph 10s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    .ultra-float {
+      animation: ultraFloat 6s ease-in-out infinite alternate;
+    }
+
+    .ultra-float-delay {
+      animation: ultraFloat 6s ease-in-out 1.5s infinite alternate;
+    }
+
+    .ultra-float-delay-2 {
+      animation: ultraFloat 6s ease-in-out 3s infinite alternate;
+    }
+
+    .ultra-pulse {
+      animation: ultraPulse 3s ease-in-out infinite alternate;
+    }
+
+    .ultra-spin {
+      animation: ultraSpin 24s linear infinite;
+      transform-origin: center;
+    }
+
+    .ultra-spin-fast {
+      animation: ultraSpin 8s linear infinite;
+      transform-origin: center;
+    }
+
+    .ultra-orbit {
+      animation: ultraOrbit 8s linear infinite;
+      transform-origin: center;
+    }
 
     @keyframes blobMorph {
-        0% { transform: scale(0.85) translate(-5px, 5px); opacity: 0.15; }
-        50% { transform: scale(1.1) translate(10px, -10px); opacity: 0.25; }
-        100% { transform: scale(0.95) translate(-10px, 0); opacity: 0.1; }
-    }
-    @keyframes ultraFloat { 0% { transform: translateY(12px); } 100% { transform: translateY(-12px); } }
-    @keyframes ultraPulse { 0% { transform: scale(0.92); opacity: 0.8; } 100% { transform: scale(1.08); opacity: 1; } }
-    @keyframes ultraSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      0% {
+        transform: scale(0.85) translate(-5px, 5px);
+        opacity: 0.15;
+      }
 
+      50% {
+        transform: scale(1.1) translate(10px, -10px);
+        opacity: 0.25;
+      }
+
+      100% {
+        transform: scale(0.95) translate(-10px, 0);
+        opacity: 0.1;
+      }
+    }
+
+    @keyframes ultraFloat {
+      0% {
+        transform: translateY(12px);
+      }
+
+      100% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes ultraPulse {
+      0% {
+        transform: scale(0.92);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    @keyframes ultraSpin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 
@@ -220,22 +321,27 @@
   <section class="page-hero">
     <div class="container">
       <h1>Smart Solar Dryers</h1>
-      <p>Advanced solar drying technology for efficient, eco-friendly post-harvest processing — preserving quality while reducing costs and carbon footprint.</p>
+      <p>Advanced solar drying technology for efficient, eco-friendly post-harvest processing — preserving quality while
+        reducing costs and carbon footprint.</p>
     </div>
   </section>
 
   <!-- PRODUCTS -->
   <section class="container" style="padding: 2rem 2rem 4rem;">
 
- <!-- 3. Box type Solar Dryer -->
+    <!-- 3. Box type Solar Dryer -->
     <div class="product-row reverse" data-aos="fade-up">
       <div class="product-info">
         <h2>Smart Box type Solar Dryer</h2>
-        <p>Our hybrid solar tunnel dryers combine direct solar radiation with a backup biomass or electric heat source, ensuring consistent drying performance regardless of weather conditions. Designed for fruits, vegetables, spices, and agricultural produce, they significantly reduce drying time while maintaining superior product quality and nutritional value.</p>
+        <p>Our hybrid solar tunnel dryers combine direct solar radiation with a backup biomass or electric heat source,
+          ensuring consistent drying performance regardless of weather conditions. Designed for fruits, vegetables,
+          spices, and agricultural produce, they significantly reduce drying time while maintaining superior product
+          quality and nutritional value.</p>
         <a href="../products/Box type Solar Dryer.html" class="btn-explore">Learn More →</a>
       </div>
       <div class="product-media" style="padding: 0 !important; overflow: hidden !important; height: 400px !important;">
-        <video src="../videos/VID-20260327-WA0000.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;"></video>
+        <video src="../videos/videoplayback (2).mp4" autoplay loop muted playsinline
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;"></video>
       </div>
     </div>
 
@@ -243,24 +349,32 @@
     <div class="product-row" data-aos="fade-up">
       <div class="product-info">
         <h2>Smart Hybrid Solar Tunnel Dryers</h2>
-        <p>Our hybrid solar tunnel dryers combine direct solar radiation with a backup biomass or electric heat source, ensuring consistent drying performance regardless of weather conditions. Designed for fruits, vegetables, spices, and agricultural produce, they significantly reduce drying time while maintaining superior product quality and nutritional value.</p>
+        <p>Our hybrid solar tunnel dryers combine direct solar radiation with a backup biomass or electric heat source,
+          ensuring consistent drying performance regardless of weather conditions. Designed for fruits, vegetables,
+          spices, and agricultural produce, they significantly reduce drying time while maintaining superior product
+          quality and nutritional value.</p>
         <a href="../products/solar-dryers.html" class="btn-explore">Learn More →</a>
       </div>
-       <div class="product-media" style="padding: 0 !important; overflow: hidden !important; height: 400px !important;">
-        <video src="../videos/solar-dryer.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;"></video>
+      <div class="product-media" style="padding: 0 !important; overflow: hidden !important; height: 400px !important;">
+        <video src="../videos/WhatsApp Video 2026-04-20 at 16.58.55.mp4" autoplay loop muted playsinline
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;"></video>
       </div>
-</div>
+    </div>
     </div>
 
     <!-- 2. Fish Dryer -->
     <div class="product-row reverse" data-aos="fade-up">
       <div class="product-info">
         <h2>Smart Fish Dryer</h2>
-        <p>Purpose-built solar fish dryers provide hygienic, controlled drying environments for fish and seafood products. By using concentrated solar heat and proper ventilation, they prevent contamination, reduce spoilage, and produce consistently high-quality dried fish — ideal for coastal communities and fisheries looking to add value to their catch.</p>
+        <p>Purpose-built solar fish dryers provide hygienic, controlled drying environments for fish and seafood
+          products. By using concentrated solar heat and proper ventilation, they prevent contamination, reduce
+          spoilage, and produce consistently high-quality dried fish — ideal for coastal communities and fisheries
+          looking to add value to their catch.</p>
         <a href="../products/fish dryer.html" class="btn-explore">Learn More →</a>
       </div>
       <div class="product-media" style="padding: 0 !important; overflow: hidden !important; height: 400px !important;">
-        <video src="../videos/fish dryer.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;"></video>
+        <video src="../videos/fish dryer.mp4" autoplay loop muted playsinline
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;"></video>
       </div>
     </div>
 
@@ -287,6 +401,7 @@
     loadComponent("header", ["../components/header.html", "components/header.html"]);
     loadComponent("footer", ["../components/footer.html", "components/footer.html"]);
   </script>
+<script src="../js/fix-logo.js"></script>
 </body>
 
 </html>

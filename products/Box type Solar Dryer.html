@@ -217,33 +217,23 @@
         .hero-video-wrapper {
             width: 100%;
             max-width: 1040px;
-            margin: 2rem auto 2rem;
-            position: relative;
-            border-radius: var(--radius-lg);
+            margin: 2rem auto;
+            border-radius: 20px;
             overflow: hidden;
-            background: #F0F2F5;
             box-shadow: var(--shadow-lg);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .hero-video-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .hero-video-wrapper::before {
             content: "";
             display: block;
-            padding-top: 56.25%;
-            /* 16:9 aspect ratio */
         }
 
         .hero-video-wrapper iframe,
         .hero-video-wrapper video {
-            position: absolute;
-            inset: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
+            display: block;
             border: none;
             object-fit: cover;
         }
@@ -727,73 +717,25 @@
             <div class="hero-video-wrapper">
                 <div class="shine"></div>
                 <!-- Local video demonstrating solar drying -->
-                <video src="../videos/VID-20260327-WA0000.mp4" autoplay loop muted playsinline></video>
+                <video src="../videos/videoplayback (3).mp4" autoplay loop muted playsinline></video>
             </div>
         </div>
     </section>
 
     <main class="container">
         <!-- Highlighted Technology Overview -->
+        <!-- System Overview -->
         <div class="reveal highlight-tech">
             <div style="margin-bottom: 0.5rem;">
-                <h2 style="margin-bottom: 0.5rem;"> Greenhouse‑Effect Drying Technology</h2>
+                <h2 style="margin-bottom: 0.5rem;">🔧 System Overview</h2>
             </div>
-            <p>The <strong>Box Type Solar Dryer</strong> operates on the natural greenhouse principle: solar radiation
-                passes through a transparent glazing, is absorbed inside an insulated chamber, and heats the air.
-                Natural convection (or optional forced circulation) removes moisture from the produce, resulting in
-                uniform, contamination‑free drying. This technology eliminates open‑sun drying losses, reduces drying
-                time by 30–50%, and preserves nutritional quality, colour, and market value.</p>
-        </div>
-
-        <!-- 2x2 Feature Matrix (Core Capabilities) -->
-        <div class="reveal">
-            <div class="section-title">
-                <h2>Core Capabilities</h2>
-            </div>
-            <div class="feature-matrix">
-                <div class="feature-card">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <h3>Drying Performance</h3>
-                    <ul class="feature-list">
-                        <li>Maintains uniform 50–80°C chamber temperature</li>
-                        <li>Reduces moisture by 80–90% in 1–3 days</li>
-                        <li>Protects from dust, insects, rain</li>
-                        <li>Suitable for fruits, vegetables, spices, herbs, fish, grains</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>System Components</h3>
-                    <ul class="feature-list">
-                        <li>Insulated box with GI/powder‑coated exterior</li>
-                        <li>Toughened glass / polycarbonate glazing</li>
-                        <li>Food‑grade stainless steel / nylon mesh trays</li>
-                        <li>Air inlet & outlet vents (natural convection)</li>
-                        <li>Optional solar‑powered DC fan for forced air</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safety & Hygiene</h3>
-                    <ul class="feature-list">
-                        <li>Fully enclosed – no contamination</li>
-                        <li>Food‑grade materials used in drying chamber</li>
-                        <li>UV‑stabilized glazing prevents degradation</li>
-                        <li>Corrosion‑resistant structure</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Economic & Environmental Benefits</h3>
-                    <ul class="feature-list">
-                        <li>100% solar‑powered – zero fuel cost</li>
-                        <li>Improves product quality → higher market price</li>
-                        <li>Payback period: 6–12 months</li>
-                        <li>System life: 10–15 years</li>
-                        <li>Eligible for government subsidies</li>
-                    </ul>
-                </div>
-            </div>
+            <p>The <strong>Box Type Solar Dryer</strong> is a compact and efficient system designed for drying
+                agricultural produce, food products, and herbs using solar energy. It operates on the greenhouse effect,
+                where solar radiation is trapped inside an insulated chamber to produce clean, uniform, and hygienic
+                drying conditions.</p>
+            <br>
+            <p>Ideal for farmers, FPOs, SHGs, small industries, and rural entrepreneurs, this system ensures improved
+                product quality, reduced drying time, and higher market value.</p>
         </div>
 
         <!-- Technical Specifications Table -->
@@ -821,15 +763,15 @@
                     </tr>
                     <tr>
                         <td><strong>Outer Body</strong></td>
-                        <td>GI sheet / Powder‑coated MS / Aluminum</td>
+                        <td>GI sheet / Powder-coated MS / Aluminum</td>
                     </tr>
                     <tr>
                         <td><strong>Inner Surface</strong></td>
-                        <td>Food‑grade SS / Aluminum</td>
+                        <td>Food-grade SS / Aluminum</td>
                     </tr>
                     <tr>
                         <td><strong>Glazing Material</strong></td>
-                        <td>Toughened glass / UV‑stabilized polycarbonate</td>
+                        <td>Toughened glass / UV-stabilized polycarbonate</td>
                     </tr>
                     <tr>
                         <td><strong>Insulation</strong></td>
@@ -837,7 +779,7 @@
                     </tr>
                     <tr>
                         <td><strong>Tray Material</strong></td>
-                        <td>Food‑grade SS / Nylon mesh</td>
+                        <td>Food-grade SS / Nylon mesh</td>
                     </tr>
                     <tr>
                         <td><strong>Number of Trays</strong></td>
@@ -849,7 +791,7 @@
                     </tr>
                     <tr>
                         <td><strong>Optional Air Flow</strong></td>
-                        <td>DC fan (solar‑powered, optional)</td>
+                        <td>DC fan (solar-powered, optional)</td>
                     </tr>
                     <tr>
                         <td><strong>Temperature Range</strong></td>
@@ -861,111 +803,169 @@
                     </tr>
                     <tr>
                         <td><strong>Moisture Reduction</strong></td>
-                        <td>Up to 80% – 90% removal</td>
+                        <td>Up to 80%–90% removal</td>
                     </tr>
                     <tr>
                         <td><strong>Mounting</strong></td>
-                        <td>Floor‑mounted / portable</td>
+                        <td>Floor-mounted / portable</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Drying Performance & Applications Table -->
+        <!-- 2x2 Feature Matrix -->
+        <div class="reveal">
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Drying Performance</h3>
+                    <ul class="feature-list">
+                        <li>Maintains uniform drying temperature</li>
+                        <li>Protects products from: Dust, Insects, Rain contamination</li>
+                        <li><strong>Typical Drying Applications:</strong></li>
+                        <li>Fruits: Mango, Banana, Pineapple, Papaya</li>
+                        <li>Vegetables: Onion, Tomato, Chili, Garlic</li>
+                        <li>Spices: Turmeric, Pepper</li>
+                        <li>Herbs: Medicinal plants, leaves</li>
+                        <li>Other: Fish, grains, seeds</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>System Components</h3>
+                    <ul class="feature-list">
+                        <li>Solar drying chamber (box type)</li>
+                        <li>Transparent glazing cover</li>
+                        <li>Insulated base and walls</li>
+                        <li>Multi-layer drying trays</li>
+                        <li>Air inlet & outlet vents</li>
+                        <li>Optional DC fan (for improved airflow)</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety & Hygiene Features</h3>
+                    <ul class="feature-list">
+                        <li>Food-grade materials for safe drying</li>
+                        <li>Enclosed system prevents contamination</li>
+                        <li>UV-protected glazing</li>
+                        <li>Non-toxic and corrosion-resistant structure</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Environmental & Economic Benefits</h3>
+                    <ul class="feature-list">
+                        <li>100% solar-powered drying</li>
+                        <li>Eliminates open sun drying losses</li>
+                        <li>Improves product quality & shelf life</li>
+                        <li>Increases farmer income (value addition)</li>
+                        <li>Payback period: 6–12 months</li>
+                        <li>System life: 10–15 years</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Capacity Variants Table -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌡️ Drying Performance & Applications</h2>
+            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">Capacity Variants</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Parameter / Application</th>
-                        <th>Details</th>
+                        <th>Model</th>
+                        <th>Capacity (Fresh Input)</th>
+                        <th>Suitable For</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Typical Drying Products</strong></td>
-                        <td>Fruits (mango, banana, pineapple, papaya) • Vegetables (onion, tomato, chili, garlic) •
-                            Spices (turmeric, pepper) • Herbs (medicinal plants, leaves) • Fish, grains, seeds</td>
+                        <td><strong>Small</strong></td>
+                        <td>25 kg</td>
+                        <td>Individual farmers</td>
                     </tr>
                     <tr>
-                        <td><strong>Product Protection</strong></td>
-                        <td>Dust‑proof, insect‑proof, rain‑protected – ensures hygienic final product</td>
+                        <td><strong>Medium</strong></td>
+                        <td>40–50 kg</td>
+                        <td>SHGs / small businesses</td>
                     </tr>
                     <tr>
-                        <td><strong>Quality Improvement</strong></td>
-                        <td>Uniform colour, retained nutrients, no direct sun exposure → higher market value</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Capacity Variants</strong></td>
-                        <td>Small (25 kg) – Individual farmers<br>Medium (40–50 kg) – SHGs / small businesses<br>Large
-                            (60–80 kg) – FPOs / rural enterprises</td>
+                        <td><strong>Large</strong></td>
+                        <td>60–80 kg</td>
+                        <td>FPOs / rural enterprises</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-
-
-        <!-- Applications Grid – one row on large screens -->
+        <!-- Applications Grid -->
         <div class="reveal">
             <div class="section-title">
-                <h2>📍 Key Applications</h2>
+                <h2>Applications</h2>
             </div>
             <div class="applications-grid">
                 <div class="app-card"><i class="fas fa-tractor"></i>
                     <h3>Farmers & FPOs</h3>
-                    <p>Reduce post‑harvest losses, add value to produce.</p>
                 </div>
                 <div class="app-card"><i class="fas fa-hand-holding-heart"></i>
-                    <h3>Self Help Groups</h3>
-                    <p>Community‑owned drying for income generation.</p>
+                    <h3>Self Help Groups (SHGs)</h3>
                 </div>
                 <div class="app-card"><i class="fas fa-chalkboard-user"></i>
-                    <h3>Rural Entrepreneurs</h3>
-                    <p>Start a small‑scale drying business with low investment.</p>
+                    <h3>Rural entrepreneurs</h3>
                 </div>
                 <div class="app-card"><i class="fas fa-industry"></i>
-                    <h3>Food Processing Units</h3>
-                    <p>Pre‑drying for further processing, energy cost savings.</p>
+                    <h3>Food processing units</h3>
                 </div>
                 <div class="app-card"><i class="fas fa-leaf"></i>
                     <h3>Herbal Product Manufacturers</h3>
-                    <p>Preserve active ingredients with gentle drying.</p>
                 </div>
             </div>
         </div>
 
-
-
-        <!-- Optional Add-ons & Maintenance -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">⚙️ Optional Upgrades & Maintenance</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Solar‑Powered DC Fan</strong></td>
-                        <td>Forced convection upgrade – reduces drying time further, improves uniformity.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hybrid Heating</strong></td>
-                        <td>Electric / biomass backup for cloudy days or night drying.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Digital Monitoring</strong></td>
-                        <td>Temperature & humidity display for process control.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Maintenance</strong></td>
-                        <td>Clean glazing weekly, wash trays after each batch, inspect structure annually.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Secondary 2x2 Feature Matrix -->
+        <div class="reveal">
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Installation & Maintenance</h3>
+                    <ul class="feature-list">
+                        <li><strong>Installation Time:</strong> 1 day</li>
+                        <li>No foundation required (portable options available)</li>
+                        <li><strong>Maintenance:</strong></li>
+                        <li>Cleaning of glazing surface</li>
+                        <li>Tray cleaning after each batch</li>
+                        <li>Periodic inspection of structure</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>Optional Add-ons</h3>
+                    <ul class="feature-list">
+                        <li>Solar-powered DC fan (forced convection upgrade)</li>
+                        <li>Hybrid heating (electric/biomass backup)</li>
+                        <li>Digital temperature & humidity monitoring</li>
+                        <li>Customized tray design for specific products</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Manufacturer</h3>
+                    <p style="margin-top: 1rem; font-size: 0.98rem; line-height: 1.45; color: var(--text-secondary);">
+                        <strong>KVB Green Energies</strong><br><br>Providing innovative solar drying solutions with
+                        proven performance across agricultural and food processing sectors.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Why Box Type Solar Dryer?</h3>
+                    <ul class="feature-list">
+                        <li>Low-cost and easy to operate</li>
+                        <li>Ideal for decentralized rural use</li>
+                        <li>No fuel or electricity required</li>
+                        <li>Enhances product quality and profitability</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <!-- Gallery (optional, using placeholder images) -->
         <div class="reveal">
@@ -974,19 +974,20 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/products/solar-dryer-1.jpeg" alt="Box Solar Dryer">
+                    <img src="../images/products/25-kg-1-co-1675937839_5878358_1756229.webp" alt="Box Solar Dryer">
                     <div class="gallery-caption"></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../images/products/solar-dryer-5.jpeg" alt="Trays inside dryer">
+                    <img src="../images/products/solar-coconut-dryer-1625048248-5878298.webp" alt="Trays inside dryer">
                     <div class="gallery-caption"></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../images/products/solar-dryer-4.jpeg" alt="Dried mango slices">
+                    <img src="../images/products/solar-cabinet-dryer-1625050337-5878433.webp" alt="Dried mango slices">
                     <div class="gallery-caption"></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../images/products/solar-dryer.jpeg" alt="Dried mango slices">
+                    <img src="../images/products/solar-aam-papad-dryer-1625049603-5878380.webp"
+                        alt="Dried mango slices">
                     <div class="gallery-caption"></div>
                 </div>
             </div>
@@ -1140,6 +1141,7 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
+<script src="../js/fix-logo.js"></script>
 </body>
 
 </html>

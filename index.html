@@ -851,8 +851,8 @@
     }
 
     .stat-message h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.8rem;
+      font-weight: 700;
       color: #1d1d1f;
       margin-bottom: 0.5rem;
       font-family: 'Montserrat', sans-serif;
@@ -1018,6 +1018,39 @@
         font-size: 0.9rem;
       }
     }
+
+    /* Label */
+    .label {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Bullet points */
+    .stat-message ul {
+      list-style: disc;
+      padding-left: 18px;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    .stat-message li {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    /* Icon styling */
+    .stat-message i {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #2e7d32;
+    }
   </style>
 </head>
 
@@ -1125,8 +1158,7 @@
             <div class="product-name">Solar Dryers</div>
           </a>
           <a href="solutions/agritech-solutions.html" class="product-card">
-            <div class="product-image"><img
-                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            <div class="product-image"><img src="images/products/Screenshot 2026-04-21 171930.png"
                 alt="Agritech Solutions"></div>
             <div class="product-name">Agritech Solutions</div>
           </a>
@@ -1249,27 +1281,62 @@
     <section class="section" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Real Impact, Measurable Results</h2>
+        <p class="section-subtitle" style="max-width: 800px;">
+          With just 70 solar dishes, we are eliminating 1.34cr fuel cost and saving 1300+ trees every year
+        </p>
+
         <div class="impact-grid">
-          <div class="stat-message"><i class="fas fa-smog"></i>
-            <h3>Thousands of tons</h3>
-            <p>CO₂ emissions reduced</p>
+
+          <!-- CO2 -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-smog"></i>
+            <h3>383 tons CO2</h3>
+            <ul>
+              <li>Emissions reduced per year</li>
+            </ul>
           </div>
-          <div class="stat-message"><i class="fas fa-gas-pump"></i>
-            <h3>Large‑scale LPG</h3>
-            <p>replaced with solar thermal</p>
+
+          <!-- LPG -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-gas-pump"></i>
+            <h3>6700+ LPG Cylinders</h3>
+            <ul>
+              <li><b>6700+</b> LPG cylinders saved annually</li>
+              <li><b>7000</b> people served daily</li>
+              <li><b>₹1.34Cr</b> fuel saving every year</li>
+            </ul>
           </div>
-          <div class="stat-message"><i class="fas fa-tree"></i>
-            <h3>Firewood saved</h3>
-            <p>community kitchens & industries</p>
+
+          <!-- Firewood -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-fire"></i>
+            <h3>383+ tons Firewood</h3>
+            <ul>
+              <li><b>1300+</b> trees saved annually</li>
+            </ul>
           </div>
-          <div class="stat-message"><i class="fas fa-users"></i>
-            <h3>Farmer livelihoods</h3>
-            <p>strengthened through smart agriculture</p>
+
+          <!-- Carbon Credit -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-chart-line"></i>
+            <h3>3.83 Lakhs Carbon Credit revenue/year</h3>
+            <ul>
+              <li><b>₹1000</b> per ton CO₂ (conservative)</li>
+            </ul>
           </div>
+
         </div>
+
+        <p style="text-align: center; color: #86868b; font-size: 0.9rem; margin-top: 2rem;">
+          *All values are calculated based on standard consumption benchmarks. Actual values may vary depending on
+          cooking practices and usage.
+        </p>
       </div>
     </section>
-
     <!-- INNOVATION LAB -->
     <section class="section" style="background:#f9f9fb;" data-aos="fade-up">
       <div class="container">
@@ -1429,7 +1496,8 @@
 
 
     })();
-  </script>
+    </script>
+<script src="js/fix-logo.js"></script>
 </body>
 
 </html>

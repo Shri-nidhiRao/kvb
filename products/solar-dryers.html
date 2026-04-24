@@ -221,14 +221,7 @@
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            background: #F0F2F5;
-            box-shadow: var(--shadow-lg);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .hero-video-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
         }
 
         .hero-video-wrapper::before {
@@ -262,8 +255,15 @@
         }
 
         @media (max-width: 768px) {
-            .hero-video-wrapper {
-                width: 95vw;
+            .video-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .video-grid video {
+                width: 90%;
+                height: auto;
             }
         }
 
@@ -786,6 +786,36 @@
                 font-size: 2rem;
             }
         }
+
+        /* REMOVE OLD STYLES EFFECT */
+        .hero-video-wrapper::before {
+            display: none !important;
+        }
+
+        .hero-video-wrapper video {
+            position: static !important;
+        }
+
+        /* MAIN LAYOUT */
+        .video-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            /* space between videos */
+            margin-top: 20px;
+        }
+
+        /* VIDEO STYLE (LIKE YOUR IMAGE) */
+        .video-grid video {
+            width: 280px;
+            /* fixed width */
+            height: 500px;
+            /* fixed height */
+            object-fit: cover;
+            border-radius: 24px;
+            /* smooth rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 
@@ -799,10 +829,16 @@
                 <h1>Smart Solar Tunnel Dryer</h1>
 
             </div>
-           <div class="hero-video-wrapper">
-                <div class="shine"></div>
-                <!-- Local video fallback to image -->
-                <video src="../videos/solar-dryer.mp4" autoplay loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; object-fit: cover;"></video>
+            <div class="hero-video-wrapper">
+                <div class="video-grid">
+
+                    <video src="../videos/WhatsApp Video 2026-04-20 at 15.06.39.mp4" autoplay loop muted
+                        playsinline></video>
+
+                    <video src="../videos/WhatsApp Video 2026-04-20 at 15.53.03.mp4" autoplay loop muted
+                        playsinline></video>
+
+                </div>
             </div>
         </div>
     </section>
@@ -818,7 +854,8 @@
                 with a <strong>Thermal Calorific Unit (TCU)</strong>and a biomass heating system, the system ensures
                 <strong>24×7 uninterrupted drying</strong> under all weather conditions.The “Smart” architecture enables
                 optimized temperature control, uniform airflow distribution, and efficient energy utilization, resulting
-                in consistent product quality,faster drying cycles,and higher productivity.</p>
+                in consistent product quality,faster drying cycles,and higher productivity.
+            </p>
         </div>
 
         <!-- 2x2 Feature Matrix (Core Capabilities) -->
@@ -1102,104 +1139,107 @@
                 </table>
             </div>
             <!-- Sustainability & Financial Benefits Table -->
-             <!-- Gallery (optional, using placeholder images) -->
-        <div class="reveal">
-            <div class="section-title">
-                <h2>System in Action</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/products/solar-dryer-1.jpeg" alt="Box Solar Dryer">
-                    <div class="gallery-caption"></div>
+            <!-- Gallery (optional, using placeholder images) -->
+            <div class="reveal">
+                <div class="section-title">
+                    <h2>System in Action</h2>
                 </div>
-                <div class="gallery-item">
-                    <img src="../images/products/solar-dryer-5.jpeg" alt="Trays inside dryer">
-                    <div class="gallery-caption"></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/products/solar-dryer-4.jpeg" alt="Dried mango slices">
-                    <div class="gallery-caption"></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/products/solar-dryer.jpeg" alt="Dried mango slices">
-                    <div class="gallery-caption"></div>
-                </div>
-            </div>
-        </div>
-
-                <!-- Premium Unlock -->
-                <div class="premium-wrapper reveal">
-                    <div id="lockContainer" class="lock-card">
-                        <div class="lock-icon"><i class="fas fa-lock"></i></div>
-                        <h3>Unlock Premium Technical Library</h3>
-                        <p>Get detailed engineering drawings, performance data, ROI calculator, and verified case
-                            studies for the Smart Solar Tunnel Dryer with TCU and biomass integration.</p>
-                        <span class="btn-outline"
-                            style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="../images/products/solar-dryer-1.jpeg" alt="Box Solar Dryer">
+                        <div class="gallery-caption"></div>
                     </div>
-
-                    <div id="unlockFormContainer" class="form-container">
-                        <h3>Access Premium Content</h3>
-                        <p>Enter your details – we’ll send the link instantly.</p>
-                        <form id="premiumForm">
-                            <div class="form-grid">
-                                <div class="form-group"><input type="text" id="fullname" placeholder="Full name *"
-                                        required></div>
-                                <div class="form-group"><input type="email" id="emailid" placeholder="Email address *"
-                                        required></div>
-                                <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)">
-                                </div>
-                                <div class="form-group"><input type="text" id="organization" placeholder="Organization">
-                                </div>
-                                <div class="form-group full"><textarea rows="2" id="message"
-                                        placeholder="Tell us about your drying requirements..."></textarea></div>
-                                <input type="hidden" id="productName" value="Smart Solar Tunnel Dryer">
-                                <div class="form-group full"><button type="submit" class="btn-submit"><i
-                                            class="fas fa-unlock-alt"></i> Unlock Library</button></div>
-                            </div>
-                            <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy.
-                                No spam.</p>
-                        </form>
+                    <div class="gallery-item">
+                        <img src="../images/products/WhatsApp Image 2026-04-20 at 15.57.38.jpeg"
+                            alt="Trays inside dryer">
+                        <div class="gallery-caption"></div>
                     </div>
+                    <div class="gallery-item">
+                        <img src="../images/products/WhatsApp Image 2026-04-20 at 15.59.05.jpeg"
+                            alt="Dried mango slices">
+                        <div class="gallery-caption"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/products/WhatsApp Image 2026-04-20 at 15.59.06.jpeg"
+                            alt="Dried mango slices">
+                        <div class="gallery-caption"></div>
+                    </div>
+                </div>
+            </div>
 
-                    <div id="hiddenPremiumContent" class="hidden-content">
-                        <div id="successMessage" class="success-banner" style="display: none;"><i
-                                class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources
-                            are ready.</div>
-                        <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
-                            <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library
-                            </h3>
-                            <div class="premium-grid">
-                                <div class="premium-card"><i class="fas fa-file-pdf"></i>
-                                    <h4>Engineering Drawings</h4>
-                                    <p>CAD files, tunnel layouts, TCU schematics</p><span
-                                        style="color: var(--primary);">✓ available</span>
-                                </div>
-                                <div class="premium-card"><i class="fas fa-chart-line"></i>
-                                    <h4>ROI Calculator</h4>
-                                    <p>Custom Excel for payback & savings projection</p><span
-                                        style="color: var(--primary);">✓ included</span>
-                                </div>
-                                <div class="premium-card"><i class="fas fa-video"></i>
-                                    <h4>Installation Videos</h4>
-                                    <p>Step‑by‑step assembly & commissioning</p><span style="color: var(--primary);">✓
-                                        watch</span>
-                                </div>
-                                <div class="premium-card"><i class="fas fa-chalkboard-user"></i>
-                                    <h4>Case Studies</h4>
-                                    <p>FPOs, industrial processors – real data</p><span style="color: var(--primary);">✓
-                                        read</span>
-                                </div>
+            <!-- Premium Unlock -->
+            <div class="premium-wrapper reveal">
+                <div id="lockContainer" class="lock-card">
+                    <div class="lock-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Unlock Premium Technical Library</h3>
+                    <p>Get detailed engineering drawings, performance data, ROI calculator, and verified case
+                        studies for the Smart Solar Tunnel Dryer with TCU and biomass integration.</p>
+                    <span class="btn-outline"
+                        style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
+                </div>
+
+                <div id="unlockFormContainer" class="form-container">
+                    <h3>Access Premium Content</h3>
+                    <p>Enter your details – we’ll send the link instantly.</p>
+                    <form id="premiumForm">
+                        <div class="form-grid">
+                            <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required>
                             </div>
-                            <div
-                                style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                                <p><strong>🏆 Success stories:</strong> Coffee Board, Balehonnur – 40% faster drying,
-                                    30% fuel savings. UHS Bagalkot – Mango drying, 500 kg/batch, ROI 2.8 years. NABARD,
-                                    Bagalkot – Chilli drying, 2000 kg/day, payback 2.2 years.</p>
+                            <div class="form-group"><input type="email" id="emailid" placeholder="Email address *"
+                                    required></div>
+                            <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)">
                             </div>
+                            <div class="form-group"><input type="text" id="organization" placeholder="Organization">
+                            </div>
+                            <div class="form-group full"><textarea rows="2" id="message"
+                                    placeholder="Tell us about your drying requirements..."></textarea></div>
+                            <input type="hidden" id="productName" value="Smart Solar Tunnel Dryer">
+                            <div class="form-group full"><button type="submit" class="btn-submit"><i
+                                        class="fas fa-unlock-alt"></i> Unlock Library</button></div>
+                        </div>
+                        <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy.
+                            No spam.</p>
+                    </form>
+                </div>
+
+                <div id="hiddenPremiumContent" class="hidden-content">
+                    <div id="successMessage" class="success-banner" style="display: none;"><i
+                            class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources
+                        are ready.</div>
+                    <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
+                        <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library
+                        </h3>
+                        <div class="premium-grid">
+                            <div class="premium-card"><i class="fas fa-file-pdf"></i>
+                                <h4>Engineering Drawings</h4>
+                                <p>CAD files, tunnel layouts, TCU schematics</p><span style="color: var(--primary);">✓
+                                    available</span>
+                            </div>
+                            <div class="premium-card"><i class="fas fa-chart-line"></i>
+                                <h4>ROI Calculator</h4>
+                                <p>Custom Excel for payback & savings projection</p><span
+                                    style="color: var(--primary);">✓ included</span>
+                            </div>
+                            <div class="premium-card"><i class="fas fa-video"></i>
+                                <h4>Installation Videos</h4>
+                                <p>Step‑by‑step assembly & commissioning</p><span style="color: var(--primary);">✓
+                                    watch</span>
+                            </div>
+                            <div class="premium-card"><i class="fas fa-chalkboard-user"></i>
+                                <h4>Case Studies</h4>
+                                <p>FPOs, industrial processors – real data</p><span style="color: var(--primary);">✓
+                                    read</span>
+                            </div>
+                        </div>
+                        <div
+                            style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
+                            <p><strong>🏆 Success stories:</strong> Coffee Board, Balehonnur – 40% faster drying,
+                                30% fuel savings. UHS Bagalkot – Mango drying, 500 kg/batch, ROI 2.8 years. NABARD,
+                                Bagalkot – Chilli drying, 2000 kg/day, payback 2.2 years.</p>
                         </div>
                     </div>
                 </div>
+            </div>
     </main>
 
     <!-- Universal Footer -->
@@ -1282,6 +1322,7 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
+<script src="../js/fix-logo.js"></script>
 </body>
 
 </html>

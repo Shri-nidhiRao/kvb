@@ -251,9 +251,18 @@
     <div class="navbar">
 
       <div class="logo">
-        <img src="../images/products/kvb-logo.png" alt="KVB Logo">
+        <img id="headerLogo" alt="KVB Logo">
         <span class="logo-text">KVB Green Energies</span>
       </div>
+      <script>
+        var logo = document.getElementById('headerLogo');
+        if (logo) {
+          var parts = window.location.pathname.split('/').filter(Boolean);
+          parts.pop();
+          var base = parts.length ? '../'.repeat(parts.length) : './';
+          logo.src = base + 'images/products/kvb-logo.png';
+        }
+      </script>
 
       <div class="menu-toggle" id="menuBtn">☰</div>
 

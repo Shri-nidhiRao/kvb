@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>AgroSense | Smart Farming & Precision Agriculture – AI-Powered Farm Intelligence</title>
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=20260421">
     <style>
-        /* ===== BASE STYLES – Pure White & Airy (same as previous pages) ===== */
+        /* ===== BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -24,6 +25,7 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
             padding-top: 80px;
+            line-height: 1.6;
         }
 
         :root {
@@ -36,15 +38,10 @@
             --primary: #3B7A3B;
             --primary-dark: #2C5E2C;
             --primary-light: #EAF5EA;
-            --primary-glow: rgba(59, 122, 59, 0.08);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
-            --shadow-md: 0 8px 20px rgba(0,0,0,0.04);
-            --shadow-lg: 0 16px 32px rgba(0,0,0,0.06);
-            --radius-sm: 12px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.04);
             --radius-md: 20px;
-            --radius-lg: 28px;
             --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
         }
 
         .container {
@@ -53,10 +50,14 @@
             padding: 0 32px;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-heading);
             font-weight: 700;
             letter-spacing: -0.02em;
+            margin-bottom: 1rem;
         }
 
         h1 {
@@ -74,16 +75,19 @@
             margin-bottom: 2rem;
             position: relative;
             display: inline-block;
+            color: var(--text-primary);
         }
+
         .section-title {
-            text-align: center;
+            text-align: left;
+            margin-bottom: 2rem;
         }
+
         .section-title h2:after {
             content: '';
             position: absolute;
             bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 80px;
             height: 3px;
             background: var(--primary);
@@ -92,353 +96,219 @@
 
         p {
             color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 1.05rem;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            border-radius: 60px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 12px rgba(59, 122, 59, 0.15);
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(59, 122, 59, 0.25);
-        }
-        .btn-outline {
-            border: 1px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-        }
-        .btn-outline:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        /* ===== HEADER placeholder ===== */
-        #header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        /* ===== HERO – Centered Title + BIG Centered Video ===== */
-        .hero-light {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
-            padding: 100px 0 60px;
-            text-align: center;
-        }
-        .hero-light .hero-full-width {
-            width: 100%;
-            padding: 0 20px;
-        }
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto 1rem;
-        }
-        .hero-content h1 {
-            text-align: center;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-        .hero-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-top: 1.5rem;
-        }
-        .tag {
-            background: white;
-            border: 1px solid var(--border-light);
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
-        }
-        .tag i { color: var(--primary); }
-        .tag:hover {
-            transform: translateY(-2px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
-        }
-        .hero-video-wrapper {
-            width: 100%;
-            max-width: 1040px;
-            margin: 2rem auto 2rem;
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            background: #F0F2F5;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .hero-video-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.1);
-        }
-        .hero-video-wrapper::before {
-            content: "";
-            display: block;
-            padding-top: 56.25%;
-        }
-        .hero-video-wrapper iframe,
-        .hero-video-wrapper video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            object-fit: cover;
-        }
-        @media (max-width: 992px) {
-            .hero-video-grid {
-                grid-template-columns: 1fr;
-                width: 95vw;
-            }
-        }
-
-        /* ===== SCROLL REVEAL ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== HIGHLIGHT OVERVIEW ===== */
-        .highlight-tech {
-            background: linear-gradient(120deg, #FFFFFF 0%, #F5FBF5 100%);
-            border-left: 6px solid var(--primary);
-            border-radius: var(--radius-md);
-            padding: 2rem 2.2rem;
-            margin: 3rem 0 2rem;
-            box-shadow: var(--shadow-md);
-        }
-        .highlight-tech h2 {
-            margin-bottom: 1rem;
-            display: inline-block;
-            background: none;
-            font-size: 2rem;
-        }
-        .highlight-tech h2:after {
-            display: none;
-        }
-        .highlight-tech p {
-            font-size: 1.1rem;
             line-height: 1.7;
-            max-width: 95%;
-            color: var(--text-primary);
-        }
-        .highlight-tech strong {
-            color: var(--primary-dark);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
         }
 
-        /* ===== 2x2 FEATURE MATRIX ===== */
-        .feature-matrix {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 4rem 0;
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
         }
-        .feature-card {
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            padding: 1.8rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            height: 100%;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-light);
-            box-shadow: var(--shadow-lg);
-        }
-        .feature-card i {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-        .feature-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .feature-list li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.4rem;
-            position: relative;
-            font-size: 0.98rem;
-            line-height: 1.45;
+
+        ul li {
+            margin-bottom: 0.6rem;
             color: var(--text-secondary);
         }
-        .feature-list li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
+
+        strong {
+            color: var(--primary-dark);
             font-weight: 600;
-            font-size: 1rem;
-        }
-        @media (max-width: 768px) {
-            .feature-matrix {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
         }
 
-        /* ===== APPLICATIONS – equal width cards ===== */
-        .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-        .app-card {
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            padding: 2rem 1.5rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-        }
-        .app-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary-light);
-            box-shadow: var(--shadow-lg);
-        }
-        .app-card i {
-            font-size: 2.6rem;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-        }
-        .app-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-        }
-        .app-card p {
-            font-size: 0.9rem;
-            line-height: 1.4;
-            margin-bottom: 0;
-        }
-        @media (max-width: 1200px) {
-            .applications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1.5rem;
-            }
-        }
-        @media (max-width: 768px) {
-            .applications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-                gap: 1rem;
-            }
-            .app-card {
-                padding: 1.5rem 1rem;
-            }
-            .app-card h3 {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* ===== OTHER CARDS ===== */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-        .card {
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
+        /* ===== SECTIONS ===== */
+        .content-block {
+            margin: 3rem 0;
             padding: 2rem;
-            transition: all 0.3s ease;
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
             box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
         }
-        .card:hover {
-            transform: translateY(-6px);
+
+        .content-block:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
             border-color: var(--primary-light);
-            box-shadow: var(--shadow-lg);
         }
-        .card i {
-            font-size: 2.6rem;
+
+        .section-icon {
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 1.2rem;
-        }
-        .card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.8rem;
+            margin-right: 0.5rem;
         }
 
         /* ===== TABLES ===== */
-        .soft-table {
-            background: white;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-light);
-            overflow-x: auto;
-            margin: 3rem 0;
-            box-shadow: var(--shadow-sm);
-        }
-        .soft-table table {
+        .spec-table {
             width: 100%;
             border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
         }
-        .soft-table th, .soft-table td {
+
+        .spec-table th,
+        .spec-table td {
             padding: 1rem 1.5rem;
             text-align: left;
             border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
         }
-        .soft-table th {
+
+        .spec-table th {
             background: var(--primary-light);
             font-weight: 600;
             color: var(--text-primary);
+            width: 35%;
         }
-        .soft-table tr:last-child td {
+
+        .spec-table tr:last-child td {
             border-bottom: none;
+        }
+
+        .spec-table tr:hover {
+            background: var(--bg-soft);
+        }
+
+        /* ===== PARAMETER LIST ===== */
+        .parameter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .parameter-item {
+            background: var(--bg-soft);
+            padding: 1rem 1.2rem;
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--primary);
+            transition: all 0.2s ease;
+        }
+
+        .parameter-item:hover {
+            background: white;
+            box-shadow: var(--shadow-sm);
+            transform: translateX(4px);
+        }
+
+        /* ===== MODES GRID ===== */
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .mode-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .mode-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-dark);
+        }
+
+        /* ===== ARCHITECTURE ===== */
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .layer-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .layer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .layer-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== ALERTS ===== */
+        .alerts-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .alert-item {
+            background: var(--primary-light);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .alert-item:hover {
+            background: white;
+            border: 1px solid var(--primary-light);
+            transform: translateX(4px);
+        }
+
+        .alert-item i {
+            color: var(--primary);
+        }
+
+        /* ===== BENEFITS ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: var(--bg-soft);
+            padding: 1.2rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+            background: white;
+        }
+
+        .benefit-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
         }
 
         /* ===== GALLERY ===== */
@@ -446,8 +316,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin: 4rem 0;
+            margin: 2rem 0;
         }
+
         .gallery-item {
             border-radius: var(--radius-md);
             overflow: hidden;
@@ -456,440 +327,481 @@
             border: 1px solid var(--border-light);
             transition: transform 0.4s;
         }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.7s;
         }
+
         .gallery-item:hover img {
             transform: scale(1.03);
         }
+
         .gallery-caption {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
             color: white;
             padding: 1rem;
             font-weight: 500;
         }
 
-        /* ===== PREMIUM UNLOCK ===== */
-        .premium-wrapper {
-            margin: 5rem auto;
-            max-width: 900px;
-            display: none;
+        /* ===== WHY BOX ===== */
+        .why-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
         }
-        .lock-card {
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 3rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-sm);
-        }
-        .lock-card:hover {
-            border-color: var(--primary);
+
+        .why-box:hover {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
-        .lock-icon {
-            font-size: 3.5rem;
+
+        .why-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-box ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: white;
+        }
+
+        .why-box ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #90EE90;
+            font-weight: bold;
+        }
+
+        /* ===== DEVELOPED BY ===== */
+        .developed-by {
+            background: var(--bg-soft);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .developed-by:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .developed-by i {
+            font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
-        .form-container {
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            margin-top: 2rem;
-            display: none;
-            box-shadow: var(--shadow-md);
-        }
-        .form-container.visible {
-            display: block;
-            animation: fadeUp 0.5s;
-        }
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-        }
-        .form-group.full {
-            grid-column: span 2;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            background: var(--bg-soft);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-sm);
-            font-family: inherit;
-            transition: 0.2s;
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px var(--primary-glow);
-        }
-        .btn-submit {
-            background: var(--primary);
-            width: 100%;
-            padding: 1rem;
-            border-radius: 40px;
-            font-weight: 600;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn-submit:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        .hidden-content {
-            display: none;
-            margin-top: 2rem;
-        }
-        .hidden-content.visible {
-            display: block;
-        }
-        .success-banner {
-            background: var(--primary-light);
-            border-left: 4px solid var(--primary);
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .premium-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-            gap: 1.2rem;
-            margin: 2rem 0;
-        }
-        .premium-card {
-            background: var(--bg-soft);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid var(--border-light);
-        }
-        .premium-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
-        .footer-light {
-            background: var(--bg-soft);
-            border-top: 1px solid var(--border-light);
-            padding: 2rem;
-            text-align: center;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 992px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .form-group.full { grid-column: span 1; }
-        }
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .spec-table th,
+            .spec-table td {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="header"></div>
 
-    <!-- HERO – Centered Title + Large Centered Video -->
-    <section class="hero-light">
-        <div class="hero-full-width">
-            <div class="hero-content">
-                <h1>AgroSense</h1>
-                
-            </div>
-            <div class="hero-video-wrapper">
-                <video autoplay muted loop playsinline controls preload="metadata">
-                    <source src="../videos/232561_small.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+    <!-- HERO SECTION -->
+    <section class="hero-light"
+        style="min-height: 60vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%); padding: 60px 0;">
+        <div class="container">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h1><i class="fas fa-seedling" style="font-size: 0.8em; color: var(--primary);"></i> AgroSense – Smart
+                    Farming & Precision Agriculture Platform</h1>
+                <p style="font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 2rem;">AI-Driven Soil
+                    Intelligence, Automated Irrigation & Smart Crop Protection</p>
+                <div class="hero-video-wrapper"
+                    style="max-width: 1040px; margin: 0 auto; position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); padding-top: 56.25%;">
+                    <video autoplay muted loop playsinline controls
+                        style="width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; display: block;">
+                        <source src="../videos/WhatsApp Video 2026-04-22 at 15.15.27.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
     </section>
 
     <main class="container">
-        <!-- Highlighted Technology Overview -->
-        <div class="reveal highlight-tech">
-            <div style="margin-bottom: 0.5rem;">
-                <h2 style="margin-bottom: 0.5rem;">🌱 AI‑Powered Digital Farm Brain</h2>
-            </div>
-            <p><strong>AgroSense</strong> is an advanced smart farming platform designed to transform traditional agriculture into a data‑driven, automated, and intelligent ecosystem. Built on real‑time field monitoring and intelligent decision‑making, the system continuously analyzes soil health, environmental conditions, and crop requirements to automate irrigation, predict diseases, and optimize farm productivity. It acts as a digital brain for the farm, enabling farmers to reduce input costs, conserve water, and maximize yield through precision agriculture.</p>
+        <!-- 🔧 System Overview -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🔧</span>System Overview</h2>
+            <p>AgroSense is an advanced precision agriculture platform designed to convert conventional farming into a
+                data-driven, automated, and intelligent system.</p>
+            <p>The platform continuously acquires and processes multi-layer soil data, environmental conditions, and
+                crop requirements, enabling automated irrigation, intelligent fertigation, and predictive crop
+                protection.</p>
+            <p>It functions as a closed-loop agricultural intelligence system, where real-time data directly drives
+                control actions, improving efficiency, reducing resource wastage, and enhancing crop productivity.</p>
         </div>
 
-        <!-- 2x2 Feature Matrix (Core Capabilities) -->
-        <div class="reveal">
-            <div class="section-title"><h2>Core Capabilities</h2></div>
-            <div class="feature-matrix">
-                <div class="feature-card">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Smart Soil Health Intelligence</h3>
-                    <ul class="feature-list">
-                        <li>Continuous monitoring of soil nutrients (N, P, K)</li>
-                        <li>pH, electrical conductivity, temperature & moisture</li>
-                        <li>Precision nutrient & irrigation recommendations</li>
-                    </ul>
+        <!-- 📐 Core System Specifications -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">📐</span>Core System Specifications</h2>
+            <table class="spec-table">
+                <tr>
+                    <th>Parameter</th>
+                    <td>Specification</td>
+                </tr>
+                <tr>
+                    <th>System Type</th>
+                    <td>Precision Agriculture & Automation Platform</td>
+                </tr>
+                <tr>
+                    <th>Monitoring Capability</th>
+                    <td>Real-time sensing with cloud-assisted analytics</td>
+                </tr>
+                <tr>
+                    <th>Connectivity</th>
+                    <td>Wireless communication interface</td>
+                </tr>
+                <tr>
+                    <th>Power System</th>
+                    <td>Solar-powered with integrated energy management</td>
+                </tr>
+                <tr>
+                    <th>Processing Unit</th>
+                    <td>Embedded microcontroller-based control system</td>
+                </tr>
+                <tr>
+                    <th>User Interface</th>
+                    <td>Mobile application and web-based dashboard</td>
+                </tr>
+                <tr>
+                    <th>Control Modes</th>
+                    <td>Automatic, Manual, and Scheduled operation</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 🌾 Multi-Layer Soil Intelligence System -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🌾</span>Multi-Layer Soil Intelligence System</h2>
+            <p>AgroSense performs depth-based soil analysis, focusing on the root-zone, where nutrient uptake is
+                critical.</p>
+            <h3>Parameters Monitored:</h3>
+            <div class="parameter-grid">
+                <div class="parameter-item"><strong>Nitrogen (N)</strong></div>
+                <div class="parameter-item"><strong>Phosphorus (P)</strong></div>
+                <div class="parameter-item"><strong>Potassium (K)</strong></div>
+                <div class="parameter-item"><strong>Soil Moisture</strong></div>
+                <div class="parameter-item"><strong>Soil Temperature</strong></div>
+                <div class="parameter-item"><strong>Soil pH</strong></div>
+                <div class="parameter-item"><strong>Electrical Conductivity</strong></div>
+            </div>
+            <div class="content-block" style="margin-top: 1.5rem; border-left: 4px solid var(--primary);">
+                <h3>👉 Key Innovation: Depth-gradient comparative analysis</h3>
+                <p>The system evaluates variations across soil layers, enabling:</p>
+                <ul>
+                    <li>Root-zone-specific nutrient delivery</li>
+                    <li>Accurate irrigation decisions</li>
+                    <li>Reduction of nutrient loss and leaching</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 🌡️ Environmental & Field Monitoring -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🌡️</span>Environmental & Field Monitoring</h2>
+            <ul>
+                <li>Air temperature monitoring</li>
+                <li>Humidity tracking</li>
+                <li>Continuous environmental sensing</li>
+                <li>Crop condition analysis</li>
+            </ul>
+            <p>This enables detection of stress conditions affecting plant growth.</p>
+        </div>
+
+        <!-- 🌤️ Weather Intelligence Module -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🌤️</span>Weather Intelligence Module</h2>
+            <ul>
+                <li>Real-time weather data integration</li>
+                <li>Forecast-based analysis</li>
+                <li>Rain and climate alerts</li>
+            </ul>
+            <p><strong>Enables:</strong></p>
+            <ul>
+                <li>Optimized irrigation scheduling</li>
+                <li>Timely fertilizer application</li>
+                <li>Improved farm planning decisions</li>
+            </ul>
+        </div>
+
+        <!-- 🦠 AI-Based Disease Prediction System -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🦠</span>AI-Based Disease Prediction System</h2>
+            <p>The system incorporates an intelligent decision module to predict crop diseases at an early stage.</p>
+            <h3>Features:</h3>
+            <ul>
+                <li>Analysis of soil and environmental conditions</li>
+                <li>Pattern-based disease prediction</li>
+                <li>Early warning notifications</li>
+                <li>Preventive action recommendations</li>
+            </ul>
+            <p><strong>👉 Reduces crop loss and unnecessary chemical usage</strong></p>
+        </div>
+
+        <!-- 🐛 AI-Based Pest Spraying System -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🐛</span>AI-Based Pest Spraying System</h2>
+            <p>An advanced feature for precision crop protection:</p>
+            <ul>
+                <li>Crop-stage-based spraying recommendations</li>
+                <li>Growth-cycle-based scheduling</li>
+                <li>Intelligent pest risk evaluation</li>
+                <li>Optimized pesticide usage</li>
+            </ul>
+            <p><strong>👉 Ensures efficient protection with minimal chemical input</strong></p>
+        </div>
+
+        <!-- 💧 Smart Irrigation & Fertigation Control -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">💧</span>Smart Irrigation & Fertigation Control</h2>
+            <p>AgroSense enables automated and intelligent water and nutrient delivery.</p>
+            <h3>🔁 Operational Modes:</h3>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <h4>1. Manual Mode</h4>
+                    <p>User-controlled irrigation via dashboard</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-bug"></i>
-                    <h3>AI Pest & Disease Prediction</h3>
-                    <ul class="feature-list">
-                        <li>Early warning alerts based on field conditions</li>
-                        <li>AI‑powered pest risk analysis</li>
-                        <li>Optimized spraying schedules (crop‑stage based)</li>
-                    </ul>
+                <div class="mode-card">
+                    <h4>2. Moisture-Based Automatic Mode</h4>
+                    <p>Irrigation triggered based on soil conditions<br>Uses depth-based analysis for decision-making
+                    </p>
                 </div>
-                <div class="feature-card">
+                <div class="mode-card">
+                    <h4>3. Timer-Based Mode</h4>
+                    <p>Scheduled irrigation cycles</p>
+                </div>
+            </div>
+            <h3>⚙️ Advanced Control Features:</h3>
+            <ul>
+                <li>Automated control of pumps and valves</li>
+                <li>Zone-wise irrigation management</li>
+                <li>Integration with drip and sprinkler systems</li>
+                <li>Real-time control signal execution</li>
+            </ul>
+            <p><strong>👉 Ensures precise delivery of water and nutrients based on actual crop needs</strong></p>
+        </div>
+
+        <!-- 🏗️ System Architecture -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🏗️</span>System Architecture</h2>
+            <p>AgroSense operates on a three-layer intelligent architecture:</p>
+            <div class="architecture-grid">
+                <div class="layer-card">
+                    <i class="fas fa-field"></i>
+                    <h4>1. Field Layer</h4>
+                    <p>Multi-depth soil sensing<br>Environmental data acquisition</p>
+                </div>
+                <div class="layer-card">
+                    <i class="fas fa-microchip"></i>
+                    <h4>2. Control Layer</h4>
+                    <p>Embedded processing using microcontroller unit<br>Depth-based comparative
+                        analysis<br>Decision-making and control signal generation</p>
+                </div>
+                <div class="layer-card">
+                    <i class="fas fa-cloud"></i>
+                    <h4>3. Cloud & Interface Layer</h4>
+                    <p>Data storage and analytics<br>Visualization dashboard<br>Remote monitoring and alerts</p>
+                </div>
+            </div>
+            <p><strong>👉 Forms a closed-loop feedback system for continuous optimization</strong></p>
+        </div>
+
+        <!-- 📱 Smart Dashboard & User Interface -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">📱</span>Smart Dashboard & User Interface</h2>
+            <ul>
+                <li>Real-time monitoring of all parameters</li>
+                <li>Visual indicators and analytics</li>
+                <li>Historical data tracking</li>
+                <li>Alerts and notifications</li>
+            </ul>
+            <h3>Alerts Include:</h3>
+            <div class="alerts-list">
+                <div class="alert-item"><i class="fas fa-water"></i> Soil condition alerts</div>
+                <div class="alert-item"><i class="fas fa-tint"></i> Irrigation triggers</div>
+                <div class="alert-item"><i class="fas fa-virus"></i> Disease risk warnings</div>
+                <div class="alert-item"><i class="fas fa-info-circle"></i> System status notifications</div>
+            </div>
+        </div>
+
+        <!-- 🔒 Reliability & Safety Features -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🔒</span>Reliability & Safety Features</h2>
+            <ul>
+                <li>Field-deployable robust design</li>
+                <li>Weather-resistant system configuration</li>
+                <li>Calibration support for sensing accuracy</li>
+                <li>Fault detection and anomaly identification</li>
+                <li>Energy-efficient operation through power management</li>
+                <li>Manual override for emergency control</li>
+            </ul>
+        </div>
+
+        <!-- 🌱 Key Benefits -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🌱</span>Key Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Improves Crop Yield</h4>
+                </div>
+                <div class="benefit-card">
                     <i class="fas fa-tint"></i>
-                    <h3>Smart Irrigation Control</h3>
-                    <ul class="feature-list">
-                        <li>Three modes: Normal, Moisture‑Based, Timer‑Based</li>
-                        <li>Automatic motor & valve control</li>
-                        <li>Prevents overwatering / underwatering</li>
-                    </ul>
+                    <h4>Reduces Water Consumption</h4>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-simple"></i>
-                    <h3>Yield Optimization & Sustainability</h3>
-                    <ul class="feature-list">
-                        <li>15–30% increase in crop yield</li>
-                        <li>30–50% reduction in water usage</li>
-                        <li>Lower fertilizer & pesticide costs</li>
-                    </ul>
+                <div class="benefit-card">
+                    <i class="fas fa-flask"></i>
+                    <h4>Optimizes Fertilizer Usage</h4>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Minimizes Nutrient Loss</h4>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Reduces Labor Dependency</h4>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-tractor"></i>
+                    <h4>Precision Agriculture</h4>
                 </div>
             </div>
         </div>
 
-        <!-- Core System Specifications Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Core System Specifications</h2>
-            <table>
-                <thead>
-                    <tr><th>Parameter</th><th>Specification</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>System Type</strong></td><td>Smart Farming & Automation Platform</td></tr>
-                    <tr><td><strong>Monitoring Capability</strong></td><td>Real‑time + Cloud Analytics</td></tr>
-                    <tr><td><strong>Connectivity</strong></td><td>Wireless (GSM / Wi‑Fi / LoRa based on site)</td></tr>
-                    <tr><td><strong>Power System</strong></td><td>Solar powered with battery backup</td></tr>
-                    <tr><td><strong>User Interface</strong></td><td>Mobile App + Web Dashboard</td></tr>
-                    <tr><td><strong>Control Mode</strong></td><td>Fully Automatic + Manual Override</td></tr>
-                </tbody>
-            </table>
+        <!-- 🛠️ Installation & Maintenance -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🛠️</span>Installation & Maintenance</h2>
+            <h3>Installation:</h3>
+            <ul>
+                <li>Rapid deployment in agricultural fields</li>
+                <li>Scalable across small to large farms</li>
+            </ul>
+            <h3>Maintenance:</h3>
+            <ul>
+                <li>Periodic calibration of sensing units</li>
+                <li>Routine system checks</li>
+                <li>Software and system updates</li>
+            </ul>
         </div>
 
-        <!-- Smart Soil Health & Climate Monitoring Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌾 Smart Soil Health & Climate Intelligence</h2>
-            <table>
-                <thead>
-                    <tr><th>Feature</th><th>Capability</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>7‑in‑1 Soil Analysis</strong></td><td>Continuous monitoring of N, P, K, pH, EC, temperature, moisture</td></tr>
-                    <tr><td><strong>Climate Monitoring</strong></td><td>Air temperature, humidity, environmental trends</td></tr>
-                    <tr><td><strong>Weather Intelligence</strong></td><td>7‑day forecast, rain alerts, temperature/humidity trends</td></tr>
-                    <tr><td><strong>Disease Prediction</strong></td><td>AI‑based early warnings using soil + climate data</td></tr>
-                    <tr><td><strong>AI Pest Spraying</strong></td><td>Crop‑stage‑based spraying recommendations, optimized pesticide usage</td></tr>
-                </tbody>
-            </table>
+        <!-- 📊 Scalability & Deployment -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">📊</span>Scalability & Deployment</h2>
+            <ul>
+                <li>Suitable for multiple crop types</li>
+                <li>Adaptable to different soil conditions</li>
+                <li>Expandable system architecture</li>
+                <li>Multi-location monitoring capability</li>
+            </ul>
         </div>
 
-        <!-- Smart Irrigation Control System Table (with three modes) -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">💧 Smart Irrigation Control System</h2>
-            <table>
-                <thead>
-                    <tr><th>Mode</th><th>Operation</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Normal Mode</strong></td><td>Manual ON/OFF control through mobile app</td></tr>
-                    <tr><td><strong>Moisture‑Based Mode</strong></td><td>Automatic irrigation triggered by soil moisture levels</td></tr>
-                    <tr><td><strong>Timer‑Based Mode</strong></td><td>Scheduled irrigation based on predefined timings</td></tr>
-                    <tr><td colspan="2"><strong>Advanced Features:</strong> Automatic motor control, zone‑wise valve control, drip & sprinkler compatibility</td></tr>
-                </tbody>
-            </table>
+        <!-- 🚀 Advanced Extensions -->
+        <div class="reveal content-block">
+            <h2><span class="section-icon">🚀</span>Advanced Extensions</h2>
+            <ul>
+                <li>Machine learning-based advisory systems</li>
+                <li>Integration with aerial spraying systems</li>
+                <li>Remote analytics and automation upgrades</li>
+                <li>Farm-level decision intelligence</li>
+            </ul>
         </div>
 
-        <!-- System Architecture Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">⚙️ System Architecture</h2>
-            <table>
-                <thead>
-                    <tr><th>Layer</th><th>Function</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Field Layer</strong></td><td>Soil and climate monitoring, real‑time data collection</td></tr>
-                    <tr><td><strong>Control Layer</strong></td><td>Data processing, decision‑making, automated irrigation & alerts</td></tr>
-                    <tr><td><strong>Cloud Layer</strong></td><td>Data storage, analytics, dashboard visualization</td></tr>
-                </tbody>
-            </table>
+        <!-- 🏭 Developed By -->
+        <div class="reveal developed-by">
+            <i class="fas fa-building"></i>
+            <h3>Developed By</h3>
+            <p><strong>KVB Green Energies</strong><br>
+                Advancing into Smart Agriculture and Climate Technology Solutions, integrating automation, data
+                intelligence, and sustainable farming practices.</p>
         </div>
 
-        <!-- Smart Dashboard & Alerts Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📱 Smart Dashboard & Alerts</h2>
-            <table>
-                <thead>
-                    <tr><th>Feature</th><th>Description</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Real‑time Monitoring</strong></td><td>Live farm data via mobile app & web dashboard</td></tr>
-                    <tr><td><strong>Visual Dashboards</strong></td><td>Graphs, indicators, historical analysis</td></tr>
-                    <tr><td><strong>Alerts & Notifications</strong></td><td>Low soil moisture, disease risk, irrigation status, weather alerts</td></tr>
-                </tbody>
-            </table>
+        <!-- 💡 Why AgroSense? -->
+        <div class="reveal why-box">
+            <h3><span class="section-icon">💡</span>Why AgroSense?</h3>
+            <ul>
+                <li>Depth-based soil intelligence (core innovation)</li>
+                <li>Real-time automated decision-making</li>
+                <li>Integrated irrigation + fertigation + protection</li>
+                <li>Scalable and future-ready system</li>
+                <li>Designed for modern precision agriculture</li>
+            </ul>
         </div>
 
-        <!-- Key Benefits & Sustainability Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🌱 Key Benefits & Impact</h2>
-            <table>
-                <thead>
-                    <tr><th>Parameter</th><th>Benefit</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Crop Yield</strong></td><td>Increase by 15–30% through precision management</td></tr>
-                    <tr><td><strong>Water Savings</strong></td><td>30–50% reduction in irrigation water</td></tr>
-                    <tr><td><strong>Fertilizer Usage</strong></td><td>Optimized NPK application reduces costs</td></tr>
-                    <tr><td><strong>Labor Dependency</strong></td><td>Automated operations reduce manual effort</td></tr>
-                    <tr><td><strong>Crop Loss Prevention</strong></td><td>Early disease detection minimizes losses</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Installation, Maintenance & Scalability Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🛠️ Installation & Scalability</h2>
-            <table>
-                <thead>
-                    <tr><th>Parameter</th><th>Details</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Installation Time</strong></td><td>1–2 days per farm</td></tr>
-                    <tr><td><strong>Coverage</strong></td><td>1–10 acres (expandable)</td></tr>
-                    <tr><td><strong>Maintenance</strong></td><td>Periodic sensor calibration, cleaning of probes, software updates</td></tr>
-                    <tr><td><strong>Scalability</strong></td><td>Multi‑location monitoring, crop‑specific customization</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Advanced Add‑ons Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">🚀 Advanced Add‑ons</h2>
-            <table>
-                <thead>
-                    <tr><th>Add‑on</th><th>Benefit</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>AI Crop Advisory</strong></td><td>Personalized recommendations for each crop stage</td></tr>
-                    <tr><td><strong>Drone‑based Spraying</strong></td><td>Integrated aerial application</td></tr>
-                    <tr><td><strong>Satellite Data Integration</strong></td><td>Large‑scale field health monitoring</td></tr>
-                    <tr><td><strong>Market Price Intelligence</strong></td><td>Real‑time market trends and best selling windows</td></tr>
-                    <tr><td><strong>Supply Chain Integration</strong></td><td>Cold storage and logistics connectivity</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Applications – six equal‑width cards -->
-        <div class="reveal">
-            <div class="section-title"><h2>📍 Suitable For</h2></div>
-            <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-apple-alt"></i><h3>Fruit Orchards</h3><p>Mango, pomegranate, citrus, grapes</p></div>
-                <div class="app-card"><i class="fas fa-carrot"></i><h3>Vegetable Farms</h3><p>Tomato, onion, chili, leafy greens</p></div>
-                <div class="app-card"><i class="fas fa-seedling"></i><h3>Field Crops</h3><p>Cotton, sugarcane, maize, wheat</p></div>
-                <div class="app-card"><i class="fas fa-leaf"></i><h3>High‑Value Crops</h3><p>Spices, medicinal plants, flowers</p></div>
-                <div class="app-card"><i class="fas fa-users"></i><h3>Farmer Groups</h3><p>FPOs, cooperatives</p></div>
-                <div class="app-card"><i class="fas fa-chart-line"></i><h3>Agri‑Startups</h3><p>Precision farming enterprises</p></div>
+        <!-- System in Action Gallery -->
+        <div class="reveal system-action-section">
+            <div class="section-title">
+                <h2>System in Action</h2>
             </div>
-        </div>
-
-        <!-- Gallery (placeholder images) -->
-        <div class="reveal">
-            <div class="section-title"><h2>System in Action</h2></div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/products/agrosense1.jpeg" alt="Field Sensors">
-                    <div class="gallery-caption"></div>
+                    <img src="../images/products/WhatsApp Image 2026-04-22 at 16.39.09.jpeg"
+                        alt="Parabolic Cooker Array">
+                    <div class="gallery-caption">
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smart Irrigation">
-                    <div class="gallery-caption"></div>
+                    <img src="../images/products/WhatsApp Image 2026-04-22 at 16.39.10 (1).jpeg"
+                        alt="Focused Solar Receiver">
+                    <div class="gallery-caption">
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1590513251874-92e2f69ea5f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dashboard View">
-                    <div class="gallery-caption"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Premium Unlock -->
-        <div class="premium-wrapper reveal">
-            <div id="lockContainer" class="lock-card">
-                <div class="lock-icon"><i class="fas fa-lock"></i></div>
-                <h3>Unlock Premium Technical Library</h3>
-                <p>Get detailed engineering drawings, ROI calculator, case studies, and funding proposal templates for the AgroSense smart farming system.</p>
-                <span class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
-            </div>
-
-            <div id="unlockFormContainer" class="form-container">
-                <h3>Access Premium Content</h3>
-                <p>Enter your details – we’ll send the link instantly.</p>
-                <form id="premiumForm">
-                    <div class="form-grid">
-                        <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required></div>
-                        <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required></div>
-                        <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="organization" placeholder="Organization / Farm"></div>
-                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your farming requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="AgroSense Smart Farming">
-                        <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-unlock-alt"></i> Unlock Library</button></div>
-                    </div>
-                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No spam.</p>
-                </form>
-            </div>
-
-            <div id="hiddenPremiumContent" class="hidden-content">
-                <div id="successMessage" class="success-banner" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources are ready.</div>
-                <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
-                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
-                    <div class="premium-grid">
-                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>System Schematics</h4><p>Block diagrams, sensor layout, wiring</p><span style="color: var(--primary);">✓ available</span></div>
-                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>ROI Calculator</h4><p>Custom Excel – water savings, yield gain</p><span style="color: var(--primary);">✓ included</span></div>
-                        <div class="premium-card"><i class="fas fa-video"></i><h4>Installation Videos</h4><p>Step‑by‑step field setup guide</p><span style="color: var(--primary);">✓ watch</span></div>
-                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>FPOs, large farms – real data</p><span style="color: var(--primary);">✓ read</span></div>
-                    </div>
-                    <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong>🏆 Success stories:</strong> Pomegranate Growers, Maharashtra – 22% yield increase, 35% water saved. Vegetable FPO, Karnataka – AI pest alerts reduced chemical use by 40%.</p>
+                    <img src="../images/products/WhatsApp Image 2026-04-22 at 16.39.10.jpeg" alt="Field Installation">
+                    <div class="gallery-caption">
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Universal Footer -->
     <div id="footer"></div>
 
     <script>
@@ -903,71 +815,17 @@
         loadComponent("header", ["components/header.html", "../components/header.html"]);
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
-        (function() {
-            emailjs.init('dU0o-KrI0m49D4wqR');
-            window.emailjsConfig = {
-                serviceId: 'service_t3i4ttm',
-                adminTemplate: 'template_q9aciqa',
-                autoTemplate: 'template_tcleyim'
-            };
-        })();
-
-        const lockDiv = document.getElementById('lockContainer');
-        const formPanel = document.getElementById('unlockFormContainer');
-        const hiddenContent = document.getElementById('hiddenPremiumContent');
-        const successMsg = document.getElementById('successMessage');
-
-        if (sessionStorage.getItem('premiumUnlocked_agrosense') === 'true') {
-            lockDiv.style.display = 'none';
-            formPanel.style.display = 'none';
-            hiddenContent.classList.add('visible');
-            successMsg.style.display = 'flex';
-        }
-
-        lockDiv.addEventListener('click', () => {
-            lockDiv.style.display = 'none';
-            formPanel.classList.add('visible');
-            formPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-
-        const premiumForm = document.getElementById('premiumForm');
-        premiumForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('fullname').value.trim();
-            const email = document.getElementById('emailid').value.trim();
-            if (!name || !email) { alert('Please enter name and email'); return; }
-            const phone = document.getElementById('phoneNum').value.trim() || 'Not provided';
-            const organization = document.getElementById('organization').value.trim() || 'Not provided';
-            const message = document.getElementById('message').value.trim() || 'No specific';
-            const product = document.getElementById('productName').value;
-
-            const adminParams = { from_name: name, reply_to: email, phone, organization, message, product, to_email: 'siddappagout@gmail.com' };
-            const autoParams = { from_name: name, reply_to: email, phone, organization, message, product, to_email: email };
-
-            const submitBtn = premiumForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-            emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.adminTemplate, adminParams)
-                .then(() => emailjs.send(window.emailjsConfig.serviceId, window.emailjsConfig.autoTemplate, autoParams))
-                .then(() => {
-                    sessionStorage.setItem('premiumUnlocked_agrosense', 'true');
-                    formPanel.style.display = 'none';
-                    hiddenContent.classList.add('visible');
-                    successMsg.style.display = 'flex';
-                    premiumForm.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalText;
-                })
-                .catch(err => { console.error(err); alert('Error sending request. Please try again.'); submitBtn.disabled = false; submitBtn.innerHTML = originalText; });
-        });
-
+        // Show all sections immediately
         const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => el.classList.add('active'));
+
+        // Optional: keep scroll animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
+<script src="../js/fix-logo.js"></script>
 </body>
+
 </html>
