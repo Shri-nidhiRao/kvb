@@ -35,6 +35,25 @@
       font-size: 13px;
       padding: 6px 40px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: transparent !important;
+      box-shadow: none !important;
+      border-bottom: transparent !important;
+      pointer-events: none;
+    }
+
+    .header.scrolled .logo {
+      pointer-events: auto;
+    }
+
+    .header.scrolled .top-bar,
+    .header.scrolled .nav-menu,
+    .header.scrolled .menu-toggle {
+      transform: translateY(-200%);
+      opacity: 0;
     }
 
     .top-content {
@@ -79,6 +98,7 @@
       display: none;
       font-size: 26px;
       cursor: pointer;
+      transition: transform 0.4s ease, opacity 0.3s ease;
     }
 
     /* Navigation menu – pushed to the right on desktop */
@@ -87,7 +107,7 @@
       gap: 28px;
       list-style: none;
       margin-left: auto;
-      /* aligns menu to the right */
+      transition: transform 0.4s ease, opacity 0.3s ease;
     }
 
     .nav-menu a {
@@ -251,9 +271,18 @@
     <div class="navbar">
 
       <div class="logo">
-        <img src="../images/products/kvb-logo.png" alt="KVB Logo">
+        <img id="headerLogo" alt="KVB Logo">
         <span class="logo-text">KVB Green Energies</span>
       </div>
+      <script>
+        var logo = document.getElementById('headerLogo');
+        if (logo) {
+          var parts = window.location.pathname.split('/').filter(Boolean);
+          parts.pop();
+          var base = parts.length ? '../'.repeat(parts.length) : './';
+          logo.src = base + 'images/products/kvb-logo.png';
+        }
+      </script>
 
       <div class="menu-toggle" id="menuBtn">☰</div>
 
@@ -338,6 +367,18 @@
         return false;
       }
     };
+
+    // hide top bar on scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    });
 
   </script>
 

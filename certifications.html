@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>KVB Green Energies – Engineering the Future</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -29,7 +31,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: opacity 1.5s cubic-bezier(0.77,0,0.175,1), visibility 1.5s ease;
+      transition: opacity 1.5s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.5s ease;
     }
 
     .intro-container.fade-out {
@@ -56,14 +58,19 @@
     }
 
     @keyframes slowZoom {
-      0% { transform: scale(1.02); }
-      100% { transform: scale(1.1); }
+      0% {
+        transform: scale(1.02);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
     }
 
     .intro-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
       z-index: 2;
     }
 
@@ -78,8 +85,15 @@
     }
 
     @keyframes contentFadeIn {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .intro-logo {
@@ -88,9 +102,17 @@
     }
 
     @keyframes logoPulse {
-      0% { filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5)); }
-      50% { filter: drop-shadow(0 0 40px rgba(58, 125, 68, 0.9)); }
-      100% { filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5)); }
+      0% {
+        filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 40px rgba(58, 125, 68, 0.9));
+      }
+
+      100% {
+        filter: drop-shadow(0 0 20px rgba(58, 125, 68, 0.5));
+      }
     }
 
     .intro-logo-circle {
@@ -103,13 +125,18 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 0 80px rgba(58, 125, 68, 0.8);
-      border: 2px solid rgba(255,255,255,0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
       animation: rotateSlow 20s linear infinite;
     }
 
     @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .intro-logo-circle i {
@@ -119,9 +146,17 @@
     }
 
     @keyframes leafFloat {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     .intro-title {
@@ -132,7 +167,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 20px;
-      text-shadow: 0 5px 30px rgba(0,0,0,0.5);
+      text-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
       background: linear-gradient(to right, #f0f0f0, #c8e6c9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -141,15 +176,20 @@
     }
 
     @keyframes titleGlow {
-      0% { text-shadow: 0 0 30px rgba(58,125,68,0.5); }
-      100% { text-shadow: 0 0 60px rgba(58,125,68,0.9); }
+      0% {
+        text-shadow: 0 0 30px rgba(58, 125, 68, 0.5);
+      }
+
+      100% {
+        text-shadow: 0 0 60px rgba(58, 125, 68, 0.9);
+      }
     }
 
     .intro-subtitle {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 1.4rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       letter-spacing: 0.3em;
       text-transform: uppercase;
       margin-bottom: 50px;
@@ -160,7 +200,7 @@
       width: 200px;
       height: 2px;
       margin: 0 auto;
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 4px;
       position: relative;
       overflow: hidden;
@@ -180,8 +220,13 @@
     }
 
     @keyframes loadingBar {
-      0% { left: -40%; }
-      100% { left: 100%; }
+      0% {
+        left: -40%;
+      }
+
+      100% {
+        left: 100%;
+      }
     }
 
     .intro-particles {
@@ -195,27 +240,95 @@
       position: absolute;
       width: 4px;
       height: 4px;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       box-shadow: 0 0 10px #3A7D44;
       animation: floatParticle 15s infinite linear;
     }
 
     @keyframes floatParticle {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
     }
 
-    .intro-particles span:nth-child(1) { left: 10%; width: 6px; height: 6px; animation-duration: 18s; animation-delay: 0s; }
-    .intro-particles span:nth-child(2) { left: 30%; width: 3px; height: 3px; animation-duration: 12s; animation-delay: 2s; }
-    .intro-particles span:nth-child(3) { left: 50%; width: 8px; height: 8px; animation-duration: 22s; animation-delay: 1s; }
-    .intro-particles span:nth-child(4) { left: 70%; width: 5px; height: 5px; animation-duration: 14s; animation-delay: 3s; }
-    .intro-particles span:nth-child(5) { left: 90%; width: 4px; height: 4px; animation-duration: 16s; animation-delay: 0.5s; }
-    .intro-particles span:nth-child(6) { left: 45%; width: 7px; height: 7px; animation-duration: 20s; animation-delay: 4s; }
-    .intro-particles span:nth-child(7) { left: 15%; width: 5px; height: 5px; animation-duration: 13s; animation-delay: 1.5s; }
-    .intro-particles span:nth-child(8) { left: 85%; width: 6px; height: 6px; animation-duration: 19s; animation-delay: 2.5s; }
+    .intro-particles span:nth-child(1) {
+      left: 10%;
+      width: 6px;
+      height: 6px;
+      animation-duration: 18s;
+      animation-delay: 0s;
+    }
+
+    .intro-particles span:nth-child(2) {
+      left: 30%;
+      width: 3px;
+      height: 3px;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+
+    .intro-particles span:nth-child(3) {
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      animation-duration: 22s;
+      animation-delay: 1s;
+    }
+
+    .intro-particles span:nth-child(4) {
+      left: 70%;
+      width: 5px;
+      height: 5px;
+      animation-duration: 14s;
+      animation-delay: 3s;
+    }
+
+    .intro-particles span:nth-child(5) {
+      left: 90%;
+      width: 4px;
+      height: 4px;
+      animation-duration: 16s;
+      animation-delay: 0.5s;
+    }
+
+    .intro-particles span:nth-child(6) {
+      left: 45%;
+      width: 7px;
+      height: 7px;
+      animation-duration: 20s;
+      animation-delay: 4s;
+    }
+
+    .intro-particles span:nth-child(7) {
+      left: 15%;
+      width: 5px;
+      height: 5px;
+      animation-duration: 13s;
+      animation-delay: 1.5s;
+    }
+
+    .intro-particles span:nth-child(8) {
+      left: 85%;
+      width: 6px;
+      height: 6px;
+      animation-duration: 19s;
+      animation-delay: 2.5s;
+    }
 
     /* ----- MAIN WEBSITE ----- */
     #mainWebsite {
@@ -229,7 +342,9 @@
     }
 
     @keyframes websiteFadeIn {
-      to { opacity: 1; }
+      to {
+        opacity: 1;
+      }
     }
 
     /* header placeholder (will be loaded) */
@@ -300,7 +415,8 @@
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5); /* dark overlay for text readability */
+      background: rgba(0, 0, 0, 0.5);
+      /* dark overlay for text readability */
       z-index: 1;
     }
 
@@ -418,9 +534,22 @@
     }
 
     @keyframes bounce {
-      0%,20%,50%,80%,100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-10px) translateX(-50%); }
-      60% { transform: translateY(-5px) translateX(-50%); }
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0) translateX(-50%);
+      }
+
+      40% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+
+      60% {
+        transform: translateY(-5px) translateX(-50%);
+      }
     }
 
     /* ----- PILLARS ----- */
@@ -434,7 +563,7 @@
       background: #ffffff;
       border-radius: 24px;
       padding: 2.5rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
       border: 1px solid #f0f0f0;
       transition: box-shadow 0.3s, border-color 0.2s;
     }
@@ -547,10 +676,31 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
     }
-    .stat-message { text-align: center; }
-    .stat-message i { font-size: 2rem; color: #4a8b4a; margin-bottom: 1rem; background: rgba(74,139,74,0.05); padding: 1rem; border-radius: 50%; }
-    .stat-message h3 { font-size: 1.5rem; font-weight: 600; color: #1d1d1f; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
-    .stat-message p { color: #86868b; }
+
+    .stat-message {
+      text-align: center;
+    }
+
+    .stat-message i {
+      font-size: 2rem;
+      color: #4a8b4a;
+      margin-bottom: 1rem;
+      background: rgba(74, 139, 74, 0.05);
+      padding: 1rem;
+      border-radius: 50%;
+    }
+
+    .stat-message h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .stat-message p {
+      color: #86868b;
+    }
 
     /* ----- INNOVATION ----- */
     .innovation-grid {
@@ -558,12 +708,27 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
     }
+
     .innovation-item {
-      background: white; border: 1px solid #f0f0f0; border-radius: 20px; padding: 2rem 1rem; text-align: center;
+      background: white;
+      border: 1px solid #f0f0f0;
+      border-radius: 20px;
+      padding: 2rem 1rem;
+      text-align: center;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .innovation-item i { font-size: 2rem; color: #4a8b4a; margin-bottom: 1rem; }
-    .innovation-item h4 { font-weight: 500; font-size: 1rem; color: #1d1d1f; }
+
+    .innovation-item i {
+      font-size: 2rem;
+      color: #4a8b4a;
+      margin-bottom: 1rem;
+    }
+
+    .innovation-item h4 {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1d1d1f;
+    }
 
     /* ----- CERTIFICATIONS ----- */
     .cert-grid {
@@ -573,6 +738,7 @@
       margin-top: 4rem;
       justify-content: center;
     }
+
     .cert-card {
       background: #ffffff;
       border-radius: 28px;
@@ -585,82 +751,168 @@
       border: 1px solid #f1f1f1;
       cursor: default;
     }
+
     @media (max-width: 1200px) {
-      .cert-grid { grid-template-columns: repeat(3, 1fr); }
+      .cert-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
+
     @media (max-width: 768px) {
-      .cert-grid { grid-template-columns: repeat(2, 1fr); }
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 480px) {
-      .cert-grid { grid-template-columns: 1fr; }
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ----- SUSTAINABILITY MESSAGE ----- */
     .sustainability-message {
-      background: #f9f9fb; padding: 5rem 0; text-align: center;
+      background: #f9f9fb;
+      padding: 5rem 0;
+      text-align: center;
     }
+
     .sustainability-message h2 {
-      font-size: 2.2rem; font-weight: 500; max-width: 900px; margin: 2rem auto; line-height: 1.4; color: #1d1d1f;
+      font-size: 2.2rem;
+      font-weight: 500;
+      max-width: 900px;
+      margin: 2rem auto;
+      line-height: 1.4;
+      color: #1d1d1f;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    .fa-quote-left, .fa-quote-right { color: #4a8b4a; opacity: 0.2; font-size: 2rem; }
+
+    .fa-quote-left,
+    .fa-quote-right {
+      color: #4a8b4a;
+      opacity: 0.2;
+      font-size: 2rem;
+    }
 
     /* ----- AUDIENCE GRID – now using <div> not <a> ----- */
     .audience-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
     }
+
     .audience-card {
-      background: white; border: 1px solid #f0f0f0; border-radius: 20px; padding: 2rem 1.5rem; text-align: center;
-      color: #1d1d1f; transition: border-color 0.2s, box-shadow 0.2s;
+      background: white;
+      border: 1px solid #f0f0f0;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: #1d1d1f;
+      transition: border-color 0.2s, box-shadow 0.2s;
       cursor: default;
     }
-    .audience-card i { font-size: 2rem; color: #4a8b4a; margin-bottom: 1rem; }
-    .audience-card h3 { font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
-    .audience-card p { color: #86868b; font-size: 0.9rem; }
+
+    .audience-card i {
+      font-size: 2rem;
+      color: #4a8b4a;
+      margin-bottom: 1rem;
+    }
+
+    .audience-card h3 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .audience-card p {
+      color: #86868b;
+      font-size: 0.9rem;
+    }
 
     /* ----- CTA BANNER ----- */
     .cta-banner {
-      background: #4a8b4a; padding: 5rem 0; color: white; text-align: center;
+      background: #4a8b4a;
+      padding: 5rem 0;
+      color: white;
+      text-align: center;
     }
+
     .cta-banner h2 {
-      font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; color: white;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
     }
+
     .cta-buttons {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
+
     .cta-buttons .btn {
-      background: white; color: #4a8b4a; padding: 0.8rem 2rem; border-radius: 30px; font-weight: 500;
+      background: white;
+      color: #4a8b4a;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 500;
     }
+
     .cta-buttons .btn-outline {
-      background: transparent; color: white; border: 1px solid white;
+      background: transparent;
+      color: white;
+      border: 1px solid white;
     }
+
     .cta-buttons .btn-outline:hover {
-      background: white; color: #4a8b4a;
+      background: white;
+      color: #4a8b4a;
     }
+
     .cta-buttons .btn-gold {
-      background: #FDB813; color: #1d1d1f;
+      background: #FDB813;
+      color: #1d1d1f;
     }
+
     .cta-buttons .btn-gold:hover {
       background: #e5a800;
     }
 
     /* ----- WHATSAPP FLOAT ----- */
     .whatsapp-float {
-      position: fixed; bottom: 30px; right: 30px; background: #25d366; border-radius: 50%;
-      width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
-      font-size: 32px; color: white; box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-      z-index: 999; transition: transform 0.2s;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 999;
+      transition: transform 0.2s;
     }
-    .whatsapp-float:hover { transform: scale(1.05); }
+
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
 
     /* ----- RESPONSIVE ----- */
     @media (max-width: 1024px) {
       .hero-grid {
         gap: 40px;
       }
+
       .hero-title {
         font-size: 3rem;
       }
+
       .logo-grid {
         gap: 2rem;
       }
@@ -670,30 +922,39 @@
       .hero-videos {
         flex-direction: column;
       }
+
       .video-half {
         flex: 1;
         height: 50%;
       }
+
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
       }
-      .hero-left, .hero-right {
+
+      .hero-left,
+      .hero-right {
         text-align: center;
       }
+
       .hero-buttons {
         justify-content: center;
       }
+
       .hero-title {
         font-size: 2.2rem;
       }
+
       .section-title {
         font-size: 2rem;
       }
+
       .sustainability-message h2 {
         font-size: 1.8rem;
       }
+
       .logo-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -704,10 +965,12 @@
       .logo-grid {
         grid-template-columns: 1fr;
       }
+
       .hero-buttons {
         flex-direction: column;
         align-items: center;
       }
+
       .btn {
         width: 100%;
         text-align: center;
@@ -715,6 +978,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- CINEMATIC INTRO -->
   <div class="intro-container" id="introScreen">
@@ -788,7 +1052,8 @@
           <div class="pillar-card" data-aos="zoom-in" data-aos-delay="100">
             <div class="pillar-icon"><i class="fas fa-solar-panel"></i></div>
             <h3>Next-Generation Clean Energy Solutions</h3>
-            <p>Solar thermal and steam technologies replacing fossil fuels in large-scale cooking and industrial heat applications.</p>
+            <p>Solar thermal and steam technologies replacing fossil fuels in large-scale cooking and industrial heat
+              applications.</p>
           </div>
           <div class="pillar-card" data-aos="zoom-in" data-aos-delay="200">
             <div class="pillar-icon"><i class="fas fa-seedling"></i></div>
@@ -810,13 +1075,27 @@
         <h2 class="section-title">Solutions Ecosystem</h2>
         <p class="section-subtitle">Complete renewable energy and smart agriculture solutions</p>
         <div class="solutions-grid">
-          <div class="solution-item" data-aos="flip-left" data-aos-delay="50"><i class="fas fa-fire"></i><h4>Solar Steam Cooking Systems</h4></div>
-          <div class="solution-item" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-satellite-dish"></i><h4>Scheffler Solar Concentrators</h4></div>
-          <div class="solution-item" data-aos="flip-left" data-aos-delay="150"><i class="fas fa-wind"></i><h4>Hybrid Solar Tunnel Dryers</h4></div>
-          <div class="solution-item" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-battery-full"></i><h4>PTC & Sand Battery Storage</h4></div>
-          <div class="solution-item" data-aos="flip-left" data-aos-delay="250"><i class="fas fa-leaf"></i><h4>Biomass Thermal Integration</h4></div>
-          <div class="solution-item" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-robot"></i><h4>AI Crop Quality Detection</h4></div>
-          <div class="solution-item" data-aos="flip-left" data-aos-delay="350"><i class="fas fa-microchip"></i><h4>Microgreen Automation Systems</h4></div>
+          <div class="solution-item" data-aos="flip-left" data-aos-delay="50"><i class="fas fa-fire"></i>
+            <h4>Solar Steam Cooking Systems</h4>
+          </div>
+          <div class="solution-item" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-satellite-dish"></i>
+            <h4>Scheffler Solar Concentrators</h4>
+          </div>
+          <div class="solution-item" data-aos="flip-left" data-aos-delay="150"><i class="fas fa-wind"></i>
+            <h4>Hybrid Solar Tunnel Dryers</h4>
+          </div>
+          <div class="solution-item" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-battery-full"></i>
+            <h4>PTC & Sand Battery Storage</h4>
+          </div>
+          <div class="solution-item" data-aos="flip-left" data-aos-delay="250"><i class="fas fa-leaf"></i>
+            <h4>Biomass Thermal Integration</h4>
+          </div>
+          <div class="solution-item" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-robot"></i>
+            <h4>AI Crop Quality Detection</h4>
+          </div>
+          <div class="solution-item" data-aos="flip-left" data-aos-delay="350"><i class="fas fa-microchip"></i>
+            <h4>Microgreen Automation Systems</h4>
+          </div>
         </div>
       </div>
     </section>
@@ -836,12 +1115,16 @@
             <p>UAS Bangalore</p>
           </div>
           <div class="client-logo">
+            <img src="images/certificates/uahs.png" alt="UAHS Shimoga">
+            <p>UAHS Shimoga</p>
+          </div>
+          <div class="client-logo">
             <img src="images\certificates\uhs b.jpeg" alt="UHS Bagalkot">
             <p>UHS Bagalkot</p>
           </div>
           <div class="client-logo">
-            <img src="images/certificates/uahs.png" alt="UAHS Shimoga">
-            <p>UAHS Shimoga</p>
+            <img src="images/products/Screenshot 2026-04-21 171930.png" alt="New Certificate">
+            <p>New Certificate</p>
           </div>
           <div class="client-logo">
             <img src="images/certificates/iit.png" alt="IIT Dharwad">
@@ -859,12 +1142,32 @@
     <section class="section" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Real Impact, Measurable Results</h2>
+        <p class="section-subtitle" style="max-width: 800px;">With just 70 solar dishes, we are eliminating 1.34cr fuel
+          cost and saving 1300+ trees every year</p>
         <div class="impact-grid">
-          <div class="stat-message"><i class="fas fa-smog"></i><h3>Thousands of tons</h3><p>CO₂ emissions reduced</p></div>
-          <div class="stat-message"><i class="fas fa-gas-pump"></i><h3>Large‑scale LPG</h3><p>replaced with solar thermal</p></div>
-          <div class="stat-message"><i class="fas fa-tree"></i><h3>Firewood saved</h3><p>community kitchens & industries</p></div>
-          <div class="stat-message"><i class="fas fa-users"></i><h3>Farmer livelihoods</h3><p>strengthened through smart agriculture</p></div>
+          <div class="stat-message"><i class="fas fa-smog"></i>
+            <h3>383 tons</h3>
+            <p>383 tons of CO₂ emissions are reduced per year</p>
+          </div>
+          <div class="stat-message"><i class="fas fa-gas-pump"></i>
+            <h3>Large‑scale LPG</h3>
+            <p>6700+ LPG cylinders saved annually</p>
+            <p>7000 people served daily without fuel</p>
+            <p>1.34cr fuel saving every year</p>
+          </div>
+          <div class="stat-message"><i class="fas fa-tree"></i>
+            <h3>Firewood saved</h3>
+            <p>383+ tons firewood/year</p>
+            <p>Trees saved-1300 every year</p>
+          </div>
+          <div class="stat-message"><i class="fas fa-users"></i>
+            <h3>Carbon Credit Benefits</h3>
+            <p>Conservative Rate-1000 per ton CO2</p>
+            <p>383*1000=3.83 Lacs per year</p>
+          </div>
         </div>
+        <p style="text-align: center; color: #86868b; font-size: 0.9rem; margin-top: 2rem;">*All values are calculated
+          based on standard consumption benchmarks. Actual values may vary depending on cooking practices and usage.</p>
       </div>
     </section>
 
@@ -872,13 +1175,24 @@
     <section class="section" style="background:#f9f9fb;" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Building Tomorrow's Infrastructure Today</h2>
-        <p style="font-size:1.2rem;color:#86868b;max-width:700px;margin-bottom:3rem;">KVB is actively developing future technologies that will transform energy and agriculture systems.</p>
+        <p style="font-size:1.2rem;color:#86868b;max-width:700px;margin-bottom:3rem;">KVB is actively developing future
+          technologies that will transform energy and agriculture systems.</p>
         <div class="innovation-grid">
-          <div class="innovation-item"><i class="fas fa-thermometer-half"></i><h4>Thermal Energy Storage</h4></div>
-          <div class="innovation-item"><i class="fas fa-digital-tachograph"></i><h4>Soil‑to‑Sale Platforms</h4></div>
-          <div class="innovation-item"><i class="fas fa-brain"></i><h4>AI Crop Grading Systems</h4></div>
-          <div class="innovation-item"><i class="fas fa-robot"></i><h4>Microgreen Smart Farms</h4></div>
-          <div class="innovation-item"><i class="fas fa-bolt"></i><h4>Hybrid Renewable Heat</h4></div>
+          <div class="innovation-item"><i class="fas fa-thermometer-half"></i>
+            <h4>Thermal Energy Storage</h4>
+          </div>
+          <div class="innovation-item"><i class="fas fa-digital-tachograph"></i>
+            <h4>Soil‑to‑Sale Platforms</h4>
+          </div>
+          <div class="innovation-item"><i class="fas fa-brain"></i>
+            <h4>AI Crop Grading Systems</h4>
+          </div>
+          <div class="innovation-item"><i class="fas fa-robot"></i>
+            <h4>Microgreen Smart Farms</h4>
+          </div>
+          <div class="innovation-item"><i class="fas fa-bolt"></i>
+            <h4>Hybrid Renewable Heat</h4>
+          </div>
         </div>
       </div>
     </section>
@@ -901,7 +1215,9 @@
     <section class="sustainability-message" data-aos="fade-up">
       <div class="container">
         <i class="fas fa-quote-left"></i>
-        <h2>Every kilogram of firewood and LPG burned releases harmful CO₂. Our mission is to replace fossil fuel dependency with renewable thermal energy and intelligent agricultural systems that protect the environment while strengthening livelihoods.</h2>
+        <h2>Every kilogram of firewood and LPG burned releases harmful CO₂. Our mission is to replace fossil fuel
+          dependency with renewable thermal energy and intelligent agricultural systems that protect the environment
+          while strengthening livelihoods.</h2>
         <i class="fas fa-quote-right"></i>
       </div>
     </section>
@@ -912,10 +1228,22 @@
         <h2 class="section-title">How Can We Help You?</h2>
         <p class="section-subtitle">Select your path for tailored solutions</p>
         <div class="audience-grid">
-          <div class="audience-card"><i class="fas fa-university"></i><h3>Government & Institutions</h3><p>Solar cooking systems for community kitchens</p></div>
-          <div class="audience-card"><i class="fas fa-tractor"></i><h3>Farmers & Agri Industries</h3><p>Solar drying, smart farming</p></div>
-          <div class="audience-card"><i class="fas fa-industry"></i><h3>Food Processing Industry</h3><p>Industrial solar thermal systems</p></div>
-          <div class="audience-card"><i class="fas fa-handshake"></i><h3>Partners & Investors</h3><p>Collaboration & investment</p></div>
+          <div class="audience-card"><i class="fas fa-university"></i>
+            <h3>Government & Institutions</h3>
+            <p>Solar cooking systems for community kitchens</p>
+          </div>
+          <div class="audience-card"><i class="fas fa-tractor"></i>
+            <h3>Farmers & Agri Industries</h3>
+            <p>Solar drying, smart farming</p>
+          </div>
+          <div class="audience-card"><i class="fas fa-industry"></i>
+            <h3>Food Processing Industry</h3>
+            <p>Industrial solar thermal systems</p>
+          </div>
+          <div class="audience-card"><i class="fas fa-handshake"></i>
+            <h3>Partners & Investors</h3>
+            <p>Collaboration & investment</p>
+          </div>
         </div>
       </div>
     </section>
@@ -941,7 +1269,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    (function() {
+    (function () {
       // intro screen handling
       if (sessionStorage.getItem('introShown') === 'true') {
         document.getElementById('introScreen').classList.add('hidden');
@@ -987,19 +1315,19 @@
       ]);
 
       // simple scroll effect for header (if needed)
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         const header = document.querySelector('.header');
         if (header) {
           if (window.scrollY > 50) {
-            header.style.background = 'rgba(255,255,255,0.95)';
-            header.style.boxShadow = '0 6px 20px rgba(0,20,10,0.05)';
+            header.classList.add('scrolled');
           } else {
-            header.style.background = 'rgba(255,255,255,0.8)';
-            header.style.boxShadow = 'none';
+            header.classList.remove('scrolled');
           }
         }
       });
     })();
   </script>
+<script src="js/fix-logo.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,27 @@
+{
+  "name": "kvb-green-energies-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjjkfl/kvb-green-energies-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jjjkfl/kvb-green-energies-website/issues"
+  },
+  "homepage": "https://github.com/jjjkfl/kvb-green-energies-website#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.5"
+  }
+}

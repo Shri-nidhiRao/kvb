@@ -1671,11 +1671,9 @@
         const header = document.querySelector('.header');
         if (header) {
           if (window.scrollY > 50) {
-            header.style.background = 'rgba(255,255,255,0.95)';
-            header.style.boxShadow = '0 6px 20px rgba(0,20,10,0.05)';
+            header.classList.add('scrolled');
           } else {
-            header.style.background = 'rgba(255,255,255,0.8)';
-            header.style.boxShadow = 'none';
+            header.classList.remove('scrolled');
           }
         }
       });
@@ -1839,6 +1837,7 @@
       loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
     })();
   </script>
+<script src="js/fix-logo.js"></script>
 </body>
 
 </html>

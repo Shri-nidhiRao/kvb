@@ -1,7 +1,3 @@
-I've fixed the HTML to remove all Chinese characters and properly format the tables. The page now has clean English
-tags, consistent spacing, and matches the premium layout of your previous product pages.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -167,7 +163,8 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             text-align: center;
         }
 
-        .hero-light .hero-full-width {
+        .hero-light .container {
+            max-width: none;
             width: 100%;
             padding: 0 20px;
         }
@@ -235,16 +232,27 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
         }
 
-        .hero-video-wrapper video {
-            width: 100%;
-            height: auto;
+        .hero-video-wrapper::before {
+            content: "";
             display: block;
-            border-radius: var(--radius-lg);
+            padding-top: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+
+        .hero-video-wrapper video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
         }
 
         @media (max-width: 768px) {
             .hero-video-wrapper {
-                width: 95vw;
+                width: 90vw;
+                max-width: 400px;
+                max-height: 711px;
             }
         }
 
@@ -405,6 +413,61 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             margin-bottom: 0;
         }
 
+        /* ===== BENEFITS GRID ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .benefit-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
+
         @media (max-width: 1100px) {
             .applications-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -475,10 +538,14 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             margin: 4rem 0;
         }
 
+        .system-action-section .gallery-item {
+            min-width: 280px;
+        }
+
         .gallery-item {
             border-radius: var(--radius-md);
             overflow: hidden;
-            height: 500px;
+            height: 260px;
             position: relative;
             border: 1px solid var(--border-light);
             transition: transform 0.4s;
@@ -487,7 +554,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
         .gallery-item img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             transition: transform 0.7s;
         }
 
@@ -504,6 +571,12 @@ tags, consistent spacing, and matches the premium layout of your previous produc
             color: white;
             padding: 1rem;
             font-weight: 500;
+        }
+
+        .gallery-caption h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin: 0;
         }
 
         /* ===== PREMIUM UNLOCK ===== */
@@ -694,14 +767,14 @@ tags, consistent spacing, and matches the premium layout of your previous produc
 
     <!-- HERO – Centered Title + Large Centered Video -->
     <section class="hero-light">
-        <div class="hero-full-width">
+        <div class="container">
             <div class="hero-content">
-                <h1>Smart Vertical Microgreens Growing System</h1>
-
+                <h1>Solar Powered Smart Vertical Microgreens Growing System</h1>
             </div>
             <div class="hero-video-wrapper">
-                <video autoplay muted loop playsinline controls preload="metadata">
-                    <source src="../videos/watch.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline controls preload="auto">
+                    <source src="../videos/Growing Kale Microgreens - Soilless 10d in 17s microgreenssalads.mp4"
+                        type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -804,10 +877,9 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                         <td>Floor‑mounted compact unit</td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
-        <!-- Lighting & Irrigation System Tables -->
         <div class="reveal soft-table">
             <h2 style="margin-left: 1.5rem; margin-top: 1rem;">💡 Lighting System</h2>
             <table>
@@ -839,7 +911,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                         <td>Photosynthesis + growth optimization</td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
         <div class="reveal soft-table">
@@ -869,7 +941,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                         <td>Mist / controlled watering</td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
         <!-- Environmental Monitoring & Airflow Tables -->
@@ -900,7 +972,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                         <td>Rear / top‑mounted airflow system</td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
         <div class="reveal soft-table">
@@ -930,7 +1002,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                         <td>Real‑time monitoring panel</td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
         <!-- Smart Automation Logic Description (as a table or descriptive section) -->
@@ -967,7 +1039,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                             auto OFF after set duration.</td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
         <!-- Growing Capacity & Suitable Crops -->
@@ -983,11 +1055,11 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                 <tbody>
                     <tr>
                         <td><strong>Trays per Layer</strong></td>
-                        <td>1–2</td>
+                        <td>2</td>
                     </tr>
                     <tr>
                         <td><strong>Total Capacity</strong></td>
-                        <td>3–6 trays</td>
+                        <td>5 compartment 10 trays</td>
                     </tr>
                     <tr>
                         <td><strong>Crop Cycle</strong></td>
@@ -999,7 +1071,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                             coriander)</td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
         <!-- Applications – five cards, one row -->
@@ -1058,7 +1130,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                         </td>
                     </tr>
                 </tbody>
-
+            </table>
         </div>
 
         <!-- Optional Upgrades Table -->
@@ -1095,23 +1167,113 @@ tags, consistent spacing, and matches the premium layout of your previous produc
                 </tbody>
             </table>
         </div>
-        <!-- Gallery (placeholder images) -->
+
+        <!-- Health Benefits Section -->
         <div class="reveal">
+            <div class="section-title">
+                <h2>🥗 Health Benefits for End Customers</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-fist-raised"></i>
+                    <h4>High Nutrient Density</h4>
+                    <p>Contains 30–40x more vitamins & minerals than mature vegetables</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h4>Boosts Immunity</h4>
+                    <p>Rich in vitamin C, E, and antioxidants that strengthen the immune system</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h4>Supports Heart Health</h4>
+                    <p>Helps reduce cholesterol and improves cardiovascular function</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-briefcase-medical"></i>
+                    <h4>Helps Manage Diabetes</h4>
+                    <p>Low glycemic, supports better blood sugar control</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-fire-alt"></i>
+                    <h4>Anti-Inflammatory Properties</h4>
+                    <p>Reduces inflammation and supports overall wellness</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Improves Brain Function</h4>
+                    <p>Antioxidants help protect brain cells and enhance focus</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-eye"></i>
+                    <h4>Good for Eye Health</h4>
+                    <p>Contains carotenoids like lutein & beta-carotene</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-dna"></i>
+                    <h4>Rich in Antioxidants</h4>
+                    <p>Fights free radicals and slows aging</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-bone"></i>
+                    <h4>Supports Bone Strength</h4>
+                    <p>Good source of calcium, magnesium, and essential minerals</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-lemon"></i>
+                    <h4>Aids Digestion</h4>
+                    <p>High fiber content improves gut health</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-weight"></i>
+                    <h4>Supports Weight Management</h4>
+                    <p>Low calorie, high nutrition food</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Detoxifies the Body</h4>
+                    <p>Helps remove toxins naturally</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-spa"></i>
+                    <h4>Improves Skin & Hair Health</h4>
+                    <p>Nutrients support glowing skin and stronger hair</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Chemical-Free & Safe</h4>
+                    <p>Grown in controlled environment without harmful residues</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="reveal system-action-section">
             <div class="section-title">
                 <h2>System in Action</h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/products/microgreen1.jpeg" alt="Vertical Microgreens System">
-                    <div class="gallery-caption"></div>
+                    <img src="../images/products/Screenshot 2026-04-21 171930.png" alt="Vertical Microgreens System">
+                    <div class="gallery-caption">
+                        <h3>Smart Vertical Growing System</h3>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../images/products/microgreen2.jpeg" alt="Microgreens Harvest">
-                    <div class="gallery-caption"></div>
+                    <img src="../images/products/Screenshot 2026-04-21 171957.png" alt="Microgreens Harvest">
+                    <div class="gallery-caption">
+                        <h3>Fresh Microgreens Harvest</h3>
+                    </div>
                 </div>
-
+                <div class="gallery-item">
+                    <img src="../images/products/Screenshot 2026-04-21 172020.png" alt="Microgreens Setup">
+                    <div class="gallery-caption">
+                        <h3>Multi-Layer Tray System</h3>
+                    </div>
+                </div>
             </div>
         </div>
+
         <!-- Premium Unlock -->
         <div class="premium-wrapper reveal">
             <div id="lockContainer" class="lock-card">
@@ -1198,6 +1360,20 @@ tags, consistent spacing, and matches the premium layout of your previous produc
         loadComponent("header", ["components/header.html", "../components/header.html"]);
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
+        // Force autoplay for hero video
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.querySelector('.hero-video-wrapper video');
+            if (video) {
+                // Attempt to play immediately
+                video.play().catch(() => {
+                    // If autoplay is blocked, add click listener to start on user interaction
+                    video.addEventListener('click', () => video.play());
+                    // Show "Click to play" hint
+                    video.style.cursor = 'pointer';
+                });
+            }
+        });
+
         (function () {
             emailjs.init('dU0o-KrI0m49D4wqR');
             window.emailjsConfig = {
@@ -1264,6 +1440,7 @@ tags, consistent spacing, and matches the premium layout of your previous produc
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
+<script src="../js/fix-logo.js"></script>
 </body>
 
 </html>

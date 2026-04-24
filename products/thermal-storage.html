@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking</title>
+    <title>Parabolic Trough Collector (PTC) System | KVB Green Energies – Industrial Solar Thermal</title>
     <!-- Fonts & Icons -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
@@ -149,6 +149,7 @@
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-light);
+            min-height: 80px;
         }
 
         /* ===== HERO – Centered Title + BIG Centered Video ===== */
@@ -278,14 +279,13 @@
 
         /* ===== SCROLL REVEAL ===== */
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            opacity: 1 !important;
+            transform: none !important;
         }
 
         .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 1 !important;
+            transform: none !important;
         }
 
         /* ===== HIGHLIGHT OVERVIEW ===== */
@@ -323,20 +323,39 @@
 
         /* ===== 2x2 FEATURE MATRIX ===== */
         .feature-matrix {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1.5rem;
             margin: 4rem 0;
+            text-align: center;
         }
 
         .feature-card {
             background: white;
             border: 1px solid var(--border-light);
             border-radius: var(--radius-md);
-            padding: 1.8rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
-            height: 100%;
+            flex: 1 1 calc(25% - 1.5rem);
+            min-width: 220px;
+            max-width: 280px;
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
         }
 
         .feature-card:hover {
@@ -384,16 +403,22 @@
 
         @media (max-width: 768px) {
             .feature-matrix {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card {
+                flex: 1 1 100%;
+                max-width: 100%;
             }
         }
 
         /* ===== CARDS ===== */
         .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
             margin: 4rem 0;
         }
 
@@ -401,9 +426,12 @@
             background: white;
             border: 1px solid var(--border-light);
             border-radius: var(--radius-md);
-            padding: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
+            flex: 1 1 calc(20% - 1.5rem);
+            min-width: 200px;
+            max-width: 240px;
         }
 
         .card:hover {
@@ -413,21 +441,26 @@
         }
 
         .card i {
-            font-size: 2.6rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
         }
 
         /* ===== APPLICATIONS – one row ===== */
         .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
             margin: 4rem 0;
         }
 
@@ -435,10 +468,13 @@
             background: white;
             border: 1px solid var(--border-light);
             border-radius: var(--radius-md);
-            padding: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
             text-align: center;
+            flex: 1 1 calc(16.66% - 1.5rem);
+            min-width: 160px;
+            max-width: 200px;
         }
 
         .app-card:hover {
@@ -448,19 +484,28 @@
         }
 
         .app-card i {
-            font-size: 2.6rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.6rem;
         }
 
         .app-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .app-card p {
+            font-size: 0.85rem;
         }
 
         @media (max-width: 1200px) {
             .applications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                flex-wrap: wrap;
+            }
+
+            .app-card {
+                flex: 1 1 calc(25% - 1.5rem);
+                max-width: none;
             }
         }
 
@@ -498,19 +543,23 @@
 
         /* ===== GALLERY ===== */
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
             margin: 4rem 0;
         }
 
         .gallery-item {
             border-radius: var(--radius-md);
             overflow: hidden;
-            height: 260px;
+            height: 200px;
             position: relative;
             border: 1px solid var(--border-light);
             transition: transform 0.4s;
+            flex: 1 1 calc(25% - 1.5rem);
+            min-width: 250px;
+            max-width: 350px;
         }
 
         .gallery-item img {
@@ -771,284 +820,464 @@
     </section>
 
     <main class="container">
-        <!-- Highlighted Technology Overview -->
+
+        <!-- Highlight -->
         <div class="reveal highlight-tech">
-            <div style="margin-bottom: 0.5rem;">
-                <h2 style="margin-bottom: 0.5rem;">⚡ Parabolic Concentrator Technology</h2>
-            </div>
-            <p>The <strong>Solar Parabolic Cooker</strong> harnesses the power of a precisely curved parabolic reflector
-                to concentrate sunlight onto a small focal point, instantly generating intense heat (up to 350°C). This
-                concentrated energy is transferred directly to a cooking vessel, enabling boiling, frying, roasting, and
-                steaming without any fuel. The system features a simple manual tracking mechanism to follow the sun,
-                ensuring peak performance throughout the day. Ideal for clean, sustainable cooking in both rural and
-                urban settings.</p>
+            <h2>☀️ Parabolic Trough Collector (PTC) System</h2>
+            <p>
+                The <strong>Parabolic Trough Collector (PTC) System</strong> is an advanced <em>concentrated solar
+                    thermal (CST) solution</em> engineered for <em>medium to high-temperature industrial process
+                    heating</em>. The system uses precision-shaped parabolic reflectors to focus solar radiation onto a
+                <strong>linear receiver tube</strong>, enabling efficient heat generation for steam, hot water, or
+                thermic fluid applications.
+            </p>
+            <p>
+                Designed for seamless integration with existing infrastructure, the PTC system enables industries to
+                <em>reduce fossil fuel consumption, stabilize energy costs, and achieve sustainability targets</em>
+                without compromising process reliability.
+            </p>
         </div>
 
-        <!-- 2x2 Feature Matrix -->
+        <!-- Engineering Specs -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem;">📐 Engineering Specifications</h2>
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Collector Technology</td>
+                    <td>Parabolic Trough Collector (PTC)</td>
+                </tr>
+                <tr>
+                    <td>Aperture Width</td>
+                    <td>4 – 6 meters (custom engineered)</td>
+                </tr>
+                <tr>
+                    <td>Module Length</td>
+                    <td>12 – 24 meters</td>
+                </tr>
+                <tr>
+                    <td>Aperture Area</td>
+                    <td>48 – 144 m² per module</td>
+                </tr>
+                <tr>
+                    <td>Reflector Surface</td>
+                    <td>Silvered Glass Mirrors / Anodized Aluminum</td>
+                </tr>
+                <tr>
+                    <td>Reflectivity</td>
+                    <td>≥ 93%</td>
+                </tr>
+                <tr>
+                    <td>Structural Material</td>
+                    <td>Mild Steel – Hot Dip Galvanized</td>
+                </tr>
+                <tr>
+                    <td>Tracking Mechanism</td>
+                    <td>Fully Automatic Single Axis (North-South Orientation)</td>
+                </tr>
+                <tr>
+                    <td>Tracking Precision</td>
+                    <td>±0.1°</td>
+                </tr>
+                <tr>
+                    <td>Concentration Ratio</td>
+                    <td>20:1 – 80:1</td>
+                </tr>
+                <tr>
+                    <td>Receiver Configuration</td>
+                    <td>Evacuated Tube / Selective Coated Absorber</td>
+                </tr>
+                <tr>
+                    <td>Coating Type</td>
+                    <td>High Absorptivity, Low Emissivity Selective Coating</td>
+                </tr>
+                <tr>
+                    <td>Heat Transfer Fluid</td>
+                    <td>Thermic Oil / Pressurized Water / Molten Salt (optional)</td>
+                </tr>
+                <tr>
+                    <td>Operating Temperature Range</td>
+                    <td>120°C – 400°C</td>
+                </tr>
+                <tr>
+                    <td>Design Pressure</td>
+                    <td>As per process requirement (customized)</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Thermal Performance -->
+        <div class="reveal soft-table">
+            <h2 style="margin-left: 1.5rem;">🔥 Thermal Performance</h2>
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Thermal Output (per module)</td>
+                    <td>25 kW – 150 kW</td>
+                </tr>
+                <tr>
+                    <td>Optical Efficiency</td>
+                    <td>70% – 80%</td>
+                </tr>
+                <tr>
+                    <td>Net System Efficiency</td>
+                    <td>55% – 70%</td>
+                </tr>
+                <tr>
+                    <td>Solar Resource Requirement</td>
+                    <td>DNI ≥ 500 W/m²</td>
+                </tr>
+                <tr>
+                    <td>Daily Operating Window</td>
+                    <td>6–8 hours (clear sky)</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- System Architecture -->
         <div class="reveal">
             <div class="section-title">
-                <h2>Core Capabilities</h2>
+                <h2>⚙️ System Architecture</h2>
             </div>
+            <p style="max-width: 900px; margin: 0 auto 2rem; text-align: center;">
+                The PTC system is delivered as a fully integrated thermal solution comprising:
+            </p>
             <div class="feature-matrix">
                 <div class="feature-card">
+                    <i class="fas fa-square"></i>
+                    <h3>Parabolic Trough Reflector Modules</h3>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-vial"></i>
+                    <h3>Linear Receiver Tube Assembly</h3>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-compass"></i>
+                    <h3>Automatic Tracking System with PLC</h3>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Drive System (motor, gearbox, actuator)</h3>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-pillar"></i>
+                    <h3>Structural Support & Civil Foundation</h3>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-pipe"></i>
+                    <h3>Heat Transfer Loop (piping, insulation, valves)</h3>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-thermometer"></i>
+                    <h3>Instrumentation (temp, pressure, flow sensors)</h3>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Control Panel & Automation Interface</h3>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem;"><em>Optional Thermal Energy Storage (TES)</em></p>
+        </div>
+
+        <!-- Process Integration -->
+        <div class="reveal">
+            <div class="section-title">
+                <h2>🔄 Process Integration</h2>
+            </div>
+            <p style="max-width: 900px; margin: 0 auto 2rem; text-align: center;">
+                The system is engineered for flexible integration across industrial utilities:
+            </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-water"></i>
+                    <h3>Boiler Feedwater Preheating</h3>
+                </div>
+                <div class="card">
+                    <i class="fas fa-fire"></i>
+                    <h3>Direct Steam Generation (DSG)</h3>
+                </div>
+                <div class="card">
+                    <i class="fas fa-temperature-high"></i>
+                    <h3>Thermic Fluid Heating Systems</h3>
+                </div>
+                <div class="card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Hybrid with Existing boilers (LPG, Diesel, Biomass)</h3>
+                </div>
+                <div class="card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Waste Heat Recovery Integration</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industrial Applications -->
+        <div class="reveal">
+            <div class="section-title">
+                <h2>🏭 Industrial Applications</h2>
+            </div>
+            <div class="applications-grid">
+                <div class="app-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Food & Agro</h3>
+                </div>
+                <div class="app-card">
+                    <i class="fas fa-cheese"></i>
+                    <h3>Dairy & Milk</h3>
+                </div>
+                <div class="app-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Textile & Dyeing</h3>
+                </div>
+                <div class="app-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Chemical & Petrochemical</h3>
+                </div>
+                <div class="app-card">
+                    <i class="fas fa-pills"></i>
+                    <h3>Pharmaceutical</h3>
+                </div>
+            </div>
+            <div class="applications-grid" style="margin-top: 1rem;">
+                <div class="app-card">
+                    <i class="fas fa-scroll"></i>
+                    <h3>Paper & Pulp</h3>
+                </div>
+                <div class="app-card">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Hotels & Resorts</h3>
+                </div>
+                <div class="app-card">
                     <i class="fas fa-utensils"></i>
-                    <h3>Cooking Performance</h3>
-                    <ul class="feature-list">
-                        <li>Boiling, frying, steaming, roasting</li>
-                        <li>Rice: 20-25 min (2‑4 kg batch)</li>
-                        <li>Dal: 40–45 min (3‑5 liters)</li>
-                        <li>Vegetables: 20–25 min (2‑3 kg)</li>
-                    </ul>
+                    <h3>Institutional Kitchens</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Safety & Control -->
+        <div class="reveal">
+            <div class="section-title">
+                <h2>🔒 Safety & Control</h2>
+            </div>
+            <p style="max-width: 900px; margin: 0 auto 2rem; text-align: center;">
+                The system incorporates industrial-grade safety and control mechanisms:
+            </p>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Automatic Stow Position During High Wind</h3>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>System Components</h3>
-                    <ul class="feature-list">
-                        <li>High‑reflectivity parabolic dish</li>
-                        <li>Galvanized steel support frame</li>
-                        <li>Manual single‑axis tracking</li>
-                        <li>Adjustable cooking vessel stand</li>
-                        <li>Safety wind lock mechanism</li>
-                    </ul>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Over-temperature & Over-pressure Protection</h3>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safety Features</h3>
-                    <ul class="feature-list">
-                        <li>Sturdy ground‑mounted design</li>
-                        <li>Heat‑resistant receiver & handles</li>
-                        <li>Wind‑resistant locking (up to 120 km/h)</li>
-                        <li>Safe manual tracking without glare</li>
-                        <li>No open flame – zero fire risk</li>
-                    </ul>
+                    <i class="fas fa-stop-circle"></i>
+                    <h3>Emergency Shutdown System (Manual + Automatic)</h3>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Key Benefits</h3>
+                    <h3>Real-time Monitoring of Thermal Parameters</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sustainability -->
+        <div class="reveal">
+            <div class="section-title">
+                <h2>🌱 Sustainability & Financial Impact</h2>
+            </div>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-gas-pump"></i>
+                    <h3>Fossil Fuel Reduction</h3>
                     <ul class="feature-list">
-                        <li>Zero fuel cost – complete LPG elimination</li>
-                        <li>15‑20 year system lifespan</li>
-                        <li>1–2 year payback period</li>
-                        <li>Minimal maintenance (mirror cleaning)</li>
-                        <li>Eligible for government subsidies & carbon credits</li>
+                        <li>30% to 70% reduction</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>CO₂ Emission Reduction</h3>
+                    <ul class="feature-list">
+                        <li>50–500 tons/year (project dependent)</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Payback Period</h3>
+                    <ul class="feature-list">
+                        <li>2–5 years</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>System Lifespan</h3>
+                    <ul class="feature-list">
+                        <li>20–25 years</li>
                     </ul>
                 </div>
             </div>
+            <p style="text-align: center; margin-top: 1rem;">
+                Supports ESG compliance and carbon credit generation | Eligible under applicable <em>MNRE solar thermal
+                    schemes</em>
+            </p>
         </div>
 
-
-        <!-- Technical Details Table -->
+        <!-- Deployment & Maintenance -->
         <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">📐 Technical Details</h2>
+            <h2 style="margin-left: 1.5rem;">🛠️ Deployment & Maintenance</h2>
             <table>
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Specification</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Reflector Area</strong></td>
-                        <td>1.5 m² & 4 m² (Available Options)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Type</strong></td>
-                        <td>Parabolic Dish Concentrator</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reflector Material</strong></td>
-                        <td>High reflectivity aluminum / mirror finish</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reflectivity</strong></td>
-                        <td>≥ 90%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Structure Material</strong></td>
-                        <td>Mild Steel with anti‑corrosion coating</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tracking System</strong></td>
-                        <td>Manual (Single Axis)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Concentration Ratio</strong></td>
-                        <td>60:1 to 120:1</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Focal Length</strong></td>
-                        <td>~0.8 to 1.5 meters</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Operating Temperature</strong></td>
-                        <td>150°C to 350°C</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cooking Capacity</strong></td>
-                        <td>10–30 persons (based on model)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mounting Type</strong></td>
-                        <td>Ground mounted</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Wind Resistance</strong></td>
-                        <td>Up to 120 km/h (with locking mechanism)</td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>Installation Timeline</strong></td>
+                    <td>2 to 6 weeks (based on project scale)</td>
+                </tr>
+                <tr>
+                    <td><strong>Requirements</strong></td>
+                    <td>Civil foundation and alignment required</td>
+                </tr>
+                <tr>
+                    <td><strong>Maintenance</strong></td>
+                    <td>Periodic reflector cleaning for optical efficiency</td>
+                </tr>
+                <tr>
+                    <td><strong>Inspection</strong></td>
+                    <td>Tracking system and actuators</td>
+                </tr>
+                <tr>
+                    <td><strong>Fluid Monitoring</strong></td>
+                    <td>Heat transfer fluid monitoring</td>
+                </tr>
+                <tr>
+                    <td><strong>Preventive</strong></td>
+                    <td>Annual preventive maintenance</td>
+                </tr>
             </table>
         </div>
 
-        <!-- Solar Performance Table -->
-        <div class="reveal soft-table">
-            <h2 style="margin-left: 1.5rem; margin-top: 1rem;">☀️ Solar Performance</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Value</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Thermal Output</strong></td>
-                        <td>1 kW – 3.5 kW (based on model)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Solar Efficiency</strong></td>
-                        <td>50% – 65%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Daily Cooking Hours</strong></td>
-                        <td>5–7 hours (clear sky)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Fuel Savings</strong></td>
-                        <td>Significant reduction in LPG usage</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-
-        <!-- Applications – one row on large screens -->
+        <!-- Scalability -->
         <div class="reveal">
             <div class="section-title">
-                <h2>Applications & Impact</h2>
+                <h2>📊 Scalability & Customization</h2>
             </div>
-            <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-place-of-worship"></i>
-                    <h3>Temples & Ashrams</h3>
-                    <p>Large‑scale prasadam with zero fuel cost.</p>
+            <p style="max-width: 900px; margin: 0 auto 2rem; text-align: center;">
+                <em>Modular design enables easy capacity expansion</em><br>
+                System capacity: <strong>100 kWth to multi-MWth installations</strong>
+            </p>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>Process Temperature Requirement</h3>
                 </div>
-                <div class="app-card"><i class="fas fa-school"></i>
-                    <h3>Residential Schools</h3>
-                    <p>Nutritious meals for hundreds of students daily.</p>
+                <div class="feature-card">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h3>Steam Demand Profile</h3>
                 </div>
-                <div class="app-card"><i class="fas fa-people-arrows"></i>
-                    <h3>Community Kitchens</h3>
-                    <p>Reliable, clean energy for mid‑day meal programs.</p>
+                <div class="feature-card">
+                    <i class="fas fa-map"></i>
+                    <h3>Available Land Area</h3>
                 </div>
-                <div class="app-card"><i class="fas fa-tree"></i>
-                    <h3>Rural Areas</h3>
-                    <p>Off‑grid cooking, reduces drudgery and indoor pollution.</p>
-                </div>
-                <div class="app-card"><i class="fas fa-concierge-bell"></i>
-                    <h3>Catering Services</h3>
-                    <p>Eco‑friendly bulk cooking, enhanced brand value.</p>
+                <div class="feature-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Solar Resource Conditions</h3>
                 </div>
             </div>
         </div>
+
+        <!-- Manufacturer -->
+        <div class="reveal">
+            <div class="section-title">
+                <h2>🏭 Manufacturer</h2>
+            </div>
+            <p style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <strong>KVB Green Energies</strong><br>
+                Experts in <em>Concentrated Solar Thermal (CST) systems</em>, delivering industrial-grade solutions for
+                process heating, steam generation, and hybrid renewable integration across India.
+            </p>
+        </div>
+
+        <!-- Advanced Add-ons -->
+        <div class="reveal">
+            <div class="section-title">
+                <h2>🚀 Advanced Add-ons</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-battery-full"></i>
+                    <h3>Thermal Energy Storage</h3>
+                    <p>Molten Salt / Pressurized Systems</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>IoT-enabled Remote Monitoring</h3>
+                    <p>& Analytics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-based Solar Optimization</h3>
+                    <p>& Load Matching</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-plug"></i>
+                    <h3>Hybrid Integration</h3>
+                    <p>Biomass / Electrical Systems</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-server"></i>
+                    <h3>SCADA-based</h3>
+                    <p>Centralized Control</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Advantage -->
+        <div class="reveal highlight-tech">
+            <h2>💡 Strategic Advantage of PTC Systems</h2>
+            <ul class="feature-list" style="max-width: 800px; margin: 0 auto;">
+                <li>Reliable high-temperature heat for industrial processes</li>
+                <li>Significant reduction in operating energy cost</li>
+                <li>Proven and scalable solar thermal technology</li>
+                <li>Enhances sustainability credentials and compliance</li>
+                <li>Reduces exposure to fuel price volatility</li>
+            </ul>
+        </div>
+
         <!-- System in Action -->
-        <h2 class="section-title">System in Action</h2>
-        <div class="image-gallery">
-            <div class="gallery-item"><img src="../images/products/parabolic-cooker1.jpg" alt="Parabolic Cooker Array">
-                <div class="gallery-overlay">
-                    <h3>Parabolic Cooker Array</h3>
+        <div class="reveal">
+            <div class="section-title">
+                <h2>System in Action</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../images/products/p4.jpeg" alt="PTC System">
+                    <div class="gallery-caption"></div>
                 </div>
-            </div>
-            <div class="gallery-item"><img src="../images/products/parabolic-cooker2.jpg" alt="Focused Solar Receiver">
-                <div class="gallery-overlay">
-                    <h3>Focused Solar Receiver</h3>
+                <div class="gallery-item">
+                    <img src="../images/products/WhatsApp Image 2026-04-17 at 16.37.58.jpeg" alt="PTC Installation">
+                    <div class="gallery-caption"></div>
                 </div>
-            </div>
-            <div class="gallery-item"><img src="../images/products/parabolic-cooker3.jpg" alt="Field Installation">
-                <div class="gallery-overlay">
-                    <h3>Field Installation</h3>
-                </div>
-            </div>
-        </div>
-        <!-- Premium Unlock -->
-        <div class="premium-wrapper reveal">
-            <div id="lockContainer" class="lock-card">
-                <div class="lock-icon"><i class="fas fa-lock"></i></div>
-                <h3>Unlock Premium Technical Library</h3>
-                <p>Get detailed engineering drawings, performance data, installation guides, and a custom ROI calculator
-                    for the Solar Parabolic Cooker.</p>
-                <span class="btn-outline"
-                    style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
-            </div>
-
-            <div id="unlockFormContainer" class="form-container">
-                <h3>Access Premium Content</h3>
-                <p>Enter your details – we’ll send the link instantly.</p>
-                <form id="premiumForm">
-                    <div class="form-grid">
-                        <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required>
-                        </div>
-                        <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required>
-                        </div>
-                        <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="organization" placeholder="Organization"></div>
-                        <div class="form-group full"><textarea rows="2" id="message"
-                                placeholder="Tell us about your cooking requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="Solar Parabolic Cooker">
-                        <div class="form-group full"><button type="submit" class="btn-submit"><i
-                                    class="fas fa-unlock-alt"></i> Unlock Library</button></div>
-                    </div>
-                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No
-                        spam.</p>
-                </form>
-            </div>
-
-            <div id="hiddenPremiumContent" class="hidden-content">
-                <div id="successMessage" class="success-banner" style="display: none;"><i
-                        class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources are
-                    ready.</div>
-                <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
-                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
-                    <div class="premium-grid">
-                        <div class="premium-card"><i class="fas fa-file-pdf"></i>
-                            <h4>Engineering Drawings</h4>
-                            <p>CAD files, reflector schematics</p><span style="color: var(--primary);">✓
-                                available</span>
-                        </div>
-                        <div class="premium-card"><i class="fas fa-chart-line"></i>
-                            <h4>ROI Calculator</h4>
-                            <p>Custom Excel for LPG savings</p><span style="color: var(--primary);">✓ included</span>
-                        </div>
-                        <div class="premium-card"><i class="fas fa-video"></i>
-                            <h4>Installation Videos</h4>
-                            <p>Step‑by‑step assembly guide</p><span style="color: var(--primary);">✓ watch</span>
-                        </div>
-                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i>
-                            <h4>Case Studies</h4>
-                            <p>Schools, temples, industries</p><span style="color: var(--primary);">✓ read</span>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong>🏆 Success stories:</strong> Rural School, Rajasthan – 150 meals/day, ₹1.2L annual
-                            LPG savings. Dairy Cooperative – 80% fuel reduction for pasteurization.</p>
-                    </div>
+                <div class="gallery-item">
+                    <img src="../images/products/ptc.jpg" alt="PTC Operation">
+                    <div class="gallery-caption"></div>
                 </div>
             </div>
         </div>
+
     </main>
-
     <!-- Universal Footer -->
     <div id="footer"></div>
 
     <script>
-        // Load header/footer (silent)
+        // Load header/footer
         function loadComponent(id, paths) {
             const tryPath = (index) => {
                 if (index >= paths.length) return;
@@ -1128,6 +1357,7 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
+<script src="../js/fix-logo.js"></script>
 </body>
 
 </html>

@@ -411,10 +411,12 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    /* ===== REVISED HERO SECTION – full background with alternating videos ===== */
+    /* ===== REVISED HERO SECTION – full background with alternating videos/images ===== */
     .hero-section {
       position: relative;
-      min-height: 100vh;
+      width: 100%;
+      height: 100vh;
+      /* Exactly fits the screen vertically */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -442,51 +444,47 @@
       opacity: 0;
       transition: opacity 1.8s ease-in-out;
       will-change: opacity;
+      display: block;
+      text-decoration: none;
     }
 
     .hero-video {
       object-fit: cover;
     }
 
-    /* Used to zoom in on portrait videos that have baked-in letterboxing */
-    .hero-video.zoom-video {
-      transform: scale(1.5);
-    }
-
-    /* Used to zoom OUT portrait videos so the whole clip is seen without cropping */
-    .hero-video.contain-video {
+    .hero-image img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      background-color: #000;
-    }
-
-    .hero-image {
-      object-fit: contain;
-      background-color: #000;
-      filter: brightness(1.15);
     }
 
     .hero-video.visible,
     .hero-image.visible {
       opacity: 1;
+      z-index: 1;
     }
 
     /* Overlay stays on top of videos */
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 1;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+      pointer-events: none;
+      /* so links underneath can be clicked */
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       width: 100%;
       max-width: 800px;
       margin: 0 auto;
       padding: 0 2rem;
       color: white;
       text-align: center;
+      pointer-events: none;
+      /* Let clicks pass through to background links */
     }
 
     .hero-title {
@@ -498,6 +496,32 @@
       font-family: 'Montserrat', sans-serif;
       min-height: 1.2em;
       transition: opacity 1s ease;
+    }
+
+    /* Image Slide Captions */
+    .slider-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      padding: 4rem 1rem 2rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      z-index: 4;
+    }
+
+    @media (max-width: 900px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .slider-caption {
+        font-size: 1.4rem;
+      }
     }
 
     .hero-title.fade-out {
@@ -851,8 +875,8 @@
     }
 
     .stat-message h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.8rem;
+      font-weight: 700;
       color: #1d1d1f;
       margin-bottom: 0.5rem;
       font-family: 'Montserrat', sans-serif;
@@ -1018,6 +1042,53 @@
         font-size: 0.9rem;
       }
     }
+
+    /* Label */
+    .label {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Bullet points */
+    .stat-message ul {
+      list-style: disc;
+      padding-left: 18px;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    .stat-message li {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    /* Icon styling */
+    .stat-message i {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #2e7d32;
+    }
+
+    .first-hero-img {
+      object-fit: contain;
+      /* show full image */
+      object-position: top;
+      /* keep top visible */
+    }
+
+    .horizontal-crop {
+      object-fit: cover !important;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+    }
   </style>
 </head>
 
@@ -1056,32 +1127,40 @@
     <!-- header placeholder -->
     <div id="header"></div>
 
-    <!-- HERO SECTION – full background alternating videos -->
+    <!-- HERO SECTION – full background alternating slider -->
     <section class="hero-section">
-      <!-- Background video container (full, no split) -->
       <div class="hero-background">
+
         <!-- Slide 1: Video -->
         <video class="hero-video hero-slide visible" id="heroSlide1" muted playsinline>
           <source src="videos/DJI_0958_2.mp4" type="video/mp4">
         </video>
-        <!-- Slide 2: Video -->
-        <video class="hero-video hero-slide zoom-video" id="heroSlide2" muted playsinline>
-          <source src="videos/watch.mp4" type="video/mp4">
-        </video>
-        <!-- Slide 3: Video -->
-        <video class="hero-video hero-slide zoom-video" id="heroSlide3" muted playsinline>
-          <source src="videos/home.mp4" type="video/mp4">
-        </video>
-        <!-- Slide 4: Video -->
-        <video class="hero-video hero-slide zoom-video" id="heroSlide4" muted playsinline>
-          <source src="videos/home1.mp4" type="video/mp4">
-        </video>
+
+        <!-- Slide 2: Clickable Image -->
+        <a href="solutions/solar-steam-cooking.html" class="hero-image hero-slide" id="heroSlide2">
+          <img src="images/products/WhatsApp Image 2026-04-24 at 17.26.15.jpeg" alt="Solar Steam Cooking"
+            class="first-hero-img">
+          <div class="slider-caption">Solar Steam Cooking</div>
+        </a>
+
+        <!-- Slide 3: Clickable Image -->
+        <a href="solutions/solar-dryers.html" class="hero-image hero-slide" id="heroSlide3">
+          <img src="images/products/WhatsApp Image 2026-04-24 at 17.27.53.jpeg" alt="Solar Dryers"
+            class="horizontal-crop">
+          <div class="slider-caption">Solar Dryers</div>
+        </a>
+
+        <!-- Slide 4: Clickable Image -->
+        <a href="solutions/agritech-solutions.html" class="hero-image hero-slide" id="heroSlide4">
+          <img src="images/products/Screenshot 2026-04-21 171930.png" alt="Agritech Solutions" class="horizontal-crop">
+          <div class="slider-caption">Agritech Solutions</div>
+        </a>
+
       </div>
       <div class="overlay"></div>
       <div class="container hero-content">
         <h1 class="hero-title" id="heroTypewriter"></h1>
-
-
+      </div>
     </section>
 
     <!-- PILLARS SECTION -->
@@ -1117,7 +1196,8 @@
         <p class="section-subtitle">Complete renewable energy and smart agriculture solutions</p>
         <div class="solutions-grid">
           <a href="solutions/solar-steam-cooking.html" class="product-card">
-            <div class="product-image"><img src="images/products/parabolic-cooker.png" alt="Solar Steam Cooking"></div>
+            <div class="product-image"><img src="images/products/WhatsApp Image 2026-04-24 at 15.12.43.jpeg"
+                alt="Solar Steam Cooking"></div>
             <div class="product-name">Solar Steam Cooking</div>
           </a>
           <a href="solutions/solar-dryers.html" class="product-card">
@@ -1125,17 +1205,10 @@
             <div class="product-name">Solar Dryers</div>
           </a>
           <a href="solutions/agritech-solutions.html" class="product-card">
-            <div class="product-image"><img
-                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            <div class="product-image"><img src="images/products/Screenshot 2026-04-21 171930.png"
                 alt="Agritech Solutions"></div>
             <div class="product-name">Agritech Solutions</div>
           </a>
-          <!-- <a href="products/microgreen-systems.html" class="product-card">
-            <div class="product-image"><img
-                src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Microgreen"></div>
-            <div class="product-name">Microgreen</div>
-          </a>-->
 
         </div>
       </div>
@@ -1249,27 +1322,62 @@
     <section class="section" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Real Impact, Measurable Results</h2>
+        <p class="section-subtitle" style="max-width: 800px;">
+          With just 70 solar dishes, we are eliminating 1.34cr fuel cost and saving 1300+ trees every year
+        </p>
+
         <div class="impact-grid">
-          <div class="stat-message"><i class="fas fa-smog"></i>
-            <h3>Thousands of tons</h3>
-            <p>CO₂ emissions reduced</p>
+
+          <!-- CO2 -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-smog"></i>
+            <h3>383 tons CO2</h3>
+            <ul>
+              <li>Emissions reduced per year</li>
+            </ul>
           </div>
-          <div class="stat-message"><i class="fas fa-gas-pump"></i>
-            <h3>Large‑scale LPG</h3>
-            <p>replaced with solar thermal</p>
+
+          <!-- LPG -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-gas-pump"></i>
+            <h3>6700+ LPG Cylinders</h3>
+            <ul>
+              <li><b>6700+</b> LPG cylinders saved annually</li>
+              <li><b>7000</b> people served daily</li>
+              <li><b>₹1.34Cr</b> fuel saving every year</li>
+            </ul>
           </div>
-          <div class="stat-message"><i class="fas fa-tree"></i>
-            <h3>Firewood saved</h3>
-            <p>community kitchens & industries</p>
+
+          <!-- Firewood -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-fire"></i>
+            <h3>383+ tons Firewood</h3>
+            <ul>
+              <li><b>1300+</b> trees saved annually</li>
+            </ul>
           </div>
-          <div class="stat-message"><i class="fas fa-users"></i>
-            <h3>Farmer livelihoods</h3>
-            <p>strengthened through smart agriculture</p>
+
+          <!-- Carbon Credit -->
+          <div class="stat-message">
+            <div class="label">Saved</div><br>
+            <i class="fas fa-chart-line"></i>
+            <h3>3.83 Lakhs Carbon Credit revenue/year</h3>
+            <ul>
+              <li><b>₹1000</b> per ton CO₂ (conservative)</li>
+            </ul>
           </div>
+
         </div>
+
+        <p style="text-align: center; color: #86868b; font-size: 0.9rem; margin-top: 2rem;">
+          *All values are calculated based on standard consumption benchmarks. Actual values may vary depending on
+          cooking practices and usage.
+        </p>
       </div>
     </section>
-
     <!-- INNOVATION LAB -->
     <section class="section" style="background:#f9f9fb;" data-aos="fade-up">
       <div class="container">
@@ -1368,58 +1476,59 @@
         tryPath(0);
       }
 
+      var cb = "?v=" + new Date().getTime();
       loadComponent("header", [
-        "components/header.html",
-        "../components/header.html"
+        "components/header.html" + cb,
+        "../components/header.html" + cb
       ]);
 
       loadComponent("footer", [
-        "components/footer.html",
-        "../components/footer.html"
+        "components/footer.html" + cb,
+        "../components/footer.html" + cb
       ]);
 
       window.addEventListener('scroll', function () {
         const header = document.querySelector('.header');
         if (header) {
           if (window.scrollY > 50) {
-            header.style.background = 'rgba(255,255,255,0.95)';
-            header.style.boxShadow = '0 6px 20px rgba(0,20,10,0.05)';
+            header.classList.add('scrolled');
           } else {
-            header.style.background = 'rgba(255,255,255,0.8)';
-            header.style.boxShadow = 'none';
+            header.classList.remove('scrolled');
           }
         }
       });
 
-      // Hero slideshow: plays videos sequentially based on their actual length
+      // Hero slideshow logic: mixes videos and images sequentially
       const slides = document.querySelectorAll('.hero-slide');
       let currentSlide = 0;
+      let slideTimeout;
 
       function playNextSlide() {
         if (slides.length === 0) return;
+        clearTimeout(slideTimeout);
 
         // Hide all slides
         slides.forEach(slide => slide.classList.remove('visible'));
 
-        // Show and play the current video
-        const currentVideo = slides[currentSlide];
-        currentVideo.classList.add('visible');
-        currentVideo.currentTime = 0; // Reset video to start
+        // Show current slide
+        const currentMedia = slides[currentSlide];
+        currentMedia.classList.add('visible');
 
-        // Slow down slide 3 playback speed to look natural
-        if (currentVideo.id === 'heroSlide3') {
-          currentVideo.playbackRate = 0.4;
+        if (currentMedia.tagName.toLowerCase() === 'video') {
+          currentMedia.currentTime = 0;
+          currentMedia.play().catch(e => console.log('Autoplay blocked:', e));
+
+          currentMedia.onended = () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            playNextSlide();
+          };
         } else {
-          currentVideo.playbackRate = 1.0;
+          // If it's an image, stay for 4 seconds then transition
+          slideTimeout = setTimeout(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            playNextSlide();
+          }, 4000);
         }
-
-        currentVideo.play().catch(e => console.log('Autoplay blocked:', e));
-
-        // When the video naturally ends, transition to the next slide
-        currentVideo.onended = () => {
-          currentSlide = (currentSlide + 1) % slides.length;
-          playNextSlide();
-        };
       }
 
       // Start the sequence
@@ -1430,6 +1539,7 @@
 
     })();
   </script>
+  <script src="js/fix-logo.js"></script>
 </body>
 
 </html>
