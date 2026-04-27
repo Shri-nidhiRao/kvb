@@ -6,6 +6,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from the root directory
+app.use(express.static(__dirname));
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
