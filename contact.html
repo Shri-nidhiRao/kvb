@@ -194,7 +194,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 100;
+            z-index: 1100;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
@@ -766,17 +766,332 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
             .container {
-                padding: 0 20px;
+                padding: 0 15px;
             }
 
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-hero {
+                padding: 80px 0 60px;
+            }
+
+            .contact-hero h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-quick-links {
+                gap: 12px;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1.5rem;
+            }
+
+            .quick-link {
+                width: 100%;
+                max-width: 280px;
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
+
+            .office-location {
+                padding: 60px 0;
+            }
+
+            .location-wrapper {
+                gap: 30px;
+                grid-template-columns: 1fr;
+            }
+
+            .location-map {
+                height: 350px;
+            }
+
+            .address-card {
+                padding: 25px;
+                margin-bottom: 20px;
+            }
+
+            .address-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+
+            .features-grid {
+                gap: 12px;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-form-section {
+                padding: 60px 0;
+            }
+
+            .form-wrapper {
+                gap: 25px;
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 25px 15px;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
-                gap: 0;
+                gap: 12px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 12px;
+                font-size: 0.9rem;
+            }
+
+            .form-group textarea {
+                min-height: 100px;
+            }
+
+            .checkbox-label {
+                font-size: 0.85rem;
+                gap: 8px;
+            }
+
+            .form-submit {
+                margin-top: 20px;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .form-sidebar {
+                gap: 15px;
+            }
+
+            .sidebar-card {
+                padding: 15px;
+            }
+
+            .sidebar-card h3 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .tips-list li {
+                font-size: 0.9rem;
+                padding: 8px 0;
+            }
+
+            .response-time {
+                gap: 10px;
+            }
+
+            .time-category {
+                padding: 10px 0;
+                font-size: 0.9rem;
+            }
+
+            .time-value {
+                padding: 4px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .contact-hero {
+                padding: 50px 0 30px;
+            }
+
+            .contact-hero h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero-description {
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+
+            .contact-quick-links {
+                gap: 10px;
+                margin-top: 1rem;
+            }
+
+            .quick-link {
+                padding: 10px 14px;
+                font-size: 0.8rem;
+            }
+
+            .quick-link i {
+                font-size: 1rem;
+            }
+
+            .office-location {
+                padding: 40px 0;
+            }
+
+            .location-wrapper {
+                gap: 20px;
+            }
+
+            .location-map {
+                height: 250px;
+            }
+
+            .address-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .address-card h3 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .address-details p {
+                font-size: 0.85rem;
+                margin: 4px 0;
+            }
+
+            .contact-details .detail {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+            }
+
+            .features-grid {
+                gap: 8px;
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-section {
+                padding: 40px 0;
+            }
+
+            .form-wrapper {
+                gap: 15px;
+            }
+
+            .contact-form {
+                padding: 15px 10px;
+            }
+
+            .form-row {
+                gap: 10px;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            .form-group label {
+                font-size: 0.8rem;
+                margin-bottom: 4px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px 10px;
+                font-size: 0.85rem;
+            }
+
+            .form-group textarea {
+                min-height: 80px;
+                rows: 4;
+            }
+
+            .checkbox-label {
+                font-size: 0.8rem;
+                gap: 6px;
+            }
+
+            .btn {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+
+            .form-submit {
+                margin-top: 15px;
+            }
+
+            .form-note {
+                font-size: 0.8rem;
+            }
+
+            .sidebar-card {
+                padding: 12px;
+            }
+
+            .sidebar-card h3 {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+
+            .tips-list li {
+                font-size: 0.85rem;
+                padding: 6px 0;
+            }
+
+            .time-category {
+                padding: 8px 0;
+                font-size: 0.85rem;
+            }
+
+            .time-label {
+                font-size: 0.85rem;
+            }
+
+            .time-value {
+                padding: 3px 10px;
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -982,21 +1297,6 @@
                                     class="time-value">24h</span></div>
                             <div class="time-category"><span class="time-label">Proposals</span><span
                                     class="time-value">24h</span></div>
-                        </div>
-                    </div>
-                    <div class="sidebar-card">
-                        <h3><i class="fas fa-phone-alt"></i> Prefer to talk?</h3>
-                        <div class="contact-options">
-                            <a href="tel:+919545529950" class="contact-option">
-                                <i class="fas fa-phone"></i>
-                                <div><span class="option-label">Call us</span><span class="option-value">+91 95455
-                                        29950</span></div>
-                            </a>
-                            <a href="https://wa.me/919545529950" target="_blank" class="contact-option">
-                                <i class="fab fa-whatsapp"></i>
-                                <div><span class="option-label">WhatsApp</span><span class="option-value">+91 95455
-                                        29950</span></div>
-                            </a>
                         </div>
                     </div>
                 </div>

@@ -556,10 +556,6 @@
             color: var(--sage-green);
         }
 
-        .checkbox-label input {
-            margin-top: 5px;
-        }
-
         .checkbox-label a {
             color: var(--earth-green);
             text-decoration: none;
@@ -1216,8 +1212,102 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .contact-hero {
+                padding: 80px 0 60px;
+            }
+
             .contact-hero h1 {
                 font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-quick-links {
+                gap: 12px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quick-link {
+                width: 100%;
+                max-width: 280px;
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+
+            .contact-channels,
+            .inquiry-types,
+            .contact-form-section,
+            .office-location,
+            .partnership-opportunities,
+            .contact-faq,
+            .contact-cta {
+                padding: 60px 0;
+            }
+
+            .channels-grid,
+            .inquiry-grid,
+            .partnership-types {
+                gap: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            .form-wrapper {
+                gap: 30px;
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                gap: 15px;
+                grid-template-columns: 1fr;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+            }
+
+            .form-sidebar {
+                gap: 20px;
+            }
+
+            .sidebar-card {
+                padding: 20px;
+            }
+
+            .sidebar-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .location-wrapper {
+                gap: 30px;
+                grid-template-columns: 1fr;
+            }
+
+            .location-map {
+                height: 400px;
             }
 
             .form-row {
@@ -1243,19 +1333,182 @@
             .footer-links a {
                 margin: 0 10px;
             }
-        }
 
-        @media (max-width: 576px) {
-            .contact-hero h1 {
+            .type-header {
+                gap: 12px;
+                padding: 20px;
+            }
+
+            .type-content {
+                padding: 20px;
+            }
+
+            .section-title h2 {
                 font-size: 2rem;
             }
 
+            .form-header h2 {
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+
+            .form-submit {
+                margin-top: 25px;
+            }
+
+            .faq-question {
+                padding: 18px 20px;
+            }
+
+            .faq-question h4 {
+                font-size: 1rem;
+            }
+
+            .contact-cta h2 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .contact-cta p {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+
+            .cta-buttons {
+                gap: 15px;
+                flex-direction: column;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero {
+                padding: 60px 0 40px;
+            }
+
+            .contact-hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .contact-channels,
+            .inquiry-types,
+            .contact-form-section,
+            .office-location,
+            .partnership-opportunities,
+            .contact-faq,
+            .contact-cta {
+                padding: 40px 0;
+            }
+
+            .contact-form {
+                padding: 20px 15px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .checkbox-label {
+                font-size: 0.9rem;
+                gap: 10px;
             }
 
             .btn {
-                padding: 12px 20px;
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .btn-submit {
+                width: 100%;
+            }
+
+            .sidebar-card {
+                padding: 15px;
+            }
+
+            .sidebar-card h3 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+
+            .form-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .channel-card,
+            .inquiry-card,
+            .partnership-type {
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .type-header {
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .type-content {
+                padding: 15px;
+            }
+
+            .address-card {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .contact-cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-cta p {
+                font-size: 0.9rem;
+            }
+
+            .quick-link {
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
+
+            .quick-link i {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .location-map {
+                height: 300px;
             }
         }
     </style>
@@ -1517,21 +1770,6 @@
                                     class="time-value">48h</span></div>
                             <div class="time-category"><span class="time-label">Project Proposals</span><span
                                     class="time-value">3‑5 days</span></div>
-                        </div>
-                    </div>
-                    <div class="sidebar-card">
-                        <h3><i class="fas fa-phone-alt"></i> Prefer to Talk?</h3>
-                        <div class="contact-options">
-                            <a href="tel:+919545529950" class="contact-option">
-                                <i class="fas fa-phone"></i>
-                                <div><span class="option-label">Call Us</span><span class="option-value">+91
-                                        9545529950</span></div>
-                            </a>
-                            <a href="https://wa.me/919545529950" target="_blank" class="contact-option">
-                                <i class="fab fa-whatsapp"></i>
-                                <div><span class="option-label">WhatsApp</span><span class="option-value">+91
-                                        9545529950</span></div>
-                            </a>
                         </div>
                     </div>
                 </div>

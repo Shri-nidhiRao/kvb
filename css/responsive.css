@@ -111,42 +111,46 @@
     
     /* Sections */
     section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
     
     .pillars-grid,
     .solutions-grid,
     .audience-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
     
     .trust-stats,
     .impact-counters {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 30px;
     }
     
     /* About page specific */
     .story-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
     
     .founder-profile {
         flex-direction: column;
-        gap: 30px;
+        gap: 25px;
     }
     
     .collaborations-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
     
     .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
     .timeline {
@@ -175,29 +179,33 @@
         left: -10px;
         top: 5px;
     }
+    
+    .container {
+        padding: 0 20px;
+    }
 }
 
 /* Mobile (576px to 767px) */
 @media screen and (max-width: 767px) {
     /* Typography */
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     /* Layout */
@@ -206,17 +214,18 @@
     .audience-grid,
     .benefits-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .trust-stats,
     .impact-counters {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
     
     .cta-buttons {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
     
     .cta-buttons .btn {
@@ -224,15 +233,20 @@
         max-width: 300px;
     }
     
+    /* Sections */
+    section {
+        padding: 40px 0;
+    }
+    
     /* Footer */
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
     
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         text-align: center;
     }
     
@@ -242,11 +256,13 @@
     
     /* Innovation grid */
     .innovation-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .collaborations-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     /* Message content */
@@ -256,12 +272,17 @@
     }
     
     .message-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     /* Calculator */
     .roi-calculator {
-        padding: 30px 20px;
+        padding: 20px 15px;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 15px;
     }
     
     /* WhatsApp float */
@@ -273,7 +294,7 @@
     .whatsapp-float a {
         width: 50px;
         height: 50px;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -281,55 +302,75 @@
 @media screen and (max-width: 575px) {
     /* Typography */
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
     }
     
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
     
     /* Layout */
     .container {
-        padding: 0 15px;
+        padding: 0 12px;
     }
     
     section {
-        padding: 40px 0;
+        padding: 30px 0;
     }
     
     /* Cards */
     .pillar-card,
     .audience-card,
     .benefit-card {
-        padding: 30px 20px;
+        padding: 20px 15px;
     }
     
     /* Stats */
     .stat-item h3 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
-    /* Innovation grid */
+    /* Grids */
     .innovation-grid,
-    .collaborations-grid {
+    .collaborations-grid,
+    .pillars-grid,
+    .solutions-grid,
+    .audience-grid,
+    .benefits-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .trust-stats,
+    .impact-counters {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     /* Timeline */
     .timeline {
-        padding-left: 15px;
+        padding-left: 12px;
     }
     
     /* Newsletter form */
@@ -338,13 +379,37 @@
     }
     
     .newsletter input {
-        border-radius: 5px;
-        margin-bottom: 10px;
+        border-radius: 4px;
+        margin-bottom: 8px;
     }
     
     .newsletter button {
-        border-radius: 5px;
-        padding: 12px;
+        border-radius: 4px;
+        padding: 10px;
+    }
+    
+    /* CTA buttons */
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer-bottom {
+        gap: 12px;
+    }
+    
+    /* WhatsApp float */
+    .whatsapp-float a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
