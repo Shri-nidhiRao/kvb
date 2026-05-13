@@ -9,6 +9,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/products/kvb-logo.png">
   <style>
     * {
       margin: 0;
@@ -786,33 +787,50 @@
       background: white;
       border: 1px solid #f0f0f0;
       border-radius: 24px;
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
       text-align: center;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .innovation-item i {
-      font-size: 3rem;
-      color: #4a8b4a;
-      margin-bottom: 1.2rem;
+    .innovation-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      border-color: #4a8b4a;
+    }
+
+    .innovation-icon {
+      width: 80px;
+      height: 80px;
       background: #e9f3ea;
-      padding: 1rem;
-      border-radius: 60px;
-      display: inline-block;
-      transition: all 0.2s;
+      color: #4a8b4a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .innovation-icon i {
+      font-size: 2.4rem;
     }
 
     .innovation-item h4 {
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-size: 1.25rem;
+      font-weight: 700;
       color: #1d1d1f;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
     }
 
     .innovation-item p {
       color: #86868b;
       font-size: 0.95rem;
+      line-height: 1.5;
       margin: 0;
     }
 
@@ -1079,8 +1097,9 @@
     .first-hero-img {
       object-fit: contain;
       /* show full image */
-      object-position: top;
-      /* keep top visible */
+      object-position: center;
+      /* keep centered */
+
     }
 
     .horizontal-crop {
@@ -1133,20 +1152,20 @@
 
         <!-- Slide 1: Video -->
         <video class="hero-video hero-slide visible" id="heroSlide1" muted playsinline>
-          <source src="https://res.cloudinary.com/dacj4jdic/video/upload/v1777051590/DJI_0958_qri4qy.webm"
-            type="video/mp4">
+          <source src="videos/DJI_0958_2.mp4" type="video/mp4">
+
         </video>
 
         <!-- Slide 2: Clickable Image -->
         <a href="solutions/solar-steam-cooking.html" class="hero-image hero-slide" id="heroSlide2">
-          <img src="images/products/WhatsApp Image 2026-04-24 at 17.26.15.jpeg" alt="Solar Steam Cooking"
+          <img src="images/products/WhatsApp Image 2026-04-24 at 17.27.53.jpeg" alt="Solar Steam Cooking"
             class="first-hero-img">
           <div class="slider-caption">Solar Steam Cooking</div>
         </a>
 
         <!-- Slide 3: Clickable Image -->
         <a href="solutions/solar-dryers.html" class="hero-image hero-slide" id="heroSlide3">
-          <img src="images/products/WhatsApp Image 2026-04-24 at 17.27.53.jpeg" alt="Solar Dryers"
+          <img src="images/products/WhatsApp Image 2026-04-24 at 17.26.15.jpeg" alt="Solar Dryers"
             class="horizontal-crop">
           <div class="slider-caption">Solar Dryers</div>
         </a>
@@ -1171,18 +1190,24 @@
         <p class="section-subtitle">Three pillars of our sustainable technology ecosystem</p>
         <div class="pillars-grid">
           <div class="pillar-card" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pillar-icon"><i class="fas fa-solar-panel"></i></div>
-            <h3>Next-Generation Clean Energy Solutions</h3>
+            <div class="pillar-icon">
+              <img src="images/products/next-generation.png" alt="Next-generation" width="80">
+            </div>
+            <h3> Next-Generation Clean Energy Solutions</h3>
             <p>Solar thermal and steam technologies replacing fossil fuels in large-scale cooking and industrial heat
               applications.</p>
           </div>
           <div class="pillar-card" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pillar-icon"><i class="fas fa-seedling"></i></div>
+            <div class="pillar-icon">
+              <img src="images/products/agriculture.png" alt="Smart-agriculture" width="80">
+            </div>
             <h3>Smart Agriculture Technologies</h3>
             <p>Advanced solar drying, crop processing, and intelligent quality systems that increase farmer income.</p>
           </div>
           <div class="pillar-card" data-aos="zoom-in" data-aos-delay="300">
-            <div class="pillar-icon"><i class="fas fa-flask"></i></div>
+            <div class="pillar-icon">
+              <img src="images/products/advanced-research.png" alt="Advanced Research" width="80">
+            </div>
             <h3>Advanced Research & Innovation</h3>
             <p>Next-generation energy storage, AI crop systems, and integrated soil-to-sale agriculture platforms.</p>
           </div>
@@ -1332,7 +1357,7 @@
           <!-- CO2 -->
           <div class="stat-message">
             <div class="label">Saved</div><br>
-            <i class="fas fa-smog"></i>
+            <img src="images/products/co2.png" alt="co2" width="60">
             <h3>383 tons CO2</h3>
             <ul>
               <li>Emissions reduced per year</li>
@@ -1342,7 +1367,7 @@
           <!-- LPG -->
           <div class="stat-message">
             <div class="label">Saved</div><br>
-            <i class="fas fa-gas-pump"></i>
+            <img src="images/products/lpg-cylinder.png" alt="LPG Cylinder" width="60">
             <h3>6700+ LPG Cylinders</h3>
             <ul>
               <li><b>6700+</b> LPG cylinders saved annually</li>
@@ -1354,7 +1379,7 @@
           <!-- Firewood -->
           <div class="stat-message">
             <div class="label">Saved</div><br>
-            <i class="fas fa-fire"></i>
+            <img src="images/products/firewood.png" alt="Firewood" width="60">
             <h3>383+ tons Firewood</h3>
             <ul>
               <li><b>1300+</b> trees saved annually</li>
@@ -1364,7 +1389,7 @@
           <!-- Carbon Credit -->
           <div class="stat-message">
             <div class="label">Saved</div><br>
-            <i class="fas fa-chart-line"></i>
+            <i class="fas fa-coins"></i>
             <h3>3.83 Lakhs Carbon Credit revenue/year</h3>
             <ul>
               <li><b>₹1000</b> per ton CO₂ (conservative)</li>
@@ -1386,23 +1411,28 @@
         <p style="font-size:1.2rem;color:#86868b;max-width:700px;margin-bottom:3rem;">KVB is actively developing future
           technologies that will transform energy and agriculture systems.</p>
         <div class="innovation-grid">
-          <div class="innovation-item"><i class="fas fa-temperature-high"></i>
+          <div class="innovation-item">
+            <div class="innovation-icon"><i class="fas fa-thermometer-half"></i></div>
             <h4>Thermal Energy Storage</h4>
             <p>Long‑duration heat storage for round‑the‑clock industrial use</p>
           </div>
-          <div class="innovation-item"><i class="fas fa-digital-tachograph"></i>
+          <div class="innovation-item">
+            <div class="innovation-icon"><i class="fas fa-microchip"></i></div>
             <h4>Soil‑to‑Sale Platforms</h4>
             <p>Integrated digital agriculture from farm to market</p>
           </div>
-          <div class="innovation-item"><i class="fas fa-brain"></i>
+          <div class="innovation-item">
+            <div class="innovation-icon"><i class="fas fa-brain"></i></div>
             <h4>AI Crop Grading Systems</h4>
             <p>Automated quality detection with 99% accuracy</p>
           </div>
-          <div class="innovation-item"><i class="fas fa-robot"></i>
+          <div class="innovation-item">
+            <div class="innovation-icon"><i class="fas fa-robot"></i></div>
             <h4>Microgreen Smart Farms</h4>
             <p>Fully automated vertical farming for urban areas</p>
           </div>
-          <div class="innovation-item"><i class="fas fa-bolt"></i>
+          <div class="innovation-item">
+            <div class="innovation-icon"><i class="fas fa-bolt"></i></div>
             <h4>Hybrid Renewable Heat</h4>
             <p>Integration of solar, biomass and storage for continuous heat</p>
           </div>
@@ -1424,7 +1454,7 @@
     <!-- CTA BANNER -->
     <section class="cta-banner" data-aos="fade-up">
       <div class="container">
-        <h2>Ready to switch to renewable energy?</h2>
+        <h2><i class="fas fa-calendar-check"></i> Ready to switch to renewable energy?</h2>
         <div class="cta-buttons">
           <a href="contact.html" class="btn">Request a Site Visit</a>
           <a href="contact.html" class="btn btn-outline">Talk to Experts</a>
@@ -1488,16 +1518,6 @@
         "../components/footer.html" + cb
       ]);
 
-      window.addEventListener('scroll', function () {
-        const header = document.querySelector('.header');
-        if (header) {
-          if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-          } else {
-            header.classList.remove('scrolled');
-          }
-        }
-      });
 
       // Hero slideshow logic: mixes videos and images sequentially
       const slides = document.querySelectorAll('.hero-slide');
@@ -1537,9 +1557,10 @@
 
 
 
-
     })();
   </script>
+  <script src="js/index.js"></script>
+
   <script src="js/fix-logo.js"></script>
 </body>
 

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Leather & Footwear Solar Thermal | KVB Green Energies</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+      background-color: #ffffff;
+      color: #1d1d1f;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    :root {
+      --green-accent: #2c6e49;
+      --green-light: #e6f4ea;
+      --gray-bg: #f5f5f7;
+      --card-border: rgba(0, 0, 0, 0.06);
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #1d1d1f 0%, #2c3e2f 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subhead {
+      font-size: 1.2rem;
+      color: #6e6e73;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--green-accent);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-primary i {
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #1f553a;
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(44, 110, 73, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #d2d2d6;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 500;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: #1d1d1f;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green-accent);
+      background: #f9faf9;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.8rem;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card i {
+      font-size: 2.4rem;
+      color: var(--green-accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .card h4 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: #6e6e73;
+      font-size: 0.95rem;
+    }
+
+    .stat-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      background: var(--gray-bg);
+      padding: 2.5rem;
+      border-radius: var(--radius-xl);
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--green-accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: #6e6e73;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .feature-list li {
+      padding: 12px 0;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      border-bottom: 1px solid #efeff1;
+    }
+
+    .feature-list i {
+      color: var(--green-accent);
+      width: 24px;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 5rem 0;
+      border-bottom: 1px solid #e9e9ed;
+    }
+
+    .section-alt {
+      background-color: var(--gray-bg);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .img-soft {
+      border-radius: var(--radius-lg);
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease;
+    }
+
+    .img-soft:hover {
+      transform: scale(1.01);
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin: 2rem 0;
+      align-items: stretch;
+    }
+
+    .step {
+      flex: 1 1 calc(33.333% - 1.25rem);
+      min-width: 140px;
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border: 1px solid #e9e9ed;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #3a3a3c;
+      line-height: 1.4;
+    }
+
+    .step i.step-icon {
+      font-size: 1.5rem;
+      color: var(--green-accent);
+    }
+
+    .step-number {
+      background: var(--green-accent);
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .cta-block {
+      background: #1d1d1f;
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-block h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-block .btn-primary {
+      background: white;
+      color: #1d1d1f;
+    }
+
+    .cta-block .btn-primary:hover {
+      background: #f0f0f0;
+    }
+
+    @media (max-width: 900px) {
+
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 0 24px;
+      }
+
+      .stat-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .steps {
+        flex-direction: column;
+      }
+
+      .cta-block {
+        padding: 2rem;
+      }
+
+      .cta-block h3 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <div class="container" style="padding-top: 3rem; padding-bottom: 2rem;">
+      <div class="grid-2" style="gap: 2rem;">
+        <div>
+          <div class="badge"><i class="fas fa-shoe-prints"></i> Leather &amp; footwear heat reimagined</div>
+          <h1>Parabolic Trough Solar Thermal<br>for Leather &amp; Footwear Manufacturing</h1>
+          <p style="font-size: 1.25rem; color: #515154; margin: 1rem 0 1.8rem 0;">Cut fuel costs up to 60% <i
+              class="fas fa-arrow-right"></i>
+            Soaking, tanning, drying &amp; finishing <i class="fas fa-arrow-right"></i> 80–250°C solar thermal energy
+          </p>
+
+        </div>
+        <div>
+          <img class="img-soft" src="../images/products/WhatsApp Image 2026-03-23 at 12.50.52.jpeg"
+            alt="KVB Parabolic Trough for Leather Industry" style="max-height: 380px; width:100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Pain Area — High Fuel Cost in Leather Manufacturing -->
+    <div class="section">
+      <div class="container">
+        <div style="max-width: 850px; margin: 0 auto; text-align: center;">
+          <span class="badge"><i class="fas fa-fire"></i> The hidden cost</span>
+          <h2>High fuel cost in leather &amp; footwear manufacturing</h2>
+          <p>Leather processing and footwear manufacturing are thermally demanding value-added processes where heat
+            and
+            steam are essential for quality, productivity and compliance. Thermal energy costs are one of the biggest
+            controllable operating expenses for leather plants.</p>
+          <p>Most leather plants rely on:</p>
+          <ul class="feature-list" style="max-width: 500px; margin: 1.5rem auto; text-align: left;">
+            <li><i class="fas fa-oil-can"></i> LPG / Diesel / Furnace Oil boilers</li>
+            <li><i class="fas fa-fire-alt"></i> Coal / Biomass fired boilers (in some facilities)</li>
+            <li><i class="fas fa-bolt"></i> Electric steam systems (high OPEX)</li>
+          </ul>
+          <div style="background: #faf9f7; padding: 2.5rem; border-radius: 24px; margin-top: 2rem; text-align: left;">
+            <p style="font-weight: 600; margin-bottom: 0.75rem;">What This Means for Your Business:</p>
+            <ul
+              style="list-style: none; padding-left: 0; margin-left: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle"
+                  style="color: #d9534f; margin-top: 4px;"></i> High operating cost</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle"
+                  style="color: #d9534f; margin-top: 4px;"></i> Exposure to fuel price volatility</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle"
+                  style="color: #d9534f; margin-top: 4px;"></i> Environmental impact &amp; emissions</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="fas fa-times-circle"
+                  style="color: #d9534f; margin-top: 4px;"></i> Compliance challenges</li>
+            </ul>
+            <p
+              style="margin-top: 1rem; font-style: italic; border-left: 3px solid var(--green-accent); padding-left: 1rem;">
+              <i class="fas fa-hand-point-right" style="color: var(--green-accent); margin-right: 8px;"></i> Managing
+              thermal energy sustainably has become a competitive necessity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Smart Solution — PTC Solar Thermal for Leather -->
+    <div class="section section-alt">
+      <div class="container" style="text-align: center;">
+        <div style="margin-bottom: 2.5rem;">
+          <span class="badge"><i class="fas fa-sun"></i> Manufacturing cost optimization</span>
+          <h2>Reducing your thermal energy cost</h2>
+          <p class="section-subhead" style="margin: 0 auto;">KVB Green Energies offers Parabolic Trough Solar Thermal
+            Systems (PTC) designed specifically for industrial requirements in leather and footwear plants.</p>
+        </div>
+        <div style="max-width: 850px; margin: 0 auto; text-align: left;">
+          <h3 style="font-size: 1.6rem; margin-bottom: 1rem; text-align: center;">What This System Does:</h3>
+          <ul class="feature-list" style="max-width: 500px; margin: 1.5rem auto;">
+            <li><i class="fas fa-temperature-high"></i> Generates high-temperature heat using solar energy</li>
+            <li><i class="fas fa-hand-holding-heart"></i> Supports tanning, drying, and finishing processes</li>
+            <li><i class="fas fa-plug"></i> Integrates with your existing boiler system</li>
+            <li><i class="fas fa-sync-alt"></i> Ensures uninterrupted production with hybrid operation</li>
+          </ul>
+          <p style="text-align: center;"><strong>Immediate Impact:</strong> Up to <strong>40% reduction in fuel consumption</strong> •
+            Lower cost of production • Long-term energy price stability</p>
+          <p style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1.5rem;"><i
+              class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> This is not just energy saving — it is margin
+            improvement.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container" style="text-align: center;">
+        <span class="badge"><i class="fas fa-cogs"></i> Illustrative system</span>
+        <h2>How the system works</h2>
+        <div class="steps" style="justify-content: center; margin: 3rem 0;">
+          <div class="step">
+            <div class="step-number">1</div><i class="fas fa-sun step-icon"></i>
+            <div>Sunlight hits solar mirrors</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div><i class="fas fa-crosshairs step-icon"></i>
+            <div>Mirrors focus energy onto receiver tubes</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div><i class="fas fa-temperature-high step-icon"></i>
+            <div>Heat transfer fluid (HTF) absorbs heat</div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div><i class="fas fa-wind step-icon"></i>
+            <div>Thermal energy generates steam</div>
+          </div>
+          <div class="step">
+            <div class="step-number">5</div><i class="fas fa-industry step-icon"></i>
+            <div>Steam supplied to leather process lines</div>
+          </div>
+          <div class="step">
+            <div class="step-number">6</div><i class="fas fa-sync-alt step-icon"></i>
+            <div>Boiler backup supports during low solar periods</div>
+          </div>
+        </div>
+        <div style="max-width: 900px; margin: 2rem auto;">
+          <p><strong>Integration Options:</strong> Boiler Feedwater Pre-Heat <i class="fas fa-arrow-right"></i>
+            Direct Steam Generation <i class="fas fa-arrow-right"></i>
+            Hybrid Solar + Boiler Backup <i class="fas fa-arrow-right"></i> Thermal Storage (optional)</p>
+          <p><strong>Industrial Performance:</strong> Temperature Range: <strong>120°C – 250°C</strong> <i
+              class="fas fa-arrow-right"></i> Efficiency: <strong>50–70%</strong> <i class="fas fa-arrow-right"></i>
+            Solar Contribution:
+            <strong>20–60%</strong> <i class="fas fa-arrow-right"></i> System Life: <strong>20–30 years</strong>
+          </p>
+          <p style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1.5rem;"><i
+              class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Optional thermal storage
+            enables heat availability beyond sunlight hours.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Applications — Across Leather Processing Stages -->
+    <div class="section section-alt">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <h2>Across leather &amp; footwear processes</h2>
+          <p class="section-subhead" style="margin: 0 auto;">Perfectly suited for all major leather manufacturing heat
+            stages
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><i class="fas fa-water"></i>
+            <h4>Soaking &amp; Degreasing</h4>
+            <p>80–100°C hot water supply</p>
+          </div>
+          <div class="card"><i class="fas fa-flask"></i>
+            <h4>Liming, Deliming &amp; Bating</h4>
+            <p>90–120°C for chemical processing</p>
+          </div>
+          <div class="card"><i class="fas fa-swatchbook"></i>
+            <h4>Tanning &amp; Neutralization</h4>
+            <p>110–160°C consistent heat</p>
+          </div>
+          <div class="card"><i class="fas fa-wind"></i>
+            <h4>Drying &amp; Conditioning</h4>
+            <p>120–180°C efficient moisture removal</p>
+          </div>
+          <div class="card"><i class="fas fa-drum"></i>
+            <h4>Drum Heating &amp; Finishing</h4>
+            <p>Continuous thermal supply to drums</p>
+          </div>
+          <div class="card"><i class="fas fa-fire"></i>
+            <h4>Boiler Feedwater Pre-Heating</h4>
+            <p>40–120°C — improves overall efficiency</p>
+          </div>
+        </div>
+        <p
+          style="text-align: center; margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> High heat demand across all stages
+          = <strong>high solar savings potential</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- 5. Benefits — What Leather Plants Gain -->
+    <div class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="badge"><i class="fas fa-chart-simple"></i> Operational & strategic benefits</span>
+            <h2>What leather plants gain</h2>
+            <ul class="feature-list">
+              <li><i class="fas fa-coins"></i> <span><strong>Reduced Fuel Cost</strong> — Replaces a portion of boiler
+                  fuel consumption; lower cost per unit of production</span></li>
+              <li><i class="fas fa-chart-line"></i> <span><strong>Stable Energy Cost</strong> — Less exposure to
+                  fluctuating fuel prices; predictable long-term energy expenditure</span></li>
+              <li><i class="fas fa-leaf"></i> <span><strong>Reduced Carbon Emissions</strong> — Supports environmental
+                  compliance and ESG goals</span></li>
+              <li><i class="fas fa-gear"></i> <span><strong>Lower Boiler Load</strong> — Reduces wear and maintenance on
+                  boiler systems</span></li>
+              <li><i class="fas fa-globe"></i> <span><strong>Improved Sustainability Credentials</strong> — Important
+                  for global buyers and export markets</span></li>
+            </ul>
+            <p style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;"><i
+                class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Lower cost + sustainable
+              manufacturing = stronger global competitiveness</p>
+          </div>
+          <div>
+            <img class="img-soft"
+              src="https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
+              alt="Energy cost comparison leather industry">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. ROI — Economic Feasibility -->
+    <div class="section section-alt">
+      <div class="container">
+        <div style="text-align: center;">
+          <h2>Economic feasibility &amp; ROI (India)</h2>
+          <p class="section-subhead" style="margin: 0 auto;">Typical returns for leather &amp; footwear plants across
+            India — clusters in Tamil Nadu, Karnataka, West Bengal and Uttar Pradesh</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="stat-number">2–5 yrs</div>
+            <div class="stat-label">Typical payback period</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">20–60%</div>
+            <div class="stat-label">Annual solar fraction</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50–70%</div>
+            <div class="stat-label">Thermal efficiency</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">~3T CO₂</div>
+            <div class="stat-label">Saved per ton of oil replaced</div>
+          </div>
+        </div>
+        <p
+          style="margin-top: 2rem; text-align: center; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> After payback: solar thermal
+          becomes a low-cost heat source for decades — lowering operating cost and increasing profitability. India's
+          industrial solar thermal market: ~USD 0.99 Billion (2024) growing at ~7.7% CAGR.
+        </p>
+      </div>
+    </div>
+
+
+
+    <div id="footer"></div>
+  </main>
+
+  <script>
+    function loadComponent(id, paths) {
+      const vars = [...paths, '../' + paths[0]];
+      function tryPath(i) {
+        if (i >= vars.length) return;
+        fetch(vars[i])
+          .then(r => r.ok ? r.text() : Promise.reject())
+          .then(d => {
+            const elem = document.getElementById(id);
+            if (elem) {
+              elem.innerHTML = d;
+              const scripts = elem.querySelectorAll('script');
+              scripts.forEach(s => {
+                const ns = document.createElement('script');
+                Array.from(s.attributes).forEach(a => ns.setAttribute(a.name, a.value));
+                ns.appendChild(document.createTextNode(s.innerHTML));
+                s.parentNode.replaceChild(ns, s);
+              });
+            }
+          })
+          .catch(() => tryPath(i + 1));
+      }
+      tryPath(0);
+    }
+    loadComponent('header', ['../components/header.html', 'components/header.html']);
+    loadComponent('footer', ['../components/footer.html', 'components/footer.html']);
+  </script>
+
+<script src="../js/fix-logo.js"></script>
+</body>
+
+</html>

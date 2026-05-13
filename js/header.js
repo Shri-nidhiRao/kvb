@@ -204,6 +204,18 @@
         display: flex;
       }
     }
+
+    /* Smart Header State */
+    .header.header-hidden {
+      transform: translateY(-100%);
+    }
+
+    .header.scrolled {
+      background: rgba(255, 255, 255, 0.98) !important;
+      backdrop-filter: blur(10px) !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+    }
+
   `;
   document.head.appendChild(style);
 
@@ -237,11 +249,12 @@
               <a href="#">Products <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-content">
                 <a href="products/solar-steam-cooking.html"><i class="fas fa-utensils"></i> Solar Steam Cooking</a>
+                <a href="products/direct-cooking.html"><i class="fas fa-fire"></i> Direct Cooking</a>
                 <a href="products/solar-tunnel-dryers.html"><i class="fas fa-wind"></i> Solar Tunnel Dryers</a>
                 <a href="products/scheffler-concentrators.html"><i class="fas fa-satellite-dish"></i> Scheffler Concentrators</a>
                 <a href="products/ai-crop-detection.html"><i class="fas fa-robot"></i> AI Crop Detection</a>
-                <a href="thermal-storage.html"><i class="fas fa-thermometer-half"></i> Thermal Storage</a>
-                <a href="microgreen-systems.html"><i class="fas fa-leaf"></i> Microgreen Systems</a>
+                <a href="products/thermal-storage.html"><i class="fas fa-thermometer-half"></i> Thermal Storage</a>
+                <a href="products/microgreen-systems.html"><i class="fas fa-leaf"></i> Microgreen Systems</a>
               </div>
             </li>
             <li><a href="innovation-lab.html">Innovation Lab</a></li>
@@ -292,17 +305,30 @@
       });
     }
 
-    // ----- Sticky header effect -----
+    // ----- Smart header effect -----
     const header = document.querySelector('.header');
+    let lastScrollY = window.scrollY;
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.style.background = 'rgba(255,255,255,0.95)';
-        header.style.boxShadow = '0 6px 20px rgba(0,20,10,0.05)';
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
+        header.classList.add('scrolled');
       } else {
-        header.style.background = 'rgba(255,255,255,0.8)';
-        header.style.boxShadow = 'none';
+        header.classList.remove('scrolled');
       }
+
+      // Hide/Show based on direction
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+
+      lastScrollY = currentScrollY;
     });
+
+
   }
 
   // Run initialisation when DOM is ready

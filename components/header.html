@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KVB Header</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -24,10 +25,14 @@
     .header {
       position: fixed;
       top: 0;
+      left: 0;
+
       width: 100%;
       background: #fff;
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       z-index: 1000;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease;
+
     }
 
     /* TOP BAR */
@@ -35,17 +40,25 @@
       font-size: 13px;
       padding: 6px 40px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      transition: transform 0.4s ease, opacity 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    /* Smart Header State */
+    .header.header-hidden {
+      transform: translateY(0);
     }
 
     .header.scrolled {
-      background: rgba(255, 255, 255, 0.98) !important;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     }
 
+    /* Ensure top-bar remains visible in all fixed states */
     .header.scrolled .top-bar {
-      display: none;
+      display: block;
     }
+
 
     .top-content {
       max-width: 1400px;
@@ -282,32 +295,19 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../innovation-lab.html">Innovation Lab</a></li>
-        <!--
-        <li class="dropdown">
-          <a href="#">Products</a>
-          <div class="dropdown-menu">
-            <a href="../products/solar-steam-cooking.html">Solar Steam Cooking(Scheffeler Dish)</a>
-            <a href="../products/solar-dryers.html">Solar Tunnel Dryers</a>
-            <a href="../products/scheffler-concentrators.html">Scheffler</a>
-            <a href="../products/ai-crop-detection.html">AI Crop Detection</a>
-            <a href="../products/microgreen-systems.html">Microgreen Systems</a>
-            <a href="../products/thermal-storage.html">Thermal Energy Storage System</a>
-          </div>
-        </li>
-        -->
 
         <li class="dropdown">
           <a href="#">Application</a>
           <div class="dropdown-menu">
-            <a href="../app/Chemical Industry.html">Chemical Industry</a>
-            <a href="../app/Tea processing Industry.html">Tea Processing</a>
-            <a href="../app/leather footwear.html">Leather & Footwear</a>
+            <a href="../app/chemical-industry.html">Chemical Industry</a>
+            <a href="../app/tea-processing-industry.html">Tea Processing</a>
+            <a href="../app/leather-footwear.html">Leather & Footwear</a>
 
-            <a href="../app/Food-Processing-Industry.html">Food Processing</a>
-            <a href="../app/automobile industry.html">Automobile Industry</a>
-            <a href="../app/Paper & Pulp Industry.html">Paper & Pulp Industry</a>
-            <a href="../app/Textile Industry.html">Textile Industry</a>
-            <a href="../app/Dairy Industry.html">Dairy Industry</a>
+            <a href="../app/food-processing-industry.html">Food Processing</a>
+            <a href="../app/automobile-industry.html">Automobile Industry</a>
+            <a href="../app/paper-pulp-industry.html">Paper & Pulp Industry</a>
+            <a href="../app/textile-industry.html">Textile Industry</a>
+            <a href="../app/dairy-industry.html">Dairy Industry</a>
           </div>
         </li>
 
@@ -359,16 +359,24 @@
       }
     };
 
-    // hide top bar on scroll
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.header');
-      if (header) {
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+    /* ================= SMART HEADER LOGIC ================= */
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+
+      // Add 'scrolled' class for stylistic changes after some scroll
+      if (currentScrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
+
+      // Ensure header is always visible (remove hidden class if it exists)
+      header.classList.remove('header-hidden');
+
+      lastScrollY = currentScrollY;
     });
 
   </script>

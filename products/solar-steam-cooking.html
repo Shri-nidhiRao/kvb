@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
     <!-- Fonts & Icons -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
@@ -72,7 +73,7 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 1.2rem;
-            
+
             font-size: 2.6rem;
             margin-bottom: 2rem;
             position: relative;
@@ -84,7 +85,7 @@
         }
 
         .section-title {
-            text-align: left;
+            text-align: center;
         }
 
         .section-title h2:after {
@@ -460,6 +461,7 @@
         .app-card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.8rem;
+            text-align: center;
         }
 
         @media (max-width: 1200px) {
@@ -511,19 +513,16 @@
         .system-action-section {
             max-width: 1140px;
             margin: 0 auto 4rem;
-            padding-left: 30px;
-            text-align: left;
+            text-align: center;
         }
 
         .system-action-section .section-title {
-            text-align: left;
-            margin-left: 0;
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .system-action-section .gallery-grid {
-            justify-content: start;
-            margin-left: -30px;
-            width: calc(100% + 30px);
+            justify-content: center;
         }
 
         .system-action-section .gallery-item {
@@ -953,21 +952,18 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../cooker/4 Sq mtr Images.jpeg" alt="Parabolic Cooker Array">
+                    <img src="../cooker/4 Sq mtr Images.jpeg">
                     <div class="gallery-caption">
-                        <h3>Parabolic Cooker Array</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../cooker/Domestic Cooker 1.5Sq mtr Images.jpeg" alt="Focused Solar Receiver">
+                    <img src="../cooker/Domestic Cooker 1.5Sq mtr Images.jpeg">
                     <div class="gallery-caption">
-                        <h3>Focused Solar Receiver</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../cooker/WhatsApp Image 2026-04-17 at 16.53.59.jpeg" alt="Field Installation">
+                    <img src="../cooker/WhatsApp Image 2026-04-17 at 16.53.59.jpeg">
                     <div class="gallery-caption">
-                        <h3>Field Installation</h3>
                     </div>
                 </div>
             </div>
@@ -1055,7 +1051,8 @@
         loadComponent("header", ["components/header.html", "../components/header.html"]);
         loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
 
-        
+
+        // EmailJS init
 
         // EmailJS init
         (function () {
@@ -1126,7 +1123,7 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
-<script src="../js/fix-logo.js"></script>
+    <script src="../js/fix-logo.js"></script>
 </body>
 
 </html>

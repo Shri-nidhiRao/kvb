@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>SolarTherm | Parabolic Trough for Textile Industry</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=SF+Pro+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            scroll-behavior: smooth;
+            line-height: 1.4;
+        }
+
+        /* Apple/Tesla inspired variables */
+        :root {
+            --green-accent: #2c6e49;
+            /* deep, premium green */
+            --green-light: #e6f4ea;
+            --gray-bg: #f5f5f7;
+            --card-border: rgba(0, 0, 0, 0.06);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            --radius-xl: 32px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #1d1d1f 0%, #2c3e2f 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subhead {
+            font-size: 1.2rem;
+            color: #6e6e73;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary i {
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #1f553a;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(44, 110, 73, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #d2d2d6;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: #1d1d1f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--green-accent);
+            background: #f9faf9;
+        }
+
+        /* Grid & Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card i {
+            font-size: 2.2rem;
+            color: var(--green-accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .card h4 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .stat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            background: var(--gray-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-xl);
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--green-accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            color: #515154;
+            font-weight: 500;
+        }
+
+        .stat-label i {
+            color: var(--green-accent);
+            font-size: 0.85rem;
+        }
+
+        /* Lists */
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border-bottom: 1px solid #efeff1;
+        }
+
+        .feature-list i {
+            color: var(--green-accent);
+            width: 22px;
+        }
+
+        /* Section styling */
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        .section-alt {
+            background-color: var(--gray-bg);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--green-light);
+            color: var(--green-accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        /* Image styling */
+        .img-soft {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .img-soft:hover {
+            transform: scale(1.01);
+        }
+
+        /* Process steps */
+        .steps {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+            justify-content: space-between;
+            margin: 2rem 0;
+            align-items: stretch;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 0;
+            background: white;
+            border-radius: 20px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            border: 1px solid #e9e9ed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #3a3a3c;
+            line-height: 1.3;
+        }
+
+        .step i.step-icon {
+            font-size: 1.2rem;
+            color: var(--green-accent);
+        }
+
+        .step-number {
+            background: var(--green-accent);
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        /* Challenge list */
+        .challenge-list {
+            list-style: none;
+            margin: 0.5rem 0;
+        }
+
+        .challenge-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 0;
+            font-size: 0.95rem;
+            color: #3a3a3c;
+        }
+
+        .challenge-list li i.icon-deny {
+            color: #d9534f;
+            width: 18px;
+            flex-shrink: 0;
+        }
+
+        .challenge-list li i.icon-warn {
+            color: #c0392b;
+            width: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Inline icon helpers */
+        .inline-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .inline-icon i {
+            color: var(--green-accent);
+        }
+
+        /* CTA section */
+        .cta-block {
+            background: #1d1d1f;
+            border-radius: var(--radius-xl);
+            padding: 3.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-block h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-block .btn-primary {
+            background: white;
+            color: #1d1d1f;
+        }
+
+        .cta-block .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #86868b;
+            border-top: 1px solid #e9e9ed;
+        }
+
+        @media (max-width: 900px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.6rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 24px;
+            }
+
+            .stat-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main>
+        <!-- Hero Section (Tesla inspired) -->
+        <div class="container" style="padding-top: 3rem; padding-bottom: 2rem;">
+            <div class="grid-2" style="gap: 2rem;">
+                <div>
+                    <div class="badge"><i class="fas fa-bolt"></i> Next-gen industrial solar</div>
+                    <h1>Parabolic Trough Solar Steam<br>for Textile Industry</h1>
+                    <p style="font-size: 1.25rem; color: #515154; margin: 1rem 0 1.8rem 0;">Cut fuel costs up to 60% •
+                        Seamless boiler integration • 120–250°C process steam</p>
+
+                </div>
+                <div>
+                    <img class="img-soft"
+                        src="../images/products/WhatsApp Image 2026-03-23 at 12.50.52.jpeg"
+                        alt="KVB Parabolic Trough for Textile Industry" style="max-height: 380px; width:100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Pain Area -->
+        <div class="section">
+            <div class="container">
+                <div style="max-width: 850px; margin: 0 auto; text-align: center;">
+                    <span class="badge"><i class="fas fa-chart-line"></i> The reality</span>
+                    <h2 class="section-title">Why textile plants struggle</h2>
+                    <p style="margin-bottom: 1rem;">Textile manufacturing is one of the most steam-intensive
+                        industries. Yet most plants still rely on fossil fuels:</p>
+                    <ul class="feature-list" style="max-width: 500px; margin: 1.5rem auto; text-align: left;">
+                        <li><i class="fas fa-fire"></i> LPG / Furnace Oil / Coal boilers</li>
+                        <li><i class="fas fa-gauge-high"></i> High-pressure steam (3–10 bar)</li>
+                        <li><i class="fas fa-clock"></i> 8–20 hours continuous operation</li>
+                    </ul>
+                    <div style="background: #faf9f7; padding: 2.5rem; border-radius: 24px; margin-top: 2rem; text-align: left;">
+                        <p
+                            style="font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-triangle-exclamation" style="color: #d9720a;"></i> Key Challenges:
+                        </p>
+                        <ul class="challenge-list">
+                            <li><i class="fas fa-times-circle icon-deny"></i> Rising &amp; volatile fuel prices</li>
+                            <li><i class="fas fa-times-circle icon-deny"></i> High OPEX &amp; boiler inefficiencies
+                            </li>
+                            <li><i class="fas fa-times-circle icon-deny"></i> Carbon emissions &amp; ESG pressure
+                            </li>
+                            <li><i class="fas fa-times-circle icon-deny"></i> Export market demands sustainability
+                            </li>
+                        </ul>
+                        <p
+                            style="margin-top: 1rem; font-style: italic; border-left: 3px solid var(--green-accent); padding-left: 1rem; display: flex; align-items: flex-start; gap: 8px;">
+                            <i class="fas fa-map-pin"
+                                style="color: var(--green-accent); margin-top: 3px; flex-shrink: 0;"></i> Energy
+                            cost is no longer just an expense — it is a <strong>competitive risk</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Smart Solution — Solar Heat for Textile Industry -->
+        <div class="section section-alt">
+            <div class="container" style="text-align: center;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="badge"><i class="fas fa-sun"></i> Our solution</span>
+                    <h2>A smarter way to generate industrial steam</h2>
+                    <p class="section-subhead" style="margin: 0 auto;">High-temperature solar steam that integrates
+                        directly with your existing boiler room.</p>
+                </div>
+                <div style="max-width: 850px; margin: 0 auto; text-align: left;">
+                    <h3 style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 1rem;"><i
+                            class="fas fa-clipboard-list"
+                            style="color: var(--green-accent); font-size: 1.5rem;"></i> What we deliver</h3>
+                    <ul class="feature-list" style="max-width: 500px; margin: 1.5rem auto;">
+                        <li><i class="fas fa-check-circle"></i> Direct steam generation for dyeing &amp; finishing
+                        </li>
+                        <li><i class="fas fa-tachometer-alt"></i> Boiler feedwater preheating → boost efficiency
+                        </li>
+                        <li><i class="fas fa-sync-alt"></i> Hybrid solar + boiler (no production stops)</li>
+                        <li><i class="fas fa-database"></i> Optional thermal storage for extended operation</li>
+                    </ul>
+                    <p style="text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;"><i class="fas fa-check"
+                            style="color: var(--green-accent);"></i> Up to <strong>40% reduction</strong> in fuel
+                        consumption — without disrupting your process lines.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Process / Technology - How it works -->
+        <div class="section">
+            <div class="container" style="text-align: center;">
+                <span class="badge"><i class="fas fa-microchip"></i> Precision engineering</span>
+                <h2>How parabolic trough delivers industrial steam</h2>
+                <div class="steps" style="justify-content: center; margin: 3rem 0;">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <i class="fas fa-sun step-icon"></i>
+                        Sunlight hits parabolic mirrors
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <i class="fas fa-crosshairs step-icon"></i>
+                        Energy concentrated onto absorber tube
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <i class="fas fa-temperature-high step-icon"></i>
+                        Heat transfer fluid (HTF) absorbs energy
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <i class="fas fa-wind step-icon"></i>
+                        Steam generated via heat exchanger
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <i class="fas fa-industry step-icon"></i>
+                        Direct to textile process lines
+                    </div>
+                </div>
+                <div style="max-width: 900px; margin: 2rem auto;">
+                    <p><strong>Integration modes:</strong> Feedwater preheating • Direct steam generation •
+                        Hybrid solar-priority</p>
+                    <p><strong>Technical capability:</strong> 120°C – 250°C | Efficiency 50–70% | System life
+                        20–30 years</p>
+                    <p style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1.5rem;"><i
+                            class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Engineered for
+                        high-load industrial environments.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Applications in Textile Industry -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2>Perfect match for wet processing & finishing</h2>
+
+                </div>
+                <div class="grid-3">
+                    <div class="card"><i class="fas fa-water"></i>
+                        <h4>Desizing & Scouring</h4>
+                        <p>90–110°C continuous</p>
+                    </div>
+                    <div class="card"><i class="fas fa-droplet"></i>
+                        <h4>Bleaching</h4>
+                        <p>100–130°C stable output</p>
+                    </div>
+                    <div class="card"><i class="fas fa-palette"></i>
+                        <h4>Dyeing</h4>
+                        <p>120–140°C precise control</p>
+                    </div>
+                    <div class="card"><i class="fas fa-hand-sparkles"></i>
+                        <h4>Washing & Rinsing</h4>
+                        <p>80–100°C preheat</p>
+                    </div>
+                    <div class="card"><i class="fas fa-tshirt"></i>
+                        <h4>Finishing & Heat Setting</h4>
+                        <p>120–180°C high-temp steam</p>
+                    </div>
+                    <div class="card"><i class="fas fa-wind"></i>
+                        <h4>Drying Operations</h4>
+                        <p>Reduces boiler load</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Benefits — why industries switch -->
+        <div class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <span class="badge"><i class="fas fa-chart-line"></i> triple bottom line</span>
+                        <h2>Financial, operational & sustainability gains</h2>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-dollar-sign"></i> <strong>20–60% fuel reduction</strong> → Lower OPEX &
+                                hedge price volatility</li>
+                            <li><i class="fas fa-plug"></i> <strong>Seamless integration</strong> → No downtime,
+                                automated hybrid control</li>
+                            <li><i class="fas fa-leaf"></i> <strong>Major CO₂ cuts</strong> → Meet ESG, compliance &
+                                export requirements</li>
+                        </ul>
+                        <div class="btn-group">
+                            <a href="#" class="btn-outline"><i class="fas fa-chart-simple"></i> See real savings
+                                case</a>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="img-soft"
+                            src="https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
+                            alt="Energy cost analysis solar vs boiler">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. ROI — Business case -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>ROI that transforms energy economics</h2>
+                    <p class="section-subhead">Typical performance for textile plants (India / emerging markets)</p>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2–5 yrs</div>
+                        <div class="stat-label"><i class="fas fa-calendar-check"></i> Payback period</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30–40%</div>
+                        <div class="stat-label"><i class="fas fa-arrow-trend-down"></i> Annual fuel savings (5 TPH
+                            plant)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20+ yrs</div>
+                        <div class="stat-label"><i class="fas fa-gear"></i> Asset life, near-zero fuel cost after
+                            payback</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">~3T CO₂</div>
+                        <div class="stat-label"><i class="fas fa-leaf"></i> Saved per ton of furnace oil replaced</div>
+                    </div>
+                </div>
+                <p
+                    style="margin-top: 2rem; text-align: center; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fas fa-map-pin" style="color: var(--green-accent);"></i> After payback, your steam cost
+                    becomes significantly lower than any fossil alternative.
+                </p>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- tiny scroll / interactive touch (optional smooth) -->
+    <script>
+        // subtle interactive hover enhancements (just for presence)
+        document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn => {
+            btn.addEventListener('mouseenter', (e) => {
+                // no extra logic just for style consistency
+            });
+        });
+
+        function loadComponent(id, paths) {
+            const tryPath = (index) => {
+                if (index >= paths.length) return;
+                fetch(paths[index])
+                    .then(res => {
+                        if (!res.ok) throw new Error();
+                        return res.text();
+                    })
+                    .then(data => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch(() => tryPath(index + 1));
+            };
+            tryPath(0);
+        }
+
+        loadComponent("header", ["../components/header.html", "components/header.html"]);
+        loadComponent("footer", ["../components/footer.html", "components/footer.html"]);
+    </script>
+<script src="../js/fix-logo.js"></script>
+</body>
+
+</html>

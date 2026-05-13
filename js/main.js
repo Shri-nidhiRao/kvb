@@ -4,13 +4,30 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('current-year').textContent = new Date().getFullYear();
     
     // Header scroll effect
+    let lastScrollY = window.scrollY;
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
-        if (window.scrollY > 50) {
+        if (!header) return;
+        
+        const currentScrollY = window.scrollY;
+        
+        // Stylistic changes
+        if (currentScrollY > 50) {
+
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+
+        // Hide/Show based on direction
+        if (currentScrollY > lastScrollY && currentScrollY > 150) {
+            header.classList.add('header-hidden');
+        } else {
+            header.classList.remove('header-hidden');
+        }
+        
+        lastScrollY = currentScrollY;
+
     });
     
     // Mobile menu toggle

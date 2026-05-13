@@ -49,16 +49,26 @@
             }
         });
 
-        // Hide top bar and add shadow on scroll
+        // Smart Header: Hide on scroll down, show on scroll up
         if (!window.headerScrollInitialized) {
+            let lastScrollY = window.scrollY;
             window.addEventListener('scroll', function() {
                 const header = document.querySelector('.header');
                 if (header) {
-                    if (window.scrollY > 50) {
+                    const currentScrollY = window.scrollY;
+                    
+                    // Add 'scrolled' class for stylistic changes (shadow/blur)
+                    if (currentScrollY > 50) {
+
                         header.classList.add('scrolled');
                     } else {
                         header.classList.remove('scrolled');
                     }
+
+                    // Keep header fixed and visible on all scroll directions
+                    header.classList.remove('header-hidden');
+                    lastScrollY = currentScrollY;
+
                 }
             });
             window.headerScrollInitialized = true;

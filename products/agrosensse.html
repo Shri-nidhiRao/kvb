@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>AgroSense | Smart Farming & Precision Agriculture – AI-Powered Farm Intelligence</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
     <!-- Fonts & Icons -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
@@ -79,7 +80,7 @@
         }
 
         .section-title {
-            text-align: left;
+            text-align: center;
             margin-bottom: 2rem;
         }
 
@@ -87,7 +88,8 @@
             content: '';
             position: absolute;
             bottom: -12px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 80px;
             height: 3px;
             background: var(--primary);
@@ -458,7 +460,7 @@
                     style="max-width: 1040px; margin: 0 auto; position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); padding-top: 56.25%;">
                     <video autoplay muted loop playsinline controls
                         style="width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; display: block;">
-                        <source src="../videos/WhatsApp Video 2026-04-22 at 15.15.27.mp4" type="video/mp4">
+                        <source src="../videos/WhatsApp Video 2026-04-29 at 17.16.39.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -635,18 +637,15 @@
             <p>AgroSense operates on a three-layer intelligent architecture:</p>
             <div class="architecture-grid">
                 <div class="layer-card">
-                    <i class="fas fa-field"></i>
                     <h4>1. Field Layer</h4>
                     <p>Multi-depth soil sensing<br>Environmental data acquisition</p>
                 </div>
                 <div class="layer-card">
-                    <i class="fas fa-microchip"></i>
                     <h4>2. Control Layer</h4>
                     <p>Embedded processing using microcontroller unit<br>Depth-based comparative
                         analysis<br>Decision-making and control signal generation</p>
                 </div>
                 <div class="layer-card">
-                    <i class="fas fa-cloud"></i>
                     <h4>3. Cloud & Interface Layer</h4>
                     <p>Data storage and analytics<br>Visualization dashboard<br>Remote monitoring and alerts</p>
                 </div>
@@ -825,7 +824,7 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
     </script>
-<script src="../js/fix-logo.js"></script>
+    <script src="../js/fix-logo.js"></script>
 </body>
 
 </html>

@@ -1,20 +1,27 @@
 // Clients & Partnerships Page Functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize Leaflet Map
     function initIndiaMap() {
         const mapContainer = document.getElementById('indiaMap');
         if (!mapContainer) return;
-        
+
         // Create map centered on India
         const map = L.map('indiaMap').setView([20.5937, 78.9629], 5);
-        
+
         // Add tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
-            maxZoom: 8,
-            minZoom: 4
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
         }).addTo(map);
-        
+
+        // Fix for map tiles not loading correctly
+        setTimeout(() => { map.invalidateSize(); }, 500);
+
+
+
+
         // Define project locations with coordinates
         const projectLocations = [
             {
@@ -130,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 details: "Renewable Energy Research"
             }
         ];
-        
+
         // Define icon colors based on type
         const iconColors = {
             solar: '#FDB813', // Solar yellow
@@ -138,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
             smart: '#0B3D91', // Deep blue
             multiple: '#FF6F00' // Accent orange
         };
-        
+
         // Create custom icons
         function createIcon(type) {
             return L.divIcon({
@@ -149,13 +156,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 popupAnchor: [0, -10]
             });
         }
-        
+
         // Add markers to map
         projectLocations.forEach(location => {
             const marker = L.marker(location.coords, {
                 icon: createIcon(location.type)
             }).addTo(map);
-            
+
             marker.bindPopup(`
                 <div class="map-popup">
                     <h4>${location.name}</h4>
@@ -164,30 +171,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="case-studies.html#${location.name.toLowerCase().replace(/\s+/g, '-')}" class="popup-link">View Details</a>
                 </div>
             `);
-            
+
             // Store category for filtering
             marker._category = location.category;
         });
-        
+
         // Fit map to show all markers
         const bounds = L.latLngBounds(projectLocations.map(loc => loc.coords));
         map.fitBounds(bounds, { padding: [50, 50] });
-        
+
         return map;
     }
-    
+
     // Client Filtering
     const categoryTabs = document.querySelectorAll('.category-tab');
     const clientCards = document.querySelectorAll('.client-card');
-    
+
     categoryTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
+        tab.addEventListener('click', function () {
             // Update active tab
             categoryTabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
-            
+
             const category = this.getAttribute('data-category');
-            
+
             // Filter client cards
             clientCards.forEach(card => {
                 if (category === 'all' || card.classList.contains(`category-${category}`)) {
@@ -206,12 +213,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
+
     // Load More Clients
     const loadMoreBtn = document.getElementById('loadMoreClients');
     const allClientCards = Array.from(document.querySelectorAll('.client-card'));
     let visibleCount = 12; // Initial number of visible cards
-    
+
     if (loadMoreBtn) {
         // Initially hide extra cards
         allClientCards.forEach((card, index) => {
@@ -219,11 +226,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.display = 'none';
             }
         });
-        
-        loadMoreBtn.addEventListener('click', function() {
+
+        loadMoreBtn.addEventListener('click', function () {
             // Show next set of cards
             const nextCards = allClientCards.slice(visibleCount, visibleCount + 6);
-            
+
             nextCards.forEach(card => {
                 card.style.display = 'flex';
                 setTimeout(() => {
@@ -231,45 +238,45 @@ document.addEventListener('DOMContentLoaded', function() {
                     card.style.transform = 'translateY(0)';
                 }, 10);
             });
-            
+
             visibleCount += 6;
-            
+
             // Hide button if all cards are visible
             if (visibleCount >= allClientCards.length) {
                 loadMoreBtn.style.display = 'none';
             }
         });
     }
-    
+
     // Partnership Statements Slider
     const statementSlides = document.querySelectorAll('.statement-slide');
     const statementDots = document.querySelectorAll('.statement-slide .dot');
     const statementPrevBtn = document.querySelector('.statement-slide .slider-prev');
     const statementNextBtn = document.querySelector('.statement-slide .slider-next');
     let currentStatementSlide = 0;
-    
+
     function showStatementSlide(index) {
         // Hide all slides
         statementSlides.forEach(slide => {
             slide.classList.remove('active');
         });
-        
+
         // Remove active class from all dots
         if (statementDots.length > 0) {
             statementDots.forEach(dot => {
                 dot.classList.remove('active');
             });
-            
+
             // Show current slide
             statementSlides[index].classList.add('active');
             statementDots[index].classList.add('active');
             currentStatementSlide = index;
         }
     }
-    
+
     // Next slide
     if (statementNextBtn) {
-        statementNextBtn.addEventListener('click', function() {
+        statementNextBtn.addEventListener('click', function () {
             let nextIndex = currentStatementSlide + 1;
             if (nextIndex >= statementSlides.length) {
                 nextIndex = 0;
@@ -277,10 +284,10 @@ document.addEventListener('DOMContentLoaded', function() {
             showStatementSlide(nextIndex);
         });
     }
-    
+
     // Previous slide
     if (statementPrevBtn) {
-        statementPrevBtn.addEventListener('click', function() {
+        statementPrevBtn.addEventListener('click', function () {
             let prevIndex = currentStatementSlide - 1;
             if (prevIndex < 0) {
                 prevIndex = statementSlides.length - 1;
@@ -288,16 +295,16 @@ document.addEventListener('DOMContentLoaded', function() {
             showStatementSlide(prevIndex);
         });
     }
-    
+
     // Dot navigation
     if (statementDots.length > 0) {
         statementDots.forEach((dot, index) => {
-            dot.addEventListener('click', function() {
+            dot.addEventListener('click', function () {
                 showStatementSlide(index);
             });
         });
     }
-    
+
     // Auto-slide every 7 seconds
     if (statementSlides.length > 1) {
         setInterval(() => {
@@ -308,35 +315,35 @@ document.addEventListener('DOMContentLoaded', function() {
             showStatementSlide(nextIndex);
         }, 7000);
     }
-    
+
     // Client Logos Marquee Animation
     const logosContainer = document.querySelector('.logos-container');
     if (logosContainer) {
         // Duplicate logos for seamless scrolling
         const logosHTML = logosContainer.innerHTML;
         logosContainer.innerHTML += logosHTML;
-        
+
         // Animate scroll
         let position = 0;
         const speed = 1; // pixels per frame
         const fps = 60;
-        
+
         function animateLogos() {
             position -= speed;
-            
+
             // Reset position when half of content has scrolled
             if (position <= -logosContainer.scrollWidth / 2) {
                 position = 0;
             }
-            
+
             logosContainer.style.transform = `translateX(${position}px)`;
             requestAnimationFrame(animateLogos);
         }
-        
+
         // Start animation
         animateLogos();
     }
-    
+
     // Add page-specific styles
     if (!document.querySelector('#clients-styles')) {
         const styles = document.createElement('style');
@@ -1046,7 +1053,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         document.head.appendChild(styles);
     }
-    
+
     // Initialize map after styles are loaded
     setTimeout(initIndiaMap, 100);
 });
