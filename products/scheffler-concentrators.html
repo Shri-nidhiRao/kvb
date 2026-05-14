@@ -245,10 +245,20 @@
             object-fit: cover;
         }
 
-        /* Responsive: on smaller screens, reduce the width to avoid touching edges */
+        /* Responsive: on smaller screens, avoid overflow and keep layout centered */
         @media (max-width: 768px) {
             .hero-video-wrapper {
-                width: 95vw;
+                width: 100%;
+                max-width: 100%;
+                margin: 2rem auto;
+            }
+
+            .product-hero {
+                padding: 60px 0 40px;
+            }
+
+            .hero-full-width {
+                padding: 0 16px;
             }
         }
 
