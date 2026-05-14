@@ -327,13 +327,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: flex-start;
+            align-items: stretch;
             gap: 1.5rem;
             margin: 4rem 0;
             text-align: center;
         }
 
         .feature-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background: white;
             border: 1px solid var(--border-light);
             border-radius: var(--radius-md);
@@ -356,7 +359,6 @@
         .feature-card h3 {
             font-size: 1.2rem;
             margin-bottom: 0.6rem;
-        }
         }
 
         .feature-card:hover {

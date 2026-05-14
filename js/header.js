@@ -252,7 +252,6 @@
                 <a href="products/direct-cooking.html"><i class="fas fa-fire"></i> Direct Cooking</a>
                 <a href="products/solar-tunnel-dryers.html"><i class="fas fa-wind"></i> Solar Tunnel Dryers</a>
                 <a href="products/scheffler-concentrators.html"><i class="fas fa-satellite-dish"></i> Scheffler Concentrators</a>
-                <a href="products/ai-crop-detection.html"><i class="fas fa-robot"></i> AI Crop Detection</a>
                 <a href="products/thermal-storage.html"><i class="fas fa-thermometer-half"></i> Thermal Storage</a>
                 <a href="products/microgreen-systems.html"><i class="fas fa-leaf"></i> Microgreen Systems</a>
               </div>

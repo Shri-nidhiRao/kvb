@@ -685,8 +685,51 @@
         }
 
         @media (max-width: 768px) {
+            .container,
+            .hero-full-width,
+            .hero-content,
+            .highlight-tech,
+            .feature-matrix,
+            .specs-grid,
+            .applications-grid,
+            .image-gallery,
+            .tech-table-container,
+            .premium-wrapper,
+            .unlock-form-container {
+                max-width: 100%;
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                box-sizing: border-box;
+            }
+
             .container {
-                padding: 0 20px;
+                padding: 0 16px;
+            }
+
+            .hero-full-width {
+                padding: 0 16px;
+            }
+
+            .hero-video-wrapper {
+                width: 100%;
+                max-width: 100%;
+                margin: 1.5rem auto;
+            }
+
+            .highlight-tech {
+                padding: 1.8rem 1.2rem;
+                margin: 1.8rem 0;
+            }
+
+            .feature-card,
+            .spec-card,
+            .app-card {
+                padding: 1.4rem 1rem;
+            }
+
+            .product-hero {
+                padding: 60px 0 40px;
             }
 
             h1 {
