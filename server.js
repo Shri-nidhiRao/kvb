@@ -1,19 +1,21 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
+const path = require("path");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the root directory
-app.use(express.static(__dirname));
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "kvbgreenenergies@gmail.com",
-        pass: "xnnt nzfn crql bubh" // NOTE: Use a Google App Password here!
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     },
     tls: {
         rejectUnauthorized: false
@@ -30,7 +32,6 @@ transporter.verify(function (error, success) {
 });
 
 const fs = require('fs');
-const path = require('path');
 
 const logError = (msg, err) => {
     const logMsg = `[${new Date().toISOString()}] ${msg}: ${err}\n`;

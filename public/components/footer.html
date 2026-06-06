@@ -1,0 +1,264 @@
+<!-- TESLA-STYLE FOOTER WITH SOCIAL ICONS – CORRECTED SPACING -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+  .main-footer {
+    background: #2f3437;
+    color: #cfcfcf;
+    padding: 70px 30px 30px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* Grid: now 4 columns – Company (2fr), Products (1fr), Application (1fr), Contact (1fr) */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    /* increased gap for better separation */
+    margin-bottom: 50px;
+  }
+
+  .footer-col h3,
+  .footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+    /* slightly more space below headings */
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-col p {
+    line-height: 1.7;
+    color: #a8a8a8;
+    margin-bottom: 20px;
+    /* space before social icons */
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col li {
+    margin-bottom: 14px;
+    /* more breathing room between list items */
+  }
+
+  .footer-col a {
+    color: #bfbfbf;
+    text-decoration: none;
+    font-size: 0.95rem;
+    /* slightly larger for readability */
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover {
+    color: white;
+  }
+
+  /* Contact List Alignment */
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #bfbfbf;
+    line-height: 1.5;
+  }
+
+  .contact-list i {
+    color: #3A7D44;
+    margin-top: 5px; /* Align icon vertically with the first line of text */
+    flex-shrink: 0; /* Prevent the icon from shrinking when text wraps */
+  }
+
+  /* Social icons */
+  .footer-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .footer-social a {
+    width: 40px;
+    /* slightly larger for better tap target */
+    height: 40px;
+    background: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.25s;
+  }
+
+  .footer-social a:hover {
+    background: #3A7D44;
+    transform: translateY(-3px);
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    border-top: 1px solid #3a3a3a;
+    /* slightly lighter border */
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #9a9a9a;
+  }
+
+  .footer-links a {
+    margin-left: 25px;
+    color: #9a9a9a;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: white;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      /* two columns on tablet */
+      gap: 40px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .footer-links a {
+      margin: 0 12px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      /* single column on mobile */
+      gap: 30px;
+    }
+
+    .footer-col {
+      text-align: center;
+      /* center align on mobile */
+    }
+
+    .footer-social {
+      justify-content: center;
+    }
+  }
+</style>
+
+<footer class="main-footer">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+      <!-- Company Column (2fr) -->
+      <div class="footer-col">
+        <h3>KVB Green Energies</h3>
+        <p>
+          Innovating energy and transforming agriculture through solar thermal,
+          smart processing, and sustainable technologies.
+        </p>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com/kvbgreenenergies/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/people/KVB-green-Energies/100075492057443/" target="_blank"
+            aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.youtube.com/@kvbgreenenergies" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/kvb-green-energies/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Products Column (1fr) – uncommented and active -->
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="../products/solar-steam-cooking.html">Solar Steam Cooking</a></li>
+          <li><a href="../products/direct-cooking.html">Direct Cooking</a></li>
+          <li><a href="../products/solar-dryers.html">Solar Dryers</a></li>
+          <li><a href="../products/scheffler-concentrators.html">Scheffler Concentrators</a></li>
+          <li><a href="../products/microgreen-systems.html">Microgreen Systems</a></li>
+          <li><a href="../products/thermal-storage.html">Thermal Storage</a></li>
+        </ul>
+      </div>
+
+      <!-- Application Column (1fr) -->
+      <div class="footer-col">
+        <h4>Application</h4>
+        <ul>
+          <li><a href="/app/chemical-industry.html">Chemical Industry</a></li>
+          <li><a href="/app/tea-processing-industry.html">Tea Processing</a></li>
+          <li><a href="/app/leather-footwear.html">Leather & Footwear</a></li>
+          <li><a href="/app/food-processing-industry.html">Food Processing</a></li>
+          <li><a href="/app/automobile-industry.html">Automobile Industry</a></li>
+          <li><a href="/app/paper-pulp-industry.html">Paper & Pulp Industry</a></li>
+          <li><a href="/app/textile-industry.html">Textile Industry</a></li>
+          <li><a href="/app/dairy-industry.html">Dairy Industry</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column (1fr) -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-map-marker-alt"></i> 1st Floor, KLE Cite, RHk Bulding, BVB Campus, VidyaNagar, Hubli-580031</li>
+          <li><i class="fas fa-phone-alt"></i> +91 9545529950</li>
+          <li><i class="fas fa-phone-alt"></i> +91 7349716555</li>
+          <li><i class="fas fa-envelope"></i> kvbgreenenergies@gmail.com</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div>
+        © <span id="year"></span> KVB Green Energies. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>

@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>About KVB Green Energies – Renewable Energy & Smart Agriculture</title>
+  <link rel="icon" type="image/png" href="images/products/kvb-logo.png">
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* ===== GLOBAL RESET & VARIABLES (index palette) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --solar-yellow: #FDB813;
+      --deep-blue: #0B3D91;
+      --eco-green: #3A7D44;
+      --dark-charcoal: #1C1C1C;
+      --soft-white: #F9F9F9;
+      --accent-orange: #FF6F00;
+      --primary: var(--eco-green);
+      --primary-dark: #2d5a33;
+      --primary-light: #e6f3e6;
+      --shadow-sm: 0 10px 30px rgba(28, 28, 28, 0.04);
+      --shadow-hover: 0 20px 40px rgba(58, 125, 68, 0.08);
+      --border-radius: 32px;
+      --border-radius-sm: 20px;
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--dark-charcoal);
+      background-color: var(--soft-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    .cta-button {
+      background: var(--eco-green);
+      color: white !important;
+      padding: 12px 24px !important;
+      border-radius: 50px;
+    }
+
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: scale(1.02);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: var(--eco-green);
+      margin: 4px;
+      border-radius: 10px;
+    }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      margin-top: -110px; /* Offset the header spacer */
+      padding: 150px 0 80px 0; /* Increase padding to account for the overlap */
+      background: linear-gradient(135deg, #09203f, #15457c);
+      overflow: hidden;
+      color: white;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(0, 255, 135, 0.15) 0%, transparent 60%);
+      animation: pulse 8s infinite alternate;
+      z-index: 1;
+    }
+
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    
+    .hero-text-col h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 25px;
+      animation: fadeUp 1s ease;
+    }
+    
+    .hero-text-col .text-gradient {
+      background: linear-gradient(to right, #00ff87, #ff9f43);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-text-col p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      max-width: 90%;
+      animation: fadeUp 1s ease 0.2s both;
+    }
+
+    .hero-image-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      animation: floatMotion 4s ease-in-out infinite;
+      text-align: center;
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .hero-image-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .hero-image-card p {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      padding: 0 10px;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    @keyframes floatMotion {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @media (max-width: 991px) {
+      .page-hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text-col p {
+        margin: 0 auto 30px;
+      }
+      .hero-text-col h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: fadeUp 1.2s ease 0.4s both;
+    }
+
+    .breadcrumb a {
+      color: white;
+    }
+
+    .breadcrumb span {
+      color: var(--solar-yellow);
+      margin-left: 5px;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: #0B3D91; /* Blue */
+      position: relative;
+      display: block; /* Allows centering */
+      text-align: center; /* Center aligns title with subtitle */
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--solar-yellow);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #5a6b5a;
+      margin-bottom: 40px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== COMPANY STORY ===== */
+    .story-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .story-content .section-title {
+      text-align: left;
+    }
+    
+    .story-content .section-title:after {
+      left: 0;
+      transform: none;
+    }
+
+    .story-content p {
+      margin-bottom: 20px;
+      color: #2d3e40;
+    }
+
+    .story-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: var(--transition);
+    }
+
+    .story-image:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== VISION & MISSION (REDESIGN) ===== */
+    .vision-mission {
+      padding: 60px 0 80px 0;
+      background-image: url('images/backgd.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    
+    .vision-mission::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+      pointer-events: none;
+    }
+
+    .vm-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .vm-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      padding: 40px 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .vm-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    /* Watermark Icon */
+    .vm-card::before {
+      content: '\f06e';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      font-size: 100px;
+      color: rgba(58, 125, 68, 0.05);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .vm-card:nth-child(2)::before { content: '\f140'; }
+    .vm-card:nth-child(3)::before { content: '\f024'; }
+    .vm-card:nth-child(4)::before { content: '\f06c'; }
+
+    /* Wave Bottom */
+    .vm-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23f0f8f4' fill-opacity='1' d='M0,256L48,250.7C96,245,192,235,288,234.7C384,235,480,245,576,234.7C672,224,768,192,864,176C960,160,1056,160,1152,176C1248,192,1344,224,1392,240L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .vm-icon, .vm-card h3, .vm-card p, .card-divider {
+      position: relative;
+      z-index: 2;
+    }
+
+    .vm-icon {
+      width: 65px;
+      height: 65px;
+      background: var(--eco-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 26px;
+    }
+
+    .vm-card h3 {
+      color: black;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .card-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--eco-green);
+      border: none;
+      margin: 0 auto 15px auto;
+      border-radius: 2px;
+    }
+
+    .vm-card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ===== FOUNDER PROFILE ===== */
+    .founder-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .founder-profile {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .founder-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: var(--transition);
+    }
+
+    .founder-image:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .founder-details h3 {
+      font-size: 2rem;
+      color: var(--eco-green);
+      margin-bottom: 25px;
+    }
+
+    .founder-details p {
+      margin-bottom: 20px;
+      color: #2d3e40;
+    }
+
+    .founder-quote {
+      background: linear-gradient(145deg, rgba(58, 125, 68, 0.04), rgba(253, 184, 19, 0.04));
+      padding: 30px;
+      border-left: 4px solid var(--solar-yellow);
+      border-radius: 0 20px 20px 0;
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    .founder-quote i {
+      color: var(--solar-yellow);
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .team-section {
+      padding: 100px 0;
+      background: linear-gradient(145deg, #f0f7f0, #e6f0e6);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .team-img {
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .team-card:hover .team-img img {
+      transform: scale(1.1);
+    }
+
+    .team-info {
+      padding: 25px;
+    }
+
+    .team-info h4 {
+      color: black;
+      margin-bottom: 5px;
+    }
+
+    .team-info .position {
+      color: var(--solar-yellow);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .team-info .bio {
+      color: #5a6b5a;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .team-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f0f7f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark-charcoal);
+      transition: var(--transition);
+    }
+
+    .team-social a:hover {
+      background: var(--eco-green);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+
+
+    /* ===== HORIZONTAL TIMELINE SECTION ===== */
+    .timeline-section {
+      padding: 120px 0;
+      background: linear-gradient(145deg, #f0f7f0, #e6f0e6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(58, 125, 68, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(253, 184, 19, 0.05) 0%, transparent 40%);
+    }
+
+    .timeline-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-track {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right,
+          rgba(189, 189, 189, 0.3) 0%,
+          rgba(189, 189, 189, 0.6) 30%,
+          rgba(189, 189, 189, 0.8) 50%,
+          rgba(189, 189, 189, 0.6) 70%,
+          rgba(189, 189, 189, 0.3) 100%);
+      border-radius: 3px;
+      margin: 80px auto;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--solar-yellow);
+      border-radius: 3px;
+      transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(253, 184, 19, 0.5), 0 0 20px rgba(253, 184, 19, 0.3);
+    }
+
+    .tractor-indicator {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      transition: left 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .tractor {
+      background: white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(255, 255, 255, 0.8),
+        0 0 0 4px var(--solar-yellow);
+      position: relative;
+      animation: tractorBounce 3s infinite ease-in-out, tractorGlow 3s infinite alternate;
+    }
+
+    .tractor-icon {
+      font-size: 36px;
+      color: var(--solar-yellow);
+      animation: tractorPulse 2s infinite;
+    }
+
+    .tractor-wheels {
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5px;
+    }
+
+    .wheel {
+      width: 22px;
+      height: 22px;
+      background: var(--dark-charcoal);
+      border-radius: 50%;
+      border: 4px solid #555;
+      position: relative;
+      animation: wheelSpin 1.5s linear infinite;
+    }
+
+    .wheel::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 6px;
+      background: #888;
+      border-radius: 50%;
+    }
+
+    .timeline-steps {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 60px;
+    }
+
+    .timeline-step {
+      position: relative;
+      width: calc(100% / 7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .step-dot {
+      width: 24px;
+      height: 24px;
+      background: white;
+      border: 4px solid #bdbdbd;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 4;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-step.active .step-dot {
+      background: var(--solar-yellow);
+      border-color: var(--solar-yellow);
+      box-shadow:
+        0 0 0 8px rgba(253, 184, 19, 0.2),
+        0 0 0 16px rgba(253, 184, 19, 0.1),
+        0 0 20px rgba(253, 184, 19, 0.3);
+      animation: dotPulse 2s infinite;
+    }
+
+    .step-year {
+      font-weight: 800;
+      color: #78909C;
+      font-size: 22px;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .timeline-step.active .step-year {
+      color: var(--solar-yellow);
+      transform: translateY(-5px);
+    }
+
+    .step-title {
+      color: var(--dark-charcoal);
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .timeline-step.active .step-title {
+      color: var(--eco-green);
+    }
+
+    .timeline-content {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      margin-top: 80px;
+      box-shadow: var(--shadow-sm), 0 0 0 1px rgba(58, 125, 68, 0.1);
+      border: 2px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, var(--solar-yellow), var(--eco-green)) border-box;
+      min-height: 300px;
+      position: relative;
+      z-index: 3;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(253, 184, 19, 0.05) 0%, transparent 50%);
+      z-index: -1;
+    }
+
+    .timeline-content h3 {
+      color: var(--eco-green);
+      margin-bottom: 20px;
+      font-size: 28px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .timeline-content h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--solar-yellow);
+      border-radius: 2px;
+    }
+
+    .timeline-content p {
+      color: var(--dark-charcoal);
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .timeline-achievements {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .timeline-achievements li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 15px;
+      color: #78909C;
+      line-height: 1.5;
+    }
+
+    .timeline-achievements li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--eco-green);
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .timeline-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .timeline-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--eco-green);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(58, 125, 68, 0.2);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .timeline-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(58, 125, 68, 0.3);
+      background: var(--primary-dark);
+    }
+
+    .timeline-btn.secondary {
+      background: var(--solar-yellow);
+      color: #1a3a32;
+    }
+
+    .timeline-btn.secondary:hover {
+      background: #e5a80d;
+      box-shadow: 0 8px 25px rgba(253, 184, 19, 0.3);
+    }
+
+    .step-counter {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--eco-green);
+      background: rgba(58, 125, 68, 0.1);
+      padding: 10px 20px;
+      border-radius: 30px;
+      min-width: 100px;
+      text-align: center;
+    }
+
+    @keyframes tractorBounce {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%, -55%) scale(1.05);
+      }
+    }
+
+    @keyframes tractorGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.8), 0 0 0 4px var(--solar-yellow);
+      }
+
+      50% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.8), 0 0 0 4px var(--solar-yellow), 0 0 20px rgba(253, 184, 19, 0.5);
+      }
+    }
+
+    @keyframes tractorPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes wheelSpin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dotPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(253, 184, 19, 0.4), 0 0 0 0 rgba(253, 184, 19, 0.2);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(253, 184, 19, 0), 0 0 0 20px rgba(253, 184, 19, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(253, 184, 19, 0), 0 0 0 0 rgba(253, 184, 19, 0);
+      }
+    }
+
+    /* ===== AWARDS & RECOGNITION ===== */
+    .awards-section {
+      padding: 80px 0;
+      background: #3A7D44;
+    }
+    
+    .awards-section .section-title {
+      color: white;
+    }
+    
+    .awards-section .section-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 1200px) {
+      .awards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+
+    .award-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .award-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #0B3D91; /* Deep blue accent */
+      transition: all 0.3s ease;
+    }
+
+    .award-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-color: #0B3D91;
+    }
+
+    .award-card:hover::before {
+      background: #FDB813; /* Gold accent on hover */
+    }
+
+    .award-icon {
+      font-size: 45px;
+      color: #FDB813;
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+
+    .award-card h3 {
+      font-size: 1.1rem;
+      color: #1d1d1f;
+      margin-bottom: 12px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .award-card p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ===== WHY CHOOSE KVB ===== */
+    .why-choose-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      border: 1px solid rgba(58, 125, 68, 0.1);
+      transition: var(--transition);
+    }
+
+    .benefit-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--primary-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--eco-green);
+      font-size: 28px;
+      transition: var(--transition);
+    }
+
+    .benefit-card h4 {
+      color: black;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .benefit-card p {
+      color: #2d3e40;
+    }
+
+    /* ===== NEW SECTIONS ADDED ===== */
+    .content-section {
+      padding: 80px 0;
+    }
+
+    .content-section.bg-alt {
+      background: var(--soft-white);
+    }
+
+    .content-section.bg-green {
+      background: linear-gradient(135deg, #3A7D44, #1B6B53);
+      color: white;
+    }
+    
+    .content-section.bg-green .section-title {
+      color: white;
+    }
+    
+    .content-section.bg-green .section-title::after {
+      background: white;
+    }
+
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      color: #333;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(245,248,245,1) 100%);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+    }
+    
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card i {
+      font-size: 2.8rem;
+      background: linear-gradient(135deg, #3A7D44, #1B6B53);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+
+    .card h3, .card h4 {
+      font-weight: 800;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #1C1C1C;
+    }
+
+    .list-check {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .list-check li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .list-check li::before {
+      content: "✔";
+      color: var(--eco-green);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 30px 40px 20px 40px;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.6;
+      max-width: 1100px;
+      margin: 0 auto;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #3A7D44 0%, #F2C94C 100%);
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      font-weight: 700;
+    }
+
+    .highlights-content p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .highlights-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .highlights-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .highlights-list li::before {
+      content: '•';
+      color: var(--eco-green);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      top: -2px;
+    }
+
+    /* Roadmap Nodes */
+    .roadmap-nodes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .rm-node {
+      position: absolute;
+      transform: translate(-50%, 50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: auto;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    .rm-circle {
+      width: 60px;
+      height: 60px;
+      background: var(--eco-green);
+      border: 4px solid white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .rm-node:hover .rm-circle,
+    .rm-node.active .rm-circle {
+      transform: scale(1.15);
+      background: var(--solar-yellow);
+      border-color: #fff;
+    }
+
+    .rm-label {
+      margin-top: 15px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: max-content;
+      max-width: 150px;
+      transition: transform 0.3s;
+    }
+
+    .rm-node:hover .rm-label,
+    .rm-node.active .rm-label {
+      transform: translateY(-5px);
+    }
+
+    .rm-year {
+      font-weight: 700;
+      color: var(--eco-green);
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+    }
+
+    .rm-title {
+      font-size: 0.85rem;
+      color: #444;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 992px) {
+      .roadmap-wrapper {
+        height: auto;
+        background: #1e3a5f;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .roadmap-arrow { display: none; }
+      .roadmap-highlights {
+        position: relative;
+        top: 0; left: 0; width: 100%;
+        margin-bottom: 40px;
+      }
+      .roadmap-nodes {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .rm-node {
+        position: relative;
+        transform: none;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        left: 0 !important; top: 0 !important; bottom: 0 !important; right: 0 !important;
+      }
+      .rm-label {
+        margin-top: 0;
+        text-align: left;
+        max-width: none;
+        flex: 1;
+      }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 999;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--eco-green);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 15px rgba(58, 125, 68, 0.3);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 998;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--solar-yellow);
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        padding: 40px;
+        transition: 0.4s;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .story-grid,
+      .founder-profile,
+      .grid-2,
+      .vm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-image {
+        order: -1;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+    }
+
+    /* ===== INTERACTIVE CURVED ROADMAP SECTION ===== */
+    .roadmap-section {
+      padding: 80px 0;
+      background: #fdfdfd;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+    .roadmap-bg-pattern {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0.05;
+      background-image: radial-gradient(#22c55e 1.5px, transparent 1.5px);
+      background-size: 30px 30px;
+      z-index: 0;
+    }
+    
+    .roadmap-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      padding: 30px 20px 10px 20px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .roadmap-top-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      width: 100%;
+    }
+
+    /* Header Area */
+    .roadmap-header-area {
+      flex: 1;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .text-green { color: #22c55e; }
+    .text-orange { color: #FDB813; }
+    .text-blue { color: #0B3D91; }
+
+    /* Progress Card */
+    .progress-card {
+      background: #fff;
+      padding: 22px 28px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+      width: 100%;
+      max-width: 450px;
+      border: 1px solid #f1f5f9;
+    }
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: #334155;
+      font-size: 0.95rem;
+    }
+    .progress-bar-bg {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #22c55e, #FDB813);
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 4px;
+    }
+    .progress-steps {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Bottom Details Panel */
+    .details-panel {
+      width: 100%;
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+      border: 1px solid #f1f5f9;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      transition: all 0.4s ease;
+      margin-top: 50px;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .details-panel.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .bp-left {
+      min-width: 220px;
+      border-right: 1px solid #e2e8f0;
+      padding-right: 30px;
+    }
+    .bp-right {
+      flex: 1;
+    }
+    .dp-year {
+      font-size: 2.4rem;
+      color: #16a34a;
+      font-weight: 900;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .dp-title {
+      font-size: 1.25rem;
+      color: #0f172a;
+      font-weight: 800;
+    }
+    .dp-desc {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .dp-achievements {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .dp-achievements span {
+      background: #f8fafc;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #334155;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dp-achievements span::before {
+      content: '\f058';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: var(--panel-color, #22c55e);
+      font-size: 1.1rem;
+    }
+
+    /* Curve Area */
+    .roadmap-curve-area {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      z-index: 5;
+    }
+    .roadmap-svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    /* Nodes */
+    .rm-node {
+      position: absolute;
+      width: 0; height: 0;
+      z-index: 15;
+    }
+    .rm-node[data-index="0"], .rm-node[data-index="1"] { --node-color: #22c55e; --node-light: #f0fdf4; }
+    .rm-node[data-index="2"], .rm-node[data-index="3"], .rm-node[data-index="4"] { --node-color: #0B3D91; --node-light: #eff6ff; }
+    .rm-node[data-index="5"], .rm-node[data-index="6"] { --node-color: #FF6F00; --node-light: #fff3e0; }
+    
+    .rm-node-circle {
+      position: absolute;
+      left: 0; top: 0;
+      transform: translate(-50%, -50%);
+      width: 56px; height: 56px;
+      background: #fff;
+      border: 5px solid var(--node-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--node-color);
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    .rm-node-circle:hover {
+      transform: translate(-50%, -50%) scale(1.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .rm-node.active .rm-node-circle {
+      background: var(--node-color);
+      color: #fff;
+      transform: translate(-50%, -50%) scale(1.25);
+      box-shadow: 0 0 30px var(--node-color);
+      border-color: #fff;
+    }
+    /* Inner ring for active state to match the screenshot */
+    .rm-node.active .rm-node-circle::after {
+      content: '';
+      position: absolute;
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      border: 3px solid var(--node-light);
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .rm-node-line {
+      position: absolute;
+      width: 1px; height: 35px;
+      border-left: 2px dotted #cbd5e1;
+      left: 0; top: 28px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .rm-node-line.up {
+      top: auto; bottom: 28px;
+    }
+
+    .rm-node-card {
+      position: absolute;
+      width: 150px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      left: 0; top: 65px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #f1f5f9;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .rm-node-card.up {
+      top: auto; bottom: 65px;
+    }
+    .rm-node:hover .rm-node-card {
+      transform: translateX(-50%) translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+    .rm-node:hover .rm-node-card.up {
+      transform: translateX(-50%) translateY(5px);
+    }
+    .card-step {
+      font-size: 0.65rem;
+      color: var(--node-color);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .card-year {
+      font-size: 1.4rem;
+      color: var(--node-color);
+      font-weight: 900;
+      margin: 2px 0 4px 0;
+      line-height: 1;
+    }
+    .card-title {
+      font-size: 0.9rem;
+      color: #334155;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    
+    @media (max-width: 992px) {
+      .roadmap-container { height: auto; display: flex; flex-direction: column; padding: 20px; gap: 30px; }
+      .roadmap-top-row { flex-direction: column; gap: 30px; }
+      .roadmap-header-area { max-width: 100%; }
+      .progress-card { width: 100%; max-width: 100%; }
+      .roadmap-curve-area { display: none; }
+      .details-panel { width: 100%; transform: none; margin-bottom: 0px; opacity: 1; pointer-events: auto; }
+      .mobile-timeline { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+      .mobile-node { background: #fff; padding: 25px; border-radius: 12px; border-left: 5px solid var(--node-color); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+      .mobile-node .card-step { margin-bottom: 10px; display: inline-block; }
+      .mobile-node .dp-year { font-size: 1.8rem; margin-bottom: 8px; color: var(--node-color); }
+      .mobile-node .dp-title { font-size: 1.1rem; margin-bottom: 15px; color: #1e293b; }
+    }
+    @media (min-width: 993px) {
+      .mobile-timeline { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER – FIXED PATHS FOR PRODUCTS ===== -->
+  <div id="header"></div>
+
+  <!-- ===== ABOUT HERO ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-text-col">
+        <h1 data-aos="fade-right">About <br><span class="text-gradient">KVB Green Energies</span></h1>
+        <p data-aos="fade-right" data-aos-delay="100">Pioneering sustainable solar thermal technology and innovative agricultural processing solutions to power a greener tomorrow.</p>
+      </div>
+      
+      <div class="hero-image-card" data-aos="fade-left" data-aos-delay="200">
+        <img src="images/renewables.png" alt="Solar Panels">
+        <div class="card-caption">
+          <h3>Clean Energy &<br>Regenerative Growth</h3>
+          <p>Building innovative solutions for clean industries, renewable energy systems, and sustainable agricultural ecosystems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPANY STORY (updated) ===== -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-content" data-aos="fade-right">
+          <h2 class="section-title">Our Story</h2>
+          <p>KVB Green Energies is a next-generation Cleantech and Agritech company pioneering intelligent renewable
+            thermal systems and deep-tech agricultural intelligence platforms.</p>
+          <p>With over 30+ years of solar thermal expertise, we are expanding beyond clean industrial heat into
+            precision agriculture, regenerative farming intelligence, and autonomous water optimization systems —
+            delivering an integrated solution from:</p>
+        </div>
+        <div class="story-image" data-aos="fade-left">
+          <img src="images/products/WhatsApp Image 2026-04-29 at 12.26.17.jpeg" alt="Solar thermal research">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DUAL CORE EXPERTISE (new) ===== -->
+  <section class="content-section bg-green" style="padding: 40px 0;">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our Dual Core Expertise</h2>
+      <div class="grid-2">
+        <div class="card" data-aos="fade-right">
+          <i class="fas fa-solar-panel"></i>
+          <h3>CLEANTECH – Industrial Renewable Thermal Systems</h3>
+          <p>We design and deploy Parabolic Trough Solar Thermal (PTC) Systems, Concentrated Solar Technology (CST), Hybrid Solar + Boiler Integration, Thermal Energy Storage, and Industrial Process Heat Optimization.</p>
+          <p style="margin-top: 20px;"><strong>Serving:</strong> Textile • Dairy • Food Processing • Pharma • Chemical •
+            Paper • Leather • Automobile • Agro Processing</p>
+          <p style="margin-top: 10px;"><span
+              style="background: var(--primary-light); padding: 5px 10px; border-radius: 20px;">✔ 20–60% fuel reduction
+              · 2–5 year ROI</span></p>
+        </div>
+        <div class="card" data-aos="fade-left">
+          <i class="fas fa-microchip"></i>
+          <h3>AGRITECH – Deep Tech Precision Farming Platform</h3>
+          <p>Intelligent agricultural systems combining soil science, climate analytics, automation, AI-driven crop
+            protection, and regenerative performance measurement.</p>
+          <p><strong>Digital & Precision Solutions from Soil to Sale.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AGRITECH INTELLIGENCE STACK (new) ===== -->
+  <section class="content-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up" style="color: var(--deep-blue);">Our Agritech Intelligence Stack</h2>
+      <div class="grid-3">
+        <div class="card" data-aos="zoom-in"><i class="fas fa-water"></i>
+          <h4 style="color: black;">Smart Irrigation</h4>
+          <p>Closed‑loop autonomous water optimization: real‑time soil moisture, weather integration, automated control.
+            <strong>30–50% water savings.</strong>
+          </p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="50"><i class="fas fa-flask"></i>
+          <h4 style="color: black;">Soil Nutrient Intelligence</h4>
+          <p>NPK modeling, EC tracking, salinity mapping, deficiency prediction, data‑driven fertigation.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-chart-line"></i>
+          <h4 style="color: black;">Land Regeneration Index</h4>
+          <p>Quantifiable soil health: organic carbon, moisture retention, nutrient density, biological activity,
+            long‑term regeneration score.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-bacteria"></i>
+          <h4 style="color: black;">Soil Microbiome Intelligence</h4>
+          <p>Proxy‑based biological monitoring using moisture, carbon, nutrient balance, crop stress signals.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-shield-virus"></i>
+          <h4 style="color: black;">Predictive Crop Immunity</h4>
+          <p>Disease prevention before infection: climate modeling + plant stress signals for early outbreak prediction.
+          </p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-globe"></i>
+          <h4 style="color: black;">Climate Ledger</h4>
+          <p>Measurable regenerative performance: carbon impact, water efficiency, soil carbon trends, energy
+            optimization, regenerative score benchmarking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ===== FOUNDER PROFILE (unchanged) ===== -->
+  <section class="founder-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Leadership</h2>
+      <div class="founder-profile">
+        <div class="founder-image" data-aos="fade-right">
+          <img src="images/products/Ravi.png" alt="Founder">
+        </div>
+        <div class="founder-details" data-aos="fade-left">
+          <h3>Ravikumar Chavadi</h3>
+          <p>With over three decades of experience in renewable energy and sustainable technologies, our founder has
+            pioneered the development of solar thermal systems in India.</p>
+          <p>Their vision combines engineering excellence with practical solutions that address real-world challenges in
+            energy and agriculture. Under their leadership, KVB has grown from a research initiative to a nationally
+            recognized technology provider.</p>
+          <div class="founder-quote">
+            <i class="fas fa-quote-left"></i>
+            <p>"Our mission is to create technologies that not only solve immediate problems but also build sustainable
+              foundations for future generations. Every solar installation, every farmer empowered, brings us closer to
+              energy independence."</p>
+            <i class="fas fa-quote-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM SECTION (unchanged) ===== -->
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our Core Team</h2>
+      <p class="section-subtitle" data-aos="fade-up">The experts driving innovation and impact</p>
+      <div class="team-grid">
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-img"><img src="images/products/Chandrashekhar.jpeg" alt="Chandrashekhar">
+          </div>
+          <div class="team-info">
+            <h4>Chandrashekhar Kori</h4>
+            <p class="position">Operation Head</p>
+            <p class="bio">Techno-commercial leader with 20+ years of expertise in delivering integrated solar thermal
+              solutions, driving business growth through strategic sales, engineering design, project execution,
+              manufacturing coordination, and innovation across Scheffler systems, solar dryers, and sustainable energy
+              technologies. </p>
+          </div>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-img"><img src="images/products/rakesh.jpg.jpeg" alt="Rakesh">
+          </div>
+          <div class="team-info">
+            <h4>Rakesh Venkatraj</h4>
+            <p class="position">Product Head</p>
+            <p class="bio">A seasoned product leader with 15+ years of experience, serving as Product Developer, Product
+              Head, and CTO. Expert in driving end-to-end product strategy, from ideation to scalable execution, with a
+              strong focus on innovation, technology architecture, and business growth. Proven track record in building
+              high-performance teams, delivering user-centric solutions, and leading complex digital transformations
+              across industries.</p>
+          </div>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-img"><img src="images/products/WhatsApp Image 2026-04-29 at 17.50.02.jpeg"
+              alt="Sunil Dyamakkanavar">
+          </div>
+          <div class="team-info">
+            <h4>Sunil Dyamakkanavar</h4>
+            <p class="position">Embedded Software Engineer</p>
+            <p class="bio">Designing smart, connected systems with a focus on efficiency.Turning innovation into
+              practical, reliable solutions.</p>
+          </div>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-img"><img src="images/products/WhatsApp Image 2026-05-15 at 15.14.02.jpeg"
+              alt="Sunil Dyamakkanavar">
+          </div>
+          <div class="team-info">
+            <h4>Raksha Ganesh Shetty</h4>
+            <p class="position">Data Science and AI professional </p>
+            <p class="bio">With experience in Machine
+              Learning, Data Analytics, and Big Data technologies. She specializes in predictive analytics, dashboard
+              development, and database management using Python, SQL, MongoDB, PostgreSQL, and Power BI. Passionate
+              about data-driven solutions, she focuses on building intelligent systems that support business
+              decision-making and innovation.</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- ===== INTERACTIVE CURVED ROADMAP SECTION ===== -->
+  <section class="roadmap-section" id="timelineSection">
+    <div class="roadmap-bg-pattern"></div>
+    <div class="container" style="max-width: 1400px; padding: 0;">
+      <div class="roadmap-container">
+        
+        <!-- Top Row: Header & Details -->
+        <div class="roadmap-top-row">
+          <div class="roadmap-header-area">
+            <h2 class="section-title">Our Journey of Growth &amp; Impact</h2>
+            <p class="section-subtitle">Milestones that shaped our commitment to a sustainable tomorrow.</p>
+          </div>
+
+          <!-- Details Panel Removed per Request -->
+        </div>
+
+        <!-- The Roadmap Curve Area -->
+        <div class="roadmap-curve-area">
+          <svg class="roadmap-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="roadmapGrad" gradientUnits="userSpaceOnUse" x1="50" y1="200" x2="950" y2="200">
+                <stop offset="0%" stop-color="#22c55e" />
+                <stop offset="50%" stop-color="#0B3D91" />
+                <stop offset="100%" stop-color="#FF6F00" />
+              </linearGradient>
+            </defs>
+            <path d="M 50,200 L 950,200" fill="none" stroke="url(#roadmapGrad)" stroke-width="8" stroke-linecap="round"/>
+            <polygon points="935,185 965,200 935,215" fill="#FF6F00" />
+          </svg>
+
+          <div class="rm-node" data-index="0" style="left: 5%; top: 50%;">
+            <div class="rm-node-circle"><i class="fas fa-seedling"></i></div>
+            <div class="rm-node-line up"></div>
+            <div class="rm-node-card up">
+              <span class="card-year">2020</span>
+              <span class="card-title">Foundation</span>
+            </div>
+          </div>
+          <div class="rm-node" data-index="1" style="left: 20%; top: 50%;">
+            <div class="rm-node-circle"><i class="fas fa-sun"></i></div>
+            <div class="rm-node-line"></div>
+            <div class="rm-node-card">
+              <span class="card-year">2021</span>
+              <span class="card-title">Incorporation</span>
+            </div>
+          </div>
+          <div class="rm-node" data-index="2" style="left: 35%; top: 50%;">
+            <div class="rm-node-circle"><i class="fas fa-certificate"></i></div>
+            <div class="rm-node-line up"></div>
+            <div class="rm-node-card up">
+              <span class="card-year">2022</span>
+              <span class="card-title">Commercial</span>
+            </div>
+          </div>
+          <div class="rm-node active" data-index="3" style="left: 50%; top: 50%;">
+            <div class="rm-node-circle"><i class="fas fa-globe"></i></div>
+            <div class="rm-node-line"></div>
+            <div class="rm-node-card">
+              <span class="card-year">2023</span>
+              <span class="card-title">Certification</span>
+            </div>
+          </div>
+          <div class="rm-node" data-index="4" style="left: 65%; top: 50%;">
+            <div class="rm-node-circle"><i class="fas fa-leaf"></i></div>
+            <div class="rm-node-line up"></div>
+            <div class="rm-node-card up">
+              <span class="card-year">2024</span>
+              <span class="card-title">Expansion</span>
+            </div>
+          </div>
+          <div class="rm-node" data-index="5" style="left: 80%; top: 50%;">
+            <div class="rm-node-circle"><i class="fas fa-flask"></i></div>
+            <div class="rm-node-line"></div>
+            <div class="rm-node-card">
+              <span class="card-year">2025</span>
+              <span class="card-title">UNIDO</span>
+            </div>
+          </div>
+          <div class="rm-node" data-index="6" style="left: 95%; top: 50%;">
+            <div class="rm-node-circle"><i class="fas fa-chart-line"></i></div>
+            <div class="rm-node-line up"></div>
+            <div class="rm-node-card up">
+              <span class="card-year">Today</span>
+              <span class="card-title">National Scale</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Details Panel -->
+        <div class="details-panel visible" id="detailsPanel">
+          <div class="bp-left">
+            <div class="dp-year" id="dpYear">2015</div>
+            <h3 class="dp-title" id="dpTitle">UNIDO</h3>
+          </div>
+          <div class="bp-right">
+            <p class="dp-desc" id="dpDesc">Description goes here.</p>
+            <div class="dp-achievements" id="dpAchievements"></div>
+          </div>
+        </div>
+
+        <!-- Mobile Fallback -->
+        <div class="mobile-timeline" id="mobileTimeline">
+          <!-- Populated by JS -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS & RECOGNITION ===== -->
+  <section class="awards-section">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2 class="section-title" data-aos="fade-up">Awards & Recognition</h2>
+        <p class="section-subtitle" data-aos="fade-up">Honoring our commitment to innovation and sustainability</p>
+      </div>
+      
+      <div class="awards-grid">
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="award-icon"><i class="fas fa-trophy"></i></div>
+           <h3>HDFC Parivartan</h3>
+  <p>Recognized in 2024 for innovative contributions in developing Solar Tunnel Dryer technology, promoting sustainable agricultural processing and renewable energy solutions.</p>
+</div>
+<div class="award-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="award-icon"><i class="fas fa-trophy"></i></div>
+           <h3>Pusa Krushi (RKVY-RAFTAAR)</h3>
+  <p>Recognized in 2025 for advancements in Enhanced Solar Tunnel Dryer (SLD) technology, supporting sustainable agricultural innovation and energy-efficient post-harvest processing solutions.</p>
+</div>
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="award-icon"><i class="fas fa-certificate"></i></div>
+          <h3>CII Innoverge</h3>
+  <p>Recognized in 2025 for innovation in Solar Thermal Storage technology, contributing to efficient renewable energy utilization and sustainable thermal energy solutions.</p>
+</div>
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="award-icon"><i class="fas fa-medal"></i></div>
+           <h3>IIC (Institution Innovation Council)</h3>
+  <p>Recognized in 2025 for promoting innovation-driven renewable energy solutions and contributing to sustainable technological advancements through research and development initiatives.</p>
+</div>
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="300">
+  <div class="award-icon"><i class="fas fa-medal"></i></div>
+  <h3>SELCO Foundation</h3>
+  <p>Recognized in 2026 for impactful contributions toward sustainable energy innovation and the advancement of clean, community-focused renewable energy solutions.</p>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE KVB (unchanged) ===== -->
+  <section class="why-choose-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Why Choose KVB</h2>
+      <p class="section-subtitle" data-aos="fade-up">Discover why institutions and farmers across India trust our
+        solutions</p>
+      <div class="benefits-grid">
+        <div class="benefit-card" data-aos="flip-left" data-aos-delay="50">
+          <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+          <h4>Proven Technology</h4>
+          <p>Field-tested systems deployed in 100+ real-world environments across India with proven reliability and
+            performance.</p>
+        </div>
+        <div class="benefit-card" data-aos="flip-left" data-aos-delay="100">
+          <div class="benefit-icon"><i class="fas fa-award"></i></div>
+          <h4>Government Recognized</h4>
+          <p>Certified and empaneled by MNRE, UNIDO, and multiple state agencies ensuring quality and compliance.</p>
+        </div>
+        <div class="benefit-card" data-aos="flip-left" data-aos-delay="150">
+          <div class="benefit-icon"><i class="fas fa-cogs"></i></div>
+          <h4>Engineering Expertise</h4>
+          <p>Three decades of specialized solar thermal experience with patented technologies and innovative solutions.
+          </p>
+        </div>
+        <div class="benefit-card" data-aos="flip-left" data-aos-delay="200">
+          <div class="benefit-icon"><i class="fas fa-microscope"></i></div>
+          <h4>Research-Backed</h4>
+          <p>Continuous innovation through partnerships with premier educational institutions and dedicated R&D.</p>
+        </div>
+        <div class="benefit-card" data-aos="flip-left" data-aos-delay="250">
+          <div class="benefit-icon"><i class="fas fa-calendar-alt"></i></div>
+          <h4>Long Product Lifespan</h4>
+          <p>Systems engineered for 25+ years of reliable operation with minimal maintenance and maximum efficiency.</p>
+        </div>
+        <div class="benefit-card" data-aos="flip-left" data-aos-delay="300">
+          <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+          <h4>Sustainability-Driven</h4>
+          <p>Mission-focused on measurable environmental and social impact, not just profits, with clear sustainability
+            goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POSITIONING & MISSION COMBINED ===== -->
+  <section class="vision-mission">
+    <div class="container">
+      <div class="highlight-box" data-aos="flip-up" style="margin-bottom: 25px;">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <div class="highlight-box-text">
+          “KVB Green Energies integrates Solar Thermal Cleantech with Regenerative Agritech Intelligence — powering industries and transforming agriculture from <span class="text-green">soil to sale.</span>”
+        </div>
+        <div class="positioning-footer">
+          <div class="positioning-footer-text">
+            <i class="fas fa-leaf"></i>
+            – Our Positioning Statement
+          </div>
+        </div>
+      </div>
+
+      <div class="vm-grid">
+        <div class="vm-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="vm-icon"><i class="fas fa-eye"></i></div>
+          <h3>Our Vision</h3>
+          <hr class="card-divider">
+          <p>To be a global leader driving the transition towards a sustainable and carbon-neutral future through cutting-edge technologies.</p>
+        </div>
+        <div class="vm-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Our Mission</h3>
+          <hr class="card-divider">
+          <p>To deliver innovative, eco-friendly solutions that reduce carbon emissions and promote sustainable development.</p>
+        </div>
+        <div class="vm-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="vm-icon"><i class="fas fa-flag"></i></div>
+          <h3>Our Goals</h3>
+          <hr class="card-divider">
+          <p>Empowering communities and businesses to reduce emissions, lower costs, and build a resilient green ecosystem.</p>
+        </div>
+        <div class="vm-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="vm-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Our Values</h3>
+          <hr class="card-divider">
+          <p>We prioritize ethics, transparency, and trust to deliver reliable, high-quality solutions that create long-term impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="footer"></div>
+
+  <!-- WhatsApp floating button -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/9545529950" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- AOS + Mobile menu + year + timeline JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    (function () {
+
+      // ===== MOBILE MENU TOGGLE =====
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      if (hamburger) {
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        document.querySelectorAll('.nav-menu a').forEach(l => l.addEventListener('click', () => navMenu.classList.remove('active')));
+      }
+
+      // ===== COPYRIGHT YEAR =====
+      const yearEl = document.getElementById('current-year');
+      if (yearEl) yearEl.innerText = new Date().getFullYear();
+
+      // ===== STICKY HEADER =====
+      window.addEventListener('scroll', function () {
+        const header = document.querySelector('.header');
+        if (header) {
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+      });
+
+      // ===== BACK TO TOP =====
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 500) backToTop.classList.add('visible');
+        else backToTop.classList.remove('visible');
+      });
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ===== ROADMAP HOVER INTERACTION =====
+      const timelineData = [
+        {
+          year: "2020",
+          title: "Company Foundation",
+          description: "KVB Green Energies was officially established with a vision to drive sustainable innovation in renewable energy solutions. The foundation phase focused on building the company’s mission, research direction, and long-term commitment toward eco-friendly energy technologies and agricultural sustainability.",
+          achievements: ["Official company establishment","Renewable energy vision initiated","Foundation for future innovations"]
+        },
+        {
+          year: "2021",
+          title: "Certification & Official Incorporation",
+          description: "The year 2021 marked a major phase of growth and recognition for KVB Green Energies with successful business incorporation, government registrations, and technical certifications. The company gained credibility through MNRE-certified solar steam technology testing and academic validation from reputed institutions, strengthening its position in the renewable energy sector.",
+          achievements: [
+             "Partnership firm officially incorporated (11/02/2021)","16 sq.m Schiffer Dish solar steam system received MNRE cooking test certification (16/02/2021)","MSME incorporation and GST registration completed (04/09/2021)","4 sq.m test report certified by Savitribai Phule Pune University"]
+      },
+        {
+  year: "2022",
+  title: "Commercial Installation & Government Recognition",
+  description: "In 2022, KVB Green Energies achieved a major breakthrough with its first commercial solar steam cooking installation. The company also gained recognition from the Karnataka Horticulture Department, strengthening its presence in the renewable energy and sustainable agricultural technology sector.",
+  achievements: [
+    "First commercial solar steam cooking installation completed at Sri Siddharood Math, Hubli",
+    "Empanelled in Karnataka Horticulture Department, Bangalore",
+    "Expanded commercial presence in sustainable energy solutions"
+  ]
+},
+        {
+  year: "2023",
+  title: "Startup Recognition & Certification",
+  description: "The year 2023 marked an important milestone for KVB Green Energies with official startup recognition and certification. This achievement strengthened the company’s credibility, innovation potential, and position within the renewable energy and sustainable technology ecosystem.",
+  achievements: [
+    "Received official startup recognition and certification (30/05/2023)",
+    "Strengthened innovation and business credibility",
+    "Expanded recognition within the renewable energy sector"
+  ]
+},
+        {
+  year: "2024",
+  title: "Expansion & Multi-site Installations",
+  description: "In 2024, KVB Green Energies entered a major expansion phase with multiple successful installations across different locations. The company strengthened its market presence by scaling its renewable energy solutions and demonstrating the reliability and adaptability of its solar steam technology.",
+  achievements: [
+    "Completed multiple successful installations across various locations",
+    "Expanded commercial and operational presence",
+    "Demonstrated scalable renewable energy solutions"
+  ]
+},
+       {
+  year: "2025",
+  title: "Performance Recognition & International Empanelment",
+  description: "In 2025, KVB Green Energies achieved significant recognition through performance validation and international empanelment. The company received an official performance report for its solar tunnel dryers and expanded its industry credibility by being empanelled under UNIDO for CST technology initiatives.",
+  achievements: [
+    "Received performance report from UHS Bagalkot for Solar Tunnel Dryers",
+    "Empanelled in UNIDO for CST technology",
+    "Strengthened technical credibility and international recognition"
+  ]
+},{
+  year: "2026",
+  title: "Recognition & Continuous Growth",
+  description: "In 2026, KVB Green Energies continues its journey of innovation and expansion, achieving widespread recognition in the renewable energy sector. With growing industry trust, successful implementations, and continuous technological advancement, the company is steadily strengthening its impact in sustainable energy solutions.",
+  achievements: [
+    "Achieved significant recognition in the renewable energy sector",
+    "Continued expansion and business growth",
+    "Strengthened reputation through successful implementations"
+  ]
+},
+
+      ];
+
+      const rmNodes = document.querySelectorAll('.rm-node');
+      const dpYear = document.getElementById('dpYear');
+      const dpTitle = document.getElementById('dpTitle');
+      const dpDesc = document.getElementById('dpDesc');
+      const detailsPanel = document.getElementById('detailsPanel');
+      const mobileTimeline = document.getElementById('mobileTimeline');
+
+      // Populate mobile timeline
+      timelineData.forEach((data, i) => {
+        const div = document.createElement('div');
+        div.className = 'mobile-node';
+        div.setAttribute('data-index', i);
+        div.innerHTML = `
+          <div class="card-step">STEP ${i + 1}</div>
+          <div class="dp-year">${data.year}</div>
+          <div class="dp-title">${data.title}</div>
+          <p class="dp-desc">${data.description}</p>
+        `;
+        mobileTimeline.appendChild(div);
+      });
+
+      function updatePanel(index) {
+        if (!detailsPanel) return;
+
+        const data = timelineData[index];
+        
+        dpYear.textContent = data.year;
+        dpTitle.textContent = data.title;
+        dpDesc.textContent = data.description;
+        
+        const dpAchievements = document.getElementById('dpAchievements');
+        if (dpAchievements && data.achievements) {
+          dpAchievements.innerHTML = data.achievements.map(a => `<span>${a}</span>`).join('');
+        }
+
+        // Update Panel colors
+        let color = '#FF6F00';
+        if (index <= 1) color = '#22c55e';
+        else if (index <= 4) color = '#0B3D91';
+        
+        detailsPanel.style.setProperty('--panel-color', color);
+        dpYear.style.color = color;
+
+        // Animation punch
+        detailsPanel.style.transform = 'translateY(10px)';
+        detailsPanel.style.opacity = '0.5';
+        setTimeout(() => {
+          detailsPanel.style.transform = 'translateY(0)';
+          detailsPanel.style.opacity = '1';
+        }, 50);
+      }
+
+      rmNodes.forEach(node => {
+        node.addEventListener('click', () => {
+          rmNodes.forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+          const index = node.getAttribute('data-index');
+          updatePanel(index);
+        });
+        // Keep original hover support for desktop
+        node.addEventListener('mouseenter', () => {
+          rmNodes.forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+          const index = node.getAttribute('data-index');
+          updatePanel(index);
+        });
+      });
+
+      // Initialize
+      updatePanel(3); // Start with UNIDO (Step 4) active
+
+      // Load header/footer components
+      function loadComponent(id, paths) {
+        return new Promise((resolve) => {
+          const tryPath = (index) => {
+            if (index >= paths.length) {
+              resolve();
+              return;
+            }
+            fetch(paths[index])
+              .then(res => {
+                if (!res.ok) throw new Error();
+                return res.text();
+              })
+              .then(data => {
+                const el = document.getElementById(id);
+                if (el) {
+                  el.innerHTML = data;
+                  // Execute scripts
+                  const scripts = el.querySelectorAll('script');
+                  scripts.forEach(s => {
+                    const newScript = document.createElement('script');
+                    Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(s.innerHTML));
+                    s.parentNode.replaceChild(newScript, s);
+                  });
+                }
+                resolve();
+              })
+              .catch(() => tryPath(index + 1));
+          };
+          tryPath(0);
+        });
+      }
+
+      const headerPromise = loadComponent("header", ["components/header.html", "../components/header.html"]);
+      loadComponent("footer", ["components/footer.html", "../components/footer.html"]);
+
+      headerPromise.then(() => {
+        if (typeof AOS !== 'undefined') {
+          AOS.init({ duration: 800, easing: 'ease-in-out-cubic', once: true, offset: 30 });
+        }
+      });
+    })();
+  </script>
+  <script src="js/fix-logo.js"></script>
+</body>
+
+</html>

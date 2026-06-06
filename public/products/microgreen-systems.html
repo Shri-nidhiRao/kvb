@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Smart Vertical Microgreens Growing System | KVB Green Energies – Automated Indoor Farming</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>    <style>
+
+        /* ===== ECO-PROFESSIONAL THEME (matches about.html) ===== */
+        :root {
+            --solar-yellow: #FDB813;
+            --deep-blue: #0B3D91;
+            --eco-green: #3A7D44;
+            --dark-charcoal: #1C1C1C;
+            --soft-white: #F9F9F9;
+            --accent-orange: #FF6F00;
+            --primary: #3A7D44;
+            --primary-dark: #2d5a33;
+            --primary-light: #e6f3e6;
+            --shadow-sm: 0 10px 30px rgba(28,28,28,0.04);
+            --shadow-hover: 0 20px 40px rgba(58,125,68,0.08);
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
+            --border-light: #e0e8e0;
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --bg-soft: #F9F9F9;
+            --text-primary: #1C1C1C;
+            --text-secondary: #4a6741;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--soft-white);
+            color: var(--dark-charcoal);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        p { color: #4a5568; line-height: 1.7; font-size: 1.05rem; }
+
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+        /* ===== HEADER PLACEHOLDER ===== */
+        #header {
+            min-height: 80px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .product-hero {
+            position: relative;
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
+            overflow: hidden;
+            color: white;
+            padding: 100px 0 60px;
+        }
+
+        .product-hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background:
+                radial-gradient(circle at 15% 50%, rgba(0,255,135,0.12) 0%, transparent 55%),
+                radial-gradient(circle at 85% 30%, rgba(253,184,19,0.08) 0%, transparent 40%);
+            animation: heroPulse 8s infinite alternate;
+            z-index: 1;
+        }
+
+        .product-hero::after {
+            content: '';
+            position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
+            background-size: cover;
+            z-index: 2;
+        }
+
+        @keyframes heroPulse {
+            0% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        .product-hero .container {
+            position: relative; z-index: 3; text-align: center;
+        }
+
+
+
+        .product-hero h1 {
+            font-size: 4rem; font-weight: 900; line-height: 1.15; margin-bottom: 20px;
+            animation: fadeUp 0.9s ease 0.1s both;
+            background: none; color: white;
+            -webkit-text-fill-color: white;
+        }
+
+        .hero-title-highlight {
+            background: linear-gradient(135deg, #00e676, var(--solar-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline;
+        }
+
+        .product-hero p.hero-sub {
+            font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 680px;
+            margin: 0 auto 28px; line-height: 1.7;
+            animation: fadeUp 1s ease 0.2s both;
+        }
+
+        .hero-tags-row {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+            animation: fadeUp 1.1s ease 0.3s both;
+        }
+
+        .hero-tag {
+            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+            padding: 8px 20px; border-radius: 50px; font-size: 0.88rem; font-weight: 500;
+            backdrop-filter: blur(6px); color: white; display: inline-flex;
+            align-items: center; gap: 8px; transition: all 0.3s;
+        }
+
+        .hero-tag:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .hero-tag i { color: var(--solar-yellow); }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTION TITLES (matches about.html exactly) ===== */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            color: #0B3D91;
+            text-align: center;
+            position: relative;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--solar-yellow);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #5a6b5a;
+            text-align: center;
+            max-width: 680px;
+            margin: 20px auto 0;
+            line-height: 1.65;
+        }
+
+        /* ===== SCROLL REVEAL & SPACING ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.75s cubic-bezier(0.2,0.9,0.4,1.1);
+            margin-bottom: 3.5rem;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ===== SYSTEM IN ACTION SECTION ===== */
+        .system-action-section {
+            padding: 80px 0;
+            background: linear-gradient(145deg, #f0f7f0, #e6f0e6);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3.5rem;
+        }
+
+        .system-action-section::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(58,125,68,0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(253,184,19,0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .system-action-section .section-header {
+            text-align: center; margin-bottom: 48px; position: relative; z-index: 2;
+        }
+
+        /* ===== BOOTSTRAP CAROUSEL (inside eco section) ===== */
+        .kvb-carousel {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            position: relative; z-index: 2;
+            max-width: 800px; margin: 0 auto;
+            background: #fff;
+        }
+        .kvb-carousel .carousel-item img {
+            width: 100%; aspect-ratio: 16/9; height: auto; object-fit: contain; border-radius: 0;
+        }
+        .kvb-carousel .carousel-control-prev,
+        .kvb-carousel .carousel-control-next {
+            width: 52px; height: 52px;
+            background: rgba(255,255,255,0.92);
+            border-radius: 50%;
+            top: 50%; transform: translateY(-50%);
+            margin: 0 16px; opacity: 1;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        .kvb-carousel .carousel-control-prev:hover,
+        .kvb-carousel .carousel-control-next:hover {
+            background: white; transform: translateY(-50%) scale(1.08);
+        }
+        .kvb-carousel .carousel-control-prev { left: 10px; }
+        .kvb-carousel .carousel-control-next { right: 10px; }
+        .kvb-carousel .carousel-control-prev-icon,
+        .kvb-carousel .carousel-control-next-icon {
+            filter: invert(1) brightness(0); width: 20px; height: 20px;
+        }
+        .kvb-carousel .carousel-indicators li {
+            background-color: var(--eco-green);
+            width: 10px; height: 10px; border-radius: 50%; border: none;
+            margin: 0 4px;
+        }
+        .kvb-carousel .carousel-indicators li.active {
+            background-color: var(--solar-yellow);
+            transform: scale(1.3);
+        }
+        @media (max-width: 768px) {
+            .kvb-carousel .carousel-item img { height: auto; }
+        }
+
+        /* ===== OVERVIEW / HIGHLIGHT TECH ===== */
+        .highlight-tech {
+            background: white;
+            border-left: 5px solid var(--eco-green);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 2.5rem 2.5rem;
+            margin: 0 0 3.5rem 0;
+            box-shadow: var(--shadow-sm);
+            position: relative; overflow: hidden;
+        }
+
+        .highlight-tech::before {
+            content: '';
+            position: absolute; top: 0; right: 0;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(58,125,68,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .highlight-tech h1, .highlight-tech h2 {
+            font-size: 1.8rem; margin-bottom: 1rem;
+            color: var(--dark-charcoal);
+            background: none; -webkit-text-fill-color: inherit;
+        }
+
+        .highlight-tech p {
+            font-size: 1.08rem; line-height: 1.75; color: #2d3e40;
+        }
+
+        .highlight-tech strong { color: var(--eco-green); }
+
+        /* ===== FEATURE MATRIX ===== */
+        .feature-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #d0e8d0;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative; overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(to bottom, var(--eco-green), var(--solar-yellow));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--eco-green);
+            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
+        }
+
+        .feature-card i {
+            font-size: 2rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem; margin-bottom: 1rem; color: var(--dark-charcoal);
+        }
+
+        .feature-list { list-style: none; padding: 0; margin: 0; }
+        .feature-list li {
+            margin-bottom: 0.65rem; padding-left: 1.4rem;
+            position: relative; font-size: 0.95rem;
+            line-height: 1.5; color: #4a5568;
+        }
+        .feature-list li::before {
+            content: "▹"; position: absolute; left: 0;
+            color: var(--eco-green); font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .feature-matrix { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
+
+        /* ===== TABLES ===== */
+        .soft-table {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid #d0e8d0;
+            overflow-x: auto;
+            margin: 0 0 3.5rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+
+
+        .soft-table table { width: 100%; border-collapse: collapse; }
+        .soft-table th, .soft-table td {
+            padding: 1rem 1.5rem; text-align: left;
+            border-bottom: 1px solid #e8f4e8;
+            font-size: 0.97rem;
+        }
+        .soft-table th {
+            background: linear-gradient(135deg, #3A7D44, #2d5a33);
+            color: white; font-weight: 600; letter-spacing: 0.02em;
+        }
+        .soft-table tr:hover td { background: #f5fbf5; }
+        .soft-table tr:last-child td { border-bottom: none; }
+
+        /* ===== APPLICATIONS GRID ===== */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .app-card {
+            background: white;
+            border: 1px solid #d0e8d0;
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative; overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-card::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--eco-green), var(--solar-yellow));
+            opacity: 0; transition: opacity 0.3s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--eco-green);
+            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
+        }
+
+        .app-card:hover::after { opacity: 1; }
+
+        .app-card i {
+            font-size: 2.4rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
+        }
+        .app-card h3 { font-size: 1.1rem; color: var(--dark-charcoal); }
+
+        /* ===== GENERIC CARDS ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem; margin-top: 3rem;
+        }
+
+        .card {
+            background: white; border: 1px solid #d0e8d0;
+            border-radius: var(--radius-md); padding: 2rem;
+            transition: all 0.3s; box-shadow: var(--shadow-sm);
+        }
+        .card:hover {
+            transform: translateY(-6px); border-color: var(--eco-green);
+            box-shadow: 0 20px 40px rgba(58,125,68,0.1);
+        }
+        .card i { font-size: 2.4rem; color: var(--eco-green); margin-bottom: 1.2rem; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+
+        /* ===== BENEFITS GRID ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            border: 1px solid #d0e8d0;
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--eco-green), var(--solar-yellow));
+            opacity: 0; transition: opacity 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--eco-green);
+            box-shadow: 0 15px 30px rgba(58,125,68,0.1);
+        }
+
+        .benefit-card:hover::after { opacity: 1; }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--eco-green);
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ===== PREMIUM UNLOCK ===== */
+        .premium-wrapper {
+            margin: 3.5rem auto 0;
+            max-width: 900px;
+            display: none;
+        }
+
+        .lock-card {
+            background: white;
+            border: 2px dashed #c0d8c0;
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lock-card:hover {
+            border-color: var(--eco-green);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
+        }
+
+        .lock-icon {
+            font-size: 3.5rem; color: var(--eco-green); margin-bottom: 1rem;
+        }
+
+        .btn-outline {
+            display: inline-block; border: 2px solid var(--eco-green);
+            background: transparent; color: var(--eco-green);
+            padding: 0.7rem 2rem; border-radius: 50px; font-weight: 600;
+            transition: all 0.3s; cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--eco-green); color: white;
+        }
+
+        .form-container {
+            background: white; border: 1px solid #d0e8d0;
+            border-radius: var(--radius-lg); padding: 2.5rem;
+            margin-top: 2rem; display: none;
+            box-shadow: 0 20px 40px rgba(58,125,68,0.08);
+        }
+        .form-container.visible { display: block; animation: fadeUp 0.5s ease; }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .form-group.full { grid-column: span 2; }
+
+        input, select, textarea {
+            width: 100%; padding: 0.9rem 1rem;
+            background: var(--soft-white);
+            border: 1px solid #d0e8d0;
+            border-radius: var(--radius-sm);
+            font-family: inherit; font-size: 0.97rem; transition: 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none; border-color: var(--eco-green);
+            box-shadow: 0 0 0 3px rgba(58,125,68,0.1);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--eco-green), var(--primary-dark));
+            width: 100%; padding: 1rem; border-radius: 50px;
+            font-weight: 700; color: white; border: none; cursor: pointer;
+            font-size: 1rem; transition: all 0.3s; letter-spacing: 0.03em;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(58,125,68,0.3);
+        }
+
+        .hidden-content { display: none; margin-top: 2rem; }
+        .hidden-content.visible { display: block; }
+
+        .success-banner {
+            background: var(--primary-light);
+            border-left: 4px solid var(--eco-green);
+            padding: 1rem 1.5rem; border-radius: var(--radius-md);
+            margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
+        }
+
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem; margin: 2rem 0;
+        }
+
+        .premium-card {
+            background: linear-gradient(145deg, #f0f7f0, #e8f4e8);
+            border-radius: var(--radius-md); padding: 1.5rem;
+            text-align: center; border: 1px solid #d0e8d0;
+            transition: all 0.3s;
+        }
+        .premium-card:hover { transform: translateY(-4px); }
+        .premium-card i { font-size: 2rem; color: var(--eco-green); margin-bottom: 0.8rem; display: block; }
+
+        /* ===== FOOTER ===== */
+        .footer-light {
+            background: #1C1C1C; color: white;
+            padding: 2rem; text-align: center;
+        }
+        /* STANDARD SECTION TITLE & SUBTITLE OVERRIDE */
+        h2.section-title, .section-title h2, div.section-title h2 {
+            font-size: 2.5rem !important;
+            color: #0B3D91 !important;
+            text-align: center !important;
+            margin-bottom: 25px !important;
+            display: block !important;
+            position: relative !important;
+            width: 100% !important;
+        }
+        h2.section-title:after, .section-title h2:after, div.section-title h2:after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: -10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 80px !important;
+            height: 4px !important;
+            background: #FDB813 !important;
+            border-radius: 2px !important;
+        }
+        p.section-subtitle, .section-subtitle {
+            font-size: 1.15rem !important;
+            color: var(--text-secondary) !important;
+            text-align: center !important;
+            max-width: 800px !important;
+            margin: 0 auto 2rem auto !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <!-- HERO SECTION -->
+    <section class="product-hero">
+        <div class="container">
+            <h1>Smart <span class="hero-title-highlight">Microgreens</span> Growing System</h1>
+            <p class="hero-sub">A complete automated vertical farming solution for high-yield pesticide-free microgreen cultivation by KVB Green Energies.</p>
+            <div class="hero-tags-row">
+                <span class="hero-tag"><i class="fas fa-seedling"></i> Vertical Farming</span>
+                <span class="hero-tag"><i class="fas fa-microchip"></i> IoT Sensors</span>
+                <span class="hero-tag"><i class="fas fa-leaf"></i> Pesticide Free</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Moved System in Action Gallery -->
+        <section class="system-action-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">System in Action</h2>
+                    <p class="section-subtitle">See our technology deployed and working in real-world environments.</p>
+                </div>
+                <div id="microgreenCarousel" class="carousel slide kvb-carousel" data-ride="carousel" data-interval="2000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../images/products/micro.jpg" class="d-block w-100" alt="Smart Vertical Microgreens System">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/products/Screenshot 2026-04-21 171930.png" class="d-block w-100" alt="Microgreens System">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/products/Screenshot 2026-04-21 171957.png" class="d-block w-100" alt="Microgreens System">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/products/Screenshot 2026-04-21 172020.png" class="d-block w-100" alt="Microgreens System">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#microgreenCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#microgreenCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" style="padding: 60px 32px;">
+        <div class="reveal highlight-tech">
+            <div style="margin-bottom: 0.5rem;">
+                <h2 style="margin-bottom: 0.5rem;">Complete Indoor Farming Solution</h2>
+            </div>
+            <p>The <strong>Smart Vertical Microgreens Growing System</strong> is a compact, sensor‑driven indoor farming
+                solution designed to enable high‑quality, pesticide‑free microgreens production in a fully controlled
+                environment. Unlike conventional systems that focus only on lighting or hydroponics, this system
+                integrates production, environmental control, automation, and performance evaluation into a single unit
+                – making it suitable for urban farming, research, and commercial applications. This approach addresses a
+                key gap identified across multiple research studies, where no single system integrates growth, control,
+                and post‑harvest considerations together.</p>
+        </div>
+
+        <!-- 2x2 Feature Matrix (Core Capabilities) -->
+        <div class="reveal">
+            <h2 class="section-title">Core Capabilities</h2>
+            <p class="section-subtitle">Everything you need for clean energy performance — engineered and field-tested.</p>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-temperature-low"></i>
+                    <h3>Temperature Control</h3>
+                    <ul class="feature-list">
+                        <li>Continuous monitoring</li>
+                        <li>Cooling fan auto ON if limit exceeded</li>
+                        <li>Ensures optimal growth range</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Lighting Control</h3>
+                    <ul class="feature-list">
+                        <li>LED grow lights (Red + Blue spectrum)</li>
+                        <li>Programmable day/night cycles</li>
+                        <li>Optional UV‑A enhancement</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Intelligent Irrigation</h3>
+                    <ul class="feature-list">
+                        <li>Manual, Timer‑Based, or Moisture‑Based (Smart) Modes</li>
+                        <li>Soil moisture sensing prevents over‑irrigation</li>
+                        <li>Pump & valve auto‑control</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Environmental Monitoring</h3>
+                    <ul class="feature-list">
+                        <li>Temperature & humidity sensors</li>
+                        <li>Soil moisture display</li>
+                        <li>Real‑time control panel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Configuration Table -->
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">System Configuration</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Specification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>System Type</strong></td>
+                        <td>Vertical Indoor Microgreens Growth Chamber</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Structure Size</strong></td>
+                        <td>Approx. 750 × 550 × 1200 mm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Layers</strong></td>
+                        <td>Multi‑layer tray system (3 levels)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Structure Type</strong></td>
+                        <td>Enclosed controlled cabinet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Material</strong></td>
+                        <td>Aluminum / SS / Powder‑coated MS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Installation</strong></td>
+                        <td>Floor‑mounted compact unit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Lighting System</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Specification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Light Type</strong></td>
+                        <td>LED grow lights (Red + Blue spectrum)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Optional</strong></td>
+                        <td>UV‑A enhancement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Placement</strong></td>
+                        <td>Mounted under each layer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Light Cycle</strong></td>
+                        <td>Controlled via timer (e.g., 18h OFF / 6h ON configurable)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purpose</strong></td>
+                        <td>Photosynthesis + growth optimization</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Irrigation & Water System</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Specification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Water Source</strong></td>
+                        <td>Bottom reservoir tank</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Distribution</strong></td>
+                        <td>Pump‑based / spray system</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Control</strong></td>
+                        <td>Automated valve‑based irrigation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Irrigation Type</strong></td>
+                        <td>Mist / controlled watering</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Environmental Monitoring & Airflow Tables -->
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Airflow & Environmental Control</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Specification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ventilation</strong></td>
+                        <td>Exhaust fan system</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Function</strong></td>
+                        <td>Temperature & humidity control</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Airflow Type</strong></td>
+                        <td>Continuous circulation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Placement</strong></td>
+                        <td>Rear / top‑mounted airflow system</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Environmental Monitoring</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Temperature</strong></td>
+                        <td>Maintains optimal growth range</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Humidity</strong></td>
+                        <td>Controls moisture environment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Soil Moisture</strong></td>
+                        <td>Determines irrigation need</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Display</strong></td>
+                        <td>Real‑time monitoring panel</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Smart Automation Logic Description (as a table or descriptive section) -->
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Smart Automation Logic</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mode / Feature</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Temperature Control</strong></td>
+                        <td>System monitors continuously; if temperature exceeds set limit → cooling fan ON, else OFF.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lighting Control</strong></td>
+                        <td>Automated timer‑based lighting cycle (e.g., 18h OFF / 6h ON, configurable).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Irrigation – Manual Mode</strong></td>
+                        <td>User‑controlled ON/OFF.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Irrigation – Timer Mode</strong></td>
+                        <td>Irrigation at fixed intervals.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Irrigation – Smart Mode</strong></td>
+                        <td>Checks soil moisture periodically; if below threshold → pump ON, valve opens, water sprayed;
+                            auto OFF after set duration.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Growing Capacity & Suitable Crops -->
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Growing Capacity & Crops</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Trays per Layer</strong></td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Capacity</strong></td>
+                        <td>5 compartment 10 trays</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crop Cycle</strong></td>
+                        <td>7–14 days</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crop Types</strong></td>
+                        <td>Microgreens (sunflower, radish, wheatgrass), leafy greens (lettuce, spinach), herbs (basil,
+                            coriander)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Applications – five cards, one row -->
+        <div class="reveal">
+            <h2 class="section-title">Perfect For</h2>
+            <p class="section-subtitle">A versatile automated farming chamber, ideal for multiple applications and users.</p>
+            <div class="applications-grid">
+                <div class="app-card"><i class="fas fa-city"></i>
+                    <h3>Urban Farming</h3>
+                    <p>Fresh produce in limited space</p>
+                </div>
+                <div class="app-card"><i class="fas fa-flask"></i>
+                    <h3>Research Labs</h3>
+                    <p>Controlled environment studies</p>
+                </div>
+                <div class="app-card"><i class="fas fa-store"></i>
+                    <h3>Commercial Growers</h3>
+                    <p>High‑quality microgreens</p>
+                </div>
+                <div class="app-card"><i class="fas fa-school"></i>
+                    <h3>Educational Institutions</h3>
+                    <p>Hands‑on agri‑tech learning</p>
+                </div>
+                <div class="app-card"><i class="fas fa-utensils"></i>
+                    <h3>Restaurants & Chefs</h3>
+                    <p>Fresh, chemical‑free greens</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Safety, Benefits & Power Requirements Table -->
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Safety, Benefits & Power</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hygiene & Safety</strong></td>
+                        <td>Fully enclosed dust‑free chamber, food‑grade surfaces, low‑voltage safe operation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key Benefits</strong></td>
+                        <td>Year‑round farming, 80–90% water savings, faster cycles, chemical‑free, space‑efficient</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Power Requirements</strong></td>
+                        <td>Low voltage DC system; adapter powered (solar optional); energy‑efficient LED + pump + fan
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Optional Upgrades Table -->
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+            <h2 class="section-title">Optional Upgrades</h2>
+        </div>
+        <div class="reveal soft-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Add‑on</th>
+                        <th>Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IoT‑based Remote Monitoring</td>
+                        <td>Real‑time data, alerts, analytics</td>
+                    </tr>
+                    <tr>
+                        <td>AI‑based Crop Advisory (AgroSense)</td>
+                        <td>Yield optimization, growth recommendations</td>
+                    </tr>
+                    <tr>
+                        <td>UV‑A Lighting Enhancement</td>
+                        <td>Increased nutritional value, pathogen control</td>
+                    </tr>
+                    <tr>
+                        <td>Data Logging for Research</td>
+                        <td>Exportable growth data for studies</td>
+                    </tr>
+                    <tr>
+                        <td>Solar Power Integration</td>
+                        <td>Off‑grid operation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Health Benefits Section -->
+        <div class="reveal">
+            <h2 class="section-title">Health Benefits for End Customers</h2>
+            <p class="section-subtitle">Supercharge your daily nutrition with fresh, locally grown microgreens.</p>
+            <div class="feature-matrix">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Core Nutrition & Protection</h3>
+                    <ul class="feature-list">
+                        <li><strong>High Nutrient Density:</strong> Contains 30–40x more vitamins & minerals</li>
+                        <li><strong>Boosts Immunity:</strong> Rich in vitamin C, E, and antioxidants</li>
+                        <li><strong>Supports Heart Health:</strong> Reduces cholesterol & improves cardio function</li>
+                        <li><strong>Helps Manage Diabetes:</strong> Low glycemic, supports blood sugar control</li>
+                        <li><strong>Anti-Inflammatory:</strong> Reduces inflammation and supports overall wellness</li>
+                        <li><strong>Improves Brain Function:</strong> Antioxidants protect brain cells and enhance focus</li>
+                        <li><strong>Rich in Antioxidants:</strong> Fights free radicals and slows aging</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Wellness & Vitality</h3>
+                    <ul class="feature-list">
+                        <li><strong>Good for Eye Health:</strong> Contains carotenoids like lutein & beta-carotene</li>
+                        <li><strong>Supports Bone Strength:</strong> Source of calcium, magnesium, and essential minerals</li>
+                        <li><strong>Aids Digestion:</strong> High fiber content improves gut health</li>
+                        <li><strong>Weight Management:</strong> Low calorie, high nutrition food</li>
+                        <li><strong>Detoxifies the Body:</strong> Helps remove toxins naturally</li>
+                        <li><strong>Skin & Hair Health:</strong> Nutrients support glowing skin and stronger hair</li>
+                        <li><strong>Chemical-Free & Safe:</strong> Grown in a controlled environment without residues</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Premium Unlock -->
+        <div class="premium-wrapper reveal">
+            <div id="lockContainer" class="lock-card">
+                <div class="lock-icon"><i class="fas fa-lock"></i></div>
+                <h3>Get Full Technical Documentation</h3>
+                <p>Download detailed engineering drawings, automation logic diagrams, research validation, and ROI
+                    calculator for the Smart Vertical Microgreens Growing System.</p>
+                <span class="btn-outline"
+                    style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Request Information
+                    →</span>
+            </div>
+
+            <div id="unlockFormContainer" class="form-container">
+                <h3>Access Technical Library</h3>
+                <p>Enter your details – we’ll send the complete technical package.</p>
+                <form id="premiumForm">
+                    <div class="form-grid">
+                        <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required>
+                        </div>
+                        <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required>
+                        </div>
+                        <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
+                        <div class="form-group"><input type="text" id="organization"
+                                placeholder="Organization / Business"></div>
+                        <div class="form-group full"><textarea rows="2" id="message"
+                                placeholder="Tell us about your growing requirements..."></textarea></div>
+                        <input type="hidden" id="productName" value="Smart Vertical Microgreens Growing System">
+                        <div class="form-group full"><button type="submit" class="btn-submit"><i
+                                    class="fas fa-unlock-alt"></i> Unlock Technical Library</button></div>
+                    </div>
+                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No
+                        spam.</p>
+                </form>
+            </div>
+
+            <div id="hiddenPremiumContent" class="hidden-content">
+                <div id="successMessage" class="success-banner" style="display: none;"><i
+                        class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your technical library is
+                    ready.</div>
+                <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
+                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
+                    <div class="premium-grid">
+                        <div class="premium-card"><i class="fas fa-file-pdf"></i>
+                            <h4>Engineering Drawings</h4>
+                            <p>CAD files, system layout, wiring diagrams</p><span style="color: var(--primary);">✓
+                                PDF</span>
+                        </div>
+                        <div class="premium-card"><i class="fas fa-chart-line"></i>
+                            <h4>ROI Calculator</h4>
+                            <p>Custom Excel – cost, yield, payback</p><span style="color: var(--primary);">✓
+                                included</span>
+                        </div>
+                        <div class="premium-card"><i class="fas fa-video"></i>
+                            <h4>Installation Videos</h4>
+                            <p>Step‑by‑step assembly & operation</p><span style="color: var(--primary);">✓ watch</span>
+                        </div>
+                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i>
+                            <h4>Case Studies</h4>
+                            <p>Urban farms, research labs – real data</p><span style="color: var(--primary);">✓
+                                read</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
+                        <p><strong>🏆 Success stories:</strong> Urban farm, Bengaluru – 3 units installed, 85% water
+                            savings, 14‑day cycle. Research institution, Pune – used for lighting optimization study,
+                            published in agri‑tech journal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <!-- Universal Footer -->
+    <div id="footer"></div>
+
+    
+    
+
+    <!-- GLOBAL COMPONENT LOADER -->
+    <script>
+        (function() {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
+                    .then(html => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            el.innerHTML = html;
+                            // Execute scripts
+                            const scripts = el.querySelectorAll('script');
+                            scripts.forEach(s => {
+                                const newScript = document.createElement('script');
+                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                                newScript.appendChild(document.createTextNode(s.innerHTML));
+                                s.parentNode.replaceChild(newScript, s);
+                            });
+                        }
+                    }).catch(console.error);
+            }
+            window.BASE_PATH = "../";
+            loadComponent('header', '../components/header.html');
+            loadComponent('footer', '../components/footer.html');
+        })();
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Bootstrap carousel is initialized via data-ride attribute
+        });
+    </script>
+    <!-- Bootstrap 4 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

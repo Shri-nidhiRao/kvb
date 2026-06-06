@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>SolarTherm | Parabolic Trough Solar Steam for Paper & Pulp Industry</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        :root {
+            --green-accent: #3A7D44;
+            --green-light: #e6f4ea;
+            --gray-bg: #f5f5f7;
+            --card-border: rgba(0, 0, 0, 0.06);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            --radius-xl: 32px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+        }
+
+        
+        .hero-section {
+            background-color: #2E7D32;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
+            background-size: cover; z-index: 2;
+        }
+        .hero-section .badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .hero-section p {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #0B3D91;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FF9800;
+            border-radius: 2px;
+        }
+
+        .section-subhead { margin-left: auto; margin-right: auto;
+            font-size: 1.2rem;
+            color: #5a6b5a;
+            max-width: 700px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary i {
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #1f553a;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(44, 110, 73, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #d2d2d6;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: #1d1d1f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--green-accent);
+            background: #f9faf9;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.8rem;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card i {
+            font-size: 2.4rem;
+            color: var(--green-accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .card h4 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .stat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            background: var(--gray-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-xl);
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--green-accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #6e6e73;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            border-bottom: 1px solid #efeff1;
+        }
+
+        .feature-list i {
+            color: var(--green-accent);
+            width: 24px;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            padding: 100px 0;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        .section-alt {
+            background-color: var(--gray-bg);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--green-light);
+            color: var(--green-accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .img-soft {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .img-soft:hover {
+            transform: scale(1.01);
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin: 2rem 0;
+            align-items: stretch;
+        }
+
+        .step {
+            flex: 1 1 calc(33.333% - 1.25rem);
+            min-width: 140px;
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border: 1px solid #e9e9ed;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #3a3a3c;
+            line-height: 1.4;
+        }
+
+        .step i.step-icon {
+            font-size: 1.5rem;
+            color: var(--green-accent);
+        }
+
+        .step-number {
+            background: var(--green-accent);
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .cta-block {
+            background: #1d1d1f;
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-block h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-block .btn-primary {
+            background: white;
+            color: #1d1d1f;
+        }
+
+        .cta-block .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #86868b;
+            border-top: 1px solid #e9e9ed;
+        }
+
+        .carousel-container {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+        }
+
+        .carousel-image {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+            transition: all 0.2s;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--green-accent);
+            color: white;
+        }
+
+        .carousel-arrow.left {
+            left: 15px;
+        }
+
+        .carousel-arrow.right {
+            right: 15px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .6);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        @media (max-width: 900px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 24px;
+            }
+
+            .stat-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+
+            .cta-block {
+                padding: 2rem;
+            }
+
+            .cta-block h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* ===== Premium Smart Solution Redesign ===== */
+        .smart-solution-redesign { max-width: 1100px; margin: 0 auto; text-align: center; font-family: 'Inter', sans-serif; }
+        
+        .section-divider { display: flex; align-items: center; justify-content: center; margin: 1.5rem 0 1rem; gap: 15px; }
+        .divider-line { height: 1px; background: #3A7D44; flex-grow: 1; max-width: 150px; position: relative; }
+        .divider-line::before { content: ''; position: absolute; width: 6px; height: 6px; background: #3A7D44; border-radius: 50%; top: -2.5px; }
+        .divider-line.left::before { right: 0; }
+        .divider-line.right::before { left: 0; }
+        .divider-text { font-size: 1.4rem; color: #3A7D44; font-weight: 700; margin: 0; }
+
+        .solution-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
+        .solution-card { background: #ffffff; border: 1px solid #eaeaea; border-radius: 12px; padding: 1.5rem 1rem; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); position: relative; overflow: hidden; transition: transform 0.3s ease; }
+        .solution-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+        .solution-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; }
+        .card-green::after { background: #3A7D44; }
+        .card-light-green::after { background: #9dcd5a; }
+        .card-yellow::after { background: #fbc02d; }
+        .card-blue::after { background: #1565c0; }
+
+        .card-icon-circle { width: 50px; height: 50px; background: #eef7f0; color: #3A7D44; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+        .card-text { font-size: 0.9rem; color: #515154; line-height: 1.4; }
+        .card-text strong { color: #1d1d1f; display: block; margin-bottom: 5px; font-size: 1.05rem; }
+
+        .impact-box { background: #f6fcf8; border: 1px solid #e3f2e8; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .impact-left { display: flex; align-items: center; gap: 12px; border-right: 2px solid #e3f2e8; padding-right: 1.5rem; }
+        .impact-main-icon { font-size: 2.2rem; color: #3A7D44; }
+        .impact-title { font-size: 1.2rem; font-weight: 700; color: #3A7D44; line-height: 1.3; }
+        
+        .impact-items { display: flex; gap: 1.5rem; flex-grow: 1; justify-content: space-around; }
+        .impact-item { display: flex; align-items: center; gap: 12px; text-align: left; }
+        .impact-icon { width: 36px; height: 36px; background: #3A7D44; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+        .impact-item-text { font-size: 0.85rem; color: #1d1d1f; line-height: 1.3; }
+        .impact-item-text strong { display: block; font-size: 0.95rem; }
+
+        .impact-conclusion-bar { background: #3A7D44; color: white; border-radius: 8px; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.05rem; font-weight: 500; }
+        .impact-conclusion-bar .fa-check-circle { color: #ffffff; font-size: 1.2rem; }
+        .highlight-yellow { color: #ffca28; }
+
+        @media (max-width: 1024px) {
+            .solution-grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .impact-box { flex-direction: column; align-items: flex-start; }
+            .impact-left { border-right: none; border-bottom: 2px solid #e3f2e8; padding-right: 0; padding-bottom: 1rem; width: 100%; justify-content: center; }
+            .impact-items { flex-direction: column; width: 100%; gap: 1.25rem; }
+        }
+        @media (max-width: 600px) {
+            .solution-grid-4 { grid-template-columns: 1fr; }
+            .impact-conclusion-bar { font-size: 0.9rem; text-align: center; flex-direction: column; }
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="hero-section">
+<div class="container" style="padding-top: 6rem; padding-bottom: 5rem;">
+            <div class="grid-2" style="gap: 2rem;">
+                <div>
+                    
+                    <h1>Parabolic Trough <span style="color: #FF9800;">Solar Steam</span><br>for Paper & Pulp Industry</h1>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #515154; max-width: 90%; margin-bottom: 30px;">Cut fuel costs up to 60% <i
+                            class="fas fa-arrow-right"></i>
+                        Dryer sections, evaporation, chemical recovery <i class="fas fa-arrow-right"></i> 120–250°C
+                        solar steam</p>
+
+                </div>
+                <div>
+                    <style>
+                        @keyframes floatHeroCard {
+                            0% { transform: translateY(0px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+                            50% { transform: translateY(-12px); box-shadow: 0 25px 30px rgba(0,0,0,0.15); }
+                            100% { transform: translateY(0px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+                        }
+                    </style>
+                    <div class="card" style="padding: 1rem; border-radius: 24px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); margin: -3rem auto 0 auto; width: 85%; animation: floatHeroCard 6s ease-in-out infinite;">
+                        <img class="img-soft"
+                            src="../images/products/WhatsApp Image 2026-03-23 at 12.50.52.jpeg"
+                            alt="KVB Parabolic Trough for Paper Industry" style="max-height: 280px; width:100%; object-fit: cover; display: block; border-radius: 12px; margin: 0 auto; box-shadow: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                </div>
+
+        <!-- 1. Pain Area — Massive Steam Demand -->
+        <div class="section">
+            <div class="container">
+                <style>
+        .pain-area-redesign {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pain-left {
+            text-align: left;
+        }
+
+        .pain-left .badge {
+            background: #fff8eb;
+            color: #FF6F00;
+            border: 1px solid #ffeccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .pain-left p {
+            font-size: 1.15rem;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .pain-left .feature-list li {
+            font-size: 1.05rem;
+            color: #000000;
+            padding: 8px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .pain-left .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .pain-left .feature-list i {
+            color: #1d1d1f;
+            width: 25px;
+        }
+
+        .pain-right {
+            position: relative;
+        }
+
+        .impact-card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(255, 111, 0, 0.08), 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255, 111, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: linear-gradient(90deg, #FDB813, #FF6F00);
+        }
+
+        .impact-header {
+            background: #fffcf8;
+            padding: 1.25rem 1.5rem 1rem;
+            border-bottom: 1px solid #fdf0d8;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pulse-icon {
+            width: 45px; height: 45px;
+            background: #fff5e6;
+            color: #FF6F00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.4);
+            animation: pulse-orange 2s infinite;
+        }
+
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 111, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0); }
+        }
+
+        .impact-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #1d1d1f;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .impact-body {
+            padding: 1.25rem 1.5rem;
+        }
+
+        .impact-body ul {
+            list-style: none;
+            padding: 0; margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .impact-body li {
+            padding: 8px 0;
+            font-size: 1.05rem;
+            color: #3a3a3c;
+            line-height: 1.5;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .impact-body li:last-child {
+            border-bottom: none;
+        }
+
+        .impact-footer {
+            background: #fffcf8;
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid #fdf0d8;
+        }
+
+        .impact-footer p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #FF6F00;
+            font-weight: 500;
+            font-style: italic;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .impact-footer p i {
+            margin-top: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .pain-area-redesign {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .pain-left {
+                text-align: center;
+            }
+            .pain-left .feature-list {
+                text-align: left;
+            }
+        }
+        </style>
+
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2>Massive steam demand, massive energy cost</h2>
+        </div>
+        <div class="pain-area-redesign">
+            <div class="pain-left">
+                <p>Paper and pulp manufacturing is one of the most energy-intensive industrial sectors. From pulping to drying, your plant depends on continuous, high-volume steam supply.</p>
+                <p>Most paper mills operate with:</p>
+                <ul class="feature-list" style="margin: 1.5rem 0; text-align: left; background: #f9f9fb; padding: 1.5rem; border-radius: 16px; border: 1px solid #e9e9ed;">
+                    <li><i class="fas fa-oil-can"></i> Large-capacity boilers (LPG / Coal / Furnace Oil / Biomass)</li>
+                    <li><i class="fas fa-tachometer-alt"></i> High-pressure steam systems</li>
+                    <li><i class="fas fa-clock"></i> Continuous 24×7 production</li>
+                </ul>
+            </div>
+            <div class="pain-right">
+                <div class="impact-card">
+                    <div class="impact-header">
+                        <h3 style="font-weight: 800; color: #1d1d1f; font-family: 'Montserrat', sans-serif; margin: 0;">Business Impact</h3>
+                    </div>
+                    <div class="impact-body">
+                        <ul>
+                            <li> Fuel cost = one of the largest operational expenses</li>
+                            <li> High steam demand leads to massive fuel consumption</li>
+                            <li> Exposure to volatile fuel prices</li>
+                            <li> Significant carbon emissions and compliance pressure</li>
+                            <li> Increasing cost pressure in competitive markets</li>
+                        </ul>
+                    </div>
+                    <div class="impact-footer">
+                        <p><i class="fas fa-hand-point-right"></i> You are not just producing paper — you are consuming fuel at scale every hour.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+
+        <!-- 2. Smart Solution — Solar Heat for Paper & Pulp -->
+        <div class="section section-alt">
+            <div class="container" style="text-align: center;">
+                <div style="margin-bottom: 2.5rem;">
+                    <h2>What if you could reduce a major portion of your boiler fuel costs?</h2>
+                    <p class="section-subhead" style="margin: 0 auto;">KVB Green Energies offers <span style="color: #3A7D44; font-weight: 600;">Parabolic Trough Solar Thermal Systems (PTC)</span><br>engineered for high-demand paper and pulp operations.</p>
+                </div>
+                <div class="smart-solution-redesign">
+                    <div class="section-divider">
+                        <span class="divider-line left"></span>
+                        <h3 class="divider-text">What This System Does:</h3>
+                        <span class="divider-line right"></span>
+                    </div>
+
+                    <div class="solution-grid-4">
+                        <div class="solution-card card-green">
+                            <div class="card-icon-circle"><i class="fas fa-temperature-high"></i></div>
+                            <div class="card-text">
+                                <strong>Generates high-temp<br>steam</strong>
+                                <span>using solar energy</span>
+                            </div>
+                        </div>
+                        <div class="solution-card card-light-green">
+                            <div class="card-icon-circle"><i class="fas fa-chart-line"></i></div>
+                            <div class="card-text">
+                                <strong>Reduces boiler fuel<br>consumption</strong>
+                                <span>significantly</span>
+                            </div>
+                        </div>
+                        <div class="solution-card card-yellow">
+                            <div class="card-icon-circle"><i class="fas fa-plug"></i></div>
+                            <div class="card-text">
+                                <strong>Integrates seamlessly<br>with existing</strong>
+                                <span>steam systems</span>
+                            </div>
+                        </div>
+                        <div class="solution-card card-blue">
+                            <div class="card-icon-circle"><i class="fas fa-sync-alt"></i></div>
+                            <div class="card-text">
+                                <strong>Operates in<br>hybrid mode</strong>
+                                <span>for uninterrupted production</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-box">
+                        <div class="impact-left">
+                            <i class="fas fa-chart-line impact-main-icon"></i>
+                            <span class="impact-title">Immediate<br>Impact:</span>
+                        </div>
+                        
+                        <div class="impact-items">
+                            <div class="impact-item">
+                                <div class="impact-icon"><i class="fas fa-arrow-down"></i></div>
+                                <div class="impact-item-text"><strong>Up to 40%</strong>reduction in<br>fuel consumption</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon"><i class="fas fa-rupee-sign"></i></div>
+                                <div class="impact-item-text"><strong>Lower cost</strong>per ton of paper produced</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon"><i class="fas fa-shield-alt"></i></div>
+                                <div class="impact-item-text"><strong>Stable long-term</strong>energy pricing</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-conclusion-bar">
+                        <i class="fas fa-check-circle"></i> 
+                        <span>This is not just energy saving — this is <span class="highlight-yellow">large-scale cost optimization</span>.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Process / Technology — Designed for Continuous Operations -->
+        <div class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2.5rem;">
+                    <h2>Designed for continuous operations</h2>
+                </div>
+                
+                <div class="grid-3" style="margin-top: 0; align-items: stretch;">
+                    <div class="impact-card" style="height: 100%;">
+                        <div class="impact-header">
+                            <h4 style="color: #1d1d1f; font-size: 1.25rem; margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 900; font-family: 'Montserrat', sans-serif;"><i class="fas fa-cogs" style="color: #FF9800;"></i> System Process</h4>
+                        </div>
+                        <div class="impact-body">
+                            <ul>
+                                <li>Solar mirrors capture & concentrate sunlight</li>
+                                <li>Heat is focused onto absorber tubes</li>
+                                <li>Heat transfer fluid absorbs high-grade thermal energy</li>
+                                <li>Energy is converted into industrial steam</li>
+                                <li>Steam supplied to paper and pulp processes</li>
+                                <li>Boiler automatically supports when required</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-card" style="height: 100%;">
+                        <div class="impact-header">
+                            <h4 style="color: #1d1d1f; font-size: 1.25rem; margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 900; font-family: 'Montserrat', sans-serif;"><i class="fas fa-layer-group" style="color: #FF9800;"></i> Integration Options</h4>
+                        </div>
+                        <div class="impact-body">
+                            <ul>
+                                <li>Boiler Feedwater Preheating</li>
+                                <li>Direct Steam Generation</li>
+                                <li>Hybrid Solar + Boiler Mode</li>
+                                <li>Thermal Storage (optional)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-card" style="height: 100%;">
+                        <div class="impact-header">
+                            <h4 style="color: #1d1d1f; font-size: 1.25rem; margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 900; font-family: 'Montserrat', sans-serif;"><i class="fas fa-chart-line" style="color: #FF9800;"></i> Industrial Performance</h4>
+                        </div>
+                        <div class="impact-body">
+                            <ul>
+                                <li>Temperature Range: <strong>120°C – 250°C</strong></li>
+                                <li>Efficiency: <strong>50–70%</strong></li>
+                                <li>Solar Contribution: <strong>20–60%</strong></li>
+                                <li>System Life: <strong>20–30 years</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 2.5rem;"><i
+                        class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Guaranteed
+                    heat supply 24/7 with seamless boiler integration.</p>
+            </div>
+        </div>
+
+        <!-- 4. Applications — Across Paper & Pulp Processes -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2.5rem;">
+                    <h2>Across paper & pulp processes</h2>
+                    <p class="section-subhead" style="margin: 0 auto;">Ideal for multiple stages of paper manufacturing
+                    </p>
+                </div>
+                <div class="grid-3">
+                    <div class="card"><i class="fas fa-tint"></i>
+                        <h4>Pulp Digestion</h4>
+                        <p>High-temperature cooking</p>
+                    </div>
+                    <div class="card"><i class="fas fa-chart-line"></i>
+                        <h4>Evaporation & Concentration</h4>
+                        <p>120–160°C energy efficient</p>
+                    </div>
+                    <div class="card"><i class="fas fa-wind"></i>
+                        <h4>Paper Drying Cylinders</h4>
+                        <p>120–180°C continuous drying</p>
+                    </div>
+                    <div class="card"><i class="fas fa-recycle"></i>
+                        <h4>Chemical Recovery</h4>
+                        <p>Recausticizing & black liquor</p>
+                    </div>
+                    <div class="card"><i class="fas fa-water"></i>
+                        <h4>Bleaching & Washing</h4>
+                        <p>Hot water & steam stages</p>
+                    </div>
+                    <div class="card"><i class="fas fa-fire"></i>
+                        <h4>Boiler Feedwater Heating</h4>
+                        <p>Improves overall efficiency</p>
+                    </div>
+                </div>
+                <p
+                    style="text-align: center; margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> High steam demand =
+                    <strong>high solar savings potential</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- 5. Benefits — What Paper Mills Gain -->
+        <div class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2.5rem;">
+                    <h2>What paper mills gain</h2>
+                </div>
+                <div class="grid-2" style="align-items: center; grid-template-columns: 1fr 1.3fr;">
+                    <div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-coins"></i> <span><strong>Financial Advantage</strong> – Reduce fuel
+                                    consumption by 20–60%, significant savings in energy cost, lower cost per ton of
+                                    production</span></li>
+                            <li><i class="fas fa-gear"></i> <span><strong>Operational Advantage</strong> – Seamless
+                                    integration with existing boilers, reduced load on boiler systems, reliable hybrid
+                                    operation with no downtime</span></li>
+                            <li><i class="fas fa-globe"></i> <span><strong>Strategic Advantage</strong> – Reduced carbon
+                                    emissions, easier compliance with environmental norms, improved sustainability
+                                    profile</span></li>
+                        </ul>
+                        <p style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;"><i
+                                class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Lower
+                            production cost + higher efficiency = stronger competitiveness</p>
+                    </div>
+                    <div>
+                        <img class="img-soft" style="max-height: 600px; width: 100%; object-fit: contain; display: block; margin: 0 auto;"
+                            src="https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
+                            alt="Energy cost comparison paper">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. ROI — Strong Returns for Large-Scale Plants -->
+        <div class="section section-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Strong returns for large-scale plants</h2>
+                    <p class="section-subhead" style="margin: 0 auto;">Typical returns for India paper industry</p>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2–5 yrs</div>
+                        <div class="stat-label">Payback period</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30–40%</div>
+                        <div class="stat-label">Annual fuel savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+ yrs</div>
+                        <div class="stat-label">System life</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">~3T CO₂</div>
+                        <div class="stat-label">Saved per ton of oil replaced</div>
+                    </div>
+                </div>
+                <p
+                    style="margin-top: 2rem; text-align: center; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> After Payback: Your
+                    plant benefits from low-cost thermal energy at scale — creating a strong cost advantage in a
+                    competitive market. One of the most impactful investments for energy-intensive industries.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div id="footer"></div>
+    </main>
+
+    
+
+
+
+    <!-- GLOBAL COMPONENT LOADER -->
+    <script>
+        (function() {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
+                    .then(html => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            el.innerHTML = html;
+                            // Execute scripts
+                            const scripts = el.querySelectorAll('script');
+                            scripts.forEach(s => {
+                                const newScript = document.createElement('script');
+                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                                newScript.appendChild(document.createTextNode(s.innerHTML));
+                                s.parentNode.replaceChild(newScript, s);
+                            });
+                        }
+                    }).catch(console.error);
+            }
+            window.BASE_PATH = "../";
+            loadComponent('header', '../components/header.html');
+            loadComponent('footer', '../components/footer.html');
+        })();
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
