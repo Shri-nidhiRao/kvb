@@ -31,12 +31,8 @@ transporter.verify(function (error, success) {
     }
 });
 
-const fs = require('fs');
-
 const logError = (msg, err) => {
-    const logMsg = `[${new Date().toISOString()}] ${msg}: ${err}\n`;
-    fs.appendFileSync(path.join(__dirname, 'error_debug.log'), logMsg);
-    console.error(msg, err);
+    console.error(`[${new Date().toISOString()}] ${msg}:`, err);
 };
 
 app.post("/send-email", async (req, res) => {
@@ -78,9 +74,11 @@ app.post("/send-email", async (req, res) => {
     }
 });
 
-app.listen(5001, () => {
-    console.log("Server running on http://localhost:5001");
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(5001, () => {
+        console.log("Server running on http://localhost:5001");
+    });
+}
 
 // Prevent process from exiting on errors
 process.on('uncaughtException', (err) => {
@@ -90,3 +88,5 @@ process.on('uncaughtException', (err) => {
 process.on('unhandledRejection', (reason, promise) => {
     console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
+
+module.exports = app;
