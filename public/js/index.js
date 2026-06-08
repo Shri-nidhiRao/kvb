@@ -33,7 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const video = currentMedia.tagName.toLowerCase() === 'video' ? currentMedia : currentMedia.querySelector('video');
             if (video) {
                 video.currentTime = 0;
-                video.play().catch(e => console.log('Autoplay blocked:', e));
+                video.play().catch(e => {
+                    console.log('Autoplay blocked or failed:', e);
+                    // Fallback: transition after 4 seconds if video fails to play
+                    slideTimeout = setTimeout(() => {
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        playNextSlide();
+                    }, 4000);
+                });
 
                 video.onended = () => {
                     currentSlide = (currentSlide + 1) % slides.length;

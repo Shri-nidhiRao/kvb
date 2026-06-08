@@ -1,7 +1,4 @@
-videos/
 cooker/
-*.mp4
-*.MP4
 *.crdownload
 node_modules/
 .env
