@@ -334,12 +334,12 @@
       menu.classList.toggle("active");
     };
 
-    /* MOBILE DROPDOWN */
+    /* DROPDOWN CLICK BEHAVIOR */
     document.querySelectorAll(".dropdown > a")
       .forEach(el => {
         el.addEventListener("click", e => {
+          e.preventDefault(); // Always prevent '#' link navigation
           if (window.innerWidth < 900) {
-            e.preventDefault();
             el.parentElement.classList.toggle("active");
           }
         });

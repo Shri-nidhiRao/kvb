@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Smart Fish Dryer | KVB Green Energies – Clean Drying Solutions</title>
+    <title>AgroSense | Smart Farming & Precision Agriculture Platform</title>
     <link rel="icon" type="image/png" href="../images/products/kvb-logo.png">
+    
     <!-- Fonts & Icons -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Bootstrap 4 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <style>
-        /* ===== ECO-PROFESSIONAL THEME (matches about.html) ===== */
+        /* ===== ECO-PROFESSIONAL THEME (matches microgreen-systems.html) ===== */
         :root {
             --solar-yellow: #FDB813;
             --deep-blue: #0B3D91;
@@ -63,10 +62,7 @@
 
         .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-        /* ===== HEADER PLACEHOLDER ===== */
-        #header {
-            min-height: 80px;
-        }
+        #header { min-height: 80px; }
 
         /* ===== HERO SECTION ===== */
         .product-hero {
@@ -180,7 +176,6 @@
             line-height: 1.65;
         }
 
-        /* ===== SCROLL REVEAL & SPACING ===== */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -211,7 +206,6 @@
             text-align: center; margin-bottom: 48px; position: relative; z-index: 2;
         }
 
-        /* ===== BOOTSTRAP CAROUSEL ===== */
         .kvb-carousel {
             border-radius: var(--radius-md);
             overflow: hidden;
@@ -221,7 +215,7 @@
             background: #fff;
         }
         .kvb-carousel .carousel-item img {
-            width: 100%; aspect-ratio: 16/9; height: auto; object-fit: contain; border-radius: 0;
+            width: 100%; aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 0;
         }
         .kvb-carousel .carousel-control-prev,
         .kvb-carousel .carousel-control-next {
@@ -237,8 +231,6 @@
         .kvb-carousel .carousel-control-next:hover {
             background: white; transform: translateY(-50%) scale(1.08);
         }
-        .kvb-carousel .carousel-control-prev { left: 10px; }
-        .kvb-carousel .carousel-control-next { right: 10px; }
         .kvb-carousel .carousel-control-prev-icon,
         .kvb-carousel .carousel-control-next-icon {
             filter: invert(1) brightness(0); width: 20px; height: 20px;
@@ -252,40 +244,31 @@
             background-color: var(--solar-yellow);
             transform: scale(1.3);
         }
-        @media (max-width: 768px) {
-            .kvb-carousel .carousel-item img { height: auto; }
-        }
 
-        /* ===== OVERVIEW / HIGHLIGHT TECH ===== */
+        /* ===== HIGHLIGHT TECH ===== */
         .highlight-tech {
             background: white;
             border-left: 5px solid var(--eco-green);
             border-radius: 0 var(--radius-md) var(--radius-md) 0;
             padding: 2.5rem 2.5rem;
-            margin: 0 0 3.5rem;
+            margin: 0 0 3.5rem 0;
             box-shadow: var(--shadow-sm);
             position: relative; overflow: hidden;
         }
-
         .highlight-tech::before {
             content: '';
             position: absolute; top: 0; right: 0;
             width: 200px; height: 200px;
             background: radial-gradient(circle, rgba(58,125,68,0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
+            border-radius: 50%; pointer-events: none;
         }
-
         .highlight-tech h1, .highlight-tech h2 {
             font-size: 1.8rem; margin-bottom: 1rem;
-            color: var(--dark-charcoal);
-            background: none; -webkit-text-fill-color: inherit;
+            color: var(--dark-charcoal); background: none; -webkit-text-fill-color: inherit;
         }
-
         .highlight-tech p {
             font-size: 1.08rem; line-height: 1.75; color: #2d3e40;
         }
-
         .highlight-tech strong { color: var(--eco-green); }
 
         /* ===== FEATURE MATRIX ===== */
@@ -295,7 +278,6 @@
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .feature-card {
             background: white;
             border: 1px solid #d0e8d0;
@@ -305,41 +287,30 @@
             box-shadow: var(--shadow-sm);
             position: relative; overflow: hidden;
         }
-
         .feature-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
             background: linear-gradient(to bottom, var(--eco-green), var(--solar-yellow));
         }
-
         .feature-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--eco-green);
+            transform: translateY(-6px); border-color: var(--eco-green);
             box-shadow: 0 20px 40px rgba(58,125,68,0.12);
         }
-
         .feature-card i {
             font-size: 2rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
         }
-
         .feature-card h3 {
             font-size: 1.3rem; margin-bottom: 1rem; color: var(--dark-charcoal);
         }
-
         .feature-list { list-style: none; padding: 0; margin: 0; }
         .feature-list li {
             margin-bottom: 0.65rem; padding-left: 1.4rem;
-            position: relative; font-size: 0.95rem;
-            line-height: 1.5; color: #4a5568;
+            position: relative; font-size: 0.95rem; line-height: 1.5; color: #4a5568;
         }
         .feature-list li::before {
             content: "▹"; position: absolute; left: 0;
             color: var(--eco-green); font-weight: 700;
         }
-
-        @media (max-width: 768px) {
-            .feature-matrix { grid-template-columns: 1fr; gap: 1.5rem; }
-        }
+        @media (max-width: 768px) { .feature-matrix { grid-template-columns: 1fr; gap: 1.5rem; } }
 
         /* ===== TABLES ===== */
         .soft-table {
@@ -350,12 +321,9 @@
             margin: 0 0 3.5rem 0;
             box-shadow: var(--shadow-sm);
         }
-
         .soft-table table { width: 100%; border-collapse: collapse; }
         .soft-table th, .soft-table td {
-            padding: 1rem 1.5rem; text-align: left;
-            border-bottom: 1px solid #e8f4e8;
-            font-size: 0.97rem;
+            padding: 1rem 1.5rem; text-align: left; border-bottom: 1px solid #e8f4e8; font-size: 0.97rem;
         }
         .soft-table th {
             background: linear-gradient(135deg, #3A7D44, #2d5a33);
@@ -364,83 +332,24 @@
         .soft-table tr:hover td { background: #f5fbf5; }
         .soft-table tr:last-child td { border-bottom: none; }
 
-        /* ===== APPLICATIONS GRID ===== */
-        .applications-grid {
+        /* ===== CARDS GRID ===== */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem; margin-top: 3rem;
         }
+        .card {
+            background: white; border: 1px solid #d0e8d0;
+            border-radius: var(--radius-md); padding: 2rem;
+            transition: all 0.3s; box-shadow: var(--shadow-sm);
+        }
+        .card:hover {
+            transform: translateY(-6px); border-color: var(--eco-green);
+            box-shadow: 0 20px 40px rgba(58,125,68,0.1);
+        }
+        .card i { font-size: 2.4rem; color: var(--eco-green); margin-bottom: 1.2rem; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
 
-        .app-card {
-            background: white;
-            border: 1px solid #d0e8d0;
-            border-radius: var(--radius-md);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            position: relative; overflow: hidden;
-        }
-
-        .app-card::after {
-            content: '';
-            position: absolute; bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--eco-green), var(--solar-yellow));
-            opacity: 0; transition: opacity 0.3s;
-        }
-
-        .app-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--eco-green);
-            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
-        }
-
-        .app-card:hover::after { opacity: 1; }
-
-        .app-card i {
-            font-size: 2.4rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
-        }
-
-        .app-card h3 { font-size: 1.1rem; color: var(--dark-charcoal); }
-        .app-card p { font-size: 0.95rem; margin-top: 0.5rem; }
-
-        @media (max-width: 992px) {
-            .applications-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .applications-grid { grid-template-columns: 1fr; }
-        }
-
-        /* STANDARD SECTION TITLE & SUBTITLE OVERRIDE */
-        h2.section-title, .section-title h2, div.section-title h2 {
-            font-size: 2.5rem !important;
-            color: #0B3D91 !important;
-            text-align: center !important;
-            margin-bottom: 25px !important;
-            display: block !important;
-            position: relative !important;
-            width: 100% !important;
-        }
-        h2.section-title:after, .section-title h2:after, div.section-title h2:after {
-            content: '' !important;
-            position: absolute !important;
-            bottom: -10px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            width: 80px !important;
-            height: 4px !important;
-            background: #FDB813 !important;
-            border-radius: 2px !important;
-        }
-        p.section-subtitle, .section-subtitle {
-            font-size: 1.15rem !important;
-            color: var(--text-secondary) !important;
-            text-align: center !important;
-            max-width: 800px !important;
-            margin: 0 auto 2rem auto !important;
-        }
     </style>
 </head>
 
@@ -450,44 +359,44 @@
     <!-- HERO SECTION -->
     <section class="product-hero">
         <div class="container">
-            <h1>Smart <span class="hero-title-highlight">Fish</span> Dryer</h1>
-            <p class="hero-sub">Clean, efficient, and highly sustainable professional drying solutions designed by KVB Green Energies to meet the demands of modern industry.</p>
+            <h1><span class="hero-title-highlight">AgroSense</span> Intelligence</h1>
+            <p class="hero-sub">AI-Driven Soil Intelligence, Automated Irrigation & Smart Crop Protection Platform.</p>
             <div class="hero-tags-row">
-                <span class="hero-tag"><i class="fas fa-leaf"></i> Eco-Friendly</span>
-                <span class="hero-tag"><i class="fas fa-bolt"></i> High Efficiency</span>
-                <span class="hero-tag"><i class="fas fa-fish"></i> Value Addition</span>
+                <span class="hero-tag"><i class="fas fa-layer-group"></i> Multi-Layer Soil Sensing</span>
+                <span class="hero-tag"><i class="fas fa-microchip"></i> Edge AI Control</span>
+                <span class="hero-tag"><i class="fas fa-tint"></i> Smart Fertigation</span>
             </div>
         </div>
     </section>
 
     <main>
-        <!-- Moved System in Action Gallery -->
+        <!-- System in Action Gallery -->
         <section class="system-action-section">
             <div class="container">
                 <div class="section-header reveal">
                     <h2 class="section-title">System in Action</h2>
-                    <p class="section-subtitle">See our technology deployed and working in real-world environments.</p>
+                    <p class="section-subtitle">Real-time data visualization, smart irrigation integration, and predictive crop protection.</p>
                 </div>
-                <div id="fishDryerCarousel" class="carousel slide kvb-carousel" data-ride="carousel" data-interval="3000">
+                <div id="agroCarousel" class="carousel slide kvb-carousel" data-ride="carousel" data-interval="3000">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <iframe style="width: 100%; aspect-ratio: 16/9; height: auto;" src="https://www.youtube.com/embed/y8GVdX5rWxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe style="width: 100%; aspect-ratio: 16/9; height: auto;" src="https://www.youtube.com/embed/mVyFvaD_10g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                         <div class="carousel-item">
-                            <img src="../images/products/fish2.jpeg" class="d-block w-100" alt="Smart Fish Dryer Unit">
+                            <img src="../images/products/agro1.jpg" class="d-block w-100" alt="Smart Sensor in Field">
                         </div>
                         <div class="carousel-item">
-                            <img src="../images/products/fish3.jpeg" class="d-block w-100" alt="Dried Fish">
+                            <img src="../images/products/agro2.jpg" class="d-block w-100" alt="Automated Smart Irrigation">
                         </div>
                         <div class="carousel-item">
-                            <img src="../images/products/fish4.jpeg" class="d-block w-100" alt="Smart Control Panel">
+                            <img src="../images/products/agro3.webp" class="d-block w-100" alt="Drone Analysis Integration">
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#fishDryerCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#agroCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#fishDryerCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#agroCarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -496,94 +405,83 @@
         </section>
 
         <div class="container" style="padding: 60px 32px;">
-            <!-- HIGHLIGHTED Overview -->
             <div class="reveal highlight-tech">
                 <div style="margin-bottom: 0.5rem;">
-                    <h1 style="margin-bottom: 0.5rem;">🐟 Smart Solar-Assisted Seafood Drying</h1>
+                    <h2 style="margin-bottom: 0.5rem;">The Brain of Your Farm</h2>
                 </div>
-                <p>The <strong>Smart Fish Dryer</strong> Hybrid solar fish dryers are engineered to provide a hygienic and
-                controlled drying solution for fish and seafood products. Combining solar energy with a backup heating
-                system, they ensure reliable and efficient drying performance even under varying weather conditions.
-                With optimized airflow and ventilation, these dryers minimize contamination, reduce spoilage, and
-                deliver uniform drying for consistently high-quality output. Ideal for coastal communities, fisheries,
-                and seafood processors, they help enhance product value, improve hygiene standards, and extend shelf
-                life.</p>
+                <p><strong>AgroSense</strong> is an advanced precision agriculture platform designed to convert conventional farming into a data-driven, automated, and intelligent system. The platform continuously acquires and processes multi-layer soil data, environmental conditions, and crop requirements, enabling automated irrigation, intelligent fertigation, and predictive crop protection. It functions as a closed-loop agricultural intelligence system, where real-time data directly drives control actions, improving efficiency, reducing resource wastage, and enhancing crop productivity.</p>
             </div>
 
-            <!-- 2x2 Feature Matrix (Core Capabilities) -->
+            <!-- Core Capabilities -->
             <div class="reveal">
                 <h2 class="section-title">Core Capabilities</h2>
-                <p class="section-subtitle">Everything you need for clean energy performance — engineered and field-tested.</p>
+                <p class="section-subtitle">Everything you need to automate your farm and maximize your yield.</p>
                 <div class="feature-matrix">
                     <div class="feature-card">
-                        <i class="fas fa-temperature-high"></i>
-                        <h3>Drying Performance</h3>
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Multi-Layer Soil Sensing</h3>
                         <ul class="feature-list">
-                            <li>Temperature: 45–80°C (solar), up to 100°C (assisted)</li>
-                            <li>Moisture reduction: 70–90%</li>
-                            <li>Drying time: 6–24 hours (fish type dependent)</li>
-                            <li>Uniform texture, improved color, export-grade finish</li>
+                            <li>Depth-based root-zone analysis</li>
+                            <li>Monitors NPK, Moisture, Temp</li>
+                            <li>Checks pH & Electrical Conductivity</li>
                         </ul>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Smart Automation</h3>
+                        <i class="fas fa-water"></i>
+                        <h3>Smart Irrigation & Fertigation</h3>
                         <ul class="feature-list">
-                            <li>Digital PID temperature control</li>
-                            <li>Humidity sensors for precision drying</li>
-                            <li>Programmable batch cycles</li>
-                            <li>IoT-enabled remote monitoring (optional)</li>
+                            <li>Moisture-based autonomous triggers</li>
+                            <li>Zone-wise irrigation management</li>
+                            <li>Precision nutrient dosing control</li>
                         </ul>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-fire"></i>
-                        <h3>Heating Integration</h3>
+                        <i class="fas fa-shield-virus"></i>
+                        <h3>AI Crop Protection</h3>
                         <ul class="feature-list">
-                            <li>Solar thermal as primary heat</li>
-                            <li>Auxiliary heating</li>
-                            <li>Indirect heating – zero smoke contamination</li>
-                            <li>Automatic mode switching</li>
+                            <li>Early disease prediction models</li>
+                            <li>Growth-cycle pest risk evaluation</li>
+                            <li>Targeted spraying recommendations</li>
                         </ul>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Sustainability</h3>
+                        <i class="fas fa-cloud-sun-rain"></i>
+                        <h3>Weather Intelligence</h3>
                         <ul class="feature-list">
-                            <li>Reduces drying time by 50–70%</li>
-                            <li>Eliminates open-sun contamination</li>
-                            <li>Improves product value for export</li>
-                            <li>Low operational cost</li>
+                            <li>Real-time weather data integration</li>
+                            <li>Forecast-based analysis</li>
+                            <li>Rain and extreme climate alerts</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Applications Grid -->
-            <div class="reveal">
-                <h2 class="section-title">Application Scope</h2>
-                <div class="applications-grid">
-                    <div class="app-card"><i class="fas fa-fish"></i>
-                        <h3>Marine Fish</h3>
-                        <p>Coastal fish processing units</p>
-                    </div>
-                    <div class="app-card"><i class="fas fa-water"></i>
-                        <h3>Inland Fish</h3>
-                        <p>Freshwater fish drying</p>
-                    </div>
-                    <div class="app-card"><i class="fas fa-shrimp"></i>
-                        <h3>Shrimp & Prawn</h3>
-                        <p>Premium value-added drying</p>
-                    </div>
-                    <div class="app-card"><i class="fas fa-chart-line"></i>
-                        <h3>Export Industries</h3>
-                        <p>Dry fish for global markets</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Technical Specifications Table -->
+            <!-- Three-Tier Architecture Grid -->
             <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
-                <h2 class="section-title">Engineering Specifications</h2>
+                <h2 class="section-title">System Architecture</h2>
+                <p class="section-subtitle">A closed-loop feedback system designed for continuous agricultural optimization.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card reveal">
+                    <i class="fas fa-microchip"></i>
+                    <h3>1. Field Layer</h3>
+                    <p>Rugged, weather-resistant sensory nodes capture real-time multi-depth soil telemetry and environmental data across your farm.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <i class="fas fa-server"></i>
+                    <h3>2. Control Layer</h3>
+                    <p>Embedded microcontrollers perform depth-based comparative analysis to generate instant control signals for valves and pumps.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <i class="fas fa-cloud-bolt"></i>
+                    <h3>3. Cloud Layer</h3>
+                    <p>Secure cloud infrastructure providing data storage, machine learning analytics, and an intuitive remote visualization dashboard.</p>
+                </div>
+            </div>
+
+            <!-- Tech Specs -->
+            <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
+                <h2 class="section-title">Technical Specifications</h2>
             </div>
             <div class="reveal soft-table">
                 <table>
@@ -596,37 +494,43 @@
                     <tbody>
                         <tr>
                             <td><strong>System Type</strong></td>
-                            <td>Smart Solar Fish Dryer (Tunnel / Chamber Type)</td>
+                            <td>Precision Agriculture & Automation Platform</td>
                         </tr>
                         <tr>
-                            <td><strong>Drying Capacity</strong></td>
-                            <td>25 kg – 2000 kg per batch</td>
+                            <td><strong>Monitoring Capability</strong></td>
+                            <td>Real-time sensing with cloud-assisted analytics</td>
                         </tr>
                         <tr>
-                            <td><strong>Structural Frame</strong></td>
-                            <td>GI / MS (Hot Dip Galvanized)</td>
+                            <td><strong>Connectivity</strong></td>
+                            <td>LoRaWAN, Wi-Fi, Cellular, Bluetooth LE</td>
                         </tr>
                         <tr>
-                            <td><strong>Inner Chamber</strong></td>
-                            <td>Food-grade Stainless Steel (SS 304)</td>
+                            <td><strong>Power System</strong></td>
+                            <td>Solar-powered with integrated energy management</td>
                         </tr>
                         <tr>
-                            <td><strong>Tray Material</strong></td>
-                            <td>SS 304 / Food-grade Mesh</td>
+                            <td><strong>Processing Unit</strong></td>
+                            <td>Embedded microcontroller-based control system</td>
                         </tr>
                         <tr>
-                            <td><strong>Airflow System</strong></td>
-                            <td>Forced Convection (High-efficiency blowers)</td>
+                            <td><strong>User Interface</strong></td>
+                            <td>Mobile application and web-based dashboard</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Control Modes</strong></td>
+                            <td>Automatic, Manual, and Scheduled operation</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            
+            <div style="margin-bottom: 80px;"></div>
         </div>
     </main>
 
     <div id="footer"></div>
 
-    <!-- GLOBAL COMPONENT LOADER -->
+    <!-- Scripts -->
     <script>
         (function() {
             function loadComponent(id, file) {
@@ -650,22 +554,22 @@
             loadComponent('header', '../components/header.html');
             loadComponent('footer', '../components/footer.html');
         })();
-    </script>
 
-    <script>
+        // Scroll Reveal Animation
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if(entry.isIntersecting) {
+                    if (entry.isIntersecting) {
                         entry.target.classList.add('active');
                     }
                 });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
             });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
     </script>
-    
-    <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

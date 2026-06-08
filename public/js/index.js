@@ -53,25 +53,41 @@ document.addEventListener('DOMContentLoaded', function() {
     playNextSlide();
 
     // Hide intro screen after animation finishes
-    setTimeout(function() {
+    if (sessionStorage.getItem('hasSeenLogoReveal')) {
+        // Already seen, just show main site immediately and init AOS
         const introScreen = document.getElementById('introScreen');
-        if (introScreen) {
-            introScreen.classList.add('fade-out');
-            setTimeout(() => { introScreen.style.display = 'none'; }, 1200);
-        }
+        if (introScreen) introScreen.style.display = 'none';
         
         const mainSite = document.getElementById('mainWebsite');
         if (mainSite) {
             mainSite.classList.add('show');
-            // Initialize AOS (Animate on Scroll)
             if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    once: true,
-                    offset: 50
-                });
+                AOS.init({ duration: 800, once: true, offset: 50 });
                 setTimeout(() => AOS.refresh(), 100);
             }
         }
-    }, 4500); // 4.5s delay allows the logo reveal to finish
+    } else {
+        sessionStorage.setItem('hasSeenLogoReveal', 'true');
+        setTimeout(function() {
+            const introScreen = document.getElementById('introScreen');
+            if (introScreen) {
+                introScreen.classList.add('fade-out');
+                setTimeout(() => { introScreen.style.display = 'none'; }, 1200);
+            }
+            
+            const mainSite = document.getElementById('mainWebsite');
+            if (mainSite) {
+                mainSite.classList.add('show');
+                // Initialize AOS (Animate on Scroll)
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 800,
+                        once: true,
+                        offset: 50
+                    });
+                    setTimeout(() => AOS.refresh(), 100);
+                }
+            }
+        }, 4500); // 4.5s delay allows the logo reveal to finish
+    }
 });
