@@ -435,63 +435,83 @@
         document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.getElementById('youtube-carousel');
             
-            // Hardcoded videos to ensure instant loading and zero delay
-            const videos = [
-                {
-                    link: "https://www.youtube.com/watch?v=mVyFvaD_10g",
-                    thumbnail: "https://i.ytimg.com/vi/mVyFvaD_10g/hqdefault.jpg",
-                    title: "KVB Green Energies - Agrosense",
-                    date: "Recent"
-                },
-                {
-                    link: "https://www.youtube.com/watch?v=lhYJ1aIAa9E",
-                    thumbnail: "https://i.ytimg.com/vi/lhYJ1aIAa9E/hqdefault.jpg",
-                    title: "KVB Green Energies - Box Type Solar Dryer",
-                    date: "Recent"
-                },
-                {
-                    link: "https://www.youtube.com/watch?v=gFP9DjOJQxI",
-                    thumbnail: "https://i.ytimg.com/vi/gFP9DjOJQxI/hqdefault.jpg",
-                    title: "KVB Green Energies - Direct Cooking",
-                    date: "Recent"
-                },
-                {
-                    link: "https://www.youtube.com/watch?v=y8GVdX5rWxk",
-                    thumbnail: "https://i.ytimg.com/vi/y8GVdX5rWxk/hqdefault.jpg",
-                    title: "KVB Green Energies - Fish Dryer",
-                    date: "Recent"
-                }
-            ];
-            
-            carousel.innerHTML = ''; // Clear loading
-            
-            videos.forEach(video => {
-                const card = document.createElement('div');
-                card.className = 'video-card';
-                card.innerHTML = `
-                    <a href="${video.link}" target="_blank" style="text-decoration: none;">
-                        <div class="video-thumbnail">
-                            <img src="${video.thumbnail}" alt="${video.title}">
-                            <div class="play-btn"><i class="fas fa-play" style="margin-left: 4px;"></i></div>
-                        </div>
-                        <div class="video-info">
-                            <h3>${video.title}</h3>
-                            <p><span>${video.date}</span> <span class="yt-brand"><i class="fab fa-youtube"></i> YouTube</span></p>
-                        </div>
-                    </a>
+            // Render function
+            function renderVideos(videos) {
+                carousel.innerHTML = '';
+                videos.forEach(video => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+                    card.innerHTML = `
+                        <a href="${video.link}" target="_blank" style="text-decoration: none;">
+                            <div class="video-thumbnail">
+                                <img src="${video.thumbnail}" alt="${video.title}">
+                                <div class="play-btn"><i class="fas fa-play" style="margin-left: 4px;"></i></div>
+                            </div>
+                            <div class="video-info">
+                                <h3>${video.title}</h3>
+                                <p><span>${video.date}</span> <span class="yt-brand"><i class="fab fa-youtube"></i> YouTube</span></p>
+                            </div>
+                        </a>
+                    `;
+                    carousel.appendChild(card);
+                });
+                
+                const moreCard = document.createElement('a');
+                moreCard.href = 'https://www.youtube.com/@kvbgreenenergies';
+                moreCard.target = '_blank';
+                moreCard.className = 'video-card more-card';
+                moreCard.innerHTML = `
+                    <i class="fab fa-youtube"></i>
+                    <span>View More<br>on YouTube</span>
                 `;
-                carousel.appendChild(card);
-            });
+                carousel.appendChild(moreCard);
+            }
             
-            const moreCard = document.createElement('a');
-            moreCard.href = 'https://www.youtube.com/@kvbgreenenergies';
-            moreCard.target = '_blank';
-            moreCard.className = 'video-card more-card';
-            moreCard.innerHTML = `
-                <i class="fab fa-youtube"></i>
-                <span>View More<br>on YouTube</span>
-            `;
-            carousel.appendChild(moreCard);
+            // 1. Instantly render initial/cached videos so the page loads at 0s
+            const cachedData = localStorage.getItem('yt_videos_cache');
+            let initialVideos = [];
+            
+            if (cachedData) {
+                initialVideos = JSON.parse(cachedData);
+            } else {
+                // Fallback initial videos to ensure no empty space
+                initialVideos = [
+                    { link: "https://www.youtube.com/watch?v=mVyFvaD_10g", thumbnail: "https://i.ytimg.com/vi/mVyFvaD_10g/hqdefault.jpg", title: "KVB Green Energies - Agrosense", date: "Recent" },
+                    { link: "https://www.youtube.com/watch?v=lhYJ1aIAa9E", thumbnail: "https://i.ytimg.com/vi/lhYJ1aIAa9E/hqdefault.jpg", title: "KVB Green Energies - Box Type Solar Dryer", date: "Recent" },
+                    { link: "https://www.youtube.com/watch?v=gFP9DjOJQxI", thumbnail: "https://i.ytimg.com/vi/gFP9DjOJQxI/hqdefault.jpg", title: "KVB Green Energies - Direct Cooking", date: "Recent" },
+                    { link: "https://www.youtube.com/watch?v=y8GVdX5rWxk", thumbnail: "https://i.ytimg.com/vi/y8GVdX5rWxk/hqdefault.jpg", title: "KVB Green Energies - Fish Dryer", date: "Recent" }
+                ];
+            }
+            
+            renderVideos(initialVideos);
+
+            // 2. Dynamically fetch the latest videos in the background
+            const channelId = 'UCB1lMrzFkZjs7qu4jxl32zA';
+            const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+            
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.status === 'ok' && data.items.length > 0) {
+                        const newVideos = data.items.slice(0, 8).map(v => ({
+                            link: v.link,
+                            thumbnail: v.thumbnail,
+                            title: v.title,
+                            date: new Date(v.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+                        }));
+                        
+                        // Save to cache
+                        localStorage.setItem('yt_videos_cache', JSON.stringify(newVideos));
+                        localStorage.setItem('yt_videos_time', new Date().getTime().toString());
+                        
+                        // Update UI seamlessly
+                        renderVideos(newVideos);
+                    }
+                })
+                .catch(err => {
+                    console.warn("Background fetch failed, keeping initial videos.", err);
+                });
         });
     </script>
 </body>
