@@ -36,6 +36,11 @@
         if (btn && menu && !btn.hasAttribute('data-initialized')) {
             btn.onclick = () => {
                 menu.classList.toggle("active");
+                if (menu.classList.contains("active")) {
+                    btn.innerHTML = "✕";
+                } else {
+                    btn.innerHTML = "☰";
+                }
             };
             btn.setAttribute('data-initialized', 'true');
         }
