@@ -205,7 +205,7 @@
       .nav-menu {
         position: fixed;
         top: 100px;
-        left: -100%;
+        right: -100%;
         flex-direction: column;
         background: rgba(255,255,255,0.98);
         backdrop-filter: blur(10px);
@@ -218,7 +218,20 @@
         border-bottom: 1px solid rgba(0,0,0,0.05);
       }
       .nav-menu.active {
-        left: 0;
+        right: 0;
+      }
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+      }
+      .dropdown.active .dropdown-menu {
+        display: block;
       }
       .hamburger {
         display: flex;
@@ -392,11 +405,20 @@
         });
       }
 
-      const navLinks = document.querySelectorAll('.nav-menu a');
+      const navLinks = document.querySelectorAll('.nav-menu a:not(.dropdown > a)');
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           if (navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
+          }
+        });
+      });
+
+      document.querySelectorAll('.dropdown > a').forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          if (window.innerWidth <= 900) {
+            el.parentElement.classList.toggle('active');
           }
         });
       });
