@@ -207,6 +207,24 @@
       .hero-text-col h1 {
         font-size: 3rem;
       }
+      .story-grid, 
+      .founder-profile {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .story-image img, 
+      .founder-image img {
+        height: auto;
+      }
+      .vm-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .vm-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .breadcrumb {
@@ -1767,12 +1785,15 @@
       .roadmap-header-area { max-width: 100%; }
       .progress-card { width: 100%; max-width: 100%; }
       .roadmap-curve-area { display: none; }
-      .details-panel { width: 100%; transform: none; margin-bottom: 0px; opacity: 1; pointer-events: auto; }
+      .details-panel { display: none !important; }
       .mobile-timeline { display: flex; flex-direction: column; gap: 20px; width: 100%; }
-      .mobile-node { background: #fff; padding: 25px; border-radius: 12px; border-left: 5px solid var(--node-color); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-      .mobile-node .card-step { margin-bottom: 10px; display: inline-block; }
-      .mobile-node .dp-year { font-size: 1.8rem; margin-bottom: 8px; color: var(--node-color); }
-      .mobile-node .dp-title { font-size: 1.1rem; margin-bottom: 15px; color: #1e293b; }
+      .mobile-node { background: #fff; padding: 25px; border-radius: 12px; border-left: 5px solid var(--eco-green); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+      .mobile-node .card-step { margin-bottom: 10px; display: inline-block; color: var(--solar-yellow); font-weight: bold; }
+      .mobile-node .dp-year { font-size: 1.8rem; margin-bottom: 8px; color: var(--deep-blue); font-weight: 800; }
+      .mobile-node .dp-title { font-size: 1.2rem; margin-bottom: 15px; color: #1e293b; font-weight: 700; }
+      .mobile-node .dp-desc { font-size: 0.95rem; line-height: 1.5; color: #555; }
+      .mobile-node ul.dp-achievements { margin-top: 15px; padding-left: 20px; }
+      .mobile-node ul.dp-achievements li { margin-bottom: 5px; font-size: 0.9rem; color: #444; }
     }
     @media (min-width: 993px) {
       .mobile-timeline { display: none; }
@@ -2341,11 +2362,18 @@
         const div = document.createElement('div');
         div.className = 'mobile-node';
         div.setAttribute('data-index', i);
+        
+        let achievementsHtml = '';
+        if (data.achievements && data.achievements.length > 0) {
+          achievementsHtml = `<ul class="dp-achievements">` + data.achievements.map(a => `<li>${a}</li>`).join('') + `</ul>`;
+        }
+
         div.innerHTML = `
           <div class="card-step">STEP ${i + 1}</div>
           <div class="dp-year">${data.year}</div>
           <div class="dp-title">${data.title}</div>
           <p class="dp-desc">${data.description}</p>
+          ${achievementsHtml}
         `;
         mobileTimeline.appendChild(div);
       });

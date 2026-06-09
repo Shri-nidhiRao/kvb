@@ -74,6 +74,7 @@
     .menu-toggle {
       display: none;
       font-size: 26px;
+      color: #000; /* Ensure hamburger/cross is black */
       cursor: pointer;
       transition: transform 0.4s ease, opacity 0.3s ease;
     }
@@ -332,6 +333,11 @@
 
     btn.onclick = () => {
       menu.classList.toggle("active");
+      if (menu.classList.contains("active")) {
+        btn.innerHTML = "✕";
+      } else {
+        btn.innerHTML = "☰";
+      }
     };
 
     /* DROPDOWN CLICK BEHAVIOR */
