@@ -205,11 +205,25 @@
         }
         .video-info p { font-size: 0.85rem; color: #888; display: flex; justify-content: space-between; align-items: center; }
         .video-info p span.yt-brand { color: #FF0000; font-weight: 600; font-size: 0.8rem; }
+        .mobile-swipe-indicator {
+            display: none;
+            text-align: center;
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            animation: swipePulse 2s infinite;
+        }
+        @keyframes swipePulse {
+            0% { opacity: 0.5; transform: translateX(-5px); }
+            50% { opacity: 1; transform: translateX(5px); }
+            100% { opacity: 0.5; transform: translateX(-5px); }
+        }
         
         @media (max-width: 768px) { 
             .video-card { flex: 0 0 85vw; } 
             .yt-section-header { flex-direction: column; align-items: flex-start; gap: 20px; }
             .yt-section-title h2 { font-size: 1.6rem; }
+            .mobile-swipe-indicator { display: block; }
         }
     </style>
 </head>
@@ -287,7 +301,10 @@
                     <h2 class="section-title">Our YouTube Channel</h2>
                     <p>Watch our latest videos and updates directly from KVB Green Energies</p>
                 </div>
-                <!-- Navigation buttons removed -->
+            </div>
+            
+            <div class="mobile-swipe-indicator">
+                <i class="fas fa-arrows-alt-h"></i> Swipe to explore videos
             </div>
             
             <div class="video-carousel" id="youtube-carousel">
