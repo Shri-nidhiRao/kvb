@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | KVB Green Energies</title>
+    <link rel="icon" type="image/png" href="images/products/kvb-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --solar-yellow: #FDB813;
+            --deep-blue: #0B3D91;
+            --eco-green: #3A7D44;
+            --text-primary: #1C1C1C;
+            --text-secondary: #4a5568;
+            --background: #F9F9F9;
+            --border: #e0e8e0;
+            --primary: #3A7D44;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* BACK BUTTON */
+        .back-btn { position: absolute; top: 100px; left: 30px; display: inline-flex; align-items: center; gap: 6px; color: #FF8C00; text-decoration: none; font-weight: 600; font-family: var(--font-body); padding: 6px 14px; font-size: 0.85rem; border-radius: 30px; background: #FFF3E0; border: none; z-index: 10; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .back-btn:hover { background: #FFE0B2; transform: translateX(-5px); color: #E65100; }
+
+        /* HERO SECTION */
+        .blog-post-hero {
+            position: relative; min-height: 45vh; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
+            color: white; padding: 120px 0 60px; text-align: center;
+        }
+
+        .blog-post-hero h1 { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; max-width: 800px; margin: 0 auto; }
+
+        .blog-meta-header { display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 20px; font-size: 0.95rem; opacity: 0.9; }
+        .blog-meta-header .tag { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        /* BLOG CONTENT */
+        .blog-content-section { padding: 4rem 0; background: white; }
+        .blog-article { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-secondary); max-width: 900px; margin: 0 auto; padding: 0 32px; line-height: 1.6; }
+        
+        .blog-article h3 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--deep-blue); margin: 2rem 0 1rem; }
+        .blog-article p { margin-bottom: 1.5rem; }
+        .blog-article ul { margin-bottom: 1.5rem; padding-left: 2rem; }
+        .blog-article li { margin-bottom: 0.8rem; }
+        .blog-article strong { color: var(--text-primary); }
+
+        .blog-hero-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (max-width: 768px) {
+            .blog-post-hero h1 { font-size: 2rem; }
+            .back-btn { top: 90px; left: 15px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header injected via script -->
+    <div id="header"></div>
+
+    <div id="loading" style="text-align: center; padding: 150px 0;">
+        <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--eco-green);"></i>
+        <p style="margin-top: 20px; font-size: 1.2rem; color: #666;">Loading article...</p>
+    </div>
+
+    <div id="errorMsg" style="display: none; text-align: center; padding: 150px 0; color: red;">
+        <h2>Article Not Found</h2>
+        <p>The article you are looking for does not exist or has been removed.</p>
+        <a href="blog.html" class="back-btn" style="position: static; margin-top: 20px; display: inline-flex;"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+    </div>
+
+    <div id="blogPost" style="display: none;">
+        <section class="blog-post-hero">
+            <a href="blog.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+            <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 32px;">
+                <h1 id="postTitle">Title</h1>
+                <div class="blog-meta-header">
+                    <span id="postTag"></span>
+                    <span><i class="far fa-calendar-alt"></i> <span id="postDate">Date</span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-content-section">
+            <div class="blog-article">
+                <img id="postImage" src="" alt="Blog Hero" class="blog-hero-image" style="display: none;">
+                <div id="postContent">
+                    <!-- HTML Content -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer injected via script -->
+    <div id="footer"></div>
+
+    <!-- GLOBAL COMPONENT LOADER -->
+    <script>
+        (function() {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
+                    .then(html => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            el.innerHTML = html;
+                            // Execute scripts
+                            const scripts = el.querySelectorAll('script');
+                            scripts.forEach(s => {
+                                const newScript = document.createElement('script');
+                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                                newScript.appendChild(document.createTextNode(s.innerHTML));
+                                s.parentNode.replaceChild(newScript, s);
+                            });
+                        }
+                    }).catch(console.error);
+            }
+            window.BASE_PATH = "./";
+            loadComponent('header', 'components/header.html');
+            loadComponent('footer', 'components/footer.html');
+        })();
+    </script>
+    <script src="js/fix-logo.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
+            if (!id) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('errorMsg').style.display = 'block';
+                return;
+            }
+
+            const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? 'http://localhost:5001/api/blogs' 
+                : '/api/blogs';
+
+            try {
+                const res = await fetch(`${API_BASE}/${id}`);
+                if (!res.ok) throw new Error('Not found');
+                const blog = await res.json();
+
+                // Render
+                document.title = blog.title + " | KVB Green Energies";
+                document.getElementById('postTitle').innerText = blog.title;
+                document.getElementById('postDate').innerText = new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: '2-digit' });
+                document.getElementById('postContent').innerHTML = blog.content;
+
+                if (blog.tags && blog.tags.length > 0) {
+                    document.getElementById('postTag').innerHTML = `<span class="tag">${blog.tags[0]}</span>`;
+                }
+
+                if (blog.imageUrl) {
+                    const img = document.getElementById('postImage');
+                    img.src = blog.imageUrl;
+                    img.style.display = 'block';
+                }
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('blogPost').style.display = 'block';
+            } catch (error) {
+                console.error(error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('errorMsg').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

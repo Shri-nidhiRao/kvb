@@ -294,12 +294,9 @@
         <li class="dropdown">
           <a href="#">Products</a>
           <div class="dropdown-menu">
-            <a href="/products/solar-steam-cooking.html">Solar Steam Cooking</a>
-            <a href="/products/direct-cooking.html">Direct Cooking</a>
-            <a href="/products/solar-dryers.html">Solar Dryers</a>
-            <a href="/products/scheffler-concentrators.html">Scheffler Concentrators</a>
-            <a href="/products/microgreen-systems.html">Microgreen Systems</a>
-            <a href="/products/thermal-storage.html">Thermal Storage</a>
+            <a href="solutions/solar-steam-cooking.html">Solar Steam Cooking</a>
+            <a href="solutions/solar-dryers.html">Smart Solar Dryers</a>
+            <a href="solutions/agritech-solutions.html">Agritech Solutions</a>
           </div>
         </li>
          <li class="dropdown">
@@ -329,29 +326,7 @@
 
   <script>
 
-    /* MOBILE MENU */
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("navMenu");
 
-    btn.onclick = () => {
-      menu.classList.toggle("active");
-      if (menu.classList.contains("active")) {
-        btn.innerHTML = "✕";
-      } else {
-        btn.innerHTML = "☰";
-      }
-    };
-
-    /* DROPDOWN CLICK BEHAVIOR */
-    document.querySelectorAll(".dropdown > a")
-      .forEach(el => {
-        el.addEventListener("click", e => {
-          e.preventDefault(); // Always prevent '#' link navigation
-          if (window.innerWidth < 900) {
-            el.parentElement.classList.toggle("active");
-          }
-        });
-      });
 
     /* ================= BASIC INSPECT BLOCK ================= */
 

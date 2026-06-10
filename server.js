@@ -2,6 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
 require("dotenv").config();
 
 const app = express();
@@ -71,6 +72,106 @@ app.post("/send-email", async (req, res) => {
     } catch (error) {
         logError("SEND ERROR", error);
         res.status(500).send("Error sending email");
+    }
+});
+
+// --- AUTHENTICATION ---
+const ADMIN_TOKEN = "kvb-admin-token-xyz";
+
+app.post("/api/login", (req, res) => {
+    const { username, password } = req.body;
+    if (username === "kvbgreenenergies@gmail.com" && password === "KVB123") {
+        res.json({ success: true, token: ADMIN_TOKEN });
+    } else {
+        res.status(401).json({ success: false, message: "Invalid credentials" });
+    }
+});
+
+const authMiddleware = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    if (authHeader === `Bearer ${ADMIN_TOKEN}`) {
+        next();
+    } else {
+        res.status(401).json({ error: 'Unauthorized' });
+    }
+};
+
+// --- BLOGS API ---
+const BLOGS_FILE = path.join(__dirname, 'blogs.json');
+
+// Helper to read blogs
+const readBlogs = () => {
+    try {
+        if (!fs.existsSync(BLOGS_FILE)) {
+            fs.writeFileSync(BLOGS_FILE, JSON.stringify([]));
+        }
+        const data = fs.readFileSync(BLOGS_FILE, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error("Error reading blogs:", error);
+        return [];
+    }
+};
+
+// Helper to write blogs
+const writeBlogs = (blogs) => {
+    fs.writeFileSync(BLOGS_FILE, JSON.stringify(blogs, null, 2));
+};
+
+// GET all blogs
+app.get("/api/blogs", (req, res) => {
+    res.json(readBlogs());
+});
+
+// GET single blog
+app.get("/api/blogs/:id", (req, res) => {
+    const blogs = readBlogs();
+    const blog = blogs.find(b => b.id === req.params.id);
+    if (blog) res.json(blog);
+    else res.status(404).send("Blog not found");
+});
+
+// POST new blog
+app.post("/api/blogs", authMiddleware, (req, res) => {
+    const blogs = readBlogs();
+    const newBlog = {
+        id: Date.now().toString(),
+        title: req.body.title,
+        author: req.body.author || "Admin",
+        date: req.body.date || new Date().toISOString().split('T')[0],
+        tags: req.body.tags || [],
+        imageUrl: req.body.imageUrl || "",
+        content: req.body.content || "",
+        createdAt: new Date().toISOString()
+    };
+    blogs.push(newBlog);
+    writeBlogs(blogs);
+    res.status(201).json(newBlog);
+});
+
+// PUT update blog
+app.put("/api/blogs/:id", authMiddleware, (req, res) => {
+    const blogs = readBlogs();
+    const index = blogs.findIndex(b => b.id === req.params.id);
+    if (index !== -1) {
+        blogs[index] = { ...blogs[index], ...req.body, id: req.params.id };
+        writeBlogs(blogs);
+        res.json(blogs[index]);
+    } else {
+        res.status(404).send("Blog not found");
+    }
+});
+
+// DELETE blog
+app.delete("/api/blogs/:id", authMiddleware, (req, res) => {
+    let blogs = readBlogs();
+    const initialLength = blogs.length;
+    blogs = blogs.filter(b => b.id !== req.params.id);
+    if (blogs.length < initialLength) {
+        writeBlogs(blogs);
+        res.json({ success: true });
+    } else {
+        res.status(404).send("Blog not found");
     }
 });
 

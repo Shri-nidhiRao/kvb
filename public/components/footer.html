@@ -15,13 +15,15 @@
     margin: auto;
   }
 
-  /* Grid: now 4 columns – Company (2fr), Products (1fr), Application (1fr), Contact (1fr) */
+  /* Layout: Company on left, Contact on right */
   .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     gap: 60px;
-    /* increased gap for better separation */
     margin-bottom: 50px;
+  }
+  .footer-col:first-child {
+    max-width: 500px;
   }
 
   .footer-col h3,
@@ -139,9 +141,12 @@
   /* Responsive adjustments */
   @media (max-width: 900px) {
     .footer-grid {
-      grid-template-columns: 1fr 1fr;
-      /* two columns on tablet */
+      flex-direction: column;
       gap: 40px;
+    }
+
+    .footer-col:first-child {
+      max-width: 100%;
     }
 
     .footer-bottom {
@@ -157,8 +162,6 @@
 
   @media (max-width: 600px) {
     .footer-grid {
-      grid-template-columns: 1fr;
-      /* single column on mobile */
       gap: 30px;
     }
 
@@ -203,33 +206,7 @@
         </div>
       </div>
 
-      <!-- Products Column (1fr) – uncommented and active -->
-      <div class="footer-col">
-        <h4>Products</h4>
-        <ul>
-          <li><a href="../products/solar-steam-cooking.html">Solar Steam Cooking</a></li>
-          <li><a href="../products/direct-cooking.html">Direct Cooking</a></li>
-          <li><a href="../products/solar-dryers.html">Solar Dryers</a></li>
-          <li><a href="../products/scheffler-concentrators.html">Scheffler Concentrators</a></li>
-          <li><a href="../products/microgreen-systems.html">Microgreen Systems</a></li>
-          <li><a href="../products/thermal-storage.html">Thermal Storage</a></li>
-        </ul>
-      </div>
-
-      <!-- Application Column (1fr) -->
-      <div class="footer-col">
-        <h4>Application</h4>
-        <ul>
-          <li><a href="/app/chemical-industry.html">Chemical Industry</a></li>
-          <li><a href="/app/tea-processing-industry.html">Tea Processing</a></li>
-          <li><a href="/app/leather-footwear.html">Leather & Footwear</a></li>
-          <li><a href="/app/food-processing-industry.html">Food Processing</a></li>
-          <li><a href="/app/automobile-industry.html">Automobile Industry</a></li>
-          <li><a href="/app/paper-pulp-industry.html">Paper & Pulp Industry</a></li>
-          <li><a href="/app/textile-industry.html">Textile Industry</a></li>
-          <li><a href="/app/dairy-industry.html">Dairy Industry</a></li>
-        </ul>
-      </div>
+      
 
       <!-- Contact Column (1fr) -->
       <div class="footer-col">
@@ -251,7 +228,6 @@
       </div>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
         <a href="#">Sitemap</a>
       </div>
     </div>

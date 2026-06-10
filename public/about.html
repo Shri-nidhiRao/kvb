@@ -353,7 +353,7 @@
 
     /* ===== VISION & MISSION (REDESIGN) ===== */
     .vision-mission {
-      padding: 60px 0 80px 0;
+      padding: 140px 0 180px 0;
       background-image: url('images/backgd.png');
       background-size: cover;
       background-position: center;
@@ -383,8 +383,8 @@
     .vm-card {
       background: rgba(255, 255, 255, 0.65);
       backdrop-filter: blur(8px);
-      padding: 40px 25px;
-      border-radius: 16px;
+      padding: 25px 20px;
+      border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       text-align: center;
       transition: all 0.3s ease;
@@ -407,9 +407,9 @@
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       position: absolute;
-      bottom: -15px;
-      left: -15px;
-      font-size: 100px;
+      bottom: -10px;
+      left: -10px;
+      font-size: 70px;
       color: rgba(58, 125, 68, 0.05);
       z-index: 0;
       pointer-events: none;
@@ -425,7 +425,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 60px;
+      height: 40px;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23f0f8f4' fill-opacity='1' d='M0,256L48,250.7C96,245,192,235,288,234.7C384,235,480,245,576,234.7C672,224,768,192,864,176C960,160,1056,160,1152,176C1248,192,1344,224,1392,240L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
       background-size: cover;
       background-repeat: no-repeat;
@@ -439,38 +439,38 @@
     }
 
     .vm-icon {
-      width: 65px;
-      height: 65px;
+      width: 45px;
+      height: 45px;
       background: var(--eco-green);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin: 0 auto 15px;
       color: white;
-      font-size: 26px;
+      font-size: 18px;
     }
 
     .vm-card h3 {
       color: black;
-      font-size: 1.5rem;
-      margin-bottom: 12px;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
       font-weight: 700;
     }
 
     .card-divider {
-      width: 40px;
-      height: 2px;
+      width: 30px;
+      height: 3px;
       background: var(--eco-green);
       border: none;
-      margin: 0 auto 15px auto;
+      margin: 0 auto 12px auto;
       border-radius: 2px;
     }
 
     .vm-card p {
       color: #555;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.85rem;
+      line-height: 1.3;
     }
 
     /* ===== FOUNDER PROFILE ===== */
@@ -1461,9 +1461,16 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-
       .hero-title {
         font-size: 2.8rem;
+      }
+
+      .story-image img,
+      .founder-image img,
+      .team-img {
+        height: auto !important;
+        max-height: 400px;
+        object-fit: contain !important;
       }
 
       .story-grid,
@@ -1930,11 +1937,7 @@
           <div class="team-info">
             <h4>Chandrashekhar Kori</h4>
             <p class="position">Operation Head</p>
-            <p class="bio">Techno-commercial leader with 20+ years of expertise in delivering integrated solar thermal
-              solutions, driving business growth through strategic sales, engineering design, project execution,
-              manufacturing coordination, and innovation across Scheffler systems, solar dryers, and sustainable energy
-              technologies. </p>
-          </div>
+            <p class="bio">Techno-commercial leader with 20+ years of expertise in integrated solar thermal solutions, driving business growth through strategic sales, engineering design, project execution, manufacturing coordination, and innovation in sustainable energy technologies. </p></div>
         </div>
         <div class="team-card" data-aos="fade-up" data-aos-delay="200">
           <div class="team-img"><img src="images/products/rakesh.jpg.jpeg" alt="Rakesh">
@@ -1942,12 +1945,7 @@
           <div class="team-info">
             <h4>Rakesh Venkatraj</h4>
             <p class="position">Product Head</p>
-            <p class="bio">A seasoned product leader with 15+ years of experience, serving as Product Developer, Product
-              Head, and CTO. Expert in driving end-to-end product strategy, from ideation to scalable execution, with a
-              strong focus on innovation, technology architecture, and business growth. Proven track record in building
-              high-performance teams, delivering user-centric solutions, and leading complex digital transformations
-              across industries.</p>
-          </div>
+            <p class="bio">Seasoned product leader with 15+ years of experience as Product Developer, Product Head, and CTO. Expert in end-to-end product strategy, innovation, technology architecture, and scalable execution, with a strong track record in digital transformation and building high-performance teams.</p></div>
         </div>
         <div class="team-card" data-aos="fade-up" data-aos-delay="200">
           <div class="team-img"><img src="images/products/WhatsApp Image 2026-04-29 at 17.50.02.jpeg"
@@ -1956,9 +1954,7 @@
           <div class="team-info">
             <h4>Sunil Dyamakkanavar</h4>
             <p class="position">Embedded Software Engineer</p>
-            <p class="bio">Designing smart, connected systems with a focus on efficiency.Turning innovation into
-              practical, reliable solutions.</p>
-          </div>
+            <p class="bio">Technology professional focused on designing smart, connected systems with an emphasis on efficiency, automation, and reliability. Passionate about transforming innovative ideas into practical, scalable solutions that enhance performance and user experience.</p></div>
         </div>
         <div class="team-card" data-aos="fade-up" data-aos-delay="200">
           <div class="team-img"><img src="images/products/WhatsApp Image 2026-05-15 at 15.14.02.jpeg"
@@ -1967,12 +1963,7 @@
           <div class="team-info">
             <h4>Raksha Ganesh Shetty</h4>
             <p class="position">Data Science and AI professional </p>
-            <p class="bio">With experience in Machine
-              Learning, Data Analytics, and Big Data technologies. She specializes in predictive analytics, dashboard
-              development, and database management using Python, SQL, MongoDB, PostgreSQL, and Power BI. Passionate
-              about data-driven solutions, she focuses on building intelligent systems that support business
-              decision-making and innovation.</p>
-          </div>
+            <p class="bio">Experienced in Machine Learning, Data Analytics, and Big Data technologies, specializing in predictive analytics, dashboard development, and database management using Python, SQL, MongoDB, PostgreSQL, and Power BI. </p></div>
         </div>
       </div>
   </section>
@@ -2099,7 +2090,7 @@
         <div class="award-card" data-aos="zoom-in" data-aos-delay="100">
           <div class="award-icon"><i class="fas fa-trophy"></i></div>
            <h3>HDFC Parivartan</h3>
-  <p>Recognized in 2024 for innovative contributions in developing Solar Tunnel Dryer technology, promoting sustainable agricultural processing and renewable energy solutions.</p>
+  <p>Recognized in 2024 for innovative contributions in developing technology, promoting sustainable agricultural processing and renewable energy solutions.</p>
 </div>
 <div class="award-card" data-aos="zoom-in" data-aos-delay="100">
           <div class="award-icon"><i class="fas fa-trophy"></i></div>
@@ -2129,13 +2120,13 @@
   <section class="why-choose-section">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Why Choose KVB</h2>
-      <p class="section-subtitle" data-aos="fade-up">Discover why institutions and farmers across India trust our
+      <p class="section-subtitle" data-aos="fade-up">Discover why industries,institutions and farmers across India trust our
         solutions</p>
       <div class="benefits-grid">
         <div class="benefit-card" data-aos="flip-left" data-aos-delay="50">
           <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
           <h4>Proven Technology</h4>
-          <p>Field-tested systems deployed in 100+ real-world environments across India with proven reliability and
+          <p>Field-tested systems deployed in 35+ real-world environments across India with proven reliability and
             performance.</p>
         </div>
         <div class="benefit-card" data-aos="flip-left" data-aos-delay="100">
@@ -2172,7 +2163,7 @@
   <!-- ===== POSITIONING & MISSION COMBINED ===== -->
   <section class="vision-mission">
     <div class="container">
-      <div class="highlight-box" data-aos="flip-up" style="margin-bottom: 25px;">
+      <div class="highlight-box" data-aos="flip-up" style="margin-bottom: 60px;">
         <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
         <div class="highlight-box-text">
           “KVB Green Energies integrates Solar Thermal Cleantech with Regenerative Agritech Intelligence — powering industries and transforming agriculture from <span class="text-green">soil to sale.</span>”
@@ -2269,20 +2260,17 @@
         {
           year: "2020",
           title: "Company Foundation",
-          description: "KVB Green Energies was officially established with a vision to drive sustainable innovation in renewable energy solutions. The foundation phase focused on building the company’s mission, research direction, and long-term commitment toward eco-friendly energy technologies and agricultural sustainability.",
           achievements: ["Official company establishment","Renewable energy vision initiated","Foundation for future innovations"]
         },
         {
           year: "2021",
           title: "Certification & Official Incorporation",
-          description: "The year 2021 marked a major phase of growth and recognition for KVB Green Energies with successful business incorporation, government registrations, and technical certifications. The company gained credibility through MNRE-certified solar steam technology testing and academic validation from reputed institutions, strengthening its position in the renewable energy sector.",
           achievements: [
              "Partnership firm officially incorporated (11/02/2021)","16 sq.m Schiffer Dish solar steam system received MNRE cooking test certification (16/02/2021)","MSME incorporation and GST registration completed (04/09/2021)","4 sq.m test report certified by Savitribai Phule Pune University"]
       },
         {
   year: "2022",
   title: "Commercial Installation & Government Recognition",
-  description: "In 2022, KVB Green Energies achieved a major breakthrough with its first commercial solar steam cooking installation. The company also gained recognition from the Karnataka Horticulture Department, strengthening its presence in the renewable energy and sustainable agricultural technology sector.",
   achievements: [
     "First commercial solar steam cooking installation completed at Sri Siddharood Math, Hubli",
     "Empanelled in Karnataka Horticulture Department, Bangalore",
@@ -2292,7 +2280,6 @@
         {
   year: "2023",
   title: "Startup Recognition & Certification",
-  description: "The year 2023 marked an important milestone for KVB Green Energies with official startup recognition and certification. This achievement strengthened the company’s credibility, innovation potential, and position within the renewable energy and sustainable technology ecosystem.",
   achievements: [
     "Received official startup recognition and certification (30/05/2023)",
     "Strengthened innovation and business credibility",
@@ -2302,7 +2289,6 @@
         {
   year: "2024",
   title: "Expansion & Multi-site Installations",
-  description: "In 2024, KVB Green Energies entered a major expansion phase with multiple successful installations across different locations. The company strengthened its market presence by scaling its renewable energy solutions and demonstrating the reliability and adaptability of its solar steam technology.",
   achievements: [
     "Completed multiple successful installations across various locations",
     "Expanded commercial and operational presence",
@@ -2312,7 +2298,6 @@
        {
   year: "2025",
   title: "Performance Recognition & International Empanelment",
-  description: "In 2025, KVB Green Energies achieved significant recognition through performance validation and international empanelment. The company received an official performance report for its solar tunnel dryers and expanded its industry credibility by being empanelled under UNIDO for CST technology initiatives.",
   achievements: [
     "Received performance report from UHS Bagalkot for Solar Tunnel Dryers",
     "Empanelled in UNIDO for CST technology",
@@ -2321,11 +2306,11 @@
 },{
   year: "2026",
   title: "Recognition & Continuous Growth",
-  description: "In 2026, KVB Green Energies continues its journey of innovation and expansion, achieving widespread recognition in the renewable energy sector. With growing industry trust, successful implementations, and continuous technological advancement, the company is steadily strengthening its impact in sustainable energy solutions.",
   achievements: [
     "Achieved significant recognition in the renewable energy sector",
     "Continued expansion and business growth",
-    "Strengthened reputation through successful implementations"
+    "Strengthened reputation through successful implementations",
+    "Secured patent recognition for an innovative renewable energy project"
   ]
 },
 
