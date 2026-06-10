@@ -442,6 +442,7 @@
             }
             .hero-title { font-size: 2.8rem; }
             .hero-premium { padding: 1rem 0 3rem 0; }
+            .hero-premium p { font-size: 1rem !important; }
             .hero-buttons { flex-direction: column; }
         }
 
@@ -493,6 +494,8 @@
             .solution-grid-4 { grid-template-columns: 1fr !important; }
             .impact-conclusion-bar { font-size: 0.9rem; text-align: center; flex-direction: column; }
         }
+    
+        @media (max-width: 900px) { .hero-section .container, .hero-premium { padding-top: 1rem !important; } }
     </style>
 </head>
 
@@ -506,7 +509,7 @@
                 <div class="grid-2" style="gap: 4rem; align-items: center;">
                     <div style="position: relative; z-index: 10;">
                         
-                        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 1.5rem;">
+                        <h1>
                             Parabolic Trough <span style="color: #FF9800;">Solar Steam</span><br>for Chemical Industry
                         </h1>
                         <p style="font-size: 1.15rem; line-height: 1.7; color: #fff; max-width: 90%; margin-bottom: 30px;">
