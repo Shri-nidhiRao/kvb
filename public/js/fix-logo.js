@@ -29,65 +29,6 @@
         return true;
     }
 
-    function initHeaderScripts() {
-        // Mobile Menu Toggle
-        const btn = document.getElementById("menuBtn");
-        const menu = document.getElementById("navMenu");
-        if (btn && menu && !btn.hasAttribute('data-initialized')) {
-            btn.onclick = () => {
-                menu.classList.toggle("active");
-                if (menu.classList.contains("active")) {
-                    btn.innerHTML = "✕";
-                } else {
-                    btn.innerHTML = "☰";
-                }
-            };
-            btn.setAttribute('data-initialized', 'true');
-        }
-
-        // Mobile Dropdown Toggle
-        document.querySelectorAll("#navMenu .dropdown > a").forEach(el => {
-            if (!el.hasAttribute('data-initialized')) {
-                el.addEventListener("click", e => {
-                    if (window.innerWidth < 900) {
-                        e.preventDefault();
-                        el.parentElement.classList.toggle("active");
-                    }
-                });
-                el.setAttribute('data-initialized', 'true');
-            }
-        });
-
-        // Smart Header: Hide on scroll down, show on scroll up
-        if (!window.headerScrollInitialized) {
-            let lastScrollY = window.scrollY;
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('.header');
-                if (header) {
-                    const currentScrollY = window.scrollY;
-                    
-                    // Add 'scrolled' class for stylistic changes (shadow/blur)
-                    if (currentScrollY > 50) {
-
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-
-                    // Hide/Show based on direction
-                    if (currentScrollY > lastScrollY && currentScrollY > 150) {
-                        header.classList.add('header-hidden');
-                    } else {
-                        header.classList.remove('header-hidden');
-                    }
-                    lastScrollY = currentScrollY;
-
-                }
-            });
-            window.headerScrollInitialized = true;
-        }
-    }
-
     // Try immediately, then retry until header has loaded (up to ~3 seconds)
     if (!fixLogo()) {
         var attempts = 0;
@@ -95,10 +36,8 @@
             attempts++;
             if (fixLogo() || attempts > 20) {
                 clearInterval(interval);
-                initHeaderScripts();
             }
         }, 150);
     } else {
-        initHeaderScripts();
     }
 })();

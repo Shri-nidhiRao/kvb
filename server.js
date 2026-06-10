@@ -97,7 +97,7 @@ const authMiddleware = (req, res, next) => {
 };
 
 // --- BLOGS API ---
-const BLOGS_FILE = path.join(__dirname, 'blogs.json');
+const BLOGS_FILE = path.join(__dirname, 'public', 'blogs.json');
 
 // Helper to read blogs
 const readBlogs = () => {

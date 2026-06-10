@@ -242,7 +242,7 @@
                 const grid = document.getElementById('dynamicBlogsGrid');
                 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
                     ? 'http://localhost:5001/api/blogs' 
-                    : '/api/blogs';
+                    : 'blogs.json';
                 
                 try {
                     const res = await fetch(API_BASE);

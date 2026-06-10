@@ -345,75 +345,77 @@
       }
     };
 
-    /* ================= SMART HEADER LOGIC ================= */
-    let lastScrollY = window.scrollY;
-    const header = document.querySelector('.header');
+    (function() {
+      /* ================= SMART HEADER LOGIC ================= */
+      let lastScrollY = window.scrollY;
+      const header = document.querySelector('.header');
 
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
 
-      // Add 'scrolled' class for stylistic changes after some scroll
-      if (currentScrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-
-      // Hide/Show based on direction
-      if (currentScrollY > lastScrollY && currentScrollY > 150) {
-        header.classList.add('header-hidden');
-      } else {
-        header.classList.remove('header-hidden');
-      }
-
-      lastScrollY = currentScrollY;
-    });
-
-    /* ================= MOBILE MENU LOGIC ================= */
-    const menuBtn = document.getElementById("menuBtn");
-    const navMenu = document.getElementById("navMenu");
-
-    if (menuBtn && navMenu) {
-      menuBtn.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        if (navMenu.classList.contains("active")) {
-          menuBtn.innerHTML = "✕";
+        // Add 'scrolled' class for stylistic changes after some scroll
+        if (currentScrollY > 50) {
+          header.classList.add('scrolled');
         } else {
-          menuBtn.innerHTML = "☰";
+          header.classList.remove('scrolled');
         }
-      });
-    }
 
-    /* Close menu on link click (if not dropdown) */
-    document.querySelectorAll(".nav-menu a:not(.dropdown > a)").forEach(link => {
-      link.addEventListener("click", () => {
-        if (navMenu.classList.contains("active")) {
-          navMenu.classList.remove("active");
-          menuBtn.innerHTML = "☰";
+        // Hide/Show based on direction
+        if (currentScrollY > lastScrollY && currentScrollY > 150) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
         }
-      });
-    });
 
-    /* Mobile Dropdown Toggle */
-    document.querySelectorAll("#navMenu .dropdown > a").forEach(el => {
-      el.addEventListener("click", e => {
-        if (window.innerWidth <= 1024) {
-          e.preventDefault();
-          el.parentElement.classList.toggle("active");
-        }
+        lastScrollY = currentScrollY;
       });
-    });
 
-    // Global AOS Initialization for all pages
-    if (typeof AOS !== 'undefined') {
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 50
+      /* ================= MOBILE MENU LOGIC ================= */
+      const menuBtn = document.getElementById("menuBtn");
+      const navMenu = document.getElementById("navMenu");
+
+      if (menuBtn && navMenu) {
+        menuBtn.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+          if (navMenu.classList.contains("active")) {
+            menuBtn.innerHTML = "✕";
+          } else {
+            menuBtn.innerHTML = "☰";
+          }
+        });
+      }
+
+      /* Close menu on link click (if not dropdown) */
+      document.querySelectorAll(".nav-menu a:not(.dropdown > a)").forEach(link => {
+        link.addEventListener("click", () => {
+          if (navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+            menuBtn.innerHTML = "☰";
+          }
+        });
       });
-      // Refresh after a small delay to ensure DOM is fully rendered
-      setTimeout(() => AOS.refresh(), 200);
-    }
+
+      /* Mobile Dropdown Toggle */
+      document.querySelectorAll("#navMenu .dropdown > a").forEach(el => {
+        el.addEventListener("click", e => {
+          if (window.innerWidth <= 1024) {
+            e.preventDefault();
+            el.parentElement.classList.toggle("active");
+          }
+        });
+      });
+
+      // Global AOS Initialization for all pages
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          once: true,
+          offset: 50
+        });
+        // Refresh after a small delay to ensure DOM is fully rendered
+        setTimeout(() => AOS.refresh(), 200);
+      }
+    })();
   </script>
 
 </body>
