@@ -276,10 +276,7 @@
     </style>
 </head>
 <body>
-    <!-- Header (Same as above) -->
-    <header class="header">
-        <!-- Use the header code from above -->
-    </header>
+    <div id="header"></div>
 
     <!-- Products Hero -->
     <section class="products-hero">
@@ -527,17 +524,31 @@
         </div>
     </section>
 
-    <!-- Footer (Use your existing footer) -->
-    <footer class="main-footer">
-        <!-- Your existing footer code -->
-    </footer>
+    <div id="footer"></div>
 
     <script>
-        // Mobile Navigation
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-            this.classList.toggle('active');
-        });
+        (function() {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
+                    .then(html => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            el.innerHTML = html;
+                            const scripts = el.querySelectorAll('script');
+                            scripts.forEach(s => {
+                                const newScript = document.createElement('script');
+                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                                newScript.appendChild(document.createTextNode(s.innerHTML));
+                                s.parentNode.replaceChild(newScript, s);
+                            });
+                        }
+                    }).catch(console.error);
+            }
+            window.BASE_PATH = "";
+            loadComponent('header', 'components/header.html');
+            loadComponent('footer', 'components/footer.html');
+        })();
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

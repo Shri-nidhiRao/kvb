@@ -1322,40 +1322,11 @@
         </div>
     </section>-->
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER ===== -->
     <div id="footer"></div>
-
-    
 
     <script>
         (function () {
-            // ===== MOBILE MENU =====
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('navMenu');
-
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function () {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                document.querySelectorAll('.nav-menu a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
-
-                document.querySelectorAll('.dropdown > a').forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        if (window.innerWidth <= 1024) {
-                            e.preventDefault();
-                            this.parentElement.classList.toggle('active');
-                        }
-                    });
-                });
-            }
-
             // ===== FORM SUBMISSION (Backend) =====
             const contactForm = document.getElementById('mainContactForm');
             const submitBtn = document.getElementById('submitBtn');
