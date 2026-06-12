@@ -2212,12 +2212,12 @@
 
       async function initRoadmap() {
         try {
-          const res = await fetch('/api/roadmaps');
+          const res = await fetch('/roadmaps.json');
           if (res.ok) {
             timelineData = await res.json();
           }
         } catch (e) {
-          console.error('Failed to load roadmaps from API', e);
+          console.error('Failed to load roadmaps from JSON', e);
         }
 
         // Fallback to empty if nothing returned

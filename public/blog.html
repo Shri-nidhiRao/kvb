@@ -255,12 +255,8 @@
             <script>
             document.addEventListener('DOMContentLoaded', async () => {
                 const grid = document.getElementById('dynamicBlogsGrid');
-                const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-                    ? 'http://localhost:5001/api/blogs' 
-                    : 'blogs.json';
-                
                 try {
-                    const res = await fetch(API_BASE);
+                    const res = await fetch('/blogs.json');
                     if (!res.ok) throw new Error('Network response was not ok');
                     const blogs = await res.json();
                     
