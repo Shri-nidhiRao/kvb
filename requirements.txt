@@ -1,0 +1,28 @@
+KVB GREEN ENERGIES - HOSTING REQUIREMENTS & DEPLOYMENT INSTRUCTIONS
+===================================================================
+
+This project uses a Node.js backend to power the frontend website and the Admin Panel. 
+Please ensure the following requirements are met when setting up the hosting environment:
+
+1. NODE.JS ENVIRONMENT REQUIRED
+-------------------------------
+Because the website features a functional Admin Panel that saves new blogs and roadmaps, basic "static" hosting (like GitHub Pages or simple cPanel shared hosting without Node.js support) will not work.
+- You must use a Node.js supported hosting environment (e.g., VPS from DigitalOcean/AWS, Hostinger Node.js plan, or similar).
+- Run `npm install` to install dependencies, and start the server using `node server.js`.
+- The application runs on port 5001 by default.
+
+2. FILE SYSTEM WRITE PERMISSIONS
+--------------------------------
+The backend saves user-generated data (Blogs and Roadmaps) directly to local JSON files (`public/blogs.json` and `public/roadmaps.json`).
+- Ensure the server has persistent storage and write permissions for the application folder.
+- WARNING: Do not use ephemeral/serverless free-tier hosting (like Heroku's free tier or Render's free tier) unless you have attached a persistent disk, because those services wipe local files upon every restart, which will delete the saved blogs and roadmaps.
+
+3. ENVIRONMENT VARIABLES (.env)
+-------------------------------
+For security, the Admin Panel credentials are not hardcoded in the source code.
+You must configure the following Environment Variables on the production server, or manually create a `.env` file in the root directory:
+
+ADMIN_USERNAME=kvbgreenenergies@gmail.com
+ADMIN_PASSWORD=KVB123
+
+(Feel free to change these values for production security).

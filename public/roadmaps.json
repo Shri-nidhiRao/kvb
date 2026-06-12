@@ -1,0 +1,95 @@
+[
+  {
+    "id": "1",
+    "year": "2020",
+    "title": "Foundation",
+    "description": "",
+    "achievements": [
+      "Official company establishment",
+      "Renewable energy vision initiated",
+      "Foundation for future innovations"
+    ],
+    "icon": "fas fa-seedling",
+    "color": "#22c55e"
+  },
+  {
+    "id": "2",
+    "year": "2021",
+    "title": "Incorporation",
+    "description": "",
+    "achievements": [
+      "Partnership firm officially incorporated (11/02/2021)",
+      "16 sq.m Schiffer Dish solar steam system received MNRE cooking test certification",
+      "MSME incorporation and GST registration completed",
+      "4 sq.m test report certified by Savitribai Phule Pune University"
+    ],
+    "icon": "fas fa-sun",
+    "color": "#22c55e"
+  },
+  {
+    "id": "3",
+    "year": "2022",
+    "title": "Commercial",
+    "description": "",
+    "achievements": [
+      "First commercial solar steam cooking installation completed at Sri Siddharood Math, Hubli",
+      "Empanelled in Karnataka Horticulture Department, Bangalore",
+      "Expanded commercial presence in sustainable energy solutions"
+    ],
+    "icon": "fas fa-certificate",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "4",
+    "year": "2023",
+    "title": "Certification",
+    "description": "",
+    "achievements": [
+      "Received official startup recognition and certification (30/05/2023)",
+      "Strengthened innovation and business credibility",
+      "Expanded recognition within the renewable energy sector"
+    ],
+    "icon": "fas fa-globe",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "5",
+    "year": "2024",
+    "title": "Expansion",
+    "description": "",
+    "achievements": [
+      "Completed multiple successful installations across various locations",
+      "Expanded commercial and operational presence",
+      "Demonstrated scalable renewable energy solutions"
+    ],
+    "icon": "fas fa-leaf",
+    "color": "#0B3D91"
+  },
+  {
+    "id": "6",
+    "year": "2025",
+    "title": "UNIDO",
+    "description": "",
+    "achievements": [
+      "Received performance report from UHS Bagalkot for Solar Tunnel Dryers",
+      "Empanelled in UNIDO for CST technology",
+      "Strengthened technical credibility and international recognition"
+    ],
+    "icon": "fas fa-flask",
+    "color": "#FF6F00"
+  },
+  {
+    "id": "7",
+    "year": "Today",
+    "title": "National Scale",
+    "description": "",
+    "achievements": [
+      "Achieved significant recognition in the renewable energy sector",
+      "Continued expansion and business growth",
+      "Strengthened reputation through successful implementations",
+      "Secured patent recognition for an innovative renewable energy project"
+    ],
+    "icon": "fas fa-chart-line",
+    "color": "#FF6F00"
+  }
+]

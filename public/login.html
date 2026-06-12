@@ -2,12 +2,19 @@
 <html lang="en">
 
 <head>
+    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login | KVB Green Energies</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Redirect if already logged in
+        if (localStorage.getItem('adminToken')) {
+            window.location.replace('admin.html');
+        }
+    </script>
     <style>
         body {
             background-color: var(--background);
@@ -111,12 +118,12 @@
         <form id="loginForm">
             <div class="input-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" required placeholder="admin@example.com">
+                <input type="email" id="email" required placeholder="admin@example.com" >
             </div>
             
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" required placeholder="Enter password">
+                <input type="password" id="password" required placeholder="Enter password" >
             </div>
 
             <button type="submit" class="btn-login" id="loginBtn">Login securely</button>
@@ -152,7 +159,7 @@
                 if (response.ok && data.success) {
                     // Store token and redirect
                     localStorage.setItem('adminToken', data.token);
-                    window.location.href = 'admin.html';
+                    window.location.replace('admin.html');
                 } else {
                     throw new Error(data.message || 'Login failed');
                 }

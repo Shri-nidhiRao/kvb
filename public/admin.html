@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Admin | KVB Green Energies</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Strict auth check before page load
+        if (!localStorage.getItem('adminToken')) {
+            window.location.replace('login.html');
+        }
+    </script>
     <style>
         :root {
             --admin-bg: #f4f6f8;
@@ -197,11 +204,11 @@
         .modal-content {
             background: white;
             border-radius: 12px;
-            width: 90%;
-            max-width: 800px;
+            width: 95%;
+            max-width: 900px;
             max-height: 90vh;
             overflow-y: auto;
-            padding: 2rem;
+            padding: 2.5rem;
             position: relative;
             transform: translateY(20px);
             transition: 0.3s;
@@ -229,16 +236,29 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #444;
+            font-weight: 700;
+            color: #000000;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input, .form-group textarea,
+        .builder-block input, .builder-block textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--admin-border);
+            padding: 1rem;
+            border: 1px solid #ccc;
             border-radius: 8px;
             font-family: inherit;
+            color: #000000;
+            background-color: #fdfdfd;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus,
+        .builder-block input:focus, .builder-block textarea:focus {
+            outline: none;
+            border-color: var(--admin-primary);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(58, 125, 68, 0.2);
         }
 
         .form-group textarea {
@@ -250,7 +270,20 @@
             display: flex;
             justify-content: flex-end;
             gap: 15px;
-            margin-top: 2rem;
+            margin-top: 20px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
         }
 
         .btn-cancel {
@@ -276,6 +309,45 @@
             padding: 3rem;
             color: #888;
         }
+
+        /* BLOCK BUILDER STYLES */
+        .builder-block {
+            background: #fafafa;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .builder-block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--admin-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .builder-block-remove {
+            background: #FFEBEE;
+            color: #D32F2F;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .builder-block-remove:hover { background: #FFCDD2; }
+        .builder-block textarea.points-input {
+            min-height: 120px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -283,9 +355,12 @@
     <div class="admin-layout">
         <!-- Sidebar -->
         <aside class="admin-sidebar">
-            <a href="index.html" class="admin-logo">KVB <span>Admin</span></a>
+            <a href="index.html" class="admin-logo" style="display: flex; justify-content: center; margin-bottom: 20px;">
+                <img src="images/products/kvb-logo.png" alt="KVB Admin" style="max-width: 120px; height: auto;">
+            </a>
             <ul class="admin-nav">
-                <li><a href="#" class="active"><i class="fas fa-file-alt"></i> Manage Blogs</a></li>
+                <li><a href="#" class="active" id="navBlogs"><i class="fas fa-file-alt"></i> Manage Blogs</a></li>
+                <li><a href="#" id="navRoadmaps"><i class="fas fa-map-signs"></i> Manage Roadmaps</a></li>
                 <li><a href="index.html"><i class="fas fa-home"></i> Back to Site</a></li>
                 <li><a href="#" onclick="logout(event)" style="color: #ff6b6b;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
@@ -293,27 +368,55 @@
 
         <!-- Main Content -->
         <main class="admin-main">
-            <div class="admin-header">
-                <h1>Blog Management</h1>
-                <button class="btn-add" id="openModalBtn">
-                    <i class="fas fa-plus"></i> Add New Blog
-                </button>
+            <!-- BLOGS SECTION -->
+            <div id="blogsSection">
+                <div class="admin-header">
+                    <h1>Blog Management</h1>
+                    <button class="btn-add" id="openModalBtn">
+                        <i class="fas fa-plus"></i> Add New Blog
+                    </button>
+                </div>
+
+                <div class="blog-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Blog Details</th>
+                                <th>Author</th>
+                                <th>Date Published</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blogTableBody">
+                            <!-- Blogs will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="blog-list">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Blog Details</th>
-                            <th>Author</th>
-                            <th>Date Published</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="blogTableBody">
-                        <!-- Blogs will be injected here -->
-                    </tbody>
-                </table>
+            <!-- ROADMAPS SECTION -->
+            <div id="roadmapsSection" style="display: none;">
+                <div class="admin-header">
+                    <h1>Roadmap Management</h1>
+                    <button class="btn-add" id="openRoadmapModalBtn">
+                        <i class="fas fa-plus"></i> Add New Roadmap Point
+                    </button>
+                </div>
+
+                <div class="blog-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Roadmap Details</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roadmapTableBody">
+                            <!-- Roadmaps will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
     </div>
@@ -325,32 +428,95 @@
             <h2 id="modalTitle">Create New Blog</h2>
             <form id="blogForm">
                 <input type="hidden" id="blogId">
+                
                 <div class="form-group">
-                    <label for="blogTitle">Title</label>
-                    <input type="text" id="blogTitle" required placeholder="Enter blog title">
+                    <label for="blogTitle">Blog Title</label>
+                    <input type="text" id="blogTitle" required placeholder="Enter an engaging title..." style="font-size: 1.1rem; padding: 1rem;">
                 </div>
-                <div class="form-group">
-                    <label for="blogImage">Cover Image URL</label>
-                    <input type="url" id="blogImage" placeholder="https://example.com/image.jpg">
+                
+                <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="form-group">
+                        <label for="blogTags">Category / Tag</label>
+                        <input type="text" id="blogTags" placeholder="e.g., Smart Agriculture" style="font-size: 1.1rem; padding: 1rem;">
+                    </div>
+                    <div class="form-group">
+                        <label for="blogAuthor">Author Name</label>
+                        <input type="text" id="blogAuthor" placeholder="e.g., KVB Team" style="font-size: 1.1rem; padding: 1rem;">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="blogAuthor">Author</label>
-                    <input type="text" id="blogAuthor" placeholder="e.g., John Doe">
+
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label style="font-size: 1.2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; color: var(--deep-blue);">Content Builder</label>
+                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 1.5rem;">Build your blog by adding blocks below. Your title is automatically styled as the main heading.</p>
+                    
+                    <div id="blockBuilderContainer">
+                        <!-- Dynamic blocks will be injected here -->
+                    </div>
+                    
+                    <div class="block-toolbar" style="display: flex; gap: 15px; margin-top: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border: 2px dashed #ddd; justify-content: center;">
+                        <button type="button" class="btn-cancel" onclick="addBlock('subtitle')" style="flex:1; max-width: 200px; border: 2px solid var(--admin-primary); color: var(--admin-primary); font-weight:700;"><i class="fas fa-heading"></i> + Add Subtitle</button>
+                        <button type="button" class="btn-cancel" onclick="addBlock('paragraph')" style="flex:1; max-width: 200px; border: 2px solid var(--admin-primary); color: var(--admin-primary); font-weight:700;"><i class="fas fa-paragraph"></i> + Add Paragraph</button>
+                        <button type="button" class="btn-cancel" onclick="addBlock('points')" style="flex:1; max-width: 200px; border: 2px solid var(--admin-primary); color: var(--admin-primary); font-weight:700;"><i class="fas fa-list-ul"></i> + Add Bullet Points</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="blogTags">Tags (comma separated)</label>
-                    <input type="text" id="blogTags" placeholder="e.g., Solar, Agriculture, Innovation">
-                </div>
-                <div class="form-group">
-                    <label for="blogContent">Content (HTML allowed)</label>
-                    <textarea id="blogContent" required placeholder="Write your blog content here..."></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
-                    <button type="submit" class="btn-save">Save Blog</button>
+                <div class="form-actions" style="border-top: 1px solid #eee; padding-top: 1.5rem;">
+                    <button type="button" class="btn-cancel" id="cancelBtn" style="font-size: 1.1rem;">Cancel</button>
+                    <button type="submit" class="btn-save" style="font-size: 1.1rem;"><i class="fas fa-save"></i> Publish Blog</button>
                 </div>
             </form>
         </div>
+    </div>
+
+    <!-- Roadmap Form Modal -->
+    <div class="modal-overlay" id="roadmapModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeRoadmapModalBtn">&times;</button>
+            <h2 id="roadmapModalTitle">Create New Roadmap Point</h2>
+            <form id="roadmapForm">
+                <input type="hidden" id="roadmapId">
+                
+                <div class="form-grid" style="grid-template-columns: 1fr 2fr;">
+                    <div class="form-group">
+                        <label for="roadmapYear">Year / Timeline</label>
+                        <input type="text" id="roadmapYear" required placeholder="e.g., 2025" style="font-size: 1.1rem; padding: 1rem;">
+                    </div>
+                    <div class="form-group">
+                        <label for="roadmapTitle">Title</label>
+                        <input type="text" id="roadmapTitle" required placeholder="e.g., National Expansion" style="font-size: 1.1rem; padding: 1rem;">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="roadmapColor">Color</label>
+                    <select id="roadmapColor" style="font-size: 1.1rem; padding: 1rem; width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="#FF6F00">Orange</option>
+                        <option value="#0B3D91">Blue</option>
+                        <option value="#22c55e">Green</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="roadmapDesc">Description (Optional)</label>
+                    <textarea id="roadmapDesc" placeholder="Brief description of the milestone..." style="min-height: 80px;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="roadmapAchievements">Achievements / Bullet Points</label>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">Enter one achievement per line.</p>
+                    <textarea id="roadmapAchievements" placeholder="Achievement 1&#10;Achievement 2" style="min-height: 120px;"></textarea>
+                </div>
+
+                <div class="form-actions" style="border-top: 1px solid #eee; padding-top: 1.5rem;">
+                    <button type="button" class="btn-cancel" id="cancelRoadmapBtn" style="font-size: 1.1rem;">Cancel</button>
+                    <button type="submit" class="btn-save" style="font-size: 1.1rem;"><i class="fas fa-save"></i> Save Roadmap</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" style="position: fixed; bottom: 20px; right: 20px; background: #3A7D44; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transform: translateY(100px); opacity: 0; transition: all 0.3s ease; z-index: 2000; font-weight: 600; display: flex; align-items: center; gap: 10px; pointer-events: none;">
+        <i class="fas fa-check-circle"></i> <span id="toastMsg">Changes saved successfully!</span>
     </div>
 
     <script src="js/admin.js"></script>

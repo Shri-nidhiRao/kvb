@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="description" content="KVB Green Energies provides innovative renewable energy solutions, including solar steam cooking, thermal energy storage, and smart agritech dryers.">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>KVB Green Energies – Engineering the Future</title>
@@ -127,7 +128,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
       font-weight: 500;
-      color: #86868b;
+      color: #555555;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       margin-top: 25px;
@@ -214,7 +215,7 @@
 
     .section-subtitle {
       font-size: 1.2rem;
-      color: #86868b;
+      color: #555555;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
@@ -744,7 +745,7 @@
     }
 
     .innovation-item p {
-      color: #86868b;
+      color: #555555;
       font-size: 0.95rem;
       line-height: 1.5;
       margin: 0;
@@ -796,7 +797,7 @@
     }
 
     .pillar-card p {
-      color: #86868b;
+      color: #555555;
       line-height: 1.6;
     }
 
@@ -830,7 +831,7 @@
     }
 
     .stat-message p {
-      color: #86868b;
+      color: #555555;
     }
 
     /* ===== CO2 IMPACT SECTION ===== */
@@ -1174,7 +1175,7 @@
 
 <body>
   <script>
-    if (sessionStorage.getItem('hasSeenLogoReveal')) {
+    if (localStorage.getItem('hasSeenLogoReveal')) {
       document.write('<style>#introScreen { display: none !important; } #mainWebsite { display: block !important; opacity: 1 !important; }</style>');
     }
   </script>
@@ -1195,6 +1196,7 @@
   <div id="mainWebsite">
     <!-- header placeholder -->
     <div id="header"></div>
+    <main id="main-content">
 
     <!-- HERO SECTION – Split Layout -->
     <section class="hero-section">
@@ -1311,7 +1313,7 @@
           <div class="marquee-track">
             <!-- First set (exactly as provided) -->
             <div class="marquee-item">
-              <div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army"></div>
+              <div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army" width="120" height="120" loading="lazy"></div>
               <div class="client-name">Indian Army</div>
             </div>
             <div class="marquee-item">
@@ -1357,7 +1359,7 @@
             </div>
             <!-- Duplicate set for seamless loop -->
             <div class="marquee-item">
-              <div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army"></div>
+              <div class="client-logo"><img src="images/certificates/indian army.png" alt="Indian Army" width="120" height="120" loading="lazy"></div>
               <div class="client-name">Indian Army</div>
             </div>
             <div class="marquee-item">
@@ -1394,7 +1396,7 @@
               <div class="client-name">Prakruti Organics Karwar</div>
             </div>
             <div class="marquee-item">
-              <div class="client-logo"><img src="images/certificates/uas bangalore.png" alt="UAS Bangalore"></div>
+              <div class="client-logo"><img src="images/certificates/uas b.jpeg" alt="UAS Bangalore"></div>
               <div class="client-name">UAS Bangalore</div>
             </div>
             <div class="marquee-item">
@@ -1412,32 +1414,32 @@
       <div class="container">
         <div style="text-align: center;">
           <h2 class="section-title">Building Tomorrow's Infrastructure Today</h2>
-          <p style="font-size:1.2rem;color:#86868b;max-width:700px;margin: 0 auto 3rem auto;">KVB is actively developing future technologies that will transform energy and agriculture systems.</p>
+          <p style="font-size:1.2rem;color:#555555;max-width:700px;margin: 0 auto 3rem auto;">KVB is actively developing future technologies that will transform energy and agriculture systems.</p>
         </div>
         <div class="innovation-grid">
           <div class="innovation-item">
             <div class="innovation-icon"><i class="fas fa-thermometer-half"></i></div>
-            <h4>Thermal Energy Storage</h4>
+            <h3>Thermal Energy Storage</h3>
             <p>Long‑duration heat storage for round‑the‑clock industrial use</p>
           </div>
           <div class="innovation-item">
             <div class="innovation-icon"><i class="fas fa-microchip"></i></div>
-            <h4>Soil‑to‑Sale Platforms</h4>
+            <h3>Soil‑to‑Sale Platforms</h3>
             <p>Integrated digital agriculture from farm to market</p>
           </div>
           <div class="innovation-item">
             <div class="innovation-icon"><i class="fas fa-brain"></i></div>
-            <h4>AI Crop Grading Systems</h4>
+            <h3>AI Crop Grading Systems</h3>
             <p>Automated quality detection with 99% accuracy</p>
           </div>
           <div class="innovation-item">
             <div class="innovation-icon"><i class="fas fa-robot"></i></div>
-            <h4>Microgreen Smart Farms</h4>
+            <h3>Microgreen Smart Farms</h3>
             <p>Fully automated vertical farming for urban areas</p>
           </div>
           <div class="innovation-item">
             <div class="innovation-icon"><i class="fas fa-bolt"></i></div>
-            <h4>Hybrid Renewable Heat</h4>
+            <h3>Hybrid Renewable Heat</h3>
             <p>Integration of solar, biomass and storage for continuous heat</p>
           </div>
         </div>
@@ -1510,10 +1512,11 @@
     </section>
 
     <!-- FOOTER PLACEHOLDER -->
+    </main>
     <div id="footer"></div>
 
     <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/919545529950" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/919545529950" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

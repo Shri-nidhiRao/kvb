@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="description" content="Get in touch with KVB Green Energies. Contact our team for inquiries regarding solar thermal solutions, industrial heating, and agritech systems.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact KVB Green Energies | Partnerships & Inquiries</title>
@@ -1053,6 +1054,28 @@
                 font-size: 0.75rem;
             }
         }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .form-success-message, .form-success-message * {
+                visibility: visible;
+            }
+            .form-success-message {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 20px;
+            }
+            .success-actions {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -1168,7 +1191,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                            <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -1249,24 +1272,24 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message / Requirements *</label>
+                        <label for="message">Message / Requirements </label>
                         <textarea id="message" name="message" rows="5"
-                            placeholder="Tell us about your project, goals, or questions..." required></textarea>
+                            placeholder="Tell us about your project, goals, or questions..." ></textarea>
                     </div>
 
                     <div class="form-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" name="privacy" required>
-                            <span>I agree to the <a href="privacy-policy.html">Privacy Policy</a> and consent to being
+                            <input type="checkbox" id="privacyCheck" name="privacy" required>
+                            <span>I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and consent to being
                                 contacted *</span>
                         </label>
                     </div>
 
                     <input type="hidden" name="product" value="Contact Form Inquiry">
-                    <input type="hidden" id="admin_email" name="to_email" value="kvbgreenenergies@gmail.com">
+                    <input type="hidden" id="admin_email" name="to_email" value="info@kvbgreenenergies.com">
 
                     <div class="form-submit">
-                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <button type="submit" class="btn btn-primary" id="submitBtn" disabled style="opacity: 0.6; cursor: not-allowed;">
                             <i class="fas fa-paper-plane"></i> Send Inquiry
                         </button>
                         <p class="form-note">We typically respond within 24 hours (Mon–Sat)</p>
@@ -1313,7 +1336,8 @@
         </div>
     </section>-->
 
-    <!-- ===== FOOTER ===== -->
+
+    <!-- ===== FOOTER ===== -->
     <div id="footer"></div>
 
     <script>
@@ -1322,12 +1346,24 @@
             const contactForm = document.getElementById('mainContactForm');
             const submitBtn = document.getElementById('submitBtn');
 
+
+            // Toggle submit button based on privacy checkbox
+            const privacyCheck = document.getElementById('privacyCheck');
+            if (privacyCheck && submitBtn) {
+                privacyCheck.addEventListener('change', function() {
+                    submitBtn.disabled = !this.checked;
+                    submitBtn.style.opacity = this.checked ? '1' : '0.6';
+                    submitBtn.style.cursor = this.checked ? 'pointer' : 'not-allowed';
+                });
+            }
+
             if (contactForm) {
                 contactForm.addEventListener('submit', async function (e) {
                     e.preventDefault();
 
                     const formData = new FormData(this);
                     const data = Object.fromEntries(formData);
+                    data.reference_id = `KVB-${Date.now().toString().slice(-6)}`;
 
                     const original = submitBtn.innerHTML;
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -1352,7 +1388,7 @@
                                     <h3>Inquiry Sent!</h3>
                                     <p>Thank you for contacting KVB Green Energies. We’ll get back to you soon.</p>
                                     <div class="success-details">
-                                        <p><strong>Reference ID:</strong> KVB-${Date.now().toString().slice(-6)}</p>
+                                        <p><strong>Reference ID:</strong> ${data.reference_id}</p>
                                         <p><strong>Expected response:</strong> Within 24 hours</p>
                                         <p><strong>Confirmation sent to:</strong> ${data.reply_to}</p>
                                     </div>
