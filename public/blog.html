@@ -1,317 +1,617 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta name="description" content="Read the latest insights, research, and updates on renewable energy, solar thermal systems, and sustainable agriculture from KVB Green Energies.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      name="description"
+      content="Read the latest insights, research, and updates on renewable energy, solar thermal systems, and sustainable agriculture from KVB Green Energies."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogs | KVB Green Energies</title>
-    <link rel="icon" type="image/png" href="images/products/kvb-logo.webp">
-    
+    <link rel="icon" type="image/png" href="images/products/kvb-logo.webp" />
+
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+
     <!-- Google Fonts: Montserrat + Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        /* ===== BASE STYLES – KVB Theme ===== */
-        :root {
-            --solar-yellow: #FDB813;
-            --deep-blue: #0B3D91;
-            --eco-green: #3A7D44;
-            --dark-charcoal: #1C1C1C;
-            --soft-white: #F9F9F9;
-            --accent-orange: #FF6F00;
-            --background: #F9F9F9;
-            --background-alt: #FFFFFF;
-            --text-primary: #1C1C1C;
-            --text-secondary: #4a5568;
-            --text-tertiary: #A1A1A6;
-            --border: #e0e8e0;
-            --primary: #3A7D44;
-            --primary-dark: #2d5a33;
-            --primary-light: #e6f3e6;
-            --primary-glow: rgba(58, 125, 68, 0.15);
-            --shadow-sm: 0 10px 30px rgba(28,28,28,0.04);
-            --shadow-md: 0 20px 40px rgba(58,125,68,0.08);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
+      /* ===== BASE STYLES – KVB Theme ===== */
+      :root {
+        --solar-yellow: #fdb813;
+        --deep-blue: #0b3d91;
+        --eco-green: #3a7d44;
+        --dark-charcoal: #1c1c1c;
+        --soft-white: #f9f9f9;
+        --accent-orange: #ff6f00;
+        --background: #f9f9f9;
+        --background-alt: #ffffff;
+        --text-primary: #1c1c1c;
+        --text-secondary: #4a5568;
+        --text-tertiary: #a1a1a6;
+        --border: #e0e8e0;
+        --primary: #3a7d44;
+        --primary-dark: #2d5a33;
+        --primary-light: #e6f3e6;
+        --primary-glow: rgba(58, 125, 68, 0.15);
+        --shadow-sm: 0 10px 30px rgba(28, 28, 28, 0.04);
+        --shadow-md: 0 20px 40px rgba(58, 125, 68, 0.08);
+        --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+        --radius-sm: 12px;
+        --radius-md: 20px;
+        --radius-lg: 28px;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--text-primary);
+        background: var(--background);
+        line-height: 1.6;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        color: var(--deep-blue);
+        text-align: center;
+        position: relative;
+        display: block;
+        margin-bottom: 26px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--solar-yellow);
+        border-radius: 2px;
+      }
+
+      /* ===== HEADER PLACEHOLDER ===== */
+      #header {
+        min-height: 80px;
+      }
+
+      /* ===== HERO SECTION ===== */
+      .blog-hero {
+        position: relative;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          #09203f 0%,
+          #0f3460 40%,
+          #1a5276 100%
+        );
+        overflow: hidden;
+        color: white;
+        padding: 100px 0 60px;
+      }
+
+      .blog-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 15% 50%,
+            rgba(0, 255, 135, 0.12) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(253, 184, 19, 0.08) 0%,
+            transparent 40%
+          );
+        animation: heroPulse 8s infinite alternate;
+        z-index: 1;
+      }
+
+      .blog-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E")
+          no-repeat bottom;
+        background-size: cover;
+        z-index: 2;
+      }
+
+      @keyframes heroPulse {
+        0% {
+          opacity: 0.9;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--text-primary);
-            background: var(--background);
-            line-height: 1.6;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+        100% {
+          opacity: 1;
         }
+      }
 
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        text-align: center;
+      }
 
-        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.02em; }
+      .hero-content h1 {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        animation: fadeUp 0.9s ease 0.1s both;
+      }
 
-        .section-title {
-            font-size: 2.5rem; font-weight: 700; font-family: 'Montserrat', sans-serif;
-            color: var(--deep-blue); text-align: center; position: relative;
-            display: block; margin-bottom: 26px;
+      .hero-title-highlight {
+        background: linear-gradient(135deg, #00e676, var(--solar-yellow));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+      }
+
+      .hero-content .hero-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
+        margin-bottom: 2rem;
+        max-width: 680px;
+        margin-inline: auto;
+        animation: fadeUp 1s ease 0.2s both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
         }
-
-        .section-title::after {
-            content: ''; position: absolute; bottom: -10px; left: 50%;
-            transform: translateX(-50%); width: 80px; height: 4px;
-            background: var(--solar-yellow); border-radius: 2px;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        /* ===== HEADER PLACEHOLDER ===== */
-        #header { min-height: 80px; }
+      /* ===== BLOG GRID ===== */
+      .blogs-section {
+        padding: 4rem 0 6rem;
+      }
 
-        /* ===== HERO SECTION ===== */
-        .blog-hero {
-            position: relative; min-height: 50vh; display: flex; align-items: center;
-            background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
-            overflow: hidden; color: white; padding: 100px 0 60px;
+      .blogs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
+      }
+
+      .blog-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        background: #fff3e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .blog-img i {
+        font-size: 4rem;
+        color: rgba(255, 140, 0, 0.4);
+      }
+
+      .blog-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .blog-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 0.85rem;
+        color: var(--text-tertiary);
+        margin-bottom: 1rem;
+      }
+
+      .blog-meta .tag {
+        background: var(--primary-light);
+        color: var(--eco-green);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+
+      .blog-card h3 {
+        font-size: 1.4rem;
+        color: var(--deep-blue);
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      .blog-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .blog-read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        color: #ff8c00;
+        text-decoration: none;
+        transition:
+          gap 0.3s,
+          color 0.3s;
+        margin-top: auto;
+      }
+
+      .blog-read-more:hover {
+        gap: 12px;
+        color: #e65100;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
         }
-
-        .blog-hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 15% 50%, rgba(0,255,135,0.12) 0%, transparent 55%),
-                        radial-gradient(circle at 85% 30%, rgba(253,184,19,0.08) 0%, transparent 40%);
-            animation: heroPulse 8s infinite alternate; z-index: 1;
-        }
-
-        .blog-hero::after {
-            content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
-            background-size: cover; z-index: 2;
-        }
-
-        @keyframes heroPulse { 0% { opacity: 0.9; } 100% { opacity: 1; } }
-
-        .hero-content {
-            max-width: 800px; margin: 0 auto; position: relative; z-index: 3; text-align: center;
-        }
-
-        .hero-content h1 { color: white; font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; animation: fadeUp 0.9s ease 0.1s both; }
-        
-        .hero-title-highlight {
-            background: linear-gradient(135deg, #00e676, var(--solar-yellow));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline;
-        }
-
-        .hero-content .hero-subtitle {
-            font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); font-weight: 400; margin-bottom: 2rem; max-width: 680px; margin-inline: auto; animation: fadeUp 1s ease 0.2s both;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ===== BLOG GRID ===== */
-        .blogs-section { padding: 4rem 0 6rem; }
-
         .blogs-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;
+          grid-template-columns: 1fr;
         }
+      }
 
-        .blog-card {
-            background: white; border-radius: var(--radius-md); overflow: hidden;
-            box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: all 0.3s ease;
-            display: flex; flex-direction: column; height: 100%;
+      /* YOUTUBE CAROUSEL */
+      .youtube-section {
+        padding: 80px 0;
+        background: #fafafa;
+        border-top: 1px solid #eee;
+      }
+      .yt-section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 40px;
+      }
+      .yt-section-title p {
+        color: var(--text-secondary);
+      }
+      .more-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: #fefefe;
+        border: 2px dashed #ddd;
+        text-decoration: none;
+        color: var(--primary);
+        gap: 15px;
+      }
+      .more-card:hover {
+        background: #f9f9f9;
+        border-color: var(--primary);
+        color: var(--deep-blue);
+      }
+      .more-card i {
+        font-size: 3rem;
+        color: #ff0000;
+      }
+      .more-card span {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: var(--font-heading);
+        text-align: center;
+      }
+      .video-carousel {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .video-carousel::-webkit-scrollbar {
+        display: none;
+      }
+      .video-card {
+        flex: 0 0 340px;
+        scroll-snap-align: start;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      .video-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+      .video-thumbnail {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        background: #222;
+      }
+      .video-thumbnail img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 54px;
+        height: 54px;
+        background: rgba(255, 0, 0, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        transition: transform 0.3s;
+      }
+      .video-card:hover .play-btn {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      .video-info {
+        padding: 20px;
+      }
+      .video-info h3 {
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+        line-height: 1.4;
+        color: var(--text-primary);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-family: var(--font-heading);
+        font-weight: 600;
+      }
+      .video-info p {
+        font-size: 0.85rem;
+        color: #888;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .video-info p span.yt-brand {
+        color: #ff0000;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+      .mobile-swipe-indicator {
+        display: none;
+        text-align: center;
+        color: #888;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        animation: swipePulse 2s infinite;
+      }
+      @keyframes swipePulse {
+        0% {
+          opacity: 0.5;
+          transform: translateX(-5px);
         }
-
-        .blog-card:hover {
-            transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--primary);
+        50% {
+          opacity: 1;
+          transform: translateX(5px);
         }
-
-        .blog-img {
-            width: 100%; height: 220px; object-fit: cover; background: #FFF3E0;
-            display: flex; align-items: center; justify-content: center;
+        100% {
+          opacity: 0.5;
+          transform: translateX(-5px);
         }
-        
-        .blog-img i { font-size: 4rem; color: rgba(255, 140, 0, 0.4); }
+      }
 
-        .blog-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
-
-        .blog-meta {
-            display: flex; align-items: center; gap: 15px; font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1rem;
-        }
-
-        .blog-meta .tag {
-            background: var(--primary-light); color: var(--eco-green); padding: 4px 12px;
-            border-radius: 20px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.75rem;
-        }
-
-        .blog-card h3 {
-            font-size: 1.4rem; color: var(--deep-blue); margin-bottom: 1rem; line-height: 1.4;
-        }
-
-        .blog-card p {
-            color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;
-        }
-
-        .blog-read-more {
-            display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #FF8C00;
-            text-decoration: none; transition: gap 0.3s, color 0.3s; margin-top: auto;
-        }
-
-        .blog-read-more:hover { gap: 12px; color: #E65100; }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .blogs-grid { grid-template-columns: 1fr; }
-        }
-
-        /* YOUTUBE CAROUSEL */
-        .youtube-section { padding: 80px 0; background: #fafafa; border-top: 1px solid #eee; }
-        .yt-section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
-        .yt-section-title p { color: var(--text-secondary); }
-        .more-card { display: flex; align-items: center; justify-content: center; flex-direction: column; background: #fefefe; border: 2px dashed #ddd; text-decoration: none; color: var(--primary); gap: 15px; }
-        .more-card:hover { background: #f9f9f9; border-color: var(--primary); color: var(--deep-blue); }
-        .more-card i { font-size: 3rem; color: #FF0000; }
-        .more-card span { font-size: 1.2rem; font-weight: 600; font-family: var(--font-heading); text-align: center; }
-        .video-carousel {
-            display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
-            padding-bottom: 20px; scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .video-carousel::-webkit-scrollbar { display: none; }
+      @media (max-width: 768px) {
         .video-card {
-            flex: 0 0 340px; scroll-snap-align: start; border-radius: 16px;
-            overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.3s ease;
-            background: #fff; border: 1px solid rgba(0,0,0,0.04);
+          flex: 0 0 85vw;
         }
-        .video-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-        .video-thumbnail { position: relative; width: 100%; padding-top: 56.25%; background: #222; }
-        .video-thumbnail img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-        .play-btn {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 54px; height: 54px; background: rgba(255, 0, 0, 0.9); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4); transition: transform 0.3s;
+        .yt-section-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
         }
-        .video-card:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); }
-        .video-info { padding: 20px; }
-        .video-info h3 { font-size: 1.05rem; margin-bottom: 8px; line-height: 1.4; color: var(--text-primary);
-            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-            font-family: var(--font-heading); font-weight: 600;
+        .yt-section-title h2 {
+          font-size: 1.6rem;
         }
-        .video-info p { font-size: 0.85rem; color: #888; display: flex; justify-content: space-between; align-items: center; }
-        .video-info p span.yt-brand { color: #FF0000; font-weight: 600; font-size: 0.8rem; }
         .mobile-swipe-indicator {
-            display: none;
-            text-align: center;
-            color: #888;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            animation: swipePulse 2s infinite;
+          display: block;
         }
-        @keyframes swipePulse {
-            0% { opacity: 0.5; transform: translateX(-5px); }
-            50% { opacity: 1; transform: translateX(5px); }
-            100% { opacity: 0.5; transform: translateX(-5px); }
-        }
-        
-        @media (max-width: 768px) { 
-            .video-card { flex: 0 0 85vw; } 
-            .yt-section-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-            .yt-section-title h2 { font-size: 1.6rem; }
-            .mobile-swipe-indicator { display: block; }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Header injected via script -->
     <div id="header"></div>
 
     <!-- HERO SECTION -->
     <section class="blog-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Insights & <span class="hero-title-highlight">Innovations</span></h1>
-                <p class="hero-subtitle">Explore the latest news, technological breakthroughs, and insights in the world of renewable energy and smart agriculture.</p>
-            </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            Insights & <span class="hero-title-highlight">Innovations</span>
+          </h1>
+          <p class="hero-subtitle">
+            Explore the latest news, technological breakthroughs, and insights
+            in the world of renewable energy and smart agriculture.
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- BLOGS CONTENT -->
     <section class="blogs-section">
-        <div class="container">
-            <h2 class="section-title">Latest Articles</h2>
-            <div class="blogs-grid" id="dynamicBlogsGrid">
-                <!-- Blogs will be injected here by JS -->
-                <p id="blogsLoadingMsg">Loading latest articles...</p>
-            </div>
-            
-            <script>
-            document.addEventListener('DOMContentLoaded', async () => {
-                const grid = document.getElementById('dynamicBlogsGrid');
-                try {
-                    const res = await fetch('/blogs.json');
-                    if (!res.ok) throw new Error('Network response was not ok');
-                    const blogs = await res.json();
-                    
-                    if (blogs.length === 0) {
-                        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666;">No articles found. Please check back later!</p>';
-                        return;
-                    }
+      <div class="container">
+        <h2 class="section-title">Latest Articles</h2>
+        <div class="blogs-grid" id="dynamicBlogsGrid">
+          <!-- Blogs will be injected here by JS -->
+          <p id="blogsLoadingMsg">Loading latest articles...</p>
+        </div>
 
-                    grid.innerHTML = blogs.map(blog => `
+        <script>
+          document.addEventListener("DOMContentLoaded", async () => {
+            const grid = document.getElementById("dynamicBlogsGrid");
+            try {
+              const res = await fetch("/blogs.json");
+              if (!res.ok) throw new Error("Network response was not ok");
+              const blogs = await res.json();
+
+              if (blogs.length === 0) {
+                grid.innerHTML =
+                  '<p style="grid-column: 1/-1; text-align: center; color: #666;">No articles found. Please check back later!</p>';
+                return;
+              }
+
+              grid.innerHTML = blogs
+                .map(
+                  (blog) => `
                         <div class="blog-card">
-                            <div class="blog-img" style="${blog.imageUrl ? `background-image: url('${blog.imageUrl}'); background-size: cover; background-position: center;` : ''}">
-                                ${!blog.imageUrl ? `<i class="${blog.icon || 'fas fa-newspaper'}"></i>` : ''}
+                            <div class="blog-img" style="${blog.imageUrl ? `background-image: url('${blog.imageUrl}'); background-size: cover; background-position: center;` : ""}">
+                                ${!blog.imageUrl ? `<i class="${blog.icon || "fas fa-newspaper"}"></i>` : ""}
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span class="tag">${blog.tags && blog.tags.length > 0 ? blog.tags[0] : 'Blog'}</span>
+                                    <span class="tag">${blog.tags && blog.tags.length > 0 ? blog.tags[0] : "Blog"}</span>
                                     <span>${new Date(blog.date).toLocaleDateString()}</span>
                                 </div>
                                 <h3>${blog.title}</h3>
-                                <p>${(blog.content || '').replace(/<[^>]+>/g, '').substring(0, 120)}...</p>
+                                <p>${(blog.content || "").replace(/<[^>]+>/g, "").substring(0, 120)}...</p>
                                 <a href="blog-post.html?id=${blog.id}" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
-                    `).join('');
-                } catch (error) {
-                    console.error('Error fetching blogs:', error);
-                    grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: red;">Error loading articles. Ensure the local server is running.</p>';
-                }
-            });
-            </script>
-        </div>
+                    `,
+                )
+                .join("");
+            } catch (error) {
+              console.error("Error fetching blogs:", error);
+              grid.innerHTML =
+                '<p style="grid-column: 1/-1; text-align: center; color: red;">Error loading articles. Ensure the local server is running.</p>';
+            }
+          });
+        </script>
+      </div>
     </section>
 
     <!-- YOUTUBE VIDEOS CAROUSEL -->
     <section class="youtube-section">
-        <div class="container">
-            <div class="yt-section-header" style="justify-content: center; text-align: center;">
-                <div class="yt-section-title" style="width: 100%;">
-                    <h2 class="section-title">Our YouTube Channel</h2>
-                    <p>Watch our latest videos and updates directly from KVB Green Energies</p>
-                </div>
-            </div>
-            
-            <div class="mobile-swipe-indicator">
-                <i class="fas fa-arrows-alt-h"></i> Swipe to explore videos
-            </div>
-            
-            <div class="video-carousel" id="youtube-carousel">
-                <!-- Videos injected dynamically here -->
-                <div style="padding: 40px; text-align: center; width: 100%; color: #888;">
-                    <i class="fas fa-spinner fa-spin fa-2x" style="margin-bottom: 15px; color: var(--primary);"></i>
-                    <p>Loading latest videos...</p>
-                </div>
-            </div>
+      <div class="container">
+        <div
+          class="yt-section-header"
+          style="justify-content: center; text-align: center"
+        >
+          <div class="yt-section-title" style="width: 100%">
+            <h2 class="section-title">Our YouTube Channel</h2>
+            <p>
+              Watch our latest videos and updates directly from KVB Green
+              Energies
+            </p>
+          </div>
         </div>
+
+        <div class="mobile-swipe-indicator">
+          <i class="fas fa-arrows-alt-h"></i> Swipe to explore videos
+        </div>
+
+        <div class="video-carousel" id="youtube-carousel">
+          <!-- Videos injected dynamically here -->
+          <div
+            style="padding: 40px; text-align: center; width: 100%; color: #888"
+          >
+            <i
+              class="fas fa-spinner fa-spin fa-2x"
+              style="margin-bottom: 15px; color: var(--primary)"
+            ></i>
+            <p>Loading latest videos...</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer injected via script -->
@@ -319,44 +619,49 @@
 
     <!-- GLOBAL COMPONENT LOADER -->
     <script>
-        (function() {
-            function loadComponent(id, file) {
-                fetch(file)
-                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-                    .then(html => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            el.innerHTML = html;
-                            // Execute scripts
-                            const scripts = el.querySelectorAll('script');
-                            scripts.forEach(s => {
-                                const newScript = document.createElement('script');
-                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                                newScript.appendChild(document.createTextNode(s.innerHTML));
-                                s.parentNode.replaceChild(newScript, s);
-                            });
-                        }
-                    }).catch(console.error);
-            }
-            window.BASE_PATH = "";
-            loadComponent('header', 'components/header.html');
-            loadComponent('footer', 'components/footer.html');
-        })();
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                // Execute scripts
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
+        }
+        window.BASE_PATH = "";
+        loadComponent("header", "components/header.html");
+        loadComponent("footer", "components/footer.html");
+      })();
 
-        // YOUTUBE CAROUSEL LOGIC
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.getElementById('youtube-carousel');
-            
-            // Render function
-            function renderVideos(videos) {
-                carousel.innerHTML = '';
-                videos.forEach(video => {
-                    const card = document.createElement('div');
-                    card.className = 'video-card';
-                    card.innerHTML = `
+      // YOUTUBE CAROUSEL LOGIC
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.getElementById("youtube-carousel");
+
+        // Render function
+        function renderVideos(videos) {
+          carousel.innerHTML = "";
+          videos.forEach((video) => {
+            const card = document.createElement("div");
+            card.className = "video-card";
+            card.innerHTML = `
                         <a href="${video.link}" target="_blank" style="text-decoration: none;">
                             <div class="video-thumbnail">
-                                <img src="${video.thumbnail}" alt="${video.title}">
+                                <img src="${video.thumbnail}" alt="${video.title}" loading="lazy" decoding="async">
                                 <div class="play-btn"><i class="fas fa-play" style="margin-left: 4px;"></i></div>
                             </div>
                             <div class="video-info">
@@ -365,66 +670,99 @@
                             </div>
                         </a>
                     `;
-                    carousel.appendChild(card);
-                });
-                
-                const moreCard = document.createElement('a');
-                moreCard.href = 'https://www.youtube.com/@kvbgreenenergies';
-                moreCard.target = '_blank';
-                moreCard.className = 'video-card more-card';
-                moreCard.innerHTML = `
+            carousel.appendChild(card);
+          });
+
+          const moreCard = document.createElement("a");
+          moreCard.href = "https://www.youtube.com/@kvbgreenenergies";
+          moreCard.target = "_blank";
+          moreCard.className = "video-card more-card";
+          moreCard.innerHTML = `
                     <i class="fab fa-youtube"></i>
                     <span>View More<br>on YouTube</span>
                 `;
-                carousel.appendChild(moreCard);
-            }
-            
-            // 1. Instantly render initial/cached videos so the page loads at 0s
-            const cachedData = localStorage.getItem('yt_videos_cache');
-            let initialVideos = [];
-            
-            if (cachedData) {
-                initialVideos = JSON.parse(cachedData);
-            } else {
-                // Fallback initial videos to ensure no empty space
-                initialVideos = [
-                    { link: "https://www.youtube.com/watch?v=mVyFvaD_10g", thumbnail: "https://i.ytimg.com/vi/mVyFvaD_10g/hqdefault.jpg", title: "KVB Green Energies - Agrosense", date: "Recent" },
-                    { link: "https://www.youtube.com/watch?v=lhYJ1aIAa9E", thumbnail: "https://i.ytimg.com/vi/lhYJ1aIAa9E/hqdefault.jpg", title: "KVB Green Energies - Box Type Solar Dryer", date: "Recent" },
-                    { link: "https://www.youtube.com/watch?v=gFP9DjOJQxI", thumbnail: "https://i.ytimg.com/vi/gFP9DjOJQxI/hqdefault.jpg", title: "KVB Green Energies - Direct Cooking", date: "Recent" },
-                    { link: "https://www.youtube.com/watch?v=y8GVdX5rWxk", thumbnail: "https://i.ytimg.com/vi/y8GVdX5rWxk/hqdefault.jpg", title: "KVB Green Energies - Fish Dryer", date: "Recent" }
-                ];
-            }
-            
-            renderVideos(initialVideos);
+          carousel.appendChild(moreCard);
+        }
 
-            // 2. Dynamically fetch the latest videos in the background
-            const channelId = 'UCB1lMrzFkZjs7qu4jxl32zA';
-            const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    if(data.status === 'ok' && data.items.length > 0) {
-                        const newVideos = data.items.slice(0, 8).map(v => ({
-                            link: v.link,
-                            thumbnail: v.thumbnail,
-                            title: v.title,
-                            date: new Date(v.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
-                        }));
-                        
-                        // Save to cache
-                        localStorage.setItem('yt_videos_cache', JSON.stringify(newVideos));
-                        localStorage.setItem('yt_videos_time', new Date().getTime().toString());
-                        
-                        // Update UI seamlessly
-                        renderVideos(newVideos);
-                    }
-                })
-                .catch(err => {
-                    console.warn("Background fetch failed, keeping initial videos.", err);
-                });
-        });
+        // 1. Instantly render initial/cached videos so the page loads at 0s
+        const cachedData = localStorage.getItem("yt_videos_cache");
+        let initialVideos = [];
+
+        if (cachedData) {
+          initialVideos = JSON.parse(cachedData);
+        } else {
+          // Fallback initial videos to ensure no empty space
+          initialVideos = [
+            {
+              link: "https://www.youtube.com/watch?v=mVyFvaD_10g",
+              thumbnail: "https://i.ytimg.com/vi/mVyFvaD_10g/hqdefault.jpg",
+              title: "KVB Green Energies - Agrosense",
+              date: "Recent",
+            },
+            {
+              link: "https://www.youtube.com/watch?v=lhYJ1aIAa9E",
+              thumbnail: "https://i.ytimg.com/vi/lhYJ1aIAa9E/hqdefault.jpg",
+              title: "KVB Green Energies - Box Type Solar Dryer",
+              date: "Recent",
+            },
+            {
+              link: "https://www.youtube.com/watch?v=gFP9DjOJQxI",
+              thumbnail: "https://i.ytimg.com/vi/gFP9DjOJQxI/hqdefault.jpg",
+              title: "KVB Green Energies - Direct Cooking",
+              date: "Recent",
+            },
+            {
+              link: "https://www.youtube.com/watch?v=y8GVdX5rWxk",
+              thumbnail: "https://i.ytimg.com/vi/y8GVdX5rWxk/hqdefault.jpg",
+              title: "KVB Green Energies - Fish Dryer",
+              date: "Recent",
+            },
+          ];
+        }
+
+        renderVideos(initialVideos);
+
+        // 2. Dynamically fetch the latest videos in the background
+        const channelId = "UCB1lMrzFkZjs7qu4jxl32zA";
+        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.status === "ok" && data.items.length > 0) {
+              const newVideos = data.items.slice(0, 8).map((v) => ({
+                link: v.link,
+                thumbnail: v.thumbnail,
+                title: v.title,
+                date: new Date(v.pubDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                }),
+              }));
+
+              // Save to cache
+              localStorage.setItem(
+                "yt_videos_cache",
+                JSON.stringify(newVideos),
+              );
+              localStorage.setItem(
+                "yt_videos_time",
+                new Date().getTime().toString(),
+              );
+
+              // Update UI seamlessly
+              renderVideos(newVideos);
+            }
+          })
+          .catch((err) => {
+            console.warn(
+              "Background fetch failed, keeping initial videos.",
+              err,
+            );
+          });
+      });
     </script>
-</body>
+  </body>
 </html>

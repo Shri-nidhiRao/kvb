@@ -1,109 +1,122 @@
 // Blog Page Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Article Filtering
-    const categoryTabs = document.querySelectorAll('.category-tab');
-    const articleCards = document.querySelectorAll('.article-card');
-    
-    categoryTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Update active tab
-            categoryTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            
-            const category = this.getAttribute('data-category');
-            
-            // Filter article cards
-            articleCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                
-                if (category === 'all' || cardCategory === category) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-    
-    // Search Functionality
-    const searchForm = document.getElementById('blog-search');
-    const searchInput = document.querySelector('.search-input');
-    
-    if (searchForm) {
-        searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            
-            if (searchTerm === '') {
-                // Show all articles if search is empty
-                articleCards.forEach(card => {
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                });
-                return;
-            }
-            
-            // Search through articles
-            let foundResults = false;
-            
-            articleCards.forEach(card => {
-                const title = card.querySelector('.article-title').textContent.toLowerCase();
-                const excerpt = card.querySelector('.article-excerpt')?.textContent.toLowerCase() || '';
-                const tags = card.getAttribute('data-tags')?.toLowerCase() || '';
-                
-                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                    foundResults = true;
-                    
-                    // Highlight search term
-                    highlightSearchTerm(card, searchTerm);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
-            
-            // Show no results message
-            showSearchResultsMessage(foundResults, searchTerm);
-        });
-    }
-    
-    function highlightSearchTerm(card, term) {
-        const elements = card.querySelectorAll('.article-title, .article-excerpt');
-        
-        elements.forEach(element => {
-            const originalText = element.textContent;
-            const regex = new RegExp(`(${term})`, 'gi');
-            const highlightedText = originalText.replace(regex, '<mark>$1</mark>');
-            element.innerHTML = highlightedText;
-        });
-    }
-    
-    function showSearchResultsMessage(foundResults, searchTerm) {
-        let messageContainer = document.querySelector('.search-results-message');
-        
-        if (!messageContainer) {
-            messageContainer = document.createElement('div');
-            messageContainer.className = 'search-results-message';
-            document.querySelector('.articles-container').parentNode.insertBefore(messageContainer, document.querySelector('.articles-container'));
+document.addEventListener("DOMContentLoaded", function () {
+  // Article Filtering
+  const categoryTabs = document.querySelectorAll(".category-tab");
+  const articleCards = document.querySelectorAll(".article-card");
+
+  categoryTabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      // Update active tab
+      categoryTabs.forEach((t) => t.classList.remove("active"));
+      this.classList.add("active");
+
+      const category = this.getAttribute("data-category");
+
+      // Filter article cards
+      articleCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (category === "all" || cardCategory === category) {
+          card.style.display = "block";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, 10);
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 300);
         }
-        
-        if (!foundResults) {
-            messageContainer.innerHTML = `
+      });
+    });
+  });
+
+  // Search Functionality
+  const searchForm = document.getElementById("blog-search");
+  const searchInput = document.querySelector(".search-input");
+
+  if (searchForm) {
+    searchForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const searchTerm = searchInput.value.toLowerCase().trim();
+
+      if (searchTerm === "") {
+        // Show all articles if search is empty
+        articleCards.forEach((card) => {
+          card.style.display = "block";
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        });
+        return;
+      }
+
+      // Search through articles
+      let foundResults = false;
+
+      articleCards.forEach((card) => {
+        const title = card
+          .querySelector(".article-title")
+          .textContent.toLowerCase();
+        const excerpt =
+          card.querySelector(".article-excerpt")?.textContent.toLowerCase() ||
+          "";
+        const tags = card.getAttribute("data-tags")?.toLowerCase() || "";
+
+        if (
+          title.includes(searchTerm) ||
+          excerpt.includes(searchTerm) ||
+          tags.includes(searchTerm)
+        ) {
+          card.style.display = "block";
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+          foundResults = true;
+
+          // Highlight search term
+          highlightSearchTerm(card, searchTerm);
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 300);
+        }
+      });
+
+      // Show no results message
+      showSearchResultsMessage(foundResults, searchTerm);
+    });
+  }
+
+  function highlightSearchTerm(card, term) {
+    const elements = card.querySelectorAll(".article-title, .article-excerpt");
+
+    elements.forEach((element) => {
+      const originalText = element.textContent;
+      const regex = new RegExp(`(${term})`, "gi");
+      const highlightedText = originalText.replace(regex, "<mark>$1</mark>");
+      element.innerHTML = highlightedText;
+    });
+  }
+
+  function showSearchResultsMessage(foundResults, searchTerm) {
+    let messageContainer = document.querySelector(".search-results-message");
+
+    if (!messageContainer) {
+      messageContainer = document.createElement("div");
+      messageContainer.className = "search-results-message";
+      document
+        .querySelector(".articles-container")
+        .parentNode.insertBefore(
+          messageContainer,
+          document.querySelector(".articles-container"),
+        );
+    }
+
+    if (!foundResults) {
+      messageContainer.innerHTML = `
                 <div class="no-results">
                     <i class="fas fa-search"></i>
                     <h3>No results found for "${searchTerm}"</h3>
@@ -111,264 +124,316 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="btn btn-outline" id="clear-search">Clear Search</button>
                 </div>
             `;
-            
-            // Add clear search functionality
-            document.getElementById('clear-search').addEventListener('click', function() {
-                searchInput.value = '';
-                messageContainer.remove();
-                articleCards.forEach(card => {
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                    
-                    // Remove highlighting
-                    const elements = card.querySelectorAll('.article-title, .article-excerpt');
-                    elements.forEach(element => {
-                        element.innerHTML = element.textContent;
-                    });
-                });
+
+      // Add clear search functionality
+      document
+        .getElementById("clear-search")
+        .addEventListener("click", function () {
+          searchInput.value = "";
+          messageContainer.remove();
+          articleCards.forEach((card) => {
+            card.style.display = "block";
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+
+            // Remove highlighting
+            const elements = card.querySelectorAll(
+              ".article-title, .article-excerpt",
+            );
+            elements.forEach((element) => {
+              element.innerHTML = element.textContent;
             });
-        } else {
-            messageContainer.innerHTML = `
+          });
+        });
+    } else {
+      messageContainer.innerHTML = `
                 <div class="results-found">
                     <p>Showing results for: <strong>"${searchTerm}"</strong></p>
                     <button class="btn-text" id="clear-search">Clear search</button>
                 </div>
             `;
-            
-            document.getElementById('clear-search').addEventListener('click', function() {
-                searchInput.value = '';
-                messageContainer.remove();
-                articleCards.forEach(card => {
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                    
-                    // Remove highlighting
-                    const elements = card.querySelectorAll('.article-title, .article-excerpt');
-                    elements.forEach(element => {
-                        element.innerHTML = element.textContent;
-                    });
-                });
-            });
-        }
-    }
-    
-    // Sort Articles
-    const sortSelect = document.getElementById('sort-by');
-    const articlesContainer = document.querySelector('.articles-container');
-    
-    if (sortSelect) {
-        sortSelect.addEventListener('change', function() {
-            const sortBy = this.value;
-            const articles = Array.from(articlesContainer.querySelectorAll('.article-card'));
-            
-            // Sort articles based on selected option
-            articles.sort((a, b) => {
-                switch(sortBy) {
-                    case 'latest':
-                        // Sort by date (newest first)
-                        const dateA = new Date(a.querySelector('.date').textContent);
-                        const dateB = new Date(b.querySelector('.date').textContent);
-                        return dateB - dateA;
-                        
-                    case 'oldest':
-                        // Sort by date (oldest first)
-                        const dateAOld = new Date(a.querySelector('.date').textContent);
-                        const dateBOld = new Date(b.querySelector('.date').textContent);
-                        return dateAOld - dateBOld;
-                        
-                    case 'popular':
-                        // Sort by views (highest first)
-                        const viewsA = parseInt(a.querySelector('.stat:nth-child(1)')?.textContent?.replace(/[^0-9]/g, '') || '0');
-                        const viewsB = parseInt(b.querySelector('.stat:nth-child(1)')?.textContent?.replace(/[^0-9]/g, '') || '0');
-                        return viewsB - viewsA;
-                        
-                    case 'trending':
-                        // Sort by combination of views and recency
-                        const dateATrend = new Date(a.querySelector('.date').textContent);
-                        const dateBTrend = new Date(b.querySelector('.date').textContent);
-                        const daysDiff = Math.abs(dateATrend - dateBTrend) / (1000 * 60 * 60 * 24);
-                        const viewsATrend = parseInt(a.querySelector('.stat:nth-child(1)')?.textContent?.replace(/[^0-9]/g, '') || '0');
-                        const viewsBTrend = parseInt(b.querySelector('.stat:nth-child(1)')?.textContent?.replace(/[^0-9]/g, '') || '0');
-                        
-                        // Simple trending score (views per day since publication)
-                        const scoreA = viewsATrend / Math.max(1, daysDiff);
-                        const scoreB = viewsBTrend / Math.max(1, daysDiff);
-                        return scoreB - scoreA;
-                        
-                    default:
-                        return 0;
-                }
-            });
-            
-            // Reorder articles in container
-            articles.forEach(article => {
-                articlesContainer.appendChild(article);
-            });
-        });
-    }
-    
-    // Save Article Functionality
-    const saveButtons = document.querySelectorAll('.save-article');
-    
-    saveButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const articleCard = this.closest('.article-card');
-            const articleTitle = articleCard.querySelector('.article-title').textContent;
-            const articleLink = articleCard.querySelector('.read-link').getAttribute('href');
-            
-            this.classList.toggle('saved');
-            this.innerHTML = this.classList.contains('saved') 
-                ? '<i class="fas fa-bookmark"></i>' 
-                : '<i class="far fa-bookmark"></i>';
-            
-            // Show notification
-            showNotification(
-                this.classList.contains('saved') 
-                    ? `"${articleTitle}" saved for later` 
-                    : `"${articleTitle}" removed from saved`,
-                this.classList.contains('saved') ? 'success' : 'info'
+
+      document
+        .getElementById("clear-search")
+        .addEventListener("click", function () {
+          searchInput.value = "";
+          messageContainer.remove();
+          articleCards.forEach((card) => {
+            card.style.display = "block";
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+
+            // Remove highlighting
+            const elements = card.querySelectorAll(
+              ".article-title, .article-excerpt",
             );
-            
-            // Store in localStorage
-            const savedArticles = JSON.parse(localStorage.getItem('kvbSavedArticles') || '[]');
-            
-            if (this.classList.contains('saved')) {
-                // Add to saved
-                if (!savedArticles.some(article => article.link === articleLink)) {
-                    savedArticles.push({
-                        title: articleTitle,
-                        link: articleLink,
-                        date: new Date().toISOString()
-                    });
-                    localStorage.setItem('kvbSavedArticles', JSON.stringify(savedArticles));
-                }
-            } else {
-                // Remove from saved
-                const filteredArticles = savedArticles.filter(article => article.link !== articleLink);
-                localStorage.setItem('kvbSavedArticles', JSON.stringify(filteredArticles));
-            }
+            elements.forEach((element) => {
+              element.innerHTML = element.textContent;
+            });
+          });
         });
-        
-        // Check if article is already saved
-        const articleCard = button.closest('.article-card');
-        const articleLink = articleCard.querySelector('.read-link').getAttribute('href');
-        const savedArticles = JSON.parse(localStorage.getItem('kvbSavedArticles') || '[]');
-        
-        if (savedArticles.some(article => article.link === articleLink)) {
-            button.classList.add('saved');
-            button.innerHTML = '<i class="fas fa-bookmark"></i>';
+    }
+  }
+
+  // Sort Articles
+  const sortSelect = document.getElementById("sort-by");
+  const articlesContainer = document.querySelector(".articles-container");
+
+  if (sortSelect) {
+    sortSelect.addEventListener("change", function () {
+      const sortBy = this.value;
+      const articles = Array.from(
+        articlesContainer.querySelectorAll(".article-card"),
+      );
+
+      // Sort articles based on selected option
+      articles.sort((a, b) => {
+        switch (sortBy) {
+          case "latest":
+            // Sort by date (newest first)
+            const dateA = new Date(a.querySelector(".date").textContent);
+            const dateB = new Date(b.querySelector(".date").textContent);
+            return dateB - dateA;
+
+          case "oldest":
+            // Sort by date (oldest first)
+            const dateAOld = new Date(a.querySelector(".date").textContent);
+            const dateBOld = new Date(b.querySelector(".date").textContent);
+            return dateAOld - dateBOld;
+
+          case "popular":
+            // Sort by views (highest first)
+            const viewsA = parseInt(
+              a
+                .querySelector(".stat:nth-child(1)")
+                ?.textContent?.replace(/[^0-9]/g, "") || "0",
+            );
+            const viewsB = parseInt(
+              b
+                .querySelector(".stat:nth-child(1)")
+                ?.textContent?.replace(/[^0-9]/g, "") || "0",
+            );
+            return viewsB - viewsA;
+
+          case "trending":
+            // Sort by combination of views and recency
+            const dateATrend = new Date(a.querySelector(".date").textContent);
+            const dateBTrend = new Date(b.querySelector(".date").textContent);
+            const daysDiff =
+              Math.abs(dateATrend - dateBTrend) / (1000 * 60 * 60 * 24);
+            const viewsATrend = parseInt(
+              a
+                .querySelector(".stat:nth-child(1)")
+                ?.textContent?.replace(/[^0-9]/g, "") || "0",
+            );
+            const viewsBTrend = parseInt(
+              b
+                .querySelector(".stat:nth-child(1)")
+                ?.textContent?.replace(/[^0-9]/g, "") || "0",
+            );
+
+            // Simple trending score (views per day since publication)
+            const scoreA = viewsATrend / Math.max(1, daysDiff);
+            const scoreB = viewsBTrend / Math.max(1, daysDiff);
+            return scoreB - scoreA;
+
+          default:
+            return 0;
         }
+      });
+
+      // Reorder articles in container
+      articles.forEach((article) => {
+        articlesContainer.appendChild(article);
+      });
     });
-    
-    function showNotification(message, type) {
-        // Remove existing notification
-        const existingNotification = document.querySelector('.notification-toast');
-        if (existingNotification) {
-            existingNotification.remove();
+  }
+
+  // Save Article Functionality
+  const saveButtons = document.querySelectorAll(".save-article");
+
+  saveButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const articleCard = this.closest(".article-card");
+      const articleTitle =
+        articleCard.querySelector(".article-title").textContent;
+      const articleLink = articleCard
+        .querySelector(".read-link")
+        .getAttribute("href");
+
+      this.classList.toggle("saved");
+      this.innerHTML = this.classList.contains("saved")
+        ? '<i class="fas fa-bookmark"></i>'
+        : '<i class="far fa-bookmark"></i>';
+
+      // Show notification
+      showNotification(
+        this.classList.contains("saved")
+          ? `"${articleTitle}" saved for later`
+          : `"${articleTitle}" removed from saved`,
+        this.classList.contains("saved") ? "success" : "info",
+      );
+
+      // Store in localStorage
+      const savedArticles = JSON.parse(
+        localStorage.getItem("kvbSavedArticles") || "[]",
+      );
+
+      if (this.classList.contains("saved")) {
+        // Add to saved
+        if (!savedArticles.some((article) => article.link === articleLink)) {
+          savedArticles.push({
+            title: articleTitle,
+            link: articleLink,
+            date: new Date().toISOString(),
+          });
+          localStorage.setItem(
+            "kvbSavedArticles",
+            JSON.stringify(savedArticles),
+          );
         }
-        
-        // Create new notification
-        const notification = document.createElement('div');
-        notification.className = `notification-toast ${type}`;
-        notification.innerHTML = `
+      } else {
+        // Remove from saved
+        const filteredArticles = savedArticles.filter(
+          (article) => article.link !== articleLink,
+        );
+        localStorage.setItem(
+          "kvbSavedArticles",
+          JSON.stringify(filteredArticles),
+        );
+      }
+    });
+
+    // Check if article is already saved
+    const articleCard = button.closest(".article-card");
+    const articleLink = articleCard
+      .querySelector(".read-link")
+      .getAttribute("href");
+    const savedArticles = JSON.parse(
+      localStorage.getItem("kvbSavedArticles") || "[]",
+    );
+
+    if (savedArticles.some((article) => article.link === articleLink)) {
+      button.classList.add("saved");
+      button.innerHTML = '<i class="fas fa-bookmark"></i>';
+    }
+  });
+
+  function showNotification(message, type) {
+    // Remove existing notification
+    const existingNotification = document.querySelector(".notification-toast");
+    if (existingNotification) {
+      existingNotification.remove();
+    }
+
+    // Create new notification
+    const notification = document.createElement("div");
+    notification.className = `notification-toast ${type}`;
+    notification.innerHTML = `
             <div class="notification-content">
-                <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+                <i class="fas fa-${type === "success" ? "check-circle" : "info-circle"}"></i>
                 <span>${message}</span>
             </div>
             <button class="notification-close"><i class="fas fa-times"></i></button>
         `;
-        
-        document.body.appendChild(notification);
-        
-        // Show notification
+
+    document.body.appendChild(notification);
+
+    // Show notification
+    setTimeout(() => {
+      notification.classList.add("show");
+    }, 10);
+
+    // Auto hide after 3 seconds
+    setTimeout(() => {
+      notification.classList.remove("show");
+      setTimeout(() => {
+        notification.remove();
+      }, 300);
+    }, 3000);
+
+    // Close button
+    notification
+      .querySelector(".notification-close")
+      .addEventListener("click", function () {
+        notification.classList.remove("show");
         setTimeout(() => {
-            notification.classList.add('show');
+          notification.remove();
+        }, 300);
+      });
+  }
+
+  // Load More Articles
+  const loadMoreBtn = document.getElementById("loadMoreArticles");
+  const allArticleCards = Array.from(
+    document.querySelectorAll(".article-card"),
+  );
+  let visibleArticles = 6; // Initial number of visible articles
+
+  if (loadMoreBtn) {
+    // Initially hide extra articles
+    allArticleCards.forEach((article, index) => {
+      if (index >= visibleArticles) {
+        article.style.display = "none";
+      }
+    });
+
+    loadMoreBtn.addEventListener("click", function () {
+      // Show next set of articles
+      const nextArticles = allArticleCards.slice(
+        visibleArticles,
+        visibleArticles + 3,
+      );
+
+      nextArticles.forEach((article) => {
+        article.style.display = "block";
+        setTimeout(() => {
+          article.style.opacity = "1";
+          article.style.transform = "translateY(0)";
         }, 10);
-        
-        // Auto hide after 3 seconds
-        setTimeout(() => {
-            notification.classList.remove('show');
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }, 3000);
-        
-        // Close button
-        notification.querySelector('.notification-close').addEventListener('click', function() {
-            notification.classList.remove('show');
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        });
-    }
-    
-    // Load More Articles
-    const loadMoreBtn = document.getElementById('loadMoreArticles');
-    const allArticleCards = Array.from(document.querySelectorAll('.article-card'));
-    let visibleArticles = 6; // Initial number of visible articles
-    
-    if (loadMoreBtn) {
-        // Initially hide extra articles
-        allArticleCards.forEach((article, index) => {
-            if (index >= visibleArticles) {
-                article.style.display = 'none';
-            }
-        });
-        
-        loadMoreBtn.addEventListener('click', function() {
-            // Show next set of articles
-            const nextArticles = allArticleCards.slice(visibleArticles, visibleArticles + 3);
-            
-            nextArticles.forEach(article => {
-                article.style.display = 'block';
-                setTimeout(() => {
-                    article.style.opacity = '1';
-                    article.style.transform = 'translateY(0)';
-                }, 10);
-            });
-            
-            visibleArticles += 3;
-            
-            // Hide button if all articles are visible
-            if (visibleArticles >= allArticleCards.length) {
-                loadMoreBtn.style.display = 'none';
-            }
-        });
-    }
-    
-    // Newsletter Subscription
-    const newsletterForm = document.getElementById('knowledge-newsletter');
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                if (key === 'interests') {
-                    if (!formObject[key]) formObject[key] = [];
-                    formObject[key].push(value);
-                } else {
-                    formObject[key] = value;
-                }
-            });
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
-            submitBtn.disabled = true;
-            
-            // Simulate API call
-            setTimeout(() => {
-                // Success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'newsletter-success';
-                successMessage.innerHTML = `
+      });
+
+      visibleArticles += 3;
+
+      // Hide button if all articles are visible
+      if (visibleArticles >= allArticleCards.length) {
+        loadMoreBtn.style.display = "none";
+      }
+    });
+  }
+
+  // Newsletter Subscription
+  const newsletterForm = document.getElementById("knowledge-newsletter");
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(this);
+      const formObject = {};
+      formData.forEach((value, key) => {
+        if (key === "interests") {
+          if (!formObject[key]) formObject[key] = [];
+          formObject[key].push(value);
+        } else {
+          formObject[key] = value;
+        }
+      });
+
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML =
+        '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+      submitBtn.disabled = true;
+
+      // Simulate API call
+      setTimeout(() => {
+        // Success message
+        const successMessage = document.createElement("div");
+        successMessage.className = "newsletter-success";
+        successMessage.innerHTML = `
                     <i class="fas fa-check-circle"></i>
                     <div>
                         <h4>Successfully Subscribed!</h4>
@@ -376,50 +441,57 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>A confirmation email has been sent to <strong>${formObject.email}</strong></p>
                     </div>
                 `;
-                
-                // Insert success message
-                newsletterForm.parentNode.insertBefore(successMessage, newsletterForm);
-                newsletterForm.style.display = 'none';
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Store subscription in localStorage
-                const subscriptions = JSON.parse(localStorage.getItem('kvbNewsletterSubscriptions') || '[]');
-                subscriptions.push({
-                    email: formObject.email,
-                    name: formObject.name,
-                    interests: formObject.interests || [],
-                    date: new Date().toISOString()
-                });
-                localStorage.setItem('kvbNewsletterSubscriptions', JSON.stringify(subscriptions));
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 1500);
+
+        // Insert success message
+        newsletterForm.parentNode.insertBefore(successMessage, newsletterForm);
+        newsletterForm.style.display = "none";
+
+        // Reset button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+
+        // Store subscription in localStorage
+        const subscriptions = JSON.parse(
+          localStorage.getItem("kvbNewsletterSubscriptions") || "[]",
+        );
+        subscriptions.push({
+          email: formObject.email,
+          name: formObject.name,
+          interests: formObject.interests || [],
+          date: new Date().toISOString(),
         });
-    }
-    
-    // Download Tracking
-    const downloadLinks = document.querySelectorAll('.resource-link, .download-link');
-    
-    downloadLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const resourceName = this.textContent.trim();
-            console.log(`Resource downloaded: ${resourceName}`);
-            // Here you can send analytics data
-            
-            // Show download notification
-            showNotification(`Downloading: ${resourceName}`, 'info');
-        });
+        localStorage.setItem(
+          "kvbNewsletterSubscriptions",
+          JSON.stringify(subscriptions),
+        );
+
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 1500);
     });
-    
-    // Add page-specific styles
-    if (!document.querySelector('#blog-styles')) {
-        const styles = document.createElement('style');
-        styles.id = 'blog-styles';
-        styles.textContent = `
+  }
+
+  // Download Tracking
+  const downloadLinks = document.querySelectorAll(
+    ".resource-link, .download-link",
+  );
+
+  downloadLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const resourceName = this.textContent.trim();
+      console.log(`Resource downloaded: ${resourceName}`);
+      // Here you can send analytics data
+
+      // Show download notification
+      showNotification(`Downloading: ${resourceName}`, "info");
+    });
+  });
+
+  // Add page-specific styles
+  if (!document.querySelector("#blog-styles")) {
+    const styles = document.createElement("style");
+    styles.id = "blog-styles";
+    styles.textContent = `
             /* Blog page specific styles */
             .blog-hero {
                 padding: 120px 0 80px;
@@ -1634,6 +1706,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         `;
-        document.head.appendChild(styles);
-    }
+    document.head.appendChild(styles);
+  }
 });

@@ -1,1136 +1,1611 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <head>
+    <meta
+      name="description"
+      content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization."
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>SolarTherm | Parabolic Trough Solar Steam for Dairy Industry</title>
-    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp">
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp" />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-            background-color: #ffffff;
-            color: #1d1d1f;
-            scroll-behavior: smooth;
-            line-height: 1.4;
-        }
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "SF Pro Display",
+          sans-serif;
+        background-color: #ffffff;
+        color: #1d1d1f;
+        scroll-behavior: smooth;
+        line-height: 1.4;
+      }
 
-        :root {
-            --green-accent: #3A7D44;
-            --green-light: #e6f4ea;
-            --gray-bg: #f5f5f7;
-            --card-border: rgba(0, 0, 0, 0.06);
-            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-            --radius-xl: 32px;
-            --radius-lg: 24px;
-            --radius-md: 18px;
-        }
+      :root {
+        --green-accent: #3a7d44;
+        --green-light: #e6f4ea;
+        --gray-bg: #f5f5f7;
+        --card-border: rgba(0, 0, 0, 0.06);
+        --shadow-sm:
+          0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+      }
 
-        
-        /* --- Hero Premium Styles --- */
-        .hero-premium {
-            padding: 6rem 0 5rem 0;
-            background-color: #2E7D32;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-premium::after {
-            content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
-            background-size: cover; z-index: 2;
-        }
+      /* --- Hero Premium Styles --- */
+      .hero-premium {
+        padding: 6rem 0 5rem 0;
+        background-color: #2e7d32;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-premium::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E")
+          no-repeat bottom;
+        background-size: cover;
+        z-index: 2;
+      }
 
-        .hero-premium::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(58, 125, 68, 0.04) 0%, transparent 60%);
-            animation: rotateBG 20s linear infinite;
-        }
+      .hero-premium::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(58, 125, 68, 0.04) 0%,
+          transparent 60%
+        );
+        animation: rotateBG 20s linear infinite;
+      }
 
-        @keyframes rotateBG {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+      @keyframes rotateBG {
+        0% {
+          transform: rotate(0deg);
         }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-        .hero-title {
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
-        }
+      .hero-title {
+        font-size: 3.8rem;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -1px;
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+        font-family: "Montserrat", sans-serif;
+      }
 
-        .hero-title .gradient-text {
-            color: #ffffff;
-            display: inline-block;
-        }
+      .hero-title .gradient-text {
+        color: #ffffff;
+        display: inline-block;
+      }
 
-        .hero-subtitle {
-            font-size: 1.35rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-            max-width: 90%;
-        }
+      .hero-subtitle {
+        font-size: 1.35rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        max-width: 90%;
+      }
 
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 2rem;
-        }
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 2rem;
+      }
 
-        .hero-btn {
-            padding: 14px 32px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+      .hero-btn {
+        padding: 14px 32px;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-        .hero-btn-primary {
-            background-color: var(--green-accent);
-            color: white;
-            box-shadow: 0 10px 20px rgba(58, 125, 68, 0.25);
-        }
+      .hero-btn-primary {
+        background-color: var(--green-accent);
+        color: white;
+        box-shadow: 0 10px 20px rgba(58, 125, 68, 0.25);
+      }
 
-        .hero-btn-primary:hover {
-            background-color: #0B3D91;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(11, 61, 145, 0.3);
-            color: white;
-        }
+      .hero-btn-primary:hover {
+        background-color: #0b3d91;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(11, 61, 145, 0.3);
+        color: white;
+      }
 
-        .hero-btn-secondary {
-            background-color: transparent;
-            color: #1d1d1f;
-            border: 2px solid #1d1d1f;
-        }
+      .hero-btn-secondary {
+        background-color: transparent;
+        color: #1d1d1f;
+        border: 2px solid #1d1d1f;
+      }
 
-        .hero-btn-secondary:hover {
-            background-color: #1d1d1f;
-            color: white;
-            transform: translateY(-3px);
-        }
+      .hero-btn-secondary:hover {
+        background-color: #1d1d1f;
+        color: white;
+        transform: translateY(-3px);
+      }
 
-        .hero-img-container {
-            position: relative;
-            z-index: 2;
-        }
+      .hero-img-container {
+        position: relative;
+        z-index: 2;
+      }
 
-        .hero-img-soft {
-            width: 80%;
-            height: auto;
-            max-height: 320px;
-            object-fit: cover;
-            border-radius: 40px 10px 40px 10px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 0 40px rgba(58, 125, 68, 0.1);
-            animation: floatImage 6s ease-in-out infinite;
-            border: 4px solid white;
-        }
+      .hero-img-soft {
+        width: 80%;
+        height: auto;
+        max-height: 320px;
+        object-fit: cover;
+        border-radius: 40px 10px 40px 10px;
+        box-shadow:
+          0 30px 60px rgba(0, 0, 0, 0.12),
+          0 0 40px rgba(58, 125, 68, 0.1);
+        animation: floatImage 6s ease-in-out infinite;
+        border: 4px solid white;
+      }
 
-        @keyframes floatImage {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+      @keyframes floatImage {
+        0% {
+          transform: translateY(0px);
         }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
 
-        .badge-premium {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(58, 125, 68, 0.1);
-            color: #3A7D44;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(58, 125, 68, 0.2);
-            box-shadow: 0 4px 10px rgba(58, 125, 68, 0.05);
-        }
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
+      .badge-premium {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(58, 125, 68, 0.1);
+        color: #3a7d44;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(58, 125, 68, 0.2);
+        box-shadow: 0 4px 10px rgba(58, 125, 68, 0.05);
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
 
-        h1,
-        h2,
-        h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+      h1,
+      h2,
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: 3.8rem;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -1px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        color: #0b3d91;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+        display: inline-block;
+      }
+      h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: #ff9800;
+        border-radius: 2px;
+      }
+
+      .section-subhead {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2rem;
+        color: #5a6b5a;
+        max-width: 700px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .btn-primary {
+        background-color: var(--green-accent);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 40px;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .btn-primary i {
+        font-size: 1rem;
+      }
+
+      .btn-primary:hover {
+        background-color: #1f553a;
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(44, 110, 73, 0.25);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid #d2d2d6;
+        padding: 12px 28px;
+        border-radius: 40px;
+        font-weight: 500;
+        transition: all 0.2s;
+        text-decoration: none;
+        color: #1d1d1f;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--green-accent);
+        background: #f9faf9;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: var(--radius-lg);
+        padding: 2rem 1.5rem;
+        border: 1px solid var(--card-border);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .card i {
+        font-size: 2.2rem;
+        color: var(--green-accent);
+        margin-bottom: 1.2rem;
+      }
+
+      .card h4 {
+        font-size: 1.35rem;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+      }
+
+      .stat-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        background: var(--gray-bg);
+        padding: 2.5rem;
+        border-radius: var(--radius-xl);
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        flex: 1;
+      }
+
+      .stat-number {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: var(--green-accent);
+        line-height: 1;
+      }
+
+      .feature-list {
+        list-style: none;
+        margin: 1.5rem 0;
+      }
+
+      .feature-list li {
+        padding: 10px 0;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        border-bottom: 1px solid #efeff1;
+      }
+
+      .feature-list i {
+        color: var(--green-accent);
+        width: 22px;
+      }
+
+      .section {
+        padding: 100px 0;
+        border-bottom: 1px solid #e9e9ed;
+      }
+
+      .section-alt {
+        background-color: var(--gray-bg);
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .badge {
+        display: inline-block;
+        background: var(--green-light);
+        color: var(--green-accent);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 30px;
+        margin-bottom: 1rem;
+      }
+
+      .img-soft {
+        border-radius: var(--radius-lg);
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease;
+      }
+
+      .img-soft:hover {
+        transform: scale(1.01);
+      }
+
+      .steps {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        margin: 2rem 0;
+        align-items: stretch;
+      }
+
+      .step {
+        flex: 1 1 calc(33.333% - 1.25rem);
+        min-width: 140px;
+        background: white;
+        border-radius: 20px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        border: 1px solid #e9e9ed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #3a3a3c;
+        line-height: 1.4;
+      }
+
+      .step i.step-icon {
+        font-size: 1.5rem;
+        color: var(--green-accent);
+      }
+
+      .step-number {
+        background: var(--green-accent);
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+      }
+
+      .cta-block {
+        background: #1d1d1f;
+        border-radius: var(--radius-xl);
+        padding: 3.5rem;
+        text-align: center;
+        color: white;
+      }
+
+      .cta-block h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-block .btn-primary {
+        background: white;
+        color: #1d1d1f;
+      }
+
+      .cta-block .btn-primary:hover {
+        background: #f0f0f0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 3rem 1rem;
+        font-size: 0.85rem;
+        color: #555555;
+        border-top: 1px solid #e9e9ed;
+      }
+
+      .carousel-container {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+      }
+
+      .carousel-image {
+        width: 100%;
+        display: block;
+        cursor: pointer;
+      }
+
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: none;
+        background: white;
+        cursor: pointer;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .carousel-arrow.left {
+        left: 15px;
+      }
+
+      .carousel-arrow.right {
+        right: 15px;
+      }
+
+      .carousel-dots {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+      }
+
+      .dot.active {
+        background: white;
+      }
+
+      @media (max-width: 900px) {
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr !important;
         }
 
         h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            font-family: 'Montserrat', sans-serif;
+          font-size: 2.6rem;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 25px;
-            color: #0B3D91;
-            font-family: 'Montserrat', sans-serif;
-            position: relative;
-            display: inline-block;
-        }
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: #FF9800;
-            border-radius: 2px;
+          font-size: 2rem;
         }
 
-        .section-subhead { margin-left: auto; margin-right: auto;
-            font-size: 1.2rem;
-            color: #5a6b5a;
-            max-width: 700px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .btn-primary {
-            background-color: var(--green-accent);
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-
-        .btn-primary i {
-            font-size: 1rem;
-        }
-
-        .btn-primary:hover {
-            background-color: #1f553a;
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(44, 110, 73, 0.25);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #d2d2d6;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 500;
-            transition: all 0.2s;
-            text-decoration: none;
-            color: #1d1d1f;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--green-accent);
-            background: #f9faf9;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: var(--radius-lg);
-            padding: 2rem 1.5rem;
-            border: 1px solid var(--card-border);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .card i {
-            font-size: 2.2rem;
-            color: var(--green-accent);
-            margin-bottom: 1.2rem;
-        }
-
-        .card h4 {
-            font-size: 1.35rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
+        .container {
+          padding: 0 24px;
         }
 
         .stat-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem;
-            background: var(--gray-bg);
-            padding: 2.5rem;
-            border-radius: var(--radius-xl);
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            flex: 1;
-        }
-
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--green-accent);
-            line-height: 1;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .feature-list li {
-            padding: 10px 0;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            border-bottom: 1px solid #efeff1;
-        }
-
-        .feature-list i {
-            color: var(--green-accent);
-            width: 22px;
-        }
-
-        .section {
-            padding: 100px 0;
-            border-bottom: 1px solid #e9e9ed;
-        }
-
-        .section-alt {
-            background-color: var(--gray-bg);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: var(--green-light);
-            color: var(--green-accent);
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 30px;
-            margin-bottom: 1rem;
-        }
-
-        .img-soft {
-            border-radius: var(--radius-lg);
-            width: 100%;
-            object-fit: cover;
-            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease;
-        }
-
-        .img-soft:hover {
-            transform: scale(1.01);
+          flex-direction: column;
+          gap: 1.5rem;
         }
 
         .steps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.25rem;
-            margin: 2rem 0;
-            align-items: stretch;
+          flex-direction: column;
         }
+      }
 
-        .step {
-            flex: 1 1 calc(33.333% - 1.25rem);
-            min-width: 140px;
-            background: white;
-            border-radius: 20px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            border: 1px solid #e9e9ed;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 0.75rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #3a3a3c;
-            line-height: 1.4;
+      /* ===== Premium Smart Solution Redesign ===== */
+      .smart-solution-redesign {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+      }
+
+      .section-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5rem 0 1rem;
+        gap: 15px;
+      }
+      .divider-line {
+        height: 1px;
+        background: #3a7d44;
+        flex-grow: 1;
+        max-width: 150px;
+        position: relative;
+      }
+      .divider-line::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #3a7d44;
+        border-radius: 50%;
+        top: -2.5px;
+      }
+      .divider-line.left::before {
+        right: 0;
+      }
+      .divider-line.right::before {
+        left: 0;
+      }
+      .divider-text {
+        font-size: 1.4rem;
+        color: #3a7d44;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .solution-grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+      .solution-card {
+        background: #ffffff;
+        border: 1px solid #eaeaea;
+        border-radius: 12px;
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      .solution-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      }
+      .solution-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+      }
+      .card-green::after {
+        background: #3a7d44;
+      }
+      .card-light-green::after {
+        background: #9dcd5a;
+      }
+      .card-yellow::after {
+        background: #fbc02d;
+      }
+      .card-blue::after {
+        background: #1565c0;
+      }
+
+      .card-icon-circle {
+        width: 50px;
+        height: 50px;
+        background: #eef7f0;
+        color: #3a7d44;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+      .card-text {
+        font-size: 0.9rem;
+        color: #515154;
+        line-height: 1.4;
+      }
+      .card-text strong {
+        color: #1d1d1f;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.05rem;
+      }
+
+      .impact-box {
+        background: #f6fcf8;
+        border: 1px solid #e3f2e8;
+        border-radius: 12px;
+        padding: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .impact-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-right: 2px solid #e3f2e8;
+        padding-right: 1.5rem;
+      }
+      .impact-main-icon {
+        font-size: 2.2rem;
+        color: #3a7d44;
+      }
+      .impact-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #3a7d44;
+        line-height: 1.3;
+      }
+
+      .impact-items {
+        display: flex;
+        gap: 1.5rem;
+        flex-grow: 1;
+        justify-content: space-around;
+      }
+      .impact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+      }
+      .impact-icon {
+        width: 36px;
+        height: 36px;
+        background: #3a7d44;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+      .impact-item-text {
+        font-size: 0.85rem;
+        color: #1d1d1f;
+        line-height: 1.3;
+      }
+      .impact-item-text strong {
+        display: block;
+        font-size: 0.95rem;
+      }
+
+      .impact-conclusion-bar {
+        background: #3a7d44;
+        color: white;
+        border-radius: 8px;
+        padding: 0.85rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
+      .impact-conclusion-bar .fa-check-circle {
+        color: #ffffff;
+        font-size: 1.2rem;
+      }
+      .highlight-yellow {
+        color: #ffca28;
+      }
+
+      @media (max-width: 1024px) {
+        .solution-grid-4 {
+          grid-template-columns: repeat(2, 1fr);
         }
-
-        .step i.step-icon {
-            font-size: 1.5rem;
-            color: var(--green-accent);
+        .impact-box {
+          flex-direction: column;
+          align-items: flex-start;
         }
-
-        .step-number {
-            background: var(--green-accent);
-            width: 32px;
-            height: 32px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-            flex-shrink: 0;
+        .impact-left {
+          border-right: none;
+          border-bottom: 2px solid #e3f2e8;
+          padding-right: 0;
+          padding-bottom: 1rem;
+          width: 100%;
+          justify-content: center;
         }
-
-        .cta-block {
-            background: #1d1d1f;
-            border-radius: var(--radius-xl);
-            padding: 3.5rem;
-            text-align: center;
-            color: white;
+        .impact-items {
+          flex-direction: column;
+          width: 100%;
+          gap: 1.25rem;
         }
-
-        .cta-block h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+      }
+      @media (max-width: 600px) {
+        .solution-grid-4 {
+          grid-template-columns: 1fr !important;
         }
-
-        .cta-block .btn-primary {
-            background: white;
-            color: #1d1d1f;
+        .impact-conclusion-bar {
+          font-size: 0.9rem;
+          text-align: center;
+          flex-direction: column;
         }
+      }
 
-        .cta-block .btn-primary:hover {
-            background: #f0f0f0;
+      @media (max-width: 900px) {
+        .hero-section .container,
+        .hero-premium {
+          padding-top: 1rem !important;
         }
-
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            font-size: 0.85rem;
-            color: #555555;
-            border-top: 1px solid #e9e9ed;
-        }
-
-        .carousel-container {
-            position: relative;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .06);
-        }
-
-        .carousel-image {
-            width: 100%;
-            display: block;
-            cursor: pointer;
-        }
-
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            border: none;
-            background: white;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
-        }
-
-        .carousel-arrow.left {
-            left: 15px;
-        }
-
-        .carousel-arrow.right {
-            right: 15px;
-        }
-
-        .carousel-dots {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .5);
-            cursor: pointer;
-        }
-
-        .dot.active {
-            background: white;
-        }
-
-        @media (max-width: 900px) {
-
-            .grid-2,
-            .grid-3 {
-                grid-template-columns: 1fr !important;
-            }
-
-            h1 {
-                font-size: 2.6rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .container {
-                padding: 0 24px;
-            }
-
-            .stat-grid {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .steps {
-                flex-direction: column;
-            }
-        }
-
-        /* ===== Premium Smart Solution Redesign ===== */
-        .smart-solution-redesign { max-width: 1100px; margin: 0 auto; text-align: center; font-family: 'Inter', sans-serif; }
-        
-        .section-divider { display: flex; align-items: center; justify-content: center; margin: 1.5rem 0 1rem; gap: 15px; }
-        .divider-line { height: 1px; background: #3A7D44; flex-grow: 1; max-width: 150px; position: relative; }
-        .divider-line::before { content: ''; position: absolute; width: 6px; height: 6px; background: #3A7D44; border-radius: 50%; top: -2.5px; }
-        .divider-line.left::before { right: 0; }
-        .divider-line.right::before { left: 0; }
-        .divider-text { font-size: 1.4rem; color: #3A7D44; font-weight: 700; margin: 0; }
-
-        .solution-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
-        .solution-card { background: #ffffff; border: 1px solid #eaeaea; border-radius: 12px; padding: 1.5rem 1rem; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); position: relative; overflow: hidden; transition: transform 0.3s ease; }
-        .solution-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
-        .solution-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; }
-        .card-green::after { background: #3A7D44; }
-        .card-light-green::after { background: #9dcd5a; }
-        .card-yellow::after { background: #fbc02d; }
-        .card-blue::after { background: #1565c0; }
-
-        .card-icon-circle { width: 50px; height: 50px; background: #eef7f0; color: #3A7D44; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
-        .card-text { font-size: 0.9rem; color: #515154; line-height: 1.4; }
-        .card-text strong { color: #1d1d1f; display: block; margin-bottom: 5px; font-size: 1.05rem; }
-
-        .impact-box { background: #f6fcf8; border: 1px solid #e3f2e8; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-        .impact-left { display: flex; align-items: center; gap: 12px; border-right: 2px solid #e3f2e8; padding-right: 1.5rem; }
-        .impact-main-icon { font-size: 2.2rem; color: #3A7D44; }
-        .impact-title { font-size: 1.2rem; font-weight: 700; color: #3A7D44; line-height: 1.3; }
-        
-        .impact-items { display: flex; gap: 1.5rem; flex-grow: 1; justify-content: space-around; }
-        .impact-item { display: flex; align-items: center; gap: 12px; text-align: left; }
-        .impact-icon { width: 36px; height: 36px; background: #3A7D44; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-        .impact-item-text { font-size: 0.85rem; color: #1d1d1f; line-height: 1.3; }
-        .impact-item-text strong { display: block; font-size: 0.95rem; }
-
-        .impact-conclusion-bar { background: #3A7D44; color: white; border-radius: 8px; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.05rem; font-weight: 500; }
-        .impact-conclusion-bar .fa-check-circle { color: #ffffff; font-size: 1.2rem; }
-        .highlight-yellow { color: #ffca28; }
-
-        @media (max-width: 1024px) {
-            .solution-grid-4 { grid-template-columns: repeat(2, 1fr); }
-            .impact-box { flex-direction: column; align-items: flex-start; }
-            .impact-left { border-right: none; border-bottom: 2px solid #e3f2e8; padding-right: 0; padding-bottom: 1rem; width: 100%; justify-content: center; }
-            .impact-items { flex-direction: column; width: 100%; gap: 1.25rem; }
-        }
-        @media (max-width: 600px) {
-            .solution-grid-4 { grid-template-columns: 1fr !important; }
-            .impact-conclusion-bar { font-size: 0.9rem; text-align: center; flex-direction: column; }
-        }
-    
-        @media (max-width: 900px) { .hero-section .container, .hero-premium { padding-top: 1rem !important; } }
+      }
     </style>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!-- HEADER -->
     <div id="header"></div>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero-premium">
-            <div class="container">
-                <div class="grid-2" style="gap: 4rem; align-items: center;">
-                    <div style="position: relative; z-index: 10;">
-                        <h1>Parabolic Trough <span style="color: #FF9800;">Solar Steam</span><br>for Dairy Industry</h1>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #fff; max-width: 90%; margin-bottom: 30px;">Cut fuel costs up to 60% •
-                        Continuous pasteurization, evaporation & CIP • 120–250°C solar steam</p>
-                    </div>
-                    <div class="hero-img-container">
-                        <style>
-                        @keyframes floatHeroCard {
-                            0% { transform: translateY(0px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-                            50% { transform: translateY(-12px); box-shadow: 0 25px 30px rgba(0,0,0,0.15); }
-                            100% { transform: translateY(0px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-                        }
-                    </style>
-                    <div class="card" style="padding: 1rem; border-radius: 24px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); margin: -3rem auto 0 auto; width: 85%; animation: floatHeroCard 6s ease-in-out infinite;">
-                        <img class="hero-img-soft"
-                            src="../images/products/WhatsApp Image 2026-03-23 at 12.50.52.webp"
-                            alt="KVB Parabolic Trough for Dairy" style="width: 100%; border-radius: 12px; border: none;">
-                    </div>
-                </div>
+      <!-- Hero Section -->
+      <section class="hero-premium">
+        <div class="container">
+          <div class="grid-2" style="gap: 4rem; align-items: center">
+            <div style="position: relative; z-index: 10">
+              <h1>
+                Parabolic Trough <span style="color: #ff9800">Solar Steam</span
+                ><br />for Dairy Industry
+              </h1>
+              <p
+                style="
+                  font-size: 1.15rem;
+                  line-height: 1.7;
+                  color: #fff;
+                  max-width: 90%;
+                  margin-bottom: 30px;
+                "
+              >
+                Cut fuel costs up to 60% • Continuous pasteurization,
+                evaporation & CIP • 120–250°C solar steam
+              </p>
             </div>
-        </section>
+            <div class="hero-img-container">
+              <style>
+                @keyframes floatHeroCard {
+                  0% {
+                    transform: translateY(0px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                  }
+                  50% {
+                    transform: translateY(-12px);
+                    box-shadow: 0 25px 30px rgba(0, 0, 0, 0.15);
+                  }
+                  100% {
+                    transform: translateY(0px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                  }
+                }
+              </style>
+              <div
+                class="card"
+                style="
+                  padding: 1rem;
+                  border-radius: 24px;
+                  background: rgba(255, 255, 255, 0.15);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  margin: -3rem auto 0 auto;
+                  width: 85%;
+                  animation: floatHeroCard 6s ease-in-out infinite;
+                "
+              >
+                <img
+                  class="hero-img-soft"
+                  src="../images/products/WhatsApp Image 2026-03-23 at 12.50.52.webp"
+                  alt="KVB Parabolic Trough for Dairy"
+                  style="width: 100%; border-radius: 12px; border: none"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                </div>
-
-        <!-- 1. Pain Area — Dairy Bleeding Energy Costs -->
-        <div class="section">
-            <div class="container">
-        <style>
-        .pain-area-redesign {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .pain-left {
-            text-align: left;
-        }
-
-        .pain-left .badge {
-            background: #fff8eb;
-            color: #FF6F00;
-            border: 1px solid #ffeccc;
-            margin-bottom: 1.5rem;
-        }
-
-        .pain-left p {
-            font-size: 1.15rem;
-            color: #000000;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .pain-left .feature-list li {
-            font-size: 1.05rem;
-            color: #000000;
-            padding: 8px 0;
-            border-bottom: 1px solid #eaeaea;
-        }
-        .pain-left .feature-list li:last-child {
-            border-bottom: none;
-        }
-        .pain-left .feature-list i {
-            color: #1d1d1f;
-            width: 25px;
-        }
-
-        .pain-right {
-            position: relative;
-        }
-
-        .impact-card {
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(255, 111, 0, 0.08), 0 1px 3px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255, 111, 0, 0.15);
-            overflow: hidden;
-            position: relative;
-            z-index: 2;
-        }
-
-        .impact-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 6px;
-            background: linear-gradient(90deg, #FDB813, #FF6F00);
-        }
-
-        .impact-header {
-            background: #fffcf8;
-            padding: 1.25rem 1.5rem 1rem;
-            border-bottom: 1px solid #fdf0d8;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .pulse-icon {
-            width: 45px; height: 45px;
-            background: #fff5e6;
-            color: #FF6F00;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.4);
-            animation: pulse-orange 2s infinite;
-        }
-
-        @keyframes pulse-orange {
-            0% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 111, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0); }
-        }
-
-        .impact-header h3 {
-            margin: 0;
-            font-size: 1.4rem;
-            color: #1d1d1f;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .impact-body {
-            padding: 1.25rem 1.5rem;
-        }
-
-        .impact-body ul {
-            list-style: none;
-            padding: 0; margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .impact-body li {
-            padding: 8px 0;
-            font-size: 1.05rem;
-            color: #3a3a3c;
-            line-height: 1.5;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .impact-body li:last-child {
-            border-bottom: none;
-        }
-
-        .impact-footer {
-            background: #fffcf8;
-            padding: 1.25rem 1.5rem;
-            border-top: 1px solid #fdf0d8;
-        }
-
-        .impact-footer p {
-            margin: 0;
-            font-size: 1.05rem;
-            color: #FF6F00;
-            font-weight: 500;
-            font-style: italic;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .impact-footer p i {
-            margin-top: 4px;
-        }
-
-        @media (max-width: 900px) {
+      <!-- 1. Pain Area — Dairy Bleeding Energy Costs -->
+      <div class="section">
+        <div class="container">
+          <style>
             .pain-area-redesign {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 4rem;
+              align-items: center;
+              max-width: 1100px;
+              margin: 0 auto;
+            }
+
+            .pain-left {
+              text-align: left;
+            }
+
+            .pain-left .badge {
+              background: #fff8eb;
+              color: #ff6f00;
+              border: 1px solid #ffeccc;
+              margin-bottom: 1.5rem;
+            }
+
+            .pain-left p {
+              font-size: 1.15rem;
+              color: #000000;
+              margin-bottom: 1.5rem;
+              line-height: 1.6;
+            }
+
+            .pain-left .feature-list li {
+              font-size: 1.05rem;
+              color: #000000;
+              padding: 8px 0;
+              border-bottom: 1px solid #eaeaea;
+            }
+            .pain-left .feature-list li:last-child {
+              border-bottom: none;
+            }
+            .pain-left .feature-list i {
+              color: #1d1d1f;
+              width: 25px;
+            }
+
+            .pain-right {
+              position: relative;
+            }
+
+            .impact-card {
+              background: #ffffff;
+              border-radius: 24px;
+              box-shadow:
+                0 20px 40px rgba(255, 111, 0, 0.08),
+                0 1px 3px rgba(0, 0, 0, 0.05);
+              border: 1px solid rgba(255, 111, 0, 0.15);
+              overflow: hidden;
+              position: relative;
+              z-index: 2;
+            }
+
+            .impact-card::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 6px;
+              background: linear-gradient(90deg, #fdb813, #ff6f00);
+            }
+
+            .impact-header {
+              background: #fffcf8;
+              padding: 1.25rem 1.5rem 1rem;
+              border-bottom: 1px solid #fdf0d8;
+              display: flex;
+              align-items: center;
+              gap: 15px;
+            }
+
+            .pulse-icon {
+              width: 45px;
+              height: 45px;
+              background: #fff5e6;
+              color: #ff6f00;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.3rem;
+              box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.4);
+              animation: pulse-orange 2s infinite;
+            }
+
+            @keyframes pulse-orange {
+              0% {
+                box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.4);
+              }
+              70% {
+                box-shadow: 0 0 0 15px rgba(255, 111, 0, 0);
+              }
+              100% {
+                box-shadow: 0 0 0 0 rgba(255, 111, 0, 0);
+              }
+            }
+
+            .impact-header h3 {
+              margin: 0;
+              font-size: 1.4rem;
+              color: #1d1d1f;
+              font-family: "Montserrat", sans-serif;
+              font-weight: 700;
+              letter-spacing: -0.02em;
+            }
+
+            .impact-body {
+              padding: 1.25rem 1.5rem;
+            }
+
+            .impact-body ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+            }
+
+            .impact-body li {
+              padding: 8px 0;
+              font-size: 1.05rem;
+              color: #3a3a3c;
+              line-height: 1.5;
+              border-bottom: 1px solid #f0f0f0;
+            }
+            .impact-body li:last-child {
+              border-bottom: none;
+            }
+
+            .impact-footer {
+              background: #fffcf8;
+              padding: 1.25rem 1.5rem;
+              border-top: 1px solid #fdf0d8;
+            }
+
+            .impact-footer p {
+              margin: 0;
+              font-size: 1.05rem;
+              color: #ff6f00;
+              font-weight: 500;
+              font-style: italic;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+            }
+
+            .impact-footer p i {
+              margin-top: 4px;
+            }
+
+            @media (max-width: 900px) {
+              .pain-area-redesign {
                 grid-template-columns: 1fr !important;
                 gap: 3rem;
-            }
-            .pain-left {
+              }
+              .pain-left {
                 text-align: center;
-            }
-            .pain-left .feature-list {
+              }
+              .pain-left .feature-list {
                 text-align: left;
+              }
             }
-        }
-        </style>
+          </style>
 
-        <div style="text-align: center; margin-bottom: 3rem;">
+          <div style="text-align: center; margin-bottom: 3rem">
             <h2>Dairy plants are bleeding energy costs</h2>
-        </div>
-        <div class="pain-area-redesign">
+          </div>
+          <div class="pain-area-redesign">
             <div class="pain-left">
-                <p>Dairy processing runs on heat. From pasteurization to evaporation and CIP cleaning — your plant depends on continuous steam and hot water. Most dairy plants today rely on:</p>
-                <ul class="feature-list" style="margin: 1.5rem 0; text-align: left; background: #f9f9fb; padding: 1.5rem; border-radius: 16px; border: 1px solid #e9e9ed;">
-                    <li><i class="fas fa-oil-can"></i> LPG / Furnace Oil / Diesel boilers</li>
-                    <li><i class="fas fa-clock"></i> High daily operating hours</li>
-                    <li><i class="fas fa-charging-station"></i> Constant thermal demand</li>
-                </ul>
+              <p>
+                Dairy processing runs on heat. From pasteurization to
+                evaporation and CIP cleaning — your plant depends on continuous
+                steam and hot water. Most dairy plants today rely on:
+              </p>
+              <ul
+                class="feature-list"
+                style="
+                  margin: 1.5rem 0;
+                  text-align: left;
+                  background: #f9f9fb;
+                  padding: 1.5rem;
+                  border-radius: 16px;
+                  border: 1px solid #e9e9ed;
+                "
+              >
+                <li>
+                  <i class="fas fa-oil-can"></i> LPG / Furnace Oil / Diesel
+                  boilers
+                </li>
+                <li><i class="fas fa-clock"></i> High daily operating hours</li>
+                <li>
+                  <i class="fas fa-charging-station"></i> Constant thermal
+                  demand
+                </li>
+              </ul>
             </div>
             <div class="pain-right">
-                <div class="impact-card">
-                    <div class="impact-header">
-                        <h3 style="font-weight: 800; color: #1d1d1f; font-family: 'Montserrat', sans-serif; margin: 0;">Business Impact</h3>
-                    </div>
-                    <div class="impact-body">
-                        <ul>
-                            <li> Fuel cost = major share of operating expense</li>
-                            <li> Energy cost fluctuates with fuel price</li>
-                            <li> High steam demand in evaporation & drying increases cost further</li>
-                            <li> Carbon emissions impacting sustainability goals</li>
-                            <li> Pressure from large buyers for green processing</li>
-                        </ul>
-                    </div>
-                    <div class="impact-footer">
-                        <p><i class="fas fa-hand-point-right"></i> You are not just producing dairy — you are consuming expensive fuel every hour.</p>
-                    </div>
+              <div class="impact-card">
+                <div class="impact-header">
+                  <h3
+                    style="
+                      font-weight: 800;
+                      color: #1d1d1f;
+                      font-family: &quot;Montserrat&quot;, sans-serif;
+                      margin: 0;
+                    "
+                  >
+                    Business Impact
+                  </h3>
                 </div>
+                <div class="impact-body">
+                  <ul>
+                    <li>Fuel cost = major share of operating expense</li>
+                    <li>Energy cost fluctuates with fuel price</li>
+                    <li>
+                      High steam demand in evaporation & drying increases cost
+                      further
+                    </li>
+                    <li>Carbon emissions impacting sustainability goals</li>
+                    <li>Pressure from large buyers for green processing</li>
+                  </ul>
+                </div>
+                <div class="impact-footer">
+                  <p>
+                    <i class="fas fa-hand-point-right"></i> You are not just
+                    producing dairy — you are consuming expensive fuel every
+                    hour.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+
+      <!-- 2. Smart Solution — Solar Heat for Dairy Operations -->
+      <div class="section section-alt">
+        <div class="container" style="text-align: center">
+          <div style="margin-bottom: 2.5rem">
+            <h2>
+              What if you could permanently reduce a major portion of your
+              heating costs?
+            </h2>
+            <p class="section-subhead" style="margin: 0 auto">
+              KVB Green Energies delivers
+              <span style="color: #3a7d44; font-weight: 600"
+                >Parabolic Trough Solar Thermal Systems</span
+              ><br />designed specifically for dairy process heat.
+            </p>
+          </div>
+          <div class="smart-solution-redesign">
+            <div class="section-divider">
+              <span class="divider-line left"></span>
+              <h3 class="divider-text">What This System Does:</h3>
+              <span class="divider-line right"></span>
             </div>
+
+            <div class="solution-grid-4">
+              <div class="solution-card card-green">
+                <div class="card-icon-circle">
+                  <i class="fas fa-temperature-high"></i>
+                </div>
+                <div class="card-text">
+                  <strong>Generates high-temp<br />steam</strong>
+                  <span>using solar energy</span>
+                </div>
+              </div>
+              <div class="solution-card card-light-green">
+                <div class="card-icon-circle">
+                  <i class="fas fa-glass-whiskey"></i>
+                </div>
+                <div class="card-text">
+                  <strong
+                    >Supports pasteurization,<br />sterilization, and</strong
+                  >
+                  <span>CIP cleaning</span>
+                </div>
+              </div>
+              <div class="solution-card card-yellow">
+                <div class="card-icon-circle"><i class="fas fa-plug"></i></div>
+                <div class="card-text">
+                  <strong>Integrates seamlessly<br />with existing</strong>
+                  <span>boiler systems</span>
+                </div>
+              </div>
+              <div class="solution-card card-blue">
+                <div class="card-icon-circle">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="card-text">
+                  <strong>Operates in<br />hybrid mode</strong>
+                  <span>for continuous thermal supply</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="impact-box">
+              <div class="impact-left">
+                <i class="fas fa-chart-line impact-main-icon"></i>
+                <span class="impact-title">Immediate<br />Impact:</span>
+              </div>
+
+              <div class="impact-items">
+                <div class="impact-item">
+                  <div class="impact-icon">
+                    <i class="fas fa-arrow-down"></i>
+                  </div>
+                  <div class="impact-item-text">
+                    <strong>Up to 40%</strong>reduction in<br />fuel consumption
+                  </div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-icon">
+                    <i class="fas fa-rupee-sign"></i>
+                  </div>
+                  <div class="impact-item-text">
+                    <strong>Lower cost</strong>of production
+                  </div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="impact-item-text">
+                    <strong>Long-term</strong>energy price stability
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="impact-conclusion-bar">
+              <i class="fas fa-check-circle"></i>
+              <span
+                >This is not just renewable energy — this is
+                <span class="highlight-yellow">cost control</span> for your
+                plant.</span
+              >
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- 2. Smart Solution — Solar Heat for Dairy Operations -->
-        <div class="section section-alt">
-            <div class="container" style="text-align: center;">
-                <div style="margin-bottom: 2.5rem;">
-                    <h2>What if you could permanently reduce a major portion of your heating costs?</h2>
-                    <p class="section-subhead" style="margin: 0 auto;">KVB Green Energies delivers <span style="color: #3A7D44; font-weight: 600;">Parabolic Trough Solar Thermal Systems</span><br>designed specifically for dairy process heat.</p>
-                </div>
-                <div class="smart-solution-redesign">
-                    <div class="section-divider">
-                        <span class="divider-line left"></span>
-                        <h3 class="divider-text">What This System Does:</h3>
-                        <span class="divider-line right"></span>
-                    </div>
+      <!-- 3. Process / Technology — Reliable & Proven System -->
+      <div class="section">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 2.5rem">
+            <h2>Reliable, proven system for dairy operations</h2>
+          </div>
 
-                    <div class="solution-grid-4">
-                        <div class="solution-card card-green">
-                            <div class="card-icon-circle"><i class="fas fa-temperature-high"></i></div>
-                            <div class="card-text">
-                                <strong>Generates high-temp<br>steam</strong>
-                                <span>using solar energy</span>
-                            </div>
-                        </div>
-                        <div class="solution-card card-light-green">
-                            <div class="card-icon-circle"><i class="fas fa-glass-whiskey"></i></div>
-                            <div class="card-text">
-                                <strong>Supports pasteurization,<br>sterilization, and</strong>
-                                <span>CIP cleaning</span>
-                            </div>
-                        </div>
-                        <div class="solution-card card-yellow">
-                            <div class="card-icon-circle"><i class="fas fa-plug"></i></div>
-                            <div class="card-text">
-                                <strong>Integrates seamlessly<br>with existing</strong>
-                                <span>boiler systems</span>
-                            </div>
-                        </div>
-                        <div class="solution-card card-blue">
-                            <div class="card-icon-circle"><i class="fas fa-sync-alt"></i></div>
-                            <div class="card-text">
-                                <strong>Operates in<br>hybrid mode</strong>
-                                <span>for continuous thermal supply</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="impact-box">
-                        <div class="impact-left">
-                            <i class="fas fa-chart-line impact-main-icon"></i>
-                            <span class="impact-title">Immediate<br>Impact:</span>
-                        </div>
-                        
-                        <div class="impact-items">
-                            <div class="impact-item">
-                                <div class="impact-icon"><i class="fas fa-arrow-down"></i></div>
-                                <div class="impact-item-text"><strong>Up to 40%</strong>reduction in<br>fuel consumption</div>
-                            </div>
-                            <div class="impact-item">
-                                <div class="impact-icon"><i class="fas fa-rupee-sign"></i></div>
-                                <div class="impact-item-text"><strong>Lower cost</strong>of production</div>
-                            </div>
-                            <div class="impact-item">
-                                <div class="impact-icon"><i class="fas fa-shield-alt"></i></div>
-                                <div class="impact-item-text"><strong>Long-term</strong>energy price stability</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="impact-conclusion-bar">
-                        <i class="fas fa-check-circle"></i> 
-                        <span>This is not just renewable energy — this is <span class="highlight-yellow">cost control</span> for your plant.</span>
-                    </div>
-                </div>
+          <div class="grid-3" style="margin-top: 0; align-items: stretch">
+            <div class="impact-card" style="height: 100%">
+              <div class="impact-header">
+                <h4
+                  style="
+                    color: #1d1d1f;
+                    font-size: 1.25rem;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-weight: 900;
+                    font-family: &quot;Montserrat&quot;, sans-serif;
+                  "
+                >
+                  <i class="fas fa-cogs" style="color: #ff9800"></i> System
+                  Process
+                </h4>
+              </div>
+              <div class="impact-body">
+                <ul>
+                  <li>Solar mirrors capture & concentrate sunlight</li>
+                  <li>Heat focused onto absorber tubes</li>
+                  <li>Heat transfer fluid absorbs thermal energy</li>
+                  <li>Steam or hot water generated</li>
+                  <li>Heat supplied to dairy processes</li>
+                  <li>Boiler automatically supports when required</li>
+                </ul>
+              </div>
             </div>
+
+            <div class="impact-card" style="height: 100%">
+              <div class="impact-header">
+                <h4
+                  style="
+                    color: #1d1d1f;
+                    font-size: 1.25rem;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-weight: 900;
+                    font-family: &quot;Montserrat&quot;, sans-serif;
+                  "
+                >
+                  <i class="fas fa-layer-group" style="color: #ff9800"></i>
+                  Integration Options
+                </h4>
+              </div>
+              <div class="impact-body">
+                <ul>
+                  <li>Boiler Feedwater Preheating</li>
+                  <li>Direct Steam Generation</li>
+                  <li>Hybrid Solar + Boiler Mode</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="impact-card" style="height: 100%">
+              <div class="impact-header">
+                <h4
+                  style="
+                    color: #1d1d1f;
+                    font-size: 1.25rem;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-weight: 900;
+                    font-family: &quot;Montserrat&quot;, sans-serif;
+                  "
+                >
+                  <i class="fas fa-chart-line" style="color: #ff9800"></i>
+                  Industrial Performance
+                </h4>
+              </div>
+              <div class="impact-body">
+                <ul>
+                  <li>Temperature Range: <strong>120°C – 250°C</strong></li>
+                  <li>Efficiency: <strong>50–70%</strong></li>
+                  <li>Solar Contribution: <strong>20–60%</strong></li>
+                  <li>System Life: <strong>20–30 years</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <p
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              margin-top: 2.5rem;
+            "
+          >
+            <i
+              class="fas fa-hand-point-right"
+              style="color: var(--green-accent)"
+            ></i>
+            Designed for continuous dairy operations with zero disruption.
+          </p>
         </div>
+      </div>
 
-        <!-- 3. Process / Technology — Reliable & Proven System -->
-        <div class="section">
-            <div class="container">
-            <div style="text-align: center; margin-bottom: 2.5rem;">
-                <h2>Reliable, proven system for dairy operations</h2>
+      <!-- 4. Applications — Where Solar Works in Dairy -->
+      <div class="section section-alt">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 2rem">
+            <h2>Perfectly suited for all major dairy heat processes</h2>
+          </div>
+          <div class="grid-3">
+            <div class="card">
+              <i class="fas fa-temperature-low"></i>
+              <h4>Milk Pasteurization</h4>
+              <p>72–85°C continuous, precise control</p>
             </div>
-            
-            <div class="grid-3" style="margin-top: 0; align-items: stretch;">
-                <div class="impact-card" style="height: 100%;">
-                    <div class="impact-header">
-                        <h4 style="color: #1d1d1f; font-size: 1.25rem; margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 900; font-family: 'Montserrat', sans-serif;"><i class="fas fa-cogs" style="color: #FF9800;"></i> System Process</h4>
-                    </div>
-                    <div class="impact-body">
-                        <ul>
-                            <li>Solar mirrors capture & concentrate sunlight</li>
-                            <li>Heat focused onto absorber tubes</li>
-                            <li>Heat transfer fluid absorbs thermal energy</li>
-                            <li>Steam or hot water generated</li>
-                            <li>Heat supplied to dairy processes</li>
-                            <li>Boiler automatically supports when required</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="impact-card" style="height: 100%;">
-                    <div class="impact-header">
-                        <h4 style="color: #1d1d1f; font-size: 1.25rem; margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 900; font-family: 'Montserrat', sans-serif;"><i class="fas fa-layer-group" style="color: #FF9800;"></i> Integration Options</h4>
-                    </div>
-                    <div class="impact-body">
-                        <ul>
-                            <li>Boiler Feedwater Preheating</li>
-                            <li>Direct Steam Generation</li>
-                            <li>Hybrid Solar + Boiler Mode</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="impact-card" style="height: 100%;">
-                    <div class="impact-header">
-                        <h4 style="color: #1d1d1f; font-size: 1.25rem; margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 900; font-family: 'Montserrat', sans-serif;"><i class="fas fa-chart-line" style="color: #FF9800;"></i> Industrial Performance</h4>
-                    </div>
-                    <div class="impact-body">
-                        <ul>
-                            <li>Temperature Range: <strong>120°C – 250°C</strong></li>
-                            <li>Efficiency: <strong>50–70%</strong></li>
-                            <li>Solar Contribution: <strong>20–60%</strong></li>
-                            <li>System Life: <strong>20–30 years</strong></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="card">
+              <i class="fas fa-tint"></i>
+              <h4>Evaporation & Concentration</h4>
+              <p>60–80°C under vacuum</p>
             </div>
-
-            <p style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 2.5rem;"><i
-                    class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Designed
-                for continuous dairy operations with zero disruption.</p>
-                </div>
+            <div class="card">
+              <i class="fas fa-wind"></i>
+              <h4>Spray Drying (preheating)</h4>
+              <p>150–200°C air heating support</p>
             </div>
+            <div class="card">
+              <i class="fas fa-pump-soap"></i>
+              <h4>CIP (Cleaning-In-Place)</h4>
+              <p>70–85°C hot water & steam</p>
+            </div>
+            <div class="card">
+              <i class="fas fa-water"></i>
+              <h4>Boiler Feedwater Heating</h4>
+              <p>Lifts feedwater temp, cuts boiler load</p>
+            </div>
+            <div class="card">
+              <i class="fas fa-fire"></i>
+              <h4>Hot water generation</h4>
+              <p>General process & utility heating</p>
+            </div>
+          </div>
+          <p
+            style="
+              text-align: center;
+              margin-top: 2rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+            "
+          >
+            <i
+              class="fas fa-hand-point-right"
+              style="color: var(--green-accent)"
+            ></i>
+            If your plant uses steam daily —
+            <strong>you are an ideal candidate.</strong>
+          </p>
         </div>
+      </div>
 
-        <!-- 4. Applications — Where Solar Works in Dairy -->
-        <div class="section section-alt">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <h2>Perfectly suited for all major dairy heat processes</h2>
-
-                </div>
-                <div class="grid-3">
-                    <div class="card"><i class="fas fa-temperature-low"></i>
-                        <h4>Milk Pasteurization</h4>
-                        <p>72–85°C continuous, precise control</p>
-                    </div>
-                    <div class="card"><i class="fas fa-tint"></i>
-                        <h4>Evaporation & Concentration</h4>
-                        <p>60–80°C under vacuum</p>
-                    </div>
-                    <div class="card"><i class="fas fa-wind"></i>
-                        <h4>Spray Drying (preheating)</h4>
-                        <p>150–200°C air heating support</p>
-                    </div>
-                    <div class="card"><i class="fas fa-pump-soap"></i>
-                        <h4>CIP (Cleaning-In-Place)</h4>
-                        <p>70–85°C hot water & steam</p>
-                    </div>
-                    <div class="card"><i class="fas fa-water"></i>
-                        <h4>Boiler Feedwater Heating</h4>
-                        <p>Lifts feedwater temp, cuts boiler load</p>
-                    </div>
-                    <div class="card"><i class="fas fa-fire"></i>
-                        <h4>Hot water generation</h4>
-                        <p>General process & utility heating</p>
-                    </div>
-                </div>
-                <p
-                    style="text-align: center; margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> If your plant uses steam
-                    daily — <strong>you are an ideal candidate.</strong>
-                </p>
+      <!-- 5. Benefits — What Dairy Plants Gain -->
+      <div class="section">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 2.5rem">
+            <h2>Financial, operational & strategic gains</h2>
+          </div>
+          <div
+            class="grid-2"
+            style="align-items: center; grid-template-columns: 1fr 1.3fr"
+          >
+            <div>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-coins"></i>
+                  <span
+                    ><strong>Financial Advantage</strong> – Reduce fuel
+                    consumption by 20–60%, save significant annual energy cost,
+                    protect against fuel price increases</span
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-gear"></i>
+                  <span
+                    ><strong>Operational Advantage</strong> – Seamless
+                    integration with existing systems, no production downtime,
+                    automated hybrid control</span
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-globe"></i>
+                  <span
+                    ><strong>Strategic Advantage</strong> – Lower carbon
+                    emissions, meet sustainability & export requirements,
+                    strengthen brand value with green processing</span
+                  >
+                </li>
+              </ul>
+              <p
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  margin-top: 1rem;
+                "
+              >
+                <i
+                  class="fas fa-hand-point-right"
+                  style="color: var(--green-accent)"
+                ></i>
+                Lower cost + better compliance = stronger market position
+              </p>
             </div>
-        </div>
-
-        <!-- 5. Benefits — What Dairy Plants Gain -->
-        <div class="section">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 2.5rem;">
-                    <h2>Financial, operational & strategic gains</h2>
-                </div>
-                <div class="grid-2" style="align-items: center; grid-template-columns: 1fr 1.3fr;">
-                    <div>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-coins"></i> <span><strong>Financial Advantage</strong> – Reduce fuel
-                                    consumption by 20–60%, save significant annual energy cost, protect against fuel
-                                    price
-                                    increases</span></li>
-                            <li><i class="fas fa-gear"></i> <span><strong>Operational Advantage</strong> – Seamless
-                                    integration with existing systems, no production downtime, automated hybrid
-                                    control</span></li>
-                            <li><i class="fas fa-globe"></i> <span><strong>Strategic Advantage</strong> – Lower carbon
-                                    emissions, meet sustainability & export requirements, strengthen brand value with
-                                    green
-                                    processing</span></li>
-                        </ul>
-                        <p style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;"><i
-                                class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> Lower cost +
-                            better compliance = stronger market position</p>
-                    </div>
-                    <div>
-                        <img class="img-soft" style="max-height: 600px; width: 100%; object-fit: contain; display: block; margin: 0 auto;"
-                            src="https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
-                            alt="Energy cost comparison dairy">
-                    </div>
-                </div>
+            <div>
+              <img
+                class="img-soft"
+                style="
+                  max-height: 600px;
+                  width: 100%;
+                  object-fit: contain;
+                  display: block;
+                  margin: 0 auto;
+                "
+                src="https://www.researchgate.net/publication/347576778/figure/fig3/AS%3A11431281398892108%401745534642125/Energy-cost-analysis-a-The-cost-of-heating-using-boiler-alone-and-combined-boiler-solar.tif"
+                alt="Energy cost comparison dairy"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- 6. ROI — Strong Financial Justification -->
-        <div class="section section-alt">
-            <div class="container">
-                <div style="text-align: center;">
-                    <h2>ROI that transforms dairy economics</h2>
-                    <p class="section-subhead">Typical returns for Indian dairy plants & emerging markets</p>
-                </div>
-                <div class="stat-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">2–5 yrs</div>
-                        <div>Payback period</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">30–40%</div>
-                        <div>Annual fuel savings</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">25+ yrs</div>
-                        <div>System life, solar heat is free for decades</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">~3T CO₂</div>
-                        <div>Saved per ton of oil replaced</div>
-                    </div>
-                </div>
-                <p
-                    style="margin-top: 2rem; text-align: center; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <i class="fas fa-hand-point-right" style="color: var(--green-accent);"></i> One of the most bankable
-                    investments in industrial energy. After payback, your thermal energy cost drops drastically.
-                </p>
+      <!-- 6. ROI — Strong Financial Justification -->
+      <div class="section section-alt">
+        <div class="container">
+          <div style="text-align: center">
+            <h2>ROI that transforms dairy economics</h2>
+            <p class="section-subhead">
+              Typical returns for Indian dairy plants & emerging markets
+            </p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-item">
+              <div class="stat-number">2–5 yrs</div>
+              <div>Payback period</div>
             </div>
+            <div class="stat-item">
+              <div class="stat-number">30–40%</div>
+              <div>Annual fuel savings</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">25+ yrs</div>
+              <div>System life, solar heat is free for decades</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">~3T CO₂</div>
+              <div>Saved per ton of oil replaced</div>
+            </div>
+          </div>
+          <p
+            style="
+              margin-top: 2rem;
+              text-align: center;
+              font-weight: 500;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+            "
+          >
+            <i
+              class="fas fa-hand-point-right"
+              style="color: var(--green-accent)"
+            ></i>
+            One of the most bankable investments in industrial energy. After
+            payback, your thermal energy cost drops drastically.
+          </p>
         </div>
-
-
-
+      </div>
     </main>
 
     <!-- FOOTER -->
     <div id="footer"></div>
 
-    
-
-
-
     <!-- GLOBAL COMPONENT LOADER -->
     <script>
-        (function() {
-            function loadComponent(id, file) {
-                fetch(file)
-                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-                    .then(html => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            el.innerHTML = html;
-                            // Execute scripts
-                            const scripts = el.querySelectorAll('script');
-                            scripts.forEach(s => {
-                                const newScript = document.createElement('script');
-                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                                newScript.appendChild(document.createTextNode(s.innerHTML));
-                                s.parentNode.replaceChild(newScript, s);
-                            });
-                        }
-                    }).catch(console.error);
-            }
-            window.BASE_PATH = "../";
-            loadComponent('header', '../components/header.html');
-            loadComponent('footer', '../components/footer.html');
-        })();
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                // Execute scripts
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
+        }
+        window.BASE_PATH = "../";
+        loadComponent("header", "../components/header.html");
+        loadComponent("footer", "../components/footer.html");
+      })();
     </script>
-
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
         });
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+      });
     </script>
-</body>
-
+  </body>
 </html>

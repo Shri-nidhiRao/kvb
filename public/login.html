@@ -1,176 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      name="description"
+      content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Login | KVB Green Energies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
-        // Redirect if already logged in
-        if (localStorage.getItem('adminToken')) {
-            window.location.replace('admin.html');
-        }
+      // Redirect if already logged in
+      if (localStorage.getItem("adminToken")) {
+        window.location.replace("admin.html");
+      }
     </script>
     <style>
-        body {
-            background-color: var(--background);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: var(--font-body);
-        }
+      body {
+        background-color: var(--background);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: var(--font-body);
+      }
 
-        .login-container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
+      .login-container {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        box-sizing: border-box;
+      }
 
-        .login-container img {
-            height: 60px;
-            margin-bottom: 20px;
-        }
+      .login-container img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
 
-        .login-container h2 {
-            font-family: var(--font-heading);
-            color: var(--deep-blue);
-            margin-bottom: 30px;
-        }
+      .login-container h2 {
+        font-family: var(--font-heading);
+        color: var(--deep-blue);
+        margin-bottom: 30px;
+      }
 
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
+      .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
 
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
+      .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
 
-        .input-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
+      .input-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
 
-        .input-group input:focus {
-            outline: none;
-            border-color: var(--eco-green);
-        }
+      .input-group input:focus {
+        outline: none;
+        border-color: var(--eco-green);
+      }
 
-        .btn-login {
-            background: var(--eco-green);
-            color: white;
-            border: none;
-            padding: 14px 20px;
-            width: 100%;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            margin-top: 10px;
-        }
+      .btn-login {
+        background: var(--eco-green);
+        color: white;
+        border: none;
+        padding: 14px 20px;
+        width: 100%;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          transform 0.2s;
+        margin-top: 10px;
+      }
 
-        .btn-login:hover {
-            background: #2E6B35;
-            transform: translateY(-2px);
-        }
+      .btn-login:hover {
+        background: #2e6b35;
+        transform: translateY(-2px);
+      }
 
-        .error-message {
-            color: #d9534f;
-            background: #fdf2f2;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            display: none;
-        }
+      .error-message {
+        color: #d9534f;
+        background: #fdf2f2;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="login-container">
-        <img width="800" height="685" src="images/products/kvb-logo.webp" alt="KVB Logo">
-        <h2>Admin Portal</h2>
-        
-        <div class="error-message" id="errorMsg">Invalid credentials. Please try again.</div>
+      <img
+        width="800"
+        height="685"
+        src="images/products/kvb-logo.webp"
+        alt="KVB Logo"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <h2>Admin Portal</h2>
 
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" required placeholder="admin@example.com" >
-            </div>
-            
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" required placeholder="Enter password" >
-            </div>
+      <div class="error-message" id="errorMsg">
+        Invalid credentials. Please try again.
+      </div>
 
-            <button type="submit" class="btn-login" id="loginBtn">Login securely</button>
-        </form>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="admin@example.com"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            required
+            placeholder="Enter password"
+          />
+        </div>
+
+        <button type="submit" class="btn-login" id="loginBtn">
+          Login securely
+        </button>
+      </form>
     </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const btn = document.getElementById('loginBtn');
-            const errorMsg = document.getElementById('errorMsg');
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-            btn.innerText = 'Verifying...';
-            btn.disabled = true;
-            errorMsg.style.display = 'none';
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const btn = document.getElementById("loginBtn");
+          const errorMsg = document.getElementById("errorMsg");
 
-            const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-                ? 'http://localhost:5001/api/login' 
-                : '/api/login';
+          btn.innerText = "Verifying...";
+          btn.disabled = true;
+          errorMsg.style.display = "none";
 
-            try {
-                const response = await fetch(API_BASE, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username: email, password: password })
-                });
+          const API_BASE =
+            window.location.hostname === "localhost" ||
+            window.location.hostname === "127.0.0.1"
+              ? "http://localhost:5001/api/login"
+              : "/api/login";
 
-                const data = await response.json();
+          try {
+            const response = await fetch(API_BASE, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ username: email, password: password }),
+            });
 
-                if (response.ok && data.success) {
-                    // Store token and redirect
-                    localStorage.setItem('adminToken', data.token);
-                    window.location.replace('admin.html');
-                } else {
-                    throw new Error(data.message || 'Login failed');
-                }
-            } catch (err) {
-                console.error(err);
-                errorMsg.innerText = err.message;
-                errorMsg.style.display = 'block';
-                btn.innerText = 'Login securely';
-                btn.disabled = false;
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+              // Store token and redirect
+              localStorage.setItem("adminToken", data.token);
+              window.location.replace("admin.html");
+            } else {
+              throw new Error(data.message || "Login failed");
             }
+          } catch (err) {
+            console.error(err);
+            errorMsg.innerText = err.message;
+            errorMsg.style.display = "block";
+            btn.innerText = "Login securely";
+            btn.disabled = false;
+          }
         });
     </script>
-</body>
+  </body>
 </html>

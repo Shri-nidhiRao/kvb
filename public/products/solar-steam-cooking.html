@@ -1,971 +1,1449 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta name="description" content="Discover KVB's advanced Solar Steam Cooking systems designed to provide efficient and sustainable large-scale cooking solutions.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking</title>
-    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp">
+  <head>
+    <meta
+      name="description"
+      content="Discover KVB's advanced Solar Steam Cooking systems designed to provide efficient and sustainable large-scale cooking solutions."
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>
+      Solar Parabolic Cooker | KVB Green Energies – Clean Energy Cooking
+    </title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp" />
     <!-- Fonts & Icons -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
     <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <style>
+      /* ===== ECO-PROFESSIONAL THEME (matches about.html) ===== */
+      :root {
+        --solar-yellow: #fdb813;
+        --deep-blue: #0b3d91;
+        --eco-green: #3a7d44;
+        --dark-charcoal: #1c1c1c;
+        --soft-white: #f9f9f9;
+        --accent-orange: #ff6f00;
+        --primary: #3a7d44;
+        --primary-dark: #2d5a33;
+        --primary-light: #e6f3e6;
+        --shadow-sm: 0 10px 30px rgba(28, 28, 28, 0.04);
+        --shadow-hover: 0 20px 40px rgba(58, 125, 68, 0.08);
+        --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+        --border-light: #e0e8e0;
+        --radius-sm: 12px;
+        --radius-md: 20px;
+        --radius-lg: 28px;
+        --bg-soft: #f9f9f9;
+        --text-primary: #1c1c1c;
+        --text-secondary: #4a6741;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
 
-        /* ===== ECO-PROFESSIONAL THEME (matches about.html) ===== */
-        :root {
-            --solar-yellow: #FDB813;
-            --deep-blue: #0B3D91;
-            --eco-green: #3A7D44;
-            --dark-charcoal: #1C1C1C;
-            --soft-white: #F9F9F9;
-            --accent-orange: #FF6F00;
-            --primary: #3A7D44;
-            --primary-dark: #2d5a33;
-            --primary-light: #e6f3e6;
-            --shadow-sm: 0 10px 30px rgba(28,28,28,0.04);
-            --shadow-hover: 0 20px 40px rgba(58,125,68,0.08);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
-            --border-light: #e0e8e0;
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --bg-soft: #F9F9F9;
-            --text-primary: #1C1C1C;
-            --text-secondary: #4a6741;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--soft-white);
+        color: var(--dark-charcoal);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        color: #4a5568;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ===== HEADER PLACEHOLDER ===== */
+      #header {
+        min-height: 80px;
+      }
+
+      /* ===== HERO SECTION ===== */
+      .product-hero {
+        position: relative;
+        min-height: 55vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          #09203f 0%,
+          #0f3460 40%,
+          #1a5276 100%
+        );
+        overflow: hidden;
+        color: white;
+        padding: 100px 0 60px;
+      }
+
+      .product-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 15% 50%,
+            rgba(0, 255, 135, 0.12) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(253, 184, 19, 0.08) 0%,
+            transparent 40%
+          );
+        animation: heroPulse 8s infinite alternate;
+        z-index: 1;
+      }
+
+      .product-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E")
+          no-repeat bottom;
+        background-size: cover;
+        z-index: 2;
+      }
+
+      @keyframes heroPulse {
+        0% {
+          opacity: 1;
         }
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--soft-white);
-            color: var(--dark-charcoal);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+        100% {
+          opacity: 0.7;
         }
+      }
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+      .product-hero .container {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+      }
+
+      .hero-breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 20px;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        margin-bottom: 24px;
+        font-size: 0.9rem;
+        animation: fadeUp 0.8s ease both;
+      }
+
+      .hero-breadcrumb a {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .hero-breadcrumb a:hover {
+        color: var(--solar-yellow);
+      }
+      .hero-breadcrumb .sep {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .hero-breadcrumb .current {
+        color: var(--solar-yellow);
+        font-weight: 600;
+      }
+
+      .product-hero h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        animation: fadeUp 0.9s ease 0.1s both;
+        background: none;
+        color: white;
+        -webkit-text-fill-color: white;
+      }
+
+      .hero-title-highlight {
+        background: linear-gradient(135deg, #00e676, var(--solar-yellow));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+      }
+
+      .product-hero p.hero-sub {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 680px;
+        margin: 0 auto 28px;
+        line-height: 1.7;
+        animation: fadeUp 1s ease 0.2s both;
+      }
+
+      .hero-tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        animation: fadeUp 1.1s ease 0.3s both;
+      }
+
+      .hero-tag {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        backdrop-filter: blur(6px);
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+      }
+
+      .hero-tag:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      .hero-tag i {
+        color: var(--solar-yellow);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
         }
-
-        p { color: #4a5568; line-height: 1.7; font-size: 1.05rem; }
-
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
-
-        /* ===== HEADER PLACEHOLDER ===== */
-        #header {
-            min-height: 80px;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        /* ===== HERO SECTION ===== */
-        .product-hero {
-            position: relative;
-            min-height: 55vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
-            overflow: hidden;
-            color: white;
-            padding: 100px 0 60px;
-        }
+      /* ===== SECTION TITLES (matches about.html exactly) ===== */
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        color: #0b3d91;
+        text-align: center;
+        position: relative;
+        display: block;
+        margin-bottom: 16px;
+      }
 
-        .product-hero::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                radial-gradient(circle at 15% 50%, rgba(0,255,135,0.12) 0%, transparent 55%),
-                radial-gradient(circle at 85% 30%, rgba(253,184,19,0.08) 0%, transparent 40%);
-            animation: heroPulse 8s infinite alternate;
-            z-index: 1;
-        }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--solar-yellow);
+        border-radius: 2px;
+      }
 
-        .product-hero::after {
-            content: '';
-            position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
-            background-size: cover;
-            z-index: 2;
-        }
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: #5a6b5a;
+        text-align: center;
+        max-width: 680px;
+        margin: 20px auto 0;
+        line-height: 1.65;
+      }
 
-        @keyframes heroPulse {
-            0% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
+      /* ===== SCROLL REVEAL & SPACING ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.75s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        margin-bottom: 3.5rem;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        .product-hero .container {
-            position: relative; z-index: 3; text-align: center;
-        }
+      /* ===== SYSTEM IN ACTION SECTION ===== */
+      .system-action-section {
+        padding: 80px 0;
+        background: linear-gradient(145deg, #f0f7f0, #e6f0e6);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3.5rem;
+      }
 
-        .hero-breadcrumb {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(255,255,255,0.1); padding: 8px 20px;
-            border-radius: 50px; border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px); margin-bottom: 24px;
-            font-size: 0.9rem; animation: fadeUp 0.8s ease both;
-        }
+      .system-action-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(58, 125, 68, 0.06) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(253, 184, 19, 0.05) 0%,
+            transparent 40%
+          );
+        pointer-events: none;
+      }
 
-        .hero-breadcrumb a { color: rgba(255,255,255,0.8); }
-        .hero-breadcrumb a:hover { color: var(--solar-yellow); }
-        .hero-breadcrumb .sep { color: rgba(255,255,255,0.4); }
-        .hero-breadcrumb .current { color: var(--solar-yellow); font-weight: 600; }
+      .system-action-section .section-header {
+        text-align: center;
+        margin-bottom: 48px;
+        position: relative;
+        z-index: 2;
+      }
 
-        .product-hero h1 {
-            font-size: 4rem; font-weight: 900; line-height: 1.15; margin-bottom: 20px;
-            animation: fadeUp 0.9s ease 0.1s both;
-            background: none; color: white;
-            -webkit-text-fill-color: white;
-        }
-
-        .hero-title-highlight {
-            background: linear-gradient(135deg, #00e676, var(--solar-yellow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline;
-        }
-
-        .product-hero p.hero-sub {
-            font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 680px;
-            margin: 0 auto 28px; line-height: 1.7;
-            animation: fadeUp 1s ease 0.2s both;
-        }
-
-        .hero-tags-row {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
-            animation: fadeUp 1.1s ease 0.3s both;
-        }
-
-        .hero-tag {
-            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
-            padding: 8px 20px; border-radius: 50px; font-size: 0.88rem; font-weight: 500;
-            backdrop-filter: blur(6px); color: white; display: inline-flex;
-            align-items: center; gap: 8px; transition: all 0.3s;
-        }
-
-        .hero-tag:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
-        .hero-tag i { color: var(--solar-yellow); }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ===== SECTION TITLES (matches about.html exactly) ===== */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            color: #0B3D91;
-            text-align: center;
-            position: relative;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--solar-yellow);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #5a6b5a;
-            text-align: center;
-            max-width: 680px;
-            margin: 20px auto 0;
-            line-height: 1.65;
-        }
-
-        /* ===== SCROLL REVEAL & SPACING ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.75s cubic-bezier(0.2,0.9,0.4,1.1);
-            margin-bottom: 3.5rem;
-        }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* ===== SYSTEM IN ACTION SECTION ===== */
-        .system-action-section {
-            padding: 80px 0;
-            background: linear-gradient(145deg, #f0f7f0, #e6f0e6);
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 3.5rem;
-        }
-
-        .system-action-section::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(58,125,68,0.06) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(253,184,19,0.05) 0%, transparent 40%);
-            pointer-events: none;
-        }
-
-        .system-action-section .section-header {
-            text-align: center; margin-bottom: 48px; position: relative; z-index: 2;
-        }
-
-        /* ===== BOOTSTRAP CAROUSEL (inside eco section) ===== */
-        .kvb-carousel {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            position: relative; z-index: 2;
-            max-width: 800px; margin: 0 auto;
-            background: #fff;
-        }
+      /* ===== BOOTSTRAP CAROUSEL (inside eco section) ===== */
+      .kvb-carousel {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+      }
+      .kvb-carousel .carousel-item img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0;
+      }
+      .kvb-carousel .carousel-control-prev,
+      .kvb-carousel .carousel-control-next {
+        width: 52px;
+        height: 52px;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 16px;
+        opacity: 1;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+      }
+      .kvb-carousel .carousel-control-prev:hover,
+      .kvb-carousel .carousel-control-next:hover {
+        background: white;
+        transform: translateY(-50%) scale(1.08);
+      }
+      .kvb-carousel .carousel-control-prev {
+        left: 10px;
+      }
+      .kvb-carousel .carousel-control-next {
+        right: 10px;
+      }
+      .kvb-carousel .carousel-control-prev-icon,
+      .kvb-carousel .carousel-control-next-icon {
+        filter: invert(1) brightness(0);
+        width: 20px;
+        height: 20px;
+      }
+      .kvb-carousel .carousel-indicators li {
+        background-color: var(--eco-green);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        margin: 0 4px;
+      }
+      .kvb-carousel .carousel-indicators li.active {
+        background-color: var(--solar-yellow);
+        transform: scale(1.3);
+      }
+      @media (max-width: 768px) {
         .kvb-carousel .carousel-item img {
-            width: 100%; aspect-ratio: 16/9; height: auto; object-fit: contain; border-radius: 0;
+          height: auto;
         }
-        .kvb-carousel .carousel-control-prev,
-        .kvb-carousel .carousel-control-next {
-            width: 52px; height: 52px;
-            background: rgba(255,255,255,0.92);
-            border-radius: 50%;
-            top: 50%; transform: translateY(-50%);
-            margin: 0 16px; opacity: 1;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-        }
-        .kvb-carousel .carousel-control-prev:hover,
-        .kvb-carousel .carousel-control-next:hover {
-            background: white; transform: translateY(-50%) scale(1.08);
-        }
-        .kvb-carousel .carousel-control-prev { left: 10px; }
-        .kvb-carousel .carousel-control-next { right: 10px; }
-        .kvb-carousel .carousel-control-prev-icon,
-        .kvb-carousel .carousel-control-next-icon {
-            filter: invert(1) brightness(0); width: 20px; height: 20px;
-        }
-        .kvb-carousel .carousel-indicators li {
-            background-color: var(--eco-green);
-            width: 10px; height: 10px; border-radius: 50%; border: none;
-            margin: 0 4px;
-        }
-        .kvb-carousel .carousel-indicators li.active {
-            background-color: var(--solar-yellow);
-            transform: scale(1.3);
-        }
-        @media (max-width: 768px) {
-            .kvb-carousel .carousel-item img { height: auto; }
-        }
+      }
 
-        /* ===== OVERVIEW / HIGHLIGHT TECH ===== */
-        .highlight-tech {
-            background: white;
-            border-left: 5px solid var(--eco-green);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 2.5rem 2.5rem;
-            margin: 0 0 3.5rem;
-            box-shadow: var(--shadow-sm);
-            position: relative; overflow: hidden;
-        }
+      /* ===== OVERVIEW / HIGHLIGHT TECH ===== */
+      .highlight-tech {
+        background: white;
+        border-left: 5px solid var(--eco-green);
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        padding: 2.5rem 2.5rem;
+        margin: 0 0 3.5rem;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
 
-        .highlight-tech::before {
-            content: '';
-            position: absolute; top: 0; right: 0;
-            width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(58,125,68,0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
+      .highlight-tech::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(58, 125, 68, 0.05) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+      }
 
-        .highlight-tech h1, .highlight-tech h2 {
-            font-size: 1.8rem; margin-bottom: 1rem;
-            color: var(--dark-charcoal);
-            background: none; -webkit-text-fill-color: inherit;
-        }
+      .highlight-tech h1,
+      .highlight-tech h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--dark-charcoal);
+        background: none;
+        -webkit-text-fill-color: inherit;
+      }
 
-        .highlight-tech p {
-            font-size: 1.08rem; line-height: 1.75; color: #2d3e40;
-        }
+      .highlight-tech p {
+        font-size: 1.08rem;
+        line-height: 1.75;
+        color: #2d3e40;
+      }
 
-        .highlight-tech strong { color: var(--eco-green); }
+      .highlight-tech strong {
+        color: var(--eco-green);
+      }
 
-        /* ===== SECTION WRAPPER (white / soft alternating) ===== */
-        .content-section {
-            padding: 80px 0;
-            background: white;
-        }
+      /* ===== SECTION WRAPPER (white / soft alternating) ===== */
+      .content-section {
+        padding: 80px 0;
+        background: white;
+      }
 
-        .content-section.alt-bg {
-            background: linear-gradient(145deg, #f5faf5, #edf5ed);
-        }
+      .content-section.alt-bg {
+        background: linear-gradient(145deg, #f5faf5, #edf5ed);
+      }
 
-        /* ===== FEATURE MATRIX ===== */
+      /* ===== FEATURE MATRIX ===== */
+      .feature-matrix {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        background: white;
+        border: 1px solid #d0e8d0;
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          var(--eco-green),
+          var(--solar-yellow)
+        );
+      }
+
+      .feature-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--eco-green);
+        box-shadow: 0 20px 40px rgba(58, 125, 68, 0.12);
+      }
+
+      .feature-card i {
+        font-size: 2rem;
+        color: var(--eco-green);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--dark-charcoal);
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-list li {
+        margin-bottom: 0.65rem;
+        padding-left: 1.4rem;
+        position: relative;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #4a5568;
+      }
+      .feature-list li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--eco-green);
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
         .feature-matrix {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
         }
+      }
 
-        .feature-card {
-            background: white;
-            border: 1px solid #d0e8d0;
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            position: relative; overflow: hidden;
-        }
+      /* ===== TABLES ===== */
+      .soft-table {
+        background: white;
+        border-radius: var(--radius-md);
+        border: 1px solid #d0e8d0;
+        overflow-x: auto;
+        margin: 0 0 3.5rem 0;
+        box-shadow: var(--shadow-sm);
+      }
 
-        .feature-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 4px; height: 100%;
-            background: linear-gradient(to bottom, var(--eco-green), var(--solar-yellow));
-        }
+      .soft-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .soft-table th,
+      .soft-table td {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid #e8f4e8;
+        font-size: 0.97rem;
+      }
+      .soft-table th {
+        background: linear-gradient(135deg, #3a7d44, #2d5a33);
+        color: white;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .soft-table tr:hover td {
+        background: #f5fbf5;
+      }
+      .soft-table tr:last-child td {
+        border-bottom: none;
+      }
 
-        .feature-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--eco-green);
-            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
-        }
+      /* ===== APPLICATIONS GRID ===== */
+      .applications-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
 
-        .feature-card i {
-            font-size: 2rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
-        }
+      .app-card {
+        background: white;
+        border: 1px solid #d0e8d0;
+        border-radius: var(--radius-md);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
 
-        .feature-card h3 {
-            font-size: 1.3rem; margin-bottom: 1rem; color: var(--dark-charcoal);
-        }
+      .app-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--eco-green),
+          var(--solar-yellow)
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
 
-        .feature-list { list-style: none; padding: 0; margin: 0; }
-        .feature-list li {
-            margin-bottom: 0.65rem; padding-left: 1.4rem;
-            position: relative; font-size: 0.95rem;
-            line-height: 1.5; color: #4a5568;
-        }
-        .feature-list li::before {
-            content: "▹"; position: absolute; left: 0;
-            color: var(--eco-green); font-weight: 700;
-        }
+      .app-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--eco-green);
+        box-shadow: 0 20px 40px rgba(58, 125, 68, 0.12);
+      }
 
-        @media (max-width: 768px) {
-            .feature-matrix { grid-template-columns: 1fr; gap: 1.5rem; }
-        }
+      .app-card:hover::after {
+        opacity: 1;
+      }
 
-        /* ===== TABLES ===== */
-        .soft-table {
-            background: white;
-            border-radius: var(--radius-md);
-            border: 1px solid #d0e8d0;
-            overflow-x: auto;
-            margin: 0 0 3.5rem 0;
-            box-shadow: var(--shadow-sm);
-        }
+      .app-card i {
+        font-size: 2.4rem;
+        color: var(--eco-green);
+        margin-bottom: 1rem;
+        display: block;
+      }
 
+      .app-card h3 {
+        font-size: 1.1rem;
+        color: var(--dark-charcoal);
+      }
 
-
-        .soft-table table { width: 100%; border-collapse: collapse; }
-        .soft-table th, .soft-table td {
-            padding: 1rem 1.5rem; text-align: left;
-            border-bottom: 1px solid #e8f4e8;
-            font-size: 0.97rem;
-        }
-        .soft-table th {
-            background: linear-gradient(135deg, #3A7D44, #2d5a33);
-            color: white; font-weight: 600; letter-spacing: 0.02em;
-        }
-        .soft-table tr:hover td { background: #f5fbf5; }
-        .soft-table tr:last-child td { border-bottom: none; }
-
-        /* ===== APPLICATIONS GRID ===== */
+      @media (max-width: 992px) {
         .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
+      @media (max-width: 600px) {
+        .applications-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-        .app-card {
-            background: white;
-            border: 1px solid #d0e8d0;
-            border-radius: var(--radius-md);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            position: relative; overflow: hidden;
-        }
+      /* ===== GENERIC CARDS ===== */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
 
-        .app-card::after {
-            content: '';
-            position: absolute; bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--eco-green), var(--solar-yellow));
-            opacity: 0; transition: opacity 0.3s;
-        }
+      .card {
+        background: white;
+        border: 1px solid #d0e8d0;
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-sm);
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        border-color: var(--eco-green);
+        box-shadow: 0 20px 40px rgba(58, 125, 68, 0.1);
+      }
+      .card i {
+        font-size: 2.4rem;
+        color: var(--eco-green);
+        margin-bottom: 1.2rem;
+      }
+      .card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+      }
 
-        .app-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--eco-green);
-            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
-        }
+      /* ===== PREMIUM UNLOCK ===== */
+      .premium-wrapper {
+        margin: 3.5rem auto 0;
+        max-width: 900px;
+        display: none;
+      }
 
-        .app-card:hover::after { opacity: 1; }
+      .lock-card {
+        background: white;
+        border: 2px dashed #c0d8c0;
+        border-radius: var(--radius-lg);
+        padding: 3rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-sm);
+      }
 
-        .app-card i {
-            font-size: 2.4rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
-        }
+      .lock-card:hover {
+        border-color: var(--eco-green);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(58, 125, 68, 0.12);
+      }
 
-        .app-card h3 { font-size: 1.1rem; color: var(--dark-charcoal); }
+      .lock-icon {
+        font-size: 3.5rem;
+        color: var(--eco-green);
+        margin-bottom: 1rem;
+      }
 
-        @media (max-width: 992px) {
-            .applications-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .applications-grid { grid-template-columns: 1fr; }
-        }
+      .btn-outline {
+        display: inline-block;
+        border: 2px solid var(--eco-green);
+        background: transparent;
+        color: var(--eco-green);
+        padding: 0.7rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .btn-outline:hover {
+        background: var(--eco-green);
+        color: white;
+      }
 
-        /* ===== GENERIC CARDS ===== */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem; margin-top: 3rem;
-        }
+      .form-container {
+        background: white;
+        border: 1px solid #d0e8d0;
+        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+        margin-top: 2rem;
+        display: none;
+        box-shadow: 0 20px 40px rgba(58, 125, 68, 0.08);
+      }
+      .form-container.visible {
+        display: block;
+        animation: fadeUp 0.5s ease;
+      }
 
-        .card {
-            background: white; border: 1px solid #d0e8d0;
-            border-radius: var(--radius-md); padding: 2rem;
-            transition: all 0.3s; box-shadow: var(--shadow-sm);
-        }
-        .card:hover {
-            transform: translateY(-6px); border-color: var(--eco-green);
-            box-shadow: 0 20px 40px rgba(58,125,68,0.1);
-        }
-        .card i { font-size: 2.4rem; color: var(--eco-green); margin-bottom: 1.2rem; }
-        .card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .form-group.full {
+        grid-column: span 2;
+      }
 
-        /* ===== PREMIUM UNLOCK ===== */
-        .premium-wrapper {
-            margin: 3.5rem auto 0;
-            max-width: 900px;
-            display: none;
-        }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        background: var(--soft-white);
+        border: 1px solid #d0e8d0;
+        border-radius: var(--radius-sm);
+        font-family: inherit;
+        font-size: 0.97rem;
+        transition: 0.2s;
+      }
 
-        .lock-card {
-            background: white;
-            border: 2px dashed #c0d8c0;
-            border-radius: var(--radius-lg);
-            padding: 3rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-sm);
-        }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--eco-green);
+        box-shadow: 0 0 0 3px rgba(58, 125, 68, 0.1);
+      }
 
-        .lock-card:hover {
-            border-color: var(--eco-green);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
-        }
+      .btn-submit {
+        background: linear-gradient(
+          135deg,
+          var(--eco-green),
+          var(--primary-dark)
+        );
+        width: 100%;
+        padding: 1rem;
+        border-radius: 50px;
+        font-weight: 700;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s;
+        letter-spacing: 0.03em;
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(58, 125, 68, 0.3);
+      }
 
-        .lock-icon {
-            font-size: 3.5rem; color: var(--eco-green); margin-bottom: 1rem;
-        }
+      .hidden-content {
+        display: none;
+        margin-top: 2rem;
+      }
+      .hidden-content.visible {
+        display: block;
+      }
 
-        .btn-outline {
-            display: inline-block; border: 2px solid var(--eco-green);
-            background: transparent; color: var(--eco-green);
-            padding: 0.7rem 2rem; border-radius: 50px; font-weight: 600;
-            transition: all 0.3s; cursor: pointer;
-        }
-        .btn-outline:hover {
-            background: var(--eco-green); color: white;
-        }
+      .success-banner {
+        background: var(--primary-light);
+        border-left: 4px solid var(--eco-green);
+        padding: 1rem 1.5rem;
+        border-radius: var(--radius-md);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
 
-        .form-container {
-            background: white; border: 1px solid #d0e8d0;
-            border-radius: var(--radius-lg); padding: 2.5rem;
-            margin-top: 2rem; display: none;
-            box-shadow: 0 20px 40px rgba(58,125,68,0.08);
-        }
-        .form-container.visible { display: block; animation: fadeUp 0.5s ease; }
+      .premium-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.2rem;
+        margin: 2rem 0;
+      }
 
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-        .form-group.full { grid-column: span 2; }
+      .premium-card {
+        background: linear-gradient(145deg, #f0f7f0, #e8f4e8);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        text-align: center;
+        border: 1px solid #d0e8d0;
+        transition: all 0.3s;
+      }
+      .premium-card:hover {
+        transform: translateY(-4px);
+      }
+      .premium-card i {
+        font-size: 2rem;
+        color: var(--eco-green);
+        margin-bottom: 0.8rem;
+        display: block;
+      }
 
-        input, select, textarea {
-            width: 100%; padding: 0.9rem 1rem;
-            background: var(--soft-white);
-            border: 1px solid #d0e8d0;
-            border-radius: var(--radius-sm);
-            font-family: inherit; font-size: 0.97rem; transition: 0.2s;
-        }
+      /* ===== FOOTER ===== */
+      .footer-light {
+        background: #1c1c1c;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
 
-        input:focus, select:focus, textarea:focus {
-            outline: none; border-color: var(--eco-green);
-            box-shadow: 0 0 0 3px rgba(58,125,68,0.1);
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 992px) {
+        .form-grid {
+          grid-template-columns: 1fr;
         }
+        .form-group.full {
+          grid-column: span 1;
+        }
+        .product-hero h1 {
+          font-size: 3rem;
+        }
+      }
 
-        .btn-submit {
-            background: linear-gradient(135deg, var(--eco-green), var(--primary-dark));
-            width: 100%; padding: 1rem; border-radius: 50px;
-            font-weight: 700; color: white; border: none; cursor: pointer;
-            font-size: 1rem; transition: all 0.3s; letter-spacing: 0.03em;
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
         }
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(58,125,68,0.3);
+        .product-hero {
+          padding: 90px 0 60px;
+          min-height: auto;
         }
+        .product-hero h1 {
+          font-size: 3rem;
+        }
+      }
 
-        .hidden-content { display: none; margin-top: 2rem; }
-        .hidden-content.visible { display: block; }
-
-        .success-banner {
-            background: var(--primary-light);
-            border-left: 4px solid var(--eco-green);
-            padding: 1rem 1.5rem; border-radius: var(--radius-md);
-            margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
-        }
-
-        .premium-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.2rem; margin: 2rem 0;
-        }
-
-        .premium-card {
-            background: linear-gradient(145deg, #f0f7f0, #e8f4e8);
-            border-radius: var(--radius-md); padding: 1.5rem;
-            text-align: center; border: 1px solid #d0e8d0;
-            transition: all 0.3s;
-        }
-        .premium-card:hover { transform: translateY(-4px); }
-        .premium-card i { font-size: 2rem; color: var(--eco-green); margin-bottom: 0.8rem; display: block; }
-
-        /* ===== FOOTER ===== */
-        .footer-light {
-            background: #1C1C1C; color: white;
-            padding: 2rem; text-align: center;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 992px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .form-group.full { grid-column: span 1; }
-            .product-hero h1 { font-size: 3rem; }
-        }
-
-        @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            .product-hero { padding: 90px 0 60px; min-height: auto; }
-            .product-hero h1 { font-size: 3rem; }
-        }
-
-        /* STANDARD SECTION TITLE & SUBTITLE OVERRIDE */
-        h2.section-title, .section-title h2, div.section-title h2 {
-            font-size: 2.5rem !important;
-            color: #0B3D91 !important;
-            text-align: center !important;
-            margin-bottom: 25px !important;
-            display: block !important;
-            position: relative !important;
-            width: 100% !important;
-        }
-        h2.section-title:after, .section-title h2:after, div.section-title h2:after {
-            content: '' !important;
-            position: absolute !important;
-            bottom: -10px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            width: 80px !important;
-            height: 4px !important;
-            background: #FDB813 !important;
-            border-radius: 2px !important;
-        }
-        p.section-subtitle, .section-subtitle {
-            font-size: 1.15rem !important;
-            color: var(--text-secondary) !important;
-            text-align: center !important;
-            max-width: 800px !important;
-            margin: 0 auto 2rem auto !important;
-        }
+      /* STANDARD SECTION TITLE & SUBTITLE OVERRIDE */
+      h2.section-title,
+      .section-title h2,
+      div.section-title h2 {
+        font-size: 2.5rem !important;
+        color: #0b3d91 !important;
+        text-align: center !important;
+        margin-bottom: 25px !important;
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+      }
+      h2.section-title:after,
+      .section-title h2:after,
+      div.section-title h2:after {
+        content: "" !important;
+        position: absolute !important;
+        bottom: -10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 80px !important;
+        height: 4px !important;
+        background: #fdb813 !important;
+        border-radius: 2px !important;
+      }
+      p.section-subtitle,
+      .section-subtitle {
+        font-size: 1.15rem !important;
+        color: var(--text-secondary) !important;
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto 2rem auto !important;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="header"></div>
 
     <!-- HERO SECTION -->
     <section class="product-hero">
-        <div class="container">
-            <h1>Solar <span class="hero-title-highlight">Parabolic</span> Cooker</h1>
-            <p class="hero-sub">Clean, sustainable, and highly efficient parabolic concentrator technology for everyday cooking needs by KVB Green Energies.</p>
-            <div class="hero-tags-row">
-                <span class="hero-tag"><i class="fas fa-sun"></i> Direct Solar</span>
-<span class="hero-tag"><i class="fas fa-utensils"></i> Zero Fuel Cost</span>
-<span class="hero-tag"><i class="fas fa-leaf"></i> Eco Friendly</span>
-            </div>
+      <div class="container">
+        <h1>
+          Solar <span class="hero-title-highlight">Parabolic</span> Cooker
+        </h1>
+        <p class="hero-sub">
+          Clean, sustainable, and highly efficient parabolic concentrator
+          technology for everyday cooking needs by KVB Green Energies.
+        </p>
+        <div class="hero-tags-row">
+          <span class="hero-tag"><i class="fas fa-sun"></i> Direct Solar</span>
+          <span class="hero-tag"
+            ><i class="fas fa-utensils"></i> Zero Fuel Cost</span
+          >
+          <span class="hero-tag"><i class="fas fa-leaf"></i> Eco Friendly</span>
         </div>
+      </div>
     </section>
 
     <main>
-        <!-- Moved System in Action Gallery -->
-        <section class="system-action-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">System in Action</h2>
-                    <p class="section-subtitle">See our technology in real-world deployments across India.</p>
-                </div>
-                <div id="solarSteamCarousel" class="carousel slide kvb-carousel" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <iframe style="width: 100%; aspect-ratio: 16/9; height: auto;" src="https://www.youtube.com/embed/GMxW_k1Q8C8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../cooker/4 Sq mtr Images.jpeg" class="d-block w-100" alt="4 Sq mtr Solar Cooker">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../cooker/Domestic Cooker 1.5Sq mtr Images.jpeg" class="d-block w-100" alt="Domestic Solar Cooker">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../cooker/WhatsApp Image 2026-04-17 at 16.53.59.jpeg" class="d-block w-100" alt="Solar Cooker in Action">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#solarSteamCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#solarSteamCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+      <!-- Moved System in Action Gallery -->
+      <section class="system-action-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title">System in Action</h2>
+            <p class="section-subtitle">
+              See our technology in real-world deployments across India.
+            </p>
+          </div>
+          <div
+            id="solarSteamCarousel"
+            class="carousel slide kvb-carousel"
+            data-interval="false"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <iframe
+                  style="width: 100%; aspect-ratio: 16/9; height: auto"
+                  src="https://www.youtube.com/embed/GMxW_k1Q8C8"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../cooker/4 Sq mtr Images.jpeg"
+                  class="d-block w-100"
+                  alt="4 Sq mtr Solar Cooker"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../cooker/Domestic Cooker 1.5Sq mtr Images.jpeg"
+                  class="d-block w-100"
+                  alt="Domestic Solar Cooker"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../cooker/WhatsApp Image 2026-04-17 at 16.53.59.jpeg"
+                  class="d-block w-100"
+                  alt="Solar Cooker in Action"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
-        </section>
+            <a
+              class="carousel-control-prev"
+              href="#solarSteamCarousel"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#solarSteamCarousel"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <div class="container">
+      <div class="container">
         <!-- HIGHLIGHTED Overview: Parabolic Concentrator Technology -->
         <div class="reveal highlight-tech">
-            <div style="margin-bottom: 0.5rem;">
-                <h1 style="margin-bottom: 0.5rem;">⚡ Parabolic Concentrator Technology</h1>
-            </div>
-            <p>The <strong>Solar Parabolic Cooker</strong> harnesses the power of a precisely curved parabolic reflector
-                to concentrate sunlight onto a small focal point, instantly generating intense heat (up to 350°C). This
-                concentrated energy is transferred directly to a cooking vessel, enabling boiling, frying, roasting, and
-                steaming without any fuel. The system features a simple manual tracking mechanism to follow the sun,
-                ensuring peak performance throughout the day. Ideal for clean, sustainable cooking in both rural and
-                urban settings.</p>
+          <div style="margin-bottom: 0.5rem">
+            <h1 style="margin-bottom: 0.5rem">
+              ⚡ Parabolic Concentrator Technology
+            </h1>
+          </div>
+          <p>
+            The <strong>Solar Parabolic Cooker</strong> harnesses the power of a
+            precisely curved parabolic reflector to concentrate sunlight onto a
+            small focal point, instantly generating intense heat (up to 350°C).
+            This concentrated energy is transferred directly to a cooking
+            vessel, enabling boiling, frying, roasting, and steaming without any
+            fuel. The system features a simple manual tracking mechanism to
+            follow the sun, ensuring peak performance throughout the day. Ideal
+            for clean, sustainable cooking in both rural and urban settings.
+          </p>
         </div>
 
         <!-- 2x2 FEATURE MATRIX (Cooking Performance, System Components, Safety, Key Benefits) -->
         <div class="reveal">
-            <h2 class="section-title">Core Capabilities</h2>
-            <p class="section-subtitle">Everything you need for clean energy performance — engineered and field-tested.</p>
-            <div class="feature-matrix">
-                <div class="feature-card">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Cooking Performance</h3>
-                    <ul class="feature-list">
-                        <li>Boiling, frying, steaming, roasting</li>
-                        <li>Rice: 20–25 min (2‑4 kg batch)</li>
-                        <li>Dal: 40–45 min (3‑5 liters)</li>
-                        <li>Vegetables: 20–25 min (2‑3 kg)</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>System Components</h3>
-                    <ul class="feature-list">
-                        <li>High‑reflectivity parabolic dish</li>
-                        <li>Galvanized steel support frame</li>
-                        <li>Manual single‑axis tracking</li>
-                        <li>Adjustable cooking vessel stand</li>
-                        <li>Safety wind lock mechanism</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safety Features</h3>
-                    <ul class="feature-list">
-                        <li>Sturdy ground‑mounted design</li>
-                        <li>Heat‑resistant receiver & handles</li>
-                        <li>Safe manual tracking without glare</li>
-                        <li>No open flame – zero fire risk</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Key Benefits</h3>
-                    <ul class="feature-list">
-                        <li>Zero fuel cost – complete LPG elimination</li>
-                        <li>15‑20 year system lifespan</li>
-                        <li>1–2 year payback period</li>
-                        <li>Minimal maintenance cleaning</li>
-                    </ul>
-                </div>
+          <h2 class="section-title">Core Capabilities</h2>
+          <p class="section-subtitle">
+            Everything you need for clean energy performance — engineered and
+            field-tested.
+          </p>
+          <div class="feature-matrix">
+            <div class="feature-card">
+              <i class="fas fa-utensils"></i>
+              <h3>Cooking Performance</h3>
+              <ul class="feature-list">
+                <li>Boiling, frying, steaming, roasting</li>
+                <li>Rice: 20–25 min (2‑4 kg batch)</li>
+                <li>Dal: 40–45 min (3‑5 liters)</li>
+                <li>Vegetables: 20–25 min (2‑3 kg)</li>
+              </ul>
             </div>
+            <div class="feature-card">
+              <i class="fas fa-cogs"></i>
+              <h3>System Components</h3>
+              <ul class="feature-list">
+                <li>High‑reflectivity parabolic dish</li>
+                <li>Galvanized steel support frame</li>
+                <li>Manual single‑axis tracking</li>
+                <li>Adjustable cooking vessel stand</li>
+                <li>Safety wind lock mechanism</li>
+              </ul>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Safety Features</h3>
+              <ul class="feature-list">
+                <li>Sturdy ground‑mounted design</li>
+                <li>Heat‑resistant receiver & handles</li>
+                <li>Safe manual tracking without glare</li>
+                <li>No open flame – zero fire risk</li>
+              </ul>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-chart-line"></i>
+              <h3>Key Benefits</h3>
+              <ul class="feature-list">
+                <li>Zero fuel cost – complete LPG elimination</li>
+                <li>15‑20 year system lifespan</li>
+                <li>1–2 year payback period</li>
+                <li>Minimal maintenance cleaning</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <!-- Technical Details Table -->
-        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
-            <h2 class="section-title">Technical Details</h2>
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px">
+          <h2 class="section-title">Technical Details</h2>
         </div>
         <div class="reveal soft-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Specification</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Reflector Area</strong></td>
-                        <td>1.5 m² & 4 m² (Available Options)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Type</strong></td>
-                        <td>Parabolic Dish Concentrator</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reflector Material</strong></td>
-                        <td>High reflectivity aluminum / mirror finish</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reflectivity</strong></td>
-                        <td>≥ 90%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Structure Material</strong></td>
-                        <td>Mild Steel with anti‑corrosion coating</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tracking System</strong></td>
-                        <td>Manual (Single Axis)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Concentration Ratio</strong></td>
-                        <td>60:1 to 120:1</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Focal Length</strong></td>
-                        <td>~0.8 to 1.5 meters</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Operating Temperature</strong></td>
-                        <td>150°C to 350°C</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cooking Capacity</strong></td>
-                        <td>5-40 persons (based on model)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mounting Type</strong></td>
-                        <td>Ground mounted</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Wind Resistance</strong></td>
-                        <td>Up to 120 km/h (with locking mechanism)</td>
-                    </tr>
-                </tbody>
-            </table>
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Reflector Area</strong></td>
+                <td>1.5 m² & 4 m² (Available Options)</td>
+              </tr>
+              <tr>
+                <td><strong>Type</strong></td>
+                <td>Parabolic Dish Concentrator</td>
+              </tr>
+              <tr>
+                <td><strong>Reflector Material</strong></td>
+                <td>High reflectivity aluminum / mirror finish</td>
+              </tr>
+              <tr>
+                <td><strong>Reflectivity</strong></td>
+                <td>≥ 90%</td>
+              </tr>
+              <tr>
+                <td><strong>Structure Material</strong></td>
+                <td>Mild Steel with anti‑corrosion coating</td>
+              </tr>
+              <tr>
+                <td><strong>Tracking System</strong></td>
+                <td>Manual (Single Axis)</td>
+              </tr>
+              <tr>
+                <td><strong>Concentration Ratio</strong></td>
+                <td>60:1 to 120:1</td>
+              </tr>
+              <tr>
+                <td><strong>Focal Length</strong></td>
+                <td>~0.8 to 1.5 meters</td>
+              </tr>
+              <tr>
+                <td><strong>Operating Temperature</strong></td>
+                <td>150°C to 350°C</td>
+              </tr>
+              <tr>
+                <td><strong>Cooking Capacity</strong></td>
+                <td>5-40 persons (based on model)</td>
+              </tr>
+              <tr>
+                <td><strong>Mounting Type</strong></td>
+                <td>Ground mounted</td>
+              </tr>
+              <tr>
+                <td><strong>Wind Resistance</strong></td>
+                <td>Up to 120 km/h (with locking mechanism)</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <!-- Solar Performance Table -->
-        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
-            <h2 class="section-title">Solar Performance</h2>
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px">
+          <h2 class="section-title">Solar Performance</h2>
         </div>
         <div class="reveal soft-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Thermal Output</strong></td>
-                        <td>1 kW – 3.5 kW (based on model)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Solar Efficiency</strong></td>
-                        <td>50% – 65%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Daily Cooking Hours</strong></td>
-                        <td>5–7 hours (clear sky)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Fuel Savings</strong></td>
-                        <td>Significant reduction in LPG usage</td>
-                    </tr>
-                </tbody>
-            </table>
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Thermal Output</strong></td>
+                <td>1 kW – 3.5 kW (based on model)</td>
+              </tr>
+              <tr>
+                <td><strong>Solar Efficiency</strong></td>
+                <td>50% – 65%</td>
+              </tr>
+              <tr>
+                <td><strong>Daily Cooking Hours</strong></td>
+                <td>5–7 hours (clear sky)</td>
+              </tr>
+              <tr>
+                <td><strong>Fuel Savings</strong></td>
+                <td>Significant reduction in LPG usage</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <!-- Applications – one row on large screens -->
         <div class="reveal">
-            <h2 class="section-title">Applications & Impact</h2>
-            <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-place-of-worship"></i>
-                    <h3>Ashrams</h3>
-                </div>
-                <div class="app-card"><i class="fas fa-child"></i>
-                    <h3>Anganwadi</h3>
-                </div>
-                <div class="app-card"><i class="fas fa-building"></i>
-                    <h3>Small PG</h3>
-                </div>
-                <div class="app-card"><i class="fas fa-hotel"></i>
-                    <h3>Small Hotels / Dhaba's</h3>
-                </div>
-                <div class="app-card"><i class="fas fa-hospital"></i>
-                    <h3>Sterilization (Hospital PHC)</h3>
-                </div>
-                <div class="app-card"><i class="fas fa-school"></i>
-                    <h3>Small Schools</h3>
-                </div>
+          <h2 class="section-title">Applications & Impact</h2>
+          <div class="applications-grid">
+            <div class="app-card">
+              <i class="fas fa-place-of-worship"></i>
+              <h3>Ashrams</h3>
             </div>
+            <div class="app-card">
+              <i class="fas fa-child"></i>
+              <h3>Anganwadi</h3>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-building"></i>
+              <h3>Small PG</h3>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-hotel"></i>
+              <h3>Small Hotels / Dhaba's</h3>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-hospital"></i>
+              <h3>Sterilization (Hospital PHC)</h3>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-school"></i>
+              <h3>Small Schools</h3>
+            </div>
+          </div>
         </div>
-
-
 
         <!-- Premium Unlock -->
         <div class="premium-wrapper reveal">
-            <div id="lockContainer" class="lock-card">
-                <div class="lock-icon"><i class="fas fa-lock"></i></div>
-                <h3>Unlock Premium Technical Library</h3>
-                <p>Get detailed engineering drawings, performance data, installation guides, and a custom ROI calculator
-                    for the Solar Parabolic Cooker.</p>
-                <span class="btn-outline"
-                    style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem;">Unlock now →</span>
-            </div>
+          <div id="lockContainer" class="lock-card">
+            <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            <h3>Unlock Premium Technical Library</h3>
+            <p>
+              Get detailed engineering drawings, performance data, installation
+              guides, and a custom ROI calculator for the Solar Parabolic
+              Cooker.
+            </p>
+            <span
+              class="btn-outline"
+              style="
+                margin-top: 1rem;
+                display: inline-block;
+                padding: 0.6rem 1.8rem;
+              "
+              >Unlock now →</span
+            >
+          </div>
 
-            <div id="unlockFormContainer" class="form-container">
-                <h3>Access Premium Content</h3>
-                <p>Enter your details – we’ll send the link instantly.</p>
-                <form id="premiumForm">
-                    <div class="form-grid">
-                        <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required>
-                        </div>
-                        <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required>
-                        </div>
-                        <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="organization" placeholder="Organization"></div>
-                        <div class="form-group full"><textarea rows="2" id="message"
-                                placeholder="Tell us about your cooking requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="Solar Parabolic Cooker">
-                        <div class="form-group full"><button type="submit" class="btn-submit"><i
-                                    class="fas fa-unlock-alt"></i> Unlock Library</button></div>
-                    </div>
-                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No
-                        spam.</p>
-                </form>
-            </div>
-
-            <div id="hiddenPremiumContent" class="hidden-content">
-                <div id="successMessage" class="success-banner" style="display: none;"><i
-                        class="fas fa-check-circle"></i> <strong>Access granted!</strong> Your premium resources are
-                    ready.</div>
-                <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
-                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> Premium Technical Library</h3>
-                    <div class="premium-grid">
-                        <div class="premium-card"><i class="fas fa-file-pdf"></i>
-                            <h4>Engineering Drawings</h4>
-                            <p>CAD files, reflector schematics</p><span style="color: var(--primary);">✓
-                                available</span>
-                        </div>
-                        <div class="premium-card"><i class="fas fa-chart-line"></i>
-                            <h4>ROI Calculator</h4>
-                            <p>Custom Excel for LPG savings</p><span style="color: var(--primary);">✓ included</span>
-                        </div>
-                        <div class="premium-card"><i class="fas fa-video"></i>
-                            <h4>Installation Videos</h4>
-                            <p>Step‑by‑step assembly guide</p><span style="color: var(--primary);">✓ watch</span>
-                        </div>
-                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i>
-                            <h4>Case Studies</h4>
-                            <p>Schools, temples, industries</p><span style="color: var(--primary);">✓ read</span>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong>🏆 Success stories:</strong> Rural School, Rajasthan – 150 meals/day, ₹1.2L annual
-                            LPG savings. Dairy Cooperative – 80% fuel reduction for pasteurization.</p>
-                    </div>
+          <div id="unlockFormContainer" class="form-container">
+            <h3>Access Premium Content</h3>
+            <p>Enter your details – we’ll send the link instantly.</p>
+            <form id="premiumForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="fullname"
+                    placeholder="Full name *"
+                    required
+                  />
                 </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="emailid"
+                    placeholder="Email address *"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    id="phoneNum"
+                    placeholder="Phone (optional)"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="organization"
+                    placeholder="Organization"
+                  />
+                </div>
+                <div class="form-group full">
+                  <textarea
+                    rows="2"
+                    id="message"
+                    placeholder="Tell us about your cooking requirements..."
+                  ></textarea>
+                </div>
+                <input
+                  type="hidden"
+                  id="productName"
+                  value="Solar Parabolic Cooker"
+                />
+                <div class="form-group full">
+                  <button type="submit" class="btn-submit">
+                    <i class="fas fa-unlock-alt"></i> Unlock Library
+                  </button>
+                </div>
+              </div>
+              <p
+                style="font-size: 0.8rem; text-align: center; margin-top: 1rem"
+              >
+                We respect your privacy. No spam.
+              </p>
+            </form>
+          </div>
+
+          <div id="hiddenPremiumContent" class="hidden-content">
+            <div
+              id="successMessage"
+              class="success-banner"
+              style="display: none"
+            >
+              <i class="fas fa-check-circle"></i>
+              <strong>Access granted!</strong> Your premium resources are ready.
             </div>
+            <div
+              style="
+                background: var(--bg-soft);
+                border-radius: var(--radius-lg);
+                padding: 2rem;
+              "
+            >
+              <h3>
+                <i class="fas fa-file-alt" style="color: var(--primary)"></i>
+                Premium Technical Library
+              </h3>
+              <div class="premium-grid">
+                <div class="premium-card">
+                  <i class="fas fa-file-pdf"></i>
+                  <h4>Engineering Drawings</h4>
+                  <p>CAD files, reflector schematics</p>
+                  <span style="color: var(--primary)">✓ available</span>
+                </div>
+                <div class="premium-card">
+                  <i class="fas fa-chart-line"></i>
+                  <h4>ROI Calculator</h4>
+                  <p>Custom Excel for LPG savings</p>
+                  <span style="color: var(--primary)">✓ included</span>
+                </div>
+                <div class="premium-card">
+                  <i class="fas fa-video"></i>
+                  <h4>Installation Videos</h4>
+                  <p>Step‑by‑step assembly guide</p>
+                  <span style="color: var(--primary)">✓ watch</span>
+                </div>
+                <div class="premium-card">
+                  <i class="fas fa-chalkboard-user"></i>
+                  <h4>Case Studies</h4>
+                  <p>Schools, temples, industries</p>
+                  <span style="color: var(--primary)">✓ read</span>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: 2rem;
+                  padding: 1rem;
+                  background: white;
+                  border-radius: var(--radius-md);
+                "
+              >
+                <p>
+                  <strong>🏆 Success stories:</strong> Rural School, Rajasthan –
+                  150 meals/day, ₹1.2L annual LPG savings. Dairy Cooperative –
+                  80% fuel reduction for pasteurization.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-</main>
+      </div>
+    </main>
 
     <!-- Universal Footer -->
     <div id="footer"></div>
 
-    
-    
-
     <!-- GLOBAL COMPONENT LOADER -->
     <script>
-        (function() {
-            function loadComponent(id, file) {
-                fetch(file)
-                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-                    .then(html => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            el.innerHTML = html;
-                            // Execute scripts
-                            const scripts = el.querySelectorAll('script');
-                            scripts.forEach(s => {
-                                const newScript = document.createElement('script');
-                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                                newScript.appendChild(document.createTextNode(s.innerHTML));
-                                s.parentNode.replaceChild(newScript, s);
-                            });
-                        }
-                    }).catch(console.error);
-            }
-            window.BASE_PATH = "../";
-            loadComponent('header', '../components/header.html');
-            loadComponent('footer', '../components/footer.html');
-        })();
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                // Execute scripts
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
+        }
+        window.BASE_PATH = "../";
+        loadComponent("header", "../components/header.html");
+        loadComponent("footer", "../components/footer.html");
+      })();
     </script>
 
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            // Bootstrap carousel is initialized via data-ride attribute
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
         });
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        // Bootstrap carousel is initialized via data-ride attribute
+      });
     </script>
     <!-- Bootstrap 4 JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
-</body>
-
+  </body>
 </html>
-

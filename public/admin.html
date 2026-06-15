@@ -1,524 +1,752 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      name="description"
+      content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Admin | KVB Green Energies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
-        // Strict auth check before page load
-        if (!localStorage.getItem('adminToken')) {
-            window.location.replace('login.html');
-        }
+      // Strict auth check before page load
+      if (!localStorage.getItem("adminToken")) {
+        window.location.replace("login.html");
+      }
     </script>
     <style>
-        :root {
-            --admin-bg: #f4f6f8;
-            --admin-card: #ffffff;
-            --admin-text: #333333;
-            --admin-primary: #2E7D32;
-            --admin-border: #e0e0e0;
-        }
+      :root {
+        --admin-bg: #f4f6f8;
+        --admin-card: #ffffff;
+        --admin-text: #333333;
+        --admin-primary: #2e7d32;
+        --admin-border: #e0e0e0;
+      }
 
-        body {
-            background-color: var(--admin-bg);
-            font-family: 'Open Sans', sans-serif;
-            color: var(--admin-text);
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        background-color: var(--admin-bg);
+        font-family: "Open Sans", sans-serif;
+        color: var(--admin-text);
+        margin: 0;
+        padding: 0;
+      }
 
-        .admin-layout {
-            display: flex;
-            min-height: 100vh;
-        }
+      .admin-layout {
+        display: flex;
+        min-height: 100vh;
+      }
 
-        .admin-sidebar {
-            width: 250px;
-            background-color: #1a1a1a;
-            color: white;
-            padding: 2rem 1rem;
-            display: flex;
-            flex-direction: column;
-        }
+      .admin-sidebar {
+        width: 250px;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+      }
 
-        .admin-logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: white;
-            text-decoration: none;
-        }
+      .admin-logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+      }
 
-        .admin-logo span { color: var(--admin-primary); }
+      .admin-logo span {
+        color: var(--admin-primary);
+      }
 
-        .admin-nav {
-            list-style: none;
-            padding: 0;
-        }
+      .admin-nav {
+        list-style: none;
+        padding: 0;
+      }
 
-        .admin-nav li a {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            color: #a0a0a0;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s;
-        }
+      .admin-nav li a {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        color: #a0a0a0;
+        text-decoration: none;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        transition: all 0.3s;
+      }
 
-        .admin-nav li a i {
-            margin-right: 15px;
-            width: 20px;
-            text-align: center;
-        }
+      .admin-nav li a i {
+        margin-right: 15px;
+        width: 20px;
+        text-align: center;
+      }
 
-        .admin-nav li a:hover, .admin-nav li a.active {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
+      .admin-nav li a:hover,
+      .admin-nav li a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
 
-        .admin-main {
-            flex: 1;
-            padding: 2rem;
-            overflow-y: auto;
-        }
+      .admin-main {
+        flex: 1;
+        padding: 2rem;
+        overflow-y: auto;
+      }
 
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
+      .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
 
-        .admin-header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            margin: 0;
-        }
+      .admin-header h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        margin: 0;
+      }
 
-        .btn-add {
-            background-color: var(--admin-primary);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background-color 0.3s;
-        }
+      .btn-add {
+        background-color: var(--admin-primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color 0.3s;
+      }
 
-        .btn-add:hover { background-color: #1B5E20; }
+      .btn-add:hover {
+        background-color: #1b5e20;
+      }
 
-        .blog-list {
-            background: var(--admin-card);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
+      .blog-list {
+        background: var(--admin-card);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
 
-        .blog-list table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+      .blog-list table {
+        width: 100%;
+        border-collapse: collapse;
+      }
 
-        .blog-list th, .blog-list td {
-            padding: 1rem 1.5rem;
-            text-align: left;
-            border-bottom: 1px solid var(--admin-border);
-        }
+      .blog-list th,
+      .blog-list td {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid var(--admin-border);
+      }
 
-        .blog-list th {
-            background-color: #f8f9fa;
-            font-weight: 600;
-            color: #555;
-        }
+      .blog-list th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #555;
+      }
 
-        .blog-list tr:hover { background-color: #fcfcfc; }
+      .blog-list tr:hover {
+        background-color: #fcfcfc;
+      }
 
-        .blog-title-cell {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+      .blog-title-cell {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
 
-        .blog-title-cell img {
-            width: 50px;
-            height: 50px;
-            border-radius: 6px;
-            object-fit: cover;
-            background: #eee;
-        }
+      .blog-title-cell img {
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        object-fit: cover;
+        background: #eee;
+      }
 
-        .action-btns {
-            display: flex;
-            gap: 10px;
-        }
+      .action-btns {
+        display: flex;
+        gap: 10px;
+      }
 
-        .btn-icon {
-            width: 35px;
-            height: 35px;
-            border-radius: 6px;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+      .btn-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 6px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s;
+      }
 
-        .btn-edit { background: #E3F2FD; color: #1976D2; }
-        .btn-edit:hover { background: #BBDEFB; }
+      .btn-edit {
+        background: #e3f2fd;
+        color: #1976d2;
+      }
+      .btn-edit:hover {
+        background: #bbdefb;
+      }
 
-        .btn-delete { background: #FFEBEE; color: #D32F2F; }
-        .btn-delete:hover { background: #FFCDD2; }
+      .btn-delete {
+        background: #ffebee;
+        color: #d32f2f;
+      }
+      .btn-delete:hover {
+        background: #ffcdd2;
+      }
 
-        /* MODAL */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s;
-        }
+      /* MODAL */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+      }
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
 
-        .modal-content {
-            background: white;
-            border-radius: 12px;
-            width: 95%;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 2.5rem;
-            position: relative;
-            transform: translateY(20px);
-            transition: 0.3s;
-        }
+      .modal-content {
+        background: white;
+        border-radius: 12px;
+        width: 95%;
+        max-width: 900px;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 2.5rem;
+        position: relative;
+        transform: translateY(20px);
+        transition: 0.3s;
+      }
 
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
+      .modal-overlay.active .modal-content {
+        transform: translateY(0);
+      }
 
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #888;
-        }
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #888;
+      }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            color: #000000;
-        }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        color: #000000;
+      }
 
-        .form-group input, .form-group textarea,
-        .builder-block input, .builder-block textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-family: inherit;
-            color: #000000;
-            background-color: #fdfdfd;
-            font-size: 1.05rem;
-            transition: all 0.3s;
-        }
+      .form-group input,
+      .form-group textarea,
+      .builder-block input,
+      .builder-block textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: inherit;
+        color: #000000;
+        background-color: #fdfdfd;
+        font-size: 1.05rem;
+        transition: all 0.3s;
+      }
 
-        .form-group input:focus, .form-group textarea:focus,
-        .builder-block input:focus, .builder-block textarea:focus {
-            outline: none;
-            border-color: var(--admin-primary);
-            background-color: #ffffff;
-            box-shadow: 0 0 0 3px rgba(58, 125, 68, 0.2);
-        }
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .builder-block input:focus,
+      .builder-block textarea:focus {
+        outline: none;
+        border-color: var(--admin-primary);
+        background-color: #ffffff;
+        box-shadow: 0 0 0 3px rgba(58, 125, 68, 0.2);
+      }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 200px;
-        }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 200px;
+      }
 
-        .form-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            margin-top: 20px;
-        }
+      .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 20px;
+      }
 
+      .form-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+      }
+
+      @media (max-width: 768px) {
         .form-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
+          grid-template-columns: 1fr;
+          gap: 0;
         }
+      }
 
-        @media (max-width: 768px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-        }
+      .btn-cancel {
+        background: white;
+        border: 1px solid var(--admin-border);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+      }
 
-        .btn-cancel {
-            background: white;
-            border: 1px solid var(--admin-border);
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+      .btn-save {
+        background: var(--admin-primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+      }
 
-        .btn-save {
-            background: var(--admin-primary);
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-        }
+      .loading-spinner {
+        text-align: center;
+        padding: 3rem;
+        color: #888;
+      }
 
-        .loading-spinner {
-            text-align: center;
-            padding: 3rem;
-            color: #888;
-        }
-
-        /* BLOCK BUILDER STYLES */
-        .builder-block {
-            background: #fafafa;
-            border: 1px solid var(--admin-border);
-            border-radius: 8px;
-            padding: 1.2rem;
-            margin-bottom: 1rem;
-            position: relative;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-        .builder-block-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--admin-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .builder-block-remove {
-            background: #FFEBEE;
-            color: #D32F2F;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-        .builder-block-remove:hover { background: #FFCDD2; }
-        .builder-block textarea.points-input {
-            min-height: 120px;
-            font-family: monospace;
-            font-size: 0.9rem;
-        }
+      /* BLOCK BUILDER STYLES */
+      .builder-block {
+        background: #fafafa;
+        border: 1px solid var(--admin-border);
+        border-radius: 8px;
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+        position: relative;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+      }
+      .builder-block-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--admin-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .builder-block-remove {
+        background: #ffebee;
+        color: #d32f2f;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transition: 0.2s;
+      }
+      .builder-block-remove:hover {
+        background: #ffcdd2;
+      }
+      .builder-block textarea.points-input {
+        min-height: 120px;
+        font-family: monospace;
+        font-size: 0.9rem;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="admin-layout">
-        <!-- Sidebar -->
-        <aside class="admin-sidebar">
-            <a href="index.html" class="admin-logo" style="display: flex; justify-content: center; margin-bottom: 20px;">
-                <img width="800" height="685" src="images/products/kvb-logo.webp" alt="KVB Admin" style="max-width: 120px; height: auto;">
-            </a>
-            <ul class="admin-nav">
-                <li><a href="#" class="active" id="navBlogs"><i class="fas fa-file-alt"></i> Manage Blogs</a></li>
-                <li><a href="#" id="navRoadmaps"><i class="fas fa-map-signs"></i> Manage Roadmaps</a></li>
-                <li><a href="index.html"><i class="fas fa-home"></i> Back to Site</a></li>
-                <li><a href="#" onclick="logout(event)" style="color: #ff6b6b;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-            </ul>
-        </aside>
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <a
+          href="index.html"
+          class="admin-logo"
+          style="display: flex; justify-content: center; margin-bottom: 20px"
+        >
+          <img
+            width="800"
+            height="685"
+            src="images/products/kvb-logo.webp"
+            alt="KVB Admin"
+            style="max-width: 120px; height: auto"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </a>
+        <ul class="admin-nav">
+          <li>
+            <a href="#" class="active" id="navBlogs"
+              ><i class="fas fa-file-alt"></i> Manage Blogs</a
+            >
+          </li>
+          <li>
+            <a href="#" id="navRoadmaps"
+              ><i class="fas fa-map-signs"></i> Manage Roadmaps</a
+            >
+          </li>
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> Back to Site</a>
+          </li>
+          <li>
+            <a href="#" onclick="logout(event)" style="color: #ff6b6b"
+              ><i class="fas fa-sign-out-alt"></i> Logout</a
+            >
+          </li>
+        </ul>
+      </aside>
 
-        <!-- Main Content -->
-        <main class="admin-main">
-            <!-- BLOGS SECTION -->
-            <div id="blogsSection">
-                <div class="admin-header">
-                    <h1>Blog Management</h1>
-                    <button class="btn-add" id="openModalBtn">
-                        <i class="fas fa-plus"></i> Add New Blog
-                    </button>
-                </div>
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- BLOGS SECTION -->
+        <div id="blogsSection">
+          <div class="admin-header">
+            <h1>Blog Management</h1>
+            <button class="btn-add" id="openModalBtn">
+              <i class="fas fa-plus"></i> Add New Blog
+            </button>
+          </div>
 
-                <div class="blog-list">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Blog Details</th>
-                                <th>Author</th>
-                                <th>Date Published</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="blogTableBody">
-                            <!-- Blogs will be injected here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+          <div class="blog-list">
+            <table>
+              <thead>
+                <tr>
+                  <th>Blog Details</th>
+                  <th>Author</th>
+                  <th>Date Published</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="blogTableBody">
+                <!-- Blogs will be injected here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-            <!-- ROADMAPS SECTION -->
-            <div id="roadmapsSection" style="display: none;">
-                <div class="admin-header">
-                    <h1>Roadmap Management</h1>
-                    <button class="btn-add" id="openRoadmapModalBtn">
-                        <i class="fas fa-plus"></i> Add New Roadmap Point
-                    </button>
-                </div>
+        <!-- ROADMAPS SECTION -->
+        <div id="roadmapsSection" style="display: none">
+          <div class="admin-header">
+            <h1>Roadmap Management</h1>
+            <button class="btn-add" id="openRoadmapModalBtn">
+              <i class="fas fa-plus"></i> Add New Roadmap Point
+            </button>
+          </div>
 
-                <div class="blog-list">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Roadmap Details</th>
-                                <th>Description</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="roadmapTableBody">
-                            <!-- Roadmaps will be injected here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </main>
+          <div class="blog-list">
+            <table>
+              <thead>
+                <tr>
+                  <th>Roadmap Details</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="roadmapTableBody">
+                <!-- Roadmaps will be injected here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- Blog Form Modal -->
     <div class="modal-overlay" id="blogModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeModalBtn">&times;</button>
-            <h2 id="modalTitle">Create New Blog</h2>
-            <form id="blogForm">
-                <input type="hidden" id="blogId">
-                
-                <div class="form-group">
-                    <label for="blogTitle">Blog Title</label>
-                    <input type="text" id="blogTitle" required placeholder="Enter an engaging title..." style="font-size: 1.1rem; padding: 1rem;">
-                </div>
-                
-                <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
-                    <div class="form-group">
-                        <label for="blogTags">Category / Tag</label>
-                        <input type="text" id="blogTags" placeholder="e.g., Smart Agriculture" style="font-size: 1.1rem; padding: 1rem;">
-                    </div>
-                    <div class="form-group">
-                        <label for="blogAuthor">Author Name</label>
-                        <input type="text" id="blogAuthor" placeholder="e.g., KVB Team" style="font-size: 1.1rem; padding: 1rem;">
-                    </div>
-                </div>
+      <div class="modal-content">
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+        <h2 id="modalTitle">Create New Blog</h2>
+        <form id="blogForm">
+          <input type="hidden" id="blogId" />
 
-                <div class="form-group" style="margin-top: 1.5rem;">
-                    <label style="font-size: 1.2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; color: var(--deep-blue);">Content Builder</label>
-                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 1.5rem;">Build your blog by adding blocks below. Your title is automatically styled as the main heading.</p>
-                    
-                    <div id="blockBuilderContainer">
-                        <!-- Dynamic blocks will be injected here -->
-                    </div>
-                    
-                    <div class="block-toolbar" style="display: flex; gap: 15px; margin-top: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border: 2px dashed #ddd; justify-content: center;">
-                        <button type="button" class="btn-cancel" onclick="addBlock('subtitle')" style="flex:1; max-width: 200px; border: 2px solid var(--admin-primary); color: var(--admin-primary); font-weight:700;"><i class="fas fa-heading"></i> + Add Subtitle</button>
-                        <button type="button" class="btn-cancel" onclick="addBlock('paragraph')" style="flex:1; max-width: 200px; border: 2px solid var(--admin-primary); color: var(--admin-primary); font-weight:700;"><i class="fas fa-paragraph"></i> + Add Paragraph</button>
-                        <button type="button" class="btn-cancel" onclick="addBlock('points')" style="flex:1; max-width: 200px; border: 2px solid var(--admin-primary); color: var(--admin-primary); font-weight:700;"><i class="fas fa-list-ul"></i> + Add Bullet Points</button>
-                    </div>
-                </div>
-                <div class="form-actions" style="border-top: 1px solid #eee; padding-top: 1.5rem;">
-                    <button type="button" class="btn-cancel" id="cancelBtn" style="font-size: 1.1rem;">Cancel</button>
-                    <button type="submit" class="btn-save" style="font-size: 1.1rem;"><i class="fas fa-save"></i> Publish Blog</button>
-                </div>
-            </form>
-        </div>
+          <div class="form-group">
+            <label for="blogTitle">Blog Title</label>
+            <input
+              type="text"
+              id="blogTitle"
+              required
+              placeholder="Enter an engaging title..."
+              style="font-size: 1.1rem; padding: 1rem"
+            />
+          </div>
+
+          <div class="form-grid" style="grid-template-columns: 1fr 1fr">
+            <div class="form-group">
+              <label for="blogTags">Category / Tag</label>
+              <input
+                type="text"
+                id="blogTags"
+                placeholder="e.g., Smart Agriculture"
+                style="font-size: 1.1rem; padding: 1rem"
+              />
+            </div>
+            <div class="form-group">
+              <label for="blogAuthor">Author Name</label>
+              <input
+                type="text"
+                id="blogAuthor"
+                placeholder="e.g., KVB Team"
+                style="font-size: 1.1rem; padding: 1rem"
+              />
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1.5rem">
+            <label
+              style="
+                font-size: 1.2rem;
+                border-bottom: 2px solid #eee;
+                padding-bottom: 0.5rem;
+                color: var(--deep-blue);
+              "
+              >Content Builder</label
+            >
+            <p style="font-size: 0.95rem; color: #555; margin-bottom: 1.5rem">
+              Build your blog by adding blocks below. Your title is
+              automatically styled as the main heading.
+            </p>
+
+            <div id="blockBuilderContainer">
+              <!-- Dynamic blocks will be injected here -->
+            </div>
+
+            <div
+              class="block-toolbar"
+              style="
+                display: flex;
+                gap: 15px;
+                margin-top: 1.5rem;
+                background: #f8f9fa;
+                padding: 1.5rem;
+                border-radius: 10px;
+                border: 2px dashed #ddd;
+                justify-content: center;
+              "
+            >
+              <button
+                type="button"
+                class="btn-cancel"
+                onclick="addBlock('subtitle')"
+                style="
+                  flex: 1;
+                  max-width: 200px;
+                  border: 2px solid var(--admin-primary);
+                  color: var(--admin-primary);
+                  font-weight: 700;
+                "
+              >
+                <i class="fas fa-heading"></i> + Add Subtitle
+              </button>
+              <button
+                type="button"
+                class="btn-cancel"
+                onclick="addBlock('paragraph')"
+                style="
+                  flex: 1;
+                  max-width: 200px;
+                  border: 2px solid var(--admin-primary);
+                  color: var(--admin-primary);
+                  font-weight: 700;
+                "
+              >
+                <i class="fas fa-paragraph"></i> + Add Paragraph
+              </button>
+              <button
+                type="button"
+                class="btn-cancel"
+                onclick="addBlock('points')"
+                style="
+                  flex: 1;
+                  max-width: 200px;
+                  border: 2px solid var(--admin-primary);
+                  color: var(--admin-primary);
+                  font-weight: 700;
+                "
+              >
+                <i class="fas fa-list-ul"></i> + Add Bullet Points
+              </button>
+            </div>
+          </div>
+          <div
+            class="form-actions"
+            style="border-top: 1px solid #eee; padding-top: 1.5rem"
+          >
+            <button
+              type="button"
+              class="btn-cancel"
+              id="cancelBtn"
+              style="font-size: 1.1rem"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-save" style="font-size: 1.1rem">
+              <i class="fas fa-save"></i> Publish Blog
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Roadmap Form Modal -->
     <div class="modal-overlay" id="roadmapModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeRoadmapModalBtn">&times;</button>
-            <h2 id="roadmapModalTitle">Create New Roadmap Point</h2>
-            <form id="roadmapForm">
-                <input type="hidden" id="roadmapId">
-                
-                <div class="form-grid" style="grid-template-columns: 1fr 2fr;">
-                    <div class="form-group">
-                        <label for="roadmapYear">Year / Timeline</label>
-                        <input type="text" id="roadmapYear" required placeholder="e.g., 2025" style="font-size: 1.1rem; padding: 1rem;">
-                    </div>
-                    <div class="form-group">
-                        <label for="roadmapTitle">Title</label>
-                        <input type="text" id="roadmapTitle" required placeholder="e.g., National Expansion" style="font-size: 1.1rem; padding: 1rem;">
-                    </div>
-                </div>
+      <div class="modal-content">
+        <button class="modal-close" id="closeRoadmapModalBtn">&times;</button>
+        <h2 id="roadmapModalTitle">Create New Roadmap Point</h2>
+        <form id="roadmapForm">
+          <input type="hidden" id="roadmapId" />
 
-                <div class="form-group">
-                    <label for="roadmapColor">Color</label>
-                    <select id="roadmapColor" style="font-size: 1.1rem; padding: 1rem; width: 100%; border: 1px solid #ddd; border-radius: 4px;">
-                        <option value="#FF6F00">Orange</option>
-                        <option value="#0B3D91">Blue</option>
-                        <option value="#22c55e">Green</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="roadmapDesc">Description (Optional)</label>
-                    <textarea id="roadmapDesc" placeholder="Brief description of the milestone..." style="min-height: 80px;"></textarea>
-                </div>
+          <div class="form-grid" style="grid-template-columns: 1fr 2fr">
+            <div class="form-group">
+              <label for="roadmapYear">Year / Timeline</label>
+              <input
+                type="text"
+                id="roadmapYear"
+                required
+                placeholder="e.g., 2025"
+                style="font-size: 1.1rem; padding: 1rem"
+              />
+            </div>
+            <div class="form-group">
+              <label for="roadmapTitle">Title</label>
+              <input
+                type="text"
+                id="roadmapTitle"
+                required
+                placeholder="e.g., National Expansion"
+                style="font-size: 1.1rem; padding: 1rem"
+              />
+            </div>
+          </div>
 
-                <div class="form-group">
-                    <label for="roadmapAchievements">Achievements / Bullet Points</label>
-                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">Enter one achievement per line.</p>
-                    <textarea id="roadmapAchievements" placeholder="Achievement 1&#10;Achievement 2" style="min-height: 120px;"></textarea>
-                </div>
+          <div class="form-group">
+            <label for="roadmapColor">Color</label>
+            <select
+              id="roadmapColor"
+              style="
+                font-size: 1.1rem;
+                padding: 1rem;
+                width: 100%;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+              "
+            >
+              <option value="#FF6F00">Orange</option>
+              <option value="#0B3D91">Blue</option>
+              <option value="#22c55e">Green</option>
+            </select>
+          </div>
 
-                <div class="form-actions" style="border-top: 1px solid #eee; padding-top: 1.5rem;">
-                    <button type="button" class="btn-cancel" id="cancelRoadmapBtn" style="font-size: 1.1rem;">Cancel</button>
-                    <button type="submit" class="btn-save" style="font-size: 1.1rem;"><i class="fas fa-save"></i> Save Roadmap</button>
-                </div>
-            </form>
-        </div>
+          <div class="form-group">
+            <label for="roadmapDesc">Description (Optional)</label>
+            <textarea
+              id="roadmapDesc"
+              placeholder="Brief description of the milestone..."
+              style="min-height: 80px"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="roadmapAchievements"
+              >Achievements / Bullet Points</label
+            >
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem">
+              Enter one achievement per line.
+            </p>
+            <textarea
+              id="roadmapAchievements"
+              placeholder="Achievement 1&#10;Achievement 2"
+              style="min-height: 120px"
+            ></textarea>
+          </div>
+
+          <div
+            class="form-actions"
+            style="border-top: 1px solid #eee; padding-top: 1.5rem"
+          >
+            <button
+              type="button"
+              class="btn-cancel"
+              id="cancelRoadmapBtn"
+              style="font-size: 1.1rem"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-save" style="font-size: 1.1rem">
+              <i class="fas fa-save"></i> Save Roadmap
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Toast Notification -->
-    <div id="toastNotification" style="position: fixed; bottom: 20px; right: 20px; background: #3A7D44; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transform: translateY(100px); opacity: 0; transition: all 0.3s ease; z-index: 2000; font-weight: 600; display: flex; align-items: center; gap: 10px; pointer-events: none;">
-        <i class="fas fa-check-circle"></i> <span id="toastMsg">Changes saved successfully!</span>
+    <div
+      id="toastNotification"
+      style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #3a7d44;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2000;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        pointer-events: none;
+      "
+    >
+      <i class="fas fa-check-circle"></i>
+      <span id="toastMsg">Changes saved successfully!</span>
     </div>
 
     <script src="js/admin.js"></script>
-</body>
+  </body>
 </html>

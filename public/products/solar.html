@@ -1,164 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KVB · Solar Concentrator (minimal)</title>
-    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+  <head>
+    <meta
+      name="description"
+      content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KVB · Solar Concentrator (minimal)</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #1d1d1f;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #ffffff;
+        color: #1d1d1f;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* ---------- HEADER (Dynamically Loaded) ---------- */
-    /* Header and navigation styles are handled by header.html and style.css */
+      /* ---------- HEADER (Dynamically Loaded) ---------- */
+      /* Header and navigation styles are handled by header.html and style.css */
 
-    /* ---------- MINIMAL PRODUCT CONTENT ---------- */
-    .main-content {
-      padding-top: 140px;  /* offset fixed header */
-      max-width: 1000px;
-      margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
+      /* ---------- MINIMAL PRODUCT CONTENT ---------- */
+      .main-content {
+        padding-top: 140px; /* offset fixed header */
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
 
-    /* very sparse */
-    .product-title {
-      font-size: 4.5rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.0;
-      margin: 60px 0 20px;
-      color: #1d1d1f;
-      text-align: center;
-    }
-
-    .product-tagline {
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: #6e6e73;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 70px;
-    }
-
-    .types-minimal {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px 24px;
-      margin: 80px 0 150px;
-    }
-
-    .type-item {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #2c2c2e;
-      background: #f5f5f7;
-      padding: 6px 20px;
-      border-radius: 40px;
-      letter-spacing: -0.01em;
-      transition: background 0.2s;
-    }
-
-    .type-item:hover {
-      background: #eaeaea;
-    }
-
-    .footer-minimal {
-      border-top: 1px solid #f0f0f2;
-      padding: 30px 0;
-      text-align: center;
-      color: #8e8e93;
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 700px) {
+      /* very sparse */
       .product-title {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 60px 0 20px;
+        color: #1d1d1f;
+        text-align: center;
       }
+
       .product-tagline {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: #6e6e73;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 70px;
       }
-    }
-  </style>
-</head>
-<body>
-  <div id="header"></div>
 
-  <main class="main-content">
-    <!-- only the absolute essentials -->
-    <div class="product-title">Solar Concentrator</div>
-    <div class="product-tagline">focus. efficiency.</div>
-
-    <!-- minimal representation of types (the list from earlier, reduced to simple tags) -->
-    <div class="types-minimal">
-      <span class="type-item">Hybrid Solar Tunnel Dryer</span>
-      <span class="type-item">Polycarbonate sheet</span>
-      <span class="type-item">Electrical coil</span>
-      <span class="type-item">Heat pump</span>
-      <span class="type-item">Refrigerant dehumidifier</span>
-      <span class="type-item">Biomass</span>
-      <span class="type-item">ETC tube collector</span>
-      <span class="type-item">Polythene sheet</span>
-    </div>
-
-    <!-- very discreet footer -->
-    <div class="footer-minimal">
-      KVB · clean technology
-    </div>
-  </main>
-
-  <script>
-    (function() {
-      function loadComponent(id, file) {
-        fetch(file)
-          .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-          .then(html => {
-            const el = document.getElementById(id);
-            if (el) {
-              el.innerHTML = html;
-              const scripts = el.querySelectorAll('script');
-              scripts.forEach(s => {
-                const newScript = document.createElement('script');
-                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                newScript.appendChild(document.createTextNode(s.innerHTML));
-                s.parentNode.replaceChild(newScript, s);
-              });
-            }
-          }).catch(console.error);
+      .types-minimal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 24px;
+        margin: 80px 0 150px;
       }
-      window.BASE_PATH = "../";
-      loadComponent('header', '../components/header.html');
-      loadComponent('footer', '../components/footer.html');
-    })();
-  </script>
+
+      .type-item {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #2c2c2e;
+        background: #f5f5f7;
+        padding: 6px 20px;
+        border-radius: 40px;
+        letter-spacing: -0.01em;
+        transition: background 0.2s;
+      }
+
+      .type-item:hover {
+        background: #eaeaea;
+      }
+
+      .footer-minimal {
+        border-top: 1px solid #f0f0f2;
+        padding: 30px 0;
+        text-align: center;
+        color: #8e8e93;
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 700px) {
+        .product-title {
+          font-size: 3.5rem;
+        }
+        .product-tagline {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main class="main-content">
+      <!-- only the absolute essentials -->
+      <div class="product-title">Solar Concentrator</div>
+      <div class="product-tagline">focus. efficiency.</div>
+
+      <!-- minimal representation of types (the list from earlier, reduced to simple tags) -->
+      <div class="types-minimal">
+        <span class="type-item">Hybrid Solar Tunnel Dryer</span>
+        <span class="type-item">Polycarbonate sheet</span>
+        <span class="type-item">Electrical coil</span>
+        <span class="type-item">Heat pump</span>
+        <span class="type-item">Refrigerant dehumidifier</span>
+        <span class="type-item">Biomass</span>
+        <span class="type-item">ETC tube collector</span>
+        <span class="type-item">Polythene sheet</span>
+      </div>
+
+      <!-- very discreet footer -->
+      <div class="footer-minimal">KVB · clean technology</div>
+    </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
                 });
-            });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
+              }
+            })
+            .catch(console.error);
+        }
+        window.BASE_PATH = "../";
+        loadComponent("header", "../components/header.html");
+        loadComponent("footer", "../components/footer.html");
+      })();
     </script>
-</body>
-</html>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        });
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

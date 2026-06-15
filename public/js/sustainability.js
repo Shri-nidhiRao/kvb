@@ -1,324 +1,353 @@
 // Sustainability Page Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Animated Impact Counters
-    function animateCounters() {
-        const counters = [
-            { id: 'co2-saved', target: 2850, suffix: '+' },
-            { id: 'firewood-saved', target: 5200, suffix: '+' },
-            { id: 'lpg-saved', target: 158000, suffix: '+' },
-            { id: 'people-impacted', target: 10500, suffix: '+' }
-        ];
+document.addEventListener("DOMContentLoaded", function () {
+  // Animated Impact Counters
+  function animateCounters() {
+    const counters = [
+      { id: "co2-saved", target: 2850, suffix: "+" },
+      { id: "firewood-saved", target: 5200, suffix: "+" },
+      { id: "lpg-saved", target: 158000, suffix: "+" },
+      { id: "people-impacted", target: 10500, suffix: "+" },
+    ];
 
-        counters.forEach(counter => {
-            const element = document.getElementById(counter.id);
-            if (!element) return;
+    counters.forEach((counter) => {
+      const element = document.getElementById(counter.id);
+      if (!element) return;
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(element, counter.target, counter.suffix);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            observer.observe(element);
-        });
-    }
-
-    function animateCounter(element, target, suffix) {
-        const valueSpan = element.querySelector('span') || element;
-        let current = 0;
-        const increment = target / 100;
-        const duration = 2000; // 2 seconds
-        const stepTime = duration / (target / increment);
-
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(element, counter.target, counter.suffix);
+              observer.unobserve(entry.target);
             }
-            
-            // Format based on target value
-            if (target >= 1000) {
-                valueSpan.textContent = Math.floor(current).toLocaleString('en-IN') + suffix;
-            } else {
-                valueSpan.textContent = Math.floor(current) + suffix;
-            }
-        }, stepTime);
-    }
+          });
+        },
+        { threshold: 0.5 },
+      );
 
-    // Initialize counters
-    animateCounters();
-
-    // Comparison Tabs
-    const comparisonTabs = document.querySelectorAll('.comparison-tab');
-    const comparisonCharts = document.querySelectorAll('.comparison-chart');
-
-    comparisonTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Update active tab
-            comparisonTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-
-            const comparisonType = this.getAttribute('data-comparison');
-
-            // Show corresponding chart
-            comparisonCharts.forEach(chart => {
-                chart.classList.remove('active');
-                if (chart.id === `${comparisonType}-comparison`) {
-                    chart.classList.add('active');
-                }
-            });
-
-            // Initialize chart if not already initialized
-            initializeChart(comparisonType);
-        });
+      observer.observe(element);
     });
+  }
 
-    // Chart.js Initialization
-    let firewoodChart = null;
-    let lpgChart = null;
+  function animateCounter(element, target, suffix) {
+    const valueSpan = element.querySelector("span") || element;
+    let current = 0;
+    const increment = target / 100;
+    const duration = 2000; // 2 seconds
+    const stepTime = duration / (target / increment);
 
-    function initializeChart(chartType) {
-        if (chartType === 'firewood' && !firewoodChart) {
-            createFirewoodChart();
-        } else if (chartType === 'lpg' && !lpgChart) {
-            createLPGChart();
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+
+      // Format based on target value
+      if (target >= 1000) {
+        valueSpan.textContent =
+          Math.floor(current).toLocaleString("en-IN") + suffix;
+      } else {
+        valueSpan.textContent = Math.floor(current) + suffix;
+      }
+    }, stepTime);
+  }
+
+  // Initialize counters
+  animateCounters();
+
+  // Comparison Tabs
+  const comparisonTabs = document.querySelectorAll(".comparison-tab");
+  const comparisonCharts = document.querySelectorAll(".comparison-chart");
+
+  comparisonTabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      // Update active tab
+      comparisonTabs.forEach((t) => t.classList.remove("active"));
+      this.classList.add("active");
+
+      const comparisonType = this.getAttribute("data-comparison");
+
+      // Show corresponding chart
+      comparisonCharts.forEach((chart) => {
+        chart.classList.remove("active");
+        if (chart.id === `${comparisonType}-comparison`) {
+          chart.classList.add("active");
         }
-    }
+      });
 
-    function createFirewoodChart() {
-        const ctx = document.getElementById('firewoodChart');
-        if (!ctx) return;
-
-        firewoodChart = new Chart(ctx.getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['CO₂ Emissions (kg)', 'Fuel Cost (₹)', 'Deforestation Impact', 'Health Impact'],
-                datasets: [
-                    {
-                        label: 'Traditional Firewood',
-                        data: [280, 4000, 90, 85],
-                        backgroundColor: '#FF6F00',
-                        borderColor: '#FF6F00',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'KVB Solar Cooking',
-                        data: [5, 800, 5, 10],
-                        backgroundColor: '#3A7D44',
-                        borderColor: '#3A7D44',
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Firewood vs Solar Cooking: Annual Impact per 100 meals/day'
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
-                                }
-                                if (context.dataIndex === 0) {
-                                    label += context.raw + ' kg CO₂';
-                                } else if (context.dataIndex === 1) {
-                                    label += '₹' + context.raw.toLocaleString('en-IN');
-                                } else {
-                                    label += context.raw + '/100 score';
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Impact Score / Quantity'
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    function createLPGChart() {
-        const ctx = document.getElementById('lpgChart');
-        if (!ctx) return;
-
-        lpgChart = new Chart(ctx.getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['Annual Fuel Cost', 'CO₂ Emissions', 'Operational Reliability', 'Energy Independence'],
-                datasets: [
-                    {
-                        label: 'LPG Cooking',
-                        data: [750000, 11000, 70, 40],
-                        backgroundColor: '#FDB813',
-                        borderColor: '#FDB813',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Solar Cooking (70% solar + 30% LPG backup)',
-                        data: [225000, 3300, 90, 85],
-                        backgroundColor: '#0B3D91',
-                        borderColor: '#0B3D91',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Solar Cooking (Hybrid)',
-                        data: [180000, 2200, 95, 90],
-                        backgroundColor: '#3A7D44',
-                        borderColor: '#3A7D44',
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'LPG vs Solar Cooking: Annual Comparison for 500 meals/day'
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
-                                }
-                                if (context.dataIndex === 0) {
-                                    label += '₹' + context.raw.toLocaleString('en-IN');
-                                } else if (context.dataIndex === 1) {
-                                    label += context.raw + ' kg CO₂';
-                                } else {
-                                    label += context.raw + '/100 score';
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Cost (₹) / Emissions (kg) / Score'
-                        },
-                        ticks: {
-                            callback: function(value) {
-                                if (value >= 100000) {
-                                    return '₹' + (value/100000).toFixed(0) + 'L';
-                                }
-                                return value;
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    // Carbon Calculator
-    const carbonCalculator = document.getElementById('carbonCalculator');
-    const carbonResults = document.getElementById('carbon-results');
-    const fuelTypeSelect = document.getElementById('fuel-type');
-    const consumptionUnit = document.getElementById('consumption-unit');
-
-    // Update unit based on fuel type
-    fuelTypeSelect.addEventListener('change', function() {
-        const unit = this.value === 'electricity' ? 'kWh' : 
-                    this.value === 'firewood' ? 'kg' : 
-                    this.value === 'lpg' ? 'kg' : 
-                    this.value === 'diesel' ? 'liters' : 'kg';
-        consumptionUnit.textContent = unit;
+      // Initialize chart if not already initialized
+      initializeChart(comparisonType);
     });
+  });
 
-    if (carbonCalculator) {
-        carbonCalculator.addEventListener('submit', function(e) {
-            e.preventDefault();
+  // Chart.js Initialization
+  let firewoodChart = null;
+  let lpgChart = null;
 
-            // Get form values
-            const fuelType = document.getElementById('fuel-type').value;
-            const fuelConsumption = parseFloat(document.getElementById('fuel-consumption').value);
-            const application = document.getElementById('application').value;
-            const capacity = document.getElementById('capacity').value;
+  function initializeChart(chartType) {
+    if (chartType === "firewood" && !firewoodChart) {
+      createFirewoodChart();
+    } else if (chartType === "lpg" && !lpgChart) {
+      createLPGChart();
+    }
+  }
 
-            // Validate inputs
-            if (!fuelType || !fuelConsumption || fuelConsumption <= 0 || !application) {
-                alert('Please fill in all required fields with valid values.');
-                return;
-            }
+  function createFirewoodChart() {
+    const ctx = document.getElementById("firewoodChart");
+    if (!ctx) return;
 
-            // Calculate carbon emissions
-            const emissionFactors = {
-                firewood: 1.5, // kg CO2 per kg firewood
-                lpg: 3.0,     // kg CO2 per kg LPG
-                diesel: 2.7,  // kg CO2 per liter diesel
-                electricity: 0.8 // kg CO2 per kWh (grid average)
-            };
+    firewoodChart = new Chart(ctx.getContext("2d"), {
+      type: "bar",
+      data: {
+        labels: [
+          "CO₂ Emissions (kg)",
+          "Fuel Cost (₹)",
+          "Deforestation Impact",
+          "Health Impact",
+        ],
+        datasets: [
+          {
+            label: "Traditional Firewood",
+            data: [280, 4000, 90, 85],
+            backgroundColor: "#FF6F00",
+            borderColor: "#FF6F00",
+            borderWidth: 1,
+          },
+          {
+            label: "KVB Solar Cooking",
+            data: [5, 800, 5, 10],
+            backgroundColor: "#3A7D44",
+            borderColor: "#3A7D44",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top",
+          },
+          title: {
+            display: true,
+            text: "Firewood vs Solar Cooking: Annual Impact per 100 meals/day",
+          },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                let label = context.dataset.label || "";
+                if (label) {
+                  label += ": ";
+                }
+                if (context.dataIndex === 0) {
+                  label += context.raw + " kg CO₂";
+                } else if (context.dataIndex === 1) {
+                  label += "₹" + context.raw.toLocaleString("en-IN");
+                } else {
+                  label += context.raw + "/100 score";
+                }
+                return label;
+              },
+            },
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: "Impact Score / Quantity",
+            },
+          },
+        },
+      },
+    });
+  }
 
-            const conversionFactors = {
-                firewood: 1,    // 1 kg firewood
-                lpg: 1,         // 1 kg LPG
-                diesel: 1,      // 1 liter diesel
-                electricity: 1  // 1 kWh
-            };
+  function createLPGChart() {
+    const ctx = document.getElementById("lpgChart");
+    if (!ctx) return;
 
-            const efficiencyFactors = {
-                cooking: 0.7,    // 70% replacement for cooking
-                drying: 0.8,     // 80% replacement for drying
-                heating: 0.75    // 75% replacement for heating
-            };
+    lpgChart = new Chart(ctx.getContext("2d"), {
+      type: "bar",
+      data: {
+        labels: [
+          "Annual Fuel Cost",
+          "CO₂ Emissions",
+          "Operational Reliability",
+          "Energy Independence",
+        ],
+        datasets: [
+          {
+            label: "LPG Cooking",
+            data: [750000, 11000, 70, 40],
+            backgroundColor: "#FDB813",
+            borderColor: "#FDB813",
+            borderWidth: 1,
+          },
+          {
+            label: "Solar Cooking (70% solar + 30% LPG backup)",
+            data: [225000, 3300, 90, 85],
+            backgroundColor: "#0B3D91",
+            borderColor: "#0B3D91",
+            borderWidth: 1,
+          },
+          {
+            label: "Solar Cooking (Hybrid)",
+            data: [180000, 2200, 95, 90],
+            backgroundColor: "#3A7D44",
+            borderColor: "#3A7D44",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top",
+          },
+          title: {
+            display: true,
+            text: "LPG vs Solar Cooking: Annual Comparison for 500 meals/day",
+          },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                let label = context.dataset.label || "";
+                if (label) {
+                  label += ": ";
+                }
+                if (context.dataIndex === 0) {
+                  label += "₹" + context.raw.toLocaleString("en-IN");
+                } else if (context.dataIndex === 1) {
+                  label += context.raw + " kg CO₂";
+                } else {
+                  label += context.raw + "/100 score";
+                }
+                return label;
+              },
+            },
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: "Cost (₹) / Emissions (kg) / Score",
+            },
+            ticks: {
+              callback: function (value) {
+                if (value >= 100000) {
+                  return "₹" + (value / 100000).toFixed(0) + "L";
+                }
+                return value;
+              },
+            },
+          },
+        },
+      },
+    });
+  }
 
-            // Calculate annual emissions
-            const monthlyEmissions = fuelConsumption * emissionFactors[fuelType];
-            const annualEmissions = monthlyEmissions * 12;
+  // Carbon Calculator
+  const carbonCalculator = document.getElementById("carbonCalculator");
+  const carbonResults = document.getElementById("carbon-results");
+  const fuelTypeSelect = document.getElementById("fuel-type");
+  const consumptionUnit = document.getElementById("consumption-unit");
 
-            // Calculate potential savings
-            const replacementRate = efficiencyFactors[application];
-            const annualSavings = annualEmissions * replacementRate;
+  // Update unit based on fuel type
+  fuelTypeSelect.addEventListener("change", function () {
+    const unit =
+      this.value === "electricity"
+        ? "kWh"
+        : this.value === "firewood"
+          ? "kg"
+          : this.value === "lpg"
+            ? "kg"
+            : this.value === "diesel"
+              ? "liters"
+              : "kg";
+    consumptionUnit.textContent = unit;
+  });
 
-            // Calculate equivalent trees
-            const treesEquivalent = Math.round(annualSavings / 22); // One tree absorbs ~22 kg CO2 per year
+  if (carbonCalculator) {
+    carbonCalculator.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-            // Calculate cost savings (simplified)
-            const fuelPrices = {
-                firewood: 5,     // ₹ per kg
-                lpg: 100,        // ₹ per kg
-                diesel: 90,      // ₹ per liter
-                electricity: 8   // ₹ per kWh
-            };
+      // Get form values
+      const fuelType = document.getElementById("fuel-type").value;
+      const fuelConsumption = parseFloat(
+        document.getElementById("fuel-consumption").value,
+      );
+      const application = document.getElementById("application").value;
+      const capacity = document.getElementById("capacity").value;
 
-            const monthlyCost = fuelConsumption * fuelPrices[fuelType];
-            const annualCost = monthlyCost * 12;
-            const annualCostSavings = annualCost * replacementRate;
+      // Validate inputs
+      if (
+        !fuelType ||
+        !fuelConsumption ||
+        fuelConsumption <= 0 ||
+        !application
+      ) {
+        alert("Please fill in all required fields with valid values.");
+        return;
+      }
 
-            // Format results
-            const formatNumber = (num) => num.toLocaleString('en-IN', { maximumFractionDigits: 0 });
-            const formatCurrency = (amount) => '₹' + amount.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+      // Calculate carbon emissions
+      const emissionFactors = {
+        firewood: 1.5, // kg CO2 per kg firewood
+        lpg: 3.0, // kg CO2 per kg LPG
+        diesel: 2.7, // kg CO2 per liter diesel
+        electricity: 0.8, // kg CO2 per kWh (grid average)
+      };
 
-            // Display results
-            carbonResults.innerHTML = `
+      const conversionFactors = {
+        firewood: 1, // 1 kg firewood
+        lpg: 1, // 1 kg LPG
+        diesel: 1, // 1 liter diesel
+        electricity: 1, // 1 kWh
+      };
+
+      const efficiencyFactors = {
+        cooking: 0.7, // 70% replacement for cooking
+        drying: 0.8, // 80% replacement for drying
+        heating: 0.75, // 75% replacement for heating
+      };
+
+      // Calculate annual emissions
+      const monthlyEmissions = fuelConsumption * emissionFactors[fuelType];
+      const annualEmissions = monthlyEmissions * 12;
+
+      // Calculate potential savings
+      const replacementRate = efficiencyFactors[application];
+      const annualSavings = annualEmissions * replacementRate;
+
+      // Calculate equivalent trees
+      const treesEquivalent = Math.round(annualSavings / 22); // One tree absorbs ~22 kg CO2 per year
+
+      // Calculate cost savings (simplified)
+      const fuelPrices = {
+        firewood: 5, // ₹ per kg
+        lpg: 100, // ₹ per kg
+        diesel: 90, // ₹ per liter
+        electricity: 8, // ₹ per kWh
+      };
+
+      const monthlyCost = fuelConsumption * fuelPrices[fuelType];
+      const annualCost = monthlyCost * 12;
+      const annualCostSavings = annualCost * replacementRate;
+
+      // Format results
+      const formatNumber = (num) =>
+        num.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+      const formatCurrency = (amount) =>
+        "₹" + amount.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+
+      // Display results
+      carbonResults.innerHTML = `
                 <div class="results-header">
                     <h4><i class="fas fa-leaf"></i> Carbon Savings Analysis</h4>
                     <p>Based on your current ${fuelType} consumption for ${application}</p>
@@ -417,15 +446,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
 
-            // Show results with animation
-            carbonResults.style.display = 'block';
-            carbonResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Show results with animation
+      carbonResults.style.display = "block";
+      carbonResults.scrollIntoView({ behavior: "smooth", block: "center" });
 
-            // Add results styles if not already present
-            if (!document.querySelector('#carbon-results-styles')) {
-                const styles = document.createElement('style');
-                styles.id = 'carbon-results-styles';
-                styles.textContent = `
+      // Add results styles if not already present
+      if (!document.querySelector("#carbon-results-styles")) {
+        const styles = document.createElement("style");
+        styles.id = "carbon-results-styles";
+        styles.textContent = `
                     .calculator-results {
                         margin-top: 30px;
                         padding: 25px;
@@ -643,16 +672,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         to { opacity: 1; }
                     }
                 `;
-                document.head.appendChild(styles);
-            }
-        });
-    }
+        document.head.appendChild(styles);
+      }
+    });
+  }
 
-    // Add page-specific styles
-    if (!document.querySelector('#sustainability-styles')) {
-        const styles = document.createElement('style');
-        styles.id = 'sustainability-styles';
-        styles.textContent = `
+  // Add page-specific styles
+  if (!document.querySelector("#sustainability-styles")) {
+    const styles = document.createElement("style");
+    styles.id = "sustainability-styles";
+    styles.textContent = `
             /* Sustainability page specific styles */
             .sustainability-hero {
                 padding: 120px 0 80px;
@@ -1535,9 +1564,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         `;
-        document.head.appendChild(styles);
-    }
+    document.head.appendChild(styles);
+  }
 
-    // Initialize first chart
-    initializeChart('firewood');
+  // Initialize first chart
+  initializeChart("firewood");
 });

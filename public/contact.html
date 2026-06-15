@@ -1,1330 +1,1473 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta name="description" content="Get in touch with KVB Green Energies. Contact our team for inquiries regarding solar thermal solutions, industrial heating, and agritech systems.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      name="description"
+      content="Get in touch with KVB Green Energies. Contact our team for inquiries regarding solar thermal solutions, industrial heating, and agritech systems."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact KVB Green Energies | Partnerships & Inquiries</title>
-    <link rel="icon" type="image/png" href="images/products/kvb-logo.webp">
+    <link rel="icon" type="image/png" href="images/products/kvb-logo.webp" />
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
     <!-- Google Fonts: Montserrat + Inter (Apple‑inspired) -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
     <!-- Leaflet JS (required for map) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <style>
-        /* ===== BASE STYLES – Apple/Tesla Inspired, GREEN brand ===== */
-        :root {
-            --solar-yellow: #FDB813;
-            --deep-blue: #0B3D91;
-            --eco-green: #3A7D44;
-            --dark-charcoal: #1C1C1C;
-            --soft-white: #F9F9F9;
-            --accent-orange: #FF6F00;
-            --background: #F9F9F9;
-            --background-alt: #FFFFFF;
-            --text-primary: #1C1C1C;
-            --text-secondary: #4a5568;
-            --text-tertiary: #A1A1A6;
-            --border: #e0e8e0;
-            --primary: #3A7D44;
-            --primary-dark: #2d5a33;
-            --primary-light: #e6f3e6;
-            --primary-glow: rgba(58, 125, 68, 0.15);
-            --shadow-sm: 0 10px 30px rgba(28,28,28,0.04);
-            --shadow-md: 0 20px 40px rgba(58,125,68,0.08);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
+      /* ===== BASE STYLES – Apple/Tesla Inspired, GREEN brand ===== */
+      :root {
+        --solar-yellow: #fdb813;
+        --deep-blue: #0b3d91;
+        --eco-green: #3a7d44;
+        --dark-charcoal: #1c1c1c;
+        --soft-white: #f9f9f9;
+        --accent-orange: #ff6f00;
+        --background: #f9f9f9;
+        --background-alt: #ffffff;
+        --text-primary: #1c1c1c;
+        --text-secondary: #4a5568;
+        --text-tertiary: #a1a1a6;
+        --border: #e0e8e0;
+        --primary: #3a7d44;
+        --primary-dark: #2d5a33;
+        --primary-light: #e6f3e6;
+        --primary-glow: rgba(58, 125, 68, 0.15);
+        --shadow-sm: 0 10px 30px rgba(28, 28, 28, 0.04);
+        --shadow-md: 0 20px 40px rgba(58, 125, 68, 0.08);
+        --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+        --radius-sm: 12px;
+        --radius-md: 20px;
+        --radius-lg: 28px;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: var(--font-body);
-            color: var(--text-primary);
-            background: var(--background);
-            line-height: 1.5;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
+      body {
+        font-family: var(--font-body);
+        color: var(--text-primary);
+        background: var(--background);
+        line-height: 1.5;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+      }
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: var(--text-primary);
+      }
 
+      h1 {
+        font-size: 3.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+      }
+
+      p {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        color: var(--deep-blue);
+        text-align: center;
+        position: relative;
+        display: block;
+        margin-bottom: 26px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--solar-yellow);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: -1rem auto 3rem;
+      }
+
+      /* ===== BUTTONS ===== */
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        border-radius: 40px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        background: transparent;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 4px 12px rgba(74, 139, 74, 0.2);
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(74, 139, 74, 0.3);
+      }
+
+      .btn-secondary {
+        background: var(--background);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: var(--background-alt);
+        border-color: var(--text-secondary);
+        transform: scale(1.02);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: var(--primary-light);
+      }
+
+      .btn-text {
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      /* ===== HEADER (placeholder) ===== */
+      #header {
+      }
+
+      /* ===== HERO SECTION ===== */
+      .contact-hero {
+        position: relative;
+        min-height: 55vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          #09203f 0%,
+          #0f3460 40%,
+          #1a5276 100%
+        );
+        overflow: hidden;
+        color: white;
+        padding: 100px 0 60px;
+      }
+
+      .contact-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 15% 50%,
+            rgba(0, 255, 135, 0.12) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(253, 184, 19, 0.08) 0%,
+            transparent 40%
+          );
+        animation: heroPulse 8s infinite alternate;
+        z-index: 1;
+      }
+
+      .contact-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E")
+          no-repeat bottom;
+        background-size: cover;
+        z-index: 2;
+      }
+
+      @keyframes heroPulse {
+        0% {
+          opacity: 0.9;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 900;
+      }
+
+      .hero-content .hero-subtitle {
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content .hero-description {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2.5rem;
+      }
+
+      .contact-quick-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .quick-link {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: white;
+        padding: 0.8rem 1.6rem;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: var(--shadow-sm);
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .quick-link:hover {
+        background: var(--primary-light);
+        border-color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      .quick-link i {
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      /* ===== CONTACT FORM ===== */
+      .contact-form-section {
+        padding: 5rem 0;
+        background: var(--background);
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .form-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-form {
+        background: var(--background-alt);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        transition: all 0.2s;
+        background: var(--background);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px var(--primary-glow);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .form-group input[type="checkbox"] {
+        width: auto;
+        margin-top: 4px;
+        cursor: pointer;
+      }
+
+      .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        cursor: pointer;
+      }
+
+      .checkbox-label a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .checkbox-label a:hover {
+        text-decoration: underline;
+      }
+
+      .form-submit {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .form-note {
+        font-size: 0.85rem;
+        color: var(--text-tertiary);
+        margin-top: 1rem;
+      }
+
+      /* Sidebar */
+      .form-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .sidebar-card {
+        background: var(--background-alt);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .sidebar-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .sidebar-card h3 i {
+        color: var(--primary);
+      }
+
+      .tips-list {
+        list-style: none;
+      }
+
+      .tips-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      .tips-list li:before {
+        content: "🌱";
+        font-size: 1rem;
+        color: var(--primary);
+      }
+
+      .response-time .time-category {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .time-value {
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        padding: 0.3rem 1rem;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .contact-options {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-option {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--background);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        transition: all 0.2s;
+        color: var(--text-primary);
+      }
+
+      .contact-option:hover {
+        border-color: var(--primary);
+        box-shadow: var(--shadow-md);
+      }
+
+      .contact-option i {
+        color: var(--primary);
+        font-size: 1.3rem;
+      }
+
+      /* ===== SUCCESS MESSAGE ===== */
+      .form-success-message {
+        background: var(--background-alt);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 3rem;
+        box-shadow: var(--shadow-lg);
+        animation: fadeIn 0.6s ease;
+      }
+
+      .success-content {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .success-content i {
+        color: var(--primary);
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .success-details {
+        background: var(--background);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        text-align: left;
+      }
+
+      .success-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      /* ===== OFFICE LOCATION ===== */
+      .office-location {
+        padding: 5rem 0;
+        background: var(--background-alt);
+      }
+
+      .location-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .address-card {
+        background: var(--background);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .address-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .address-details p {
+        margin: 0.3rem 0;
+        color: var(--text-secondary);
+      }
+
+      .contact-details .detail {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin: 0.5rem 0;
+        color: var(--text-secondary);
+      }
+
+      .contact-details i {
+        color: var(--primary);
+        width: 20px;
+      }
+
+      .office-features {
+        margin-top: 1.5rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 0.8rem;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+      }
+
+      .feature i {
+        color: var(--primary);
+      }
+
+      .visit-instructions {
+        margin-top: 1.5rem;
+      }
+
+      .visit-instructions ul {
+        list-style: none;
+        margin-top: 0.8rem;
+      }
+
+      .visit-instructions li {
+        padding: 0.3rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      .visit-instructions li:before {
+        content: "🌿";
+        color: var(--primary);
+      }
+
+      .location-map {
+        height: 500px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+      }
+
+      #officeMap {
+        height: 100%;
+        width: 100%;
+      }
+
+      .map-marker {
+        background: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        border: 2px solid white;
+        box-shadow: var(--shadow-md);
+      }
+
+      .map-popup {
+        padding: 1rem;
+      }
+
+      .map-popup h4 {
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+      }
+
+      .map-popup p {
+        margin: 0.2rem 0;
+      }
+
+      .popup-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        text-decoration: none;
+        margin-top: 0.8rem;
+      }
+
+      /* ===== CONTACT CTA ===== */
+      .contact-cta {
+        padding: 5rem 0;
+        background: linear-gradient(
+          135deg,
+          #09203f 0%,
+          #0f3460 40%,
+          #1a5276 100%
+        );
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .contact-cta h2 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .contact-cta p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-buttons .btn {
+        background: white;
+        color: var(--primary);
+        border: none;
+      }
+
+      .cta-buttons .btn:hover {
+        background: var(--primary-light);
+      }
+
+      /* ===== RESPONSIVE ===== */
+
+      @media (max-width: 992px) {
         h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1.2rem;
+          font-size: 2.8rem;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 600;
+          font-size: 2.2rem;
         }
 
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            font-weight: 500;
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            color: var(--deep-blue);
-            text-align: center;
-            position: relative;
-            display: block;
-            margin-bottom: 26px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--solar-yellow);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: -1rem auto 3rem;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            background: transparent;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 12px rgba(74, 139, 74, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(74, 139, 74, 0.3);
-        }
-
-        .btn-secondary {
-            background: var(--background);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: var(--background-alt);
-            border-color: var(--text-secondary);
-            transform: scale(1.02);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-light);
-        }
-
-        .btn-text {
-            background: none;
-            border: none;
-            color: var(--primary);
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        /* ===== HEADER (placeholder) ===== */
-        #header {
-        }
-
-        /* ===== HERO SECTION ===== */
-        .contact-hero {
-            position: relative;
-            min-height: 55vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
-            overflow: hidden;
-            color: white;
-            padding: 100px 0 60px;
-        }
-
-        .contact-hero::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                radial-gradient(circle at 15% 50%, rgba(0,255,135,0.12) 0%, transparent 55%),
-                radial-gradient(circle at 85% 30%, rgba(253,184,19,0.08) 0%, transparent 40%);
-            animation: heroPulse 8s infinite alternate;
-            z-index: 1;
-        }
-
-        .contact-hero::after {
-            content: '';
-            position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
-            background-size: cover;
-            z-index: 2;
-        }
-
-        @keyframes heroPulse {
-            0% { opacity: 0.9; }
-            100% { opacity: 1; }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 3;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            color: white;
-            font-size: 3.5rem;
-            font-weight: 900;
-        }
-
-        .hero-content .hero-subtitle {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content .hero-description {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2.5rem;
+        .form-wrapper,
+        .location-wrapper {
+          grid-template-columns: 1fr;
         }
 
         .contact-quick-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 2rem;
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 15px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+        }
+
+        .contact-hero {
+          padding: 40px 0 60px;
+        }
+
+        .contact-hero h1 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-description {
+          font-size: 0.95rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .contact-quick-links {
+          gap: 12px;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 1.5rem;
         }
 
         .quick-link {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: white;
-            padding: 0.8rem 1.6rem;
-            border-radius: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: var(--shadow-sm);
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
+          width: 100%;
+          max-width: 280px;
+          padding: 12px 16px;
+          font-size: 0.9rem;
         }
 
-        .quick-link:hover {
-            background: var(--primary-light);
-            border-color: var(--primary);
-            transform: translateY(-2px);
+        .office-location {
+          padding: 60px 0;
         }
 
-        .quick-link i {
-            color: var(--primary);
-            font-size: 1.1rem;
+        .location-wrapper {
+          gap: 30px;
+          grid-template-columns: 1fr;
         }
 
-        /* ===== CONTACT FORM ===== */
+        .location-map {
+          height: 350px;
+        }
+
+        .address-card {
+          padding: 25px;
+          margin-bottom: 20px;
+        }
+
+        .address-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 15px;
+        }
+
+        .features-grid {
+          gap: 12px;
+          grid-template-columns: 1fr 1fr;
+        }
+
         .contact-form-section {
-            padding: 5rem 0;
-            background: var(--background);
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 3rem;
+          padding: 60px 0;
         }
 
         .form-wrapper {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
+          gap: 25px;
+          grid-template-columns: 1fr;
         }
 
         .contact-form {
-            background: var(--background-alt);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-sm);
+          padding: 25px 15px;
         }
 
         .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+          grid-template-columns: 1fr;
+          gap: 12px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+          margin-bottom: 15px;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            font-size: 0.9rem;
+          font-size: 0.85rem;
+          margin-bottom: 6px;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            transition: all 0.2s;
-            background: var(--background);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px var(--primary-glow);
+          padding: 12px 12px;
+          font-size: 0.9rem;
         }
 
         .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group input[type="checkbox"] {
-            width: auto;
-            margin-top: 4px;
-            cursor: pointer;
+          min-height: 100px;
         }
 
         .checkbox-label {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-        }
-
-        .checkbox-label a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .checkbox-label a:hover {
-            text-decoration: underline;
+          font-size: 0.85rem;
+          gap: 8px;
         }
 
         .form-submit {
-            text-align: center;
-            margin-top: 2rem;
+          margin-top: 20px;
         }
 
-        .form-note {
-            font-size: 0.85rem;
-            color: var(--text-tertiary);
-            margin-top: 1rem;
+        .btn {
+          padding: 10px 18px;
+          font-size: 0.9rem;
         }
 
-        /* Sidebar */
         .form-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+          gap: 15px;
         }
 
         .sidebar-card {
-            background: var(--background-alt);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
+          padding: 15px;
         }
 
         .sidebar-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .sidebar-card h3 i {
-            color: var(--primary);
-        }
-
-        .tips-list {
-            list-style: none;
+          font-size: 1rem;
+          margin-bottom: 12px;
         }
 
         .tips-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: var(--text-secondary);
+          font-size: 0.9rem;
+          padding: 8px 0;
         }
 
-        .tips-list li:before {
-            content: '🌱';
-            font-size: 1rem;
-            color: var(--primary);
+        .response-time {
+          gap: 10px;
         }
 
-        .response-time .time-category {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--border);
+        .time-category {
+          padding: 10px 0;
+          font-size: 0.9rem;
         }
 
         .time-value {
-            background: var(--primary-light);
-            color: var(--primary-dark);
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
+          padding: 4px 12px;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          padding: 0 12px;
         }
 
-        .contact-options {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        h1 {
+          font-size: 1.6rem;
         }
 
-        .contact-option {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--background);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            transition: all 0.2s;
-            color: var(--text-primary);
+        h2 {
+          font-size: 1.3rem;
         }
 
-        .contact-option:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
+        .contact-hero {
+          padding: 50px 0 90px;
         }
 
-        .contact-option i {
-            color: var(--primary);
-            font-size: 1.3rem;
+        .contact-hero h1 {
+          font-size: 1.5rem;
+          margin-bottom: 0.6rem;
         }
 
-        /* ===== SUCCESS MESSAGE ===== */
-        .form-success-message {
-            background: var(--background-alt);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-            animation: fadeIn 0.6s ease;
+        .hero-subtitle {
+          font-size: 0.95rem;
+          margin-bottom: 0.8rem;
         }
 
-        .success-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
+        .hero-description {
+          font-size: 0.85rem;
+          margin-bottom: 1rem;
         }
 
-        .success-content i {
-            color: var(--primary);
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+        .contact-quick-links {
+          gap: 10px;
+          margin-top: 1rem;
         }
 
-        .success-details {
-            background: var(--background);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: left;
+        .quick-link {
+          padding: 10px 14px;
+          font-size: 0.8rem;
         }
 
-        .success-actions {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
+        .quick-link i {
+          font-size: 1rem;
         }
 
-        /* ===== OFFICE LOCATION ===== */
         .office-location {
-            padding: 5rem 0;
-            background: var(--background-alt);
+          padding: 40px 0;
         }
 
         .location-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .address-card {
-            background: var(--background);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .address-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .address-details p {
-            margin: 0.3rem 0;
-            color: var(--text-secondary);
-        }
-
-        .contact-details .detail {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin: 0.5rem 0;
-            color: var(--text-secondary);
-        }
-
-        .contact-details i {
-            color: var(--primary);
-            width: 20px;
-        }
-
-        .office-features {
-            margin-top: 1.5rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 0.8rem;
-        }
-
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        .feature i {
-            color: var(--primary);
-        }
-
-        .visit-instructions {
-            margin-top: 1.5rem;
-        }
-
-        .visit-instructions ul {
-            list-style: none;
-            margin-top: 0.8rem;
-        }
-
-        .visit-instructions li {
-            padding: 0.3rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .visit-instructions li:before {
-            content: '🌿';
-            color: var(--primary);
+          gap: 20px;
         }
 
         .location-map {
-            height: 500px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-lg);
+          height: 250px;
         }
 
-        #officeMap {
-            height: 100%;
-            width: 100%;
+        .address-card {
+          padding: 15px;
+          margin-bottom: 15px;
         }
 
-        .map-marker {
-            background: var(--primary);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            border: 2px solid white;
-            box-shadow: var(--shadow-md);
+        .address-card h3 {
+          font-size: 1rem;
+          margin-bottom: 12px;
         }
 
-        .map-popup {
-            padding: 1rem;
+        .address-details p {
+          font-size: 0.85rem;
+          margin: 4px 0;
         }
 
-        .map-popup h4 {
-            margin-bottom: 0.5rem;
-            color: var(--primary);
+        .contact-details .detail {
+          font-size: 0.85rem;
+          margin-bottom: 8px;
         }
 
-        .map-popup p {
-            margin: 0.2rem 0;
+        .features-grid {
+          gap: 8px;
+          grid-template-columns: 1fr;
         }
 
-        .popup-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            margin-top: 0.8rem;
+        .contact-form-section {
+          padding: 40px 0;
         }
 
-        /* ===== CONTACT CTA ===== */
-        .contact-cta {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
-            color: white;
-            text-align: center;
-            position: relative;
+        .form-wrapper {
+          gap: 15px;
         }
 
-        .contact-cta h2 {
-            color: white;
-            margin-bottom: 1rem;
+        .contact-form {
+          padding: 15px 10px;
         }
 
-        .contact-cta p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+        .form-row {
+          gap: 10px;
         }
 
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .form-group {
+          margin-bottom: 12px;
         }
 
-        .cta-buttons .btn {
-            background: white;
-            color: var(--primary);
-            border: none;
+        .form-group label {
+          font-size: 0.8rem;
+          margin-bottom: 4px;
         }
 
-        .cta-buttons .btn:hover {
-            background: var(--primary-light);
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          padding: 10px 10px;
+          font-size: 0.85rem;
         }
 
-        /* ===== RESPONSIVE ===== */
-
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-
-            h2 {
-                font-size: 2.2rem;
-            }
-
-            .form-wrapper,
-            .location-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-quick-links {
-                gap: 15px;
-            }
+        .form-group textarea {
+          min-height: 80px;
+          rows: 4;
         }
 
-        @media (max-width: 768px) {
-
-            .container {
-                padding: 0 15px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            .contact-hero {
-                padding: 40px 0 60px;
-            }
-
-            .contact-hero h1 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-            }
-
-            .hero-description {
-                font-size: 0.95rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .contact-quick-links {
-                gap: 12px;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 1.5rem;
-            }
-
-            .quick-link {
-                width: 100%;
-                max-width: 280px;
-                padding: 12px 16px;
-                font-size: 0.9rem;
-            }
-
-            .office-location {
-                padding: 60px 0;
-            }
-
-            .location-wrapper {
-                gap: 30px;
-                grid-template-columns: 1fr;
-            }
-
-            .location-map {
-                height: 350px;
-            }
-
-            .address-card {
-                padding: 25px;
-                margin-bottom: 20px;
-            }
-
-            .address-card h3 {
-                font-size: 1.2rem;
-                margin-bottom: 15px;
-            }
-
-            .features-grid {
-                gap: 12px;
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .contact-form-section {
-                padding: 60px 0;
-            }
-
-            .form-wrapper {
-                gap: 25px;
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 25px 15px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .form-group {
-                margin-bottom: 15px;
-            }
-
-            .form-group label {
-                font-size: 0.85rem;
-                margin-bottom: 6px;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 12px 12px;
-                font-size: 0.9rem;
-            }
-
-            .form-group textarea {
-                min-height: 100px;
-            }
-
-            .checkbox-label {
-                font-size: 0.85rem;
-                gap: 8px;
-            }
-
-            .form-submit {
-                margin-top: 20px;
-            }
-
-            .btn {
-                padding: 10px 18px;
-                font-size: 0.9rem;
-            }
-
-            .form-sidebar {
-                gap: 15px;
-            }
-
-            .sidebar-card {
-                padding: 15px;
-            }
-
-            .sidebar-card h3 {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-
-            .tips-list li {
-                font-size: 0.9rem;
-                padding: 8px 0;
-            }
-
-            .response-time {
-                gap: 10px;
-            }
-
-            .time-category {
-                padding: 10px 0;
-                font-size: 0.9rem;
-            }
-
-            .time-value {
-                padding: 4px 12px;
-                font-size: 0.8rem;
-            }
+        .checkbox-label {
+          font-size: 0.8rem;
+          gap: 6px;
         }
 
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 12px;
-            }
-
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .contact-hero {
-                padding: 50px 0 90px;
-            }
-
-            .contact-hero h1 {
-                font-size: 1.5rem;
-                margin-bottom: 0.6rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.95rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .hero-description {
-                font-size: 0.85rem;
-                margin-bottom: 1rem;
-            }
-
-            .contact-quick-links {
-                gap: 10px;
-                margin-top: 1rem;
-            }
-
-            .quick-link {
-                padding: 10px 14px;
-                font-size: 0.8rem;
-            }
-
-            .quick-link i {
-                font-size: 1rem;
-            }
-
-            .office-location {
-                padding: 40px 0;
-            }
-
-            .location-wrapper {
-                gap: 20px;
-            }
-
-            .location-map {
-                height: 250px;
-            }
-
-            .address-card {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-
-            .address-card h3 {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-
-            .address-details p {
-                font-size: 0.85rem;
-                margin: 4px 0;
-            }
-
-            .contact-details .detail {
-                font-size: 0.85rem;
-                margin-bottom: 8px;
-            }
-
-            .features-grid {
-                gap: 8px;
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form-section {
-                padding: 40px 0;
-            }
-
-            .form-wrapper {
-                gap: 15px;
-            }
-
-            .contact-form {
-                padding: 15px 10px;
-            }
-
-            .form-row {
-                gap: 10px;
-            }
-
-            .form-group {
-                margin-bottom: 12px;
-            }
-
-            .form-group label {
-                font-size: 0.8rem;
-                margin-bottom: 4px;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 10px 10px;
-                font-size: 0.85rem;
-            }
-
-            .form-group textarea {
-                min-height: 80px;
-                rows: 4;
-            }
-
-            .checkbox-label {
-                font-size: 0.8rem;
-                gap: 6px;
-            }
-
-            .btn {
-                padding: 8px 14px;
-                font-size: 0.85rem;
-            }
-
-            .form-submit {
-                margin-top: 15px;
-            }
-
-            .form-note {
-                font-size: 0.8rem;
-            }
-
-            .sidebar-card {
-                padding: 12px;
-            }
-
-            .sidebar-card h3 {
-                font-size: 0.95rem;
-                margin-bottom: 10px;
-            }
-
-            .tips-list li {
-                font-size: 0.85rem;
-                padding: 6px 0;
-            }
-
-            .time-category {
-                padding: 8px 0;
-                font-size: 0.85rem;
-            }
-
-            .time-label {
-                font-size: 0.85rem;
-            }
-
-            .time-value {
-                padding: 3px 10px;
-                font-size: 0.75rem;
-            }
+        .btn {
+          padding: 8px 14px;
+          font-size: 0.85rem;
         }
 
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            .form-success-message, .form-success-message * {
-                visibility: visible;
-            }
-            .form-success-message {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                box-shadow: none;
-                border: none;
-                margin: 0;
-                padding: 20px;
-            }
-            .success-actions {
-                display: none !important;
-            }
+        .form-submit {
+          margin-top: 15px;
         }
+
+        .form-note {
+          font-size: 0.8rem;
+        }
+
+        .sidebar-card {
+          padding: 12px;
+        }
+
+        .sidebar-card h3 {
+          font-size: 0.95rem;
+          margin-bottom: 10px;
+        }
+
+        .tips-list li {
+          font-size: 0.85rem;
+          padding: 6px 0;
+        }
+
+        .time-category {
+          padding: 8px 0;
+          font-size: 0.85rem;
+        }
+
+        .time-label {
+          font-size: 0.85rem;
+        }
+
+        .time-value {
+          padding: 3px 10px;
+          font-size: 0.75rem;
+        }
+      }
+
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        .form-success-message,
+        .form-success-message * {
+          visibility: visible;
+        }
+        .form-success-message {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          box-shadow: none;
+          border: none;
+          margin: 0;
+          padding: 20px;
+        }
+        .success-actions {
+          display: none !important;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ===== HEADER (with dropdowns) ===== -->
     <div id="header"></div>
 
     <!-- ===== HERO SECTION – Solid Green Background ===== -->
     <section class="contact-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Let’s Build a Sustainable Future</h1>
-                <p class="hero-subtitle">Connect with India’s renewable energy & smart agriculture pioneers</p>
-                <p class="hero-description">Whether you need technical guidance, partnership opportunities, or custom
-                    solutions, our team is ready to help. Reach out – we typically respond within 24 hours.</p>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Let’s Build a Sustainable Future</h1>
+          <p class="hero-subtitle">
+            Connect with India’s renewable energy & smart agriculture pioneers
+          </p>
+          <p class="hero-description">
+            Whether you need technical guidance, partnership opportunities, or
+            custom solutions, our team is ready to help. Reach out – we
+            typically respond within 24 hours.
+          </p>
 
-                <div class="contact-quick-links">
-
-                    <a href="tel:+917349716555" class="quick-link">
-                        <i class="fas fa-phone"></i>
-                        <span>Call Us</span>
-                    </a>
-                    <a href="https://wa.me/919545529950" target="_blank" class="quick-link">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    <a href="#visit-us" class="quick-link">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Visit Us</span>
-                    </a>
-                </div>
-            </div>
+          <div class="contact-quick-links">
+            <a href="tel:+917349716555" class="quick-link">
+              <i class="fas fa-phone"></i>
+              <span>Call Us</span>
+            </a>
+            <a
+              href="https://wa.me/919545529950"
+              target="_blank"
+              class="quick-link"
+            >
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="#visit-us" class="quick-link">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Visit Us</span>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== OFFICE LOCATION & MAP ===== -->
     <section class="office-location" id="visit-us">
-        <div class="container">
-            <h2 class="section-title">Visit Our Facility</h2>
-            <div class="location-wrapper">
-                <div class="location-info">
-                    <div class="address-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Headquarters & Factory</h3>
-                        <div class="address-details">
-                            <p><strong>Office:</strong>1st Floor, KLE Cite,RHk Bulding,BVB Campus ,VidyaNagar, Hubli,
-                                Karnataka – 580031</p>
+      <div class="container">
+        <h2 class="section-title">Visit Our Facility</h2>
+        <div class="location-wrapper">
+          <div class="location-info">
+            <div class="address-card">
+              <h3>
+                <i class="fas fa-map-marker-alt"></i> Headquarters & Factory
+              </h3>
+              <div class="address-details">
+                <p>
+                  <strong>Office:</strong>1st Floor, KLE Cite,RHk Bulding,BVB
+                  Campus ,VidyaNagar, Hubli, Karnataka – 580031
+                </p>
 
-
-                            <p style="margin-top:1rem;"><strong>Factory:</strong> 3rd Main Road, KSSIDC, Belur
-                                Industrial Area, Dharwad, Karnataka – 580011</p>
-                        </div>
-                        <div class="contact-details">
-                            <div class="detail"><i class="fas fa-phone"></i> +91-9545529950</div>
-                            <div class="detail"><i class="fas fa-phone"></i> +91 7349716555</div>
-
-                            <div class="detail"><i class="fas fa-envelope"></i>kvbgreenenergies@gmail.com</div>
-                            <div class="detail"><i class="far fa-clock"></i> Mon–Sat, 9am – 6pm</div>
-                        </div>
-                        <div class="office-features">
-                            <h4>Facilities</h4>
-                            <div class="features-grid">
-                                <div class="feature"><i class="fas fa-car"></i> Parking</div>
-                                <div class="feature"><i class="fas fa-wheelchair"></i> Accessible</div>
-                                <div class="feature"><i class="fas fa-wifi"></i> Wi‑Fi</div>
-                                <div class="feature"><i class="fas fa-coffee"></i> Meeting rooms</div>
-                            </div>
-                        </div>
-                        <div class="visit-instructions">
-                            <h4>Before you visit</h4>
-                            <ul>
-                                <li>Please schedule an appointment</li>
-                                <li>Bring a valid ID</li>
-                                <li>Carry relevant project documents</li>
-                            </ul>
-                        </div>
-                    </div>
+                <p style="margin-top: 1rem">
+                  <strong>Factory:</strong> 3rd Main Road, KSSIDC, Belur
+                  Industrial Area, Dharwad, Karnataka – 580011
+                </p>
+              </div>
+              <div class="contact-details">
+                <div class="detail">
+                  <i class="fas fa-phone"></i> +91-9545529950
                 </div>
-                <div class="location-map">
-                    <div id="officeMap"></div>
+                <div class="detail">
+                  <i class="fas fa-phone"></i> +91 7349716555
                 </div>
+
+                <div class="detail">
+                  <i class="fas fa-envelope"></i>kvbgreenenergies@gmail.com
+                </div>
+                <div class="detail">
+                  <i class="far fa-clock"></i> Mon–Sat, 9am – 6pm
+                </div>
+              </div>
+              <div class="office-features">
+                <h4>Facilities</h4>
+                <div class="features-grid">
+                  <div class="feature"><i class="fas fa-car"></i> Parking</div>
+                  <div class="feature">
+                    <i class="fas fa-wheelchair"></i> Accessible
+                  </div>
+                  <div class="feature"><i class="fas fa-wifi"></i> Wi‑Fi</div>
+                  <div class="feature">
+                    <i class="fas fa-coffee"></i> Meeting rooms
+                  </div>
+                </div>
+              </div>
+              <div class="visit-instructions">
+                <h4>Before you visit</h4>
+                <ul>
+                  <li>Please schedule an appointment</li>
+                  <li>Bring a valid ID</li>
+                  <li>Carry relevant project documents</li>
+                </ul>
+              </div>
             </div>
+          </div>
+          <div class="location-map">
+            <div id="officeMap"></div>
+          </div>
         </div>
+      </div>
     </section>
-
-
 
     <!-- ===== CONTACT FORM ===== -->
     <section class="contact-form-section" id="contact-form">
-        <div class="container">
-            <div class="form-header">
-                <h2 class="section-title">Send Your Inquiry</h2>
-                <p class="form-subtitle">Fill out the form – we’ll get back to you within 24 hours</p>
-                <!-- Removed selected inquiry display -->
-            </div>
-
-            <div class="form-wrapper">
-                <form id="mainContactForm" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="from_name">Full Name *</label>
-                            <input type="text" id="from_name" name="from_name" placeholder="e.g. A. Sharma" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="organization">Organization</label>
-                            <input type="text" id="organization" name="organization"
-                                placeholder="Company / Institution">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="reply_to">Email *</label>
-                            <input type="email" id="reply_to" name="reply_to" placeholder="name@domain.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="city">City *</label>
-                            <input type="text" id="city" name="city" placeholder="Your city" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="state">State *</label>
-                            <select id="state" name="state" required>
-                                <option value="">Select State / UT</option>
-                                <optgroup label="States">
-                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                    <option value="Assam">Assam</option>
-                                    <option value="Bihar">Bihar</option>
-                                    <option value="Chhattisgarh">Chhattisgarh</option>
-                                    <option value="Goa">Goa</option>
-                                    <option value="Gujarat">Gujarat</option>
-                                    <option value="Haryana">Haryana</option>
-                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                    <option value="Jharkhand">Jharkhand</option>
-                                    <option value="Karnataka">Karnataka</option>
-                                    <option value="Kerala">Kerala</option>
-                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                    <option value="Maharashtra">Maharashtra</option>
-                                    <option value="Manipur">Manipur</option>
-                                    <option value="Meghalaya">Meghalaya</option>
-                                    <option value="Mizoram">Mizoram</option>
-                                    <option value="Nagaland">Nagaland</option>
-                                    <option value="Odisha">Odisha</option>
-                                    <option value="Punjab">Punjab</option>
-                                    <option value="Rajasthan">Rajasthan</option>
-                                    <option value="Sikkim">Sikkim</option>
-                                    <option value="Tamil Nadu">Tamil Nadu</option>
-                                    <option value="Telangana">Telangana</option>
-                                    <option value="Tripura">Tripura</option>
-                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                    <option value="Uttarakhand">Uttarakhand</option>
-                                    <option value="West Bengal">West Bengal</option>
-                                </optgroup>
-                                <optgroup label="Union Territories">
-                                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                    <option value="Chandigarh">Chandigarh</option>
-                                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-                                    <option value="Delhi">Delhi</option>
-                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                    <option value="Ladakh">Ladakh</option>
-                                    <option value="Lakshadweep">Lakshadweep</option>
-                                    <option value="Puducherry">Puducherry</option>
-                                </optgroup>
-                                <option value="Other">Other / Outside India</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inquiryType">Inquiry Type *</label>
-                        <select id="inquiryType" name="inquiryType" required>
-                            <option value="">Select Inquiry Type</option>
-                            <option value="technical">Technical Inquiry</option>
-                            <option value="demo">Request Demo/Site Visit</option>
-                            <option value="government">Government Partnership</option>
-                            <option value="investor">Investor Inquiry</option>
-                            <option value="farmer">Farmer Support</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="productInterest">Product/Service Interest</label>
-                        <select id="productInterest" name="productInterest">
-                            <option value="">Select if applicable</option>
-                            <option value="solar-cooking">Solar Cooking Systems</option>
-                            <option value="solar-drying">Solar Drying Systems</option>
-                            <option value="energy-storage">Energy Storage</option>
-                            <option value="smart-agri">Smart Agriculture</option>
-                            <option value="multiple">Multiple Systems</option>
-                            <option value="not-sure">Need consultation</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message / Requirements </label>
-                        <textarea id="message" name="message" rows="5"
-                            placeholder="Tell us about your project, goals, or questions..." ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="privacyCheck" name="privacy" required>
-                            <span>I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a> and consent to being
-                                contacted *</span>
-                        </label>
-                    </div>
-
-                    <input type="hidden" name="product" value="Contact Form Inquiry">
-                    <input type="hidden" id="admin_email" name="to_email" value="info@kvbgreenenergies.com">
-
-                    <div class="form-submit">
-                        <button type="submit" class="btn btn-primary" id="submitBtn" disabled style="opacity: 0.6; cursor: not-allowed;">
-                            <i class="fas fa-paper-plane"></i> Send Inquiry
-                        </button>
-                        <p class="form-note">We typically respond within 24 hours (Mon–Sat)</p>
-                    </div>
-                </form>
-
-                <div class="form-sidebar">
-                    <div class="sidebar-card">
-                        <h3><i class="fas fa-lightbulb"></i> Tips for a faster response</h3>
-                        <ul class="tips-list">
-                            <li>Include specific project details</li>
-                            <li>Mention location and timeline</li>
-                            <li>Share current energy source & usage</li>
-
-                        </ul>
-                    </div>
-                    <div class="sidebar-card">
-                        <h3><i class="fas fa-clock"></i> Expected response times</h3>
-                        <div class="response-time">
-                            <div class="time-category"><span class="time-label">General</span><span
-                                    class="time-value">24h</span></div>
-                            <div class="time-category"><span class="time-label">Technical</span><span
-                                    class="time-value">24h</span></div>
-                            <div class="time-category"><span class="time-label">Proposals</span><span
-                                    class="time-value">24h</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="form-header">
+          <h2 class="section-title">Send Your Inquiry</h2>
+          <p class="form-subtitle">
+            Fill out the form – we’ll get back to you within 24 hours
+          </p>
+          <!-- Removed selected inquiry display -->
         </div>
+
+        <div class="form-wrapper">
+          <form id="mainContactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="from_name">Full Name *</label>
+                <input
+                  type="text"
+                  id="from_name"
+                  name="from_name"
+                  placeholder="e.g. A. Sharma"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="organization">Organization</label>
+                <input
+                  type="text"
+                  id="organization"
+                  name="organization"
+                  placeholder="Company / Institution"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reply_to">Email *</label>
+                <input
+                  type="email"
+                  id="reply_to"
+                  name="reply_to"
+                  placeholder="name@domain.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="10-digit mobile number"
+                  pattern="[0-9]{10}"
+                  maxlength="10"
+                  title="Please enter exactly 10 digits"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City *</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Your city"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="state">State *</label>
+                <select id="state" name="state" required>
+                  <option value="">Select State / UT</option>
+                  <optgroup label="States">
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </optgroup>
+                  <optgroup label="Union Territories">
+                    <option value="Andaman and Nicobar Islands">
+                      Andaman and Nicobar Islands
+                    </option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Dadra and Nagar Haveli and Daman and Diu">
+                      Dadra and Nagar Haveli and Daman and Diu
+                    </option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Ladakh">Ladakh</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                  </optgroup>
+                  <option value="Other">Other / Outside India</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inquiryType">Inquiry Type *</label>
+              <select id="inquiryType" name="inquiryType" required>
+                <option value="">Select Inquiry Type</option>
+                <option value="technical">Technical Inquiry</option>
+                <option value="demo">Request Demo/Site Visit</option>
+                <option value="government">Government Partnership</option>
+                <option value="investor">Investor Inquiry</option>
+                <option value="farmer">Farmer Support</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="productInterest">Product/Service Interest</label>
+              <select id="productInterest" name="productInterest">
+                <option value="">Select if applicable</option>
+                <option value="solar-cooking">Solar Cooking Systems</option>
+                <option value="solar-drying">Solar Drying Systems</option>
+                <option value="energy-storage">Energy Storage</option>
+                <option value="smart-agri">Smart Agriculture</option>
+                <option value="multiple">Multiple Systems</option>
+                <option value="not-sure">Need consultation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message / Requirements </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell us about your project, goals, or questions..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  id="privacyCheck"
+                  name="privacy"
+                  required
+                />
+                <span
+                  >I agree to the
+                  <a href="privacy.html" target="_blank">Privacy Policy</a> and
+                  consent to being contacted *</span
+                >
+              </label>
+            </div>
+
+            <input type="hidden" name="product" value="Contact Form Inquiry" />
+            <input
+              type="hidden"
+              id="admin_email"
+              name="to_email"
+              value="info@kvbgreenenergies.com"
+            />
+
+            <div class="form-submit">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="submitBtn"
+                disabled
+                style="opacity: 0.6; cursor: not-allowed"
+              >
+                <i class="fas fa-paper-plane"></i> Send Inquiry
+              </button>
+              <p class="form-note">
+                We typically respond within 24 hours (Mon–Sat)
+              </p>
+            </div>
+          </form>
+
+          <div class="form-sidebar">
+            <div class="sidebar-card">
+              <h3>
+                <i class="fas fa-lightbulb"></i> Tips for a faster response
+              </h3>
+              <ul class="tips-list">
+                <li>Include specific project details</li>
+                <li>Mention location and timeline</li>
+                <li>Share current energy source & usage</li>
+              </ul>
+            </div>
+            <div class="sidebar-card">
+              <h3><i class="fas fa-clock"></i> Expected response times</h3>
+              <div class="response-time">
+                <div class="time-category">
+                  <span class="time-label">General</span
+                  ><span class="time-value">24h</span>
+                </div>
+                <div class="time-category">
+                  <span class="time-label">Technical</span
+                  ><span class="time-value">24h</span>
+                </div>
+                <div class="time-category">
+                  <span class="time-label">Proposals</span
+                  ><span class="time-value">24h</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-
-    <!-- ===== CONTACT CTA ===== 
+    <!-- ===== CONTACT CTA =====
     <section class="contact-cta">
         <div class="container">
             <h2>Ready to start your green journey?</h2>
@@ -1336,53 +1479,52 @@
         </div>
     </section>-->
 
-
     <!-- ===== FOOTER ===== -->
     <div id="footer"></div>
 
     <script>
-        (function () {
-            // ===== FORM SUBMISSION (Backend) =====
-            const contactForm = document.getElementById('mainContactForm');
-            const submitBtn = document.getElementById('submitBtn');
+      (function () {
+        // ===== FORM SUBMISSION (Backend) =====
+        const contactForm = document.getElementById("mainContactForm");
+        const submitBtn = document.getElementById("submitBtn");
 
+        // Toggle submit button based on privacy checkbox
+        const privacyCheck = document.getElementById("privacyCheck");
+        if (privacyCheck && submitBtn) {
+          privacyCheck.addEventListener("change", function () {
+            submitBtn.disabled = !this.checked;
+            submitBtn.style.opacity = this.checked ? "1" : "0.6";
+            submitBtn.style.cursor = this.checked ? "pointer" : "not-allowed";
+          });
+        }
 
-            // Toggle submit button based on privacy checkbox
-            const privacyCheck = document.getElementById('privacyCheck');
-            if (privacyCheck && submitBtn) {
-                privacyCheck.addEventListener('change', function() {
-                    submitBtn.disabled = !this.checked;
-                    submitBtn.style.opacity = this.checked ? '1' : '0.6';
-                    submitBtn.style.cursor = this.checked ? 'pointer' : 'not-allowed';
-                });
-            }
+        if (contactForm) {
+          contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
 
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function (e) {
-                    e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            data.reference_id = `KVB-${Date.now().toString().slice(-6)}`;
 
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData);
-                    data.reference_id = `KVB-${Date.now().toString().slice(-6)}`;
+            const original = submitBtn.innerHTML;
+            submitBtn.innerHTML =
+              '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
 
-                    const original = submitBtn.innerHTML;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    submitBtn.disabled = true;
+            try {
+              const response = await fetch("/send-email", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              });
 
-                    try {
-                        const response = await fetch("/send-email", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify(data)
-                        });
-
-                        if (response.ok) {
-                            // Success UI
-                            const success = document.createElement('div');
-                            success.className = 'form-success-message';
-                            success.innerHTML = `
+              if (response.ok) {
+                // Success UI
+                const success = document.createElement("div");
+                success.className = "form-success-message";
+                success.innerHTML = `
                                 <div class="success-content">
                                     <i class="fas fa-check-circle"></i>
                                     <h3>Inquiry Sent!</h3>
@@ -1398,71 +1540,80 @@
                                     </div>
                                 </div>
                             `;
-                            contactForm.parentNode.insertBefore(success, contactForm);
-                            contactForm.style.display = 'none';
-                            submitBtn.innerHTML = original;
-                            submitBtn.disabled = false;
+                contactForm.parentNode.insertBefore(success, contactForm);
+                contactForm.style.display = "none";
+                submitBtn.innerHTML = original;
+                submitBtn.disabled = false;
 
-                            document.getElementById('printInquiry')?.addEventListener('click', () => window.print());
-                            document.getElementById('newInquiry')?.addEventListener('click', () => location.reload());
-                            success.scrollIntoView({ behavior: 'smooth' });
-                        } else {
-                            throw new Error("Failed to send");
-                        }
-                    } catch (err) {
-                        console.error(err);
-                        alert("There was a problem sending your information. Please try again or contact us directly.");
-                        submitBtn.innerHTML = original;
-                        submitBtn.disabled = false;
-                    }
-                });
+                document
+                  .getElementById("printInquiry")
+                  ?.addEventListener("click", () => window.print());
+                document
+                  .getElementById("newInquiry")
+                  ?.addEventListener("click", () => location.reload());
+                success.scrollIntoView({ behavior: "smooth" });
+              } else {
+                throw new Error("Failed to send");
+              }
+            } catch (err) {
+              console.error(err);
+              alert(
+                "There was a problem sending your information. Please try again or contact us directly.",
+              );
+              submitBtn.innerHTML = original;
+              submitBtn.disabled = false;
             }
+          });
+        }
 
-            // ===== SMOOTH SCROLL =====
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-            });
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target)
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
 
-            // ===== MAP INIT (Leaflet) - HEADQUARTERS + FACTORY =====
-            window.addEventListener('load', function () {
-                const mapEl = document.getElementById('officeMap');
-                if (!mapEl) return;
+        // ===== MAP INIT (Leaflet) - HEADQUARTERS + FACTORY =====
+        window.addEventListener("load", function () {
+          const mapEl = document.getElementById("officeMap");
+          if (!mapEl) return;
 
-                const hqCoords = [15.370883318923394, 75.12227886687761];
-                const factoryCoords = [15.507592247668278, 74.9234778806391];
+          const hqCoords = [15.370883318923394, 75.12227886687761];
+          const factoryCoords = [15.507592247668278, 74.9234778806391];
 
-                const map = L.map('officeMap').setView([15.43, 75.02], 11);
+          const map = L.map("officeMap").setView([15.43, 75.02], 11);
 
-                const tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-                    subdomains: 'abcd',
-                    maxZoom: 20
-                }).addTo(map);
+          const tileLayer = L.tileLayer(
+            "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+            {
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+              subdomains: "abcd",
+              maxZoom: 20,
+            },
+          ).addTo(map);
 
-                // Fix for map tiles not loading correctly on some browsers
-                setTimeout(() => {
-                    map.invalidateSize();
-                }, 500);
+          // Fix for map tiles not loading correctly on some browsers
+          setTimeout(() => {
+            map.invalidateSize();
+          }, 500);
 
-                // Ensure map images are not constrained by global styles
-                const style = document.createElement('style');
-                style.innerHTML = '#officeMap img { max-width: none !important; }';
-                document.head.appendChild(style);
+          // Ensure map images are not constrained by global styles
+          const style = document.createElement("style");
+          style.innerHTML = "#officeMap img { max-width: none !important; }";
+          document.head.appendChild(style);
 
+          const icon = L.divIcon({
+            className: "office-marker",
+            html: '<div class="map-marker"><i class="fas fa-map-marker-alt"></i></div>',
+            iconSize: [40, 40],
+            iconAnchor: [20, 40],
+          });
 
-                const icon = L.divIcon({
-                    className: 'office-marker',
-                    html: '<div class="map-marker"><i class="fas fa-map-marker-alt"></i></div>',
-                    iconSize: [40, 40],
-                    iconAnchor: [20, 40]
-                });
-
-                L.marker(hqCoords, { icon }).addTo(map)
-                    .bindPopup(`
+          L.marker(hqCoords, { icon }).addTo(map).bindPopup(`
                         <div class="map-popup">
                             <h4>KVB Main Office</h4>
                             <p>1st Floor, KLE Cite, RHC Bulding,BVB Campus Vidya Nagar<br>Hubballi, Karnataka - 580031</p>
@@ -1473,8 +1624,7 @@
                         </div>
                     `);
 
-                L.marker(factoryCoords, { icon }).addTo(map)
-                    .bindPopup(`
+          L.marker(factoryCoords, { icon }).addTo(map).bindPopup(`
                         <div class="map-popup">
                             <h4>KVB Factory</h4>
                             <p>3rd Main Road, KSSIDC<br>Belur Industrial Area, Dharwad - 580011</p>
@@ -1483,38 +1633,40 @@
                             </a>
                         </div>
                     `);
-            });
-        })();
+        });
+      })();
     </script>
-    
 
     <!-- GLOBAL COMPONENT LOADER -->
     <script>
-        (function() {
-            function loadComponent(id, file) {
-                fetch(file)
-                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-                    .then(html => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            el.innerHTML = html;
-                            // Execute scripts
-                            const scripts = el.querySelectorAll('script');
-                            scripts.forEach(s => {
-                                const newScript = document.createElement('script');
-                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                                newScript.appendChild(document.createTextNode(s.innerHTML));
-                                s.parentNode.replaceChild(newScript, s);
-                            });
-                        }
-                    }).catch(console.error);
-            }
-            window.BASE_PATH = "";
-            loadComponent('header', 'components/header.html');
-            loadComponent('footer', 'components/footer.html');
-        })();
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                // Execute scripts
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
+        }
+        window.BASE_PATH = "";
+        loadComponent("header", "components/header.html");
+        loadComponent("footer", "components/footer.html");
+      })();
     </script>
-
-</body>
-
+  </body>
 </html>

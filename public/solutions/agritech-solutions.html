@@ -1,263 +1,379 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta name="description" content="Explore KVB Green Energies' comprehensive suite of renewable energy solutions tailored for industrial, agricultural, and commercial applications.">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agritech Solutions – KVB Green Energies</title>
-  <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
-  <style>
-    /* ===== PREMIUM DESIGN SYSTEM ===== */
-    :root {
-      --solar-yellow: #FDB813;
-      --deep-blue: #0B3D91;
-      --eco-green: #3A7D44;
-      --dark-charcoal: #1C1C1C;
-      --background: #F9F9F9;
-      --primary: #3A7D44;
-      --font-heading: 'Montserrat', sans-serif;
-      --font-body: 'Inter', sans-serif;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: var(--font-body); 
-      background: var(--background);
-      color: var(--dark-charcoal); 
-      overflow-x: hidden; 
-    }
-
-    /* ===== PAGE HERO BANNER ===== */
-    .page-hero {
-      position: relative; 
-      min-height: 45vh; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
-      color: white; 
-      padding: 100px 20px 80px; 
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero-orb {
-      position: absolute; 
-      border-radius: 50%; 
-      filter: blur(80px); 
-      opacity: 0.4; 
-      animation: float 12s infinite alternate;
-    }
-    .orb-1 { width: 400px; height: 400px; background: #3A7D44; top: -100px; left: -100px; }
-    .orb-2 { width: 500px; height: 500px; background: #0B3D91; bottom: -150px; right: -150px; animation-duration: 15s; }
-    
-    @keyframes float { 
-      0% { transform: translate(0, 0) scale(1); } 
-      100% { transform: translate(40px, 40px) scale(1.1); } 
-    }
-
-    .hero-content { position: relative; z-index: 2; max-width: 800px; }
-    .hero-content h1 { 
-      font-family: var(--font-heading); 
-      font-size: 3.5rem; 
-      font-weight: 800; 
-      margin-bottom: 20px; 
-      line-height: 1.2; 
-      text-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-    }
-    .hero-content p { 
-      font-size: 1.2rem; 
-      color: rgba(255,255,255,0.9); 
-      line-height: 1.7; 
-      max-width: 700px; 
-      margin: 0 auto; 
-    }
-
-    /* ===== SOLUTIONS CONTENT ===== */
-    .solutions-container { 
-      max-width: 1200px; 
-      margin: 0 auto; 
-      padding: 80px 32px; 
-    }
-
-    .product-card {
-      display: flex; 
-      flex-direction: column; 
-      background: #fff; 
-      border-radius: 28px;
-      overflow: hidden; 
-      box-shadow: 0 15px 40px rgba(0,0,0,0.04); 
-      margin-bottom: 60px;
-      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-    @media (min-width: 900px) {
-      .product-card { flex-direction: row; align-items: stretch; }
-      .product-card:nth-child(even) { flex-direction: row-reverse; }
-    }
-    
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(11, 61, 145, 0.08);
-    }
-
-    .product-image {
-      flex: 1; 
-      min-height: 350px; 
-      position: relative; 
-      overflow: hidden;
-    }
-    .product-image img {
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      position: absolute; 
-      inset: 0;
-      transition: transform 0.6s ease;
-    }
-    .product-card:hover .product-image img { transform: scale(1.05); }
-
-    .product-info {
-      flex: 1; 
-      padding: 60px; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center;
-    }
-    
-    .product-info h2 {
-      font-family: var(--font-heading); 
-      font-size: 2.2rem; 
-      color: var(--deep-blue); 
-      margin-bottom: 20px; 
-      font-weight: 700;
-      line-height: 1.3;
-    }
-    
-    .product-info p {
-      font-size: 1.1rem; 
-      color: #555; 
-      line-height: 1.7; 
-      margin-bottom: 30px;
-    }
-
-    .btn-explore {
-      display: inline-flex; 
-      align-items: center; 
-      gap: 10px; 
-      align-self: flex-start;
-      padding: 14px 30px; 
-      background: linear-gradient(135deg, var(--eco-green), #2d5a33);
-      color: white; 
-      text-decoration: none; 
-      border-radius: 30px; 
-      font-weight: 600; 
-      font-size: 1rem;
-      transition: all 0.3s ease; 
-      box-shadow: 0 8px 20px rgba(58, 125, 68, 0.25);
-    }
-    .btn-explore:hover {
-      transform: translateY(-3px); 
-      box-shadow: 0 12px 25px rgba(58, 125, 68, 0.35); 
-      background: linear-gradient(135deg, #449250, #2d5a33);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2.4rem; }
-      .product-info { padding: 40px 25px; }
-      .product-info h2 { font-size: 1.8rem; }
-      .product-image { min-height: 280px; }
-      .solutions-container { padding: 50px 20px; }
-    }
-  </style>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <div id="header"></div>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
-    <div class="container">
-      <div class="hero-content" data-aos="fade-up">
-        <h1>Agritech Solutions</h1>
-        <p>Intelligent agriculture technology combining AI, IoT, and data analytics to empower farmers with actionable insights for better yields and quality.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTS SECTION -->
-  <section class="solutions-container">
-
-    <!-- 1. AgroSense -->
-    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="product-image">
-        <img src="../images/products/agrosense1.webp" alt="AgroSense smart agriculture platform">
-      </div>
-      <div class="product-info">
-        <h2>AgroSense</h2>
-        <p>AgroSense is KVB's flagship smart agriculture platform that integrates AI-powered crop quality detection, soil health monitoring, and real-time weather analytics. Designed for farmers and agri-businesses, AgroSense provides end-to-end digital tools — from soil analysis to market-ready grading — helping increase crop value and reduce post-harvest losses.</p>
-        <a href="../products/agrosense.html" class="btn-explore">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-
-    <!-- 2. Micro-Green -->
-    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="product-image">
-        <img src="../images/products/Screenshot 2026-04-21 171930.webp" alt="Micro-Green systems in operation">
-      </div>
-      <div class="product-info">
-        <h2>Micro-Green</h2>
-        <p>The Smart Vertical Microgreens Growing System is a compact, sensor‑driven indoor farming solution designed to enable high‑quality, pesticide‑free microgreens production in a fully controlled environment. Unlike conventional systems that focus only on lighting or hydroponics, this system integrates production, environmental control, automation, and performance evaluation into a single unit – making it suitable for urban farming, research, and commercial applications.</p>
-        <a href="../products/microgreen-systems.html" class="btn-explore">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-  <div id="footer"></div>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize AOS
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, once: true, offset: 50 });
+  <head>
+    <meta
+      name="description"
+      content="Explore KVB Green Energies' comprehensive suite of renewable energy solutions tailored for industrial, agricultural, and commercial applications."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agritech Solutions – KVB Green Energies</title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+    <link
+      rel="preload"
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    /></noscript>
+    <style>
+      /* ===== PREMIUM DESIGN SYSTEM ===== */
+      :root {
+        --solar-yellow: #fdb813;
+        --deep-blue: #0b3d91;
+        --eco-green: #3a7d44;
+        --dark-charcoal: #1c1c1c;
+        --background: #f9f9f9;
+        --primary: #3a7d44;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Inter", sans-serif;
       }
-    });
 
-    // GLOBAL COMPONENT LOADER
-    (function() {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--background);
+        color: var(--dark-charcoal);
+        overflow-x: hidden;
+      }
+
+      /* ===== PAGE HERO BANNER ===== */
+      .page-hero {
+        position: relative;
+        min-height: 45vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          #09203f 0%,
+          #0f3460 40%,
+          #1a5276 100%
+        );
+        color: white;
+        padding: 100px 20px 80px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .hero-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.4;
+        animation: float 12s infinite alternate;
+      }
+      .orb-1 {
+        width: 400px;
+        height: 400px;
+        background: #3a7d44;
+        top: -100px;
+        left: -100px;
+      }
+      .orb-2 {
+        width: 500px;
+        height: 500px;
+        background: #0b3d91;
+        bottom: -150px;
+        right: -150px;
+        animation-duration: 15s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          transform: translate(40px, 40px) scale(1.1);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+      }
+      .hero-content h1 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* ===== SOLUTIONS CONTENT ===== */
+      .solutions-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 32px;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+        margin-bottom: 60px;
+        transition:
+          transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+          box-shadow 0.4s ease;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+      @media (min-width: 900px) {
+        .product-card {
+          flex-direction: row;
+          align-items: stretch;
+        }
+        .product-card:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 60px rgba(11, 61, 145, 0.08);
+      }
+
+      .product-image {
+        flex: 1;
+        min-height: 350px;
+        position: relative;
+        overflow: hidden;
+      }
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+        transition: transform 0.6s ease;
+      }
+      .product-card:hover .product-image img {
+        transform: scale(1.05);
+      }
+
+      .product-info {
+        flex: 1;
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .product-info h2 {
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+        color: var(--deep-blue);
+        margin-bottom: 20px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .product-info p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .btn-explore {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        align-self: flex-start;
+        padding: 14px 30px;
+        background: linear-gradient(135deg, var(--eco-green), #2d5a33);
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(58, 125, 68, 0.25);
+      }
+      .btn-explore:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(58, 125, 68, 0.35);
+        background: linear-gradient(135deg, #449250, #2d5a33);
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.4rem;
+        }
+        .product-info {
+          padding: 40px 25px;
+        }
+        .product-info h2 {
+          font-size: 1.8rem;
+        }
+        .product-image {
+          min-height: 280px;
+        }
+        .solutions-container {
+          padding: 50px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Agritech Solutions</h1>
+          <p>
+            Intelligent agriculture technology combining AI, IoT, and data
+            analytics to empower farmers with actionable insights for better
+            yields and quality.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="solutions-container">
+      <!-- 1. AgroSense -->
+      <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="product-image">
+          <img
+            src="../images/products/agrosense1.webp"
+            alt="AgroSense smart agriculture platform"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="product-info">
+          <h2>AgroSense</h2>
+          <p>
+            AgroSense is KVB's flagship smart agriculture platform that
+            integrates AI-powered crop quality detection, soil health
+            monitoring, and real-time weather analytics. Designed for farmers
+            and agri-businesses, AgroSense provides end-to-end digital tools —
+            from soil analysis to market-ready grading — helping increase crop
+            value and reduce post-harvest losses.
+          </p>
+          <a href="../products/agrosense.html" class="btn-explore"
+            >Learn More <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+
+      <!-- 2. Micro-Green -->
+      <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="product-image">
+          <img
+            src="../images/products/Screenshot 2026-04-21 171930.webp"
+            alt="Micro-Green systems in operation"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="product-info">
+          <h2>Micro-Green</h2>
+          <p>
+            The Smart Vertical Microgreens Growing System is a compact,
+            sensor‑driven indoor farming solution designed to enable
+            high‑quality, pesticide‑free microgreens production in a fully
+            controlled environment. Unlike conventional systems that focus only
+            on lighting or hydroponics, this system integrates production,
+            environmental control, automation, and performance evaluation into a
+            single unit – making it suitable for urban farming, research, and
+            commercial applications.
+          </p>
+          <a href="../products/microgreen-systems.html" class="btn-explore"
+            >Learn More <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize AOS
+        if (typeof AOS !== "undefined") {
+          AOS.init({ duration: 800, once: true, offset: 50 });
+        }
+      });
+
+      // GLOBAL COMPONENT LOADER
+      (function () {
         function loadComponent(id, file) {
-            fetch(file)
-                .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-                .then(html => {
-                    const el = document.getElementById(id);
-                    if (el) {
-                        el.innerHTML = html;
-                        // Execute scripts
-                        const scripts = el.querySelectorAll('script');
-                        scripts.forEach(s => {
-                            const newScript = document.createElement('script');
-                            Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                            newScript.appendChild(document.createTextNode(s.innerHTML));
-                            s.parentNode.replaceChild(newScript, s);
-                        });
-                    }
-                }).catch(console.error);
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                // Execute scripts
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
         }
         window.BASE_PATH = "../";
-        loadComponent('header', '../components/header.html');
-        loadComponent('footer', '../components/footer.html');
-    })();
-  </script>
-</body>
+        loadComponent("header", "../components/header.html");
+        loadComponent("footer", "../components/footer.html");
+      })();
+    </script>
+  </body>
 </html>

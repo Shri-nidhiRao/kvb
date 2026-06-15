@@ -1,140 +1,140 @@
 // Product Page Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Interactive Diagram Hotspots
-    const hotspots = document.querySelectorAll('.hotspot');
-    
-    hotspots.forEach(hotspot => {
-        hotspot.addEventListener('mouseenter', function() {
-            const infoBox = this.querySelector('.hotspot-info');
-            infoBox.style.opacity = '1';
-            infoBox.style.visibility = 'visible';
-        });
-        
-        hotspot.addEventListener('mouseleave', function() {
-            const infoBox = this.querySelector('.hotspot-info');
-            infoBox.style.opacity = '0';
-            infoBox.style.visibility = 'hidden';
-        });
+document.addEventListener("DOMContentLoaded", function () {
+  // Interactive Diagram Hotspots
+  const hotspots = document.querySelectorAll(".hotspot");
+
+  hotspots.forEach((hotspot) => {
+    hotspot.addEventListener("mouseenter", function () {
+      const infoBox = this.querySelector(".hotspot-info");
+      infoBox.style.opacity = "1";
+      infoBox.style.visibility = "visible";
     });
-    
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const item = this.parentElement;
-            const answer = this.nextElementSibling;
-            const icon = this.querySelector('i');
-            
-            // Close other items
-            document.querySelectorAll('.faq-item').forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = '0';
-                    otherItem.querySelector('i').classList.remove('fa-chevron-up');
-                    otherItem.querySelector('i').classList.add('fa-chevron-down');
-                }
-            });
-            
-            // Toggle current item
-            item.classList.toggle('active');
-            
-            if (item.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                answer.style.maxHeight = '0';
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-            }
-        });
+
+    hotspot.addEventListener("mouseleave", function () {
+      const infoBox = this.querySelector(".hotspot-info");
+      infoBox.style.opacity = "0";
+      infoBox.style.visibility = "hidden";
     });
-    
-    // Testimonial Slider
-    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-    let currentSlide = 0;
-    
-    function showSlide(index) {
-        // Hide all slides
-        testimonialSlides.forEach(slide => {
-            slide.classList.remove('active');
-        });
-        
-        // Remove active class from all dots
-        dots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        
-        // Show current slide
-        testimonialSlides[index].classList.add('active');
-        dots[index].classList.add('active');
-        currentSlide = index;
+  });
+
+  // FAQ Accordion
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", function () {
+      const item = this.parentElement;
+      const answer = this.nextElementSibling;
+      const icon = this.querySelector("i");
+
+      // Close other items
+      document.querySelectorAll(".faq-item").forEach((otherItem) => {
+        if (otherItem !== item && otherItem.classList.contains("active")) {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+          otherItem.querySelector("i").classList.remove("fa-chevron-up");
+          otherItem.querySelector("i").classList.add("fa-chevron-down");
+        }
+      });
+
+      // Toggle current item
+      item.classList.toggle("active");
+
+      if (item.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.classList.remove("fa-chevron-down");
+        icon.classList.add("fa-chevron-up");
+      } else {
+        answer.style.maxHeight = "0";
+        icon.classList.remove("fa-chevron-up");
+        icon.classList.add("fa-chevron-down");
+      }
+    });
+  });
+
+  // Testimonial Slider
+  const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+  const dots = document.querySelectorAll(".dot");
+  const prevBtn = document.querySelector(".slider-prev");
+  const nextBtn = document.querySelector(".slider-next");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    // Hide all slides
+    testimonialSlides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+
+    // Remove active class from all dots
+    dots.forEach((dot) => {
+      dot.classList.remove("active");
+    });
+
+    // Show current slide
+    testimonialSlides[index].classList.add("active");
+    dots[index].classList.add("active");
+    currentSlide = index;
+  }
+
+  // Next slide
+  nextBtn.addEventListener("click", function () {
+    let nextIndex = currentSlide + 1;
+    if (nextIndex >= testimonialSlides.length) {
+      nextIndex = 0;
     }
-    
-    // Next slide
-    nextBtn.addEventListener('click', function() {
-        let nextIndex = currentSlide + 1;
-        if (nextIndex >= testimonialSlides.length) {
-            nextIndex = 0;
-        }
-        showSlide(nextIndex);
+    showSlide(nextIndex);
+  });
+
+  // Previous slide
+  prevBtn.addEventListener("click", function () {
+    let prevIndex = currentSlide - 1;
+    if (prevIndex < 0) {
+      prevIndex = testimonialSlides.length - 1;
+    }
+    showSlide(prevIndex);
+  });
+
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", function () {
+      showSlide(index);
     });
-    
-    // Previous slide
-    prevBtn.addEventListener('click', function() {
-        let prevIndex = currentSlide - 1;
-        if (prevIndex < 0) {
-            prevIndex = testimonialSlides.length - 1;
-        }
-        showSlide(prevIndex);
-    });
-    
-    // Dot navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            showSlide(index);
-        });
-    });
-    
-    // Auto-slide every 5 seconds
-    setInterval(() => {
-        let nextIndex = currentSlide + 1;
-        if (nextIndex >= testimonialSlides.length) {
-            nextIndex = 0;
-        }
-        showSlide(nextIndex);
-    }, 5000);
-    
-    // Contact Form Handling
-    const inquiryForm = document.getElementById('product-inquiry-form');
-    
-    if (inquiryForm) {
-        inquiryForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'form-success';
-                successMessage.innerHTML = `
+  });
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    let nextIndex = currentSlide + 1;
+    if (nextIndex >= testimonialSlides.length) {
+      nextIndex = 0;
+    }
+    showSlide(nextIndex);
+  }, 5000);
+
+  // Contact Form Handling
+  const inquiryForm = document.getElementById("product-inquiry-form");
+
+  if (inquiryForm) {
+    inquiryForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(this);
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+
+      // Simulate form submission (replace with actual API call)
+      setTimeout(() => {
+        // Success message
+        const successMessage = document.createElement("div");
+        successMessage.className = "form-success";
+        successMessage.innerHTML = `
                     <i class="fas fa-check-circle"></i>
                     <div>
                         <h5>Thank you for your inquiry!</h5>
@@ -142,97 +142,100 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>For immediate assistance, call us at <strong>+91-XXXXXXXXXX</strong></p>
                     </div>
                 `;
-                
-                // Insert success message
-                inquiryForm.parentNode.insertBefore(successMessage, inquiryForm);
-                inquiryForm.style.display = 'none';
-                
-                // Send data to server (example)
-                console.log('Form submitted:', formObject);
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        });
-    }
-    
-    // Gallery Lightbox initialization
-    if (typeof lightbox !== 'undefined') {
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'albumLabel': 'Image %1 of %2',
-            'fadeDuration': 300
-        });
-    }
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            if (href === '#') return;
-            
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
-        });
+
+        // Insert success message
+        inquiryForm.parentNode.insertBefore(successMessage, inquiryForm);
+        inquiryForm.style.display = "none";
+
+        // Send data to server (example)
+        console.log("Form submitted:", formObject);
+
+        // Reset button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 1500);
     });
-    
-    // Performance metrics animation
-    const metricCards = document.querySelectorAll('.metric-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const metricValue = entry.target.querySelector('.metric-value');
-                const text = metricValue.textContent;
-                const number = parseFloat(text);
-                const suffix = text.replace(number, '');
-                
-                if (!isNaN(number)) {
-                    animateCounter(metricValue, number, suffix);
-                }
-                
-                observer.unobserve(entry.target);
-            }
+  }
+
+  // Gallery Lightbox initialization
+  if (typeof lightbox !== "undefined") {
+    lightbox.option({
+      resizeDuration: 200,
+      wrapAround: true,
+      albumLabel: "Image %1 of %2",
+      fadeDuration: 300,
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+
+      if (href === "#") return;
+
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        e.preventDefault();
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: "smooth",
         });
-    }, { threshold: 0.5 });
-    
-    metricCards.forEach(card => observer.observe(card));
-    
-    function animateCounter(element, target, suffix) {
-        let current = 0;
-        const increment = target / 50; // Adjust speed
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            
-            // Format based on target value
-            if (target >= 1000) {
-                element.textContent = Math.floor(current).toLocaleString() + suffix;
-            } else if (target % 1 !== 0) {
-                element.textContent = current.toFixed(1) + suffix;
-            } else {
-                element.textContent = Math.floor(current) + suffix;
-            }
-        }, 30);
-    }
-    
-    // Add product page specific styles
-    if (!document.querySelector('#product-styles')) {
-        const styles = document.createElement('style');
-        styles.id = 'product-styles';
-        styles.textContent = `
+      }
+    });
+  });
+
+  // Performance metrics animation
+  const metricCards = document.querySelectorAll(".metric-card");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const metricValue = entry.target.querySelector(".metric-value");
+          const text = metricValue.textContent;
+          const number = parseFloat(text);
+          const suffix = text.replace(number, "");
+
+          if (!isNaN(number)) {
+            animateCounter(metricValue, number, suffix);
+          }
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  metricCards.forEach((card) => observer.observe(card));
+
+  function animateCounter(element, target, suffix) {
+    let current = 0;
+    const increment = target / 50; // Adjust speed
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+
+      // Format based on target value
+      if (target >= 1000) {
+        element.textContent = Math.floor(current).toLocaleString() + suffix;
+      } else if (target % 1 !== 0) {
+        element.textContent = current.toFixed(1) + suffix;
+      } else {
+        element.textContent = Math.floor(current) + suffix;
+      }
+    }, 30);
+  }
+
+  // Add product page specific styles
+  if (!document.querySelector("#product-styles")) {
+    const styles = document.createElement("style");
+    styles.id = "product-styles";
+    styles.textContent = `
             /* Product page specific styles */
             .product-hero {
                 padding: 120px 0 60px;
@@ -1240,6 +1243,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         `;
-        document.head.appendChild(styles);
-    }
+    document.head.appendChild(styles);
+  }
 });

@@ -1,675 +1,986 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Smart Fish Dryer | KVB Green Energies – Clean Drying Solutions</title>
-    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp">
+  <head>
+    <meta
+      name="description"
+      content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization."
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>
+      Smart Fish Dryer | KVB Green Energies – Clean Drying Solutions
+    </title>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp" />
     <!-- Fonts & Icons -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
     <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <style>
-        /* ===== ECO-PROFESSIONAL THEME (matches about.html) ===== */
-        :root {
-            --solar-yellow: #FDB813;
-            --deep-blue: #0B3D91;
-            --eco-green: #3A7D44;
-            --dark-charcoal: #1C1C1C;
-            --soft-white: #F9F9F9;
-            --accent-orange: #FF6F00;
-            --primary: #3A7D44;
-            --primary-dark: #2d5a33;
-            --primary-light: #e6f3e6;
-            --shadow-sm: 0 10px 30px rgba(28,28,28,0.04);
-            --shadow-hover: 0 20px 40px rgba(58,125,68,0.08);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
-            --border-light: #e0e8e0;
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --bg-soft: #F9F9F9;
-            --text-primary: #1C1C1C;
-            --text-secondary: #4a6741;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
+      /* ===== ECO-PROFESSIONAL THEME (matches about.html) ===== */
+      :root {
+        --solar-yellow: #fdb813;
+        --deep-blue: #0b3d91;
+        --eco-green: #3a7d44;
+        --dark-charcoal: #1c1c1c;
+        --soft-white: #f9f9f9;
+        --accent-orange: #ff6f00;
+        --primary: #3a7d44;
+        --primary-dark: #2d5a33;
+        --primary-light: #e6f3e6;
+        --shadow-sm: 0 10px 30px rgba(28, 28, 28, 0.04);
+        --shadow-hover: 0 20px 40px rgba(58, 125, 68, 0.08);
+        --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+        --border-light: #e0e8e0;
+        --radius-sm: 12px;
+        --radius-md: 20px;
+        --radius-lg: 28px;
+        --bg-soft: #f9f9f9;
+        --text-primary: #1c1c1c;
+        --text-secondary: #4a6741;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--soft-white);
+        color: var(--dark-charcoal);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        color: #4a5568;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ===== HEADER PLACEHOLDER ===== */
+      #header {
+        min-height: 80px;
+      }
+
+      /* ===== HERO SECTION ===== */
+      .product-hero {
+        position: relative;
+        min-height: 55vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          #09203f 0%,
+          #0f3460 40%,
+          #1a5276 100%
+        );
+        overflow: hidden;
+        color: white;
+        padding: 100px 0 60px;
+      }
+
+      .product-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 15% 50%,
+            rgba(0, 255, 135, 0.12) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(253, 184, 19, 0.08) 0%,
+            transparent 40%
+          );
+        animation: heroPulse 8s infinite alternate;
+        z-index: 1;
+      }
+
+      .product-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E")
+          no-repeat bottom;
+        background-size: cover;
+        z-index: 2;
+      }
+
+      @keyframes heroPulse {
+        0% {
+          opacity: 1;
         }
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--soft-white);
-            color: var(--dark-charcoal);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+        100% {
+          opacity: 0.7;
         }
+      }
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+      .product-hero .container {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+      }
+
+      .product-hero h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        animation: fadeUp 0.9s ease 0.1s both;
+        background: none;
+        color: white;
+        -webkit-text-fill-color: white;
+      }
+
+      .hero-title-highlight {
+        background: linear-gradient(135deg, #00e676, var(--solar-yellow));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+      }
+
+      .product-hero p.hero-sub {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 680px;
+        margin: 0 auto 28px;
+        line-height: 1.7;
+        animation: fadeUp 1s ease 0.2s both;
+      }
+
+      .hero-tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        animation: fadeUp 1.1s ease 0.3s both;
+      }
+
+      .hero-tag {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        backdrop-filter: blur(6px);
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+      }
+
+      .hero-tag:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      .hero-tag i {
+        color: var(--solar-yellow);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
         }
-
-        p { color: #4a5568; line-height: 1.7; font-size: 1.05rem; }
-
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
-
-        /* ===== HEADER PLACEHOLDER ===== */
-        #header {
-            min-height: 80px;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        /* ===== HERO SECTION ===== */
-        .product-hero {
-            position: relative;
-            min-height: 55vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #09203f 0%, #0f3460 40%, #1a5276 100%);
-            overflow: hidden;
-            color: white;
-            padding: 100px 0 60px;
-        }
+      /* ===== SECTION TITLES ===== */
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        color: #0b3d91;
+        text-align: center;
+        position: relative;
+        display: block;
+        margin-bottom: 16px;
+      }
 
-        .product-hero::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                radial-gradient(circle at 15% 50%, rgba(0,255,135,0.12) 0%, transparent 55%),
-                radial-gradient(circle at 85% 30%, rgba(253,184,19,0.08) 0%, transparent 40%);
-            animation: heroPulse 8s infinite alternate;
-            z-index: 1;
-        }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--solar-yellow);
+        border-radius: 2px;
+      }
 
-        .product-hero::after {
-            content: '';
-            position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23F9F9F9' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
-            background-size: cover;
-            z-index: 2;
-        }
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: #5a6b5a;
+        text-align: center;
+        max-width: 680px;
+        margin: 20px auto 0;
+        line-height: 1.65;
+      }
 
-        @keyframes heroPulse {
-            0% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
+      /* ===== SCROLL REVEAL & SPACING ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.75s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        margin-bottom: 3.5rem;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        .product-hero .container {
-            position: relative; z-index: 3; text-align: center;
-        }
+      /* ===== SYSTEM IN ACTION SECTION ===== */
+      .system-action-section {
+        padding: 80px 0;
+        background: linear-gradient(145deg, #f0f7f0, #e6f0e6);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3.5rem;
+      }
 
-        .product-hero h1 {
-            font-size: 4rem; font-weight: 900; line-height: 1.15; margin-bottom: 20px;
-            animation: fadeUp 0.9s ease 0.1s both;
-            background: none; color: white;
-            -webkit-text-fill-color: white;
-        }
+      .system-action-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(58, 125, 68, 0.06) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(253, 184, 19, 0.05) 0%,
+            transparent 40%
+          );
+        pointer-events: none;
+      }
 
-        .hero-title-highlight {
-            background: linear-gradient(135deg, #00e676, var(--solar-yellow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline;
-        }
+      .system-action-section .section-header {
+        text-align: center;
+        margin-bottom: 48px;
+        position: relative;
+        z-index: 2;
+      }
 
-        .product-hero p.hero-sub {
-            font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 680px;
-            margin: 0 auto 28px; line-height: 1.7;
-            animation: fadeUp 1s ease 0.2s both;
-        }
-
-        .hero-tags-row {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
-            animation: fadeUp 1.1s ease 0.3s both;
-        }
-
-        .hero-tag {
-            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
-            padding: 8px 20px; border-radius: 50px; font-size: 0.88rem; font-weight: 500;
-            backdrop-filter: blur(6px); color: white; display: inline-flex;
-            align-items: center; gap: 8px; transition: all 0.3s;
-        }
-
-        .hero-tag:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
-        .hero-tag i { color: var(--solar-yellow); }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ===== SECTION TITLES ===== */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            color: #0B3D91;
-            text-align: center;
-            position: relative;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--solar-yellow);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #5a6b5a;
-            text-align: center;
-            max-width: 680px;
-            margin: 20px auto 0;
-            line-height: 1.65;
-        }
-
-        /* ===== SCROLL REVEAL & SPACING ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.75s cubic-bezier(0.2,0.9,0.4,1.1);
-            margin-bottom: 3.5rem;
-        }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* ===== SYSTEM IN ACTION SECTION ===== */
-        .system-action-section {
-            padding: 80px 0;
-            background: linear-gradient(145deg, #f0f7f0, #e6f0e6);
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 3.5rem;
-        }
-
-        .system-action-section::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(58,125,68,0.06) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(253,184,19,0.05) 0%, transparent 40%);
-            pointer-events: none;
-        }
-
-        .system-action-section .section-header {
-            text-align: center; margin-bottom: 48px; position: relative; z-index: 2;
-        }
-
-        /* ===== BOOTSTRAP CAROUSEL ===== */
-        .kvb-carousel {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            position: relative; z-index: 2;
-            max-width: 800px; margin: 0 auto;
-            background: #fff;
-        }
+      /* ===== BOOTSTRAP CAROUSEL ===== */
+      .kvb-carousel {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+      }
+      .kvb-carousel .carousel-item img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0;
+      }
+      .kvb-carousel .carousel-control-prev,
+      .kvb-carousel .carousel-control-next {
+        width: 52px;
+        height: 52px;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 16px;
+        opacity: 1;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+      }
+      .kvb-carousel .carousel-control-prev:hover,
+      .kvb-carousel .carousel-control-next:hover {
+        background: white;
+        transform: translateY(-50%) scale(1.08);
+      }
+      .kvb-carousel .carousel-control-prev {
+        left: 10px;
+      }
+      .kvb-carousel .carousel-control-next {
+        right: 10px;
+      }
+      .kvb-carousel .carousel-control-prev-icon,
+      .kvb-carousel .carousel-control-next-icon {
+        filter: invert(1) brightness(0);
+        width: 20px;
+        height: 20px;
+      }
+      .kvb-carousel .carousel-indicators li {
+        background-color: var(--eco-green);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        margin: 0 4px;
+      }
+      .kvb-carousel .carousel-indicators li.active {
+        background-color: var(--solar-yellow);
+        transform: scale(1.3);
+      }
+      @media (max-width: 768px) {
         .kvb-carousel .carousel-item img {
-            width: 100%; aspect-ratio: 16/9; height: auto; object-fit: contain; border-radius: 0;
+          height: auto;
         }
-        .kvb-carousel .carousel-control-prev,
-        .kvb-carousel .carousel-control-next {
-            width: 52px; height: 52px;
-            background: rgba(255,255,255,0.92);
-            border-radius: 50%;
-            top: 50%; transform: translateY(-50%);
-            margin: 0 16px; opacity: 1;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-        }
-        .kvb-carousel .carousel-control-prev:hover,
-        .kvb-carousel .carousel-control-next:hover {
-            background: white; transform: translateY(-50%) scale(1.08);
-        }
-        .kvb-carousel .carousel-control-prev { left: 10px; }
-        .kvb-carousel .carousel-control-next { right: 10px; }
-        .kvb-carousel .carousel-control-prev-icon,
-        .kvb-carousel .carousel-control-next-icon {
-            filter: invert(1) brightness(0); width: 20px; height: 20px;
-        }
-        .kvb-carousel .carousel-indicators li {
-            background-color: var(--eco-green);
-            width: 10px; height: 10px; border-radius: 50%; border: none;
-            margin: 0 4px;
-        }
-        .kvb-carousel .carousel-indicators li.active {
-            background-color: var(--solar-yellow);
-            transform: scale(1.3);
-        }
-        @media (max-width: 768px) {
-            .kvb-carousel .carousel-item img { height: auto; }
-        }
+      }
 
-        /* ===== OVERVIEW / HIGHLIGHT TECH ===== */
-        .highlight-tech {
-            background: white;
-            border-left: 5px solid var(--eco-green);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 2.5rem 2.5rem;
-            margin: 0 0 3.5rem;
-            box-shadow: var(--shadow-sm);
-            position: relative; overflow: hidden;
-        }
+      /* ===== OVERVIEW / HIGHLIGHT TECH ===== */
+      .highlight-tech {
+        background: white;
+        border-left: 5px solid var(--eco-green);
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        padding: 2.5rem 2.5rem;
+        margin: 0 0 3.5rem;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
 
-        .highlight-tech::before {
-            content: '';
-            position: absolute; top: 0; right: 0;
-            width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(58,125,68,0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
+      .highlight-tech::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(58, 125, 68, 0.05) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+      }
 
-        .highlight-tech h1, .highlight-tech h2 {
-            font-size: 1.8rem; margin-bottom: 1rem;
-            color: var(--dark-charcoal);
-            background: none; -webkit-text-fill-color: inherit;
-        }
+      .highlight-tech h1,
+      .highlight-tech h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--dark-charcoal);
+        background: none;
+        -webkit-text-fill-color: inherit;
+      }
 
-        .highlight-tech p {
-            font-size: 1.08rem; line-height: 1.75; color: #2d3e40;
-        }
+      .highlight-tech p {
+        font-size: 1.08rem;
+        line-height: 1.75;
+        color: #2d3e40;
+      }
 
-        .highlight-tech strong { color: var(--eco-green); }
+      .highlight-tech strong {
+        color: var(--eco-green);
+      }
 
-        /* ===== FEATURE MATRIX ===== */
+      /* ===== FEATURE MATRIX ===== */
+      .feature-matrix {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        background: white;
+        border: 1px solid #d0e8d0;
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          var(--eco-green),
+          var(--solar-yellow)
+        );
+      }
+
+      .feature-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--eco-green);
+        box-shadow: 0 20px 40px rgba(58, 125, 68, 0.12);
+      }
+
+      .feature-card i {
+        font-size: 2rem;
+        color: var(--eco-green);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--dark-charcoal);
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-list li {
+        margin-bottom: 0.65rem;
+        padding-left: 1.4rem;
+        position: relative;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #4a5568;
+      }
+      .feature-list li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--eco-green);
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
         .feature-matrix {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
         }
+      }
 
-        .feature-card {
-            background: white;
-            border: 1px solid #d0e8d0;
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            position: relative; overflow: hidden;
-        }
+      /* ===== TABLES ===== */
+      .soft-table {
+        background: white;
+        border-radius: var(--radius-md);
+        border: 1px solid #d0e8d0;
+        overflow-x: auto;
+        margin: 0 0 3.5rem 0;
+        box-shadow: var(--shadow-sm);
+      }
 
-        .feature-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 4px; height: 100%;
-            background: linear-gradient(to bottom, var(--eco-green), var(--solar-yellow));
-        }
+      .soft-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .soft-table th,
+      .soft-table td {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid #e8f4e8;
+        font-size: 0.97rem;
+      }
+      .soft-table th {
+        background: linear-gradient(135deg, #3a7d44, #2d5a33);
+        color: white;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .soft-table tr:hover td {
+        background: #f5fbf5;
+      }
+      .soft-table tr:last-child td {
+        border-bottom: none;
+      }
 
-        .feature-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--eco-green);
-            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
-        }
+      /* ===== APPLICATIONS GRID ===== */
+      .applications-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
 
-        .feature-card i {
-            font-size: 2rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
-        }
+      .app-card {
+        background: white;
+        border: 1px solid #d0e8d0;
+        border-radius: var(--radius-md);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
 
-        .feature-card h3 {
-            font-size: 1.3rem; margin-bottom: 1rem; color: var(--dark-charcoal);
-        }
+      .app-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--eco-green),
+          var(--solar-yellow)
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
 
-        .feature-list { list-style: none; padding: 0; margin: 0; }
-        .feature-list li {
-            margin-bottom: 0.65rem; padding-left: 1.4rem;
-            position: relative; font-size: 0.95rem;
-            line-height: 1.5; color: #4a5568;
-        }
-        .feature-list li::before {
-            content: "▹"; position: absolute; left: 0;
-            color: var(--eco-green); font-weight: 700;
-        }
+      .app-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--eco-green);
+        box-shadow: 0 20px 40px rgba(58, 125, 68, 0.12);
+      }
 
-        @media (max-width: 768px) {
-            .feature-matrix { grid-template-columns: 1fr; gap: 1.5rem; }
-        }
+      .app-card:hover::after {
+        opacity: 1;
+      }
 
-        /* ===== TABLES ===== */
-        .soft-table {
-            background: white;
-            border-radius: var(--radius-md);
-            border: 1px solid #d0e8d0;
-            overflow-x: auto;
-            margin: 0 0 3.5rem 0;
-            box-shadow: var(--shadow-sm);
-        }
+      .app-card i {
+        font-size: 2.4rem;
+        color: var(--eco-green);
+        margin-bottom: 1rem;
+        display: block;
+      }
 
-        .soft-table table { width: 100%; border-collapse: collapse; }
-        .soft-table th, .soft-table td {
-            padding: 1rem 1.5rem; text-align: left;
-            border-bottom: 1px solid #e8f4e8;
-            font-size: 0.97rem;
-        }
-        .soft-table th {
-            background: linear-gradient(135deg, #3A7D44, #2d5a33);
-            color: white; font-weight: 600; letter-spacing: 0.02em;
-        }
-        .soft-table tr:hover td { background: #f5fbf5; }
-        .soft-table tr:last-child td { border-bottom: none; }
+      .app-card h3 {
+        font-size: 1.1rem;
+        color: var(--dark-charcoal);
+      }
+      .app-card p {
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+      }
 
-        /* ===== APPLICATIONS GRID ===== */
+      @media (max-width: 992px) {
         .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
+      @media (max-width: 600px) {
+        .applications-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-        .app-card {
-            background: white;
-            border: 1px solid #d0e8d0;
-            border-radius: var(--radius-md);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            position: relative; overflow: hidden;
-        }
-
-        .app-card::after {
-            content: '';
-            position: absolute; bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--eco-green), var(--solar-yellow));
-            opacity: 0; transition: opacity 0.3s;
-        }
-
-        .app-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--eco-green);
-            box-shadow: 0 20px 40px rgba(58,125,68,0.12);
-        }
-
-        .app-card:hover::after { opacity: 1; }
-
-        .app-card i {
-            font-size: 2.4rem; color: var(--eco-green); margin-bottom: 1rem; display: block;
-        }
-
-        .app-card h3 { font-size: 1.1rem; color: var(--dark-charcoal); }
-        .app-card p { font-size: 0.95rem; margin-top: 0.5rem; }
-
-        @media (max-width: 992px) {
-            .applications-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .applications-grid { grid-template-columns: 1fr; }
-        }
-
-        /* STANDARD SECTION TITLE & SUBTITLE OVERRIDE */
-        h2.section-title, .section-title h2, div.section-title h2 {
-            font-size: 2.5rem !important;
-            color: #0B3D91 !important;
-            text-align: center !important;
-            margin-bottom: 25px !important;
-            display: block !important;
-            position: relative !important;
-            width: 100% !important;
-        }
-        h2.section-title:after, .section-title h2:after, div.section-title h2:after {
-            content: '' !important;
-            position: absolute !important;
-            bottom: -10px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            width: 80px !important;
-            height: 4px !important;
-            background: #FDB813 !important;
-            border-radius: 2px !important;
-        }
-        p.section-subtitle, .section-subtitle {
-            font-size: 1.15rem !important;
-            color: var(--text-secondary) !important;
-            text-align: center !important;
-            max-width: 800px !important;
-            margin: 0 auto 2rem auto !important;
-        }
+      /* STANDARD SECTION TITLE & SUBTITLE OVERRIDE */
+      h2.section-title,
+      .section-title h2,
+      div.section-title h2 {
+        font-size: 2.5rem !important;
+        color: #0b3d91 !important;
+        text-align: center !important;
+        margin-bottom: 25px !important;
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+      }
+      h2.section-title:after,
+      .section-title h2:after,
+      div.section-title h2:after {
+        content: "" !important;
+        position: absolute !important;
+        bottom: -10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 80px !important;
+        height: 4px !important;
+        background: #fdb813 !important;
+        border-radius: 2px !important;
+      }
+      p.section-subtitle,
+      .section-subtitle {
+        font-size: 1.15rem !important;
+        color: var(--text-secondary) !important;
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto 2rem auto !important;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="header"></div>
 
     <!-- HERO SECTION -->
     <section class="product-hero">
-        <div class="container">
-            <h1>Smart <span class="hero-title-highlight">Fish</span> Dryer</h1>
-            <p class="hero-sub">Clean, efficient, and highly sustainable professional drying solutions designed by KVB Green Energies to meet the demands of modern industry.</p>
-            <div class="hero-tags-row">
-                <span class="hero-tag"><i class="fas fa-leaf"></i> Eco-Friendly</span>
-                <span class="hero-tag"><i class="fas fa-bolt"></i> High Efficiency</span>
-                <span class="hero-tag"><i class="fas fa-fish"></i> Value Addition</span>
-            </div>
+      <div class="container">
+        <h1>Smart <span class="hero-title-highlight">Fish</span> Dryer</h1>
+        <p class="hero-sub">
+          Clean, efficient, and highly sustainable professional drying solutions
+          designed by KVB Green Energies to meet the demands of modern industry.
+        </p>
+        <div class="hero-tags-row">
+          <span class="hero-tag"><i class="fas fa-leaf"></i> Eco-Friendly</span>
+          <span class="hero-tag"
+            ><i class="fas fa-bolt"></i> High Efficiency</span
+          >
+          <span class="hero-tag"
+            ><i class="fas fa-fish"></i> Value Addition</span
+          >
         </div>
+      </div>
     </section>
 
     <main>
-        <!-- Moved System in Action Gallery -->
-        <section class="system-action-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">System in Action</h2>
-                    <p class="section-subtitle">See our technology deployed and working in real-world environments.</p>
-                </div>
-                <div id="fishDryerCarousel" class="carousel slide kvb-carousel" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <iframe style="width: 100%; aspect-ratio: 16/9; height: auto;" src="https://www.youtube.com/embed/y8GVdX5rWxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../images/products/fish2.webp" class="d-block w-100" alt="Smart Fish Dryer Unit">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../images/products/fish3.webp" class="d-block w-100" alt="Dried Fish">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../images/products/fish4.webp" class="d-block w-100" alt="Smart Control Panel">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#fishDryerCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#fishDryerCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+      <!-- Moved System in Action Gallery -->
+      <section class="system-action-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title">System in Action</h2>
+            <p class="section-subtitle">
+              See our technology deployed and working in real-world
+              environments.
+            </p>
+          </div>
+          <div
+            id="fishDryerCarousel"
+            class="carousel slide kvb-carousel"
+            data-interval="false"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <iframe
+                  style="width: 100%; aspect-ratio: 16/9; height: auto"
+                  src="https://www.youtube.com/embed/y8GVdX5rWxk"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../images/products/fish2.webp"
+                  class="d-block w-100"
+                  alt="Smart Fish Dryer Unit"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../images/products/fish3.webp"
+                  class="d-block w-100"
+                  alt="Dried Fish"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../images/products/fish4.webp"
+                  class="d-block w-100"
+                  alt="Smart Control Panel"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
-        </section>
-
-        <div class="container" style="padding: 60px 32px;">
-            <!-- HIGHLIGHTED Overview -->
-            <div class="reveal highlight-tech">
-                <div style="margin-bottom: 0.5rem;">
-                    <h1 style="margin-bottom: 0.5rem;">🐟 Smart Solar-Assisted Seafood Drying</h1>
-                </div>
-                <p>The <strong>Smart Fish Dryer</strong> Hybrid solar fish dryers are engineered to provide a hygienic and
-                controlled drying solution for fish and seafood products. Combining solar energy with a backup heating
-                system, they ensure reliable and efficient drying performance even under varying weather conditions.
-                With optimized airflow and ventilation, these dryers minimize contamination, reduce spoilage, and
-                deliver uniform drying for consistently high-quality output. Ideal for coastal communities, fisheries,
-                and seafood processors, they help enhance product value, improve hygiene standards, and extend shelf
-                life.</p>
-            </div>
-
-            <!-- 2x2 Feature Matrix (Core Capabilities) -->
-            <div class="reveal">
-                <h2 class="section-title">Core Capabilities</h2>
-                <p class="section-subtitle">Everything you need for clean energy performance — engineered and field-tested.</p>
-                <div class="feature-matrix">
-                    <div class="feature-card">
-                        <i class="fas fa-temperature-high"></i>
-                        <h3>Drying Performance</h3>
-                        <ul class="feature-list">
-                            <li>Temperature: 45–80°C (solar), up to 100°C (assisted)</li>
-                            <li>Moisture reduction: 70–90%</li>
-                            <li>Drying time: 6–24 hours (fish type dependent)</li>
-                            <li>Uniform texture, improved color, export-grade finish</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Smart Automation</h3>
-                        <ul class="feature-list">
-                            <li>Digital PID temperature control</li>
-                            <li>Humidity sensors for precision drying</li>
-                            <li>Programmable batch cycles</li>
-                            <li>IoT-enabled remote monitoring (optional)</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-fire"></i>
-                        <h3>Heating Integration</h3>
-                        <ul class="feature-list">
-                            <li>Solar thermal as primary heat</li>
-                            <li>Auxiliary heating</li>
-                            <li>Indirect heating – zero smoke contamination</li>
-                            <li>Automatic mode switching</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Sustainability</h3>
-                        <ul class="feature-list">
-                            <li>Reduces drying time by 50–70%</li>
-                            <li>Eliminates open-sun contamination</li>
-                            <li>Improves product value for export</li>
-                            <li>Low operational cost</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Applications Grid -->
-            <div class="reveal">
-                <h2 class="section-title">Application Scope</h2>
-                <div class="applications-grid">
-                    <div class="app-card"><i class="fas fa-fish"></i>
-                        <h3>Marine Fish</h3>
-                        <p>Coastal fish processing units</p>
-                    </div>
-                    <div class="app-card"><i class="fas fa-water"></i>
-                        <h3>Inland Fish</h3>
-                        <p>Freshwater fish drying</p>
-                    </div>
-                    <div class="app-card"><i class="fas fa-shrimp"></i>
-                        <h3>Shrimp & Prawn</h3>
-                        <p>Premium value-added drying</p>
-                    </div>
-                    <div class="app-card"><i class="fas fa-chart-line"></i>
-                        <h3>Export Industries</h3>
-                        <p>Dry fish for global markets</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Technical Specifications Table -->
-            <div class="reveal" style="margin-top: 80px; margin-bottom: 40px;">
-                <h2 class="section-title">Engineering Specifications</h2>
-            </div>
-            <div class="reveal soft-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Parameter</th>
-                            <th>Specification</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>System Type</strong></td>
-                            <td>Smart Solar Fish Dryer (Tunnel / Chamber Type)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Drying Capacity</strong></td>
-                            <td>25 kg – 2000 kg per batch</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Structural Frame</strong></td>
-                            <td>GI / MS (Hot Dip Galvanized)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Inner Chamber</strong></td>
-                            <td>Food-grade Stainless Steel (SS 304)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tray Material</strong></td>
-                            <td>SS 304 / Food-grade Mesh</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Airflow System</strong></td>
-                            <td>Forced Convection (High-efficiency blowers)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <a
+              class="carousel-control-prev"
+              href="#fishDryerCarousel"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#fishDryerCarousel"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
         </div>
+      </section>
+
+      <div class="container" style="padding: 60px 32px">
+        <!-- HIGHLIGHTED Overview -->
+        <div class="reveal highlight-tech">
+          <div style="margin-bottom: 0.5rem">
+            <h1 style="margin-bottom: 0.5rem">
+              🐟 Smart Solar-Assisted Seafood Drying
+            </h1>
+          </div>
+          <p>
+            The <strong>Smart Fish Dryer</strong> Hybrid solar fish dryers are
+            engineered to provide a hygienic and controlled drying solution for
+            fish and seafood products. Combining solar energy with a backup
+            heating system, they ensure reliable and efficient drying
+            performance even under varying weather conditions. With optimized
+            airflow and ventilation, these dryers minimize contamination, reduce
+            spoilage, and deliver uniform drying for consistently high-quality
+            output. Ideal for coastal communities, fisheries, and seafood
+            processors, they help enhance product value, improve hygiene
+            standards, and extend shelf life.
+          </p>
+        </div>
+
+        <!-- 2x2 Feature Matrix (Core Capabilities) -->
+        <div class="reveal">
+          <h2 class="section-title">Core Capabilities</h2>
+          <p class="section-subtitle">
+            Everything you need for clean energy performance — engineered and
+            field-tested.
+          </p>
+          <div class="feature-matrix">
+            <div class="feature-card">
+              <i class="fas fa-temperature-high"></i>
+              <h3>Drying Performance</h3>
+              <ul class="feature-list">
+                <li>Temperature: 45–80°C (solar), up to 100°C (assisted)</li>
+                <li>Moisture reduction: 70–90%</li>
+                <li>Drying time: 6–24 hours (fish type dependent)</li>
+                <li>Uniform texture, improved color, export-grade finish</li>
+              </ul>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-microchip"></i>
+              <h3>Smart Automation</h3>
+              <ul class="feature-list">
+                <li>Digital PID temperature control</li>
+                <li>Humidity sensors for precision drying</li>
+                <li>Programmable batch cycles</li>
+                <li>IoT-enabled remote monitoring (optional)</li>
+              </ul>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-fire"></i>
+              <h3>Heating Integration</h3>
+              <ul class="feature-list">
+                <li>Solar thermal as primary heat</li>
+                <li>Auxiliary heating</li>
+                <li>Indirect heating – zero smoke contamination</li>
+                <li>Automatic mode switching</li>
+              </ul>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-chart-line"></i>
+              <h3>Sustainability</h3>
+              <ul class="feature-list">
+                <li>Reduces drying time by 50–70%</li>
+                <li>Eliminates open-sun contamination</li>
+                <li>Improves product value for export</li>
+                <li>Low operational cost</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Applications Grid -->
+        <div class="reveal">
+          <h2 class="section-title">Application Scope</h2>
+          <div class="applications-grid">
+            <div class="app-card">
+              <i class="fas fa-fish"></i>
+              <h3>Marine Fish</h3>
+              <p>Coastal fish processing units</p>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-water"></i>
+              <h3>Inland Fish</h3>
+              <p>Freshwater fish drying</p>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-shrimp"></i>
+              <h3>Shrimp & Prawn</h3>
+              <p>Premium value-added drying</p>
+            </div>
+            <div class="app-card">
+              <i class="fas fa-chart-line"></i>
+              <h3>Export Industries</h3>
+              <p>Dry fish for global markets</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Specifications Table -->
+        <div class="reveal" style="margin-top: 80px; margin-bottom: 40px">
+          <h2 class="section-title">Engineering Specifications</h2>
+        </div>
+        <div class="reveal soft-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>System Type</strong></td>
+                <td>Smart Solar Fish Dryer (Tunnel / Chamber Type)</td>
+              </tr>
+              <tr>
+                <td><strong>Drying Capacity</strong></td>
+                <td>25 kg – 2000 kg per batch</td>
+              </tr>
+              <tr>
+                <td><strong>Structural Frame</strong></td>
+                <td>GI / MS (Hot Dip Galvanized)</td>
+              </tr>
+              <tr>
+                <td><strong>Inner Chamber</strong></td>
+                <td>Food-grade Stainless Steel (SS 304)</td>
+              </tr>
+              <tr>
+                <td><strong>Tray Material</strong></td>
+                <td>SS 304 / Food-grade Mesh</td>
+              </tr>
+              <tr>
+                <td><strong>Airflow System</strong></td>
+                <td>Forced Convection (High-efficiency blowers)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </main>
 
     <div id="footer"></div>
 
     <!-- GLOBAL COMPONENT LOADER -->
     <script>
-        (function() {
-            function loadComponent(id, file) {
-                fetch(file)
-                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-                    .then(html => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            el.innerHTML = html;
-                            const scripts = el.querySelectorAll('script');
-                            scripts.forEach(s => {
-                                const newScript = document.createElement('script');
-                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                                newScript.appendChild(document.createTextNode(s.innerHTML));
-                                s.parentNode.replaceChild(newScript, s);
-                            });
-                        }
-                    }).catch(console.error);
-            }
-            window.BASE_PATH = "../";
-            loadComponent('header', '../components/header.html');
-            loadComponent('footer', '../components/footer.html');
-        })();
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
+        }
+        window.BASE_PATH = "../";
+        loadComponent("header", "../components/header.html");
+        loadComponent("footer", "../components/footer.html");
+      })();
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
         });
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+      });
     </script>
-    
+
     <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
-

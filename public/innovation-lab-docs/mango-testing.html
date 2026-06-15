@@ -1,421 +1,1108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta name="description" content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization.">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <head>
+    <meta
+      name="description"
+      content="KVB Green Energies engineers sustainable solutions for the future, specializing in solar thermal systems, smart agriculture, and industrial decarbonization."
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
     <title>Mango Quality Testing & Segregation | KVB Green Energies</title>
-    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    /></noscript>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg-white: #FFFFFF;
-            --bg-soft: #F9F9FB;
-            --text-primary: #1D1D1F;
-            --text-secondary: #5A5A66;
-            --border-light: #E6E6E8;
-            --primary: #2E7D32;
-            --primary-dark: #0B3D91;
-            --primary-light: #E8F5E9;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
-            --shadow-md: 0 8px 20px rgba(0,0,0,0.04);
-            --shadow-lg: 0 16px 32px rgba(0,0,0,0.06);
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-white);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
-        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.02em; }
-        h1 { font-size: 3.8rem; color: #FFFFFF; margin-bottom: 1.2rem; text-align: center; }
-        h2 { font-size: 2.6rem; margin-bottom: 2rem; position: relative; display: inline-block; color: var(--primary-dark); }
-        .section-title { text-align: center; }
-        .section-title h2:after {
-            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
-            width: 80px; height: 4px; background: #FDB813; border-radius: 2px;
-        }
-        p { color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem; }
-        
-        .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 60px; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; font-size: 1rem; }
-        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15); }
-        .btn-primary:hover { background: #1B5E20; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(46, 125, 50, 0.25); }
-        .btn-outline { border: 1px solid var(--primary); background: transparent; color: var(--primary); }
-        .btn-outline:hover { background: var(--primary-light); transform: translateY(-2px); }
-        
-        #header {
-            min-height: 80px;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.2rem;
-            background: #FFF2E6; /* Solid light orange to match the Learn More button exactly */
-            border-radius: 40px;
-            color: #F57C00;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: absolute;
-            top: 30px;
-            left: 5%;
-            z-index: 10;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg-white: #ffffff;
+        --bg-soft: #f9f9fb;
+        --text-primary: #1d1d1f;
+        --text-secondary: #5a5a66;
+        --border-light: #e6e6e8;
+        --primary: #2e7d32;
+        --primary-dark: #0b3d91;
+        --primary-light: #e8f5e9;
+        --shadow-sm:
+          0 2px 8px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
+        --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.04);
+        --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.06);
+        --radius-sm: 12px;
+        --radius-md: 20px;
+        --radius-lg: 28px;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
+      body {
+        font-family: var(--font-body);
+        background: var(--bg-white);
+        color: var(--text-primary);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      h1 {
+        font-size: 3.8rem;
+        color: #ffffff;
+        margin-bottom: 1.2rem;
+        text-align: center;
+      }
+      h2 {
+        font-size: 2.6rem;
+        margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+        color: var(--primary-dark);
+      }
+      .section-title {
+        text-align: center;
+      }
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: #fdb813;
+        border-radius: 2px;
+      }
+      p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-size: 1.05rem;
+      }
 
-        .back-btn:hover {
-            background: #F57C00;
-            color: white;
-            box-shadow: 0 10px 20px rgba(245, 124, 0, 0.3);
-            transform: translateY(-2px);
+      .btn {
+        display: inline-block;
+        padding: 0.9rem 2rem;
+        border-radius: 60px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+      }
+      .btn-primary:hover {
+        background: #1b5e20;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(46, 125, 50, 0.25);
+      }
+      .btn-outline {
+        border: 1px solid var(--primary);
+        background: transparent;
+        color: var(--primary);
+      }
+      .btn-outline:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+      }
+
+      #header {
+        min-height: 80px;
+      }
+
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.2rem;
+        background: #fff2e6; /* Solid light orange to match the Learn More button exactly */
+        border-radius: 40px;
+        color: #f57c00;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: absolute;
+        top: 30px;
+        left: 5%;
+        z-index: 10;
+      }
+
+      .back-btn:hover {
+        background: #f57c00;
+        color: white;
+        box-shadow: 0 10px 20px rgba(245, 124, 0, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .hero-light {
+        position: relative;
+        min-height: 35vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+        padding: 100px 0 50px;
+        text-align: center;
+        color: #ffffff;
+      }
+      .hero-light .hero-full-width {
+        width: 100%;
+        padding: 0 20px;
+      }
+      .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .hero-content h1 {
+        text-align: center;
+        color: #ffffff;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        color: #ffffff;
+        padding: 0.4rem 1rem;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        margin-bottom: 7rem !important;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .highlight-tech {
+        margin-top: 3rem;
+        text-align: center;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2.2rem;
+        border: 1px solid var(--primary);
+        border-radius: var(--radius-md);
+        background: var(--bg-soft);
+      }
+      .highlight-tech h2 {
+        margin-bottom: 1.2rem;
+        display: inline-block;
+        background: none;
+        font-size: 2.2rem;
+        color: var(--primary-dark);
+      }
+      .highlight-tech h2:after {
+        display: none;
+      }
+      .highlight-tech p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--text-primary);
+      }
+      .highlight-tech strong {
+        color: var(--primary);
+      }
+
+      .feature-matrix {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .feature-card {
+        background: white;
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        padding: 1.8rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        height: 100%;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-lg);
+      }
+      .feature-card i {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+      .feature-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-list li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.4rem;
+        position: relative;
+        font-size: 0.98rem;
+        line-height: 1.45;
+        color: var(--text-secondary);
+      }
+      .feature-list li:before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+      @media (max-width: 768px) {
+        .feature-matrix {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
         }
-        
-        .hero-light {
-            position: relative; min-height: 35vh; display: flex; flex-direction: column; justify-content: center;
-            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
-            padding: 100px 0 50px; text-align: center; color: #FFFFFF;
+      }
+
+      .applications-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .app-card {
+        background: white;
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        padding: 2rem 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+      }
+      .app-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-lg);
+      }
+      .app-card i {
+        font-size: 2.6rem;
+        color: var(--primary);
+        margin-bottom: 1.2rem;
+      }
+      .app-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: var(--primary-dark);
+      }
+      .app-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+      }
+      @media (max-width: 1100px) {
+        .applications-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1.5rem;
         }
-        .hero-light .hero-full-width { width: 100%; padding: 0 20px; }
-        .hero-content { max-width: 900px; margin: 0 auto; }
-        .hero-content h1 { text-align: center; color: #FFFFFF; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.85); }
-        .hero-badge { display: inline-block; background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); color: #FFFFFF; padding: 0.4rem 1rem; border-radius: 40px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.2); }
-        
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1); margin-bottom: 7rem !important; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        .highlight-tech { margin-top: 3rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto; padding: 2.2rem; border: 1px solid var(--primary); border-radius: var(--radius-md); background: var(--bg-soft); }
-        .highlight-tech h2 { margin-bottom: 1.2rem; display: inline-block; background: none; font-size: 2.2rem; color: var(--primary-dark); }
-        .highlight-tech h2:after { display: none; }
-        .highlight-tech p { font-size: 1.15rem; line-height: 1.8; color: var(--text-primary); }
-        .highlight-tech strong { color: var(--primary); }
-        
-        .feature-matrix { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
-        .feature-card { background: white; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.8rem; transition: all 0.3s ease; box-shadow: var(--shadow-sm); height: 100%; }
-        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: var(--shadow-lg); }
-        .feature-card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; display: inline-block; }
-        .feature-card h3 { font-size: 1.6rem; margin-bottom: 1rem; font-weight: 700; color: var(--primary-dark); }
-        .feature-list { list-style: none; padding: 0; margin: 0; }
-        .feature-list li { margin-bottom: 0.75rem; padding-left: 1.4rem; position: relative; font-size: 0.98rem; line-height: 1.45; color: var(--text-secondary); }
-        .feature-list li:before { content: "▹"; position: absolute; left: 0; color: var(--primary); font-weight: 600; font-size: 1rem; }
-        @media (max-width: 768px) { .feature-matrix { grid-template-columns: 1fr; gap: 1.5rem; } }
-        
-        .applications-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; margin-top: 2rem; }
-        .app-card { background: white; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 2rem 1.5rem; transition: all 0.3s ease; box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center; height: 100%; }
-        .app-card:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: var(--shadow-lg); }
-        .app-card i { font-size: 2.6rem; color: var(--primary); margin-bottom: 1.2rem; }
-        .app-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--primary-dark); }
-        .app-card p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0; }
-        @media (max-width: 1100px) { .applications-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; } }
-        @media (max-width: 768px) { .applications-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; } .app-card { padding: 1.5rem 1rem; } .app-card h3 { font-size: 1.2rem; } }
-        
-        .soft-table { background: white; border-radius: var(--radius-lg); border: 1px solid var(--border-light); overflow-x: auto; margin-top: 2rem; box-shadow: var(--shadow-sm); }
-        .soft-table table { width: 100%; border-collapse: collapse; }
-        .soft-table th, .soft-table td { padding: 1rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border-light); }
-        .soft-table th { background: var(--bg-soft); font-weight: 600; color: var(--primary-dark); }
-        .soft-table tr:last-child td { border-bottom: none; }
-        
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
-        .gallery-item { border-radius: var(--radius-md); overflow: hidden; height: 260px; position: relative; border: 1px solid var(--border-light); transition: transform 0.4s; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
-        .gallery-item:hover img { transform: scale(1.03); }
-        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(17,42,70,0.8), transparent); color: white; padding: 1rem; font-weight: 500; }
-        
-        .premium-wrapper { margin: 5rem auto 0; max-width: 900px; }
-        .lock-card { background: white; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 3rem; text-align: center; cursor: pointer; transition: all 0.3s; box-shadow: var(--shadow-sm); }
-        .lock-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-        .lock-icon { font-size: 3.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .form-container { background: white; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.5rem; margin-top: 2rem; display: none; box-shadow: var(--shadow-md); }
-        .form-container.visible { display: block; animation: fadeUp 0.5s; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-        .form-group.full { grid-column: span 2; }
-        input, select, textarea { width: 100%; padding: 0.9rem 1rem; background: var(--bg-soft); border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-family: inherit; transition: 0.2s; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
-        .btn-submit { background: var(--primary); width: 100%; padding: 1rem; border-radius: 40px; font-weight: 600; color: white; border: none; cursor: pointer; transition: 0.2s; }
-        .btn-submit:hover { background: #1B5E20; transform: translateY(-2px); }
-        .hidden-content { display: none; margin-top: 2rem; }
-        .hidden-content.visible { display: block; }
-        .success-banner { background: var(--primary-light); border-left: 4px solid var(--primary); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
-        .premium-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.2rem; margin: 2rem 0; }
-        .premium-card { background: var(--bg-white); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; border: 1px solid var(--border-light); }
-        .premium-card i { font-size: 2rem; color: var(--primary); margin-bottom: 0.8rem; }
-        
-        .footer-light { background: var(--bg-soft); border-top: 1px solid var(--border-light); padding: 2rem; text-align: center; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 992px) { .form-grid { grid-template-columns: 1fr; } .form-group.full { grid-column: span 1; } }
-        @media (max-width: 768px) { .container { padding: 0 20px; } h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } }
+      }
+      @media (max-width: 768px) {
+        .applications-grid {
+          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          gap: 1rem;
+        }
+        .app-card {
+          padding: 1.5rem 1rem;
+        }
+        .app-card h3 {
+          font-size: 1.2rem;
+        }
+      }
+
+      .soft-table {
+        background: white;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-light);
+        overflow-x: auto;
+        margin-top: 2rem;
+        box-shadow: var(--shadow-sm);
+      }
+      .soft-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .soft-table th,
+      .soft-table td {
+        padding: 1rem 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .soft-table th {
+        background: var(--bg-soft);
+        font-weight: 600;
+        color: var(--primary-dark);
+      }
+      .soft-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2.5rem;
+      }
+      .gallery-item {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        height: 260px;
+        position: relative;
+        border: 1px solid var(--border-light);
+        transition: transform 0.4s;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.03);
+      }
+      .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(17, 42, 70, 0.8), transparent);
+        color: white;
+        padding: 1rem;
+        font-weight: 500;
+      }
+
+      .premium-wrapper {
+        margin: 5rem auto 0;
+        max-width: 900px;
+      }
+      .lock-card {
+        background: white;
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 3rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-sm);
+      }
+      .lock-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+      .lock-icon {
+        font-size: 3.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+      .form-container {
+        background: white;
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem;
+        margin-top: 2rem;
+        display: none;
+        box-shadow: var(--shadow-md);
+      }
+      .form-container.visible {
+        display: block;
+        animation: fadeUp 0.5s;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .form-group.full {
+        grid-column: span 2;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        background: var(--bg-soft);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-sm);
+        font-family: inherit;
+        transition: 0.2s;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px var(--primary-light);
+      }
+      .btn-submit {
+        background: var(--primary);
+        width: 100%;
+        padding: 1rem;
+        border-radius: 40px;
+        font-weight: 600;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .btn-submit:hover {
+        background: #1b5e20;
+        transform: translateY(-2px);
+      }
+      .hidden-content {
+        display: none;
+        margin-top: 2rem;
+      }
+      .hidden-content.visible {
+        display: block;
+      }
+      .success-banner {
+        background: var(--primary-light);
+        border-left: 4px solid var(--primary);
+        padding: 1rem;
+        border-radius: var(--radius-md);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .premium-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+        margin: 2rem 0;
+      }
+      .premium-card {
+        background: var(--bg-white);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        text-align: center;
+        border: 1px solid var(--border-light);
+      }
+      .premium-card i {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-light {
+        background: var(--bg-soft);
+        border-top: 1px solid var(--border-light);
+        padding: 2rem;
+        text-align: center;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 992px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .form-group.full {
+          grid-column: span 1;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="header"></div>
 
     <!-- HERO -->
     <section class="hero-light">
-        <a href="../innovation-lab.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Innovations</a>
-        <div class="hero-full-width">
-            <div class="hero-content">
-                <h1>Mango Quality Testing & Segregation System</h1>
-                <p>AI-powered non-destructive grading system that detects internal quality and defects without cutting the fruit.</p>
-            </div>
+      <a href="../innovation-lab.html" class="back-btn"
+        ><i class="fas fa-arrow-left"></i> Back to Innovations</a
+      >
+      <div class="hero-full-width">
+        <div class="hero-content">
+          <h1>Mango Quality Testing & Segregation System</h1>
+          <p>
+            AI-powered non-destructive grading system that detects internal
+            quality and defects without cutting the fruit.
+          </p>
         </div>
+      </div>
     </section>
 
-    <main class="container" style="padding-top: 5rem;">
+    <main class="container" style="padding-top: 5rem">
+      <!-- Gallery -->
+      <div class="reveal">
+        <div class="section-title"><h2>System in Action (Concept)</h2></div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="../images/products/mango1.webp"
+              alt="Mango Sorting Conveyor"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-caption">Conveyor with smart sensors</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="../images/products/mango2.webp"
+              alt="Quality Analysis"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-caption">Internal quality detection</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="../images/products/mango3.webp"
+              alt="Grading Display"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-caption">Real‑time grading dashboard</div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Gallery -->
-        <div class="reveal">
-            <div class="section-title"><h2>System in Action (Concept)</h2></div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/products/mango1.webp" alt="Mango Sorting Conveyor">
-                    <div class="gallery-caption">Conveyor with smart sensors</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/products/mango2.webp" alt="Quality Analysis">
-                    <div class="gallery-caption">Internal quality detection</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/products/mango3.webp" alt="Grading Display">
-                    <div class="gallery-caption">Real‑time grading dashboard</div>
-                </div>
+      <!-- 2x2 Feature Matrix (Core Capabilities) -->
+      <div class="reveal">
+        <div class="section-title"><h2>How It Works – Simple & Smart</h2></div>
+        <div class="feature-matrix">
+          <div class="feature-card">
+            <h3>Step 1: Loading</h3>
+            <ul class="feature-list">
+              <li>Mangoes placed on conveyor</li>
+              <li>Automatic movement through inspection zone</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Step 2: Smart Scanning</h3>
+            <ul class="feature-list">
+              <li>Non‑destructive internal analysis</li>
+              <li>Detects ripeness, internal defects, hidden spoilage</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Step 3: Intelligent Decision</h3>
+            <ul class="feature-list">
+              <li>
+                Classifies into: Export Premium, Market Ready, Medium, Reject
+              </li>
+              <li>Based on real internal quality (R & Q grading)</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Step 4: Automatic Segregation</h3>
+            <ul class="feature-list">
+              <li>Smart sorting mechanism separates by grade</li>
+              <li>No manual sorting needed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- YouTube Video Section -->
+      <div class="reveal">
+        <div class="section-title"><h2>See It In Action</h2></div>
+        <div style="text-align: center; margin-top: 2rem">
+          <iframe
+            width="800"
+            height="450"
+            style="
+              max-width: 100%;
+              border-radius: var(--radius-md);
+              box-shadow: var(--shadow-md);
+            "
+            src="https://www.youtube.com/embed/CjHAuckcXiw?si=-4IzU6EgQrhXbK8O"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Technical Specifications Table -->
+      <div class="reveal soft-table">
+        <div
+          class="section-title"
+          style="margin-bottom: 2rem; margin-top: 2rem"
+        >
+          <h2>Technical Specifications</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>System Type</strong></td>
+              <td>AI‑Based Non‑Destructive Quality Tester & Sorter</td>
+            </tr>
+            <tr>
+              <td><strong>Capacity</strong></td>
+              <td>Up to 5 tons per hour (customizable)</td>
+            </tr>
+            <tr>
+              <td><strong>Inspection Technology</strong></td>
+              <td>Thermal pattern analysis / Structured logic (R&Q grading)</td>
+            </tr>
+            <tr>
+              <td><strong>Detection Capabilities</strong></td>
+              <td>
+                Internal ripeness, hidden defects, spoilage, maturity index
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Grading Categories</strong></td>
+              <td>Export Premium / Market Ready / Medium / Reject</td>
+            </tr>
+            <tr>
+              <td><strong>Sorting Mechanism</strong></td>
+              <td>Automatic air‑jet / mechanical pusher</td>
+            </tr>
+            <tr>
+              <td><strong>Conveyor Width</strong></td>
+              <td>600 – 1200 mm (custom)</td>
+            </tr>
+            <tr>
+              <td><strong>Power Supply</strong></td>
+              <td>230V / 415V, 3‑phase</td>
+            </tr>
+            <tr>
+              <td><strong>User Interface</strong></td>
+              <td>Touchscreen HMI with real‑time data</td>
+            </tr>
+            <tr>
+              <td><strong>Integration</strong></td>
+              <td>Compatible with packhouse automation, cold storage, ERP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Why It’s a Game Changer Table -->
+      <div class="reveal soft-table">
+        <div
+          class="section-title"
+          style="margin-bottom: 2rem; margin-top: 2rem"
+        >
+          <h2>Why It’s a Game Changer</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Challenge</th>
+              <th>Solution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Manual grading is inconsistent</td>
+              <td>AI‑powered, objective grading every time</td>
+            </tr>
+            <tr>
+              <td>Internal defects remain hidden</td>
+              <td>Non‑destructive internal quality detection</td>
+            </tr>
+            <tr>
+              <td>Wrong grading = lost revenue</td>
+              <td>Accurate segregation ensures premium pricing</td>
+            </tr>
+            <tr>
+              <td>High labor dependency</td>
+              <td>Fully automated sorting reduces manual work</td>
+            </tr>
+            <tr>
+              <td>Post‑harvest losses</td>
+              <td>
+                Early detection of spoilage improves shelf life management
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Business Impact Table -->
+      <div class="reveal soft-table">
+        <div
+          class="section-title"
+          style="margin-bottom: 2rem; margin-top: 2rem"
+        >
+          <h2>Business Impact</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Product Value</strong></td>
+              <td>Increases by up to 30% through export‑ready grading</td>
+            </tr>
+            <tr>
+              <td><strong>Post‑Harvest Loss</strong></td>
+              <td>Reduced by 15–25%</td>
+            </tr>
+            <tr>
+              <td><strong>Labor Savings</strong></td>
+              <td>Up to 70% reduction in sorting manpower</td>
+            </tr>
+            <tr>
+              <td><strong>Buyer Trust</strong></td>
+              <td>Consistent quality builds reputation</td>
+            </tr>
+            <tr>
+              <td><strong>ROI</strong></td>
+              <td>Typically 12–24 months for medium‑scale packhouses</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Applications -->
+      <div class="reveal">
+        <div class="section-title"><h2>Where It Can Be Used</h2></div>
+        <div class="applications-grid">
+          <div class="app-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Mango Export Units</h3>
+            <p>Ensure export‑grade quality consistently</p>
+          </div>
+          <div class="app-card">
+            <i class="fas fa-boxes"></i>
+            <h3>Pack Houses</h3>
+            <p>High‑throughput, reliable grading</p>
+          </div>
+          <div class="app-card">
+            <i class="fas fa-users"></i>
+            <h3>Farmer Groups / FPOs</h3>
+            <p>Add value to collective produce</p>
+          </div>
+          <div class="app-card">
+            <i class="fas fa-thermometer-half"></i>
+            <h3>Cold Storage Facilities</h3>
+            <p>Sort before storage for better shelf life</p>
+          </div>
+          <div class="app-card">
+            <i class="fas fa-industry"></i>
+            <h3>Agri‑Processing Industries</h3>
+            <p>Raw material quality control</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlighted Technology Overview -->
+      <div class="reveal highlight-tech">
+        <div style="margin-bottom: 0.5rem">
+          <h2 style="margin-bottom: 0.5rem">
+            See Inside Every Mango – Without Cutting
+          </h2>
+        </div>
+        <p>
+          Today, mango grading is mostly manual and based on external color and
+          size – leading to inconsistent quality and lost value. Our upcoming
+          <strong>Mango Quality Testing & Segregation System</strong> solves
+          this by using advanced intelligent analysis to understand ripeness,
+          internal defects, and true quality. Using thermal patterns and
+          structured logic, it detects spoilage and maturity
+          <strong>without cutting the fruit</strong>, ensuring every mango is
+          sorted accurately for its real market value.<br /><br />
+        </p>
+        <h3>Be First to Know – Early Access</h3>
+        <p>
+          Get detailed technical specifications, pilot installation details, and
+          early‑bird pricing for the Mango Quality Testing & Segregation System.
+        </p>
+        <a
+          href="../contact.html"
+          class="btn-outline"
+          style="
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 0.6rem 1.8rem;
+            text-decoration: none;
+          "
+          >Request Information →</a
+        >
+      </div>
+
+      <div id="unlockFormContainer" class="form-container">
+        <h3>Get Full Details</h3>
+        <p>
+          Enter your details – we’ll share the complete product brochure and
+          arrange a demo.
+        </p>
+        <form id="premiumForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <input
+                type="text"
+                id="fullname"
+                placeholder="Full name *"
+                required
+              />
             </div>
-        </div>
-
-        <!-- 2x2 Feature Matrix (Core Capabilities) -->
-        <div class="reveal">
-            <div class="section-title"><h2>How It Works – Simple & Smart</h2></div>
-            <div class="feature-matrix">
-                <div class="feature-card">
-                    <h3>Step 1: Loading</h3>
-                    <ul class="feature-list">
-                        <li>Mangoes placed on conveyor</li>
-                        <li>Automatic movement through inspection zone</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Step 2: Smart Scanning</h3>
-                    <ul class="feature-list">
-                        <li>Non‑destructive internal analysis</li>
-                        <li>Detects ripeness, internal defects, hidden spoilage</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Step 3: Intelligent Decision</h3>
-                    <ul class="feature-list">
-                        <li>Classifies into: Export Premium, Market Ready, Medium, Reject</li>
-                        <li>Based on real internal quality (R & Q grading)</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Step 4: Automatic Segregation</h3>
-                    <ul class="feature-list">
-                        <li>Smart sorting mechanism separates by grade</li>
-                        <li>No manual sorting needed</li>
-                    </ul>
-                </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="emailid"
+                placeholder="Email address *"
+                required
+              />
             </div>
-        </div>
-
-        <!-- YouTube Video Section -->
-        <div class="reveal">
-            <div class="section-title"><h2>See It In Action</h2></div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <iframe width="800" height="450" style="max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);" src="https://www.youtube.com/embed/CjHAuckcXiw?si=-4IzU6EgQrhXbK8O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="form-group">
+              <input type="tel" id="phoneNum" placeholder="Phone (optional)" />
             </div>
-        </div>
-
-        <!-- Technical Specifications Table -->
-        <div class="reveal soft-table">
-            <div class="section-title" style="margin-bottom: 2rem; margin-top: 2rem;"><h2>Technical Specifications</h2></div>
-            <table>
-                <thead>
-                    <tr><th>Parameter</th><th>Specification</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>System Type</strong></td><td>AI‑Based Non‑Destructive Quality Tester & Sorter</td></tr>
-                    <tr><td><strong>Capacity</strong></td><td>Up to 5 tons per hour (customizable)</td></tr>
-                    <tr><td><strong>Inspection Technology</strong></td><td>Thermal pattern analysis / Structured logic (R&Q grading)</td></tr>
-                    <tr><td><strong>Detection Capabilities</strong></td><td>Internal ripeness, hidden defects, spoilage, maturity index</td></tr>
-                    <tr><td><strong>Grading Categories</strong></td><td>Export Premium / Market Ready / Medium / Reject</td></tr>
-                    <tr><td><strong>Sorting Mechanism</strong></td><td>Automatic air‑jet / mechanical pusher</td></tr>
-                    <tr><td><strong>Conveyor Width</strong></td><td>600 – 1200 mm (custom)</td></tr>
-                    <tr><td><strong>Power Supply</strong></td><td>230V / 415V, 3‑phase</td></tr>
-                    <tr><td><strong>User Interface</strong></td><td>Touchscreen HMI with real‑time data</td></tr>
-                    <tr><td><strong>Integration</strong></td><td>Compatible with packhouse automation, cold storage, ERP</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Why It’s a Game Changer Table -->
-        <div class="reveal soft-table">
-            <div class="section-title" style="margin-bottom: 2rem; margin-top: 2rem;"><h2>Why It’s a Game Changer</h2></div>
-            <table>
-                <thead>
-                    <tr><th>Challenge</th><th>Solution</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Manual grading is inconsistent</td><td>AI‑powered, objective grading every time</td></tr>
-                    <tr><td>Internal defects remain hidden</td><td>Non‑destructive internal quality detection</td></tr>
-                    <tr><td>Wrong grading = lost revenue</td><td>Accurate segregation ensures premium pricing</td></tr>
-                    <tr><td>High labor dependency</td><td>Fully automated sorting reduces manual work</td></tr>
-                    <tr><td>Post‑harvest losses</td><td>Early detection of spoilage improves shelf life management</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Business Impact Table -->
-        <div class="reveal soft-table">
-            <div class="section-title" style="margin-bottom: 2rem; margin-top: 2rem;"><h2>Business Impact</h2></div>
-            <table>
-                <thead>
-                    <tr><th>Aspect</th><th>Benefit</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Product Value</strong></td><td>Increases by up to 30% through export‑ready grading</td></tr>
-                    <tr><td><strong>Post‑Harvest Loss</strong></td><td>Reduced by 15–25%</td></tr>
-                    <tr><td><strong>Labor Savings</strong></td><td>Up to 70% reduction in sorting manpower</td></tr>
-                    <tr><td><strong>Buyer Trust</strong></td><td>Consistent quality builds reputation</td></tr>
-                    <tr><td><strong>ROI</strong></td><td>Typically 12–24 months for medium‑scale packhouses</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Applications -->
-        <div class="reveal">
-            <div class="section-title"><h2> Where It Can Be Used</h2></div>
-            <div class="applications-grid">
-                <div class="app-card"><i class="fas fa-chart-line"></i><h3>Mango Export Units</h3><p>Ensure export‑grade quality consistently</p></div>
-                <div class="app-card"><i class="fas fa-boxes"></i><h3>Pack Houses</h3><p>High‑throughput, reliable grading</p></div>
-                <div class="app-card"><i class="fas fa-users"></i><h3>Farmer Groups / FPOs</h3><p>Add value to collective produce</p></div>
-                <div class="app-card"><i class="fas fa-thermometer-half"></i><h3>Cold Storage Facilities</h3><p>Sort before storage for better shelf life</p></div>
-                <div class="app-card"><i class="fas fa-industry"></i><h3>Agri‑Processing Industries</h3><p>Raw material quality control</p></div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="organization"
+                placeholder="Organization / Farm / Packhouse"
+              />
             </div>
-        </div>
-
-        <!-- Highlighted Technology Overview -->
-        <div class="reveal highlight-tech">
-            <div style="margin-bottom: 0.5rem;">
-                <h2 style="margin-bottom: 0.5rem;">See Inside Every Mango – Without Cutting</h2>
+            <div class="form-group full">
+              <textarea
+                rows="2"
+                id="message"
+                placeholder="Tell us about your mango processing requirements..."
+              ></textarea>
             </div>
-            <p>Today, mango grading is mostly manual and based on external color and size – leading to inconsistent quality and lost value. Our upcoming <strong>Mango Quality Testing & Segregation System</strong> solves this by using advanced intelligent analysis to understand ripeness, internal defects, and true quality. Using thermal patterns and structured logic, it detects spoilage and maturity <strong>without cutting the fruit</strong>, ensuring every mango is sorted accurately for its real market value.<br><br></p>
-            <h3>Be First to Know – Early Access</h3>
-                <p>Get detailed technical specifications, pilot installation details, and early‑bird pricing for the Mango Quality Testing & Segregation System.</p>
-                <a href="../contact.html" class="btn-outline" style="margin-top: 1rem; display: inline-block; padding: 0.6rem 1.8rem; text-decoration: none;">Request Information →</a>
-        </div>
-
-
-            <div id="unlockFormContainer" class="form-container">
-                <h3>Get Full Details</h3>
-                <p>Enter your details – we’ll share the complete product brochure and arrange a demo.</p>
-                <form id="premiumForm">
-                    <div class="form-grid">
-                        <div class="form-group"><input type="text" id="fullname" placeholder="Full name *" required></div>
-                        <div class="form-group"><input type="email" id="emailid" placeholder="Email address *" required></div>
-                        <div class="form-group"><input type="tel" id="phoneNum" placeholder="Phone (optional)"></div>
-                        <div class="form-group"><input type="text" id="organization" placeholder="Organization / Farm / Packhouse"></div>
-                        <div class="form-group full"><textarea rows="2" id="message" placeholder="Tell us about your mango processing requirements..."></textarea></div>
-                        <input type="hidden" id="productName" value="Mango Quality Testing & Segregation System">
-                        <div class="form-group full"><button type="submit" class="btn-submit"><i class="fas fa-envelope"></i> Request Early Access</button></div>
-                    </div>
-                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem;">We respect your privacy. No spam.</p>
-                </form>
+            <input
+              type="hidden"
+              id="productName"
+              value="Mango Quality Testing & Segregation System"
+            />
+            <div class="form-group full">
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-envelope"></i> Request Early Access
+              </button>
             </div>
+          </div>
+          <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem">
+            We respect your privacy. No spam.
+          </p>
+        </form>
+      </div>
 
-            <div id="hiddenPremiumContent" class="hidden-content">
-                <div id="successMessage" class="success-banner" style="display: none;"><i class="fas fa-check-circle"></i> <strong>Thank you!</strong> We’ll send you the detailed product brochure soon.</div>
-                <div style="background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2rem;">
-                    <h3><i class="fas fa-file-alt" style="color: var(--primary);"></i> What You’ll Receive</h3>
-                    <div class="premium-grid">
-                        <div class="premium-card"><i class="fas fa-file-pdf"></i><h4>Product Brochure</h4><p>Technical specs, capacities, and options</p><span style="color: var(--primary);">✓ PDF</span></div>
-                        <div class="premium-card"><i class="fas fa-chart-line"></i><h4>ROI Estimator</h4><p>Calculate your potential savings</p><span style="color: var(--primary);">✓ Excel tool</span></div>
-                        <div class="premium-card"><i class="fas fa-video"></i><h4>Demo Video</h4><p>See the system in action</p><span style="color: var(--primary);">✓ link</span></div>
-                        <div class="premium-card"><i class="fas fa-chalkboard-user"></i><h4>Case Studies</h4><p>Export‑grade packhouse success</p><span style="color: var(--primary);">✓ coming soon</span></div>
-                    </div>
-                    <div style="margin-top: 2rem; padding: 1rem; background: white; border-radius: var(--radius-md);">
-                        <p><strong> Early Access Offer:</strong> First 10 inquiries get a complimentary feasibility study for their facility.</p>
-                    </div>
-                </div>
-            </div>
+      <div id="hiddenPremiumContent" class="hidden-content">
+        <div id="successMessage" class="success-banner" style="display: none">
+          <i class="fas fa-check-circle"></i> <strong>Thank you!</strong> We’ll
+          send you the detailed product brochure soon.
         </div>
+        <div
+          style="
+            background: var(--bg-soft);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+          "
+        >
+          <h3>
+            <i class="fas fa-file-alt" style="color: var(--primary)"></i> What
+            You’ll Receive
+          </h3>
+          <div class="premium-grid">
+            <div class="premium-card">
+              <i class="fas fa-file-pdf"></i>
+              <h4>Product Brochure</h4>
+              <p>Technical specs, capacities, and options</p>
+              <span style="color: var(--primary)">✓ PDF</span>
+            </div>
+            <div class="premium-card">
+              <i class="fas fa-chart-line"></i>
+              <h4>ROI Estimator</h4>
+              <p>Calculate your potential savings</p>
+              <span style="color: var(--primary)">✓ Excel tool</span>
+            </div>
+            <div class="premium-card">
+              <i class="fas fa-video"></i>
+              <h4>Demo Video</h4>
+              <p>See the system in action</p>
+              <span style="color: var(--primary)">✓ link</span>
+            </div>
+            <div class="premium-card">
+              <i class="fas fa-chalkboard-user"></i>
+              <h4>Case Studies</h4>
+              <p>Export‑grade packhouse success</p>
+              <span style="color: var(--primary)">✓ coming soon</span>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 2rem;
+              padding: 1rem;
+              background: white;
+              border-radius: var(--radius-md);
+            "
+          >
+            <p>
+              <strong> Early Access Offer:</strong> First 10 inquiries get a
+              complimentary feasibility study for their facility.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
 
     <div id="footer"></div>
 
     <script>
-        (function() {
-            function loadComponent(id, file) {
-                fetch(file)
-                    .then(r => r.ok ? r.text() : Promise.reject('Failed to load ' + file))
-                    .then(html => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            el.innerHTML = html;
-                            const scripts = el.querySelectorAll('script');
-                            scripts.forEach(s => {
-                                const newScript = document.createElement('script');
-                                Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                                newScript.appendChild(document.createTextNode(s.innerHTML));
-                                s.parentNode.replaceChild(newScript, s);
-                            });
-                        }
-                    }).catch(console.error);
-            }
-            window.BASE_PATH = "../";
-            loadComponent('header', '../components/header.html');
-            loadComponent('footer', '../components/footer.html');
-        })();
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file),
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value),
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
+        }
+        window.BASE_PATH = "../";
+        loadComponent("header", "../components/header.html");
+        loadComponent("footer", "../components/footer.html");
+      })();
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const reveals = document.querySelectorAll('.reveal');
-            function revealOnScroll() {
-                for (let i = 0; i < reveals.length; i++) {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 50;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add('active');
-                    }
-                }
+      document.addEventListener("DOMContentLoaded", function () {
+        const reveals = document.querySelectorAll(".reveal");
+        function revealOnScroll() {
+          for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = reveals[i].getBoundingClientRect().top;
+            const elementVisible = 50;
+            if (elementTop < windowHeight - elementVisible) {
+              reveals[i].classList.add("active");
             }
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll();
+          }
+        }
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll();
 
-            const lockCard = document.getElementById('lockContainer');
-            const formContainer = document.getElementById('unlockFormContainer');
-            const premiumForm = document.getElementById('premiumForm');
-            const successMessage = document.getElementById('successMessage');
-            const hiddenContent = document.getElementById('hiddenPremiumContent');
+        const lockCard = document.getElementById("lockContainer");
+        const formContainer = document.getElementById("unlockFormContainer");
+        const premiumForm = document.getElementById("premiumForm");
+        const successMessage = document.getElementById("successMessage");
+        const hiddenContent = document.getElementById("hiddenPremiumContent");
 
-            if (lockCard && formContainer) {
-                lockCard.addEventListener('click', function() {
-                    lockCard.style.display = 'none';
-                    formContainer.classList.add('visible');
-                });
-            }
+        if (lockCard && formContainer) {
+          lockCard.addEventListener("click", function () {
+            lockCard.style.display = "none";
+            formContainer.classList.add("visible");
+          });
+        }
 
-            if (premiumForm) {
-                premiumForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    formContainer.style.display = 'none';
-                    hiddenContent.classList.add('visible');
-                    successMessage.style.display = 'flex';
-                });
-            }
-        });
+        if (premiumForm) {
+          premiumForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            formContainer.style.display = "none";
+            hiddenContent.classList.add("visible");
+            successMessage.style.display = "flex";
+          });
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
