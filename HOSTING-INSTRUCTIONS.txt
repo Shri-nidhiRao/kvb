@@ -11,11 +11,11 @@ Because the website features a functional Admin Panel that saves new blogs and r
 - Run `npm install` to install dependencies, and start the server using `node server.js`.
 - The application runs on port 5001 by default.
 
-2. FILE SYSTEM WRITE PERMISSIONS
---------------------------------
+2. FILE SYSTEM WRITE PERMISSIONS & VERCEL WARNING
+---------------------------------------------------
 The backend saves user-generated data (Blogs and Roadmaps) directly to local JSON files (`public/blogs.json` and `public/roadmaps.json`).
 - Ensure the server has persistent storage and write permissions for the application folder.
-- WARNING: Do not use ephemeral/serverless free-tier hosting (like Heroku's free tier or Render's free tier) unless you have attached a persistent disk, because those services wipe local files upon every restart, which will delete the saved blogs and roadmaps.
+- WARNING ABOUT VERCEL: Vercel is a "serverless" hosting environment. Serverless environments wipe local file changes upon every restart or new request spin-up. If you host this Node.js app on Vercel using `vercel.json`, the website will render correctly, but **any blogs or roadmaps you create in the Admin Panel will be deleted when Vercel spins down the function**. To fix this, you would need to connect an external database (like Vercel Postgres, MongoDB, or Firebase) instead of writing to local JSON files.
 
 3. ENVIRONMENT VARIABLES (.env)
 -------------------------------
