@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playNextSlide();
 
     // Hide intro screen after animation finishes
-    if (localStorage.getItem('hasSeenLogoReveal')) {
+    if (sessionStorage.getItem('hasSeenLogoReveal')) {
         // Already seen, just show main site immediately and init AOS
         const introScreen = document.getElementById('introScreen');
         if (introScreen) introScreen.style.display = 'none';
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     } else {
-        localStorage.setItem('hasSeenLogoReveal', 'true');
+        sessionStorage.setItem('hasSeenLogoReveal', 'true');
         setTimeout(function() {
             const introScreen = document.getElementById('introScreen');
             if (introScreen) {

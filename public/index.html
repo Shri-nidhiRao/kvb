@@ -6,7 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>KVB Green Energies – Engineering the Future</title>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=block" rel="stylesheet">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
   <link rel="icon" type="image/png" href="images/products/kvb-logo.webp">
@@ -312,7 +314,7 @@
     /* Background container acting as a frame */
     .hero-background {
       position: relative;
-      width: 110%;
+      width: 100%;
       height: 425px;
       border-radius: 20px;
       overflow: hidden;
@@ -1175,7 +1177,7 @@
 
 <body>
   <script>
-    if (localStorage.getItem('hasSeenLogoReveal')) {
+    if (sessionStorage.getItem('hasSeenLogoReveal')) {
       document.write('<style>#introScreen { display: none !important; } #mainWebsite { display: block !important; opacity: 1 !important; }</style>');
     }
   </script>
@@ -1202,7 +1204,7 @@
     <section class="hero-section">
       <!-- Left Side: Welcome Message -->
       <div class="hero-text-side">
-        <h1 class="welcome-title"><span style="color: #0B3D91;">Welcome to</span> <br><span style="color: #3A7D44; font-weight: 900;">KVB Green Energies</span></h1>
+        <h1 class="welcome-title"><span style="color: #0B3D91; font-weight: bold;">Welcome to</span> <br><span style="color: #3A7D44; font-weight: 800; letter-spacing: -1px;">KVB Green Energies</span></h1>
         <p class="welcome-subtitle">Pioneering sustainable solar thermal technology and innovative agricultural processing solutions to power a greener tomorrow.</p>
         <div class="welcome-buttons">
           <a href="about.html" class="welcome-btn primary">About Us</a>
