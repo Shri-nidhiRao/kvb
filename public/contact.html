@@ -24,7 +24,8 @@
     <!-- Google Fonts: Montserrat + Inter (Apple‑inspired) -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
-    <!-- Leaflet JS (required for map) -->
+    <!-- Leaflet JS & CSS (required for map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- EmailJS SDK -->
     <script
@@ -843,6 +844,15 @@
         .features-grid {
           gap: 12px;
           grid-template-columns: 1fr 1fr;
+        }
+
+        .success-actions {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .success-actions .btn {
+          width: 100%;
         }
 
         .contact-form-section {
