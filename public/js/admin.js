@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${new Date(blog.date).toLocaleDateString()}</td>
                 <td>
                     <div class="action-btns">
-                        <button class="btn-icon btn-edit" onclick="editBlog('${blog.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon btn-delete" onclick="deleteBlog('${blog.id}')" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn-icon btn-edit" onclick="editBlog('${blog.id}')" title="Edit">Edit</button>
+                        <button class="btn-icon btn-delete" onclick="deleteBlog('${blog.id}')" title="Delete">Delete</button>
                     </div>
                 </td>
             </tr>
@@ -465,8 +465,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${r.description || (r.achievements && r.achievements.length > 0 ? r.achievements[0] + "..." : "No description")}</td>
                 <td>
                     <div class="action-btns">
-                        <button class="btn-icon btn-edit" onclick="editRoadmap('${r.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon btn-delete" onclick="deleteRoadmap('${r.id}')" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn-icon btn-edit" onclick="editRoadmap('${r.id}')" title="Edit">Edit</button>
+                        <button class="btn-icon btn-delete" onclick="deleteRoadmap('${r.id}')" title="Delete">Delete</button>
                     </div>
                 </td>
             </tr>

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta
@@ -2688,16 +2688,7 @@
               node.style.setProperty("--node-color", color);
               node.style.setProperty("--node-light", lightColor);
 
-              const icons = [
-                "fas fa-seedling",
-                "fas fa-sun",
-                "fas fa-certificate",
-                "fas fa-globe",
-                "fas fa-leaf",
-                "fas fa-flask",
-                "fas fa-chart-line",
-              ];
-              const iconClass = icons[i % icons.length];
+              const iconClass = "fas fa-seedling";
 
               node.innerHTML = `
                     <div class="rm-node-circle"><i class="${iconClass}"></i></div>
