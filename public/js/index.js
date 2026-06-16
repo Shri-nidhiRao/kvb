@@ -83,8 +83,8 @@
   } else {
     sessionStorage.setItem("hasSeenLogoReveal", "true");
 
-    // Wait until everything (including images) is fully loaded to start animation
-    window.addEventListener("load", function () {
+    // Start animation immediately after DOM is ready to improve LCP
+    document.addEventListener("DOMContentLoaded", function () {
       if (introScreen) introScreen.classList.add("play-animations");
 
       setTimeout(function () {
@@ -99,12 +99,14 @@
           mainSite.classList.add("show");
           // Initialize AOS (Animate on Scroll)
           if (typeof AOS !== "undefined") {
-            AOS.init({
-              duration: 800,
-              once: true,
-              offset: 50,
+            requestAnimationFrame(() => {
+              AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50,
+              });
+              requestAnimationFrame(() => AOS.refresh());
             });
-            setTimeout(() => AOS.refresh(), 100);
           }
         }
       }, 3500); // 3.5s delay allows the logo reveal to finish
