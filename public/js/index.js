@@ -3,7 +3,7 @@
  * Handles the hero slideshow and other index-specific functionality
  */
 
-document.addEventListener("DOMContentLoaded", function () {
+(function() {
   // Hero slideshow logic: mixes videos and images sequentially
   const slides = document.querySelectorAll(".hero-slide");
   if (slides.length === 0) return;
@@ -110,4 +110,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 3500); // 3.5s delay allows the logo reveal to finish
     });
   }
-});
+})();

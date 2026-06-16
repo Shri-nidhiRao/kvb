@@ -249,4 +249,22 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+  
+  (function initFooterLinks() {
+    var isSubFolder =
+      window.location.pathname.includes("/products/") ||
+      window.location.pathname.includes("/app/") ||
+      window.location.pathname.includes("/innovation-lab-docs/") ||
+      window.location.pathname.includes("/blogs/") ||
+      window.location.pathname.includes("/solutions/");
+    var base = isSubFolder ? "../" : "./";
+
+    var footerLinks = document.querySelectorAll(".footer-links a");
+    footerLinks.forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (href && !href.startsWith("http")) {
+        link.setAttribute("href", base + href);
+      }
+    });
+  })();
 </script>

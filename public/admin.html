@@ -742,5 +742,44 @@
     </div>
 
     <script src="js/admin.js"></script>
+      <!-- GLOBAL COMPONENT LOADER -->
+    <script>
+      (function () {
+        function loadComponent(id, file) {
+          fetch(file)
+            .then((r) =>
+              r.ok ? r.text() : Promise.reject("Failed to load " + file)
+            )
+            .then((html) => {
+              const el = document.getElementById(id);
+              if (el) {
+                el.innerHTML = html;
+                // Execute scripts
+                const scripts = el.querySelectorAll("script");
+                scripts.forEach((s) => {
+                  const newScript = document.createElement("script");
+                  Array.from(s.attributes).forEach((attr) =>
+                    newScript.setAttribute(attr.name, attr.value)
+                  );
+                  newScript.appendChild(document.createTextNode(s.innerHTML));
+                  s.parentNode.replaceChild(newScript, s);
+                });
+              }
+            })
+            .catch(console.error);
+        }
+
+        var isSubFolder =
+          window.location.pathname.includes("/products/") ||
+          window.location.pathname.includes("/app/") ||
+          window.location.pathname.includes("/innovation-lab-docs/") ||
+          window.location.pathname.includes("/blogs/") ||
+          window.location.pathname.includes("/solutions/");
+        var base = isSubFolder ? "../" : "./";
+
+        loadComponent("header", base + "components/header.html");
+        loadComponent("footer", base + "components/footer.html");
+      })();
+    </script>
   </body>
 </html>

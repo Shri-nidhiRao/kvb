@@ -279,10 +279,11 @@
               height="55"
             />
           </a>
+          <span class="logo-text">KVB Green Energies</span>
           
         </div>
         <script>
-          (function () {
+          function initHeaderLinks() {
             var isSubFolder =
               window.location.pathname.includes("/products/") ||
               window.location.pathname.includes("/app/") ||
@@ -317,7 +318,12 @@
                 link.setAttribute("href", base + href);
               }
             });
-          })();
+          }
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHeaderLinks);
+          } else {
+            initHeaderLinks();
+          }
         </script>
 
         <div class="menu-toggle" id="menuBtn">☰</div>
