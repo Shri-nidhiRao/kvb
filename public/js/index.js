@@ -83,8 +83,8 @@
   } else {
     sessionStorage.setItem("hasSeenLogoReveal", "true");
 
-    // Start animation immediately after DOM is ready to improve LCP
-    document.addEventListener("DOMContentLoaded", function () {
+    // Wait until everything (including images) is fully loaded to start animation
+    window.addEventListener("load", function () {
       if (introScreen) introScreen.classList.add("play-animations");
 
       setTimeout(function () {
