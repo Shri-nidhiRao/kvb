@@ -15,10 +15,7 @@
     </title>
     <link rel="icon" type="image/png" href="../images/products/kvb-logo.webp" />
     <!-- Fonts & Icons -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     <link
       rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -29,15 +26,8 @@
       "
     />
     <noscript
-      ><link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    /></noscript>
-    <!-- Bootstrap 4 CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    />
+      ><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <!-- EmailJS SDK -->
     <script
       type="text/javascript"
@@ -863,21 +853,22 @@
 
         .menu-toggle {
           display: block;
-          /* show hamburger on mobile */
+          order: -1;
+            /* show hamburger on mobile */
         }
 
         .nav-menu {
           position: fixed;
           top: 0;
-          right: -100%;
-          /* off‑canvas from right */
+          left: -100%;
+          /* off-canvas from left */
           height: 100vh;
           width: 260px;
           background: #fff;
           flex-direction: column;
           padding: 90px 25px;
           gap: 22px;
-          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
           transition: 0.35s ease;
           margin-left: 0;
           /* override desktop margin */
@@ -886,7 +877,7 @@
         }
 
         .nav-menu.active {
-          right: 0;
+          left: 0;
         }
 
         /* on mobile, dropdown is static and hidden by default */
@@ -936,6 +927,8 @@
                 alt="KVB Logo"
                 fetchpriority="high"
                 decoding="async"
+                width="200"
+                height="55"
               />
             </a>
             <span class="logo-text">KVB Green Energies</span>
@@ -1368,9 +1361,6 @@
     </main>
 
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-
       .main-footer {
         background: #2f3437;
         color: #cfcfcf;
@@ -1545,9 +1535,6 @@
     <div id="footer">
       <!-- TESLA-STYLE FOOTER WITH SOCIAL ICONS – CORRECTED SPACING -->
       <style>
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-
         .main-footer {
           background: #2f3437;
           color: #cfcfcf;
